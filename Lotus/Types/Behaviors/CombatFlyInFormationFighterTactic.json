@@ -1,0 +1,120 @@
+{
+    "parent": "FlyInFormationFighterTactic",
+    "data": {
+        "MaxGroupingDistance": 300,
+        "OnlyFormationInCombat": 1,
+        "GroupType": "GT_ASSAULT",
+        "MaxFormationSlots": 2,
+        "DesiredFormation": "FRM_ARROW",
+        "SpacingOffset": 30,
+        "LeaderAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+        "LeaderAction:DefaultReevaluationDelay": 0,
+        "LeaderAction:Actions": [
+            "FlyAroundTargetFighterBehavior",
+            "FlyBackToCombatZoneFighterBehavior",
+            "FlyAfterTargetBehavior"
+        ],
+        "LeaderAction:FlyAroundTargetFighterBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "MaxRange": 650,
+            "CirclingStageMinTime": 5,
+            "PredictTime": 2,
+            "ShootingAngleFromForward": 60,
+            "AttackRunPastTargetDistanceRange": [
+                300,
+                450
+            ],
+            "RandomPitchRange": [
+                0.05,
+                15
+            ],
+            "MinSpeedModifier": 0.8,
+            "MinSpeedModifierClose": 0.6,
+            "DistanceForSpeedModifier": [
+                100,
+                400
+            ],
+            "MinAngelForSpeedModifier": 90,
+            "MinAttackAlignmentDistance": 120,
+            "MaxDisengageCheckDist": 250,
+            "DisengagePointDist": 1000,
+            "MinDistanceForAttackRun": 250,
+            "UseDisengageCorrectionCurve": 0,
+            "DisengageDirCorrectionCurve": {
+                "m": -0.4,
+                "k": 2,
+                "b": 0.9,
+                "c": 0,
+                "logistic": 0
+            },
+            "MaxAttackAngle": 90,
+            "CombatPosture": "JOG"
+        },
+        "LeaderAction:FlyBackToCombatZoneFighterBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "SpeedMultiplier": 1.2,
+            "AvatarOutOfBoundsRatioRequired": 0.8
+        },
+        "LeaderAction:FlyAfterTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "RangeToEngage": [
+                400,
+                10000
+            ],
+            "RepathThreshold": 100,
+            "DefaultThrottle": 1,
+            "FullThrust": 1,
+            "FullThrustDistance": 0,
+            "AttackWait": {
+                "WaitDuration": [
+                    1.5,
+                    3
+                ],
+                "AttackDuration": [
+                    1.5,
+                    3
+                ]
+            },
+            "CombatAttack": {
+                "AttackRange": [
+                    5,
+                    40
+                ]
+            },
+            "MoveFacingControl": "MFC_FACE_MOVEDIR",
+            "ShouldAccelerateWhileChasing": 0,
+            "ChaseSpeedMultiplier": 1,
+            "ChaseAccelerationDelay": 5,
+            "ShouldAdjustTurningAngle": 0,
+            "TurningAngleAdjustmentFrequency": 5,
+            "TurningAngleAdjustmentFactor": 20
+        },
+        "LeaderAction:FailOnChildFailure": 0,
+        "AllowableLinearOffsetFromPos": 300,
+        "AllowableDistanceOffsetFromAlignment": 60,
+        "CatchUpDistance": 200,
+        "SlowDownSpeedModifier": 0.85,
+        "CatchUpSpeedModifier": 1.25
+    }
+}

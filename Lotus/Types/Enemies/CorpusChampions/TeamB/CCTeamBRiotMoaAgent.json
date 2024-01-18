@@ -1,0 +1,276 @@
+{
+    "parent": "/Lotus/Types/Enemies/CorpusChampions/CorpusChampionBipedRobotBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "CCTeamBRiotMoaAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionWeapons/CorpusChampionRiotRifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionWeapons/CCTeamBBipedRobotMeleeWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionPowerSuits/NpcTeamBRiotMoaSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/EE/Types/Npc/EngageTargetTactic",
+            "/EE/Types/Npc/PostureChangingBehaviorSelector",
+            "/Lotus/Types/Behaviors/ActiveDodgeBehavior",
+            "/EE/Types/Npc/AgentOffNavBehavior",
+            "/Lotus/Types/Behaviors/CorpusArenaChangeToMeleeWeaponDecorator",
+            "/Lotus/Types/Behaviors/ChangeToPrimaryWeaponDecoratorBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "EngageTargetTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceVisible": 5,
+            "ReportEnemyActivityInfluence": "EnemyActivity",
+            "AttackBehaviors": [
+                "/Lotus/Types/Behaviors/RiotBipedShieldPhasesBehavior"
+            ],
+            "RiotBipedShieldPhasesBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "EnableUntilStopped": 1,
+                "FaceTargetAngle": 30,
+                "MinAbilityCooldown": 3,
+                "Cooldown": 1,
+                "DamageReduction": 1,
+                "HealPctPerSecond": 0.05,
+                "DeactivationHealthPct": 0,
+                "Crouch": 1,
+                "SetupDRAndImmunities": 1,
+                "InjuryImmunities": [
+                    "STAGGER",
+                    "BIG_STAGGER",
+                    "RAGDOLL",
+                    "KNOCKDOWN"
+                ],
+                "ProcImmunities": [
+                    "PT_RAGDOLL",
+                    "PT_KNOCKED_DOWN",
+                    "PT_DISARMED",
+                    "PT_FLASHBANG"
+                ],
+                "AttackBarkInterval": [
+                    5,
+                    12
+                ],
+                "Actions": [
+                    "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                    "/EE/Types/Npc/SimpleMeleeAttackBehavior",
+                    "/Lotus/Types/Behaviors/BipedRobotShootBehavior"
+                ],
+                "UsePowerSuitAbilitiesBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.25,
+                    "BlockForPowerCompleteType": "BT_ALWAYS",
+                    "AllowInterruptOfAbility": 0,
+                    "StopFiring": 1,
+                    "StopMovingOnStart": 0,
+                    "ExtraReevaluationDelay": 0,
+                    "ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ActiveAction:Enabled": 1,
+                    "ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "EvaluateAction": 1,
+                    "FaceTarget": 0,
+                    "TurnAccuracyThreshold": 10,
+                    "TurnTimeout": 2,
+                    "AimTimeout": 0.5,
+                    "ValidAbilities": [],
+                    "MaxProcessPerEval": 0,
+                    "AimAtTarget": 0,
+                    "CheckIfAbilityUnlocked": 0,
+                    "MultipleConcurrentAbilities": 0,
+                    "EvaluateDelayRange": [
+                        0.5,
+                        1
+                    ],
+                    "PreventUsageOnWeaponUse": 0,
+                    "TurnDuringAbility": 0,
+                    "DeactivateAbilitiesOnPredeath": 0,
+                    "ResetEvalTimerOnEnemySpotted": 0
+                },
+                "SimpleMeleeAttackBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AttackRange": [
+                        0,
+                        2
+                    ],
+                    "AlternateAttackRange": [
+                        0,
+                        2
+                    ],
+                    "UseMeleeFov": 0,
+                    "MeleeFov": 45,
+                    "AllowMeleeingFromBehind": 0,
+                    "TimeSinceRendered": 0,
+                    "MeleeFromBehindFOV": 90,
+                    "RequiresClearNavTrace": 0,
+                    "InputCode": "MELEE",
+                    "AlternateAttackInputCode": "MELEE",
+                    "InTimer": 0.25,
+                    "Timer": 5,
+                    "TimeBetweenAttacksRange": [
+                        0.1,
+                        0.1
+                    ],
+                    "ShouldModifyPosture": 1,
+                    "UsePredictedPosition": 0,
+                    "MeleeAttackTime": 0.5,
+                    "AttackEvenIfTargetLeavesRange": 1,
+                    "TurnToFaceTarget": 1,
+                    "StopMeleeOnStop": 0,
+                    "WaitForMeleeToEnd": 0,
+                    "StopMovingWhenAttacking": 0
+                },
+                "BipedRobotShootBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "MinReloadRange": 0,
+                    "CheckWeaponRange": 1,
+                    "MaxRunningTime": 0,
+                    "SuppressionTargetDistDiff": 2.5,
+                    "FireModifiers": [],
+                    "TargetTriggerTypes": [],
+                    "TriggerSearchInterval": 1,
+                    "TriggerSearchRadius": 100,
+                    "RestrictTriggersByZone": 0,
+                    "AllowSuppressingFire": 0,
+                    "EvaluateRange": [
+                        0,
+                        100
+                    ],
+                    "MaintainAim": 1,
+                    "LookAtTarget": 1,
+                    "LookHorizRate": 40,
+                    "LookVertRate": 20,
+                    "DisableTurnToAim": 0,
+                    "ShootingStateMaxFacingAngle": 90,
+                    "TurningStateMinViewDelta": 10,
+                    "TurnTime": 1,
+                    "PreventMoving": 1,
+                    "StrafeChance": 0.5,
+                    "StrafeMaxDistance": 50,
+                    "MovementRange": [
+                        1.25,
+                        3
+                    ],
+                    "AlwaysEmptyClip": 0,
+                    "PointBlankDistance": 5,
+                    "CrouchHealthThreshold": 0.5,
+                    "ShootTime": [
+                        8,
+                        8
+                    ],
+                    "WaitTime": [
+                        0.5,
+                        1
+                    ],
+                    "TargetNotVisibleTimeoutRange": [
+                        6,
+                        8
+                    ],
+                    "UseDefenseVolume": 0
+                },
+                "DeployBarrier": 1,
+                "DeployOnlyInChokepoints": 0,
+                "OverrideChokepointTag": "ChokeHint",
+                "OverrideHintFindRange": 6,
+                "ValidDistanceToChokepoint": 8
+            }
+        },
+        "PostureChangingBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Actions": [],
+            "FailOnChildFailure": 0,
+            "SetPosture": "WALK",
+            "SetAnimVariable": "IV_NONE",
+            "SetAnimVariableValue": 0,
+            "RevertPosturesOnExit": 1,
+            "FaceTargetBeforePosture": 0,
+            "FaceTargetTimeout": 6,
+            "AllowableFacingAngleDifference": 15,
+            "LookAtTarget": 1,
+            "LookHorizRate": 40,
+            "LookVertRate": 40,
+            "LookTargetOffset": [
+                0,
+                0,
+                0
+            ]
+        },
+        "AgentOffNavBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOffNav": 2,
+            "ToleranceDistance": 0,
+            "DisableWhenFlying": 0,
+            "RerunDelay": 5,
+            "OffNavBehaviors": []
+        }
+    }
+}

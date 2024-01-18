@@ -1,0 +1,168 @@
+{
+    "parent": "/Lotus/Types/Enemies/CaptureTargets/CaptureTargetBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "EntratiApparitionAvatar"
+        },
+        "NewAdditionalInventory": [],
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/DroneRecoveryBehavior",
+            "/EE/Types/Npc/UseActionOrderBehavior",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
+        "DroneRecoveryBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOffNav": 2,
+            "ToleranceDistance": 1,
+            "DisableWhenFlying": 0,
+            "RerunDelay": 5,
+            "OffNavBehaviors": [
+                "/EE/Types/Npc/FlyDescendToNavBehavior"
+            ],
+            "FlyDescendToNavBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "DelayEvaluationOnNavFindFailure": 12,
+                "DownwardRaycastLength": 50,
+                "RaycastIgnoreTypes": [
+                    "/EE/Types/Engine/BaseAvatar",
+                    "/EE/Types/Engine/HitProxy",
+                    "/EE/Types/Engine/Decoration",
+                    "/EE/Types/Physics/Ragdoll"
+                ],
+                "UseLastGoodPosition": 0
+            }
+        },
+        "UseActionOrderBehavior": {
+            "SuccessRadius": 1,
+            "DesiredPosture": "WALK"
+        },
+        "WaitBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOut": 5,
+            "CoverOnly": 0,
+            "AimPosture": 0,
+            "MinimalEnemyDistance": 0,
+            "TrackTarget": 0,
+            "TrackTargetNotVisible": 0,
+            "Peek": 0,
+            "FailOnDamaged": 1,
+            "PreventShooting": 0,
+            "StopMovingOnEnter": 0
+        },
+        "LocomotionController:DynamicPathFinderGround": {
+            "UseCover": 0,
+            "StripContextActionsIfFlyer": 0
+        },
+        "LocomotionController:PathFollower": [
+            "/EE/Types/Npc/DynamicPathFollowerHover"
+        ],
+        "LocomotionController:DynamicPathFollowerHover": {
+            "MoveFailureTime": 0.4,
+            "MoveFailureThreshold": 0.9,
+            "LockedInPlaceTimeout": 5,
+            "KeepPathWhileBlocking": 0,
+            "MinimumMoveDistance": 0.1,
+            "MinimumRunDistance": 3,
+            "ShortDistanceSpeedMultiplier": 2,
+            "ForceSidestepDistance": 0,
+            "RunStopDist": 0.5,
+            "WalkStopDist": 0.3,
+            "MinWalkWhenTurningAngle": 50,
+            "StopWhenTurningAngle": 90,
+            "CheckFunnelForTightTurns": 0,
+            "MinReducedSpeed": 0.5,
+            "TurnAccelerationCompensation": 1,
+            "ReduceSpeedForTightTurns": 1,
+            "TraceOffset": [
+                0,
+                0.5,
+                0
+            ],
+            "TraceScoreCurve": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 0.99,
+                "logistic": 0
+            },
+            "TraceFwdBias": 2,
+            "SlopeThrottleMapping": [],
+            "EnableViewChange": 1,
+            "InitialAngleDiffForTurn": 0,
+            "ForceLookTarget": 0,
+            "ForcePredictUsingDesiredViewHeading": 0,
+            "TransitionDistance": 2,
+            "CoverWalkTransitionDistance": 0.5,
+            "AlternateCoverPoseTransitionDistance": 0,
+            "UseEndPoseForCoverWarp": 0,
+            "CanUseBendTransition": 0,
+            "MaximumHeightDifferenceForAlternateCover": 0,
+            "MaximumAngleForAlternateCover": 0,
+            "RoadNetworkTargetMinDistanceSqr": 50,
+            "RoadNetworkTargetMaxDistanceSqr": 400,
+            "UseVIPNav": 0,
+            "AvoidDynamicOnly": 0,
+            "HoverHeightCorrection": 1,
+            "MinMoveDistToCorrectHeight": 5,
+            "DesiredHeightTolerance": 0.25,
+            "HeightRecoverFactor": 3,
+            "HeightRecoverSpeed": 3,
+            "GroundRaycastCorrection": 0,
+            "RaycastCooldownDuration": 0.5,
+            "MaxDownwardsRaytraceDist": -3,
+            "NavBelowGeoCompensateDist": 1,
+            "DodgeActionSymbol": "DodgeJump",
+            "FlyerPerlinNoise": 0,
+            "NoiseFrequency": 0.5,
+            "NoiseAmplitudeRot": 0,
+            "NoiseAmplitudePitch": 0,
+            "NoiseAmplitudeVel": 0,
+            "YawAccel": 720,
+            "MaxDesiredHeightOnBridges": 0.4
+        },
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 5,
+            "preferredHeight": 1.1,
+            "shorteningType": "ST_NONE",
+            "useAvoidance": 0,
+            "requiredLinkFlags": 5,
+            "allowedLinkFlags": 21364719
+        }
+    }
+}

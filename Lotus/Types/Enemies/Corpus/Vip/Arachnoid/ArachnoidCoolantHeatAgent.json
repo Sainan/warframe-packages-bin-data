@@ -1,0 +1,123 @@
+{
+    "parent": "ArachnoidCoolantAgent",
+    "data": {
+        "NewAdditionalInventory": [
+            {
+                "item": "ArachnoidCoolantMeleeWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/ArachnoidCoolantHeatSuit",
+                "forceEquip": 0,
+                "hand": "EXTRA1"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/CanChangeTargetBehaviorSelector",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/AgentOffNavBehavior",
+            "/EE/Types/Npc/MeleeTactic",
+            "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/RandomTacWalkBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic",
+            "/EE/Types/Npc/Action"
+        ],
+        "UsePowerSuitAbilitiesBehavior": {
+            "ExtraReevaluationDelay": 0
+        },
+        "CanChangeTargetBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Actions": [
+                "/EE/Types/Npc/MeleeContinousBehavior"
+            ],
+            "MeleeContinousBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SwingAttackRange": [
+                    0,
+                    16
+                ],
+                "LungeAttackRange": [
+                    0,
+                    16
+                ],
+                "TeamBbLungeSym": "",
+                "TimeBetweenTeamLunges": 5,
+                "LungeToPredictedPos": 0,
+                "UseMeleeFov": 0,
+                "StopIfOutsideMeleeFov": 0,
+                "MeleeFov": 120,
+                "AllowMeleeingFromBehind": 0,
+                "TimeSinceRendered": 3,
+                "MeleeFromBehindFOV": 90,
+                "SwingInputCode": "MELEE",
+                "LungeInputCode": "MELEE_SWING",
+                "ModifyAttackRangeBasedOnPlayerVelocity": 0,
+                "PredictedSwingTime": 0.5,
+                "PredictedLungeTime": 1,
+                "StopMovingWhenAttacking": 0,
+                "DisablePostureChangers": 0,
+                "TimeBetweenLunges": 2,
+                "LowTargetThreshold": 0.8,
+                "NormalAttack": "MELEE",
+                "LowAttack": "MELEE",
+                "ClearCoverReservationOnStart": 0,
+                "UseCombatManager": 0,
+                "VipAvatarType": "",
+                "TimeBetweenBarks": 2,
+                "VisibilityTimeout": 0,
+                "MaxReachableHeight": -9223372036854775808.0,
+                "Bark": "ATTACK_SCREAM",
+                "IsOffHandWeapon": 0
+            },
+            "FailOnChildFailure": 0,
+            "ActivateWhenTargetChangeable": 0,
+            "IncludeScriptedTarget": 1
+        },
+        "StormTargetOrderBehavior": {
+            "MaxDistToTarget": 100,
+            "Order": "CoolCamper",
+            "FailsOnTargetAcquired": 0,
+            "DesiredPostureNearTarget": "JOG",
+            "DesiredPostureOutOfView": "JOG",
+            "TargetMovedRadius": 0.5,
+            "OnFailureReevalTime": 0.5,
+            "OnSuccessReevalTime": 1
+        },
+        "AgentOffNavBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOffNav": 2,
+            "ToleranceDistance": 0,
+            "DisableWhenFlying": 0,
+            "RerunDelay": 5,
+            "OffNavBehaviors": []
+        }
+    }
+}

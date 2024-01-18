@@ -1,0 +1,129 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Spaceman/AIWeek/RifleSpacemanAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SniperBossAvatar",
+            "EXIMUS": ""
+        },
+        "MaxLevel": 9999,
+        "NewAdditionalInventory": [
+            {
+                "item": "SniperRifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SniperBossSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "SuicideOffNavAndHidden": 0,
+        "TransmissionScript": {
+            "Script": "/Lotus/Scripts/BossTransmissions.lua",
+            "Function": "Run",
+            "_introTransmission": "",
+            "_transmissions": [
+                "/Lotus/Sounds/Dialog/Taunts/Corpus/NefInGameTaunt"
+            ],
+            "_combatTransmissions": [
+                "/Lotus/Sounds/Dialog/Taunts/Corpus/NefInCombatTaunt"
+            ],
+            "_minCombatTransDelay": 20,
+            "_maxCombatTransDelay": 30,
+            "_minDistToTarget": 75,
+            "_playCombatTaunts": 1,
+            "_waitForCombatTaunt": 0,
+            "_delayForCombatTaunt": 5,
+            "_targetNumTransmission": 5
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/EE/Types/Npc/SearchForTargetBehavior",
+            "/EE/Types/Npc/MeleeTactic",
+            "/EE/Types/Npc/AttackFromCoverTactic",
+            "/Lotus/Types/Behaviors/LotusAttackFromTheOpenBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "UsePowerSuitAbilitiesBehavior": {
+            "ActiveAction:Type": "/EE/Types/Npc/TacAreaFleeBehavior",
+            "ActiveAction:DefaultReevaluationDelay": 0,
+            "ActiveAction:MovementSpeedModifier": 1,
+            "ActiveAction:StopRadius": 0.1,
+            "ActiveAction:NearDistance": 1,
+            "ActiveAction:OnlyActiveAreas": 1,
+            "ActiveAction:EvaluateTime": 0,
+            "ActiveAction:DoorWeight": 0.75,
+            "ActiveAction:NeighborWeight": 0.25,
+            "ActiveAction:PrevNodeWeight": 2,
+            "ActiveAction:BreadCrumbRadius": 15,
+            "ActiveAction:BreadCrumbDropRate": 5,
+            "ActiveAction:BreadCrumbWeight": 5,
+            "ActiveAction:AllowFiringAtTarget": 0,
+            "ActiveAction:TimeSinceSeenTarget": 5,
+            "ActiveAction:MaxNodeWeight": 15
+        },
+        "SearchForTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StartAtTimeSinceLastSeen": [
+                12,
+                18
+            ],
+            "ReInvestigateTimeRange": [
+                12,
+                18
+            ],
+            "ShouldAim": 1,
+            "CanRun": 0,
+            "StopSearchIfNoTarget": 0,
+            "StopSearchOnAwarenessLevel": "AW_IDLE",
+            "MaintainedAwarenessLevel": "AW_ALERT",
+            "SeekCoverDelayPostSearch": 5,
+            "OnArrivalBehaviors": []
+        },
+        "AttackFromCoverTactic": {
+            "CoverBehaviors": [
+                "/EE/Types/Npc/RunToAttackCoverBehavior",
+                "/EE/Types/Npc/ControlledShootBehavior",
+                "/EE/Types/Npc/WaitBehavior"
+            ],
+            "RunToAttackCoverBehavior": {
+                "MinCoverDistFromEnemy": 5,
+                "DistanceToShoot": 0,
+                "DistanceToTarget": 0
+            },
+            "ControlledShootBehavior": {
+                "AttackSegmentTime": [
+                    8,
+                    12
+                ],
+                "AimWhenPausing": 1,
+                "ReturnToCoverOnDamage": 1,
+                "ReturnToCoverDamageThreshold": 0.15
+            }
+        },
+        "LotusAttackFromTheOpenBehavior": {
+            "MaxStrafeDistance": 20,
+            "WaitTime": [
+                0.75,
+                1.5
+            ],
+            "DesiredTimeBetweenReloads": [
+                1.75,
+                3.25
+            ],
+            "ShieldThresholdForAggressiveMovement": 1
+        }
+    }
+}

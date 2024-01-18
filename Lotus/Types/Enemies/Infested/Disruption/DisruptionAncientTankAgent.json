@@ -1,0 +1,129 @@
+{
+    "parent": "/Lotus/Types/Enemies/Infested/AiWeek/Emissary/AncientTankAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/DisruptionAncientTankAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Infested/AiWeek/Emissary/AncientTankSwingWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "Powersuits/DisruptionAncientTankPowersuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "NeverPauseByAiDirector": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/AgentOffNavBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/EE/Types/Npc/TimerDecorator",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/BasicChargeBehavior",
+            "/EE/Types/Npc/MeleeRingTactic",
+            "/EE/Types/Npc/SearchForTargetBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "TimerDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/EE/Types/Npc/MeleeContinousBehavior",
+            "ChildAction:MeleeContinousBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SwingAttackRange": [
+                    0,
+                    4
+                ],
+                "LungeAttackRange": [
+                    0,
+                    1
+                ],
+                "TeamBbLungeSym": "",
+                "TimeBetweenTeamLunges": 5,
+                "LungeToPredictedPos": 0,
+                "UseMeleeFov": 0,
+                "StopIfOutsideMeleeFov": 0,
+                "MeleeFov": 45,
+                "AllowMeleeingFromBehind": 0,
+                "TimeSinceRendered": 10,
+                "MeleeFromBehindFOV": 90,
+                "SwingInputCode": "MELEE",
+                "LungeInputCode": "MELEE_SWING",
+                "ModifyAttackRangeBasedOnPlayerVelocity": 1,
+                "PredictedSwingTime": 0.5,
+                "PredictedLungeTime": 1,
+                "StopMovingWhenAttacking": 0,
+                "DisablePostureChangers": 0,
+                "TimeBetweenLunges": 2,
+                "LowTargetThreshold": 0.8,
+                "NormalAttack": "MELEE",
+                "LowAttack": "MELEE",
+                "ClearCoverReservationOnStart": 0,
+                "UseCombatManager": 0,
+                "VipAvatarType": "",
+                "TimeBetweenBarks": 2,
+                "VisibilityTimeout": 0,
+                "MaxReachableHeight": -9223372036854775808.0,
+                "Bark": "ATTACK_SCREAM",
+                "IsOffHandWeapon": 0
+            },
+            "StopWhenChildStops": 1,
+            "TimerDuration": [
+                2,
+                3
+            ],
+            "EvaluationDelay": 10
+        },
+        "StormTargetOrderBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceLastSeen": 5,
+            "MaxDistToTarget": 25,
+            "ConsiderOrderType": 1,
+            "Order": "StormTarget",
+            "FailsOnTargetAcquired": 0,
+            "SuccessRadius": 1,
+            "DesiredPosture": "RUN",
+            "UseNearTargetPosture": 0,
+            "DesiredPostureNearTarget": "WALK",
+            "DesiredPostureOutOfView": "RUN",
+            "MaxOffNavDistance": 5,
+            "TargetMovedRadius": 6,
+            "OnFailureReevalTime": 2,
+            "OnSuccessReevalTime": 10,
+            "TryShoot": 1,
+            "TargetFaction": "",
+            "DistanceToOrderTargetForNearPosture": 0,
+            "ClearOrderOnMoveSuccess": 0,
+            "AllowTeleportToCatchUp": 1,
+            "TeleportToDestination": 0,
+            "AllowPartialPath": 1
+        }
+    }
+}

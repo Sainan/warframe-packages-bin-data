@@ -1,0 +1,311 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 7,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 12,
+                "value": {
+                    "type": "Selector"
+                }
+            },
+            {
+                "key": 13,
+                "value": {
+                    "type": "Condition"
+                }
+            },
+            {
+                "key": 14,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 15,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 16,
+                "value": {
+                    "type": "Condition"
+                }
+            },
+            {
+                "key": 18,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 19,
+                "value": {
+                    "type": "Condition"
+                }
+            },
+            {
+                "key": 20,
+                "value": {
+                    "type": "Action"
+                }
+            }
+        ],
+        "NodeProperties": {
+            "7": {
+                "Type": "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+                "MoveToDesiredScriptPositionBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "SpeedMultiplier": 1,
+                    "StopRadius": 0.5,
+                    "NearDistance": 2,
+                    "FacingThreshold": 10,
+                    "SucceedWhenNearPosition": 1,
+                    "MovePosture": "RUN",
+                    "FacingControl": "MFC_FACE_MOVEDIR",
+                    "ClearDesiredPosOnAwareness": 0,
+                    "TargetAwarenessToClear": "AW_SLEEPING",
+                    "ClearDesiredPosOnSuccess": 1,
+                    "StopMovingOnComplete": 1,
+                    "TryRecover": 1,
+                    "RecoverDist": 10,
+                    "MaxRecoverTime": 10,
+                    "StuckTime": 2,
+                    "MaxFailures": 5,
+                    "AllowFiring": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 7,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 12,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "12": {
+                "links": []
+            },
+            "13": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/BlackboardCondition",
+                "conditionProperties:BlackboardVar": "PlayerHasBall",
+                "conditionProperties:UseAvatarBlackboard": 1,
+                "conditionProperties:Check": "BBCT_IsTrue",
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 13,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 12,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "14": {
+                "Type": "/Lotus/Types/Behaviors/RunScriptBehavior",
+                "RunScriptBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 1,
+                    "Script": {
+                        "Script": "/Lotus/Scripts/NPC/AnimalFetch.lua",
+                        "Function": "ScanForPlayersWithBall",
+                        "_ballTag": "ConservationBall",
+                        "_fetchDistance": 50,
+                        "_ballType": "",
+                        "_attachedBallType": "",
+                        "_attachBone": "GAME_C1_HEAD1",
+                        "_pickupAnim": ""
+                    }
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 14,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 13,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "15": {
+                "Type": "/Lotus/Types/Behaviors/RunScriptBehavior",
+                "RunScriptBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "Script": {
+                        "Script": "/Lotus/Scripts/NPC/AnimalFetch.lua",
+                        "Function": "GoFetchBehavior",
+                        "_ballTag": "ConservationBall",
+                        "_fetchDistance": 50,
+                        "_ballType": "",
+                        "_attachedBallType": "",
+                        "_attachBone": "GAME_C1_HEAD1",
+                        "_pickupAnim": ""
+                    }
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 15,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 16,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "16": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/BlackboardCondition",
+                "conditionProperties:BlackboardVar": "IsFetchingBall",
+                "conditionProperties:UseAvatarBlackboard": 1,
+                "conditionProperties:Check": "BBCT_IsTrue",
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 16,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 13,
+                            "prop": 1
+                        }
+                    }
+                ]
+            },
+            "18": {
+                "Type": "/Lotus/Types/Behaviors/RunScriptBehavior",
+                "RunScriptBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 1,
+                    "Script": {
+                        "Script": "/Lotus/Scripts/NPC/AnimalFetch.lua",
+                        "Function": "PickUpBallBehavior",
+                        "_ballTag": "ConservationBall",
+                        "_fetchDistance": 50,
+                        "_ballType": "",
+                        "_attachedBallType": "/Lotus/Types/Gameplay/Duviri/SideActivities/Encounters/Conservation/DuvAnimalBallCarryAttach",
+                        "_attachBone": "GAME_C1_JAW2",
+                        "_pickupAnim": "/Lotus/Animations/Creatures/KubrowTame/Tracking/ItemPickUp_anim.fbx"
+                    }
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 18,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 19,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "19": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/BlackboardCondition",
+                "conditionProperties:BlackboardVar": "IsCarryingBall",
+                "conditionProperties:UseAvatarBlackboard": 1,
+                "conditionProperties:Check": "BBCT_IsTrue",
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 19,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 16,
+                            "prop": 1
+                        }
+                    }
+                ]
+            },
+            "20": {
+                "Type": "/Lotus/Types/Behaviors/RunScriptBehavior",
+                "RunScriptBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "Script": {
+                        "Script": "/Lotus/Scripts/NPC/AnimalFetch.lua",
+                        "Function": "DropOffBall",
+                        "_ballTag": "ConservationBall",
+                        "_fetchDistance": 50,
+                        "_ballType": "/Lotus/Types/Gameplay/Duviri/SideActivities/Encounters/Conservation/DuvAnimalBallThrowablePickup",
+                        "_attachedBallType": "/Lotus/Types/Gameplay/Duviri/SideActivities/Encounters/Conservation/DuvAnimalBallCarryAttach",
+                        "_attachBone": "GAME_C1_JAW2",
+                        "_pickupAnim": "/Lotus/Animations/Creatures/KubrowTame/Tracking/ItemPickUp_anim.fbx"
+                    }
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 20,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 19,
+                            "prop": 1
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 12
+    }
+}

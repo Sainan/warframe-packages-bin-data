@@ -1,0 +1,113 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Drones/DroneAttackAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SuicideDroneAvatar",
+            "EXIMUS": ""
+        },
+        "MinLevel": 5,
+        "BaseLevel": 5,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Rifle/SuicideDroneRifle",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SuicideDroneSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/DroneRecoveryBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/DroneDodgeBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/Lotus/Types/Behaviors/HoverAttackBehavior",
+            "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "BlockingBehavior": {
+            "BlockOnBeingAttached": 1
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ALWAYS",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 1,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [
+                0
+            ],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 1,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "HoverAttackBehavior": {
+            "FireDuration": [
+                1.5,
+                2
+            ],
+            "WaitDuration": [
+                0.8,
+                1.5
+            ]
+        },
+        "HoverNearTargetBehavior": {
+            "TargetDistance": [
+                5,
+                20
+            ],
+            "VerticalDistance": 2.5,
+            "WaitDuration": [
+                1,
+                2
+            ]
+        },
+        "ShootingController:DefaultFiringPrefs": {
+            "firingPreferences": {
+                "burstTime": [
+                    0.5,
+                    1.2
+                ],
+                "burstPauseTime": [
+                    0.2,
+                    0.4
+                ]
+            }
+        }
+    }
+}

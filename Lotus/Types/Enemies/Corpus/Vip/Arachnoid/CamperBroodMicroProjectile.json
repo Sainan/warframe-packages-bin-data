@@ -1,0 +1,168 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "UseAmbient": 1,
+        "Mesh": "/Lotus/Characters/Guild/Arachnoid/SpiderBall/SpawnerLauncherSmallBall.fbx",
+        "MeshScale": 20,
+        "OverrideMaterial": [
+            "/Lotus/Characters/Guild/Arachnoid/SpiderBall/BroodmotherSpiderBallSpawnerMat"
+        ],
+        "DistortionEffect": 1,
+        "DrawInTransparentPass": 1,
+        "DistortionMaterial": "/Lotus/Fx/Weapons/Corpus/ElectroMag/ElectroMagProjectileDistortion",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Corpus/CrpAirPistol/CrpAirPistolProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Corpus/ElectroMag/ElectroMagProjEnergy",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Corpus/ElectroMag/ElectroMagProjFlare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicNonCollidable",
+        "AttackData": {
+            "Type": "DT_ELECTRICITY",
+            "Amount": 30,
+            "ProcChance": 0
+        },
+        "ExplosiveAttack": {
+            "Type": "DT_ELECTRICITY",
+            "Amount": 15,
+            "ProcChance": 0.75
+        },
+        "ExplosionIgnoreSource": 1,
+        "GrenadeShootPermissions": [
+            "IS_INSTIGATOR",
+            "IS_OTHER_FACTION_PLAYER"
+        ],
+        "DamageRadius": 5,
+        "DieEffect": "/Lotus/Fx/Corpus/Ambulas/AmbulusMortarExplosion",
+        "DieSound": "/Lotus/Sounds/Enemies/Corpus/Ambulas/AmbulasGrenadeExplosion3D",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "IgnoreTypes": [
+            "ArachnoidCamperSpawnerAvatar",
+            "ArachnoidCamperSpawnerBigDeco",
+            "ArachnoidCamperSpawnerDeco",
+            "CamperBroodMicroDeco",
+            "/EE/Types/Engine/ProxyMover",
+            "ArachnoidCamperSpawnerHitProxy",
+            "ArachnoidCamperSpawnerBigHitProxy"
+        ],
+        "MaxLife": 6,
+        "BounceOnAvatars": 0,
+        "BounceOnRagdolls": 0,
+        "WhizzBySound": "/Lotus/Sounds/Weapons/Corpus/CrpElectroMag/CrpElectroMagWhizzBy",
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "ImpulseHalflife": 0.166389,
+        "Health": 1,
+        "AngleSpeed": [
+            0.5,
+            2
+        ],
+        "EmbedAttack": {
+            "Type": "DT_FIRE",
+            "Amount": 0
+        },
+        "EmbedTime": [
+            1.5,
+            1.5
+        ],
+        "EmbedDeathAttack": {
+            "Amount": 90
+        },
+        "DoNotEmbedOnThisSurface": "ST_DEFAULT",
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 20,
+        "KinematicMaxSpeed": 40,
+        "KinematicGravity": 1,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            0,
+            90,
+            0
+        ],
+        "ProjectileReplication": "REPLICATED",
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCamperBroodScript.lua",
+            "Function": "CreateAgent",
+            "_turretAvatarType": "",
+            "_turretAgentType": "",
+            "_agentType": "ArachnoidMicroAgent",
+            "_addSpawnDistMin": 20,
+            "_addSpawnDistMax": 40,
+            "_microSpawnerType": "",
+            "_microOrbProjType": "",
+            "_microOrbDecoType": "",
+            "_spawnTime": 10,
+            "_spawnerCooldown": 25,
+            "_spawnerActiveDuration": 10,
+            "_loadTime": 1
+        }
+    }
+}

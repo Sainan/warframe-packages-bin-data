@@ -1,0 +1,80 @@
+{
+    "parent": "/Lotus/Upgrades/Invigorations/BaseArchonCrystalUpgrade",
+    "data": {
+        "LocalizeTag": "[HC]PURPLE ARCHON SHARD: 25% melee crit damage, if max energy is over 500, double the effect",
+        "LocalizeDescTag": "",
+        "Upgrades": [
+            {
+                "UpgradeType": "WEAPON_CRIT_DAMAGE",
+                "OperationType": "STACKING_MULTIPLY",
+                "Value": 0.25,
+                "DamageType": "DT_ANY",
+                "AutoType": 0,
+                "ValidType": "/Lotus/Weapons/Tenno/Melee/PlayerMeleeWeapon",
+                "SymbolFilter": "",
+                "UpgradeObject": "",
+                "ValidPostures": [],
+                "ValidModifiers": [],
+                "ValidProcTypes": [],
+                "OverrideLocalization": 1,
+                "LocTag": "/Lotus/Language/Alchemy/ArchonUpgradeWarframeMeleeCritDoubledWithMaxEnergy",
+                "LocKeyWordScript": {
+                    "Script": "/Lotus/Scripts/Mods/UpgradeStackAfterEnergyThreshold.lua",
+                    "Function": "GetAugmentDescriptionInfo",
+                    "_upgradeType": "NONE",
+                    "_operationType": "ADD",
+                    "_value": 0.25,
+                    "_damageType": "DT_ANY",
+                    "_objectType": "",
+                    "_objectInstance": "",
+                    "_filter": "",
+                    "_clientAuthoritative": 0,
+                    "_procType": "MAX_ProcType",
+                    "_thresholds": [
+                        0,
+                        500
+                    ]
+                },
+                "SmallerIsBetter": 0,
+                "RoundTo": 0.1,
+                "RoundingMode": "RM_ROUND"
+            }
+        ],
+        "FusionLimit": "QA_NONE",
+        "ItemCompatibility": "/Lotus/Types/Game/PowerSuits/PlayerPowerSuit",
+        "Script": {
+            "Script": "/Lotus/Scripts/Mods/UpgradeStackAfterEnergyThreshold.lua",
+            "Function": "AttachMod",
+            "_upgradeType": "WEAPON_CRIT_DAMAGE",
+            "_operationType": "STACKING_MULTIPLY",
+            "_value": 0.25,
+            "_damageType": "DT_ANY",
+            "_objectType": "/Lotus/Types/Game/LotusMeleeWeapon",
+            "_objectInstance": "",
+            "_filter": "",
+            "_clientAuthoritative": 0,
+            "_procType": "MAX_ProcType",
+            "_thresholds": [
+                0,
+                500
+            ]
+        },
+        "UnappliedScript": {
+            "Script": "/Lotus/Scripts/Mods/UpgradeStackAfterEnergyThreshold.lua",
+            "Function": "RemoveMod",
+            "_upgradeType": "WEAPON_CRIT_DAMAGE",
+            "_operationType": "STACKING_MULTIPLY",
+            "_value": 0.25,
+            "_damageType": "DT_ANY",
+            "_objectType": "/Lotus/Types/Game/LotusMeleeWeapon",
+            "_objectInstance": "",
+            "_filter": "",
+            "_clientAuthoritative": 0,
+            "_procType": "MAX_ProcType",
+            "_thresholds": [
+                0,
+                500
+            ]
+        }
+    }
+}

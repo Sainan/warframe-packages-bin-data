@@ -1,0 +1,67 @@
+{
+    "parent": "/Lotus/Types/Enemies/Infested/AiWeek/Runners/SuicideRunnerAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Tenno/Medusa/MedusaDeluxeBody_skel.fbx",
+        "OverrideMaterial": [
+            "MoltSuicideRunnerMat",
+            "MoltSuicideRunnerMat"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Characters/Tenno/Medusa/SarynDeluxeMoltHelmetDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "ScriptInstance": {
+            "_explodeAnims": [
+                "/Lotus/Animations/Zombie/Crawling/CrawlSelfDestruct"
+            ],
+            "_explodeFx": "/Lotus/Fx/FairyQuest/MoltSuicideRunnerBurst",
+            "_explodeDamageType": "DT_GAS"
+        },
+        "LocTag": "/Lotus/Language/Enemies/FairyQuestSarynMolt",
+        "AnimControllerType": "/Lotus/Types/Enemies/Infested/AiWeek/Crawlers/CrawlerAnimTreeController",
+        "DamageControllerType": "MoltSuicideRunnerDamageController",
+        "OnDamageScript": {
+            "_explodeFx": "/Lotus/Fx/FairyQuest/MoltSuicideRunnerBurst",
+            "_explodeDamageType": "DT_VIRAL",
+            "_explodeDoForceProc": 1,
+            "_explodeProc": "PT_POISONED"
+        },
+        "OnDeathScript": {
+            "Script": "/Lotus/Powersuits/PowersuitAbilities/Shed.lua",
+            "Function": "OnKilled",
+            "_decoyAvatarType": "",
+            "_decoyDestroyType": "/Lotus/Fx/PowersuitAbilities/Asp/ShedAttachEffects",
+            "_decoyAttachType": "",
+            "_decoySpawnEffect": "",
+            "_decoyWispyDeco": "/Lotus/Fx/PowersuitAbilities/Asp/ShedAvatarWispyDeco",
+            "_decoyProj": "",
+            "_avatarAttach": "",
+            "_attachmentTypesToRemove": [],
+            "_decoyMaterial": "",
+            "_pvpBulletAttractor": ""
+        },
+        "PaintedTargetType": "/Lotus/Types/Game/MarkerInfos/PaintedMarkerInfo",
+        "AppliesToKillStats": 0,
+        "ExcludedFromSimulacrum": 1
+    }
+}

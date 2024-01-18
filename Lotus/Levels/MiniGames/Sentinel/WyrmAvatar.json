@@ -1,0 +1,634 @@
+{
+    "parent": "/Lotus/Types/Game/LotusAvatar",
+    "data": {
+        "ReceivesShadows": 1,
+        "Mesh": "/Lotus/Characters/Pets/Wyrm/Wyrm_skel.fbx",
+        "MeshScale": 1.5,
+        "MotionBlurStrength": 2.5,
+        "AnimationName": "wyrm",
+        "AnimateMaster": 1,
+        "PhysicsBehavior": "SpaceFlight",
+        "EyeOffset": [
+            0,
+            0.5,
+            0
+        ],
+        "WeaponBone": "GAME_R1_WEAPON1",
+        "CrouchOffset": [
+            0,
+            1,
+            0
+        ],
+        "InputFilter": "SentinelMiniGameInputFilter",
+        "Faction": "TENNO",
+        "MaxHealth": 10000,
+        "RespondsToWorldCollisions": 1,
+        "AnimControllerType": "/Lotus/Types/Sentinels/SentinelAnimTreeController",
+        "CameraControllerType": "SentinelMiniGameCameraController",
+        "ClimbControllerType": "/Lotus/Types/Player/TennoClimbController",
+        "WallSlideControllerType": "/Lotus/Types/Player/TennoPlayerWallSlideController",
+        "DamageControllerType": "SentinelAvatarDamageController",
+        "GameActionControllerType": "/Lotus/Types/Player/TennoGameActionController",
+        "InputControllerType": "/Lotus/Types/Player/InputController",
+        "InventoryControllerType": "WyrmInventoryController",
+        "MotionControllerType": "Lotus2DMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                -0.1,
+                0.4,
+                0
+            ],
+            "BoneName": "GAME_C1_ROOT",
+            "Type": "WyrmiusFullBody"
+        },
+        "MaxStamina": 100000000.0,
+        "StaminaRechargeRate": 15,
+        "StaminaRechargeDelay": 0.35,
+        "StaminaFullyDrainedRechargeDelay": 0.35,
+        "IsCameraIndependent": 1,
+        "AnimTriggeredJump": 1,
+        "FallDamageVelocityThreshold": 15,
+        "FallHardLandingThreshold": 12,
+        "CancelRunWhenJump": 0,
+        "DodgeStaminaCost": 12,
+        "CanCrouchAfterLanding": {
+            "LS_LIGHT": 0,
+            "LS_HEAVY": 0,
+            "LS_JUMPRUN": 0,
+            "LS_LIGHTRUN": 0
+        },
+        "OnDamageScript": {
+            "Script": "SentinelGame.lua",
+            "Function": "GrantDamage",
+            "_cameraSpot": "",
+            "_cameraSpotDeco": "",
+            "_inputFilter": "SentinelMiniGameInputFilter",
+            "_titleScreenMovie": "/Lotus/Interface/MinigameTitleScreen.swf",
+            "_newOffset": [
+                0,
+                0,
+                0
+            ],
+            "_roomFloor": 0,
+            "_roomCeiling": 0,
+            "_healthRecovery": 0,
+            "_lockZAt": 0,
+            "_avatarScore": 0,
+            "_newMesh": "",
+            "_autoScrollSpeed": 1.75,
+            "_setScroll": 0,
+            "_hudMovie": "",
+            "_reviveEffect": "ReviveOutline",
+            "_burstLaserType": "Weapons/BulletHell/BurstLaserI",
+            "_sniperRifleType": "Weapons/BulletHell/SniperRifleI",
+            "_rocketLauncherType": "Weapons/BulletHell/RocketLauncherI",
+            "_reviveSound": "/Lotus/Sounds/MiniGames/WyrmiusMinigame/WyrmiusRevive",
+            "_gameOverSound": "/Lotus/Sounds/MiniGames/WyrmiusMinigame/WyrmiusGameOver",
+            "_pickupSound": "/Lotus/Sounds/MiniGames/WyrmiusMinigame/WyrmiusItemPickup",
+            "_wyrmiusKeybindings": "/Lotus/Types/Input/WyrmiusKeyBindings",
+            "_wyrmiusPoster": "/Lotus/Types/Items/ShipDecos/WyrmiusPoster",
+            "_wyrmiusPosterStoreItem": "/Lotus/StoreItems/Types/Items/ShipDecos/WyrmiusPoster",
+            "_rewardsMovie": "/Lotus/Interface/SurvivalReward.swf"
+        },
+        "WaterSimChild": {
+            "Type": "/EE/Types/Engine/WaterSimInjectionTrigger"
+        },
+        "PaintedTargetType": "/Lotus/Types/Game/MarkerInfos/PaintedMarkerInfo",
+        "WaypointDuration": 15,
+        "WaypointSound": "/Lotus/Sounds/Misc/ButtonPressUI",
+        "WaypointLocTag": "/Lotus/Language/Game/Marker_Waypoint",
+        "AppliesToKillStats": 0,
+        "SlideKickHitEffect": "/Lotus/Sounds/Weapons/Staff/Impacts/StaffImpactEffects",
+        "SlideKickOffset": [
+            -0.5,
+            0.2,
+            0
+        ],
+        "SlideKickBone": "GAME_L1_LEG3",
+        "SlideAttack": {
+            "Amount": 20,
+            "ProcChance": 0
+        },
+        "SlideBone": "GAME_L1_LEG1",
+        "WallSlideBone": "GAME_L1_LEG1",
+        "SlideEffects": [
+            {
+                "SurfaceType": "ST_DEFAULT",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopA"
+            },
+            {
+                "SurfaceType": "ST_STONE",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideStone",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopA"
+            },
+            {
+                "SurfaceType": "ST_DIRT",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideDirt",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeslideLoopDirt"
+            },
+            {
+                "SurfaceType": "ST_FLUID",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideFluid",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopWater"
+            },
+            {
+                "SurfaceType": "ST_SNOW",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideIce",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopSnow"
+            },
+            {
+                "SurfaceType": "ST_VEGETATION",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeslideLoopDirt"
+            },
+            {
+                "SurfaceType": "ST_WATER_STREAM",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopWater"
+            }
+        ],
+        "WallSlideEffects": [
+            {
+                "SurfaceType": "ST_DEFAULT",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopA"
+            },
+            {
+                "SurfaceType": "ST_STONE",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideStone",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopA"
+            },
+            {
+                "SurfaceType": "ST_DIRT",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideDirt",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeslideLoopDirt"
+            },
+            {
+                "SurfaceType": "ST_FLUID",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideFluid",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopWater"
+            },
+            {
+                "SurfaceType": "ST_SNOW",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideIce",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopSnow"
+            },
+            {
+                "SurfaceType": "ST_VEGETATION",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeslideLoopDirt"
+            },
+            {
+                "SurfaceType": "ST_WATER_STREAM",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopWater"
+            }
+        ],
+        "MaxSlideVelocity": 4,
+        "SlideGain": [
+            -3,
+            6
+        ],
+        "ReviveInvulnTime": 5,
+        "SpawnInvulnTime": 5,
+        "DownedInvulnTime": 1,
+        "EnterBreachZoneScripts": [
+            {
+                "Script": "/Lotus/Scripts/PanicButton.lua",
+                "Function": "OnAvatarEnterBreach",
+                "_screenType": "",
+                "_HBColorCorrection": "/Lotus/Fx/ColorGradingData/BlueWaterColorGrading",
+                "_wait": 1,
+                "_shutters": [],
+                "_shakeSound": "",
+                "_shakeScript": "",
+                "_avatarType": "",
+                "_triggerZoneObjectTags": [],
+                "_enterBreachSound": "/Lotus/Sounds/Levels/HullBreech/HullBreechDepressurize",
+                "_leaveBreachSound": "",
+                "_firePortTag": "",
+                "_firePortName": "",
+                "_mixerArray": [
+                    "/EE/Sounds/Mixer/SoundFx",
+                    "/EE/Sounds/Mixer/Dialog"
+                ],
+                "_occlusionFilter": "/Lotus/Sounds/OcclusionSettings/HullBreechOcclusion",
+                "_buttonScreen": "",
+                "_buttonPortForwarder": "",
+                "_buttonLight": "",
+                "_buttonScreenOff": "",
+                "_failedPortFowarder": "",
+                "_disableOnUse": 1,
+                "_decorationsToMaterialSwap": [],
+                "_materialsToSwap": [],
+                "_materialSlots": [
+                    0
+                ],
+                "_successForwarder": "",
+                "_fadeOutTime": 3,
+                "_fadeInTime": 1,
+                "_filterAmount": 1,
+                "_playerAvatar": "/Lotus/Types/Player/TennoAvatar",
+                "_coneType": "",
+                "_GreenFlareType": "",
+                "_RedFlareType": "",
+                "_laserScanType": "",
+                "_grineerBeamLargeType": "",
+                "_laserSound": "",
+                "_alarmBank": "",
+                "_onMaterialsCorpus": [],
+                "_alertMaterialsCorpus": [],
+                "_offMaterialsCorpus": [],
+                "_onMaterialsGrineer": [],
+                "_alertMaterialsGrineer": [],
+                "_offMaterialsGrineer": [],
+                "_glassPanes": [],
+                "_materialSlot": 0,
+                "_PurgeTint": [
+                    140,
+                    140,
+                    140,
+                    140
+                ],
+                "_PurgeFlashTint": [
+                    255,
+                    0,
+                    0,
+                    255
+                ]
+            }
+        ],
+        "LeaveBreachZoneScripts": [
+            {
+                "Script": "/Lotus/Scripts/PanicButton.lua",
+                "Function": "OnAvatarLeaveBreach",
+                "_screenType": "",
+                "_HBColorCorrection": "/Lotus/Fx/ColorGradingData/BlueWaterColorGrading",
+                "_wait": 1,
+                "_shutters": [],
+                "_shakeSound": "",
+                "_shakeScript": "",
+                "_avatarType": "",
+                "_triggerZoneObjectTags": [],
+                "_enterBreachSound": "",
+                "_leaveBreachSound": "/Lotus/Sounds/Levels/HullBreech/HullBreechPressurize",
+                "_firePortTag": "",
+                "_firePortName": "",
+                "_mixerArray": [
+                    "/EE/Sounds/Mixer/SoundFx",
+                    "/EE/Sounds/Mixer/Dialog"
+                ],
+                "_occlusionFilter": "/Lotus/Sounds/OcclusionSettings/HullBreechOcclusion",
+                "_buttonScreen": "",
+                "_buttonPortForwarder": "",
+                "_buttonLight": "",
+                "_buttonScreenOff": "",
+                "_failedPortFowarder": "",
+                "_disableOnUse": 1,
+                "_decorationsToMaterialSwap": [],
+                "_materialsToSwap": [],
+                "_materialSlots": [
+                    0
+                ],
+                "_successForwarder": "",
+                "_fadeOutTime": 0.5,
+                "_fadeInTime": 1,
+                "_filterAmount": 1,
+                "_playerAvatar": "/Lotus/Types/Player/TennoAvatar",
+                "_coneType": "",
+                "_GreenFlareType": "",
+                "_RedFlareType": "",
+                "_laserScanType": "",
+                "_grineerBeamLargeType": "",
+                "_laserSound": "",
+                "_alarmBank": "",
+                "_onMaterialsCorpus": [],
+                "_alertMaterialsCorpus": [],
+                "_offMaterialsCorpus": [],
+                "_onMaterialsGrineer": [],
+                "_alertMaterialsGrineer": [],
+                "_offMaterialsGrineer": [],
+                "_glassPanes": [],
+                "_materialSlot": 0,
+                "_PurgeTint": [
+                    140,
+                    140,
+                    140,
+                    140
+                ],
+                "_PurgeFlashTint": [
+                    255,
+                    0,
+                    0,
+                    255
+                ]
+            }
+        ],
+        "SlowedDamageEffect": {
+            "Type": "/Lotus/Fx/Projectors/FreezeProjector"
+        },
+        "PlayerAvatarType": 1,
+        "ImpactVelocityThreshold": 16,
+        "FallImpactEffect": {
+            "Type": "/Lotus/Fx/Common/RadialBlastHeavyImpactMod"
+        },
+        "FallImpactEffectDuration": 5,
+        "LightSensorType": "/Lotus/Types/Player/TennoLightSensor",
+        "AllowSpectatorMode": 0
+    }
+}

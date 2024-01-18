@@ -1,0 +1,221 @@
+{
+    "parent": "EidolonBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/EidolonEviseratorLancerAvatar",
+            "EXIMUS": "Avatars/EidolonEviseratorLancerAvatarLeader"
+        },
+        "MinLevel": 12,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Grenades/NpcGrineerThrowGrenadeIceWeapon",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            },
+            {
+                "item": "/Lotus/Weapons/Tenno/Shotgun/EidolonEviseratorWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Grineer/Eidolon/EidolonAntiAWMissileLauncher",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "DefaultSlot": "SLOT_2",
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/AgentOffNavBehaviorDropship",
+            "/Lotus/Types/Behaviors/WeaponSwapBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/DeployReinforcementEntityBehavior",
+            "/Lotus/Types/Behaviors/GrineerLancerFormationTactic",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/MeleeTactic",
+            "/EE/Types/Npc/UseEmplacementBehavior",
+            "/Lotus/Types/Behaviors/PlaceDynamicCover",
+            "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+            "/EE/Types/Npc/BuddyShieldTactic",
+            "/EE/Types/Npc/AttackFromCoverTactic",
+            "/EE/Types/Npc/UseGrenadeBehavior",
+            "/EE/Types/Npc/KeepIdealDistanceBehavior",
+            "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/Lotus/Types/Behaviors/PatrolFormationTactic",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/PoiBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "WeaponSwapBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WeaponSettings": [
+                {
+                    "WeaponSlot": "SLOT_2",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_LAND_ONLY"
+                },
+                {
+                    "WeaponSlot": "SLOT_1",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_AIR_ONLY"
+                }
+            ],
+            "WeaponHand": "MAIN_HAND",
+            "SwapThreshold": 5,
+            "RandomSwapDelay": [
+                3,
+                4
+            ]
+        },
+        "StormTargetOrderBehavior": {
+            "UseNearTargetPosture": 0
+        },
+        "MoveTowardsTacEnemyInfluence": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StopRadius": 0.5,
+            "NearDistance": 2,
+            "SpeedMultiplier": 1,
+            "AlertSpeedMultiplier": 1,
+            "AimWhenIdle": 0,
+            "AimWhenAlert": 1,
+            "PermanentAlert": 1,
+            "EnemyFaction": "TENNO",
+            "TimeSinceLastSeen": 5,
+            "NoCoverAfterExitTime": 1,
+            "MustBeFurtherFromObjective": 1,
+            "DistAheadToAdvance": 50,
+            "MinAwareness": "AW_COMBAT",
+            "AlertMovementPosture": "JOG",
+            "DefaultMovementPosture": "WALK",
+            "PauseTime": [
+                3,
+                5
+            ],
+            "DesiredTacAreaScore": 8,
+            "OnlyIfLevelAlert": 0,
+            "UseLastSeenByTeam": 1,
+            "LimitToCurrentRoom": 0,
+            "OnlyFindPositionsOnFlightNav": 0
+        },
+        "MeleeTactic": {
+            "SimpleMeleeAttackBehavior": {
+                "RequiresClearNavTrace": 1
+            }
+        },
+        "AttackFromCoverTactic": {
+            "RunToAttackCoverBehavior": {
+                "DistanceToShoot": -1,
+                "DistanceToTarget": 10
+            },
+            "BlindFireBehavior": {
+                "CrouchCoverOnly": 1
+            }
+        },
+        "KeepIdealDistanceBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "RandomizeRange": 1,
+            "UseWeaponRange": 0,
+            "IdealDistance": [
+                5,
+                10
+            ],
+            "EvaluateDistance": [
+                12,
+                100
+            ],
+            "MaxMovementDistance": 100,
+            "AllowRetreat": 1,
+            "AllowRun": 1,
+            "AllowChase": 1,
+            "ForceWalkBelowMinIdealRange": 1,
+            "WalkRange": [
+                0,
+                0
+            ],
+            "RequireTeamMeleeLock": 0,
+            "ReleaseTeamMeleeLock": 1,
+            "AimWhileMoving": 0,
+            "MoveFacingControl": "MFC_FACE_MOVEDIR",
+            "StopRadius": 0.5,
+            "RunWhenShocked": 0,
+            "ShockedDamageTime": 30,
+            "OnlyTravelWhenVisible": 1,
+            "TravelDuringStruggle": 1,
+            "AllowPartialPath": 0,
+            "UpdateDestinationInterval": 0.5,
+            "UpdateDestinationDistance": 0,
+            "OffNavRadius": 4,
+            "OffNavHeight": 3,
+            "RequiresClearNavTrace": 0,
+            "HoverHeightOverride": -1,
+            "RetryWithPathlessMovement": 0,
+            "PathlessMovementMaxDistance": 16,
+            "AvoidTargetLineOfSight": 0,
+            "AvoidanceBias": 10,
+            "LockTarget": 0,
+            "LookAtTarget": 0,
+            "DistanceToShoot": -1,
+            "WalkWhileShooting": 0,
+            "AimOnFire": 0,
+            "AllowReload": 0,
+            "ChangeWeapons": 0,
+            "WeaponSlot": "SLOT_1",
+            "WeaponHand": "MAIN_HAND",
+            "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+            "PlayPhrase": 0,
+            "Bark": "IDLE",
+            "BarkFilter": "",
+            "BarkInterval": [
+                0,
+                0
+            ],
+            "ReportUnreachableOnFailedMove": 0,
+            "ReportUnreachableOffNav": 0,
+            "TimeOffNav": 2,
+            "RestrictToDefenseVolume": 1,
+            "WalkMovePosture": "WALK"
+        },
+        "AttackFromTheOpenBehavior": {
+            "UseDefenseVolume": 1
+        },
+        "GuardTactic": {
+            "RandomWalkBehavior:UseDefenseVolume": 1
+        },
+        "BaseHitChance": [
+            0.5,
+            1
+        ],
+        "CoverEvaluatorType": "/Lotus/Types/Enemies/Grineer/GrineerShotgunAdvancingCoverEvaluator"
+    }
+}

@@ -1,0 +1,185 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Guild/Civilian/CorpusCivilian_skel.fbx",
+        "MeshScale": 1.25,
+        "OverrideMaterial": "",
+        "": [
+            "",
+            "/Lotus/Types/Enemies/Corpus/GasCity/Attachments/GasEliteSpacemanTintMat"
+        ],
+        "AnimationName": "Guild",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_SPINE3",
+                "Type": "/Lotus/Types/Enemies/Corpus/GasCity/Attachments/GasSniperHelmetDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    1.5,
+                    -0.05,
+                    0
+                ],
+                "LocalRotation": [
+                    0.5,
+                    -0.5,
+                    0.5,
+                    0.5
+                ],
+                "BoneName": "GAME_C1_SPINE3",
+                "Type": "/Lotus/Types/Enemies/Corpus/GasCity/Attachments/GasFlyingSpacemanJetPack",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "ServerChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0.4,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0.069756,
+                    0.997564
+                ],
+                "BoneName": "GAME_C1_SPINE3",
+                "Type": "/Lotus/Types/Enemies/Corpus/Venus/Heavies/CrpJetpackHitProxy",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/Lotus/Types/Enemies/Corpus/Venus/Heavies/JetpackSpacemanHover",
+        "HeadBone": "GAME_C1_HEAD1",
+        "HeadRotation": [
+            270,
+            0,
+            0
+        ],
+        "UseHeadBoneForEyePosition": 1,
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "Faction": "Corpus",
+        "LocTag": "/Lotus/Language/CorpusGasCity/GasFlyingSniperSpacemanName",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Corpus/GasCity/GasFlyingSniperSpaceman.png",
+        "MaxHealth": 60,
+        "VoiceBoxVariants": [
+            "/Lotus/Sounds/Dialog/Barks/Battle/CorpusVenusMaleA/CorpusVenusMaleA",
+            "/Lotus/Sounds/Dialog/Barks/Battle/CorpusVenusMaleB/CorpusVenusMaleB"
+        ],
+        "DropTable": "/Lotus/Types/DropTables/VenusDropTables/Enemies/VenusHeavyCrewmenDropTable",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
+        "AnimControllerType": "/Lotus/Types/Enemies/Corpus/Venus/Heavies/JetpackSpacemanAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "WallSlideControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWallSlideController",
+        "DamageControllerType": "GasSniperFlyingDamageController",
+        "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Corpus/GuildInventory",
+        "MotionControllerType": "/Lotus/Types/Enemies/Corpus/Venus/JetpackSpacemanMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "BoneName": "GAME_C1_HIP1",
+            "Type": "/Lotus/Types/Enemies/SpaceBattles/Corpus/CrewMan/SpaceCrewmanFullBodyRaycast"
+        },
+        "CollisionProxy": {
+            "LocalPosition": [
+                0,
+                1,
+                0
+            ],
+            "BoneName": "GAME_C1_HIP1",
+            "Type": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/HitProxies/GrineerFullBodyCollision"
+        },
+        "OnDeathScript": {
+            "Script": "/Lotus/Scripts/Effects/AttachFX.lua",
+            "Function": "KillThisAttachedToParent",
+            "_typeToKill": "/Lotus/Fx/Enemies/Corpus/SpaceJetpack/VenusThrusterJetsSpawner",
+            "_typesToKill": [],
+            "_typeToAttach": "",
+            "_attachToThis": "",
+            "_attachToArray": [],
+            "_isAttachedToThis": "",
+            "_isAttachedToThisArray": [],
+            "_attachPos": [
+                0,
+                0,
+                0
+            ],
+            "_attachRot": [
+                0,
+                0,
+                0
+            ],
+            "_delay": 0,
+            "_attachmentType": "",
+            "_isEnable": 1,
+            "_bone": "",
+            "_newMesh": "",
+            "_masterOnly": 1,
+            "_stopSpewing": 0,
+            "_destrySelfIfNotLocal": 0,
+            "_beamAttachBones": [],
+            "_beamEndBones": []
+        },
+        "FacialMorphScript": {
+            "Script": "/Lotus/Scripts/NPC/FacialMorph.lua",
+            "Function": "OnMorphChangeRequested",
+            "_autoRemovePainMorph": 1
+        },
+        "FacialMorphHeadAttachmentType": "/Lotus/Characters/Grineer/Marine/GrineerHeadMorphsDeco",
+        "MorphName:ALERT": "Morphs.Alert",
+        "MorphName:RAGE": "Morphs.Rage",
+        "MorphName:FEAR": "Morphs.Fear",
+        "MorphName:DEAD": "Morphs.Dead",
+        "MorphName:SMUG": "Morphs.Smug",
+        "MorphName:PAIN": "Morphs.Pain",
+        "VoiceBoxEvents": [
+            {
+                "EventName": "SFXConversation",
+                "Phrase": "WITNESS_EVENT",
+                "Filter": "SFXConversation"
+            }
+        ],
+        "KillXPReward": 300,
+        "AiDirEncounterScore": 100,
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HumanoidReactionAnims",
+        "DisarmWeapon": "/Lotus/Types/Enemies/Corpus/Spaceman/AIWeek/SpacemanMeleeWeapon"
+    }
+}

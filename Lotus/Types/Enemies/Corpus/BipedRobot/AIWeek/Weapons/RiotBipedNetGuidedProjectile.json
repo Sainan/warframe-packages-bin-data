@@ -1,0 +1,78 @@
+{
+    "parent": "/EE/Types/Engine/GuidedProjectile",
+    "data": {
+        "Mesh": "/Lotus/Fx/Enemies/Corpus/RiotMoa/RiotMoaProjectile.fbx",
+        "AttackData": {
+            "Type": "DT_PUNCTURE",
+            "Amount": 0,
+            "ProcChance": 0
+        },
+        "ExplosiveAttack": {
+            "Type": "DT_FREEZE",
+            "ProcChance": 0,
+            "ForcedProcs": [
+                "PT_CHILLED"
+            ]
+        },
+        "DamageRadius": 6,
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "MaxLife": 6,
+        "VerticalImpulse": 1000,
+        "HorizontalImpulse": 1000,
+        "Health": 400,
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_SHIELD_DRAIN",
+            "Amount": 30
+        },
+        "EmbedTime": [
+            20,
+            20
+        ],
+        "EmbedDeathAttack": {
+            "Type": "DT_FREEZE"
+        },
+        "EmbedEffect": "/Lotus/Types/Enemies/Corpus/Spaceman/AIWeek/NullifyShieldDeco",
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 35,
+        "KinematicMaxSpeed": 50,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "ProjectileReplication": "REPLICATED",
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/RiotBipedNetProjectile.lua",
+            "Function": "ProjectileMonitor",
+            "_hitRadius": 10,
+            "_attachedDuration": 10,
+            "_slow": 0.5,
+            "_slowAttenuationName": "RiotBipedSnare",
+            "_projectileType": "RiotBipedNetGuidedProjectile",
+            "_attachDecoType": "/Lotus/Types/Enemies/Infested/AiWeek/InfestedMoas/NaniteCloudDeco",
+            "_isBlockable": 1,
+            "_ensnaredAnim": "",
+            "_ensnaredExitAnim": "SnareEnd"
+        },
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/RiotBipedNetProjectile.lua",
+            "Function": "LatchEffect",
+            "_hitRadius": 10,
+            "_attachedDuration": 10,
+            "_slow": 0.5,
+            "_slowAttenuationName": "RiotBipedSnare",
+            "_projectileType": "RiotBipedNetGuidedProjectile",
+            "_attachDecoType": "/Lotus/Types/Enemies/Infested/AiWeek/InfestedMoas/NaniteCloudDeco",
+            "_isBlockable": 1,
+            "_ensnaredAnim": "",
+            "_ensnaredExitAnim": "SnareEnd"
+        },
+        "ForwardVel": 14,
+        "AvatarTargetPart": "TORSO",
+        "AimRate": 46,
+        "SeekAllEntities": 1
+    }
+}

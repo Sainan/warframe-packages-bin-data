@@ -1,0 +1,326 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Spaceman/AIWeek/ShotgunSpacemanAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "NarmerCrewmanAvatar",
+            "EXIMUS": ""
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "Weapons/NarmerThrowGrenadeWeapon",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            },
+            {
+                "item": "Weapons/NarmerCrewmanWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "NarmerMaskPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "AggroController:UseDynamicDifficulty": 0,
+        "CorpusNullifierFormationTactic": {
+            "LeaderAction:UsePowerSuitAbilitiesBehavior": {
+                "ResetEvalTimerOnEnemySpotted": 1
+            },
+            "LeaderAction:SearchForTargetBehavior": {
+                "SeekCoverDelayPostSearch": 10,
+                "SearchForTargetInAreaBehavior": {
+                    "SeekCoverDelayPostSearch": 10
+                }
+            }
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "ResetEvalTimerOnEnemySpotted": 1
+        },
+        "InterruptResponseBehavior": {
+            "Responses": [
+                {
+                    "reaction": "CONTEXT_BARK",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 1,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "TARGET_CLOAKED",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 0,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "TargetCloaked",
+                        "Animation": "",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                }
+            ]
+        },
+        "AttackFromCoverTactic": {
+            "SeekCoverDelayOnFlanked": 10,
+            "RunToAttackCoverBehavior": {
+                "InvalidatedCoverDelay": [
+                    10,
+                    10
+                ],
+                "SeekCoverDelayOnFail": 10
+            }
+        },
+        "CustomResponseBehavior": {
+            "Responses": [
+                {
+                    "reaction": "INVESTIGATE_DEATH",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 1,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "/Lotus/Animations/Grineer/Movement/AlertLookToStandingAim01_anim.fbx",
+                        "NewAlertness": "AW_ALERT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 1
+                    }
+                },
+                {
+                    "reaction": "INVESTIGATE_COMBAT",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "LIGHT_OUT",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "WHAT_WAS_THAT",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "ABOUT_TO_INVESTIGATE",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 1,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "UNDER_FIRE",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 1,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "/Lotus/Animations/Grineer/Movement/AlertLookToStandingAim01_anim.fbx",
+                        "NewAlertness": "AW_ALERT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 1
+                    }
+                }
+            ],
+            "BlockingResponse": 0
+        },
+        "InvestigateBehavior": {
+            "ReportAttackOnDamage": 0
+        },
+        "PoiBehavior": {
+            "PoiWhitelist": [
+                "SpacemanPoint",
+                "NarmerIdlePoint"
+            ]
+        },
+        "GuardTactic": {
+            "ReportAttackOnDamage": 0
+        },
+        "UseExtraViewCone": 1,
+        "IdleVerticalFov": 30,
+        "ExtraViewConeIdleFovFactor": 1.5,
+        "ExtraViewConeIdleDistFactor": 0.3,
+        "ReactionControllerType": "NarmerReactionControllerImpl",
+        "PerceiverType": "NarmerPerceiver"
+    }
+}

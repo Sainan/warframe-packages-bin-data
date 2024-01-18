@@ -1,0 +1,75 @@
+{
+    "parent": "/Lotus/Types/Game/LotusSentinelAvatar",
+    "data": {
+        "MeshScale": 0.75,
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "PhysicsBehavior": "SentinelHover",
+        "ScriptInstance": {
+            "Script": "SentinelAbilities/SentinelOnSpawn.lua",
+            "Function": "DroneHover",
+            "_hoverSound": "",
+            "_pitchMin": 0.95,
+            "_pitchMax": 1.05
+        },
+        "EyeOffset": [
+            0,
+            0.5,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "TENNO",
+        "LocTag": "/Lotus/Language/Game/LeechDrone",
+        "MaxHealth": 35,
+        "DropTable": "/Lotus/Types/DropTables/SentinelDropTable",
+        "AnimControllerType": "SentinelAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "DamageControllerType": "SentinelDamageController",
+        "InventoryControllerType": "SentinelInventoryController",
+        "MotionControllerType": "SentinelMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0.4,
+                0
+            ],
+            "BoneName": "GAME_C1_ROOT",
+            "Type": "SentinelFullBody"
+        },
+        "CollisionProxy": {
+            "LocalPosition": [
+                0,
+                0.4,
+                -0.1
+            ],
+            "BoneName": "GAME_C1_ROOT"
+        },
+        "OnPreDeathScript": {
+            "Script": "SentinelAbilities/SentinelOnDeath.lua",
+            "Function": "OnDeath",
+            "_explosionEffect": "/Lotus/Fx/Weapons/Bow/ExpArrowDeath",
+            "_healFX": "/Lotus/Fx/Sentinels/Precepts/RegenEffect",
+            "_preDeath": 1
+        },
+        "KillXPReward": 100,
+        "ReviveInvulnTime": 5,
+        "CanBeRevived": 0,
+        "DisarmAction": "DA_DAMAGE_ONLY",
+        "SentinelOnDeathScript": {
+            "Script": "SentinelAbilities/SentinelOnDeath.lua",
+            "Function": "OnDeath",
+            "_explosionEffect": "/Lotus/Fx/Weapons/Bow/ExpArrowDeath",
+            "_healFX": "/Lotus/Fx/Sentinels/Precepts/RegenEffect",
+            "_preDeath": 0
+        },
+        "SentinelOnReviveScript": {
+            "Script": "SentinelAbilities/SentinelOnRevive.lua",
+            "Function": "OnReviveFromPredeath",
+            "_reviveBank": "/Lotus/Sounds/Characters/Tenno/CompanionResurrect/CompanionResurrect",
+            "_reviveEffect": "/Lotus/Fx/Sentinels/Precepts/Mod/ReviveCompanionSpawner",
+            "_reviveProj": "/Lotus/Fx/Sentinels/Precepts/Mod/ReviveCompanionProj",
+            "_reviveEffectBone": "GAME_C1_COG"
+        },
+        "CanSelfRespawn": 1,
+        "BaseSelfRespawnTime": 60
+    }
+}

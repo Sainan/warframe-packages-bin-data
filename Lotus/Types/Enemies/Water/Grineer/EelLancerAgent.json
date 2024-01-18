@@ -1,0 +1,203 @@
+{
+    "parent": "FrogLancerNavAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/EelLancerAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Grineer/Melee/GrnTrident/AiGrnTridentWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/EelLancerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/Lotus/Types/Behaviors/FlyReceiveMeleeAttackBehavior",
+            "/Lotus/Types/Behaviors/FlyStormTargetOrderBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/UnderWaterDodgeBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/MeleeRingTactic",
+            "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ALWAYS",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0,
+            "ActiveAction:Type": "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "ActiveAction:DefaultReevaluationDelay": 0,
+            "ActiveAction:TargetDistance": [
+                4,
+                8
+            ],
+            "ActiveAction:StrafeDistance": 5,
+            "ActiveAction:VerticalDistance": 1,
+            "ActiveAction:VerticalDistanceVariance": [
+                -3,
+                3
+            ],
+            "ActiveAction:ReachedLocationTolerance": 0.5,
+            "ActiveAction:WaitDuration": [
+                0,
+                1
+            ],
+            "ActiveAction:RecheckInterval": 2,
+            "ActiveAction:MinMovementDistance": 1,
+            "ActiveAction:AlwaysUpdateEvasion": 0,
+            "ActiveAction:ControlFacing": "MFC_FACE_TARGET",
+            "ActiveAction:BoostFacing": "MFC_FACE_TARGET",
+            "ActiveAction:BoostPosture": "WALK",
+            "ActiveAction:SpeedBoostMultiplier": 1,
+            "ActiveAction:BoostRange": 3,
+            "ActiveAction:BoostToTarget": 1,
+            "ActiveAction:ExitAfterWait": 0,
+            "ActiveAction:AdjustDestinationHeight": 0,
+            "EvaluateAction": 0,
+            "FaceTarget": 0,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "MeleeRingTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "OnlyEvalWithValidSlot": 0,
+            "MaxMovementDistance": 25,
+            "MaxRingSlots": 6,
+            "MaxUsableSlots": 4,
+            "RingDist": [
+                1,
+                2
+            ],
+            "SuccessRadius": 0.5,
+            "StopRadius": 0.5,
+            "RingReplacerDistanceOffset": 8,
+            "AllowRun": 1,
+            "LastSeenThreshold": 10,
+            "ReportUnreachable": 0,
+            "TimeOffNavForReport": 3,
+            "UnreachableTime": 2,
+            "VipAvatarType": "",
+            "MeleeBehaviors": [
+                "/EE/Types/Npc/SimpleMeleeAttackBehavior",
+                "/EE/Types/Npc/MeleeWaitBehavior"
+            ],
+            "SimpleMeleeAttackBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "AttackRange": [
+                    0,
+                    3
+                ],
+                "AlternateAttackRange": [
+                    0,
+                    3
+                ],
+                "UseMeleeFov": 1,
+                "MeleeFov": 45,
+                "AllowMeleeingFromBehind": 1,
+                "TimeSinceRendered": 0,
+                "MeleeFromBehindFOV": 90,
+                "RequiresClearNavTrace": 0,
+                "InputCode": "MELEE",
+                "AlternateAttackInputCode": "MELEE",
+                "InTimer": 0.25,
+                "Timer": 5,
+                "TimeBetweenAttacksRange": [
+                    0.1,
+                    0.1
+                ],
+                "ShouldModifyPosture": 1,
+                "UsePredictedPosition": 1,
+                "MeleeAttackTime": 0.5,
+                "AttackEvenIfTargetLeavesRange": 1,
+                "TurnToFaceTarget": 1,
+                "StopMeleeOnStop": 0,
+                "WaitForMeleeToEnd": 0,
+                "StopMovingWhenAttacking": 0
+            },
+            "MeleeWaitBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOut": 5,
+                "CoverOnly": 0,
+                "AimPosture": 0,
+                "MinimalEnemyDistance": 0,
+                "TrackTarget": 0,
+                "Peek": 0,
+                "FailOnDamaged": 1,
+                "PreventShooting": 0,
+                "StopMovingOnEnter": 0,
+                "EndMeleeAction": 1,
+                "PlayPhrase": 0,
+                "Bark": "IDLE",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    3.5,
+                    5
+                ],
+                "MaxDistanceToTarget": 0
+            },
+            "OnlyUseMeleeWeapon": 0,
+            "WalkInThisRangeForcefully": [
+                0,
+                0
+            ]
+        }
+    }
+}

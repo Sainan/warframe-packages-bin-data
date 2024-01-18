@@ -1,0 +1,109 @@
+{
+    "parent": "/EE/Types/Engine/GuidedProjectile",
+    "data": {
+        "Mesh": "/Lotus/Fx/Enemies/Drones/Projectile.fbx",
+        "OverrideMaterial": [
+            "/Lotus/Fx/Enemies/Drones/SuperDroneProjMatTint"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0.3
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Corpus/EnergyRifleFlare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0.25
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/WeaponTrailBlue",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicNonCollidable",
+        "AttackData": {
+            "Type": "DT_IMPACT",
+            "Amount": 20,
+            "ProcChance": 0.3
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "ExplosiveAttack": {
+            "Type": "DT_ELECTRICITY",
+            "Amount": 10,
+            "ProcChance": 0
+        },
+        "ExplosionIgnoreSource": 1,
+        "DamageRadius": 4,
+        "DamageMultAppliesToExplosiveRadius": 1,
+        "DieEffect": "/Lotus/Fx/Corpus/Ambulas/AmbulasRifleProjExplosion",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "IgnoreCollisionsWithSameType": 1,
+        "SetAutoChildThrower": 1,
+        "IgnoreTypes": [
+            "/Lotus/Types/Game/LotusSentinelAvatar"
+        ],
+        "BounceOnAvatars": 0,
+        "WhizzBySound": "/Lotus/Sounds/Weapons/Corpus/CrpGrenadeLauncher/CrpGrenadeLauncherProjectileLoop",
+        "WhizzByRadius": 8,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 150,
+        "Health": 1,
+        "KinematicMovement": 1,
+        "KinematicAccel": 1,
+        "KinematicMaxSpeed": 70,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "ProjectileReplication": "REPLICATED",
+        "FaceVelocity": 1,
+        "ApplyColorCustomization": 1,
+        "ForwardVel": 90,
+        "UnguidedFlightTime": 0.65,
+        "AvatarTargetPart": "TORSO",
+        "AimRate": 90,
+        "ReducedAimRate": 85,
+        "SeekAllEntities": 1,
+        "OnSetTargetScript": {
+            "Script": "AmbulasBulletEffect.lua",
+            "Function": "Start",
+            "_fireFxType": "/Lotus/Fx/Corpus/Ambulas/AmbulasRifleProjLaunchShockwave",
+            "_trailFxType": "/Lotus/Fx/Corpus/Ambulas/AmbulasRifleProjLaunchTrail",
+            "_sound": "/Lotus/Sounds/Enemies/Corpus/Ambulas/AmbulasLaserBurst3D"
+        }
+    }
+}

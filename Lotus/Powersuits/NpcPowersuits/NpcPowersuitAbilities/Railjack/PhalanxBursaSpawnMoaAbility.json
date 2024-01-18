@@ -1,0 +1,61 @@
+{
+    "parent": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/NpcAbility",
+    "data": {
+        "Script": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/QuadRobotSpawnDronesAbility.lua",
+            "Function": "ActivateAbility",
+            "_spawnFx": "/Lotus/Fx/Enemies/Corpus/Moa/PhalanxBursaSpawnMoaFX",
+            "_respawnDelay": 22,
+            "_desiredMaxEnemies": 2,
+            "_minEnemyCount": 2,
+            "_droneAgentType": "/Lotus/Types/Enemies/Corpus/Amalgams/AmalgamMoaAgent",
+            "_droneAvatarType": "/Lotus/Types/Enemies/Corpus/Amalgams/Avatars/AmalgamMoaAvatar",
+            "_spawnDroneAgentType": [
+                "/Lotus/Types/Enemies/Corpus/Railjack/SpecOpsFireMoaAgent",
+                "/Lotus/Types/Enemies/Corpus/Railjack/SpecOpsIceMoaAgent"
+            ],
+            "_droneTeam": "PhalanxBursaTeam",
+            "_minRange": -7,
+            "_maxRange": 7,
+            "_minHeight": 0,
+            "_maxHeight": 0,
+            "_parentRankMin": 0.3,
+            "_parentRankMax": 0.8,
+            "_maxDroneSearchRange": 100,
+            "_droneIgnoredByAiDir": 0,
+            "_useInstigatorTarget": 1,
+            "_setScriptTarget": 0,
+            "_pairDroneWithTarget": 0,
+            "_scaleEnemyCountWithPlayerCount": 1,
+            "_useInstigatorAwareness": 1,
+            "_rampUpCooldown": 0,
+            "_onSpawnAnim": "/Lotus/Animations/Corpus/RiotMoa/StandingNullifierFire_anim.fbx",
+            "_onSpawnSound": "",
+            "_onSpawnEvent": "SFXSpawnMoa",
+            "_onAttackAnim": "/Lotus/Animations/Grineer/KubrowHandler/SendDog_anim.fbx",
+            "_onAttackSound": ""
+        },
+        "CooldownDuration": 10,
+        "ActivationXP": 0,
+        "EvaluateScript": 0,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/BlackboardVarEvaluator",
+            "/Lotus/Types/Game/AbilityEvaluators/FindAvatarsEvaluator"
+        ],
+        "Evaluator:BlackboardVarEvaluator": {
+            "VarName": "DroneDeathTime",
+            "Var": "LastChargeAbilityTime",
+            "Value": 10,
+            "Check": "VC_LAST_TIME_GREATER",
+            "Team": 1
+        },
+        "Evaluator:FindAvatarsEvaluator": {
+            "AvatarType": "/Lotus/Types/Enemies/Corpus/Amalgams/Avatars/AmalgamMoaAvatar",
+            "SearchRange": [
+                0,
+                100
+            ],
+            "MinCount": 2
+        }
+    }
+}

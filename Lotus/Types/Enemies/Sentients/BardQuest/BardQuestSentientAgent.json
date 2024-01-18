@@ -1,0 +1,100 @@
+{
+    "parent": "/Lotus/Types/Enemies/Sentients/SentientBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "BardQuestSentientAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Sentients/BardQuest/BardQuestSentientConduitLeft",
+                "forceEquip": 1,
+                "hand": "OFF_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Sentients/BardQuest/BardQuestSentientConduitRight",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/Lotus/Types/Behaviors/BardQuestMovementBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "BardQuestMovementBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "NoMovement": 1,
+            "StartMovingImmediately": 0,
+            "NearDistance": 0.25,
+            "OffsetHeightWhenIdling": 1,
+            "MovementTimeInterval": [
+                100,
+                100
+            ],
+            "MaximumMovesLookAhead": 6,
+            "AttackAction:Type": "/EE/Types/Npc/BehaviorParallel",
+            "AttackAction:Enabled": 1,
+            "AttackAction:OnStartScript": {
+                "Script": ""
+            },
+            "AttackAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "AttackAction:DefaultReevaluationDelay": 0,
+            "AttackAction:RequireAllToRun": 0,
+            "AttackAction:FailOnChildFailure": 0,
+            "AttackAction:Behaviors": [
+                "/EE/Types/Npc/BehaviorParallel"
+            ],
+            "AttackAction:BehaviorParallel": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "RequireAllToRun": 0,
+                "FailOnChildFailure": 0,
+                "Behaviors": [
+                    "/Lotus/Types/Enemies/Sentients/Troopers/Behaviors/LeftHookDynamicBehavior",
+                    "/Lotus/Types/Enemies/Sentients/Troopers/Behaviors/RightHookDynamicBehavior"
+                ],
+                "LeftHookDynamicBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "Symbol": "LeftArm"
+                },
+                "RightHookDynamicBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "Symbol": "RightArm"
+                }
+            }
+        },
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 100,
+        "ViewFov": 360,
+        "ViewDistance": 100
+    }
+}

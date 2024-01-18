@@ -1,0 +1,950 @@
+{
+    "parent": "/EE/Types/Engine/AnimTreeController",
+    "data": {
+        "AnimTree": "ArachnoidCamperAnimTree.animtree",
+        "DefaultMovementMode": "ATMM_PHYSICS_DRIVEN",
+        "DefaultMovementModeRemotePlayers": "ATMM_PHYSICS_DRIVEN",
+        "MaximumAimDirH": 180,
+        "LookIKFov": 180,
+        "DefaultLookIkHeadingTrackSpeed": 80,
+        "FootIKSpeed": 5,
+        "ApplyScaleToRootMotion": 1,
+        "Actions": [
+            {
+                "Action": "IDLE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 0
+                    }
+                ],
+                "Query": []
+            },
+            {
+                "Action": "EnterStunLF",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ]
+            },
+            {
+                "Action": "EnterStunRF",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ]
+            },
+            {
+                "Action": "EnterStunLB",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ]
+            },
+            {
+                "Action": "EnterStunRB",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ]
+            },
+            {
+                "Action": "CLAMBER_UP",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 5
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 5
+                    }
+                ]
+            },
+            {
+                "Action": "StartClimbDown",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_SITTING",
+                        "Value": 0
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_SITTING",
+                        "Value": 0
+                    }
+                ]
+            }
+        ],
+        "SoundEvents": [
+            {
+                "EventName": "CrpArachnoidCamperStepMovement",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepMovement",
+                "Chance": 0.5,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCamperMissileDoorOpen",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Movement/CrpArachnoidCamperMissileOpen",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCamperMissileDoorClose",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Movement/CrpArachnoidCamperMissileClose",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCamperDeathExplosion",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Death/CrpArachnoidCamperDeathExplosion",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCamperDeathFirstExplosion",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Death/CrpArachnoidCamperDeathFirstExplosion",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCamperDeathFinalExplosion",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Death/CrpArachnoidCamperDeathFinalExplosion",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXArachnoidCamperArtilleryCharge",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Weapons/CrpArachnoidCamperArtilleryCannonCharge",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidCamperBodyfall",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Death/CrpArachnoidCamperDamagedBodyfall",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "VoiceBoxEvents": [
+            {
+                "EventName": "SFXCamperVocalMissile",
+                "Phrase": "ATTACK_SCREAM",
+                "Filter": "SFXCamperVocalMissile",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXCamperPatrolVocal",
+                "Phrase": "IDLE",
+                "Filter": "SFXCamperPatrolVocal",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXCrpArachnoidCamperVocalDeath",
+                "Phrase": "DEATH",
+                "Filter": "SFXCrpArachnoidCamperVocalDeath",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXCrpArachnoidCamperWalkVocal",
+                "Phrase": "CHARGE_SCREAM",
+                "Filter": "SFXCrpArachnoidCamperWalkVocal",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXCrpArachnoidCamperUnperchVocalA",
+                "Phrase": "UNDER_FIRE",
+                "Filter": "SFXCrpArachnoidCamperUnperchVocalA",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXCrpArachnoidCamperUnperchVocalB",
+                "Phrase": "UNDER_FIRE",
+                "Filter": "SFXCrpArachnoidCamperUnperchVocalB",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXCrpArachnoidCamperVocalPain",
+                "Phrase": "PAIN",
+                "Filter": "SFXCrpArachnoidCamperVocalPain",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXCrpArachnoidCamperStunEndVocal",
+                "Phrase": "NEED_HELP",
+                "Filter": "SFXCrpArachnoidCamperStunEndVocal",
+                "Chance": 1
+            }
+        ],
+        "ParticleEvents": [
+            {
+                "EventName": "StepL",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_FORELEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepUnperchL",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_FORELEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepR",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_FORELEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepUnperchR",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_FORELEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepLB",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_HINDLEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepUnperchLB",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_HINDLEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepRB",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_HINDLEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepUnperchRB",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_HINDLEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepRotateL",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_FORELEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepRotateR",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_FORELEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepRotateLB",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_HINDLEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "StepRotateRB",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperStepGroundFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_HINDLEG5",
+                "LocalPosition": [
+                    0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Death Explosion A",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathExplosion",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_PLATEA",
+                "LocalPosition": [
+                    0,
+                    0.1,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Death Explosion B",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathExplosion",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_PLATEB",
+                "LocalPosition": [
+                    0,
+                    0.1,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Death Explosion C",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathExplosion",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_FORELEG3",
+                "LocalPosition": [
+                    0,
+                    0.1,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Death Explosion D",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathExplosion",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_VENT",
+                "LocalPosition": [
+                    0,
+                    0.1,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Death Explosion E",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathExplosion",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_HINDLEG3",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Death Explosion F",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathExplosion",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "FX_R1_PEWPEW",
+                "LocalPosition": [
+                    0,
+                    0.1,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Death Explosion G",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathExplosion",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_HINDLEG2",
+                "LocalPosition": [
+                    0,
+                    0.1,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Snow",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathSnow",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_ROOT",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Mega Explosion",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathMegaExplosion",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_COG",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Electricity",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathBreakdown",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_COG",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "SelfDestruct",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidCamperDeathSelfDestruct",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_COG",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "CameraShake",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidTerraCameraShake",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_COG",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "FootstepCameraShake",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidTerraFootstepCameraShake",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_COG",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "FootstepCameraShakeWeak",
+                "ParticleSys": "/Lotus/Fx/Enemies/Corpus/Arachnoid/ArachnoidTerraFootstepCameraShakeWeaker",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_COG",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "SurfaceSensitiveEffects": [
+            {
+                "AnimEventSymbols": [
+                    "StepL"
+                ],
+                "RaycasterBoneName": "GAME_L1_FORELEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepR"
+                ],
+                "RaycasterBoneName": "GAME_R1_FORELEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 1,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepLB"
+                ],
+                "RaycasterBoneName": "GAME_L1_HINDLEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepRB"
+                ],
+                "RaycasterBoneName": "GAME_R1_HINDLEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepRotateL"
+                ],
+                "RaycasterBoneName": "GAME_L1_FORELEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepRotateHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepRotateR"
+                ],
+                "RaycasterBoneName": "GAME_R1_FORELEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepRotateHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepRotateLB"
+                ],
+                "RaycasterBoneName": "GAME_L1_HINDLEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepRotateHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepRotateRB"
+                ],
+                "RaycasterBoneName": "GAME_R1_HINDLEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepRotateHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepUnperchL"
+                ],
+                "RaycasterBoneName": "GAME_L1_FORELEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepUnperchHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepUnperchR"
+                ],
+                "RaycasterBoneName": "GAME_R1_FORELEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepUnperchHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepUnperchLB"
+                ],
+                "RaycasterBoneName": "GAME_L1_HINDLEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepUnperchHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepUnperchRB"
+                ],
+                "RaycasterBoneName": "GAME_R1_HINDLEG5",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Steps/CrpArachnoidCamperStepUnperchHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            }
+        ],
+        "StepRaycastDistance": 5,
+        "CinematicID": "Camper",
+        "MinimumAnimWeight": 0
+    }
+}

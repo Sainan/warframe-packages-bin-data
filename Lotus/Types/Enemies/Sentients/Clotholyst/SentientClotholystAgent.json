@@ -1,0 +1,322 @@
+{
+    "parent": "/Lotus/Types/Enemies/Infested/ZombieAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SentientClotholystAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "SentientClotholystMeleeWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "SentientClotholystPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MeleeTactic",
+            "/Lotus/Types/Behaviors/ContinuousMoveToTargetBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
+        "InterruptResponseBehavior": {
+            "Responses": []
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ABILITY_DRIVEN",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0.2,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 0,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "StormTargetOrderBehavior": {
+            "TimeSinceLastSeen": 30,
+            "MaxDistToTarget": 100,
+            "DesiredPosture": "WALK",
+            "DesiredPostureOutOfView": "WALK",
+            "AllowTeleportToCatchUp": 0
+        },
+        "MeleeTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "AttackState": "AS_MELEE",
+            "ReportUnreachable": 0,
+            "RequireMeleeWeapon": 0,
+            "RequireWeaponInInventory": 0,
+            "TimeOffNavForReport": 3,
+            "UnreachableTime": 2,
+            "MeleeBehaviors": [
+                "/EE/Types/Npc/SimpleMeleeAttackBehavior",
+                "/EE/Types/Npc/TurnToTargetBehavior"
+            ],
+            "SimpleMeleeAttackBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0.5,
+                "AttackRange": [
+                    0,
+                    8.5
+                ],
+                "AlternateAttackRange": [
+                    0,
+                    7
+                ],
+                "UseMeleeFov": 0,
+                "MeleeFov": 45,
+                "AllowMeleeingFromBehind": 0,
+                "TimeSinceRendered": 10,
+                "MeleeFromBehindFOV": 90,
+                "RequiresClearNavTrace": 0,
+                "InputCode": "MELEE",
+                "AlternateAttackInputCode": "MELEE_SWING",
+                "InTimer": 1,
+                "Timer": 1,
+                "TimeBetweenAttacksRange": [
+                    0.05,
+                    0.05
+                ],
+                "ShouldModifyPosture": 1,
+                "UsePredictedPosition": 0,
+                "MeleeAttackTime": 0.5,
+                "AttackEvenIfTargetLeavesRange": 1,
+                "TurnToFaceTarget": 1,
+                "StopMeleeOnStop": 1,
+                "WaitForMeleeToEnd": 1,
+                "StopMovingWhenAttacking": 0
+            },
+            "TurnToTargetBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 1,
+                "AccuracyThreshold": 10,
+                "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+                "TurnToAction:Enabled": 1,
+                "TurnToAction:OnStartScript": {
+                    "Script": ""
+                },
+                "TurnToAction:OnDamagedScript": {
+                    "Script": ""
+                }
+            }
+        },
+        "ContinuousMoveToTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DesiredPosture": "WALK",
+            "MaxMovementDistance": 100,
+            "StopDistance": 4,
+            "ClearAvoidance": 0,
+            "SpeedModifier": 1,
+            "MoveFacingControl": "MFC_FACE_MOVEDIR",
+            "OffsetDistance": 0,
+            "UseEyePos": 0,
+            "UseLastPosWhenTargetLost": 0
+        },
+        "MoveTowardsTacEnemyInfluence": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StopRadius": 0.5,
+            "NearDistance": 5,
+            "SpeedMultiplier": 1,
+            "AlertSpeedMultiplier": 1,
+            "AimWhenIdle": 0,
+            "AimWhenAlert": 0,
+            "PermanentAlert": 1,
+            "EnemyFaction": "TENNO",
+            "TimeSinceLastSeen": 5,
+            "NoCoverAfterExitTime": 1,
+            "MustBeFurtherFromObjective": 0,
+            "DistAheadToAdvance": 0,
+            "MinAwareness": "AW_ALERT",
+            "AlertMovementPosture": "WALK",
+            "DefaultMovementPosture": "WALK",
+            "PauseTime": [
+                3,
+                5
+            ],
+            "DesiredTacAreaScore": 1,
+            "OnlyIfLevelAlert": 1,
+            "UseLastSeenByTeam": 1,
+            "LimitToCurrentRoom": 0,
+            "OnlyFindPositionsOnFlightNav": 0
+        },
+        "InvestigateBehavior": {
+            "ShouldAim": 0,
+            "MaxInvestigateDistance": 16,
+            "TeamCoordination": 0,
+            "AllowRun": 0,
+            "RunTowardsNewTargets": 0,
+            "MinAwareness": "AW_IDLE"
+        },
+        "CustomRunToCoverBehavior": "",
+        "LocomotionController:PathFollower": [
+            "/EE/Types/Npc/DynamicPathFollowerGround",
+            "/EE/Types/Npc/DynamicPathFollowerHover"
+        ],
+        "LocomotionController:DynamicPathFollowerHover": {
+            "MoveFailureTime": 0.4,
+            "MoveFailureThreshold": 0.9,
+            "LockedInPlaceTimeout": 5,
+            "KeepPathWhileBlocking": 0,
+            "MinimumMoveDistance": 0.1,
+            "MinimumRunDistance": 3,
+            "ShortDistanceSpeedMultiplier": 2,
+            "ForceSidestepDistance": 0,
+            "RunStopDist": 0.5,
+            "WalkStopDist": 0.3,
+            "MinWalkWhenTurningAngle": 50,
+            "StopWhenTurningAngle": 90,
+            "CheckFunnelForTightTurns": 1,
+            "MinReducedSpeed": 0.25,
+            "TurnAccelerationCompensation": 1,
+            "ReduceSpeedForTightTurns": 1,
+            "TraceOffset": [
+                0,
+                0.5,
+                0
+            ],
+            "TraceScoreCurve": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 0.99,
+                "logistic": 0
+            },
+            "TraceFwdBias": 2,
+            "SlopeThrottleMapping": [],
+            "EnableViewChange": 1,
+            "InitialAngleDiffForTurn": 0,
+            "ForceLookTarget": 0,
+            "ForcePredictUsingDesiredViewHeading": 0,
+            "TransitionDistance": 2,
+            "CoverWalkTransitionDistance": 0.5,
+            "AlternateCoverPoseTransitionDistance": 0,
+            "UseEndPoseForCoverWarp": 0,
+            "CanUseBendTransition": 0,
+            "MaximumHeightDifferenceForAlternateCover": 0,
+            "MaximumAngleForAlternateCover": 0,
+            "RoadNetworkTargetMinDistanceSqr": 50,
+            "RoadNetworkTargetMaxDistanceSqr": 400,
+            "UseVIPNav": 0,
+            "AvoidDynamicOnly": 0,
+            "HoverHeightCorrection": 1,
+            "MinMoveDistToCorrectHeight": 5,
+            "DesiredHeightTolerance": 0.25,
+            "HeightRecoverFactor": 3,
+            "HeightRecoverSpeed": 3,
+            "GroundRaycastCorrection": 0,
+            "RaycastCooldownDuration": 0.5,
+            "MaxDownwardsRaytraceDist": -3,
+            "NavBelowGeoCompensateDist": 1,
+            "DodgeActionSymbol": "DodgeJump",
+            "FlyerPerlinNoise": 0,
+            "NoiseFrequency": 0.5,
+            "NoiseAmplitudeRot": 0,
+            "NoiseAmplitudePitch": 0,
+            "NoiseAmplitudeVel": 0,
+            "YawAccel": 720,
+            "MaxDesiredHeightOnBridges": 1
+        },
+        "LocomotionController:limitToNav": 1,
+        "LocomotionController:PathingPreferences": {
+            "nearbyNavSearchRadius": 4,
+            "shorteningType": "ST_NONE",
+            "avoidanceFactor": 0.05,
+            "minRequiredNavEdgeWidth": 1
+        },
+        "MusicWeight": 5
+    }
+}

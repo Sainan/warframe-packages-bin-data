@@ -1,0 +1,99 @@
+{
+    "parent": "/Lotus/Types/Weapon/WaveProjectile",
+    "data": {
+        "Mesh": "/Lotus/Fx/Weapons/Corpus/CrpAirPistol/AirPistolProjMesh.fbx",
+        "OverrideMaterial": [
+            "/Lotus/Fx/Weapons/Corpus/Shotgun/CrpShotgunProjMat"
+        ],
+        "MaterialParams": [
+            {
+                "name": "vScales",
+                "type": "Float4",
+                "slot": -1,
+                "value": 1,
+                "value1": 1,
+                "value2": 0.65,
+                "value3": 0
+            },
+            {
+                "name": "UnlitAtten",
+                "type": "Float",
+                "slot": -1,
+                "value": 0
+            }
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Corpus/Shotgun/CrpBEArcaPlasmorProjFX",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            }
+        ],
+        "AttackData": {
+            "Type": "DT_RADIATION",
+            "Amount": 760,
+            "ProcChance": 0.34,
+            "HitType": "DHT_PROJECTILE"
+        },
+        "CriticalChance": 0.22,
+        "CriticalMultiplier": 2,
+        "DamageFallOff": [
+            18,
+            36
+        ],
+        "DamageFallOffMinDamage": 380,
+        "GrenadeShootPermissions": [],
+        "GrenadeShootBonus": [],
+        "HitEffect": "/Lotus/Sounds/Weapons/Corpus/CorpusShotgun/CrpBEArcaPlasmor/CrpArcaPlasmorProjectileHitEffect",
+        "PassThroughEffect": "/Lotus/Fx/Weapons/Corpus/Shotgun/CrpBEArcaPlasmorProjExplosion",
+        "Toughness": 10000,
+        "MaxLife": 0.37,
+        "MaxBounces": 4,
+        "PlayLocalHitSoundOnImpact": 1,
+        "VerticalImpulse": 100,
+        "HorizontalImpulse": 500,
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 120,
+        "KinematicMaxSpeed": 120,
+        "FaceVelocity": 1,
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/CrpShotgun.lua",
+            "Function": "Update"
+        },
+        "ApplyColorCustomization": 1,
+        "ClearHitEntitesOnContact": 1,
+        "RiftStasisWeight": 25,
+        "InitialWidth": 0.2,
+        "InitialRadius": 0.2,
+        "AllowNormalContactBehavior": 1,
+        "ProjectileResizes": [
+            {
+                "Time": 0.35,
+                "ResizeWidth": 4.4,
+                "ResizeRadius": 0.5
+            }
+        ],
+        "DestroyOnContactTypes": [
+            "/Lotus/Types/Enemies/Corpus/Spaceman/AIWeek/NullifyShieldDecoCollision",
+            "/Lotus/Powersuits/Frost/IceShieldDeco",
+            "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/NpcIceShieldDeco"
+        ]
+    }
+}

@@ -1,0 +1,221 @@
+{
+    "parent": "/EE/Types/Engine/GuidedProjectile",
+    "data": {
+        "UseAmbient": 1,
+        "Mesh": "/Lotus/Fx/Common/Sphere.fbx",
+        "OverrideMaterial": [
+            "/EE/Materials/Hidden"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "DuviriDragonAirMineProxy",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Duviri/DuviriVoidDragon/Abilities/DuviriVoidDragonOrbProjectileLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Duviri/Dragon/DragonProjectileFireDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Duviri/DuviriVoidDragon/Abilities/DuviriVoidDragonOrbCastFlyingSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
+        "ScriptInstance": {
+            "Script": "DragonAirMineLauncher.lua",
+            "Function": "DragonMineProjectile",
+            "_launchBone": "",
+            "_launchBoneOffset": [
+                0,
+                0,
+                0
+            ],
+            "_projTypeList": [],
+            "_chargeDecoTypeList": [],
+            "_chargeCancelDecoTypeList": [],
+            "_chargeBeamFxTypeList": [],
+            "_chargeThrowFxTypeList": [],
+            "_preLaunchFxTypeList": [],
+            "_minRangeToTarget": 20,
+            "_maxRangeToTarget": 400,
+            "_maxAngleOffset": 10,
+            "_coneHalfAperture": 90,
+            "_grappleGracePeriod": 5,
+            "_baseProjectileCount": 2,
+            "_leftBones": [],
+            "_rightBones": [],
+            "_preLaunchSoundFx": "",
+            "_preLaunchStepDelay": 0.2,
+            "_projectileFireDelay": 2,
+            "_transmissionSetList": []
+        },
+        "ReplicationOverride": "RO_ALWAYS",
+        "ReplicateCreator": 1,
+        "AttackData": {
+            "Type": "DT_EXPLOSION",
+            "Amount": 0,
+            "ProcChance": 0
+        },
+        "ExplosiveAttack": {
+            "Type": "DT_FIRE",
+            "Amount": 100,
+            "ProcChance": 0
+        },
+        "ExplosionIgnoreSource": 1,
+        "ExplodeEffect": "/Lotus/Fx/Enemies/Duviri/Dragon/DragonProjectileFireExplosionSpawner",
+        "PostFireInvulnDuration": 0.15,
+        "DamageRadius": 12,
+        "DieEffect": "/Lotus/Fx/Enemies/Duviri/Dragon/DragonProjectileFireExplosionSpawner",
+        "DieSound": "/Lotus/Sounds/Enemies/Duviri/DuviriVoidDragon/Abilities/DuviriVoidDragonOrbProjExplosion",
+        "IgnoreCollisionsWithSameType": 1,
+        "MaxLife": 20,
+        "BounceOnAvatars": 0,
+        "BounceOnRagdolls": 0,
+        "RayMoveTestRadius": 0.1,
+        "WhizzBySound": "/Lotus/Sounds/Enemies/GrineerPursuitSpaceShip/GrineerPursuitSpaceShipMineWhizzBy",
+        "WhizzByRadius": 25,
+        "ReuseMoveQuery": 1,
+        "VerticalImpulse": 300,
+        "HorizontalImpulse": 300,
+        "Health": 1,
+        "CanBeReflected": 0,
+        "CanBeAttracted": 0,
+        "KinematicMovement": 1,
+        "KinematicAccel": 50,
+        "KinematicInitialSpeed": 60,
+        "KinematicMaxSpeed": 500,
+        "KinematicGravityMultiplier": 0,
+        "KinematicBulletRaycast": 0,
+        "SweepRadius": 20,
+        "ProjectileReplication": "REPLICATED",
+        "OnProjectileDeathScript": {
+            "Script": "DuviriHorseSpeedBoost.lua",
+            "Function": "OnProjectileDeath",
+            "_speedBoostFx": "",
+            "_speedBoostMultiplier": 2,
+            "_speedBoostDuration": 5,
+            "_decoType": "DuviriHorseSpeedBoostDeco",
+            "_dragonHorsePhaseMultiplier": 1.5,
+            "_babyDragonProjectileType": "/Lotus/Types/Enemies/Duviri/Dragon/Baby/DragonBabyProjectile",
+            "_projectileDestroyRange": 100
+        },
+        "ScriptsPreventDestruction": 1,
+        "ForwardVel": 60,
+        "MaxHomingSpeed": 160,
+        "HomingAccel": 20,
+        "UnguidedFlightTime": 0.5,
+        "SmoothUnguidedFlightTime": 1,
+        "AvatarTargetPart": "TORSO",
+        "AimRate": 120,
+        "UseAccumulatedDeltaAfterTurn": 1,
+        "SeekAllEntities": 1,
+        "DetonateNearFlareDist": 30,
+        "FlareProjectileDetectionRadius": 100,
+        "FlareSearchDelay": 0.5,
+        "OnSetTargetScript": {
+            "Script": "DragonAirMineLauncher.lua",
+            "Function": "MineTargetChanged",
+            "_launchBone": "",
+            "_launchBoneOffset": [
+                0,
+                0,
+                0
+            ],
+            "_projTypeList": [],
+            "_chargeDecoTypeList": [],
+            "_chargeCancelDecoTypeList": [],
+            "_chargeBeamFxTypeList": [],
+            "_chargeThrowFxTypeList": [],
+            "_preLaunchFxTypeList": [],
+            "_minRangeToTarget": 20,
+            "_maxRangeToTarget": 400,
+            "_maxAngleOffset": 10,
+            "_coneHalfAperture": 90,
+            "_grappleGracePeriod": 5,
+            "_baseProjectileCount": 2,
+            "_leftBones": [],
+            "_rightBones": [],
+            "_preLaunchSoundFx": "",
+            "_preLaunchStepDelay": 0.2,
+            "_projectileFireDelay": 2,
+            "_transmissionSetList": []
+        },
+        "DieNearTargetDistance": 3
+    }
+}

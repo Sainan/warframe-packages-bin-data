@@ -1,0 +1,133 @@
+{
+    "parent": "NpcAbility",
+    "data": {
+        "Script": {
+            "Script": "MachetePull.lua",
+            "Function": "ActivateAbility",
+            "_sound": "/Lotus/Sounds/Weapons/Grapple/GrappleFireA",
+            "_soundDetach": "",
+            "_soundRopeCut": "",
+            "_activateAnim": "/Lotus/Animations/Grineer/Scorpion/CastHarpoonStart",
+            "_LoopAnim": "/Lotus/Animations/Grineer/Scorpion/CastHarpoonLoop",
+            "_EndAnim": "/Lotus/Animations/Grineer/Scorpion/CastHarpoonEnd",
+            "_beamType": "/Lotus/Fx/PowersuitAbilities/ThrowBeam",
+            "_slideSound": "",
+            "_animEventToWaitFor": "StartPull",
+            "_Hand": "GAME_L1_ARM3",
+            "_ObstructionCheckBone": "",
+            "_projType": "/Lotus/Types/Enemies/Grineer/AIWeek/Avatars/Gear/SpikeProjectile",
+            "_postPullCreateFx": "",
+            "_abilityType": "MachetePullAbility",
+            "_canBeBlocked": 1,
+            "_canBeDodged": 1,
+            "_maxTime": 4,
+            "_minRange": 5,
+            "_maxRange": 15,
+            "_forbiddenTargetTypes": [
+                "/Lotus/Powersuits/PowersuitAbilities/DecoyAvatar",
+                "/Lotus/Powersuits/Saryn/ShedDecoyAvatar",
+                "/Lotus/Powersuits/Harlequin/IllusionMirrorAvatar"
+            ],
+            "_targetWhenStanding": 1,
+            "_targetWhenKnockedDown": 0,
+            "_clearTargetDataOnDeactivation": 1,
+            "_kickFx": "",
+            "_chargeFx": "",
+            "_tetherType": "",
+            "_pullDelayTime": 2,
+            "_ropeCutDecoType": "",
+            "_ropeCutOffset": [
+                0,
+                1,
+                0
+            ],
+            "_pullLoopAnim": "",
+            "_useCutMechanic": 1,
+            "_pushVelMagnitude": 5,
+            "_cutReadyEffect": "/Lotus/Fx/Enemies/MachetePullCutReady",
+            "_ropeCutProxyType": "",
+            "_ropeCutHitboxScale": 0.75,
+            "_backfireImpulse": 1500
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "DoPull",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "MachetePull.lua",
+                    "Function": "DoPull",
+                    "_sound": "",
+                    "_soundDetach": "",
+                    "_soundRopeCut": "/Lotus/Sounds/Weapons/Grapple/GrappleRopeBreak",
+                    "_activateAnim": "",
+                    "_LoopAnim": "",
+                    "_EndAnim": "/Lotus/Animations/Grineer/Scorpion/CastHarpoonEnd",
+                    "_beamType": "/Lotus/Fx/PowersuitAbilities/PullBeam",
+                    "_slideSound": "",
+                    "_animEventToWaitFor": "",
+                    "_Hand": "GAME_L1_ARM3",
+                    "_ObstructionCheckBone": "",
+                    "_projType": "",
+                    "_postPullCreateFx": "",
+                    "_abilityType": "",
+                    "_canBeBlocked": 1,
+                    "_canBeDodged": 1,
+                    "_maxTime": 4,
+                    "_minRange": 0,
+                    "_maxRange": 15,
+                    "_forbiddenTargetTypes": [
+                        "/Lotus/Powersuits/PowersuitAbilities/DecoyAvatar",
+                        "/Lotus/Powersuits/Saryn/ShedDecoyAvatar",
+                        "/Lotus/Powersuits/Harlequin/IllusionMirrorAvatar"
+                    ],
+                    "_targetWhenStanding": 1,
+                    "_targetWhenKnockedDown": 0,
+                    "_clearTargetDataOnDeactivation": 1,
+                    "_kickFx": "",
+                    "_chargeFx": "",
+                    "_tetherType": "",
+                    "_pullDelayTime": 1,
+                    "_ropeCutDecoType": "MachetePullHitOnlyDecoration",
+                    "_ropeCutOffset": [
+                        0,
+                        1,
+                        0
+                    ],
+                    "_pullLoopAnim": "/Lotus/Animations/Grineer/Scorpion/CastHarpoonLoop",
+                    "_useCutMechanic": 1,
+                    "_pushVelMagnitude": 5,
+                    "_cutReadyEffect": "/Lotus/Fx/Enemies/MachetePullCutReady",
+                    "_ropeCutProxyType": "MachetePullRopeHitProxy",
+                    "_ropeCutHitboxScale": 0.75,
+                    "_backfireImpulse": 1500
+                }
+            }
+        ],
+        "CooldownDuration": 30,
+        "ActivationXP": 0,
+        "EvaluateScript": 0,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/MachetePullEvaluator"
+        ],
+        "Evaluator:MachetePullEvaluator": {
+            "TargetWhenKnockedDown": 0,
+            "TargetWhenStanding": 1,
+            "Range": [
+                5,
+                15
+            ]
+        },
+        "SoundEvents": [
+            {
+                "EventName": "SFXGrappleWindup",
+                "Sound": "/Lotus/Sounds/Weapons/Grapple/GrappleWindup",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ]
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "parent": "BaseAcolyteAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "DuellistAcolyteAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "DuellistAcolyteSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "AcolyteRapier",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "MeleeTactic": {
+            "MeleeBehaviors": [
+                "/Lotus/Types/Behaviors/LotusSimpleMeleeBehavior",
+                "/Lotus/Types/Behaviors/TimedTactic",
+                "/EE/Types/Npc/KeepMeleeDistanceBehavior"
+            ],
+            "TimedTactic": {
+                "AttackFromTheOpenBehavior": {
+                    "FiringPreferencesOverride": [
+                        {
+                            "attackRange": [
+                                0,
+                                10
+                            ],
+                            "firePreferences": {
+                                "firingType": "FT_NORMAL",
+                                "burstTime": [
+                                    0,
+                                    0
+                                ],
+                                "burstPauseTime": [
+                                    0,
+                                    0
+                                ],
+                                "fireRate": [
+                                    0.25,
+                                    0.5
+                                ]
+                            }
+                        }
+                    ],
+                    "RequireRangedWeapon": 1
+                }
+            },
+            "KeepMeleeDistanceBehavior": {
+                "EvaluateDistance": [
+                    0,
+                    20
+                ]
+            }
+        },
+        "KeepIdealDistanceBehavior": {
+            "AllowRetreat": 0
+        }
+    }
+}

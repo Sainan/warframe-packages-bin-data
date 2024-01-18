@@ -1,0 +1,144 @@
+{
+    "parent": "/Lotus/Types/Enemies/CorpusChampions/CorpusChampionDroneBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "CCTeamBOspreyAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionWeapons/CorpusChampionRaptorCannon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionPowerSuits/NpcTeamBRaptorSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/ActiveDodgeBehavior",
+            "/EE/Types/Npc/AgentOffNavBehavior",
+            "/Lotus/Types/Behaviors/ChangeToPrimaryWeaponDecoratorBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "AgentOffNavBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOffNav": 2,
+            "ToleranceDistance": 0,
+            "DisableWhenFlying": 0,
+            "RerunDelay": 5,
+            "OffNavBehaviors": []
+        },
+        "ChangeToPrimaryWeaponDecoratorBehavior": {
+            "Action:GenericBehaviorSelector": {
+                "ShootingDecoratorBehavior": {
+                    "Action:GenericBehaviorSelector": {
+                        "Actions": [
+                            "/Lotus/Types/Behaviors/CautiousApproachToPickUpBehavior",
+                            "/Lotus/Types/Behaviors/CtfOrderPointBankerBehaviorSelector",
+                            "/Lotus/Types/Behaviors/CorpusArenaIgnoreInfestedBehaviorSelector",
+                            "/EE/Types/Npc/LeaveDeathAreaBehavior",
+                            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                            "/Lotus/Types/Behaviors/CtfOrderProtectorBehaviorSelector",
+                            "/Lotus/Types/Behaviors/CtfOrderAttackerBehaviorSelector",
+                            "/Lotus/Types/Behaviors/CtfOrderDefenderBehaviorSelector",
+                            "/Lotus/Types/Behaviors/CtfOrderHunterBehaviorSelector",
+                            "/EE/Types/Npc/EngageTargetMovementBehavior",
+                            "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+                            "/EE/Types/Npc/WaitBehavior"
+                        ],
+                        "CautiousApproachToPickUpBehavior": {
+                            "Enabled": 1,
+                            "OnStartScript": {
+                                "Script": ""
+                            },
+                            "OnDamagedScript": {
+                                "Script": ""
+                            },
+                            "DefaultReevaluationDelay": 0,
+                            "PickUpTargetTypes": [
+                                "/Lotus/Types/Gameplay/Arena/GreedPointPickupAction"
+                            ],
+                            "EvaluateValueType": "EVT_HEALTH",
+                            "EvalValueComparator": "CT_ACTIVATE_WHEN_PLENTY",
+                            "OnPickupTakenScript": {
+                                "Script": ""
+                            },
+                            "EvaluateValueVsDistanceRange": [
+                                0.2,
+                                1
+                            ],
+                            "SearchRadius": 30,
+                            "GrabAnywayDistance": 6,
+                            "FailsOnEnemyCloserByPct": 1.5,
+                            "NearRadius": 3,
+                            "StopRadius": 2,
+                            "MaxOffNavDist": 10,
+                            "DelayAfterFailure": 1,
+                            "MovementPosture": "JOG",
+                            "PreferredHeight": 1,
+                            "HumanPlayerNearbyRange": -1,
+                            "AnimActionBeforeGrabbing": ""
+                        },
+                        "UsePowerSuitAbilitiesBehavior": {
+                            "Enabled": 1,
+                            "OnStartScript": {
+                                "Script": ""
+                            },
+                            "OnDamagedScript": {
+                                "Script": ""
+                            },
+                            "DefaultReevaluationDelay": 0.25,
+                            "BlockForPowerCompleteType": "BT_ABILITY_DRIVEN",
+                            "AllowInterruptOfAbility": 0,
+                            "StopFiring": 1,
+                            "StopMovingOnStart": 0,
+                            "ExtraReevaluationDelay": 0,
+                            "ActiveAction:Type": "/EE/Types/Npc/Action",
+                            "ActiveAction:Enabled": 1,
+                            "ActiveAction:OnStartScript": {
+                                "Script": ""
+                            },
+                            "ActiveAction:OnDamagedScript": {
+                                "Script": ""
+                            },
+                            "EvaluateAction": 1,
+                            "FaceTarget": 1,
+                            "TurnAccuracyThreshold": 10,
+                            "TurnTimeout": 2,
+                            "AimTimeout": 0.5,
+                            "ValidAbilities": [],
+                            "MaxProcessPerEval": 0,
+                            "AimAtTarget": 0,
+                            "CheckIfAbilityUnlocked": 0,
+                            "MultipleConcurrentAbilities": 0,
+                            "EvaluateDelayRange": [
+                                0.5,
+                                1
+                            ],
+                            "PreventUsageOnWeaponUse": 0,
+                            "TurnDuringAbility": 0,
+                            "DeactivateAbilitiesOnPredeath": 0,
+                            "ResetEvalTimerOnEnemySpotted": 0
+                        }
+                    }
+                }
+            }
+        },
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 4
+        }
+    }
+}

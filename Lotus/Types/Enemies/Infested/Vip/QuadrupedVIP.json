@@ -1,0 +1,150 @@
+{
+    "parent": "/Lotus/Types/Enemies/Infested/ZombieAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/QuadrupedVIPAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Melee/VIPQuadMeleeWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/VipQuadSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "SuicideOffNavAndHidden": 0,
+        "TransmissionScript": {
+            "Script": "/Lotus/Scripts/BossTransmissions.lua",
+            "Function": "Run",
+            "_introTransmission": "/Lotus/Sounds/Lotus/LotusTransmissionsBosses/Infestation/BossPhoridTransmissionEvent",
+            "_transmissions": [
+                "/Lotus/Sounds/Lotus/LotusTransmissionsBosses/Infestation/BossPhoridVariationTransmissionEvent",
+                "/Lotus/Sounds/Dialog/Taunts/Infested/PhoridInGameTaunt"
+            ],
+            "_combatTransmissions": [
+                "/Lotus/Sounds/Dialog/Taunts/Infested/PhoridInCombatTaunt"
+            ],
+            "_minCombatTransDelay": 20,
+            "_maxCombatTransDelay": 30,
+            "_minDistToTarget": 75,
+            "_playCombatTaunts": 1,
+            "_waitForCombatTaunt": 0,
+            "_delayForCombatTaunt": 5,
+            "_targetNumTransmission": 5
+        },
+        "BehaviorDatabase": [
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/MeleeRingTactic",
+            "/EE/Types/Npc/SearchForTargetBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ALWAYS",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 0,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "MeleeRingTactic": {
+            "RingDist": [
+                0.4,
+                0.7
+            ],
+            "SuccessRadius": 0.7,
+            "LastSeenThreshold": 4,
+            "MeleeContinousBehavior": {
+                "LungeAttackRange": [
+                    0,
+                    0
+                ],
+                "AllowMeleeingFromBehind": 1,
+                "StopMovingWhenAttacking": 1
+            },
+            "MeleeWaitBehavior": {
+                "TimeOut": 3,
+                "TrackTarget": 1
+            }
+        },
+        "CustomResponseBehavior": {
+            "Responses": [
+                {
+                    "reaction": "WHAT_WAS_THAT",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 1,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                }
+            ]
+        },
+        "InvestigateBehavior": {
+            "MaxInvestigateDistance": 16,
+            "TeamCoordination": 0,
+            "MinAwareness": "AW_IDLE"
+        },
+        "CustomRunToCoverBehavior": ""
+    }
+}

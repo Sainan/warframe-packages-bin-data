@@ -1,0 +1,82 @@
+{
+    "parent": "/Lotus/Types/Game/AutoTurretAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Guild/Turret/Turret_skel.fbx",
+        "RootMotionChannel": "Swivel",
+        "AttachBone": "GAME_C1_TILT1",
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
+        "OnlyRegisterBounds": 1,
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/TimedSelfDestruction.lua",
+            "Function": "TimedSelfDestruction",
+            "_timeToSelfDestruct": 60,
+            "_destructionFx": "/Lotus/Fx/Explosions/Generic/ExplosionFXScifiMedium",
+            "_hostOnly": 1,
+            "_delay": 0
+        },
+        "EyeOffset": [
+            0,
+            0.8,
+            0
+        ],
+        "HeadBone": "GAME_C1_TILT1",
+        "WeaponBone": "GAME_C1_TILT1",
+        "Faction": "TENNO",
+        "LocTag": "/Lotus/Language/Items/LisetTurretName",
+        "Icon": "/Lotus/Interface/Icons/Objects/SecurityTurret.png",
+        "MaxHealth": 200,
+        "CanRun": 0,
+        "DefaultThreatLevel": -5,
+        "AnimControllerType": "/Lotus/Types/Enemies/Corpus/Turrets/TurretAvatars/AutoTurretAnimTreeController",
+        "DamageControllerType": "LisetTurretDamageController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Corpus/Turrets/TurretAvatars/AutoTurretInventory",
+        "MotionControllerType": "/Lotus/Types/Enemies/Corpus/Turrets/TurretAvatars/AutoTurretMotionController",
+        "OnPreDeathScript": {
+            "Script": "/Lotus/Scripts/Effects/SimpleDecoFuntions.lua",
+            "Function": "MeshSwap",
+            "_TimeLength": 1,
+            "_OffsetPosition": [
+                0,
+                0,
+                0
+            ],
+            "_Delay": 0,
+            "_TargetDeco": "",
+            "_DistortOn": 1,
+            "_DistortMat": "",
+            "_scaleStart": 0.1,
+            "_scaleFinish": 1,
+            "_newMesh": "/Lotus/Characters/Guild/Turret/TurretDestroyed_skel.fbx",
+            "_applyToParent": 0,
+            "_applyToChildren": 0,
+            "_DoRandomRotationRange": 0,
+            "_newTestRotateSpeed": [
+                0,
+                0,
+                0
+            ],
+            "_TargetDecos": [],
+            "_isShowVisibility": 1,
+            "_newRotation": [
+                0,
+                0,
+                0
+            ],
+            "_enableNoise": 1,
+            "_newMaterial": "",
+            "_materialSlot": 0,
+            "_newAnimDelta": 0.1
+        },
+        "OnDeathScript": {
+            "Script": "/Lotus/Scripts/TimedSelfDestruction.lua",
+            "Function": "TriggerSelfDestruction",
+            "_timeToSelfDestruct": 10,
+            "_destructionFx": "/Lotus/Fx/Explosions/Generic/ExplosionFXScifiMedium",
+            "_hostOnly": 1,
+            "_delay": 5
+        },
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataHeal",
+        "DisarmAction": "DA_NONE",
+        "StartActive": 1
+    }
+}

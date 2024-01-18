@@ -1,0 +1,135 @@
+{
+    "parent": "/Lotus/Types/Enemies/EnemyAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "DragonAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "DragonNpcPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "AggroController:Entries": [
+            "/EE/Types/Npc/AggroEntryNearDeath"
+        ],
+        "AggroController:AggroEntryNearDeath": {
+            "Enabled": 0,
+            "IncreaseTimeLength": 1,
+            "DecayTimeLength": 1,
+            "LowHeatlthBackOffValue": 50
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/Logic/LogicGraphAction"
+        ],
+        "LogicGraphAction": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "GraphRes": "DragonLogicGraph"
+        },
+        "LocomotionController:Type": "/Lotus/Types/Game/DynamicSpaceFlightLocomotionController",
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderSpace"
+        ],
+        "LocomotionController:DynamicPathFinderSpace": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 0,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerSpace"
+        ],
+        "LocomotionController:DynamicPathFollowerSpace": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 1,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 0,
+            "IdlingSpeedMultiplier": 1,
+            "ForceFaceForwardWhenInactive": 0
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierAvoidance",
+                    "/EE/Types/Npc/LocomotionMoveModifierPID"
+                ],
+                "LocomotionMoveModifierAvoidance": {
+                    "AllowVerticalAvoidance": 1,
+                    "AvoidanceInputMultiplier": [
+                        1.2,
+                        1.2,
+                        0.8
+                    ],
+                    "PreserveVelocity": 0,
+                    "MinAvoidanceReducedVelocityPct": 0,
+                    "FlyerControlMode": 0,
+                    "AllowedObstacleCountForMaxSpeed": 30,
+                    "ObstacleCountForMinSpeed": 200,
+                    "ObstacleSlowdownScalingExponent": 1.8,
+                    "MinSpeedScalingFromObstacles": 0.25,
+                    "AvoidDynamicObstaclesOnly": 0
+                },
+                "LocomotionMoveModifierPID": {
+                    "PosKP": 1,
+                    "PosKI": 0,
+                    "PosKD": 0.1,
+                    "VelKP": 1,
+                    "VelKI": 0,
+                    "VelKD": 0.1,
+                    "ClampValue": 1,
+                    "PreserveVelocity": 0
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 2,
+            "nearbyNavSearchRadius": 1
+        },
+        "LocomotionController:ImplicitActionAheadDistance": 0.5,
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 500,
+        "ViewFov": 360,
+        "ViewDistance": 500,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "AwarenessDecayTime": 20,
+        "TargetLostTime": 10,
+        "TargetLowHealthPercent": 0.3,
+        "SuperAlertDecayTime": 20,
+        "ReactionControllerType": "/Lotus/Types/Enemies/Grineer/Eidolon/EidolonGrineerReactionController",
+        "PerceiverType": "/Lotus/Types/Enemies/Infested/InfestedMicroplanet/MicroPlanetInfestedPerceiver",
+        "CoverEvaluatorType": "/EE/Types/Npc/UtilityCoverEvaluator",
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/Sentients/SentientTargetEvaluator",
+        "MusicWeight": 0
+    }
+}

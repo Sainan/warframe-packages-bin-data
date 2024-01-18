@@ -1,0 +1,194 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/CorpusShipRemastered/Avatars/ShipOspreyMineAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/MITW/Handbomber/Handbomber_skel.fbx",
+        "MeshScale": 1.25,
+        "OverrideMaterial": [],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Mitw/HandBomberFXDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "HandBomberHover",
+        "ScriptInstance": {
+            "Script": "/Lotus/Types/Enemies/ManInTheWall/MITWBarkController.lua",
+            "Function": "IdleVoiceBoxLoop"
+        },
+        "Faction": "MITW",
+        "LocTag": "/Lotus/Language/EntratiLab/EntratiGeneral/HandBomberName",
+        "ShortDesc": "",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Murmur/HandBomber.png",
+        "MaxHealth": 12000,
+        "VoiceBox": "/Lotus/Sounds/Dialog/Barks/Battle/MiTW/MITWHandBomber/MITWHandBomberVoiceBoxA",
+        "DropTable": "/Lotus/Types/DropTables/ManInTheWall/HandBomberAgentDropTable",
+        "AnimControllerType": "HandBomberAnimTreeController",
+        "DamageControllerType": "HandBomberDamageController",
+        "RaycastProxy": {
+            "Type": "HitProxies/HandBomberFullBody"
+        },
+        "EnableCameraCollisionCulling": 0,
+        "OnDeathScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/MITWEnnemiesVFX.lua",
+            "Function": "DissolveOnDeath",
+            "_dissolveEffect": "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveGenericSpawner",
+            "_dissolveSound": "/Lotus/Sounds/Enemies/ManInTheWall/Triangle/MITWTriangleDeathDissolve",
+            "_dissolveProj": [
+                "/Lotus/Fx/Enemies/Mitw/MitwSandProj",
+                "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveExtrudeDynProj",
+                "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveGlitterProj"
+            ],
+            "_attachmentToTriggeredFade": [],
+            "_attachmentToDissolveAndHide": [],
+            "_boneToAttachTo": "GAME_C1_CENTERPIECE1",
+            "_attachOffset": [
+                0,
+                0,
+                0
+            ],
+            "_gravityOnDeath": 1,
+            "_gravityVector": [
+                0,
+                0,
+                0
+            ],
+            "_disableCollision": 1,
+            "_totalFadeOutDuration": 1.6,
+            "_waitBeforeDissolve": 0.5,
+            "_waitBeforeStart": 0,
+            "_DestroyAfterFade": 1,
+            "_waitBeforeDestroy": 0,
+            "_SpawnerToDestroy": "",
+            "_OriginalValue": 1,
+            "_NewValue": 2,
+            "_deathProjectileType": "/Lotus/Weapons/Mitw/HandBomberOnDeathProjectile",
+            "_deathProjectileCount": 5,
+            "_deathProjectileBone": "GAME_C1_CENTERPIECE1",
+            "_octopedeEventDropTables": []
+        },
+        "SoundEvents": [
+            {
+                "EventName": "SFXBomberFireStart",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/HandBomber/MITWHandBomberFireStart",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXBomberFireLoop",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/HandBomber/MITWHandBomberFireLoop",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": "SFXBomberFireLoopEnd"
+            },
+            {
+                "EventName": "SFXMITWSpawnLargeEnemy",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/EnemyGameplay/MITWSpawnLargeEnemy",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "VoiceBoxEvents": [
+            {
+                "EventName": "SFXHandBomberFIreBark",
+                "Phrase": "USING_ABILITY",
+                "Filter": "",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXMITWSpawnLargeEnemyBark",
+                "Phrase": "MODE_CHANGED",
+                "Filter": "SFXMITWSpawnLargeEnemyBark",
+                "Chance": 1
+            }
+        ],
+        "ScriptEvents": [
+            {
+                "EventName": "GrabProjectile",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/HandBomberWeapon.lua",
+                    "Function": "GrabBomb",
+                    "_handBomberDecoType": "/Lotus/Weapons/Mitw/HandBomberGrenadeLauncherProjectileDeco",
+                    "_handBomberAttachBones": [
+                        "GAME_C1_FINGER1",
+                        "GAME_C5_FINGER1",
+                        "GAME_C4_FINGER1",
+                        "GAME_C3_FINGER1",
+                        "GAME_C2_FINGER1"
+                    ],
+                    "_handBomberAttachOffsets": [
+                        [
+                            0,
+                            -0.1,
+                            -0.05
+                        ],
+                        [
+                            0,
+                            -0.1,
+                            -0.05
+                        ],
+                        [
+                            0,
+                            -0.1,
+                            -0.05
+                        ],
+                        [
+                            0,
+                            -0.1,
+                            -0.05
+                        ],
+                        [
+                            0,
+                            -0.1,
+                            -0.05
+                        ]
+                    ]
+                }
+            },
+            {
+                "EventName": "ThrowProjectile",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/HandBomberWeapon.lua",
+                    "Function": "ReleaseBomb",
+                    "_handBomberDecoType": "/Lotus/Weapons/Mitw/HandBomberGrenadeLauncherProjectileDeco",
+                    "_handBomberAttachBones": [
+                        "GAME_C1_FINGER1",
+                        "GAME_C5_FINGER1",
+                        "GAME_C4_FINGER1",
+                        "GAME_C3_FINGER1",
+                        "GAME_C2_FINGER1"
+                    ],
+                    "_handBomberAttachOffsets": []
+                }
+            }
+        ],
+        "KillXPReward": 500,
+        "UINameAttachOffset": [
+            0,
+            0.95,
+            0
+        ]
+    }
+}

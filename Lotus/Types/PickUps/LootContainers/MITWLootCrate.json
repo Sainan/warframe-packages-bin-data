@@ -1,0 +1,98 @@
+{
+    "parent": "/Lotus/Types/PickUps/BaseMediumLootCrate",
+    "data": {
+        "Mesh": "/Lotus/Objects/ManInTheWall/Gameplay/LootCrates/MITWxLootCrateA_skel.fbx",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Types/Game/MarkerInfos/LootMarkerInfo",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/EE/Types/Pickups/PickupGlow",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0.35,
+                    0
+                ],
+                "LocalRotation": [
+                    -0.707107,
+                    0,
+                    0,
+                    0.707107
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Levels/ManInTheWall/MITWCrateSandDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            }
+        ],
+        "Tag": "MITWLootCrate",
+        "SurvivesMigration": 1,
+        "LocTag": "/Lotus/Language/Entrati/MITWLootCrateName",
+        "Icon": "/Lotus/Interface/Objects/EntratiLab/MITWLootCrate.png",
+        "AmbientAnimation": "/Lotus/Animations/MITW/LootCrate/IdleClosed_anim.fbx",
+        "DeathAnimation": "/Lotus/Animations/MITW/LootCrate/IdleToOpen_anim.fbx",
+        "RemoveOnDestroy": 0,
+        "CreateOnDestroy": {
+            "Type": "/Lotus/Fx/Levels/ManInTheWall/MITWCrateOpened",
+            "Attach": 1
+        },
+        "PlayOnDestroy": "/Lotus/Sounds/Gameplay/Entrati/LootCrates/MITWLootCrateMedium",
+        "OnDamageScript": {
+            "Script": "/Lotus/Scripts/Challenges/ChallengeNotifyTag.lua",
+            "Function": "NotifyChallengeMgr",
+            "_gameEventTag": "MITWLootCrateDestroyed"
+        },
+        "StateChangeScript": {
+            "_dropTable": "/Lotus/Types/DropTables/ContainerDropTables/MITWLootCrateDropTable",
+            "_nightmareModeDropTable": "/Lotus/Types/DropTables/ContainerDropTables/MITWLootCrateDropTable",
+            "_survivalDropTable": "/Lotus/Types/DropTables/ContainerDropTables/MITWLootCrateDropTable",
+            "_delay": 1.7,
+            "_hasDropAnim": 1
+        }
+    }
+}

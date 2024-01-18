@@ -1,0 +1,185 @@
+{
+    "parent": "/Lotus/Types/Enemies/Infested/AiWeek/GreyStrain/GreyStrainAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "BoneBladeAvatar",
+            "EXIMUS": "BoneBladeEximusAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "BoneBladeWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "BoneBladeAWWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/BoneBladePowerSuit",
+                "forceEquip": 0,
+                "hand": "EXTRA1"
+            }
+        ],
+        "DefaultSlot": "SLOT_2",
+        "AllowTeleportedByAiDirector": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/WeaponSwapBehavior",
+            "/EE/Types/Npc/BlackboardBehaviorSelector",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "UsePowerSuitAbilitiesBehavior": {
+            "ExtraReevaluationDelay": 0,
+            "FaceTarget": 0
+        },
+        "WeaponSwapBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WeaponSettings": [
+                {
+                    "WeaponSlot": "SLOT_2",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_LAND_ONLY"
+                },
+                {
+                    "WeaponSlot": "SLOT_1",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_AIR_ONLY"
+                }
+            ],
+            "WeaponHand": "MAIN_HAND",
+            "SwapThreshold": 5,
+            "RandomSwapDelay": [
+                1,
+                2
+            ]
+        },
+        "BlackboardBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlackboardType": "BBT_AGENT",
+            "Actions": [
+                {
+                    "VarName": "BonebladeDormant",
+                    "Action:Type": "/EE/Types/Npc/WaitBehavior",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0,
+                    "Action:TimeOut": 0,
+                    "Action:CoverOnly": 0,
+                    "Action:AimPosture": 0,
+                    "Action:MinimalEnemyDistance": 0,
+                    "Action:TrackTarget": 0,
+                    "Action:Peek": 0,
+                    "Action:FailOnDamaged": 0,
+                    "Action:PreventShooting": 0,
+                    "Action:StopMovingOnEnter": 0
+                },
+                {
+                    "VarName": "",
+                    "Action:Type": "/EE/Types/Npc/ControlledShootBehavior",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:GoodTargetTimeout": 0.2,
+                    "Action:SetAimTarget": 1,
+                    "Action:RequireAim": 1,
+                    "Action:AllowAlternateAim": 1,
+                    "Action:ShootAtCoverEnabled": 1,
+                    "Action:AttackSegmentTime": [
+                        20,
+                        20
+                    ],
+                    "Action:WaitSegmentTime": [
+                        0,
+                        0
+                    ],
+                    "Action:FireBursts": 0,
+                    "Action:AimWhenPausing": 1,
+                    "Action:AimWhenStopping": 1,
+                    "Action:DecorativeReloads": 0,
+                    "Action:UseSuppressiveFire": 0,
+                    "Action:SuppressionTargetDistDiff": 2.5,
+                    "Action:IgnoreColinearTeamMates": 1,
+                    "Action:ReturnToCoverOnDamage": 0,
+                    "Action:ReturnToCoverDamageThreshold": 0.5,
+                    "Action:ExitCoverOnDamageDuringWait": 0,
+                    "Action:ExitCoverOnDamageDuringWaitDamageThreshold": 0.5,
+                    "Action:PushoutFromCrouchDistance": 0.3,
+                    "Action:RequireCover": 0,
+                    "Action:SuppressionUnderFireTime": 3,
+                    "Action:LookAtTarget": 0,
+                    "Action:LookHorizRate": 40,
+                    "Action:LookVertRate": 20,
+                    "Action:LookTargetOffset": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "Action:UseCurrentWeapon": 1,
+                    "Action:PointBlankRange": 0
+                }
+            ],
+            "FailOnChildFailure": 0
+        },
+        "WaitBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOut": 5,
+            "CoverOnly": 0,
+            "AimPosture": 0,
+            "MinimalEnemyDistance": 0,
+            "TrackTarget": 0,
+            "Peek": 0,
+            "FailOnDamaged": 1,
+            "PreventShooting": 0,
+            "StopMovingOnEnter": 0
+        },
+        "CustomRunToCoverBehavior": "/EE/Types/Npc/RunToAttackCoverBehavior",
+        "LocomotionController:PathFinder": [],
+        "LocomotionController:MoveModifierCollection": [],
+        "LocomotionController:PathingPreferences": {
+            "vipNavName": "LargeEnemy"
+        },
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 60,
+        "ViewFov": 360,
+        "PerceiverType": "/Lotus/Types/Enemies/Infested/InfestedMicroplanet/MicroPlanetInfestedPerceiver",
+        "MusicWeight": 2
+    }
+}

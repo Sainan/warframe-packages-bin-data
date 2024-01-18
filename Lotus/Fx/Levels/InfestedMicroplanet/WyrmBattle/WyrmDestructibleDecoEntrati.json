@@ -1,0 +1,183 @@
+{
+    "parent": "/Lotus/Types/Game/LotusEffectDecoration",
+    "data": {
+        "UseAmbient": 1,
+        "Mesh": "WyrmDebrisMeshA.fbx",
+        "MeshScale": 0.35,
+        "MaterialParams": [
+            {
+                "name": "EmissiveTintColor",
+                "type": "Color",
+                "slot": -1,
+                "value": [
+                    0.0026,
+                    0.083,
+                    0.43,
+                    1
+                ]
+            },
+            {
+                "name": "EmissiveMapAtten",
+                "type": "Float",
+                "slot": -1,
+                "value": 20
+            }
+        ],
+        "UseParentVisibility": 0,
+        "GridZoningExpansion": 6,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0.707107,
+                    0,
+                    0,
+                    0.707107
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Types/Gameplay/InfestedMicroplanet/EncounterObjects/WyrmDebrisHitProxy",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Types/PickUps/AmmoPickupGlow",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "WyrmDestructibleBeamEntrati",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
+        "Tag": "WyrmGiblit",
+        "ReplicationOverride": "RO_ALWAYS",
+        "SurvivesMigration": 1,
+        "LocTag": "/Lotus/Language/InfestedMicroplanet/WyrmDebrisEntratiName",
+        "TestRotateMode": "TRM_AUTONOMOUS",
+        "TestRotateSpeed": [
+            5,
+            120,
+            0
+        ],
+        "ReplicaPositionNoise": [
+            0,
+            0,
+            0,
+            0.1
+        ],
+        "ReplicaRotationNoise": [
+            0,
+            0,
+            0,
+            0.1
+        ],
+        "Health": 1000,
+        "CreateOnDestroy": {
+            "Type": "WyrmDebriDestructibleBaitEntrati"
+        },
+        "StateChangeScript": {
+            "Script": "/Lotus/Scripts/InfestedMicroplanet/WyrmPuddle.lua",
+            "Function": "SpawnDrops",
+            "_infestedProjectorType": "",
+            "_entratiProjectorType": "",
+            "_infestedScreenFxType": "/Lotus/Fx/Raids/J3Golem/InfestedScreenEffect",
+            "_entratiScreenFxType": "/Lotus/Fx/Raids/J3Golem/InfestedScreenEffect",
+            "_infestedAreaDeco": "",
+            "_entratriAreaDeco": "",
+            "_entratiDebrisDeco": "EntratiDebrisDeco",
+            "_infestedDebrisDeco": "InfestedDebrisDeco",
+            "_debrisVolume": "",
+            "_debrisSpawnDelayRange": [
+                0,
+                1.25
+            ],
+            "_debrisVelocityFactor": 0.25,
+            "_healthRatioPerTick": 0.015,
+            "_moveSpeedDebuffMult": 0.75,
+            "_moveSpeedBuffMult": 1.25,
+            "_minPickupsCount": 1,
+            "_maxPickupsCount": 5,
+            "_pickupSpawnChanceRange": [
+                0.25,
+                0.75
+            ],
+            "_infestedPickupType": "",
+            "_entratiPickupType": "",
+            "_pickupType": "/Lotus/Types/Items/Deimos/EntratiWyrmBloodPickup",
+            "_hudDisruptionTimeTick": 1,
+            "_hudNormalTimeTick": 5,
+            "_forceFaction": "",
+            "_isDebugMode": 0
+        },
+        "MaterialFade": [
+            {
+                "Parameter": "UnlitAtten",
+                "TimeLength": 0.3,
+                "Multiplier": 1,
+                "FadeRange": [
+                    1,
+                    1
+                ],
+                "FadeCurve": {
+                    "Values": [],
+                    "SplineType": "LINEAR_SPLINE"
+                },
+                "BaseValue": 0,
+                "Delay": 0,
+                "DestroyWhenComplete": 0,
+                "IsDissolve": 1,
+                "IsMeshScale": 0,
+                "IsRepeating": 0
+            }
+        ],
+        "TriggeredFadeChild": {
+            "Attach": 0,
+            "DestroyWithOwner": 0
+        }
+    }
+}

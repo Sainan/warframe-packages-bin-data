@@ -1,0 +1,299 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 1,
+                "value": {
+                    "type": "Selector"
+                }
+            },
+            {
+                "key": 2,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 3,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 4,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 5,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 6,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 7,
+                "value": {
+                    "type": "Action"
+                }
+            }
+        ],
+        "NodeProperties": {
+            "1": {
+                "links": []
+            },
+            "2": {
+                "Type": "/Lotus/Types/Behaviors/FlyReceiveMeleeAttackBehavior",
+                "FlyReceiveMeleeAttackBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AfterAttackTime": 1,
+                    "DamagePushBackSpeed": 10,
+                    "VerticalFactor": 0.5,
+                    "ValidProcs": [],
+                    "MeleeHitManeuverCooldown": [
+                        5,
+                        6
+                    ],
+                    "MeleeHitManeuverProbability": 0.3
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 2,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 1,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "3": {
+                "Type": "/EE/Types/Npc/BlockingBehavior",
+                "BlockingBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "ChanceToShootWhileHeld": 0,
+                    "UseShootingController": 1,
+                    "CanDisarmOnGrab": 0,
+                    "BlockOnBeingAttached": 0,
+                    "BlindFireTime": [
+                        0.2,
+                        0.8
+                    ]
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 3,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 1,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "4": {
+                "Type": "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "WaitForSpawnAnimationBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 4,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 1,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "5": {
+                "Type": "/Lotus/Types/Behaviors/DropshipFlyToOrderTargetBehavior",
+                "DropshipFlyToOrderTargetBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "SpaceMode": 1,
+                    "SlowDownDistance": 0,
+                    "CloseToDestinationDistance": 6,
+                    "DistanceFromLeaveTargetForCleanupScript": 30,
+                    "SpeedMultiplier": 1,
+                    "OrderSymbolForDropTarget": "DropshipDrop",
+                    "OrderSymbolForExitTarget": "DropshipLeave",
+                    "CompleteEnteringOrderUponStop": 0,
+                    "AllowsEnemyTargetDuringDrop": 1,
+                    "AllowsEnemyTargetDuringExit": 1,
+                    "DelayBetweenConsecutiveDrops": [
+                        15,
+                        20
+                    ],
+                    "DelayAfterFinalDrop": [
+                        0,
+                        0
+                    ],
+                    "CorrectDestinationForSolidNodes": 1,
+                    "TurretDestructionEndsWaypointDelays": 0,
+                    "OutOfSightEscapeScriptDelay": -1,
+                    "DropOnTargetInSightDistance": 0,
+                    "WipeIrrelevantOrders": 1,
+                    "FaceInitialPathTargetOnStart": 0,
+                    "LandingZoneSearchRadius": 120,
+                    "DropAtDestination": 1,
+                    "DoTacPosRefining": 1
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 5,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 1,
+                            "prop": 5
+                        }
+                    }
+                ]
+            },
+            "6": {
+                "Type": "/Lotus/Types/Behaviors/FlyEscapeWhenTooFarBehavior",
+                "FlyEscapeWhenTooFarBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "DistanceFromAllPlayersForEscape": 240,
+                    "MinAgentAgeInSeconds": 10,
+                    "TimeBeforeDisappearing": 0,
+                    "EscapeAngleY": 30,
+                    "AllowedMoveError": 16,
+                    "SpeedMultiplier": 1,
+                    "OnEscapeScript": {
+                        "Script": "/Lotus/Types/Enemies/Corpus/Dropship/DropshipActions.lua",
+                        "Function": "DropshipExit",
+                        "_spawnEffect": "",
+                        "_exitEffect": "/Lotus/Fx/Enemies/Corpus/DropShip/DropVenusShipExit",
+                        "_dropshipPatrolRoute": "",
+                        "_hunterShipOverwatchVolumePair": [],
+                        "_hunterShipOverwatchWaypointPair": [],
+                        "_nonEventAmbulasSpawnChance": 0.5,
+                        "_nonEventAmbulasAreasIdx": [
+                            8
+                        ],
+                        "_ambulasPerAppearanceLevelIncrementMin": 3,
+                        "_ambulasPerAppearanceLevelIncrementMax": 5,
+                        "_ambulasWeakType": "/Lotus/Types/Enemies/Corpus/Vip/Ambulas/BossAmbulasRangedAgent",
+                        "_ambulasEventTransmissionSet": "",
+                        "_ambulasKilledPlayerTransmissionRange": 50,
+                        "_ambulasKilledPlayerTransmissionDelay": 5,
+                        "_ambulasHackedFx": "",
+                        "_spawnOverrideAgentCountMin": 3,
+                        "_spawnOverrideAgentCountMax": 6,
+                        "_spawnOverrideAgentType": "",
+                        "_hunterFarAwayScale": 0.1,
+                        "_hunterCloseByScale": 1,
+                        "_hunterResizeTime": 2.2,
+                        "_hunterShipShallReturn": 0,
+                        "_chanceToBeFighterTypeHunter": 0.4,
+                        "_hunterFighterFirstAttachToInstance": ""
+                    }
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 6,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 1,
+                            "prop": 6
+                        }
+                    }
+                ]
+            },
+            "7": {
+                "Type": "/EE/Types/Npc/WaitBehavior",
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 7,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 1,
+                            "prop": 7
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 1
+    }
+}

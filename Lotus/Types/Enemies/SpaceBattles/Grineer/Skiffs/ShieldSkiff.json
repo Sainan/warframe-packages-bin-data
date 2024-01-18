@@ -1,0 +1,423 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "ShieldSkiffAvatar",
+            "EXIMUS": "ShieldSkiffAvatarLeader"
+        },
+        "MinLevel": 20,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/SpaceWeapons/Grineer/LightMachineSkiffRifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "SuicideOffNavAndHidden": 0,
+        "AggroController:AggroEntryVisible": {
+            "IncreaseTimeLength": 4,
+            "DecayTimeLength": 2
+        },
+        "BehaviorDatabase": [
+            "/Lotus/Types/Behaviors/FlyReceiveMeleeAttackBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/FlyStormTargetOrderBehavior",
+            "/Lotus/Types/Behaviors/FlyStrafingRunBehavior",
+            "/Lotus/Types/Behaviors/FlySphereStrafeBehavior",
+            "/Lotus/Types/Behaviors/FlyAfterTargetBehavior",
+            "/Lotus/Types/Behaviors/FlyPatrolBehavior",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "FlyReceiveMeleeAttackBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "AfterAttackTime": 1,
+            "DamagePushBackSpeed": 10,
+            "VerticalFactor": 0.5,
+            "ValidProcs": [],
+            "MeleeHitManeuverCooldown": [
+                5,
+                6
+            ],
+            "MeleeHitManeuverProbability": 0.3
+        },
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ALWAYS",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 0,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "FlyStormTargetOrderBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceLastSeen": 5,
+            "MaxDistToTarget": 100,
+            "Order": "StormTarget",
+            "SuccessRadius": 1,
+            "DesiredPosture": "RUN",
+            "UseNearTargetPosture": 1,
+            "NearTargetPostureMissionType": "Territory",
+            "DesiredPostureNearTarget": "WALK",
+            "OnFailureReevalTime": 2,
+            "OnSuccessReevalTime": 10,
+            "TargetMovedRadius": 10
+        },
+        "FlyStrafingRunBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "MaxRange": 100,
+            "DefaultThrottle": 1,
+            "AttackRange": [
+                1,
+                40
+            ],
+            "IdealStartRunDistance": 40,
+            "MinStartRunDistance": 5,
+            "IdealStartViewCone": 30,
+            "IdealLateralDistance": 1,
+            "IdealDistanceToMoveDestination": 0.5,
+            "IdealFlyByDist": 4,
+            "IdealFlyPastDist": 20,
+            "LineUpRadius": 5,
+            "FlyByRadius": 5,
+            "RecoverRadius": 5,
+            "TimeSpentPerStageThreshold": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "MinTimeToSpendPerStage": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "RepathThreshold": [
+                2,
+                1,
+                10,
+                5
+            ],
+            "Postures": [
+                "RUN",
+                "JOG",
+                "JOG",
+                "RUN"
+            ],
+            "OneRunOnly": 1,
+            "TimeBetweenRuns": 10
+        },
+        "FlySphereStrafeBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "MaxRange": 45,
+            "DesiredRangeFromTarget": 25,
+            "DistToPositionThreshold": 1,
+            "DefaultThrottle": 3,
+            "ControlFiring": 1,
+            "AttackOnMove": 1,
+            "AttackRange": [
+                3,
+                50
+            ],
+            "AttackTime": [
+                1,
+                3
+            ],
+            "TimeBetweenAttacks": [
+                1,
+                2
+            ],
+            "HorizonalAngularSnap": 30,
+            "VerticalAngularSnap": 5,
+            "MaxVerticalAngle": 20,
+            "NumHoriztalSteps": 2,
+            "NumVerticalSteps": 1,
+            "StayInTargetVision": 1,
+            "AssumedTargetFov": 180,
+            "HoverTime": [
+                0.5,
+                2
+            ],
+            "MoveTimeout": 20,
+            "MoveInFrequency": 0.5,
+            "DesiredMoveInRange": 5,
+            "UsePathing": 1,
+            "MoveDiffThreshold": 3,
+            "RestrictHeight": 0,
+            "HeightRangeFromGround": [
+                25,
+                30
+            ],
+            "ContinuousReposition": 0,
+            "FailOnNonTerrainTargetZone": 0
+        },
+        "FlyAfterTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "RangeToEngage": [
+                5,
+                600
+            ],
+            "RepathThreshold": 1,
+            "DefaultThrottle": 3,
+            "FullThrust": 1,
+            "FullThrustDistance": 30,
+            "AttackWait": {
+                "WaitDuration": [
+                    1.5,
+                    3
+                ],
+                "AttackDuration": [
+                    1.5,
+                    3
+                ]
+            },
+            "CombatAttack": {
+                "AttackRange": [
+                    5,
+                    40
+                ]
+            },
+            "MoveFacingControl": "MFC_FACE_MOVEDIR",
+            "ShouldAccelerateWhileChasing": 0,
+            "ChaseSpeedMultiplier": 1,
+            "ChaseAccelerationDelay": 5,
+            "ShouldAdjustTurningAngle": 0,
+            "TurningAngleAdjustmentFrequency": 5,
+            "TurningAngleAdjustmentFactor": 20
+        },
+        "FlyPatrolBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DefaultThrottle": 0.75,
+            "WaypointRadius": 2,
+            "AutoAssignClosestPatrol": 1,
+            "SameZoneOnly": 1,
+            "CanRunIfHasTarget": 0,
+            "MovePosture": "WALK",
+            "SlowDownDistance": 0,
+            "SpeedMultiplier": 1,
+            "AutoPatrolRadius": 300,
+            "BackwardWeight": 3,
+            "StationaryThreshold": 10
+        },
+        "WaitBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOut": 0,
+            "CoverOnly": 0,
+            "AimPosture": 0,
+            "MinimalEnemyDistance": 0,
+            "TrackTarget": 0,
+            "TrackTargetNotVisible": 0,
+            "Peek": 0,
+            "FailOnDamaged": 1,
+            "PreventShooting": 0,
+            "StopMovingOnEnter": 0
+        },
+        "CustomShootBehavior": "/EE/Types/Npc/ScriptedShootBehavior",
+        "LocomotionController:Type": "/Lotus/Types/Game/DynamicSpaceFlightLocomotionController",
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderSpace"
+        ],
+        "LocomotionController:DynamicPathFinderSpace": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 0,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerSpace"
+        ],
+        "LocomotionController:DynamicPathFollowerSpace": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 1,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "ForceFaceForwardWhenInactive": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierAvoidance",
+                    "/EE/Types/Npc/LocomotionMoveModifierPID"
+                ],
+                "LocomotionMoveModifierAvoidance": {
+                    "AllowVerticalAvoidance": 1,
+                    "AvoidanceInputMultiplier": [
+                        1.2,
+                        1.2,
+                        0.8
+                    ],
+                    "PreserveVelocity": 0,
+                    "MinAvoidanceReducedVelocityPct": 0,
+                    "FlyerControlMode": 0,
+                    "AllowedObstacleCountForMaxSpeed": 30,
+                    "ObstacleCountForMinSpeed": 200,
+                    "ObstacleSlowdownScalingExponent": 1.8,
+                    "MinSpeedScalingFromObstacles": 0.25,
+                    "AvoidDynamicObstaclesOnly": 0
+                },
+                "LocomotionMoveModifierPID": {
+                    "PosKP": 1,
+                    "PosKI": 0,
+                    "PosKD": 0,
+                    "VelKP": 1,
+                    "VelKI": 0,
+                    "VelKD": 0.1,
+                    "ClampValue": 1,
+                    "PreserveVelocity": 0
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "coverBias": 3,
+            "maxHeight": 3,
+            "nearbyNavSearchRadius": 1,
+            "offNavToleranceRadius": 0,
+            "avoidanceExtraRange": 20,
+            "disallowedNodeFlags": 393
+        },
+        "LocomotionController:ImplicitActionAheadDistance": 0.5,
+        "AccuracyModsType": "/EE/Types/Npc/NpcArchwingAccuracyMods",
+        "ViewIdleFov": 90,
+        "IdleVerticalFov": 15,
+        "ViewIdleDistance": 90,
+        "ViewFov": 170,
+        "ViewDistance": 120,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "AwarenessDecayTime": 20,
+        "TargetLostTime": 10,
+        "TargetLowHealthPercent": 0.3,
+        "SuperAlertDecayTime": 20,
+        "ReactionControllerType": "/Lotus/Types/Enemies/Grineer/GrineerReactionControllerImpl",
+        "PerceiverType": "/Lotus/Types/Enemies/Grineer/GrineerPerceiver",
+        "SightReactionProbability": 0.8,
+        "CoverEvaluatorType": "/EE/Types/Npc/AdvancingCoverEvaluator",
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/RangedTargetEvaluator"
+    }
+}

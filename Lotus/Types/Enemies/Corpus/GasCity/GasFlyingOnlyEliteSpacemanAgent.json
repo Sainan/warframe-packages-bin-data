@@ -1,0 +1,272 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Venus/Heavies/VenusFlyingSpacemanAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/GasEliteFlyingSpacemanAvatar",
+            "EXIMUS": "Avatars/GasEliteFlyingSpacemanAvatarLeader"
+        },
+        "MinLevel": 15,
+        "MaxLevel": 9999,
+        "NewAdditionalInventory": [
+            {
+                "item": "Weapon/GasEliteShapeBlastShotgun",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Tenno/Grenades/NpcThrowGrenadeWeapon",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            }
+        ],
+        "JetpackSpacemanMovementBehavior": {
+            "AlwaysFly": 1,
+            "JetpackType": "Attachments/GasFlyingSpacemanJetPack"
+        },
+        "JetpackSpacemanInAirBehavior": {
+            "Actions": [
+                "/EE/Types/Npc/BlockingBehavior",
+                "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "/EE/Types/Npc/DroneRecoveryBehavior",
+                "/Lotus/Types/Behaviors/FlyStormTargetOrderBehavior",
+                "/EE/Types/Npc/FlyingAgentOffFlightNavBehavior",
+                "/Lotus/Types/Behaviors/SimpleShootBehavior",
+                "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+                "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+                "/EE/Types/Npc/PoiBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ],
+            "DroneRecoveryBehavior": {
+                "TimeOffNav": 8,
+                "FlyDescendToNavBehavior": {
+                    "UseLastGoodPosition": 1
+                }
+            },
+            "FlyingAgentOffFlightNavBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOffFlightNav": 5
+            },
+            "SimpleShootBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "AttackSegmentTime": [
+                    3,
+                    6
+                ],
+                "TimeBetweenAttacks": [
+                    3,
+                    5
+                ],
+                "AttackRange": [
+                    0,
+                    50
+                ],
+                "RequireAim": 1,
+                "StartAimAction": "",
+                "StopAimAction": "",
+                "AimHeadingOffset": 0,
+                "AimArc": 60,
+                "ExitIfCannotShoot": 1,
+                "UseAltFire": 0,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_1",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_PLAY_EQUIP_ANIM"
+            },
+            "TacPosIdealDistanceBehavior": {
+                "IdealDistance": [
+                    5,
+                    35
+                ],
+                "GenerateFromTarget": 0,
+                "ScoreDistanceFromTarget": 0,
+                "DistanceFromSelfRange": [
+                    10,
+                    50
+                ],
+                "OnlyFindPositionsOnFlightNav": 1,
+                "WantTargetVisible": 0,
+                "AimWhileMoving": 1,
+                "ShootingDistance": 15.401785
+            },
+            "MoveTowardsTacEnemyInfluence": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "StopRadius": 0.1,
+                "NearDistance": 1,
+                "SpeedMultiplier": 1,
+                "AlertSpeedMultiplier": 1,
+                "AimWhenIdle": 0,
+                "AimWhenAlert": 1,
+                "PermanentAlert": 0,
+                "EnemyFaction": "TENNO",
+                "TimeSinceLastSeen": 5,
+                "NoCoverAfterExitTime": 5,
+                "MustBeFurtherFromObjective": 1,
+                "DistAheadToAdvance": 50,
+                "MinAwareness": "AW_IDLE",
+                "AlertMovementPosture": "JOG",
+                "DefaultMovementPosture": "WALK",
+                "PauseTime": [
+                    3,
+                    5
+                ],
+                "DesiredTacAreaScore": 8,
+                "OnlyIfLevelAlert": 0,
+                "UseLastSeenByTeam": 1,
+                "LimitToCurrentRoom": 0,
+                "OnlyFindPositionsOnFlightNav": 1
+            },
+            "PoiBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "PoiSearchRadius": 100,
+                "MinPlayerDist": 9,
+                "MinPlayerFov": 180,
+                "NearDistance": 1,
+                "PoiWhitelist": [
+                    "JetpackerPointAir"
+                ],
+                "StopWhenAlerted": 1,
+                "CantHaltOnceArrived": 0
+            },
+            "GuardTactic": {
+                "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
+                "RandomWalkBehavior:DefaultReevaluationDelay": 0,
+                "RandomWalkBehavior:StopRadius": 2,
+                "RandomWalkBehavior:NearDistance": 4,
+                "RandomWalkBehavior:SpeedMultiplier": 1,
+                "RandomWalkBehavior:AlertSpeedMultiplier": 1,
+                "RandomWalkBehavior:AllowTarget": 0,
+                "RandomWalkBehavior:AimWhenIdle": 0,
+                "RandomWalkBehavior:AimWhenAlert": 1,
+                "RandomWalkBehavior:PermanentAlert": 0,
+                "RandomWalkBehavior:ForceIdleForSinglePointPatrols": 1,
+                "RandomWalkBehavior:AnimAction": "PatrolIdle",
+                "RandomWalkBehavior:GenericAnims": [],
+                "RandomWalkBehavior:MinPlayerDist": [
+                    0,
+                    0
+                ],
+                "RandomWalkBehavior:MinPlayerFov": 60,
+                "RandomWalkBehavior:PauseTime": [
+                    3,
+                    5
+                ],
+                "RandomWalkBehavior:TimeBetweenPauses": [
+                    15,
+                    25
+                ],
+                "RandomWalkBehavior:ReevaluationDelayOnAbortedMove": 5,
+                "RandomWalkBehavior:PlayPhrase": 1,
+                "RandomWalkBehavior:Bark": "IDLE",
+                "RandomWalkBehavior:BarkFilter": "",
+                "RandomWalkBehavior:BarkInterval": [
+                    0,
+                    0
+                ],
+                "RandomWalkBehavior:StartUpDelay": [
+                    0,
+                    0
+                ],
+                "RandomWalkBehavior:UseWasAlert": 0,
+                "RandomWalkBehavior:ScanLength": 2,
+                "RandomWalkBehavior:MovementPosture": "WALK",
+                "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
+                "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
+                "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
+                    "Script": ""
+                },
+                "RandomWalkBehavior:TeammateBarkBehavior:OnDamagedScript": {
+                    "Script": ""
+                },
+                "RandomWalkBehavior:TeammateBarkBehavior:DefaultReevaluationDelay": 0,
+                "RandomWalkBehavior:TeammateBarkBehavior:StopForTeammateDuration": [
+                    3,
+                    6
+                ],
+                "RandomWalkBehavior:TeammateBarkBehavior:DontStopForTeammateDuration": 30,
+                "RandomWalkBehavior:TeammateBarkBehavior:PostFailureEvaluationDelay": [
+                    3,
+                    3
+                ],
+                "RandomWalkBehavior:TeammateBarkBehavior:AllowableTeammateAngle": 90,
+                "RandomWalkBehavior:TeammateBarkBehavior:TeammateSearchDistance": 5,
+                "RandomWalkBehavior:TeammateBarkBehavior:TeammateBark": "IDLE",
+                "RandomWalkBehavior:TeammateBarkBehavior:TeammateBarkFilter": "",
+                "RandomWalkBehavior:UseDefenseVolume": 0,
+                "RandomWalkBehavior:EvaluateMoveScript": {
+                    "Script": ""
+                },
+                "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 1,
+                "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0
+            }
+        },
+        "JetpackSpacemanOnGroundBehavior": {
+            "Actions": [
+                "/EE/Types/Npc/BlockingBehavior",
+                "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "/EE/Types/Npc/InterruptResponseBehavior",
+                "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+                "/EE/Types/Npc/StormTargetOrderBehavior",
+                "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+                "/EE/Types/Npc/MeleeTactic",
+                "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+                "/EE/Types/Npc/UseGrenadeBehavior",
+                "/EE/Types/Npc/AttackFromTheOpenBehavior",
+                "/EE/Types/Npc/CustomResponseBehavior",
+                "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+                "/EE/Types/Npc/InvestigateBehavior",
+                "/EE/Types/Npc/PoiBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ],
+            "PoiBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "PoiSearchRadius": 250,
+                "MinPlayerDist": 9,
+                "MinPlayerFov": 180,
+                "NearDistance": 1,
+                "PoiWhitelist": [
+                    "JetpackerPointGround"
+                ],
+                "StopWhenAlerted": 1,
+                "CantHaltOnceArrived": 0
+            },
+            "GuardTactic": {
+                "RandomWalkBehavior:Type": "/EE/Types/Npc/Action"
+            }
+        }
+    }
+}

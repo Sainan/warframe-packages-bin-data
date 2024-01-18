@@ -1,0 +1,63 @@
+{
+    "parent": "/Lotus/Upgrades/Boons/BaseBoon",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Boons/CorruptedArmorForShotDamageName",
+        "Icon": "/Lotus/Interface/Icons/DrifterBoons/DrifterBoonIcon76.png",
+        "Upgrades": [
+            {
+                "UpgradeType": "AVATAR_ARMOUR",
+                "OperationType": "MULTIPLY",
+                "Value": 0.5,
+                "DamageType": "DT_ANY",
+                "AutoType": 0,
+                "ValidType": "",
+                "SymbolFilter": "",
+                "UpgradeObject": "",
+                "ValidPostures": [],
+                "ValidModifiers": [],
+                "ValidProcTypes": [],
+                "OverrideLocalization": 1,
+                "LocTag": "/Lotus/Language/Boons/CorruptedArmorForShotDamageDesc",
+                "LocKeyWordScript": {
+                    "Script": "StatIncreasePerArmorPercentage.lua",
+                    "Function": "GetDescription",
+                    "_armorMultiplier": 0.05,
+                    "_statUpgradeTypes": [
+                        "WEAPON_DAMAGE_AMOUNT"
+                    ],
+                    "_operationType": "STACKING_MULTIPLY",
+                    "_validType": "",
+                    "_armorDecreaseMultiplier": 0.5
+                },
+                "SmallerIsBetter": 0,
+                "RoundTo": 0.1,
+                "RoundingMode": "RM_ROUND"
+            }
+        ],
+        "FusionLimit": "QA_NONE",
+        "Script": {
+            "Script": "StatIncreasePerArmorPercentage.lua",
+            "Function": "ApplyUpgrade",
+            "_armorMultiplier": 0.05,
+            "_statUpgradeTypes": [
+                "WEAPON_DAMAGE_AMOUNT"
+            ],
+            "_operationType": "ADD_BASE",
+            "_validType": "/Lotus/Weapons/Tenno/LotusBulletWeapon",
+            "_armorDecreaseMultiplier": 0.5
+        },
+        "UnappliedScript": {
+            "Script": "StatIncreasePerArmorPercentage.lua",
+            "Function": "RemoveUpgrade",
+            "_armorMultiplier": 1,
+            "_statUpgradeTypes": [
+                "WEAPON_DAMAGE_AMOUNT"
+            ],
+            "_operationType": "ADD_BASE",
+            "_validType": "/Lotus/Weapons/Tenno/LotusBulletWeapon",
+            "_armorDecreaseMultiplier": 0.5
+        },
+        "HudBuffIcon": "/Lotus/Interface/Icons/ModBuffIndicators/DrifterBoons/DrifterBoonIcon76Buff.png",
+        "UseDebuffIcon": 1
+    }
+}

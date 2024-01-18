@@ -1,0 +1,114 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/GrineerMarineRifle",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "OrokinHeavyFemaleAvatar",
+            "EXIMUS": "OrokinHeavyFemaleLeaderAvatar"
+        },
+        "MinLevel": 8,
+        "BaseLevel": 8,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Rifle/HeavyRifleAI",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/NpcRadialBlastSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "ShouldIgnoreGCS": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/MeleeTactic",
+            "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+            "/EE/Types/Npc/AttackFromCoverTactic",
+            "/EE/Types/Npc/UseGrenadeBehavior",
+            "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "InterruptResponseBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Responses": [
+                {
+                    "reaction": "ABOUT_TO_ENGAGE",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 1,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "/Lotus/Animations/Grineer/Movement/Point01Short",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 20,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                }
+            ],
+            "BlockingResponse": 1
+        },
+        "AttackFromCoverTactic": {
+            "ControlledShootBehavior": {
+                "AttackSegmentTime": [
+                    8,
+                    12
+                ],
+                "WaitSegmentTime": [
+                    3,
+                    5
+                ]
+            }
+        },
+        "AttackFromTheOpenBehavior": {
+            "ShootTime": [
+                8,
+                12
+            ],
+            "WaitTime": [
+                3,
+                5
+            ],
+            "CrouchDuringShootChance": 0
+        },
+        "BaseHitChance": [
+            0.4,
+            1
+        ],
+        "IsCoverUseEnabled": 0
+    }
+}

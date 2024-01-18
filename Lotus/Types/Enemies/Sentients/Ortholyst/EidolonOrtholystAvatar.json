@@ -1,0 +1,137 @@
+{
+    "parent": "SentientOrtholystAvatar",
+    "data": {
+        "OverrideMaterial": [
+            "/Lotus/Characters/Sentient/Ortholyst/OrtholystDamaged"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "ATT_L1_MIMICWEAPON",
+                "Type": "/Lotus/Characters/Sentient/Mimic/MimicWeaponLDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "ATT_R1_MIMICWEAPON",
+                "Type": "/Lotus/Characters/Sentient/Mimic/MimicWeaponRDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Sentients/Vomvalyst/VomvalystGlow",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "OnPreDeathScript": {
+            "_attachmantDestroyedOnPredeath": ""
+        },
+        "ParticleEvents": [
+            {
+                "EventName": "FXEnableGroundCaster",
+                "ParticleSys": "/Lotus/Fx/Enemies/Sentients/SentientLevitationFXEidolon",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_SPINE2",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "ScriptEvents": [
+            {
+                "EventName": "FXDisableGroundCaster",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Scripts/Effects/AttachFX.lua",
+                    "Function": "KillAttachedOnSelf",
+                    "_typeToKill": "/Lotus/Fx/Enemies/Sentients/SentientLevitationFXEidolon",
+                    "_typesToKill": [],
+                    "_typeToAttach": "",
+                    "_attachToThis": "",
+                    "_attachToArray": [],
+                    "_isAttachedToThis": "",
+                    "_isAttachedToThisArray": [],
+                    "_attachPos": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "_attachRot": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "_delay": 0,
+                    "_attachmentType": "/Lotus/Fx/Enemies/Sentients/Ortholyst/OrtholystGroundDust",
+                    "_isEnable": 0,
+                    "_bone": "",
+                    "_newMesh": "",
+                    "_masterOnly": 1,
+                    "_stopSpewing": 0,
+                    "_destrySelfIfNotLocal": 0,
+                    "_beamAttachBones": [],
+                    "_beamEndBones": []
+                }
+            }
+        ]
+    }
+}

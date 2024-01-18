@@ -1,0 +1,111 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Tenno/Odalisk/OdaliskBody_skel.fbx",
+        "MeshScale": 1.1,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Characters/Tenno/Odalisk/OdaliskHelmetDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/Lotus/Types/Friendly/Rescue/RescueWalk",
+        "Tag": "ProteaSpecter",
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/Quests/ProteaQuestSpecter.lua",
+            "Function": "ProteaSpecterEnemySetup",
+            "_burstFx": "",
+            "_deathFx": ""
+        },
+        "EyeOffset": [
+            0,
+            1.75,
+            0
+        ],
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Corpus",
+        "LocTag": "/Lotus/Language/DeadlockProtocol/ProteaQuestBossName",
+        "ShortDesc": "/Lotus/Language/DeadlockProtocol/ProteaQuestBossDesc",
+        "Icon": "/Lotus/Interface/Icons/StoreIcons/Warframes/Odalisk.png",
+        "MaxHealth": 70,
+        "BlockInputInCameraSpot": 1,
+        "AnimControllerType": "OdaliskQuestSpecterAnimController",
+        "CameraControllerType": "/Lotus/Types/Player/CameraController",
+        "ClimbControllerType": "/Lotus/Types/Player/TennoClimbController",
+        "WallSlideControllerType": "/Lotus/Types/Player/TennoWallSlideController",
+        "DamageControllerType": "OdaliskQuestSpecterScaledDamageController",
+        "GameActionControllerType": "/Lotus/Types/Player/TennoGameActionController",
+        "InputControllerType": "/Lotus/Types/Player/InputController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/TennoReplicants/SpectreInventoryController",
+        "MotionControllerType": "/Lotus/Types/Player/TennoMotion",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "BoneName": "GAME_C1_HIP1"
+        },
+        "CollisionProxy": {
+            "BoneName": "GAME_C1_HIP1",
+            "Type": "/EE/Types/Physics/FullBodyCollision"
+        },
+        "CreditsOwningPlayerAvatarForDamage": 0,
+        "OnPreDeathScript": {
+            "Script": "/Lotus/Scripts/Quests/ProteaQuestSpecter.lua",
+            "Function": "OnPreDeath",
+            "_burstFx": "/Lotus/Fx/PowersuitAbilities/Odalisk/AnchorEndBurstOdaliskQuestSpecter",
+            "_deathFx": "/Lotus/Fx/Quests/Protea/ProteaDeathPause"
+        },
+        "ScriptEvents": [
+            {
+                "EventName": "StartDodge",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Scripts/Quests/ProteaQuestSpecter.lua",
+                    "Function": "OnStartDodge",
+                    "_burstFx": "",
+                    "_deathFx": ""
+                }
+            },
+            {
+                "EventName": "StopDodge",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Scripts/Quests/ProteaQuestSpecter.lua",
+                    "Function": "OnStopDodge",
+                    "_burstFx": "",
+                    "_deathFx": ""
+                }
+            }
+        ],
+        "KillXPReward": 1500,
+        "ExcludedFromSimulacrum": 1,
+        "CodexScansRequiredOverride": 1,
+        "PlayerAvatarType": 1,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataBoss",
+        "DisarmAction": "DA_DAMAGE_ONLY",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HumanoidReactionAnims"
+    }
+}

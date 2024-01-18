@@ -1,0 +1,80 @@
+{
+    "parent": "CorpusChampionBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "CorpusChampionHyenaBaseAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "ChampionWeapons/CorpusChampionZanukaHunterRifle",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "ActiveDodgeBehavior": {
+            "UseDirectionalActions": 0,
+            "Action": "DodgeJump",
+            "UseTacPosMgr": 1,
+            "IdealJumpDist": [
+                4,
+                6
+            ],
+            "MaxJumpDist": 150,
+            "ShouldFaceTarget": 0,
+            "GeneratePointsDistance": [
+                3,
+                8
+            ],
+            "ScoreDistToTarget": 0,
+            "ScoreDistanceResponseCurve": {
+                "m": 10,
+                "k": 1,
+                "b": 0
+            },
+            "ScoreDirectionFromTarget": {
+                "m": -3,
+                "k": 2,
+                "b": 1,
+                "logistic": 0
+            },
+            "WallJumpLeftAction": "WallDodgeLeft",
+            "WallJumpRightAction": "WallDodgeRight"
+        },
+        "ChangeToPrimaryWeaponDecoratorBehavior": {
+            "Action:GenericBehaviorSelector": {
+                "ShootingDecoratorBehavior": {
+                    "LookAtTarget": 1,
+                    "LookHorizRate": 360,
+                    "LookVertRate": 90,
+                    "Action:GenericBehaviorSelector": {
+                        "CtfOrderAttackerBehaviorSelector": {
+                            "Actions": [
+                                "/EE/Types/Npc/PostureChangingBehaviorSelector",
+                                "/EE/Types/Npc/EngageTargetTactic",
+                                "/EE/Types/Npc/PursueTargetBehavior",
+                                "/Lotus/Types/Behaviors/CtfSearchTacAreaMapForPriorityBehavior",
+                                "/EE/Types/Npc/SearchTacAreaMapForTargetsBehavior"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierVipDodgeJumpBackToNav"
+                ],
+                "LocomotionMoveModifierVipDodgeJumpBackToNav": {
+                    "DodgeJumpSymbol": "DodgeJump",
+                    "OffNavTimeRequired": 2,
+                    "TotallyStuckTimeRequired": 4,
+                    "SkipPathOnStuck": 0,
+                    "MinTimeSinceLastSeenRequired": 0,
+                    "SkipFallingOrLaunchingAvatars": 1,
+                    "DistanceToInstantTeleport": 100
+                }
+            }
+        ]
+    }
+}

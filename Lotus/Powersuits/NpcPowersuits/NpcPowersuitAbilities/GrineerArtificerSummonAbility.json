@@ -1,0 +1,58 @@
+{
+    "parent": "NpcAbility",
+    "data": {
+        "Script": {
+            "Script": "QuadRobotSpawnDronesAbility.lua",
+            "Function": "ActivateAbility",
+            "_spawnFx": "/Lotus/Fx/Enemies/Grineer/Manic/ManicGrineerTeleportSmokeArtificerSentinel",
+            "_respawnDelay": 10,
+            "_desiredMaxEnemies": 3,
+            "_minEnemyCount": 1,
+            "_droneAgentType": "/Lotus/Types/Enemies/Grineer/SpecialEvents/ArtificerSuicideDroneAgent",
+            "_droneAvatarType": "",
+            "_spawnDroneAgentType": [],
+            "_droneTeam": "ArtificerTeam",
+            "_minRange": 1,
+            "_maxRange": 3,
+            "_minHeight": 1,
+            "_maxHeight": 2,
+            "_parentRankMin": 0.5,
+            "_parentRankMax": 0.8,
+            "_maxDroneSearchRange": 100,
+            "_droneIgnoredByAiDir": 0,
+            "_useInstigatorTarget": 1,
+            "_setScriptTarget": 0,
+            "_pairDroneWithTarget": 0,
+            "_scaleEnemyCountWithPlayerCount": 1,
+            "_useInstigatorAwareness": 0,
+            "_rampUpCooldown": 0,
+            "_onSpawnAnim": "/Lotus/Animations/Grineer/KubrowHandler/SendDog_anim.fbx",
+            "_onSpawnSound": "",
+            "_onSpawnEvent": "SFXKubrowHandlerCall",
+            "_onAttackAnim": "",
+            "_onAttackSound": ""
+        },
+        "CooldownDuration": 1,
+        "ActivationXP": 0,
+        "EvaluateScript": 0,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/BlackboardVarEvaluator",
+            "/Lotus/Types/Game/AbilityEvaluators/FindAvatarsEvaluator"
+        ],
+        "Evaluator:BlackboardVarEvaluator": {
+            "VarName": "DroneDeathTime",
+            "Var": "LastChargeAbilityTime",
+            "Value": 10,
+            "Check": "VC_LAST_TIME_GREATER",
+            "Team": 1
+        },
+        "Evaluator:FindAvatarsEvaluator": {
+            "AvatarType": "/Lotus/Types/Enemies/Grineer/AIWeek/Avatars/CombatKubrowAvatar",
+            "SearchRange": [
+                0,
+                100
+            ],
+            "MinCount": 2
+        }
+    }
+}

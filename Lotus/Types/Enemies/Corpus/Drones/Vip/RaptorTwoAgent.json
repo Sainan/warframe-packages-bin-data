@@ -1,0 +1,563 @@
+{
+    "parent": "/Lotus/Types/Enemies/EnemyAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "RaptorTwoAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/RaptorTwoSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "RaptorTwoRifle",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "TransmissionScript": {
+            "Script": "/Lotus/Scripts/NPC/RaptorTransmissions.lua",
+            "Function": "Run",
+            "_introTransmissions": [
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorEnroute02Lotus",
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorEnroute01Lotus",
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorEnroute05Lotus",
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorEnroute04Lotus",
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorEnroute03Lotus"
+            ],
+            "_hintTransmissions": [
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorHintCoreDropped01Lotus",
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorHintCoreDropped02Lotus",
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorHintCoreDropped03Lotus"
+            ],
+            "_hintTimes": [
+                120,
+                240,
+                360
+            ],
+            "_combatTransmissions": [
+                "/Lotus/Sounds/Dialog/Taunts/Corpus/RaptorInCombatTaunt"
+            ],
+            "_genDestroyedTransmissions": [
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorVentDestroyed01Lotus",
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorVentDestroyed02Lotus",
+                "/Lotus/Sounds/Dialog/RaptorBoss/DRaptorVictoryLotus"
+            ],
+            "_minCombatTransDelay": 45,
+            "_maxCombatTransDelay": 60,
+            "_minDistToTarget": 225,
+            "_playCombatTaunts": 1,
+            "_waitForCombatTaunt": 0,
+            "_delayForCombatTaunt": 5,
+            "_targetNumTransmission": 4
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/DroneDodgeBehavior",
+            "/Lotus/Types/Behaviors/HoverAttackBehavior",
+            "/Lotus/Types/Behaviors/HoverNearTargetInControlZonesBehavior",
+            "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ALWAYS",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 1,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "DroneDodgeBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "UseDirectionalActions": 0,
+            "DirectionalActions:STATIONARY": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:FORWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:BACKWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:LEFT": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:RIGHT": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:STOPPING": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:UPWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:DOWNWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "FullBodyAction": "FBA_NONE",
+            "Action": "DodgeJump",
+            "UseTacPosMgr": 0,
+            "IdealJumpDist": [
+                6,
+                10
+            ],
+            "MaxJumpDist": 12,
+            "ShouldFaceTarget": 0,
+            "GeneratePointsAroundTarget": 0,
+            "GeneratePointsDistance": [
+                5,
+                10
+            ],
+            "GenerateSpacing": 2,
+            "MinDistanceToNavEdge": 0,
+            "PreventDodgeOnAnimBlocked": 0,
+            "DoTacVisTrace": 1,
+            "DoGeoRaycast": 0,
+            "StaticShapesOnly": 1,
+            "TacVisToTarget": 1,
+            "ScoreDistToTarget": 1,
+            "ScoreDistanceResponseCurve": {
+                "m": -3,
+                "k": 2,
+                "b": 1,
+                "c": 0.5,
+                "logistic": 0
+            },
+            "ScoreDirectionFromTarget": {
+                "m": 10,
+                "k": 1,
+                "b": 0,
+                "c": 0.5,
+                "logistic": 1
+            },
+            "DoTargetViewScore": 0,
+            "ScoreDirectionFromTargetView": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 1,
+                "logistic": 0
+            },
+            "NumResults": 1,
+            "TimeBetweenDodges": 2,
+            "MinimumDodgeDistance": 3
+        },
+        "HoverAttackBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "FireDuration": [
+                3,
+                4
+            ],
+            "WaitDuration": [
+                2,
+                3
+            ],
+            "CheckTargetVisible": 1,
+            "BaitType": "",
+            "MaxBaitRadius": 1000,
+            "FaceTarget": 1,
+            "StopMovingOnShoot": 0
+        },
+        "HoverNearTargetInControlZonesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "CloseToDestPos": 2,
+            "TimeBetweenMoves": [
+                2,
+                2
+            ],
+            "DesiredHeightFromTarget": [
+                3,
+                6
+            ],
+            "DesiredDistanceFromTarget": [
+                6,
+                12
+            ],
+            "StrafeDistance": [
+                0,
+                0
+            ],
+            "UseClosestNeighbourControlZone": 1,
+            "NeighbourWeight": 1.5,
+            "MaxStuckTime": 1
+        },
+        "HoverNearTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TargetDistance": [
+                3,
+                10
+            ],
+            "StrafeDistance": 5,
+            "VerticalDistance": 5,
+            "VerticalDistanceVariance": [
+                0,
+                0
+            ],
+            "ReachedLocationTolerance": 5,
+            "WaitDuration": [
+                1,
+                2
+            ],
+            "RecheckInterval": 2,
+            "MinMovementDistance": 10,
+            "AlwaysUpdateEvasion": 0,
+            "ControlFacing": "MFC_NONE",
+            "BoostFacing": "MFC_NONE",
+            "BoostPosture": "WALK",
+            "SpeedBoostMultiplier": 1,
+            "BoostRange": 15,
+            "BoostToTarget": 0,
+            "ExitAfterWait": 0,
+            "AdjustDestinationHeight": 0
+        },
+        "InvestigateBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ShouldAim": 0,
+            "MaxInvestigateDistance": 55,
+            "NearDestinationRadius": 6,
+            "SpeedMultiplier": 1,
+            "FastSpeedMultiplier": 1,
+            "VisInterval": 0.5,
+            "LookAroundTime": 3,
+            "NumLookAroundDirections": 2,
+            "TeamCoordination": 0,
+            "UseFlare": 0,
+            "CheckThreatFaction": 0,
+            "AllowRun": 1,
+            "RunTowardsNewTargets": 0,
+            "KnowInstigatorPosAtStart": 0,
+            "reactionsToInvestigate": [],
+            "MinAwareness": "AW_ALERT",
+            "minimumTargetInterest": "Investigate",
+            "ReportAttackOnDamage": 1
+        },
+        "GuardTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "LookAtNearbyTeammates": 1,
+            "LookAtNearbyPlayer": 0,
+            "LookAtTarget": 1,
+            "NearbyTeammatesThreshold": 10,
+            "PlayerBias": 0.6,
+            "ReportAttackOnDamage": 1,
+            "PatrolBehavior:Type": "/EE/Types/Npc/PatrolBehavior",
+            "PatrolBehavior:Enabled": 1,
+            "PatrolBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "PatrolBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "PatrolBehavior:DefaultReevaluationDelay": 0,
+            "PatrolBehavior:StopRadius": 1,
+            "PatrolBehavior:NearDistance": 2,
+            "PatrolBehavior:SpeedMultiplier": 1,
+            "PatrolBehavior:AlertSpeedMultiplier": 1,
+            "PatrolBehavior:FailOnTargetAcquired": 1,
+            "PatrolBehavior:AimWhenIdle": 0,
+            "PatrolBehavior:AimWhenAlert": 0,
+            "PatrolBehavior:PermanentAlert": 0,
+            "PatrolBehavior:ForceIdleForSinglePointPatrols": 1,
+            "PatrolBehavior:GenericAnims": [],
+            "PatrolBehavior:MinPlayerDist": [
+                0,
+                0
+            ],
+            "PatrolBehavior:MinPlayerFov": 60,
+            "PatrolBehavior:AutoAssignClosestPatrol": 0,
+            "PatrolBehavior:SameZoneOnly": 1,
+            "PatrolBehavior:AutoPatrolRadius": 30,
+            "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
+            "RandomWalkBehavior:Enabled": 1,
+            "RandomWalkBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:DefaultReevaluationDelay": 0,
+            "RandomWalkBehavior:StopRadius": 2,
+            "RandomWalkBehavior:NearDistance": 4,
+            "RandomWalkBehavior:SpeedMultiplier": 0.25,
+            "RandomWalkBehavior:AlertSpeedMultiplier": 1,
+            "RandomWalkBehavior:AllowTarget": 0,
+            "RandomWalkBehavior:AimWhenIdle": 0,
+            "RandomWalkBehavior:AimWhenAlert": 1,
+            "RandomWalkBehavior:PermanentAlert": 0,
+            "RandomWalkBehavior:ForceIdleForSinglePointPatrols": 1,
+            "RandomWalkBehavior:AnimAction": "PatrolIdle",
+            "RandomWalkBehavior:GenericAnims": [],
+            "RandomWalkBehavior:MinPlayerDist": [
+                0,
+                0
+            ],
+            "RandomWalkBehavior:MinPlayerFov": 60,
+            "RandomWalkBehavior:PauseTime": [
+                3,
+                5
+            ],
+            "RandomWalkBehavior:TimeBetweenPauses": [
+                15,
+                25
+            ],
+            "RandomWalkBehavior:ReevaluationDelayOnAbortedMove": 5,
+            "RandomWalkBehavior:PlayPhrase": 1,
+            "RandomWalkBehavior:Bark": "IDLE",
+            "RandomWalkBehavior:BarkFilter": "",
+            "RandomWalkBehavior:BarkInterval": [
+                0,
+                0
+            ],
+            "RandomWalkBehavior:StartUpDelay": [
+                0,
+                0
+            ],
+            "RandomWalkBehavior:UseWasAlert": 0,
+            "RandomWalkBehavior:ScanLength": 2,
+            "RandomWalkBehavior:MovementPosture": "WALK",
+            "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
+            "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
+            "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:TeammateBarkBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:TeammateBarkBehavior:DefaultReevaluationDelay": 0,
+            "RandomWalkBehavior:TeammateBarkBehavior:StopForTeammateDuration": [
+                3,
+                6
+            ],
+            "RandomWalkBehavior:TeammateBarkBehavior:DontStopForTeammateDuration": 30,
+            "RandomWalkBehavior:TeammateBarkBehavior:PostFailureEvaluationDelay": [
+                3,
+                3
+            ],
+            "RandomWalkBehavior:TeammateBarkBehavior:AllowableTeammateAngle": 90,
+            "RandomWalkBehavior:TeammateBarkBehavior:TeammateSearchDistance": 5,
+            "RandomWalkBehavior:TeammateBarkBehavior:TeammateBark": "IDLE",
+            "RandomWalkBehavior:TeammateBarkBehavior:TeammateBarkFilter": "",
+            "RandomWalkBehavior:UseDefenseVolume": 0,
+            "RandomWalkBehavior:EvaluateMoveScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
+            "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
+            "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
+            "GuardBehavior:Enabled": 1,
+            "GuardBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "GuardBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "GuardBehavior:DefaultReevaluationDelay": 0,
+            "GuardBehavior:WaitAction:Type": "/EE/Types/Npc/WaitAction",
+            "GuardBehavior:WaitAction:Enabled": 1,
+            "GuardBehavior:WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "GuardBehavior:WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "GuardBehavior:RandomFacingChange": [
+                0,
+                0
+            ],
+            "GuardBehavior:MinHeadingChangeToTurn": 0
+        },
+        "LocomotionController:Type": "/EE/Types/Npc/DynamicLocomotionControllerHover",
+        "LocomotionController:DynamicPathFinderGround": {
+            "UseCover": 0
+        },
+        "LocomotionController:PathFollower": [
+            "/EE/Types/Npc/DynamicPathFollowerHover"
+        ],
+        "LocomotionController:DynamicPathFollowerHover": {
+            "MoveFailureTime": 0.4,
+            "MoveFailureThreshold": 0.9,
+            "LockedInPlaceTimeout": 5,
+            "KeepPathWhileBlocking": 0,
+            "MinimumMoveDistance": 0.1,
+            "MinimumRunDistance": 0,
+            "ShortDistanceSpeedMultiplier": 2,
+            "ForceSidestepDistance": 0,
+            "RunStopDist": 0.5,
+            "WalkStopDist": 0.3,
+            "MinWalkWhenTurningAngle": 50,
+            "StopWhenTurningAngle": 90,
+            "CheckFunnelForTightTurns": 0,
+            "MinReducedSpeed": 0.5,
+            "TurnAccelerationCompensation": 1,
+            "ReduceSpeedForTightTurns": 1,
+            "TraceOffset": [
+                0,
+                0.5,
+                0
+            ],
+            "TraceScoreCurve": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 0.99,
+                "logistic": 0
+            },
+            "TraceFwdBias": 2,
+            "SlopeThrottleMapping": [],
+            "EnableViewChange": 1,
+            "InitialAngleDiffForTurn": 0,
+            "ForceLookTarget": 1,
+            "ForcePredictUsingDesiredViewHeading": 0,
+            "TransitionDistance": 2,
+            "CoverWalkTransitionDistance": 0.5,
+            "AlternateCoverPoseTransitionDistance": 0,
+            "UseEndPoseForCoverWarp": 0,
+            "CanUseBendTransition": 0,
+            "MaximumHeightDifferenceForAlternateCover": 0,
+            "MaximumAngleForAlternateCover": 0,
+            "RoadNetworkTargetMinDistanceSqr": 50,
+            "RoadNetworkTargetMaxDistanceSqr": 400,
+            "UseVIPNav": 0,
+            "AvoidDynamicOnly": 0,
+            "HoverHeightCorrection": 1,
+            "MinMoveDistToCorrectHeight": 5,
+            "DesiredHeightTolerance": 0.25,
+            "HeightRecoverFactor": 3,
+            "HeightRecoverSpeed": 3,
+            "GroundRaycastCorrection": 0,
+            "RaycastCooldownDuration": 0.5,
+            "MaxDownwardsRaytraceDist": -3,
+            "NavBelowGeoCompensateDist": 1,
+            "DodgeActionSymbol": "DodgeJump",
+            "FlyerPerlinNoise": 0,
+            "NoiseFrequency": 0.5,
+            "NoiseAmplitudeRot": 0,
+            "NoiseAmplitudePitch": 0,
+            "NoiseAmplitudeVel": 0,
+            "YawAccel": 720,
+            "MaxDesiredHeightOnBridges": 1
+        },
+        "LocomotionController:MoveModifierCollection": [],
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 5,
+            "minHeight": 0,
+            "preferredHeight": 2,
+            "offNavToleranceRadius": 1,
+            "maxShortenSteps": 20,
+            "useAvoidance": 0,
+            "disallowedNodeFlags": 393
+        },
+        "LocomotionController:ImplicitActionAheadDistance": 0.5,
+        "ViewIdleFov": 90,
+        "ViewIdleDistance": 300,
+        "ViewFov": 170,
+        "ViewDistance": 300,
+        "DarkVisionSensitivity": [
+            0.5,
+            1
+        ],
+        "AwarenessDecayTime": 20,
+        "TargetLostTime": 10,
+        "TargetLowHealthPercent": 0.3,
+        "SuperAlertDecayTime": 20,
+        "ReactionControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneReactionController",
+        "PerceiverType": "/Lotus/Types/Enemies/Corpus/Drones/DronePerceiver"
+    }
+}

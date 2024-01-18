@@ -1,0 +1,176 @@
+{
+    "parent": "/Lotus/Types/Game/LotusEffectDecoration",
+    "data": {
+        "PhysicsSleep": 0,
+        "Mesh": "ArachnoidTerraVentIceMesh.fbx",
+        "OverrideMaterial": [
+            "ArachnoidTerraVentIceMatB"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamperTerra/Abilities/CrpArachnoidCamperTerraVentFreezeSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
+        "ReplicationOverride": "RO_ALWAYS",
+        "Health": 600,
+        "AcceptedDamageTypes": [
+            "DT_FIRE"
+        ],
+        "ExclusiveDamageSourceType": "/Lotus/Types/Enemies/Corpus/Vip/Arachnoid/HeatJuiceExplosion",
+        "CreateOnDestroy": {
+            "LocalPosition": [
+                0,
+                1,
+                0
+            ],
+            "Type": "TerraIceVentMelt"
+        },
+        "CreateOnDamaged": {
+            "LocalPosition": [
+                0,
+                1,
+                0
+            ]
+        },
+        "PlayOnDestroy": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamperTerra/Death/CrpArachnoidCamperTerraVentIcedExplosion",
+        "OnDamageScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCamperTerraScript.lua",
+            "Function": "damagestates",
+            "_turretAvatarType": "",
+            "_turretAgentType": "",
+            "_coolantSpiderAgentType": "",
+            "_coolantSpiderCount": 3,
+            "_coolantSpiderDelay": 3,
+            "_microAgentType": "",
+            "_microCount": 15,
+            "_spawnAgentsAnimEvent": "SpawnMinions",
+            "_ventDecoRes": "/Lotus/Characters/Guild/Arachnoid/Camper/CamperTerraVentDeco",
+            "_ventExtendTime": 3,
+            "_ventFrozenFx": "",
+            "_ventHealthFactor": 0.01,
+            "_coolantObjectType": "",
+            "_coolantRespawnTime": 45,
+            "_dispensorBarType": "/Lotus/Fx/Levels/VenusLandscape/SUMachineAThermiaDispenserBarDeco",
+            "_abilityTypeIceWave": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCamperIndoorIceWave",
+            "_abilityTypeIceWaveB": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCamperIndoorIceWaveB",
+            "_abilityTypeIceFloor": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCamperIndoorIceFloor",
+            "_abilityTypeAngryIdle": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCamperIndoorAngryIdle",
+            "_abilityTypeAngryIdleB": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCamperAngryIdleBAbility",
+            "_abilityTypeAngryIdleC": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCamperIndoorAngryIdleC",
+            "_ventStunTime": 3,
+            "_rockBreakAnim": "/Lotus/Animations/Corpus/Arachnoid/CamperDeck12PerchAReact_anim.fbx",
+            "_spawnCoolantSpiderAnim": "/Lotus/Animations/Corpus/Arachnoid/CamperDeck12PerchBSpawn_anim.fbx",
+            "_onVentDamagedTransmission": "",
+            "_transmissions": [],
+            "_Zuddtransmissions": [],
+            "_spiderTransmissions": [],
+            "_bossIntroMovie": "",
+            "_bossIntroMovieDelay": 1,
+            "_damageStateTypes": [
+                "TerraIceVentMeltPersist",
+                "TerraIceVentMeltPersistStageB",
+                "TerraIceVentMeltPersistStageC"
+            ],
+            "_damageStateOffset": [
+                0,
+                1,
+                0
+            ],
+            "_debugMovementTest": 0,
+            "_pickupglowType": ""
+        },
+        "StateChangeScript": {
+            "Script": "/Lotus/Scripts/Audio/PlayTransmission.lua",
+            "Function": "GiveTransmission",
+            "_startDelay": 0,
+            "_transmission": "/Lotus/Sounds/Dialog/ExploiterEvent/Zuud/DBossIntPTwoIceMelt0590Zuud",
+            "_transmissions": [],
+            "_playForAllPlayers": 0,
+            "_transmissionSet": "",
+            "_tag": "",
+            "_interruptAll": 0,
+            "_allowInQuests": 1,
+            "_randomChance": 1
+        },
+        "MaterialFade": [
+            {
+                "Parameter": "UnlitAtten",
+                "TimeLength": 1,
+                "Multiplier": 1,
+                "FadeRange": [
+                    1,
+                    1
+                ],
+                "FadeCurve": {
+                    "Values": [],
+                    "SplineType": "LINEAR_SPLINE"
+                },
+                "BaseValue": 0,
+                "Delay": 0,
+                "DestroyWhenComplete": 0,
+                "IsDissolve": 0,
+                "IsMeshScale": 1,
+                "IsRepeating": 0
+            }
+        ],
+        "TriggeredMaterialFade": [
+            {
+                "Parameter": "UnlitAtten",
+                "TimeLength": 0.3,
+                "Multiplier": 1,
+                "FadeRange": [
+                    0,
+                    1
+                ],
+                "FadeCurve": {
+                    "Values": [
+                        {
+                            "Time": 0,
+                            "Value": 1
+                        },
+                        {
+                            "Time": 1,
+                            "Value": 0
+                        }
+                    ],
+                    "SplineType": "LINEAR_SPLINE"
+                },
+                "BaseValue": 0,
+                "Delay": 0,
+                "DestroyWhenComplete": 1,
+                "IsDissolve": 0,
+                "IsMeshScale": 1,
+                "IsRepeating": 0
+            }
+        ],
+        "TriggeredFadeChild": {
+            "LocalPosition": [
+                0,
+                0.8,
+                0
+            ],
+            "Type": "TerraIceVentMelt",
+            "DestroyWithOwner": 0
+        }
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PaxFieldAbility",
+    "data": {
+        "Script": {
+            "Script": "PaxDungeonEncounterFieldNpcAbility.lua",
+            "_telegraphAnim": "/Lotus/Animations/Tenno/Powers/Tengu/JumpCharge_anim.fbx",
+            "_aiInterruptionHealthThreshold": 0.5,
+            "_baseRadius": 7,
+            "_baseDuration": 12,
+            "_baseDamage": 30,
+            "_baseProcChance": 0.1
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "ActivateField",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 1,
+                "functionName": "ActivateField",
+                "scriptInstance": {
+                    "Script": "PaxDungeonEncounterFieldNpcAbility.lua",
+                    "Function": "ActivateField",
+                    "_telegraphAnim": "/Lotus/Animations/Tenno/Powers/Tengu/JumpCharge_anim.fbx",
+                    "_activateAnim": "/Lotus/Animations/Tenno/Powers/Kullervo/RisingBlades_anim.fbx",
+                    "_castEffect": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/FieldCast",
+                    "_rangeDeco": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/FieldRangeDeco",
+                    "_movingBlade": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/FieldBladeDeco",
+                    "_movingBladeHit": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/FieldBladeHit",
+                    "_aiInterruptionHealthThreshold": 0.5,
+                    "_baseRadius": 7,
+                    "_baseDuration": 12,
+                    "_baseDamage": 30,
+                    "_baseProcChance": 0.1
+                }
+            },
+            {
+                "tag": "CheckForAbilityInterruption",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "DuviriAbilityUtility.lua",
+                    "Function": "CheckForAbilityInterruption"
+                }
+            },
+            {
+                "tag": "RaiseBlades",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 1,
+                "functionName": "RaiseBlades",
+                "scriptInstance": {
+                    "Script": "PaxDungeonEncounterFieldNpcAbility.lua",
+                    "Function": "RaiseBlades",
+                    "_telegraphAnim": "/Lotus/Animations/Tenno/Powers/Tengu/JumpCharge_anim.fbx",
+                    "_activateAnim": "/Lotus/Animations/Tenno/Powers/Kullervo/RisingBlades_anim.fbx",
+                    "_castEffect": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/FieldCast",
+                    "_rangeDeco": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/FieldRangeDeco",
+                    "_movingBlade": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/FieldBladeDeco",
+                    "_movingBladeHit": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/FieldBladeHit",
+                    "_aiInterruptionHealthThreshold": 0.5,
+                    "_baseRadius": 7,
+                    "_baseDuration": 12,
+                    "_baseDamage": 30,
+                    "_baseProcChance": 0.1
+                }
+            }
+        ],
+        "CooldownDuration": 30,
+        "EnergyRequiredToActivate": 10,
+        "SoundEvents": [
+            {
+                "EventName": "SFXEnemyRisingBladesAbilityCast",
+                "Sound": "/Lotus/Sounds/Enemies/Warframes/PaxDuviricus/EnemyPaxDuviricusRisingBladesCast",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXRisingBladesAbilityImpact",
+                "Sound": "/Lotus/Sounds/Warframes/PaxDuviricus/PaxDuviricusRisingBladesImpact",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ]
+    }
+}

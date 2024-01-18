@@ -1,0 +1,134 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/Vip/GrineerRoyalGuard/GrineerRoyalGuardAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/DisruptionRoyalGuardAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Grineer/Vip/GrineerRoyalGuard/GrnHalberdRoyalGuard",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "Powersuits/DisruptionRoyalGuardPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "NeverPauseByAiDirector": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/TimerDecorator",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/TargetOffNavBehavior",
+            "/Lotus/Types/Behaviors/GetPickUpBehavior",
+            "/EE/Types/Npc/MeleeTactic",
+            "/EE/Types/Npc/KeepIdealDistanceBehavior",
+            "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "TimerDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/Lotus/Types/Behaviors/LotusAdvancedMeleeBehavior",
+            "ChildAction:LotusAdvancedMeleeBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SucceedAfterCombo": 0,
+                "AdjustAimDuringCombo": 0,
+                "AlwaysCompleteCombo": 1,
+                "AttackFirst": 1,
+                "DefensiveMoveTowards": 1,
+                "StopMovementOnAttack": 1,
+                "DefensiveParryChance": 1,
+                "DefensiveTime": [
+                    0,
+                    2
+                ],
+                "MeleeRange": [
+                    0,
+                    4
+                ],
+                "MeleeRangeAttack": [
+                    0,
+                    3
+                ],
+                "MeleeRangeDash": [
+                    3,
+                    4
+                ],
+                "PlayerBehaviourEvalTime": [
+                    0.25,
+                    1
+                ],
+                "BasicAttackTypes": [
+                    "CC_GROUND",
+                    "CC_GROUND_HEAVY",
+                    "CC_SLIDING"
+                ],
+                "DashAttackType": "CC_SLIDING",
+                "UseEquippedWeapon": 1,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_6",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_INSTANT_EQUIP",
+                "StopWeapons": 0
+            },
+            "StopWhenChildStops": 1,
+            "TimerDuration": [
+                2,
+                3
+            ],
+            "EvaluationDelay": 15
+        },
+        "StormTargetOrderBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceLastSeen": 5,
+            "MaxDistToTarget": 25,
+            "ConsiderOrderType": 1,
+            "Order": "StormTarget",
+            "FailsOnTargetAcquired": 0,
+            "SuccessRadius": 1,
+            "DesiredPosture": "RUN",
+            "UseNearTargetPosture": 0,
+            "DesiredPostureNearTarget": "WALK",
+            "DesiredPostureOutOfView": "RUN",
+            "MaxOffNavDistance": 5,
+            "TargetMovedRadius": 6,
+            "OnFailureReevalTime": 1,
+            "OnSuccessReevalTime": 1,
+            "TryShoot": 1,
+            "TargetFaction": "",
+            "DistanceToOrderTargetForNearPosture": 0,
+            "ClearOrderOnMoveSuccess": 0,
+            "AllowTeleportToCatchUp": 1,
+            "TeleportToDestination": 0,
+            "AllowPartialPath": 1
+        }
+    }
+}

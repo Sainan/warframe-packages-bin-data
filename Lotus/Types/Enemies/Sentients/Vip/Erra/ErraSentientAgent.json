@@ -1,0 +1,174 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/GrineerMarineLeader",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "ErraSentientAvatar"
+        },
+        "MinLevel": 15,
+        "BaseLevel": 1,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Sentients/SentientConduitLeft",
+                "forceEquip": 1,
+                "hand": "OFF_HAND"
+            },
+            {
+                "item": "SentientErraConduitRight",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "ErraSentientFighterSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "DefaultSlot": "INVALID",
+        "ShouldIgnoreGCS": 1,
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "AllowTeleportedByAiDirector": 0,
+        "SuicideOffNavAndHidden": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/GetPickUpBehavior",
+            "/Lotus/Types/Behaviors/SentientPickupDecorator",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior"
+        ],
+        "InterruptResponseBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Responses": [
+                {
+                    "reaction": "ABOUT_TO_ENGAGE",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 0,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 0,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 1,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                }
+            ],
+            "BlockingResponse": 1
+        },
+        "GetPickUpBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "GoToInvestigateTgtFarPosture": "JOG",
+            "GoToInvestigateTgtNearPosture": "WALK",
+            "NearThreshold": 15,
+            "NearSpeedMultiplier": [
+                0.5,
+                0.6
+            ],
+            "FarSpeedMultiplier": [
+                0.4,
+                0.5
+            ],
+            "PickupDistance": 30,
+            "AllowedPickupTypes": [
+                "/Lotus/Types/Enemies/Sentients/Sparks/SentientSparkPickupAction"
+            ],
+            "PickupWaitTime": 3,
+            "OnlyDroppedItems": 0,
+            "AllowFire": 0
+        },
+        "SentientPickupDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/Lotus/Types/Behaviors/GetPickUpBehavior",
+            "ChildAction:GetPickUpBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "GoToInvestigateTgtFarPosture": "JOG",
+                "GoToInvestigateTgtNearPosture": "WALK",
+                "NearThreshold": 15,
+                "NearSpeedMultiplier": [
+                    0.2,
+                    0.3
+                ],
+                "FarSpeedMultiplier": [
+                    0.3,
+                    0.4
+                ],
+                "PickupDistance": 30,
+                "AllowedPickupTypes": [
+                    "/Lotus/Weapons/Sentients/SentientDualWieldPickupAction"
+                ],
+                "PickupWaitTime": 15,
+                "OnlyDroppedItems": 0,
+                "AllowFire": 0
+            },
+            "StopWhenChildStops": 1
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "BlockForPowerCompleteType": "BT_ABILITY_DRIVEN",
+            "ExtraReevaluationDelay": 0.2,
+            "FaceTarget": 0,
+            "ValidAbilities": [],
+            "TurnDuringAbility": 1
+        },
+        "LocomotionController:PathingPreferences": {
+            "nearbyNavSearchRadius": 1
+        },
+        "ViewIdleFov": 120,
+        "IdleVerticalFov": 30,
+        "ViewIdleDistance": 60,
+        "VerticalFov": 80,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "ReactionControllerType": "/Lotus/Types/Enemies/Infested/ZombieReactionController",
+        "CoverEvaluatorType": "/Lotus/Types/Enemies/Grineer/GrineerShotgunAdvancingCoverEvaluator",
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/Sentients/SentientTargetEvaluator"
+    }
+}

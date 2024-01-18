@@ -1,0 +1,99 @@
+{
+    "parent": "/Lotus/Types/Game/PowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/RhinoChargeAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/RhinoChargeAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/RhinoDash.png",
+        "Script": {
+            "Script": "DuviriDaxPlungeAbility.lua",
+            "Function": "ActivateAbility",
+            "_plungeAnim": "/Lotus/Animations/Dax/Melee/GroundStabStart_anim.fbx",
+            "_plungeAnimEvent": "PlungeAttack",
+            "_plungeLoopAnim": "/Lotus/Animations/Dax/Melee/GroundStabPlungeLoop_anim.fbx",
+            "_followupAnim": "/Lotus/Animations/Dax/Melee/GroundStabPlunge_anim.fbx",
+            "_followupAnimEvent": "SecondPlungeAttack",
+            "_teamCooldown": 25,
+            "_castSound": "/Lotus/Sounds/Enemies/Duviri/DuviriDax/Abilities/DaxKnight/DuviriDaxKnightPlungeAbilityCast",
+            "_plungeHitSound": "/Lotus/Sounds/Enemies/Duviri/DuviriDax/Abilities/DaxKnight/DuviriDaxKnightPlungeAbilityGroundHit",
+            "_lifeStealSound": "/Lotus/Sounds/Enemies/Duviri/DuviriDax/Abilities/DaxKnight/DuviriDaxKnightPlungeAbilityLifeSteal",
+            "_useBark": 0,
+            "_bark": "VoiceBox_USING_ABILITY",
+            "_barkFilter": "SFXBarkDaxKnightAbility",
+            "_plungeFxList": [
+                "/Lotus/Fx/Enemies/Duviri/DuviriDaxPlungeFx",
+                "/Lotus/Fx/Enemies/Duviri/DaxAngryCrackDeco",
+                "/Lotus/Fx/Explosions/Generic/SurfaceHitEffects/ExplosionHitEffectSmallIceDeco"
+            ],
+            "_followupFxList": [
+                "/Lotus/Fx/Enemies/Duviri/DuviriDaxGroundExp",
+                "/Lotus/Fx/Enemies/Duviri/DaxAngryCrackEnd",
+                "/Lotus/Fx/Enemies/Duviri/DaxSadPlungeExplode",
+                "/Lotus/Fx/Enemies/Duviri/DaxFearPlungeExplode",
+                "/Lotus/Fx/Enemies/Duviri/DaxHappyPlungeExplode",
+                "/Lotus/Fx/Enemies/Duviri/DaxEnvyPlungeExplode"
+            ],
+            "_plungeShockwaveList": [
+                "/Lotus/Types/Enemies/Duviri/Dax/DuviriDaxPlungeShockwave"
+            ],
+            "_plungeTriggerList": [
+                "/Lotus/Types/Enemies/Duviri/Dax/DaxFirePoolTrigger",
+                "/Lotus/Types/Enemies/Duviri/Dax/DaxFirePoolTrigger",
+                "",
+                "/Lotus/Fx/Enemies/Duviri/DaxFearPlungeBladeDeco",
+                "",
+                "/Lotus/Fx/Enemies/Duviri/DaxEnvyPlungeEruptionDeco"
+            ],
+            "_plungeExtraList": [
+                "/Lotus/Types/Enemies/Duviri/Dax/Weapons/DuviriDaxAngryLobFireball",
+                "/Lotus/Types/Enemies/Duviri/Dax/Weapons/DuviriDaxAngryLobFireball",
+                "/Lotus/Fx/Enemies/Duviri/DaxSadPlungeIceDeco",
+                "/Lotus/Fx/Enemies/Duviri/DaxFearPlungePoolDeco",
+                "/Lotus/Fx/Enemies/Duviri/DaxHappyLifeStealDeco",
+                "/Lotus/Fx/Enemies/Duviri/DaxEnvyPlungeFissure"
+            ],
+            "_damageTypeList": [
+                "DT_IMPACT",
+                "DT_FIRE"
+            ],
+            "_plungeEvenMoreExtrasList": [
+                "/Lotus/Fx/Enemies/Duviri/DaxSadPlungeDecal",
+                "",
+                "/Lotus/Fx/Enemies/Duviri/DaxSadPlungeDecal",
+                "/Lotus/Fx/Enemies/Duviri/DaxFearPlungeBladeFX",
+                "/Lotus/Fx/Enemies/Duviri/DaxHappyPlungeDecal"
+            ],
+            "_plungeTelegraphFx": "/Lotus/Fx/Enemies/Duviri/DaxPlungeTelegraph",
+            "_plungeTelegraphBnwFx": "/Lotus/Fx/Enemies/Duviri/DaxPlungeTelegraphBnW",
+            "_offsetAmount": 0.75,
+            "_range": 8,
+            "_channelDuration": 5,
+            "_tickRate": 0.3,
+            "_stabAoe": 3,
+            "_stabDamage": 50,
+            "_plungeDamage": 30,
+            "_plungeAoe": 8,
+            "_procType": "PT_STAGGERED",
+            "_AoeTelegraphScaleFactor": 2.5,
+            "_counterDecayDelay": 8,
+            "_damageCounterDecay": 0.04,
+            "_damageCounterPct": 0.025,
+            "_happyLifeGainAmount": 0.2,
+            "_evaluateDamageThreshold": 0
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "CheckForAbilityInterruption",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "DuviriAbilityUtility.lua",
+                    "Function": "CheckForAbilityInterruption"
+                }
+            }
+        ],
+        "CooldownDuration": 25,
+        "EnergyRequiredToActivate": 0,
+        "ActivationXP": 0
+    }
+}

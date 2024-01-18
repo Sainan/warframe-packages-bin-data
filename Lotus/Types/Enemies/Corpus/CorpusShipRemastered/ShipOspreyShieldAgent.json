@@ -1,0 +1,165 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Venus/VenusDroneBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/ShipOspreyShieldAvatar",
+            "EXIMUS": "Avatars/ShipOspreyShieldAvatarLeader"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "Weapons/ShipOspreyShieldRifle",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Upgrades/Mods/Aura/EnemyShieldDroneAuraMod",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/DroneRecoveryBehavior",
+            "/EE/Types/Npc/AgentOffNavBehaviorDropship",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/DroneDodgeBehavior",
+            "/Lotus/Types/Behaviors/HoverNearTeammatesBehavior",
+            "/Lotus/Types/Behaviors/HoverAttackBehavior",
+            "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+            "/EE/Types/Npc/DefensiveCombatBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/PatrolFormationTactic",
+            "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/PoiBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "BlockingBehavior": {
+            "BlockOnBeingAttached": 1
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ALWAYS",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 2,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 0,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                2,
+                3
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "HoverNearTeammatesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TargetDistance": [
+                3,
+                10
+            ],
+            "StrafeDistance": 0,
+            "VerticalDistance": 2.5,
+            "VerticalDistanceVariance": [
+                0,
+                0
+            ],
+            "ReachedLocationTolerance": 1,
+            "WaitDuration": [
+                0,
+                1
+            ],
+            "RecheckInterval": 2,
+            "MinMovementDistance": 1,
+            "AlwaysUpdateEvasion": 1,
+            "ControlFacing": "MFC_FACE_TARGET",
+            "BoostFacing": "MFC_FACE_TARGET",
+            "BoostPosture": "WALK",
+            "SpeedBoostMultiplier": 1,
+            "BoostRange": 15,
+            "BoostToTarget": 0,
+            "ExitAfterWait": 0,
+            "AdjustDestinationHeight": 0,
+            "TeammateMaxProximity": 10,
+            "IgnoreTeammatesOfSameType": 1,
+            "HoverNearEngagedEnemies": 0
+        },
+        "HoverNearTargetBehavior": {
+            "TargetDistance": [
+                10,
+                15
+            ],
+            "StrafeDistance": 0,
+            "ReachedLocationTolerance": 10,
+            "WaitDuration": [
+                0,
+                1
+            ]
+        },
+        "DefensiveCombatBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "MaxPerceptionDist": 80,
+            "FleeDist": [
+                10,
+                25
+            ],
+            "WaitDuration": [
+                0.25,
+                1
+            ]
+        },
+        "PatrolFormationTactic": {
+            "MaxDistToLeader": 40,
+            "SuccessRadius": 5,
+            "MoveFacingControl": "MFC_FACE_MOVEDIR",
+            "LeaderAction:InvestigateBehavior": {
+                "TeamCoordination": 1
+            },
+            "AllowInDefenseVolumes": 1,
+            "PeriodicBarkTiming": [
+                0,
+                0
+            ]
+        }
+    }
+}

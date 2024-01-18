@@ -1,0 +1,175 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Duviri/OroMaleLightErsatz/OroMaleLightErsatz_skel.fbx",
+        "MeshScale": 1.2,
+        "AnimationName": "Guild",
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Zariman/Wraith/ZarimanWraithVoidFlyLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/Lotus/Types/Enemies/Duviri/DuviriWalk",
+        "HeadBone": "GAME_C1_HEAD1",
+        "HeadRotation": [
+            270,
+            0,
+            0
+        ],
+        "UseHeadBoneForEyePosition": 1,
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Duviri",
+        "LocTag": "[HC] DUVIRI MELEE",
+        "Icon": "/Lotus/Interface/Icons/Npcs/RifleLancerAvatar.png",
+        "MaxHealth": 800,
+        "VoiceBoxVariants": [
+            "/Lotus/Sounds/Dialog/Zariman/ZarimanWraith/ZarimanWraithVoicebox"
+        ],
+        "DropTable": "/Lotus/Types/DropTables/ZarimanDropTables/DuviriWraithDropTable",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
+        "AnimControllerType": "BaseDuviriAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "WallSlideControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWallSlideController",
+        "DamageControllerType": "DuviriMeleeTestDamageController",
+        "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInventory",
+        "MotionControllerType": "/Lotus/Types/Enemies/Duviri/BaseDuviriMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "BoneName": "GAME_C1_HIP1",
+            "Type": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/HitProxies/GrineerFullBody"
+        },
+        "OnPreDeathScript": {
+            "Script": "/Lotus/Types/Enemies/Duviri/DuviriAvatarReviveForm.lua",
+            "Function": "OnDuviriPreDeath",
+            "_deathEffectType": "/Lotus/Fx/Enemies/Duviri/DuviriAgentPreDeath",
+            "_reviveEffect": "",
+            "_reviveHealthRatio": 0.3,
+            "_maxRange": 30,
+            "_struggleDuviriEffect": "",
+            "_struggleVictimEffect": "",
+            "_alteredDsp": "/Lotus/Sounds/Enemies/Zariman/Wraith/WraithAlteredDsp",
+            "_finisherToUse": "",
+            "_damageRadius": 10,
+            "_damageAmount": 50,
+            "_damageRankMod": 3,
+            "_preDeathEffect": "",
+            "_cloneEffect": ""
+        },
+        "FacialMorphScript": {
+            "Script": "/Lotus/Scripts/NPC/FacialMorph.lua",
+            "Function": "OnMorphChangeRequested",
+            "_autoRemovePainMorph": 1
+        },
+        "FacialMorphHeadAttachmentType": "/Lotus/Characters/Grineer/Marine/GrineerHeadMorphsDeco",
+        "MorphName:ALERT": "Morphs.Alert",
+        "MorphName:RAGE": "Morphs.Rage",
+        "MorphName:FEAR": "Morphs.Fear",
+        "MorphName:DEAD": "Morphs.Dead",
+        "MorphName:SMUG": "Morphs.Smug",
+        "MorphName:PAIN": "Morphs.Pain",
+        "SoundEvents": [
+            {
+                "EventName": "VaultFoley",
+                "Sound": "/Lotus/Sounds/Enemies/Zariman/Wraith/ZarimanWraithVaultDown",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXPreDeathFlyUp",
+                "Sound": "/Lotus/Sounds/Enemies/Zariman/Wraith/ZarimanWraithPreDeathFlyUp",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXWraithPossess",
+                "Sound": "/Lotus/Sounds/Enemies/Zariman/Wraith/ZarimanWraithPossess",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXWraithJump",
+                "Sound": "/Lotus/Sounds/Enemies/Zariman/Wraith/ZarimanWraithLeapJump",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXVolleyHoverStart",
+                "Sound": "/Lotus/Sounds/Enemies/Zariman/Wraith/ZarimanWraithVoidFlyLoopRifleVolley",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": "SFXVolleyHoverStop"
+            },
+            {
+                "EventName": "SFXWraithDash",
+                "Sound": "/Lotus/Sounds/Enemies/Zariman/Wraith/ZarimanWraithTeleport",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXHeavyImpactLand",
+                "Sound": "/Lotus/Sounds/Enemies/Zariman/Wraith/ZarimanWraithLeapJumpLand",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "VoiceBoxEvents": [
+            {
+                "EventName": "VOReborn",
+                "Phrase": "USING_ABILITY",
+                "Filter": "Reborn",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXDuviriVoWraith",
+                "Phrase": "USING_ABILITY",
+                "Filter": "Wraith",
+                "Chance": 1
+            }
+        ],
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HumanoidReactionAnims",
+        "DisarmWeapon": "/Lotus/Weapons/Grineer/Melee/GrineerCombatKnife/NPCGrineerCombatKnife"
+    }
+}

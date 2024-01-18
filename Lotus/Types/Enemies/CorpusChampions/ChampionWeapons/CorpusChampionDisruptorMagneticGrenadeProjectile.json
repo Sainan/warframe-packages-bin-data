@@ -1,0 +1,113 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/PlasmaGrenadeProjectile",
+    "data": {
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Corpus/RiotMoa/NullifierGrenadeProjLensflare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/VayHek/HekGrenadeProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/RiotMoa/Attacks/RiotMoaMineProjLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "ReplicationOverride": "RO_ALWAYS",
+        "ExplosiveAttack": {
+            "Amount": 0
+        },
+        "ExplosionIgnoreSource": 1,
+        "ExplosionIgnoreCover": 0,
+        "DamageRadius": 2.75,
+        "HitEffect": "/Lotus/Sounds/Enemies/RiotMoa/Attacks/RiotMoaMineImpactHitEffect",
+        "DieEffect": "/Lotus/Fx/Weapons/Grenades/PlasmaSparks",
+        "IgnoreCollisionsWithSameType": 1,
+        "MaxLife": 10,
+        "SpikeAttack": {
+            "Amount": 5
+        },
+        "EmbedTime": [
+            20,
+            20
+        ],
+        "EmbedDeathAttack": {
+            "Amount": 250
+        },
+        "EmbedDeathEffect": "/Lotus/Fx/Enemies/Drones/RiotMoaMineDeath",
+        "KinematicInitialSpeed": 20,
+        "KinematicMaxSpeed": 25,
+        "KinematicGravityMultiplier": 0.4,
+        "KinematicAngleSpeed": [
+            10,
+            20
+        ],
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/WeaponStuff.lua",
+            "Function": "grenadeSound",
+            "_grenadeLaunch": ""
+        },
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/RiotMoaMagneticGrenade.lua",
+            "Function": "OnEmbed",
+            "_triggerType": "/Lotus/Types/Enemies/Corpus/BipedRobot/AIWeek/Weapons/RiotMoaGrenadeProximityTrigger",
+            "_avatarType": "/EE/Types/Game/Avatar"
+        }
+    }
+}

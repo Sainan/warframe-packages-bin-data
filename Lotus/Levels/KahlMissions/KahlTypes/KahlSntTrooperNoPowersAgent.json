@@ -1,0 +1,95 @@
+{
+    "parent": "/Lotus/Types/Enemies/Sentients/Troopers/SentientBaseTrooperAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "KahlSntMeleeTrooperNoPowersAvatar"
+        },
+        "MinLevel": 1,
+        "MaxLevel": 1,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Sentients/SentientConduitLeft",
+                "forceEquip": 1,
+                "hand": "OFF_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Sentients/SentientConduitRight",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SentientTrooperDowngradePowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorParallel": {
+            "GenericBehaviorSelector": {
+                "Actions": [
+                    "/EE/Types/Npc/StormTargetOrderBehavior",
+                    "/EE/Types/Npc/SetupAmbushBehavior",
+                    "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+                    "/EE/Types/Npc/KeepIdealDistanceBehavior",
+                    "/EE/Types/Npc/MultiTargetFaceBehavior",
+                    "/EE/Types/Npc/CustomResponseBehavior",
+                    "/Lotus/Types/Enemies/Sentients/Troopers/Behaviors/SentientRetreatDecorator",
+                    "/EE/Types/Npc/SearchForTargetBehavior",
+                    "/Lotus/Types/Behaviors/HoverNearTeammatesBehavior",
+                    "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+                    "/EE/Types/Npc/InvestigateBehavior",
+                    "/EE/Types/Npc/PoiBehavior",
+                    "/EE/Types/Npc/GuardTactic"
+                ],
+                "StormTargetOrderBehavior": {
+                    "AllowTeleportToCatchUp": 0
+                },
+                "SetupAmbushBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "IdealDistance": [
+                        20,
+                        30
+                    ],
+                    "NumResults": 1,
+                    "MinDistFromNavEdge": 5,
+                    "DistanceFromTargetScoreRange": [
+                        10,
+                        40
+                    ],
+                    "StopRadius": 0.5,
+                    "SamplePointSpacing": 2,
+                    "DistanceScoreCurve": {
+                        "m": 1,
+                        "k": 2,
+                        "b": 0,
+                        "c": 0,
+                        "logistic": 0
+                    }
+                },
+                "MoveTowardsTacEnemyInfluence": {
+                    "MustBeFurtherFromObjective": 1,
+                    "DistAheadToAdvance": 0
+                },
+                "MultiTargetFaceBehavior": {
+                    "ChildAction:SentientRangedCircleDecorator": {
+                        "ChildAction:MultiTargetCircleBehavior": {
+                            "IdealDistance": [
+                                6,
+                                20
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "LocomotionController:PathingPreferences": {
+            "minHeight": -2
+        }
+    }
+}

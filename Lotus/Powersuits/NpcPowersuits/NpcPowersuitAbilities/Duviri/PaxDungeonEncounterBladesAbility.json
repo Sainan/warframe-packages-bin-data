@@ -1,0 +1,114 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PaxBladesAbility",
+    "data": {
+        "Script": {
+            "_movingBlade": "/Lotus/Fx/Enemies/Duviri/Pax/PaxBladesDeco",
+            "_castSequencer": "",
+            "_isAiAbility": 1,
+            "_aiTelegraphType": "/Lotus/Fx/Enemies/Duviri/Pax/PaxDungeonEncounterBladesTelegraph",
+            "_aiBnwTelegraphType": "/Lotus/Fx/Enemies/Duviri/DaxPlungeTelegraphBnW",
+            "_aiInterruptionHealthThreshold": 0.5
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "FireAt",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 1,
+                "functionName": "FireAt",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/PaxBlades.lua",
+                    "Function": "FireAt",
+                    "_activateAnim": "/Lotus/Animations/Tenno/Powers/Kullervo/Backstab_anim.fbx",
+                    "_castEffect": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesCast",
+                    "_beamEffect": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesBeam",
+                    "_attachedBlade": "/Lotus/Characters/Tenno/PaxDuviricus/Static/PaxDuviricusSwordBaseDeco",
+                    "_movingBlade": "/Lotus/Fx/Enemies/Duviri/Pax/PaxBladesDeco",
+                    "_movingBladeDummy": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesDummyDeco",
+                    "_movingBladeFiredAttach": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesMovingAttach",
+                    "_movingBladeReturnAttach": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesMovingToWarframeAttach",
+                    "_bladeReturnImpact": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesReturnHit",
+                    "_castSequencer": "",
+                    "_bladeHitEnemySound": "/Lotus/Sounds/Warframes/PaxDuviricus/PaxDuviricusBackstabImpactTarget",
+                    "_bladeHitSelfSound": "/Lotus/Sounds/Warframes/PaxDuviricus/PaxDuviricusBackstabSelfImpact",
+                    "_isAiAbility": 1,
+                    "_aiTelegraphType": "/Lotus/Fx/Enemies/Duviri/Pax/PaxDungeonEncounterBladesTelegraph",
+                    "_aiBnwTelegraphType": "/Lotus/Fx/Enemies/Duviri/DaxPlungeTelegraphBnW",
+                    "_aiInterruptionHealthThreshold": 0.5
+                }
+            },
+            {
+                "tag": "HitSelf",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 1,
+                "functionName": "HitSelf",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/PaxBlades.lua",
+                    "Function": "HitSelf",
+                    "_activateAnim": "/Lotus/Animations/Tenno/Powers/Kullervo/Backstab_anim.fbx",
+                    "_castEffect": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesCast",
+                    "_beamEffect": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesBeam",
+                    "_attachedBlade": "/Lotus/Characters/Tenno/PaxDuviricus/Static/PaxDuviricusSwordBaseDeco",
+                    "_movingBlade": "/Lotus/Fx/Enemies/Duviri/Pax/PaxBladesDeco",
+                    "_movingBladeDummy": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesDummyDeco",
+                    "_movingBladeFiredAttach": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesMovingAttach",
+                    "_movingBladeReturnAttach": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesMovingToWarframeAttach",
+                    "_bladeReturnImpact": "/Lotus/Fx/PowersuitAbilities/PaxDuviricus/BladesReturnHit",
+                    "_castSequencer": "",
+                    "_bladeHitEnemySound": "/Lotus/Sounds/Warframes/PaxDuviricus/PaxDuviricusBackstabImpactTarget",
+                    "_bladeHitSelfSound": "/Lotus/Sounds/Warframes/PaxDuviricus/PaxDuviricusBackstabSelfImpact",
+                    "_isAiAbility": 1,
+                    "_aiTelegraphType": "/Lotus/Fx/Enemies/Duviri/Pax/PaxDungeonEncounterBladesTelegraph",
+                    "_aiBnwTelegraphType": "/Lotus/Fx/Enemies/Duviri/DaxPlungeTelegraphBnW",
+                    "_aiInterruptionHealthThreshold": 0.5
+                }
+            },
+            {
+                "tag": "CheckForAbilityInterruption",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "DuviriAbilityUtility.lua",
+                    "Function": "CheckForAbilityInterruption"
+                }
+            }
+        ],
+        "CooldownDuration": 25,
+        "EnergyRequiredToActivate": 10,
+        "Blocking": 1,
+        "SoundEvents": [
+            {
+                "EventName": "SFXEnemyBackstabAbilityCast",
+                "Sound": "/Lotus/Sounds/Enemies/Warframes/PaxDuviricus/EnemyPaxDuviricusBackstabCastStart",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": "CheckForAbilityInterruption"
+            },
+            {
+                "EventName": "SFXEnemyBackstabThrow",
+                "Sound": "/Lotus/Sounds/Enemies/Warframes/PaxDuviricus/EnemyPaxDuviricusBackstabCastThrow",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXEnemyBackstabHover",
+                "Sound": "/Lotus/Sounds/Enemies/Warframes/PaxDuviricus/EnemyPaxDuviricusBackstabCastHover",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXEnemyBackstabReturn",
+                "Sound": "/Lotus/Sounds/Enemies/Warframes/PaxDuviricus/EnemyPaxDuviricusBackstabCastThrow",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ]
+    }
+}

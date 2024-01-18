@@ -1,0 +1,164 @@
+{
+    "parent": "/Lotus/Types/Enemies/EnemyAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "DragonVehicleAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "FlyingDragonNpcPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/Duviri/Dragon/DragonBreathWeaponAngry",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/Duviri/Dragon/DragonBreathWeaponSad",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/Duviri/Dragon/DragonBreathWeaponFear",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/Duviri/Dragon/DragonBreathWeaponHappy",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/Duviri/Dragon/DragonBreathWeaponEnvy",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "AllowTeleportedByAiDirector": 0,
+        "SuicideOffNavAndHidden": 0,
+        "SuicideOnWaterRestrictionViolation": 0,
+        "AggroController:Entries": [
+            "/EE/Types/Npc/AggroEntryNearDeath"
+        ],
+        "AggroController:AggroEntryNearDeath": {
+            "Enabled": 0,
+            "IncreaseTimeLength": 1,
+            "DecayTimeLength": 1,
+            "LowHeatlthBackOffValue": 50
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/Logic/LogicGraphAction"
+        ],
+        "LogicGraphAction": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "GraphRes": "FlyingDragonLogicGraph"
+        },
+        "LocomotionController:Type": "/Lotus/Types/Game/DynamicSpaceFlightLocomotionController",
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderFlight"
+        ],
+        "LocomotionController:DynamicPathFinderFlight": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 0,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1,
+            "MaxDestinationHeightCorrectionDistance": 0
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerFlight"
+        ],
+        "LocomotionController:DynamicPathFollowerFlight": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 1,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "ForceFaceForwardWhenInactive": 1,
+            "PreferedDistAboveNav": [
+                8,
+                12
+            ],
+            "MoveHeightOffset": 0,
+            "DistanceToDisregardTurning": 1,
+            "DistanceToSlow": 12,
+            "MinimumSlowedSpeed": 8,
+            "MinimumSpeed": 0,
+            "RecoverySpeedPct": 0.6,
+            "CorrectHeightOnIdle": 0,
+            "AirplaneControls": 1,
+            "DesiredAngleRangeForBank": [
+                0,
+                0
+            ],
+            "BackUpForRecovery": 0,
+            "CanMoveWithoutPath": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierLimitedOrientation"
+                ],
+                "LocomotionMoveModifierLimitedOrientation": {
+                    "AirplaneControlMaxPitch": [
+                        -45,
+                        45
+                    ],
+                    "AirplaneControlMaxBank": [
+                        -45,
+                        45
+                    ],
+                    "TurnLimit": 179
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 2,
+            "nearbyNavSearchRadius": 1
+        },
+        "LocomotionController:ImplicitActionAheadDistance": 0.5,
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 500,
+        "ViewFov": 360,
+        "ViewDistance": 500,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "AwarenessDecayTime": 20,
+        "TargetLostTime": 10,
+        "TargetLowHealthPercent": 0.3,
+        "SuperAlertDecayTime": 20,
+        "ReactionControllerType": "/Lotus/Types/Enemies/Grineer/Eidolon/EidolonGrineerReactionController",
+        "PerceiverType": "/Lotus/Types/Enemies/Infested/InfestedMicroplanet/MicroPlanetInfestedPerceiver",
+        "CoverEvaluatorType": "/EE/Types/Npc/UtilityCoverEvaluator",
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/Sentients/SentientTargetEvaluator"
+    }
+}

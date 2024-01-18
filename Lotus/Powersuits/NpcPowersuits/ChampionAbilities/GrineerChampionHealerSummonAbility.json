@@ -1,0 +1,60 @@
+{
+    "parent": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/NpcAbility",
+    "data": {
+        "Script": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/QuadRobotSpawnDronesAbility.lua",
+            "Function": "ActivateAbility",
+            "_spawnFx": "/Lotus/Fx/Enemies/Grineer/Manic/GrineerHealerSummon",
+            "_respawnDelay": 10,
+            "_desiredMaxEnemies": 1,
+            "_minEnemyCount": 1,
+            "_droneAgentType": "/Lotus/Types/Enemies/GrineerChampions/ChampionDrones/HealerDroneAgent",
+            "_droneAvatarType": "",
+            "_spawnDroneAgentType": [],
+            "_droneTeam": "",
+            "_minRange": 1,
+            "_maxRange": 3,
+            "_minHeight": 1,
+            "_maxHeight": 2,
+            "_parentRankMin": 0.5,
+            "_parentRankMax": 0.8,
+            "_maxDroneSearchRange": 100,
+            "_droneIgnoredByAiDir": 1,
+            "_useInstigatorTarget": 0,
+            "_setScriptTarget": 0,
+            "_pairDroneWithTarget": 1,
+            "_scaleEnemyCountWithPlayerCount": 0,
+            "_useInstigatorAwareness": 0,
+            "_rampUpCooldown": 0,
+            "_onSpawnAnim": "/Lotus/Animations/Grineer/KubrowHandler/SendDog_anim.fbx",
+            "_onSpawnSound": "",
+            "_onSpawnEvent": "VBAttackCall",
+            "_onAttackAnim": "",
+            "_onAttackSound": ""
+        },
+        "CooldownDuration": 30,
+        "ActivationXP": 0,
+        "CastSound": "/Lotus/Sounds/Levels/Missions/Arena/GrineerChampions/Healer/HealerSentinelCast",
+        "EvaluateScript": 0,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/FindAvatarsEvaluator",
+            "/Lotus/Types/Game/AbilityEvaluators/AvatarHealthEvaluator"
+        ],
+        "Evaluator:FindAvatarsEvaluator": {
+            "AvatarType": "/Lotus/Types/Enemies/GrineerChampions/ChampionDrones/ChampionDroneBaseAvatar",
+            "SearchRange": [
+                0,
+                100
+            ],
+            "MinCount": 2
+        },
+        "Evaluator:AvatarHealthEvaluator": {
+            "AvatarType": "/Lotus/Types/Enemies/GrineerChampions/GrineerChampionBaseAvatar",
+            "HealthPctThreshold": 1,
+            "Range": [
+                0,
+                25
+            ]
+        }
+    }
+}

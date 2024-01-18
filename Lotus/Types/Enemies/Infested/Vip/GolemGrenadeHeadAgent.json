@@ -1,0 +1,162 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/GolemGrenadeHeadAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "GolemFullGrenadeWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "BehaviorDatabase": [
+            "/Lotus/Types/Behaviors/GolemHeadPopUpBehavior"
+        ],
+        "GolemHeadPopUpBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "PointType": "GolemGrenadeHeadWaypoint",
+            "HidePoint": "/Layer9/Waypoint0",
+            "AttackDistance": [
+                0,
+                100
+            ],
+            "EmergeAttackDistance": [
+                0,
+                0
+            ],
+            "GolemBufferZone": [
+                0,
+                10
+            ],
+            "UseAttackDistance": 1,
+            "TurnToTargetWhenSubmerged": 1,
+            "TurnAccuracyThreshold": 15,
+            "AttackBehaviors": [
+                "/Lotus/Types/Behaviors/GolemFireGrenadeBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ],
+            "GolemFireGrenadeBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "AimHeadingOffset": 0,
+                "AimArc": 60,
+                "ProjectileType": "GrenadeProjectile",
+                "SpawnPodProjectileType": "GolemInfestedSpawnerProjectile",
+                "InLevelEntityType": "InfestedGrenadeDeco",
+                "MaxNumSpawnPods": 3,
+                "ToggleFireBehavior": 0,
+                "MinTimeBetweenGrenades": 2,
+                "ThrowGrenadeTimeout": 10,
+                "DebugArc": 0
+            },
+            "GuardTactic": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "LookAtNearbyTeammates": 1,
+                "LookAtNearbyPlayer": 0,
+                "LookAtTarget": 1,
+                "NearbyTeammatesThreshold": 10,
+                "PlayerBias": 0.6,
+                "ReportAttackOnDamage": 1,
+                "PatrolBehavior:Type": "/EE/Types/Npc/PatrolBehavior",
+                "PatrolBehavior:Enabled": 1,
+                "PatrolBehavior:OnStartScript": {
+                    "Script": ""
+                },
+                "PatrolBehavior:OnDamagedScript": {
+                    "Script": ""
+                },
+                "PatrolBehavior:DefaultReevaluationDelay": 0,
+                "PatrolBehavior:StopRadius": 1,
+                "PatrolBehavior:NearDistance": 2,
+                "PatrolBehavior:SpeedMultiplier": 1,
+                "PatrolBehavior:AlertSpeedMultiplier": 1,
+                "PatrolBehavior:FailOnTargetAcquired": 1,
+                "PatrolBehavior:AimWhenIdle": 0,
+                "PatrolBehavior:AimWhenAlert": 1,
+                "PatrolBehavior:PermanentAlert": 0,
+                "PatrolBehavior:ForceIdleForSinglePointPatrols": 1,
+                "PatrolBehavior:GenericAnims": [],
+                "PatrolBehavior:MinPlayerDist": [
+                    0,
+                    0
+                ],
+                "PatrolBehavior:MinPlayerFov": 60,
+                "PatrolBehavior:AutoAssignClosestPatrol": 0,
+                "PatrolBehavior:SameZoneOnly": 1,
+                "PatrolBehavior:AutoPatrolRadius": 30,
+                "RandomWalkBehavior:Type": "/EE/Types/Npc/Action",
+                "RandomWalkBehavior:Enabled": 1,
+                "RandomWalkBehavior:OnStartScript": {
+                    "Script": ""
+                },
+                "RandomWalkBehavior:OnDamagedScript": {
+                    "Script": ""
+                },
+                "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
+                "GuardBehavior:Enabled": 1,
+                "GuardBehavior:OnStartScript": {
+                    "Script": ""
+                },
+                "GuardBehavior:OnDamagedScript": {
+                    "Script": ""
+                },
+                "GuardBehavior:DefaultReevaluationDelay": 0,
+                "GuardBehavior:WaitAction:Type": "/EE/Types/Npc/WaitAction",
+                "GuardBehavior:WaitAction:Enabled": 1,
+                "GuardBehavior:WaitAction:OnStartScript": {
+                    "Script": ""
+                },
+                "GuardBehavior:WaitAction:OnDamagedScript": {
+                    "Script": ""
+                },
+                "GuardBehavior:RandomFacingChange": [
+                    0,
+                    0
+                ],
+                "GuardBehavior:MinHeadingChangeToTurn": 0
+            }
+        },
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 3
+        },
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 200,
+        "ViewFov": 360,
+        "ViewDistance": 200,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "PerceiverType": "/Lotus/Types/Enemies/Grineer/GrineerPerceiver",
+        "CustomLevelScalingScript": {
+            "Script": "/Lotus/Types/Enemies/SimpleBossScaling.lua",
+            "Function": "CalculateVIPLevel"
+        }
+    }
+}

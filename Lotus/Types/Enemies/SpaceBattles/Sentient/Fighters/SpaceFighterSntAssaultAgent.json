@@ -1,0 +1,138 @@
+{
+    "parent": "/Lotus/Types/Enemies/SpaceBattles/SpaceFighterBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SpaceFighterSntAssaultAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/SpaceBattles/Sentient/Weapons/SpaceFighterSntAssaultWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SpaceFighterSntAssaultSuit",
+                "forceEquip": 0,
+                "hand": "EXTRA1"
+            }
+        ],
+        "BlockingBehaviorFighter": {
+            "Deceleration": 0
+        },
+        "FlyRetreatOffMapBehaviour": {
+            "OnStartScript": {
+                "Script": ""
+            }
+        },
+        "TargetEvaluatingBehaviorSelector": {
+            "FighterFlyInCirclesBehavior": {
+                "SetVariable": "IV_ADDITIVE_1_STATE"
+            }
+        },
+        "CombatFlyInFormationFighterTactic": {
+            "MaxFormationSlots": 1,
+            "LeaderAction:FighterManeuverBehavior": {
+                "UnderFireManeuverDistance": 300
+            },
+            "LeaderAction:FighterBehaviorStateMachine": {
+                "AttackAction:MaxSpeedModifier": 2.4,
+                "AttackAction:MinSpeedModifier": 1,
+                "DisengageAction:MaxDistanceToTarget": 50,
+                "DisengageAction:DisengageDistance": 100,
+                "EvasivePathingType": 1
+            },
+            "FollowerAction:FighterManeuverBehavior": {
+                "UnderFireManeuverDistance": 300
+            },
+            "ShootingAngleFromForward": 10
+        },
+        "FighterManeuverBehavior": {
+            "ManeuverProbability": 0.85,
+            "UnderFireManeuverDistance": 300,
+            "CloseToTargetManeuverDistance": 50,
+            "PostDodgeMaintainSpeedDuration": 1.4
+        },
+        "FighterBehaviorStateMachine": {
+            "AttackAction:MaxSpeedModifier": 2.4,
+            "AttackAction:MinSpeedModifier": 1,
+            "AttackAction:SetVariable": "IV_ADDITIVE_1_STATE",
+            "AttackAction:SetVariableValue": 1,
+            "DisengageAction:MaxDistanceToTarget": 50,
+            "DisengageAction:DisengageDistance": 100,
+            "CircleAction:Type": "/Lotus/Types/Behaviors/FighterFlyInCirclesBehavior",
+            "CircleAction:LazyCircling": 0,
+            "CircleAction:EnableManeuvers": 1,
+            "CircleAction:SearchTag": "",
+            "CircleAction:SearchForTargetTagRange": 0,
+            "CircleAction:DefaultFlyAroundTargetRange": 180,
+            "CircleAction:MoveFacingControl": "MFC_FACE_TARGET",
+            "CircleAction:SetVariable": "IV_ADDITIVE_1_STATE",
+            "CircleAction:SetVariableValue": 0,
+            "CircleAction:AimArc": 40,
+            "CirclingMinTimeRange": [
+                4,
+                6
+            ],
+            "ScriptTargetInRangeMoveSpeedModifier": 1,
+            "EvasivePathingType": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierAvoidance",
+                    "/EE/Types/Npc/LocomotionMoveModifierAlwaysMoveForward",
+                    "/EE/Types/Npc/LocomotionMoveModifierFreezeDesiredSpeed"
+                ],
+                "LocomotionMoveModifierAvoidance": {
+                    "AllowVerticalAvoidance": 1,
+                    "AvoidanceInputMultiplier": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "PreserveVelocity": 1,
+                    "MinAvoidanceReducedVelocityPct": 0.3,
+                    "FlyerControlMode": 1,
+                    "AllowedObstacleCountForMaxSpeed": 60,
+                    "ObstacleCountForMinSpeed": 200,
+                    "ObstacleSlowdownScalingExponent": 1.8,
+                    "MinSpeedScalingFromObstacles": 0.66,
+                    "AvoidDynamicObstaclesOnly": 0
+                },
+                "LocomotionMoveModifierAlwaysMoveForward": {
+                    "MinSpeed": 0
+                },
+                "LocomotionMoveModifierFreezeDesiredSpeed": []
+            },
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierAvoidance"
+                ],
+                "LocomotionMoveModifierAvoidance": {
+                    "AllowVerticalAvoidance": 1,
+                    "AvoidanceInputMultiplier": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "PreserveVelocity": 1,
+                    "MinAvoidanceReducedVelocityPct": 0.3,
+                    "FlyerControlMode": 1,
+                    "AllowedObstacleCountForMaxSpeed": 30,
+                    "ObstacleCountForMinSpeed": 200,
+                    "ObstacleSlowdownScalingExponent": 1.8,
+                    "MinSpeedScalingFromObstacles": 0.25,
+                    "AvoidDynamicObstaclesOnly": 0
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "avoidanceRadius": 15
+        },
+        "ShootingController:DefaultFiringPrefs": {
+            "onlyFireWithinRangeMultiplier": 1
+        },
+        "ViewCombatDistance": 3500,
+        "VoiceBoxTeam": "GrineerFighters"
+    }
+}

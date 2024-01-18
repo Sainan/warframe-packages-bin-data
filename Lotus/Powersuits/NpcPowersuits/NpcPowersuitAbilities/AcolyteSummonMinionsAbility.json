@@ -1,0 +1,58 @@
+{
+    "parent": "NpcAbility",
+    "data": {
+        "Script": {
+            "Script": "QuadRobotSpawnDronesAbility.lua",
+            "Function": "ActivateAbility",
+            "_spawnFx": "/Lotus/Fx/Enemies/Grineer/DeathSquad/FlashbangBurstSparks",
+            "_respawnDelay": 10,
+            "_desiredMaxEnemies": 2,
+            "_minEnemyCount": 2,
+            "_droneAgentType": "/Lotus/Types/Enemies/Acolytes/CrawlerMinion",
+            "_droneAvatarType": "",
+            "_spawnDroneAgentType": [],
+            "_droneTeam": "CatMaster",
+            "_minRange": -7,
+            "_maxRange": 7,
+            "_minHeight": 0,
+            "_maxHeight": 0,
+            "_parentRankMin": 0.3,
+            "_parentRankMax": 0.8,
+            "_maxDroneSearchRange": 100,
+            "_droneIgnoredByAiDir": 0,
+            "_useInstigatorTarget": 1,
+            "_setScriptTarget": 0,
+            "_pairDroneWithTarget": 0,
+            "_scaleEnemyCountWithPlayerCount": 1,
+            "_useInstigatorAwareness": 0,
+            "_rampUpCooldown": 0,
+            "_onSpawnAnim": "/Lotus/Animations/Grineer/GrineerManic/Taunt_anim.fbx",
+            "_onSpawnSound": "",
+            "_onSpawnEvent": "SFXKubrowHandlerCall",
+            "_onAttackAnim": "",
+            "_onAttackSound": ""
+        },
+        "CooldownDuration": 6,
+        "ActivationXP": 0,
+        "EvaluateScript": 0,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/BlackboardVarEvaluator",
+            "/Lotus/Types/Game/AbilityEvaluators/FindAvatarsEvaluator"
+        ],
+        "Evaluator:BlackboardVarEvaluator": {
+            "VarName": "DroneDeathTime",
+            "Var": "LastChargeAbilityTime",
+            "Value": 10,
+            "Check": "VC_LAST_TIME_GREATER",
+            "Team": 1
+        },
+        "Evaluator:FindAvatarsEvaluator": {
+            "AvatarType": "/Lotus/Types/Enemies/Grineer/AIWeek/Avatars/CombatKubrowAvatar",
+            "SearchRange": [
+                0,
+                100
+            ],
+            "MinCount": 2
+        }
+    }
+}

@@ -1,0 +1,296 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Drones/AIWeek/SuicideDroneAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "ArtificerSuicideDroneAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Rifle/ArtificerSuicideDroneRifle",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SuicideDroneWithOwnerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/FormationTactic",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/HoverAttackBehavior",
+            "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "BlockingBehavior": {
+            "BlockOnBeingAttached": 0
+        },
+        "FormationTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "GroupType": "GT_LEADER_FORMATION",
+            "SwapSlotsRandomly": 1,
+            "SwapSlotInterval": [
+                2,
+                4
+            ],
+            "MaxDistToLeader": 8,
+            "RingDist": [
+                1,
+                3
+            ],
+            "MaxMovementDistance": 100,
+            "MaxJoinDistanceWileFleeing": 20,
+            "SuccessRadius": 0.5,
+            "StopRadius": 2.5,
+            "AllowRun": 1,
+            "MoveFacingControl": "MFC_NONE",
+            "MinDistToTarget": 0,
+            "ExitReevaluationTime": 0,
+            "TurnAngleThreshold": 30,
+            "FollowerPositions": [
+                [
+                    2.5,
+                    3,
+                    2.5
+                ],
+                [
+                    -2.5,
+                    2,
+                    2.5
+                ],
+                [
+                    2.5,
+                    3,
+                    -2.5
+                ],
+                [
+                    -2.5,
+                    2,
+                    -2.5
+                ],
+                [
+                    2.5,
+                    2,
+                    2.5
+                ],
+                [
+                    -2.5,
+                    3,
+                    2.5
+                ],
+                [
+                    2.5,
+                    2,
+                    -2.5
+                ],
+                [
+                    -2.5,
+                    3,
+                    -2.5
+                ]
+            ],
+            "Formation:Type": "/EE/Types/Npc/FixedFormation",
+            "Formation:FixedFormation": {
+                "FollowerPositions": [
+                    [
+                        2.5,
+                        3,
+                        2.5
+                    ],
+                    [
+                        -2.5,
+                        2,
+                        2.5
+                    ],
+                    [
+                        2.5,
+                        3,
+                        -2.5
+                    ],
+                    [
+                        -2.5,
+                        2,
+                        -2.5
+                    ],
+                    [
+                        2.5,
+                        2,
+                        2.5
+                    ],
+                    [
+                        -2.5,
+                        3,
+                        2.5
+                    ],
+                    [
+                        2.5,
+                        2,
+                        -2.5
+                    ],
+                    [
+                        -2.5,
+                        3,
+                        -2.5
+                    ]
+                ]
+            },
+            "ForceLeader": "FL_SELECT_BEST_LEADER",
+            "OnlyEnhancedCanLead": 1,
+            "LeaderPriority": 0,
+            "EnhancedPriorityBoost": 1,
+            "CombatSetting": "CS_COMBAT_ONLY",
+            "NeedsTarget": 0,
+            "PatrolRouteOnly": 0,
+            "FormationIdentifier": "Artificer",
+            "MergeThreshold": 0,
+            "LeaderAction:Type": "/EE/Types/Npc/Action",
+            "LeaderAction:Enabled": 1,
+            "LeaderAction:OnStartScript": {
+                "Script": ""
+            },
+            "LeaderAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "FollowerAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+            "FollowerAction:Enabled": 1,
+            "FollowerAction:OnStartScript": {
+                "Script": ""
+            },
+            "FollowerAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "FollowerAction:DefaultReevaluationDelay": 0,
+            "FollowerAction:Actions": [
+                "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "/Lotus/Types/Behaviors/HoverAttackBehavior",
+                "/EE/Types/Npc/WaitBehavior"
+            ],
+            "FollowerAction:UsePowerSuitAbilitiesBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0.25,
+                "BlockForPowerCompleteType": "BT_ALWAYS",
+                "AllowInterruptOfAbility": 0,
+                "StopFiring": 1,
+                "StopMovingOnStart": 0,
+                "ExtraReevaluationDelay": 0,
+                "ActiveAction:Type": "/EE/Types/Npc/Action",
+                "ActiveAction:Enabled": 1,
+                "ActiveAction:OnStartScript": {
+                    "Script": ""
+                },
+                "ActiveAction:OnDamagedScript": {
+                    "Script": ""
+                },
+                "EvaluateAction": 1,
+                "FaceTarget": 0,
+                "TurnAccuracyThreshold": 10,
+                "TurnTimeout": 2,
+                "AimTimeout": 0.5,
+                "ValidAbilities": [],
+                "MaxProcessPerEval": 0,
+                "AimAtTarget": 0,
+                "CheckIfAbilityUnlocked": 0,
+                "MultipleConcurrentAbilities": 0,
+                "EvaluateDelayRange": [
+                    0.5,
+                    1
+                ],
+                "PreventUsageOnWeaponUse": 0,
+                "TurnDuringAbility": 0,
+                "DeactivateAbilitiesOnPredeath": 0,
+                "ResetEvalTimerOnEnemySpotted": 0
+            },
+            "FollowerAction:HoverAttackBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "FireDuration": [
+                    1.5,
+                    2
+                ],
+                "WaitDuration": [
+                    0.8,
+                    2.5
+                ],
+                "CheckTargetVisible": 1,
+                "BaitType": "",
+                "MaxBaitRadius": 1000,
+                "FaceTarget": 1,
+                "StopMovingOnShoot": 1
+            },
+            "FollowerAction:WaitBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOut": 5,
+                "CoverOnly": 0,
+                "AimPosture": 0,
+                "MinimalEnemyDistance": 0,
+                "TrackTarget": 0,
+                "Peek": 0,
+                "FailOnDamaged": 1,
+                "PreventShooting": 0,
+                "StopMovingOnEnter": 0
+            },
+            "FollowerAction:FailOnChildFailure": 0,
+            "AllowInDefenseVolumes": 1,
+            "AllowSlotRearrangement": 0,
+            "RearrangeThreshold": 0,
+            "FollowerCrouchWhenInFormation": 1,
+            "FollowerIdleAnim": "",
+            "RandomFollowerDelay": 0,
+            "FollowerDelayRange": [
+                0,
+                1
+            ],
+            "PeriodicBarkTiming": [
+                0,
+                0
+            ],
+            "PeriodicBark": "IDLE",
+            "CatchUpDistance": 5,
+            "CatchUpMult": 1
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "FaceTarget": 0,
+            "ValidAbilities": [],
+            "AimAtTarget": 0
+        }
+    }
+}

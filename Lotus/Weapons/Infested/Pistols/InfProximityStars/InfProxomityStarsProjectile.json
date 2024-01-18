@@ -1,0 +1,134 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "Mesh": "InfProximityStars_skel.fbx",
+        "AnimationScene": "/Lotus/Animations/Tenno/Movement/Throwing/U18ThrowingKnivesOpenedWEP_anim.fbx",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Infested/InfProximityStars/InfProximityStarProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Grenades/InfProximityStarsTrailSpots",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicQuery",
+        "AttackData": {
+            "Type": "DT_POISON",
+            "Amount": 50,
+            "ProcChance": 0.35
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "CriticalChance": 0.01,
+        "CriticalMultiplier": 2,
+        "ForcedSourceProcs": [
+            "PT_STAGGERED",
+            "PT_BIG_STAGGER",
+            "PT_KNOCKED_DOWN"
+        ],
+        "ExplosionIgnoreSource": 1,
+        "ExplosionIgnoreCover": 0,
+        "ExplosionFallOff": 0.5,
+        "AllowedDamageTypes": [
+            "DT_IMPACT",
+            "DT_FIRE",
+            "DT_EXPLOSION",
+            "DT_PHYSICAL"
+        ],
+        "DamageRadius": 4.8,
+        "DieEffect": "/Lotus/Fx/Explosions/Generic/ExplosionFXOrganicSmall",
+        "DieEffectMirror": "/Lotus/Fx/Explosions/Generic/ExplosionFXOrganicSmall",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "Toughness": 10000,
+        "MaxLife": 8,
+        "VerticalImpulse": 50,
+        "HorizontalImpulse": 75,
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_POISON",
+            "Amount": 20,
+            "ProcChance": 0.35
+        },
+        "EmbedDamageRadius": 2.5,
+        "EmbedFallOff": 0,
+        "EmbedTime": [
+            5,
+            5
+        ],
+        "EmbedEffect": "/Lotus/Fx/Weapons/Infested/InfProximityStars/InfProximityEmbed",
+        "OwnEmbedEffect": 1,
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 30,
+        "KinematicMaxSpeed": 30,
+        "KinematicGravity": 1,
+        "KinematicGravityMultiplier": 0.25,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            0,
+            60,
+            10
+        ],
+        "SweepRadius": 0,
+        "ProjectileReplication": "SYNCED_AUTONOMOUS",
+        "FaceVelocity": 1,
+        "BaseRotation": [
+            -0.5,
+            0.5,
+            0.5,
+            0.5
+        ],
+        "KinematicIgnoredTypes": [
+            "/Lotus/Types/Game/PickUps/LotusPickUp"
+        ],
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/InfProximityStars.lua",
+            "Function": "ScaleDownAndHide"
+        },
+        "SilentProjectile": 1,
+        "ApplyColorCustomization": 1,
+        "RiftStasisWeight": 12
+    }
+}

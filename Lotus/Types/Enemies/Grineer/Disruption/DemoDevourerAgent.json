@@ -1,0 +1,121 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/Ghouls/GhoulDevourerAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/DemoDevourerAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "Weapons/DemoDevourerMeleeWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "Powersuits/DemoDevourerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "NeverPauseByAiDirector": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/TimerDecorator",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+            "/Lotus/Types/Behaviors/TargetOffNavBehavior",
+            "/EE/Types/Npc/MeleeTactic",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "TimerDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/EE/Types/Npc/MeleeContinousBehavior",
+            "ChildAction:MeleeContinousBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SwingAttackRange": [
+                    0,
+                    2.5
+                ],
+                "LungeAttackRange": [
+                    2.5,
+                    2.5
+                ],
+                "TeamBbLungeSym": "",
+                "TimeBetweenTeamLunges": 5,
+                "LungeToPredictedPos": 0,
+                "UseMeleeFov": 0,
+                "StopIfOutsideMeleeFov": 0,
+                "MeleeFov": 120,
+                "AllowMeleeingFromBehind": 0,
+                "TimeSinceRendered": 10,
+                "MeleeFromBehindFOV": 90,
+                "SwingInputCode": "MELEE",
+                "LungeInputCode": "MELEE_SWING",
+                "ModifyAttackRangeBasedOnPlayerVelocity": 1,
+                "PredictedSwingTime": 0.5,
+                "PredictedLungeTime": 1,
+                "StopMovingWhenAttacking": 0,
+                "DisablePostureChangers": 0,
+                "TimeBetweenLunges": 2,
+                "LowTargetThreshold": 0.8,
+                "NormalAttack": "MELEE",
+                "LowAttack": "MELEE",
+                "ClearCoverReservationOnStart": 0,
+                "UseCombatManager": 0,
+                "VipAvatarType": "",
+                "TimeBetweenBarks": 2,
+                "VisibilityTimeout": 0,
+                "MaxReachableHeight": -9223372036854775808.0,
+                "Bark": "ATTACK_SCREAM",
+                "IsOffHandWeapon": 0
+            },
+            "StopWhenChildStops": 1,
+            "TimerDuration": [
+                1,
+                2
+            ],
+            "EvaluationDelay": 10
+        },
+        "StormTargetOrderBehavior": {
+            "FailsOnTargetAcquired": 0
+        },
+        "MeleeTactic": {
+            "MeleeContinousBehavior": {
+                "SwingAttackRange": [
+                    0,
+                    2.5
+                ],
+                "LungeAttackRange": [
+                    2.5,
+                    2.5
+                ]
+            },
+            "KeepMeleeDistanceBehavior": {
+                "IdealDistance": [
+                    1.5,
+                    2.5
+                ]
+            }
+        }
+    }
+}

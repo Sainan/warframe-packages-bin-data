@@ -1,0 +1,71 @@
+{
+    "parent": "/Lotus/Types/Enemies/SpaceBattles/SpaceFighterBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SpaceFighterChargeAvatar"
+        },
+        "MaxLevel": 13,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/SpaceBattles/Corpus/Weapons/Venus/SpaceFighterChargeWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/Lotus/Types/Behaviors/FlyReceiveMeleeAttackBehavior",
+            "/EE/Types/Npc/BlockingBehaviorFighter",
+            "/Lotus/Types/Behaviors/FlyRetreatOffMapBehaviour",
+            "/EE/Types/Npc/TargetEvaluatingBehaviorSelector",
+            "/Lotus/Types/Behaviors/CombatFlyInFormationFighterTactic",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/FighterBehaviorStateMachine",
+            "/Lotus/Types/Behaviors/FlyBackToCombatZoneFighterBehavior",
+            "/Lotus/Types/Behaviors/FlyAfterTargetBehavior",
+            "/Lotus/Types/Behaviors/FlyInFormationFighterTactic",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "TargetEvaluatingBehaviorSelector": {
+            "FighterFlyInCirclesBehavior": {
+                "AimArc": 180
+            }
+        },
+        "CombatFlyInFormationFighterTactic": {
+            "GroupType": "GT_CHARGE",
+            "MaxFormationSlots": 4,
+            "DesiredFormation": "FRM_COLUMN",
+            "ShootingAngleFromForward": 80
+        },
+        "FighterBehaviorStateMachine": {
+            "AttackAction:CombatPosture": "JOG",
+            "AttackAction:ControlShooting": 0,
+            "AttackAction:AimArc": 75,
+            "AttackAction:OffsetTargetDestination": 120,
+            "AttackAction:AlwaysHeadForOffsetDestination": 1,
+            "DisengageAction:SimpleForwardDisengage": 1,
+            "DisengageAction:DisengageDistance": 100,
+            "CircleAction:Type": "/Lotus/Types/Behaviors/FighterFlyInCirclesBehavior",
+            "CircleAction:LazyCircling": 1,
+            "CircleAction:EnableManeuvers": 1,
+            "CircleAction:SearchTag": "",
+            "CircleAction:SearchForTargetTagRange": 3000,
+            "CircleAction:DefaultFlyAroundTargetRange": 500,
+            "CircleAction:SetVariable": "IV_CROUCH",
+            "CircleAction:SetVariableValue": 0,
+            "CircleAction:AimArc": 180
+        },
+        "FlyInFormationFighterTactic": {
+            "ShootingAngleFromForward": 80
+        },
+        "LocomotionController:PathingPreferences": {
+            "avoidanceRadius": 14
+        },
+        "ShootingController:ContinuousSweepMoveSpeed": 0.11,
+        "ViewCombatDistance": 3500,
+        "BaseHitChance": [
+            1,
+            1
+        ]
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "parent": "/EE/Types/Engine/Decoration",
+    "data": {
+        "Mesh": "/Lotus/Objects/ManInTheWall/Gameplay/MITWxBreakBlockShortB.fbx",
+        "CullDistance": 80,
+        "UseParentVisibility": 0,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "DestructibleCollideScriptTriggerSmall",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "DestructibleObjectNavMeshCutterLarge",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
+        "DamageOnContact": 1,
+        "Health": 2000,
+        "MasterCreateOnDestroy": {
+            "LocalPosition": [
+                0,
+                0,
+                -1
+            ],
+            "Type": "MITWxBreakBlockShortDestructionB"
+        },
+        "OnDamageScript": {
+            "Script": "/Lotus/Scripts/DecorationFunctions.lua",
+            "Function": "VulnerableToAgentType",
+            "_triggerType": "",
+            "_radius": 10,
+            "_angleClamp": 0,
+            "_speed": 30,
+            "_reset": 1,
+            "_movementSound": "",
+            "_vulnerableType": "/Lotus/Types/Enemies/ManInTheWall/Octopede/MITWOctopedeAvatar"
+        },
+        "StateChangeScript": {
+            "Script": "/Lotus/Scripts/DestructibleObject.lua",
+            "Function": "DestructibleObjectsRemoval",
+            "_navCutterType": "DestructibleObjectNavMeshCutterLarge"
+        },
+        "NavMeshInfluence": "NMI_NONE"
+    }
+}

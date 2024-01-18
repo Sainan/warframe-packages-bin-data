@@ -1,0 +1,486 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/BossLechKrilAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Rifle/HeavyRifle",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Grineer/HammerBossWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/BossLechKrilSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "DefaultSlot": "SLOT_6",
+        "PlayerAlly": 1,
+        "IgnoredByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "TransmissionScript": {
+            "Script": "/Lotus/Scripts/BossTransmissions.lua",
+            "Function": "Run",
+            "_introTransmission": "/Lotus/Sounds/Lotus/LotusTransmissionsBosses/Grineer/BossLieutenantLechKrilTransmissionEvent",
+            "_transmissions": [
+                "/Lotus/Sounds/Dialog/Taunts/Grineer/KrilInGameTaunt",
+                "/Lotus/Sounds/Lotus/LotusTransmissionsBosses/Grineer/BossLieutenantLechKrilVariationTransmissionEvent"
+            ],
+            "_combatTransmissions": [
+                "/Lotus/Sounds/Dialog/Taunts/Grineer/KrilInCombatTaunt"
+            ],
+            "_minCombatTransDelay": 20,
+            "_maxCombatTransDelay": 30,
+            "_minDistToTarget": 75,
+            "_playCombatTaunts": 1,
+            "_waitForCombatTaunt": 0,
+            "_delayForCombatTaunt": 5,
+            "_targetNumTransmission": 5
+        },
+        "AggroController:ForceAgentAggro": 1,
+        "AggroController:ForcedAgentAggroRange": [
+            0.5,
+            1
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/Lotus/Types/Behaviors/HammerBossStateMachine"
+        ],
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "HammerBossStateMachine": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "MaxFireShieldWait": 1,
+            "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
+            "GuardBehavior:Enabled": 1,
+            "GuardBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "GuardBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "GuardBehavior:DefaultReevaluationDelay": 0,
+            "GuardBehavior:WaitAction:Type": "/EE/Types/Npc/WaitAction",
+            "GuardBehavior:WaitAction:Enabled": 1,
+            "GuardBehavior:WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "GuardBehavior:WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "GuardBehavior:RandomFacingChange": [
+                0,
+                0
+            ],
+            "GuardBehavior:MinHeadingChangeToTurn": 0,
+            "SearchForTargetBehavior:Type": "/EE/Types/Npc/SearchForTargetBehavior",
+            "SearchForTargetBehavior:Enabled": 1,
+            "SearchForTargetBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "SearchForTargetBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "SearchForTargetBehavior:DefaultReevaluationDelay": 0,
+            "SearchForTargetBehavior:StartAtTimeSinceLastSeen": [
+                4,
+                6
+            ],
+            "SearchForTargetBehavior:ReInvestigateTimeRange": [
+                4,
+                6
+            ],
+            "SearchForTargetBehavior:ShouldAim": 1,
+            "SearchForTargetBehavior:CanRun": 1,
+            "SearchForTargetBehavior:StopSearchIfNoTarget": 0,
+            "SearchForTargetBehavior:StopSearchOnAwarenessLevel": "AW_IDLE",
+            "SearchForTargetBehavior:MaintainedAwarenessLevel": "AW_ALERT",
+            "SearchForTargetBehavior:SeekCoverDelayPostSearch": 5,
+            "SearchForTargetBehavior:OnArrivalBehaviors": [],
+            "UsePowerSuitAbilityBehavior:Type": "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "UsePowerSuitAbilityBehavior:Enabled": 1,
+            "UsePowerSuitAbilityBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "UsePowerSuitAbilityBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "UsePowerSuitAbilityBehavior:DefaultReevaluationDelay": 0.25,
+            "UsePowerSuitAbilityBehavior:BlockForPowerCompleteType": "BT_ALWAYS",
+            "UsePowerSuitAbilityBehavior:AllowInterruptOfAbility": 0,
+            "UsePowerSuitAbilityBehavior:StopFiring": 1,
+            "UsePowerSuitAbilityBehavior:StopMovingOnStart": 0,
+            "UsePowerSuitAbilityBehavior:ExtraReevaluationDelay": 4,
+            "UsePowerSuitAbilityBehavior:ActiveAction:Type": "/EE/Types/Npc/Action",
+            "UsePowerSuitAbilityBehavior:ActiveAction:Enabled": 1,
+            "UsePowerSuitAbilityBehavior:ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "UsePowerSuitAbilityBehavior:ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "UsePowerSuitAbilityBehavior:EvaluateAction": 0,
+            "UsePowerSuitAbilityBehavior:FaceTarget": 1,
+            "UsePowerSuitAbilityBehavior:TurnAccuracyThreshold": 5,
+            "UsePowerSuitAbilityBehavior:TurnTimeout": 2,
+            "UsePowerSuitAbilityBehavior:AimTimeout": 0.5,
+            "UsePowerSuitAbilityBehavior:ValidAbilities": [],
+            "UsePowerSuitAbilityBehavior:MaxProcessPerEval": 0,
+            "UsePowerSuitAbilityBehavior:AimAtTarget": 0,
+            "UsePowerSuitAbilityBehavior:CheckIfAbilityUnlocked": 0,
+            "UsePowerSuitAbilityBehavior:MultipleConcurrentAbilities": 0,
+            "UsePowerSuitAbilityBehavior:EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "UsePowerSuitAbilityBehavior:PreventUsageOnWeaponUse": 0,
+            "UsePowerSuitAbilityBehavior:TurnDuringAbility": 0,
+            "UsePowerSuitAbilityBehavior:DeactivateAbilitiesOnPredeath": 0,
+            "UsePowerSuitAbilityBehavior:ResetEvalTimerOnEnemySpotted": 0,
+            "MeleeBehavior:Type": "/EE/Types/Npc/HammerBossMeleeBehavior",
+            "MeleeBehavior:Enabled": 1,
+            "MeleeBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "MeleeBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "MeleeBehavior:DefaultReevaluationDelay": 0,
+            "MeleeBehavior:SwingAttackRange": [
+                0,
+                2.8
+            ],
+            "MeleeBehavior:ComboAttackRange": [
+                0,
+                2.8
+            ],
+            "MeleeBehavior:LungeAttackRange": [
+                0,
+                0
+            ],
+            "MeleeBehavior:WeaponThrowRange": [
+                5,
+                20
+            ],
+            "MeleeBehavior:UseMeleeFov": 1,
+            "MeleeBehavior:MeleeFov": 90,
+            "MeleeBehavior:SwingInputCode": "MELEE",
+            "MeleeBehavior:LungeInputCode": "MELEE_SWING",
+            "MeleeBehavior:ModifyAttackRangeBasedOnPlayerVelocity": 1,
+            "MeleeBehavior:PredictedSwingTime": 2,
+            "MeleeBehavior:StopMovingWhenAttacking": 0,
+            "MeleeBehavior:TimeBetweenLunges": 0,
+            "MeleeBehavior:TimeBetweenThrows": 10,
+            "MeleeBehavior:NormalAttack": "MELEE",
+            "MeleeBehavior:ComboAttack": "MELEE_ALTERNATE",
+            "MeleeBehavior:LungeAttackAction": "MELEE_SWING",
+            "MeleeBehavior:ThrowAttackAction": "MELEE_SWING_UP",
+            "MeleeBehavior:HammerSwingAction": "SwingingHammer",
+            "MeleeBehavior:MovementSpeedModifier": [
+                0.00001,
+                1
+            ],
+            "MeleeBehavior:MoveTimeout": 2,
+            "MeleeBehavior:SearchTimeout": 5,
+            "AttackFromTheOpenBehavior:Type": "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "AttackFromTheOpenBehavior:Enabled": 1,
+            "AttackFromTheOpenBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "AttackFromTheOpenBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "AttackFromTheOpenBehavior:DefaultReevaluationDelay": 0,
+            "AttackFromTheOpenBehavior:MaxStrafeDistance": 15,
+            "AttackFromTheOpenBehavior:MinStrafeDistance": 0,
+            "AttackFromTheOpenBehavior:StopRadius": 0.1,
+            "AttackFromTheOpenBehavior:MovementSpeedModifier": [
+                0.8,
+                1.2
+            ],
+            "AttackFromTheOpenBehavior:LookAtTarget": 0,
+            "AttackFromTheOpenBehavior:LookHorizRate": 40,
+            "AttackFromTheOpenBehavior:LookVertRate": 20,
+            "AttackFromTheOpenBehavior:LookTargetOffset": [
+                0,
+                0,
+                0
+            ],
+            "AttackFromTheOpenBehavior:MinAngleToTurn": 30,
+            "AttackFromTheOpenBehavior:MinAimMask": 0.9,
+            "AttackFromTheOpenBehavior:TargetNotVisibleTimeoutRange": [
+                2,
+                2
+            ],
+            "AttackFromTheOpenBehavior:ShootTime": [
+                3,
+                5
+            ],
+            "AttackFromTheOpenBehavior:WaitTime": [
+                0.5,
+                1
+            ],
+            "AttackFromTheOpenBehavior:RepositionTime": [
+                2,
+                6
+            ],
+            "AttackFromTheOpenBehavior:KeepRunningDuringWaitPeriod": 1,
+            "AttackFromTheOpenBehavior:MoveDuringShoot": 1,
+            "AttackFromTheOpenBehavior:CrouchDuringShootChance": 0.2,
+            "AttackFromTheOpenBehavior:AllowCrouchMoveDistance": 0,
+            "AttackFromTheOpenBehavior:IgnoreTeammateBlockage": 0,
+            "AttackFromTheOpenBehavior:DecorativeReloads": 0,
+            "AttackFromTheOpenBehavior:DesiredTimeBetweenReloads": [
+                3,
+                6
+            ],
+            "AttackFromTheOpenBehavior:RealReloads": 0,
+            "AttackFromTheOpenBehavior:AllowSuppressingFire": 1,
+            "AttackFromTheOpenBehavior:SuppressionTargetDistDiff": 2.5,
+            "AttackFromTheOpenBehavior:OnlyAimDuringShootTime": 0,
+            "AttackFromTheOpenBehavior:MoveFacingControl": "MFC_FACE_TARGET",
+            "AttackFromTheOpenBehavior:MovePosture": "WALK",
+            "AttackFromTheOpenBehavior:MoveToTarget": 0,
+            "AttackFromTheOpenBehavior:PointBlankRange": 5,
+            "AttackFromTheOpenBehavior:NumQueryResults": 5,
+            "AttackFromTheOpenBehavior:disallowedNodeFlags": 0,
+            "AttackFromTheOpenBehavior:ChangeWeapons": 1,
+            "AttackFromTheOpenBehavior:WeaponSlot": "SLOT_2",
+            "AttackFromTheOpenBehavior:WeaponHand": "MAIN_HAND",
+            "AttackFromTheOpenBehavior:EquipStyle": "ES_INSTANT_EQUIP",
+            "AttackFromTheOpenBehavior:UnequipChangedWeaponsWhenStop": 0,
+            "AttackFromTheOpenBehavior:FiringPreferencesOverride": [],
+            "AttackFromTheOpenBehavior:RequireRangedWeapon": 0,
+            "AttackFromTheOpenBehavior:RequireNotForcedMelee": 0,
+            "AttackFromTheOpenBehavior:UseDefenseVolume": 0,
+            "KeepIdealDistanceBehavior:Type": "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "KeepIdealDistanceBehavior:Enabled": 1,
+            "KeepIdealDistanceBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "KeepIdealDistanceBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "KeepIdealDistanceBehavior:DefaultReevaluationDelay": 0,
+            "KeepIdealDistanceBehavior:StopRadius": 0.5,
+            "KeepIdealDistanceBehavior:NearDistance": 2,
+            "KeepIdealDistanceBehavior:SpeedMultiplier": 1,
+            "KeepIdealDistanceBehavior:AlertSpeedMultiplier": 1,
+            "KeepIdealDistanceBehavior:AimWhenIdle": 0,
+            "KeepIdealDistanceBehavior:AimWhenAlert": 1,
+            "KeepIdealDistanceBehavior:PermanentAlert": 1,
+            "KeepIdealDistanceBehavior:EnemyFaction": "TENNO",
+            "KeepIdealDistanceBehavior:TimeSinceLastSeen": 2,
+            "KeepIdealDistanceBehavior:NoCoverAfterExitTime": 1,
+            "KeepIdealDistanceBehavior:MustBeFurtherFromObjective": 1,
+            "KeepIdealDistanceBehavior:DistAheadToAdvance": 50,
+            "KeepIdealDistanceBehavior:MinAwareness": "AW_COMBAT",
+            "KeepIdealDistanceBehavior:AlertMovementPosture": "WALK",
+            "KeepIdealDistanceBehavior:DefaultMovementPosture": "WALK",
+            "KeepIdealDistanceBehavior:PauseTime": [
+                3,
+                5
+            ],
+            "KeepIdealDistanceBehavior:DesiredTacAreaScore": 8,
+            "KeepIdealDistanceBehavior:OnlyIfLevelAlert": 1,
+            "KeepIdealDistanceBehavior:UseLastSeenByTeam": 1,
+            "KeepIdealDistanceBehavior:LimitToCurrentRoom": 0,
+            "KeepIdealDistanceBehavior:OnlyFindPositionsOnFlightNav": 0,
+            "RageKeepIdealDistanceBehavior:Type": "/EE/Types/Npc/KeepIdealDistanceBehavior",
+            "RageKeepIdealDistanceBehavior:Enabled": 1,
+            "RageKeepIdealDistanceBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "RageKeepIdealDistanceBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "RageKeepIdealDistanceBehavior:DefaultReevaluationDelay": 0,
+            "RageKeepIdealDistanceBehavior:RandomizeRange": 0,
+            "RageKeepIdealDistanceBehavior:UseWeaponRange": 0,
+            "RageKeepIdealDistanceBehavior:IdealDistance": [
+                0,
+                0.5
+            ],
+            "RageKeepIdealDistanceBehavior:EvaluateDistance": [
+                0,
+                100
+            ],
+            "RageKeepIdealDistanceBehavior:MaxMovementDistance": 100,
+            "RageKeepIdealDistanceBehavior:AllowRetreat": 0,
+            "RageKeepIdealDistanceBehavior:AllowRun": 1,
+            "RageKeepIdealDistanceBehavior:AllowChase": 1,
+            "RageKeepIdealDistanceBehavior:ForceWalkBelowMinIdealRange": 1,
+            "RageKeepIdealDistanceBehavior:WalkRange": [
+                0,
+                0
+            ],
+            "RageKeepIdealDistanceBehavior:RequireTeamMeleeLock": 0,
+            "RageKeepIdealDistanceBehavior:ReleaseTeamMeleeLock": 0,
+            "RageKeepIdealDistanceBehavior:AimWhileMoving": 0,
+            "RageKeepIdealDistanceBehavior:MoveFacingControl": "MFC_FACE_MOVEDIR",
+            "RageKeepIdealDistanceBehavior:StopRadius": 0.5,
+            "RageKeepIdealDistanceBehavior:RunWhenShocked": 0,
+            "RageKeepIdealDistanceBehavior:ShockedDamageTime": 30,
+            "RageKeepIdealDistanceBehavior:OnlyTravelWhenVisible": 0,
+            "RageKeepIdealDistanceBehavior:TravelDuringStruggle": 1,
+            "RageKeepIdealDistanceBehavior:AllowPartialPath": 0,
+            "RageKeepIdealDistanceBehavior:UpdateDestinationInterval": 0.25,
+            "RageKeepIdealDistanceBehavior:UpdateDestinationDistance": 1,
+            "RageKeepIdealDistanceBehavior:OffNavRadius": 5,
+            "RageKeepIdealDistanceBehavior:OffNavHeight": 4,
+            "RageKeepIdealDistanceBehavior:RequiresClearNavTrace": 0,
+            "RageKeepIdealDistanceBehavior:HoverHeightOverride": -1,
+            "RageKeepIdealDistanceBehavior:RetryWithPathlessMovement": 0,
+            "RageKeepIdealDistanceBehavior:PathlessMovementMaxDistance": 16,
+            "RageKeepIdealDistanceBehavior:AvoidTargetLineOfSight": 0,
+            "RageKeepIdealDistanceBehavior:AvoidanceBias": 10,
+            "RageKeepIdealDistanceBehavior:LockTarget": 1,
+            "RageKeepIdealDistanceBehavior:LookAtTarget": 0,
+            "RageKeepIdealDistanceBehavior:DistanceToShoot": 0,
+            "RageKeepIdealDistanceBehavior:WalkWhileShooting": 0,
+            "RageKeepIdealDistanceBehavior:AimOnFire": 0,
+            "RageKeepIdealDistanceBehavior:AllowReload": 0,
+            "RageKeepIdealDistanceBehavior:ChangeWeapons": 0,
+            "RageKeepIdealDistanceBehavior:WeaponSlot": "SLOT_1",
+            "RageKeepIdealDistanceBehavior:WeaponHand": "MAIN_HAND",
+            "RageKeepIdealDistanceBehavior:EquipStyle": "ES_PLAY_EQUIP_ANIM",
+            "RageKeepIdealDistanceBehavior:AttackPhrase": "CHARGE_SCREAM",
+            "RageKeepIdealDistanceBehavior:PlayPhrase": 0,
+            "RageKeepIdealDistanceBehavior:Bark": "IDLE",
+            "RageKeepIdealDistanceBehavior:BarkFilter": "",
+            "RageKeepIdealDistanceBehavior:BarkInterval": [
+                0,
+                0
+            ],
+            "RageKeepIdealDistanceBehavior:ReportUnreachableOnFailedMove": 0,
+            "RageKeepIdealDistanceBehavior:ReportUnreachableOffNav": 0,
+            "RageKeepIdealDistanceBehavior:TimeOffNav": 2,
+            "RageKeepIdealDistanceBehavior:RestrictToDefenseVolume": 0,
+            "RageKeepIdealDistanceBehavior:WalkMovePosture": "WALK",
+            "ChargeBehavior:Type": "/EE/Types/Npc/BasicChargeBehavior",
+            "ChargeBehavior:Enabled": 1,
+            "ChargeBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "ChargeBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "ChargeBehavior:DefaultReevaluationDelay": 0,
+            "ChargeBehavior:UseChargeRange": 1,
+            "ChargeBehavior:ChargeAttackRange": [
+                0,
+                20
+            ],
+            "ChargeBehavior:ChargePastTargetDistance": 0.5,
+            "ChargeBehavior:ForceBashWithinTargetDistance": 3,
+            "ChargeBehavior:ChargeInputCode": "MELEE_SWING",
+            "ChargeBehavior:CoolOffTimeRange": [
+                6,
+                10
+            ],
+            "ChargeBehavior:CheckKneeVisibility": 1,
+            "ChargeBehavior:EarlyOutDistance": 2,
+            "ChargeBehavior:TargetCameraFOVMultiplier": 1,
+            "ChargeBehavior:SpecialWeapon": "",
+            "ChargeBehavior:ChargeSpeedMultiplier": 1.4,
+            "ChargeBehavior:TimeToHeatSeek": 10,
+            "ChargeBehavior:HeatSeakMaxAngle": 15,
+            "ChargeBehavior:DistanceToRePath": 1,
+            "ChargeBehavior:OnHeldMaxRunningTime": 5,
+            "ChargeBehavior:FirstPersonAnim": "",
+            "ChargeBehavior:PushBackArgs": {
+                "Force": 0,
+                "Time": 0,
+                "DecelForce": 0,
+                "MaxVelocity": 20
+            },
+            "ChargeBehavior:PushBackDamage": 50,
+            "ChargeBehavior:PushBackDamageType": "DT_IMPACT",
+            "ChargeBehavior:PushBackHitType": "DHT_MELEE",
+            "ChargeBehavior:OnlyOnePush": 1,
+            "ChargeBehavior:ShouldKnockdown": 1,
+            "ChargeBehavior:MovePosture": "RUN",
+            "ChargeBehavior:ClearAvoidance": 1,
+            "ChargeBehavior:SwapWeapon": 0,
+            "ChargeBehavior:ExitOnDamage": 0,
+            "ChargeBehavior:UseAttackInputRange": 3,
+            "ChargeBehavior:PredictedSwingTime": 2,
+            "ChargeBehavior:ModifyAttackRangeBasedOnPlayerVelocity": 1,
+            "ChargeBehavior:PushBackRangeWhileAttacking": 2.5,
+            "ChargeBehavior:PushBackAnimEvent": "MeleeStart",
+            "ChargeBehavior:PushBackEffect": "/Lotus/Fx/GrineerShieldHitEffect",
+            "ChargeBehavior:WeaponHand": "MAIN_HAND",
+            "ChargeBehavior:UseMultiSamplePrediction": 1,
+            "ChargeBehavior:InterruptMeleeOnStop": 1,
+            "ChargeBehavior:PlayPhrase": 1,
+            "ChargeBehavior:Bark": "CHARGE_SCREAM",
+            "ChargeBehavior:BarkFilter": "",
+            "ChargeBehavior:BarkInterval": [
+                0,
+                0
+            ],
+            "ChargeBehavior:PlayAttackPhrase": 0,
+            "ChargeBehavior:AttackBark": "ATTACK_SCREAM",
+            "ChargeBehavior:AttackBarkFilter": "",
+            "ChargeBehavior:AttackSound": "",
+            "FireShieldBehavior:Type": "/Lotus/Types/Behaviors/HammerBossShieldBehavior",
+            "FireShieldBehavior:Enabled": 1,
+            "FireShieldBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "FireShieldBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "FireShieldBehavior:DefaultReevaluationDelay": 0
+        },
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 4
+        },
+        "ViewDistance": 250,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "PerceiverType": "/Lotus/Types/Enemies/Grineer/GrineerPerceiver",
+        "IgnoredFactions": [
+            "Neutral"
+        ],
+        "IsCoverUseEnabled": 0,
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/RangedTargetEvaluator"
+    }
+}

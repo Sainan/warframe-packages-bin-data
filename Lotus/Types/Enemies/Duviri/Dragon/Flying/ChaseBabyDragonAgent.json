@@ -1,0 +1,159 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "/Lotus/Types/Enemies/Duviri/Dragon/Baby/ChaseBabyDragonAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Duviri/Dragon/Baby/DuviriDragonBabyWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/ShieldPhaseDuviriDragonBabySuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "ShouldIgnoreGCS": 0,
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "AggroController:AggroEntryVisible": {
+            "IncreaseTimeLength": 4,
+            "DecayTimeLength": 2
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/Logic/LogicGraphAction"
+        ],
+        "LogicGraphAction": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "GraphRes": "/Lotus/Types/Enemies/Duviri/Dragon/Baby/BabyDragonSplineLogicGraph"
+        },
+        "CustomShootBehavior": "/EE/Types/Npc/ScriptedShootBehavior",
+        "LocomotionController:Type": "/Lotus/Types/Game/DynamicSpaceFlightLocomotionController",
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderSpace"
+        ],
+        "LocomotionController:DynamicPathFinderSpace": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 0,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerSpace"
+        ],
+        "LocomotionController:DynamicPathFollowerSpace": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 1,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "ForceFaceForwardWhenInactive": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierAvoidance",
+                    "/EE/Types/Npc/LocomotionMoveModifierPID"
+                ],
+                "LocomotionMoveModifierAvoidance": {
+                    "AllowVerticalAvoidance": 1,
+                    "AvoidanceInputMultiplier": [
+                        1.2,
+                        1.2,
+                        0.8
+                    ],
+                    "PreserveVelocity": 0,
+                    "MinAvoidanceReducedVelocityPct": 0,
+                    "FlyerControlMode": 0,
+                    "AllowedObstacleCountForMaxSpeed": 30,
+                    "ObstacleCountForMinSpeed": 200,
+                    "ObstacleSlowdownScalingExponent": 1.8,
+                    "MinSpeedScalingFromObstacles": 0.25,
+                    "AvoidDynamicObstaclesOnly": 0
+                },
+                "LocomotionMoveModifierPID": {
+                    "PosKP": 1,
+                    "PosKI": 0,
+                    "PosKD": 0.1,
+                    "VelKP": 1,
+                    "VelKI": 0,
+                    "VelKD": 0.1,
+                    "ClampValue": 1,
+                    "PreserveVelocity": 0
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 20,
+            "minHeight": 5,
+            "preferredHeight": 10,
+            "nearbyNavSearchRadius": 1,
+            "offNavToleranceRadius": 0,
+            "maxShortenSteps": 20,
+            "avoidanceRadius": 4,
+            "dangerRadius": 4,
+            "avoidanceFactor": 1,
+            "disallowedNodeFlags": 393
+        },
+        "LocomotionController:ImplicitActionAheadDistance": 0.5,
+        "AccuracyModsType": "/EE/Types/Npc/NpcArchwingAccuracyMods",
+        "MotionControllerOverride": "/Lotus/Types/Enemies/SpaceBattles/Infested/CarrierDroneSpaceFlightMotionController",
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 400,
+        "ViewIdleFovSphereRadius": 5000,
+        "ViewFov": 360,
+        "ViewDistance": 500,
+        "UseCombatView": 1,
+        "ViewCombatFov": 360,
+        "ViewCombatDistance": 3500,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "AwarenessDecayTime": 0,
+        "TargetLostTime": 20,
+        "TargetLowHealthPercent": 0.3,
+        "ReportTargetRadius": 600,
+        "ReportTargetPortalCheck": 0,
+        "ReportAwareness": 1,
+        "alertRadiusBounds": [
+            1,
+            100
+        ],
+        "AlertDecayTime": 30,
+        "SuperAlertRadius": 800,
+        "SuperAlertDecayTime": 20,
+        "ReactionControllerType": "/Lotus/Types/Enemies/SpaceBattles/Grineer/Fighters/RailjackFighterReactionControllerImpl",
+        "PerceiverType": "/Lotus/Types/Enemies/SpaceBattles/Grineer/Fighters/SplineFighterPerceiver",
+        "SightReactionProbability": 0.8,
+        "IsCoverUseEnabled": 0,
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/RangedTargetEvaluator"
+    }
+}

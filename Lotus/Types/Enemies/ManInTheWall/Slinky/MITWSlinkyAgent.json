@@ -1,0 +1,322 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/AIWeek/RifleLancer",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "MITWSlinkyAvatar",
+            "EXIMUS": "MITWSlinkyLeaderAvatar"
+        },
+        "MaxLevel": 9999,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/MITWSlinkySuit",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "UsePowerSuitAbilitiesBehavior": {
+            "ExtraReevaluationDelay": 0,
+            "FaceTarget": 0,
+            "ValidAbilities": []
+        },
+        "StormTargetOrderBehavior": {
+            "DesiredPosture": "RUN",
+            "UseNearTargetPosture": 0,
+            "DesiredPostureNearTarget": "RUN"
+        },
+        "MoveTowardsTacEnemyInfluence": {
+            "StopRadius": 0.1,
+            "NearDistance": 1,
+            "PermanentAlert": 0,
+            "EnemyFaction": "",
+            "NoCoverAfterExitTime": 5,
+            "AlertMovementPosture": "RUN",
+            "DefaultMovementPosture": "RUN"
+        },
+        "TacPosIdealDistanceBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "FailOnQueryFailure": 0,
+            "ReevaluationDelayOnQueryFail": 0,
+            "RandomizeRange": 0,
+            "UseWeaponRange": 0,
+            "IdealDistance": [
+                6,
+                25
+            ],
+            "NumResults": 1,
+            "MinDistFromNavEdge": 1,
+            "GenerateFromTarget": 0,
+            "navType": "NT_NAVMESH",
+            "ScoreDistanceFromTarget": 1,
+            "DistanceFromTargetScoreRange": [
+                10,
+                20
+            ],
+            "HeightFromTargetRange": [
+                0,
+                0
+            ],
+            "UseTacAreaFilter": 0,
+            "ScoreDirectionFromTarget": 1,
+            "DistanceFromSelfRange": [
+                15,
+                40
+            ],
+            "EvaluateDistance": [
+                0,
+                100
+            ],
+            "StopRadius": 2,
+            "UpdateDestinationInterval": 0,
+            "UpdateDestinationDistance": 5,
+            "ForceRepositionTime": 0,
+            "OnlyTravelWhenVisible": 0,
+            "CompleteTravelWhenTargetLost": 1,
+            "AllowRetreat": 1,
+            "AllowRun": 1,
+            "LookAtTarget": 0,
+            "LockTarget": 0,
+            "OnlyFindPositionsOnFlightNav": 0,
+            "WalkFacingControl": "MFC_FACE_MOVEDIR",
+            "RunFacingControl": "MFC_FACE_MOVEDIR",
+            "SpeedMultiplier": [
+                1,
+                1
+            ],
+            "StopMovingOnExit": 1,
+            "SamplePointSpacing": 2,
+            "DoTacVisTrace": 1,
+            "DoVisRaycast": 0,
+            "WantTargetVisible": 1,
+            "WaitPeriodAfterVisibilityViolation": 0,
+            "PrioritizeVisibility": 1,
+            "DistanceScoreCurve": {
+                "m": -3,
+                "k": 2,
+                "b": 1,
+                "c": 0.5,
+                "logistic": 0
+            },
+            "DirectionScoreCurve": {
+                "m": 1000,
+                "k": 1,
+                "b": 0,
+                "c": 0.75,
+                "logistic": 1
+            },
+            "AimWhileMoving": 0,
+            "ShootingDistance": 0,
+            "ChangeWeapons": 0,
+            "WeaponSlot": "SLOT_1",
+            "WeaponHand": "MAIN_HAND",
+            "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+            "ForceWeaponCancelOnStopFiring": 0
+        },
+        "CustomResponseBehavior": {
+            "Responses": [
+                {
+                    "reaction": "INVESTIGATE_DEATH",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 1,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": 100,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "INVESTIGATE_COMBAT",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": 100,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "BULLET_IMPACT",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 3,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": 100,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "WHAT_WAS_THAT",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 1,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 1,
+                        "DoAim": 0,
+                        "UpdateTarget": 1,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": 100,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "UNDER_FIRE",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": 100,
+                        "ReportAttackAfterReact": 0
+                    }
+                }
+            ]
+        },
+        "InvestigateBehavior": {
+            "ShouldAim": 0,
+            "SpeedMultiplier": 1,
+            "FastSpeedMultiplier": 1,
+            "LookAroundTime": 3
+        },
+        "GuardTactic": {
+            "RandomWalkBehavior:MovementPosture": "RUN"
+        },
+        "LocomotionController:DynamicPathFollowerGround": {
+            "MinWalkWhenTurningAngle": 60,
+            "CheckFunnelForTightTurns": 1,
+            "MinReducedSpeed": 4
+        },
+        "LocomotionController:PathingPreferences": {
+            "shorteningType": "ST_NONE",
+            "useAvoidance": 0,
+            "minRequiredNavEdgeWidth": 1.5
+        },
+        "ShootingController:DefaultFiringPrefs": {
+            "setAimTarget": 0,
+            "setAimSource": 0
+        },
+        "UseExtraViewCone": 1,
+        "IdleVerticalFov": 30,
+        "ViewIdleDistance": 60,
+        "ExtraViewConeIdleFovFactor": 1.5,
+        "ExtraViewConeIdleDistFactor": 0.3,
+        "ViewFov": 360,
+        "ViewDistance": 160
+    }
+}

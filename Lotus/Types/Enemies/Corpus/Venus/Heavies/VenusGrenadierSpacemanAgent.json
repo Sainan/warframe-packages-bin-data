@@ -1,0 +1,126 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Venus/VenusSpacemanBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "VenusGrenadierSpacemanAvatar",
+            "EXIMUS": "VenusGrenadierSpacemanAvatarLeader"
+        },
+        "MaxLevel": 29,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Corpus/LongGuns/CrpEnergyRifle/CrpEnergyRifleWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/VenusGrenadierSpacemanPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Tenno/Grenades/NpcVenusThrowGrenadeIceWeapon",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/AgentOffNavBehaviorDropship",
+            "/Lotus/Types/Behaviors/CorpusNullifierFormationTactic",
+            "/Lotus/Types/Behaviors/DeployReinforcementEntityBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveToDefenseVolumeBehavior",
+            "/Lotus/Types/Behaviors/PlaceDynamicCover",
+            "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+            "/EE/Types/Npc/CombatEngageBehavior",
+            "/EE/Types/Npc/UseContextActionBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/Lotus/Types/Behaviors/PatrolFormationTactic",
+            "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/DefensiveCombatBehavior",
+            "/EE/Types/Npc/PoiBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "StormTargetOrderBehavior": {
+            "SuccessRadius": 10
+        },
+        "PlaceDynamicCover": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DeployCoverType": "/Lotus/Weapons/Corpus/Emplacement/CrpDeployableCover/CrpDeployableCover",
+            "VolumeType": "/Lotus/Weapons/Grineer/Emplacements/GrnDeployableCover/GrnDeployableCoverNavVolume",
+            "AvailableWhenLevelMin": 1,
+            "AvailableWhenLevelMax": 999,
+            "NumAvailableCovers": 1,
+            "CoverOrder": "",
+            "DeploymentLookupRange": [
+                0.5,
+                15
+            ],
+            "MinDistanceFromTarget": 10,
+            "AllowDefenseVolumes": 0,
+            "MaxSlopeAngle": 15,
+            "CoverSpacing": 10,
+            "StaticCoverDistanceMin": 5,
+            "DeploymentMaxDistance": -1,
+            "MaxTimeSinceTargetSeen": 2,
+            "DeploymentAnimation": "/Lotus/Animations/Corpus/Movement/CoverDeploy_anim.fbx",
+            "DeploymentAnimEvent": "DeployCover",
+            "DeployableAttachment": {
+                "LocalPosition": [
+                    -0.28,
+                    0,
+                    -0.2
+                ],
+                "LocalRotation": [
+                    0.541675,
+                    0.454519,
+                    -0.454519,
+                    0.541675
+                ],
+                "BoneName": "GAME_L1_LEG1",
+                "Type": "/Lotus/Weapons/Corpus/Emplacement/CrpDeployableCover/CrpDeployableCoverAttachment",
+                "Chance": 89,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            "HideAttachmentOnAnimStart": 0,
+            "HideLastAttachmentOnAnimStart": 0,
+            "SearchNearDesiredPosition": 0
+        },
+        "CombatEngageBehavior": {
+            "AttackFromCoverTactic": {
+                "UseGrenadeBehavior": {
+                    "MinimumThrowDelay": 15,
+                    "StationaryRadius": 5,
+                    "StationaryTime": 1
+                }
+            },
+            "UseGrenadeBehavior": {
+                "MinimumThrowDelay": 15,
+                "StationaryRadius": 5,
+                "StationaryTime": 1
+            }
+        },
+        "GuardTactic": {
+            "RandomWalkBehavior:UseDefenseVolume": 1
+        },
+        "CoverEvaluatorType": "/EE/Types/Npc/VenusAdvancingCoverEvaluator"
+    }
+}

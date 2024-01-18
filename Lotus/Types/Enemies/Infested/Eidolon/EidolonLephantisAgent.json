@@ -1,0 +1,599 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "EidolonLephantisAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "GolemEidolonGunWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "GolemEidolonGrenadeWeapon",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/Infested/Vip/GolemFullMeleeWeapon",
+                "forceEquip": 0,
+                "hand": "EXTRA2"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "SuicideOnWaterRestrictionViolation": 0,
+        "IgnoredByGroupCoordinators": 1,
+        "TransmissionScript": {
+            "Script": "/Lotus/Scripts/BossTransmissions.lua",
+            "Function": "Run",
+            "_introTransmission": "/Lotus/Sounds/Lotus/LotusTransmissionsBosses/Infestation/BossGolemDerelictTransmissionEvent",
+            "_transmissions": [
+                "/Lotus/Sounds/Lotus/LotusTransmissionsBosses/Infestation/BossGolemDerelictVariationTransmissionEvent",
+                "/Lotus/Sounds/Dialog/Taunts/Infested/GolemnDerelictInGameTaunt"
+            ],
+            "_combatTransmissions": [
+                "/Lotus/Sounds/Dialog/Taunts/Infested/GolemnDerelictInCombatTaunt"
+            ],
+            "_minCombatTransDelay": 20,
+            "_maxCombatTransDelay": 30,
+            "_minDistToTarget": 75,
+            "_playCombatTaunts": 1,
+            "_waitForCombatTaunt": 1,
+            "_delayForCombatTaunt": 15,
+            "_targetNumTransmission": 5
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BehaviorParallel",
+            "/EE/Types/Npc/GuardBehavior"
+        ],
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "BehaviorParallel": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "RequireAllToRun": 0,
+            "FailOnChildFailure": 0,
+            "Behaviors": [
+                "/Lotus/Types/Behaviors/GolemGunHeadBehaviorSelector",
+                "/Lotus/Types/Behaviors/GolemGrenadeHeadBehaviorSelector",
+                "/Lotus/Types/Behaviors/GolemMeleeHeadBehaviorSelector",
+                "/Lotus/Types/Behaviors/GolemRadialSlamAttackBehavior",
+                "/EE/Types/Npc/GenericBehaviorSelector"
+            ],
+            "GolemGunHeadBehaviorSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "AttachmentType": "/Lotus/Types/Enemies/Infested/Vip/GolemGunWeakSpotHitProxy",
+                "InitialAttachmentCheckOnly": 1,
+                "CheckTargetForAttachmentInstead": 0,
+                "SubBehaviors": [
+                    "/Lotus/Types/Behaviors/GolemShootBehavior",
+                    "/EE/Types/Npc/WaitBehavior"
+                ],
+                "GolemShootBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AttackSegmentTime": [
+                        4,
+                        4
+                    ],
+                    "WaitSegmentTime": [
+                        2,
+                        3
+                    ],
+                    "AttackRange": [
+                        0,
+                        100
+                    ],
+                    "RequireAim": 1,
+                    "StartAimAction": "StartGunAim",
+                    "StopAimAction": "EndGunAim",
+                    "AimHeadingOffset": 0,
+                    "AimArc": 50,
+                    "UseAltFire": 1,
+                    "UseTargeter": 0
+                },
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 600,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 1,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                }
+            },
+            "GolemGrenadeHeadBehaviorSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "AttachmentType": "/Lotus/Types/Enemies/Infested/Vip/GolemGrenadeWeakSpotHitProxy",
+                "InitialAttachmentCheckOnly": 1,
+                "CheckTargetForAttachmentInstead": 0,
+                "SubBehaviors": [
+                    "/Lotus/Types/Behaviors/GolemFireGrenadeBehavior",
+                    "/EE/Types/Npc/WaitBehavior"
+                ],
+                "GolemFireGrenadeBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AimHeadingOffset": 120,
+                    "AimArc": 35,
+                    "ProjectileType": "EidolonLephGrenadeProjectile",
+                    "SpawnPodProjectileType": "EidolonLephInfestedSpawnerProjectile",
+                    "InLevelEntityType": "/Lotus/Types/Enemies/Infested/Vip/InfestedGrenadeDeco",
+                    "MaxNumSpawnPods": 3,
+                    "ToggleFireBehavior": 1,
+                    "MinTimeBetweenGrenades": 2,
+                    "ThrowGrenadeTimeout": 10,
+                    "DebugArc": 0
+                },
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 60,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 1,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                }
+            },
+            "GolemMeleeHeadBehaviorSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "AttachmentType": "/Lotus/Types/Enemies/Infested/Vip/GolemMeleeWeakSpotHitProxy",
+                "InitialAttachmentCheckOnly": 1,
+                "CheckTargetForAttachmentInstead": 0,
+                "SubBehaviors": [
+                    "/Lotus/Types/Behaviors/GolemMeleeBehavior",
+                    "/EE/Types/Npc/WaitBehavior"
+                ],
+                "GolemMeleeBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AttackRange": [
+                        0,
+                        30
+                    ],
+                    "AimHeadingOffset": -120,
+                    "AimArc": 60,
+                    "AttackCoolDown": 5,
+                    "AttackInputCode": "MELEE",
+                    "StartAttackTime": 5,
+                    "MaxAttackTime": 15,
+                    "StopMovement": 1,
+                    "StopTurning": 1,
+                    "AttackVariants": [
+                        {
+                            "distance": [
+                                4,
+                                15
+                            ],
+                            "height": [
+                                -2,
+                                3
+                            ],
+                            "arc": 60,
+                            "cooldown": 12,
+                            "attack": "MELEE"
+                        },
+                        {
+                            "distance": [
+                                4,
+                                15
+                            ],
+                            "height": [
+                                3,
+                                12
+                            ],
+                            "arc": 60,
+                            "cooldown": 12,
+                            "attack": "MELEE_ALTERNATE"
+                        },
+                        {
+                            "distance": [
+                                0,
+                                25
+                            ],
+                            "height": [
+                                -10,
+                                20
+                            ],
+                            "arc": 35,
+                            "cooldown": 12,
+                            "attack": "MELEE_SWING"
+                        }
+                    ]
+                },
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 60,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 1,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                }
+            },
+            "GolemRadialSlamAttackBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "AttackRange": [
+                    0,
+                    5
+                ],
+                "AttackCoolDown": 5,
+                "MaxAttackTime": 5,
+                "SmashAnimEvent": "",
+                "SmashStartAction": "SlamAttack",
+                "SmashStopAction": ""
+            },
+            "GenericBehaviorSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/Lotus/Types/Behaviors/GolemGunHeadBehaviorSelector",
+                    "/Lotus/Types/Behaviors/GolemGrenadeHeadBehaviorSelector",
+                    "/Lotus/Types/Behaviors/GolemMeleeHeadBehaviorSelector",
+                    "/EE/Types/Npc/WaitBehavior"
+                ],
+                "GolemGunHeadBehaviorSelector": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AttachmentType": "/Lotus/Types/Enemies/Infested/Vip/GolemFullGunWeakSpotHitProxy",
+                    "InitialAttachmentCheckOnly": 1,
+                    "CheckTargetForAttachmentInstead": 0,
+                    "SubBehaviors": [
+                        "/Lotus/Types/Behaviors/GolemMeleeMovementBehavior",
+                        "/EE/Types/Npc/WaitBehavior"
+                    ],
+                    "GolemMeleeMovementBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "Id": 0,
+                        "AttackRange": [
+                            15,
+                            50
+                        ],
+                        "TurnToFaceRange": [
+                            5,
+                            100
+                        ],
+                        "AimHeadingOffset": 0,
+                        "AimArc": 80,
+                        "InArcMultiplier": 1,
+                        "OutOfArcMultiplier": 2,
+                        "SameTargetMultiplier": 0.8,
+                        "AllowRun": 0,
+                        "SuccessRadius": 0.5,
+                        "StopRadius": 0.5,
+                        "FacingControl": "MFC_NONE",
+                        "CoolDown": 5,
+                        "UseControlZones": 0
+                    },
+                    "WaitBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TimeOut": 5,
+                        "CoverOnly": 0,
+                        "AimPosture": 0,
+                        "MinimalEnemyDistance": 0,
+                        "TrackTarget": 0,
+                        "Peek": 0,
+                        "FailOnDamaged": 1,
+                        "PreventShooting": 0,
+                        "StopMovingOnEnter": 0
+                    }
+                },
+                "GolemGrenadeHeadBehaviorSelector": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AttachmentType": "/Lotus/Types/Enemies/Infested/Vip/GolemFullGrenadeWeakSpotHitProxy",
+                    "InitialAttachmentCheckOnly": 1,
+                    "CheckTargetForAttachmentInstead": 0,
+                    "SubBehaviors": [
+                        "/Lotus/Types/Behaviors/GolemMeleeMovementBehavior",
+                        "/EE/Types/Npc/WaitBehavior"
+                    ],
+                    "GolemMeleeMovementBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "Id": 1,
+                        "AttackRange": [
+                            15,
+                            35
+                        ],
+                        "TurnToFaceRange": [
+                            5,
+                            60
+                        ],
+                        "AimHeadingOffset": 120,
+                        "AimArc": 80,
+                        "InArcMultiplier": 1,
+                        "OutOfArcMultiplier": 2,
+                        "SameTargetMultiplier": 0.8,
+                        "AllowRun": 0,
+                        "SuccessRadius": 0.5,
+                        "StopRadius": 0.5,
+                        "FacingControl": "MFC_NONE",
+                        "CoolDown": 5,
+                        "UseControlZones": 0
+                    },
+                    "WaitBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TimeOut": 5,
+                        "CoverOnly": 0,
+                        "AimPosture": 0,
+                        "MinimalEnemyDistance": 0,
+                        "TrackTarget": 0,
+                        "Peek": 0,
+                        "FailOnDamaged": 1,
+                        "PreventShooting": 0,
+                        "StopMovingOnEnter": 0
+                    }
+                },
+                "GolemMeleeHeadBehaviorSelector": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AttachmentType": "/Lotus/Types/Enemies/Infested/Vip/GolemFullMeleeWeakSpotHitProxy",
+                    "InitialAttachmentCheckOnly": 1,
+                    "CheckTargetForAttachmentInstead": 0,
+                    "SubBehaviors": [
+                        "/Lotus/Types/Behaviors/GolemMeleeMovementBehavior",
+                        "/EE/Types/Npc/WaitBehavior"
+                    ],
+                    "GolemMeleeMovementBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "Id": 2,
+                        "AttackRange": [
+                            10,
+                            100
+                        ],
+                        "TurnToFaceRange": [
+                            5,
+                            25
+                        ],
+                        "AimHeadingOffset": -100,
+                        "AimArc": 60,
+                        "InArcMultiplier": 1,
+                        "OutOfArcMultiplier": 2,
+                        "SameTargetMultiplier": 0.8,
+                        "AllowRun": 0,
+                        "SuccessRadius": 1,
+                        "StopRadius": 10,
+                        "FacingControl": "MFC_NONE",
+                        "CoolDown": 5,
+                        "UseControlZones": 0
+                    },
+                    "WaitBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TimeOut": 5,
+                        "CoverOnly": 0,
+                        "AimPosture": 0,
+                        "MinimalEnemyDistance": 0,
+                        "TrackTarget": 0,
+                        "Peek": 0,
+                        "FailOnDamaged": 1,
+                        "PreventShooting": 0,
+                        "StopMovingOnEnter": 0
+                    }
+                },
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 5,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 1,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "FailOnChildFailure": 0
+            }
+        },
+        "GuardBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+            "WaitAction:Enabled": 1,
+            "WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "RandomFacingChange": [
+                0,
+                0
+            ],
+            "MinHeadingChangeToTurn": 0
+        },
+        "LocomotionController:limitToNav": 1,
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 5,
+            "minHeight": -3,
+            "shorteningType": "ST_NONE",
+            "useAvoidance": 0,
+            "minRequiredNavEdgeWidth": 8
+        },
+        "RegisterAvoidance": 0,
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 200,
+        "ViewFov": 360,
+        "ViewDistance": 200,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "PerceiverType": "/Lotus/Types/Enemies/Grineer/Eidolon/EidolonGrineerPerceiver",
+        "IsCoverUseEnabled": 0
+    }
+}

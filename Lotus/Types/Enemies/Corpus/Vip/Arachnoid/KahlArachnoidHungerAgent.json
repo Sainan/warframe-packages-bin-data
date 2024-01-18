@@ -1,0 +1,66 @@
+{
+    "parent": "ArachnoidHungerAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "KahlArachnoidHungerAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "KahlHungerWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/KahlArachnoidHungerSuit",
+                "forceEquip": 0,
+                "hand": "EXTRA1"
+            }
+        ],
+        "AllowTeleportedByAiDirector": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/Lotus/Types/Behaviors/ArachnoidHungerBehaviorSelector",
+            "/EE/Types/Npc/MeleeTactic",
+            "/EE/Types/Npc/TargetEvaluatingBehaviorSelector",
+            "/Lotus/Types/Behaviors/ContinuousMoveToTargetBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "StormTargetOrderBehavior": {
+            "AllowTeleportToCatchUp": 0
+        },
+        "ArachnoidHungerBehaviorSelector": {
+            "Actions": [
+                "/EE/Types/Npc/MeleeTactic",
+                "/Lotus/Types/Behaviors/ContinuousMoveToTargetBehavior",
+                "/EE/Types/Npc/InvestigateBehavior",
+                "/EE/Types/Npc/RandomTacWalkBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ]
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierDodgeJumpBackToNav"
+                ],
+                "LocomotionMoveModifierDodgeJumpBackToNav": {
+                    "DodgeJumpSymbol": "DodgeJump",
+                    "OffNavTimeRequired": 2,
+                    "TotallyStuckTimeRequired": 4,
+                    "SkipPathOnStuck": 0,
+                    "MinTimeSinceLastSeenRequired": 10,
+                    "SkipFallingOrLaunchingAvatars": 1,
+                    "DistanceToInstantTeleport": 100
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "minRequiredNavEdgeWidth": 2.5
+        }
+    }
+}

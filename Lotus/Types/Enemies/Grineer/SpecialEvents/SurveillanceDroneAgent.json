@@ -1,0 +1,98 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Drones/DroneAttackAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SurveillanceDroneAvatar",
+            "EXIMUS": ""
+        },
+        "MinLevel": 15,
+        "BaseLevel": 15,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Rifle/SuperDroneRifle",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/InformerDroneSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ALWAYS",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 0,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "GuardTactic": {
+            "OnDamagedScript": {
+                "Script": "SurveillanceDrone.lua",
+                "Function": "OnDamaged",
+                "_cloakEffect": "DroneFadingOut",
+                "_flashEffect": ""
+            },
+            "LookAtNearbyTeammates": 0,
+            "LookAtNearbyPlayer": 1,
+            "PatrolBehavior:OnDamagedScript": {
+                "Script": "SurveillanceDrone.lua",
+                "Function": "OnDamaged",
+                "_cloakEffect": "DroneFadingOut",
+                "_flashEffect": ""
+            },
+            "GuardBehavior:OnDamagedScript": {
+                "Script": "SurveillanceDrone.lua",
+                "Function": "OnDamaged",
+                "_cloakEffect": "DroneFadingOut",
+                "_flashEffect": ""
+            },
+            "GuardBehavior:WaitAction:OnDamagedScript": {
+                "Script": "SurveillanceDrone.lua",
+                "Function": "OnDamaged",
+                "_cloakEffect": "/Lotus/Fx/Enemies/Drones/Surveillance/DroneFadeOut",
+                "_flashEffect": ""
+            }
+        }
+    }
+}

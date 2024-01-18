@@ -1,0 +1,72 @@
+{
+    "parent": "/EE/Types/Sound/DistanceFxSetting",
+    "data": {
+        "DryWetCurve": {
+            "Type": "FC_LOG_SIGMOID"
+        },
+        "DryWetRange": [
+            20,
+            100
+        ],
+        "ReverbWetDryGain": 2,
+        "ReverbWetDryMix": 0.4,
+        "DistanceReverb": "/Lotus/Sounds/ReverbSettings/Distance/DefaultDistance",
+        "DistanceParams": {
+            "EnableFilter": 1,
+            "OutputGain": 4,
+            "FilterSettings": {
+                "Type": "FS_BAND_PASS",
+                "Frequency": 800,
+                "Resonance": 0.6667
+            },
+            "EffectChain": [
+                {
+                    "Type": "ECS_ECHO",
+                    "EnableEffect": 1,
+                    "EchoSettings": {
+                        "WetDryMix": 0.35,
+                        "Feedback": 0.05,
+                        "Delay": 125
+                    },
+                    "EqSettings": {
+                        "FrequencyCenter0": 100,
+                        "Gain0": 0,
+                        "Bandwidth0": 1,
+                        "FrequencyCenter1": 800,
+                        "Gain1": 0,
+                        "Bandwidth1": 1,
+                        "FrequencyCenter2": 2000,
+                        "Gain2": 0,
+                        "Bandwidth2": 1,
+                        "FrequencyCenter3": 10000,
+                        "Gain3": 0,
+                        "Bandwidth3": 1
+                    }
+                },
+                {
+                    "Type": "ECS_EQ",
+                    "EnableEffect": 1,
+                    "EchoSettings": {
+                        "WetDryMix": 0.5,
+                        "Feedback": 0.5,
+                        "Delay": 500
+                    },
+                    "EqSettings": {
+                        "FrequencyCenter0": 75,
+                        "Gain0": 0,
+                        "Bandwidth0": 1.5,
+                        "FrequencyCenter1": 800,
+                        "Gain1": -2,
+                        "Bandwidth1": 1.5,
+                        "FrequencyCenter2": 2000,
+                        "Gain2": -1,
+                        "Bandwidth2": 1,
+                        "FrequencyCenter3": 1000,
+                        "Gain3": 0,
+                        "Bandwidth3": 1
+                    }
+                }
+            ]
+        }
+    }
+}

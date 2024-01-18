@@ -1,0 +1,77 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PlayerPowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/RadialBlindAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/RadialBlindAbilityDesc",
+        "UniquePowerIdentifier": "EXCALIBUR_RADIAL_BLIND",
+        "AdditionalPowerIdentifiers": [
+            "EFFECT_PERCEPTION"
+        ],
+        "Script": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Lich/RadialBlind.lua",
+            "Function": "ActivateAbility",
+            "_duration": 2,
+            "_maxNumBlindReactionAnims": 3,
+            "_baseRange": 15,
+            "_activateAnim": "/Lotus/Animations/Grineer/KuvaLich/PowerCast6_anim.fbx",
+            "_blindProjector": "",
+            "_blindSoundLocal": "",
+            "_playerBlindDuration": 1
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "DoBlind",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/RadialBlindAbility.lua",
+                    "Function": "BlindEnemy",
+                    "_energySwordDeco": "",
+                    "_duration": 10,
+                    "_maxNumBlindReactionAnims": 3,
+                    "_baseRange": 10,
+                    "_activateAnim": "",
+                    "_blindProjector": "/Lotus/Fx/PowersuitAbilities/Excalibur/BlindedSpawner",
+                    "_blindSoundLocal": "/Lotus/Sounds/Warframes/Generic/BlindedImpactAffect",
+                    "_doomSwordType": "",
+                    "_pvpBlindDurationScale": 0.25,
+                    "_energySwordPrimeMesh": "",
+                    "_energySwordDarkMesh": "",
+                    "_energySwordCYDarkMesh": "",
+                    "_cyUmbraType": "",
+                    "_doVoid": 0
+                }
+            }
+        ],
+        "NpcCooldownDuration": 50,
+        "EnergyRequiredToActivate": 0,
+        "ActivationXP": 0,
+        "CastSound": "/Lotus/Sounds/Enemies/Corpus/CorpusLich/CorpusLichAgents/Abilities/CrpLichRadialBlindCast",
+        "VideoTexture": "/Lotus/Interface/AbilityVideos/ExcaliburPower2.bk2",
+        "SoundEvents": [
+            {
+                "EventName": "ExcaliburRadialBlind",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/CorpusLich/CorpusLichAgents/Abilities/CrpLichRadialBlind",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXExcaliburRadialBlindSwordCast",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/CorpusLich/CorpusLichAgents/Abilities/CrpLichRadialBlindSwordCast",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "ResourceOverrides": [
+            {
+                "Tag": "BlindCastBurst",
+                "Resource": "/Lotus/Fx/PowersuitAbilities/Excalibur/BlindSpawner"
+            }
+        ]
+    }
+}

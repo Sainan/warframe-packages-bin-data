@@ -1,0 +1,90 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Venus/VenusLaserCannonBipedAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/NarmerShipMoaDualCannonAvatar",
+            "EXIMUS": ""
+        },
+        "MinLevel": 15,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Narmer/Weapons/NarmerMoaDualCannonWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/Corpus/CorpusShipRemastered/PowerSuits/ShipMoaCommandSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/AgentOffNavBehaviorDropship",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/CorpusNullifierFormationTactic",
+            "/EE/Types/Npc/GenericBehaviorSequence",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveToDefenseVolumeBehavior",
+            "/Lotus/Types/Behaviors/BipedRobotShootBehavior",
+            "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/Lotus/Types/Behaviors/PatrolFormationTactic",
+            "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/DefensiveCombatBehavior",
+            "/EE/Types/Npc/PoiBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "GenericBehaviorSequence": {
+            "FailOnChildFailure": 0,
+            "UsePowerSuitAbilitiesBehavior": {
+                "ValidAbilities": []
+            },
+            "TacPosIdealDistanceBehavior": {
+                "FailOnQueryFailure": 0,
+                "IdealDistance": [
+                    20,
+                    30
+                ],
+                "ScoreDirectionFromTarget": 1,
+                "DistanceFromSelfRange": [
+                    5,
+                    10
+                ],
+                "LookAtTarget": 0,
+                "DoTacVisTrace": 1,
+                "AimWhileMoving": 0
+            }
+        },
+        "BipedRobotShootBehavior": {
+            "EvaluateRange": [
+                0,
+                100
+            ],
+            "ShootingStateMaxFacingAngle": 60,
+            "StrafeChance": 0.5,
+            "WaitTime": [
+                1,
+                2
+            ]
+        },
+        "TacPosIdealDistanceBehavior": {
+            "RandomizeRange": 1,
+            "IdealDistance": [
+                20,
+                30
+            ],
+            "ShootingDistance": 0
+        },
+        "MoveTowardsTacEnemyInfluence": {
+            "StopRadius": 0.1,
+            "NearDistance": 1,
+            "NoCoverAfterExitTime": 5
+        }
+    }
+}

@@ -1,0 +1,144 @@
+{
+    "parent": "PlayerPowerSuitAbility",
+    "data": {
+        "MarketMode": "MM_HIDDEN",
+        "LocalizeTag": "/Lotus/Language/Suits/SandmanBlastAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/SandmanBlastAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/SandmanBlast.png",
+        "UniquePowerIdentifier": "SANDMAN_BLAST",
+        "AdditionalPowerIdentifiers": [
+            "EFFECT_DAMAGE",
+            "EFFECT_PERCEPTION"
+        ],
+        "Script": {
+            "Script": "SandmanBlast.lua",
+            "Function": "ActivateAbility",
+            "_activateAnim": "/Lotus/Animations/Tenno/Powers/Mummy/Sandblast_anim.fbx",
+            "_blindProjector": "",
+            "_castEffect": "/Lotus/Fx/PowersuitAbilities/Sandman/BlastCast",
+            "_castBurstEffect": "/Lotus/Fx/PowersuitAbilities/Sandman/BlastBurst",
+            "_castBurstEnergyEffect": "/Lotus/Fx/PowersuitAbilities/Sandman/BlastBurstEnergy",
+            "_castBurstPvpEffect": "/Lotus/Fx/PowersuitAbilities/Sandman/BlastBurstPvP",
+            "_pvpDotEffect": ""
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "Blast",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "SandmanBlast.lua",
+                    "Function": "Blast",
+                    "_activateAnim": "",
+                    "_blindProjector": "/Lotus/Fx/PowersuitAbilities/Sandman/SandBlinded",
+                    "_castEffect": "",
+                    "_castBurstEffect": "",
+                    "_castBurstEnergyEffect": "",
+                    "_castBurstPvpEffect": "",
+                    "_pvpDotEffect": "/Lotus/Fx/PowersuitAbilities/Sandman/BlastDotAttach"
+                }
+            },
+            {
+                "tag": "UpdatePredeathMovie",
+                "executionMode": "EM_LOCAL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/Sandman/SandmanPassive.lua",
+                    "Function": "UpdatePredeathMovie",
+                    "_customDC": "",
+                    "_customMC": "",
+                    "_customHud": "/Lotus/Interface/PowerSuitCustomHuds/SandmanResurrectMeter.swf",
+                    "_predeathDevourEnemyAttach": "",
+                    "_predeathDevourSandmanAttach": "",
+                    "_predeathExitSubTree": "",
+                    "_devourBeamType": "",
+                    "_stareSequencerType": ""
+                }
+            },
+            {
+                "tag": "DoDrainFromBlast",
+                "executionMode": "EM_HOST",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "SandmanDevour.lua",
+                    "Function": "DoDrainFromBlast",
+                    "_activateAnim": "",
+                    "_pullAnim": "",
+                    "_eatAction": "",
+                    "_devourStartAnim": "",
+                    "_devourLoopAnim": "",
+                    "_devourEndAnim": "",
+                    "_captureAnim": "",
+                    "_castEffect": "",
+                    "_castBurstEffect": "",
+                    "_enemyAttachEffect": "",
+                    "_eatAttachEffect": "",
+                    "_pullBeamType": "",
+                    "_pvpSandPileType": "",
+                    "_pvpSandPileEffectType": "",
+                    "_invalidAvatars": [],
+                    "_inputFilter": "",
+                    "_minionEffect": "/Lotus/Fx/PowersuitAbilities/Sandman/SandmanMinionAttach",
+                    "_npcAgainstPlayerCookTime": 2
+                }
+            }
+        ],
+        "AbilityEvents": [
+            {
+                "tag": "PassiveKill",
+                "eventType": "ET_ON_MELEE_KILL",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/Sandman/SandmanPassive.lua",
+                    "Function": "OnMeleeKill",
+                    "_customDC": "",
+                    "_customMC": "",
+                    "_customHud": "",
+                    "_predeathDevourEnemyAttach": "",
+                    "_predeathDevourSandmanAttach": "",
+                    "_predeathExitSubTree": "",
+                    "_devourBeamType": "",
+                    "_stareSequencerType": ""
+                }
+            },
+            {
+                "tag": "AugmentMeleeKill",
+                "eventType": "ET_ON_MELEE_KILL",
+                "scriptInstance": {
+                    "Script": "SandmanBlast.lua",
+                    "Function": "AugmentMeleeKill",
+                    "_activateAnim": "",
+                    "_blindProjector": "",
+                    "_castEffect": "",
+                    "_castBurstEffect": "",
+                    "_castBurstEnergyEffect": "",
+                    "_castBurstPvpEffect": "",
+                    "_pvpDotEffect": ""
+                }
+            }
+        ],
+        "NpcCooldownDuration": 20,
+        "ActivationXP": 25,
+        "VideoTexture": "/Lotus/Interface/AbilityVideos/InarosPower1_s.bk2",
+        "SoundEvents": [
+            {
+                "EventName": "MummySandblastCast",
+                "Sound": "/Lotus/Sounds/Warframes/Mummy/MummySandblastCast",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "MummySandblastImpact",
+                "Sound": "/Lotus/Sounds/Warframes/Mummy/MummySandblastImpact",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ]
+    }
+}

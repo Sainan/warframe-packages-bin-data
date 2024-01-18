@@ -1,0 +1,210 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/GrineerMarineRifle",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "WardenGrineerHeavyAvatar",
+            "EXIMUS": "WardenGrineerHeavyAvatarLeader"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Grineer/LongGuns/GrnVulkar/GrnSniperRifleAI",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/NpcRadialBlastSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "ShouldIgnoreGCS": 1,
+        "AllowTeleportedByAiDirector": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/EE/Types/Npc/UseContextActionBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/MeleeTactic",
+            "/EE/Types/Npc/AttackFromCoverTactic",
+            "/EE/Types/Npc/UseGrenadeBehavior",
+            "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "InterruptResponseBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Responses": [
+                {
+                    "reaction": "CONTEXT_BARK",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 1,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "DODGE_MELEE_ATTACK",
+                    "responseAction:Type": "/Lotus/Types/Behaviors/DodgeMeleeAttackReaction",
+                    "responseAction:DodgeMeleeAttackReaction": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "/Lotus/Animations/Grineer/MeleeDodge/DodgeLeft",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0,
+                        "DodgeAnims": {
+                            "STATIONARY": "",
+                            "FORWARD": "",
+                            "BACKWARD": "/Lotus/Animations/Grineer/MeleeDodge/DodgeBackwards",
+                            "LEFT": "/Lotus/Animations/Grineer/MeleeDodge/DodgeLeft",
+                            "RIGHT": "/Lotus/Animations/Grineer/MeleeDodge/DodgeRight",
+                            "STOPPING": "",
+                            "UPWARD": "",
+                            "DOWNWARD": ""
+                        },
+                        "DistanceFromTargetPoint": 0.4
+                    }
+                }
+            ],
+            "BlockingResponse": 1
+        },
+        "UseContextActionBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StopOnDamage": 0,
+            "SkipMoveActionIfInRange": 1,
+            "DamageThresholdToStop": 0.25,
+            "SearchRadius": 80,
+            "CombatOnly": 1,
+            "ShouldRun": 1,
+            "StopRadius": 0.15,
+            "FindAnimations": 1,
+            "ActionInterval": -1,
+            "GlobalActionCooldown": 10,
+            "ValidActionTags": [
+                "RescuePanicButton"
+            ],
+            "ValidActionTypes": [],
+            "KeepTrying": 1,
+            "DrawDest": 0,
+            "MoveAction:Type": "/EE/Types/Npc/LocomotionFollowPath",
+            "MoveAction:Enabled": 1,
+            "MoveAction:OnStartScript": {
+                "Script": ""
+            },
+            "MoveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "MoveAction:TrackEntity": 0,
+            "MoveAction:TrackingRate": 0.5,
+            "MoveAction:FaceTarget": 0,
+            "MoveAction:SucceedEarly": 0,
+            "MoveAction:SuccessRadius": 0.5,
+            "MoveAction:SucceedImmediately": 0,
+            "MoveAction:SucceedOnAbort": 0,
+            "AlignToAction:Type": "/EE/Types/Npc/AlignToAction",
+            "AlignToAction:Enabled": 1,
+            "AlignToAction:OnStartScript": {
+                "Script": ""
+            },
+            "AlignToAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "AlignToAction:AlignAngleThreshold": 10,
+            "MinDistFromEnemy": 10,
+            "EvaluationDelayOnEnemyToClose": 5,
+            "MatchActionAttachOwnerFaction": 0,
+            "AttackTargetsOnRoute": 0
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "ExtraReevaluationDelay": 2,
+            "FaceTarget": 1,
+            "ValidAbilities": [
+                0
+            ]
+        },
+        "AttackFromCoverTactic": {
+            "ControlledShootBehavior": {
+                "AttackSegmentTime": [
+                    8,
+                    12
+                ],
+                "WaitSegmentTime": [
+                    3,
+                    5
+                ]
+            }
+        },
+        "AttackFromTheOpenBehavior": {
+            "ShootTime": [
+                8,
+                12
+            ],
+            "WaitTime": [
+                3,
+                5
+            ],
+            "CrouchDuringShootChance": 0
+        },
+        "IsCoverUseEnabled": 0
+    }
+}

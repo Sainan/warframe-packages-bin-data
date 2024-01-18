@@ -1,0 +1,83 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 1,
+                "value": {
+                    "type": "Selector"
+                }
+            },
+            {
+                "key": 2,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 3,
+                "value": {
+                    "type": "Action"
+                }
+            }
+        ],
+        "NodeProperties": {
+            "1": {
+                "links": []
+            },
+            "2": {
+                "Type": "/EE/Types/Npc/Logic/LogicGraphAction",
+                "LogicGraphAction": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "GraphRes": "RJCrewFunctionsSubgraph"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 2,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 1,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "3": {
+                "Type": "/EE/Types/Npc/Logic/LogicGraphAction",
+                "LogicGraphAction": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "GraphRes": "RJCrewCombatSubgraph"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 3,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 1,
+                            "prop": 3
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 1
+    }
+}

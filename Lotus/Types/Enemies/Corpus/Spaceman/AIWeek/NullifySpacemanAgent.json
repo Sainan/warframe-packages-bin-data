@@ -1,0 +1,67 @@
+{
+    "parent": "RifleSpacemanAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "NullifySpacemanAvatar",
+            "EXIMUS": "NullifySpacemanAvatarLeader"
+        },
+        "MinLevel": 15,
+        "MaxLevel": 9999,
+        "BaseLevel": 15,
+        "NewAdditionalInventory": [
+            {
+                "item": "SniperRifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/CorpusNullifierFormationTactic",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/MeleeTactic",
+            "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+            "/Lotus/Types/Behaviors/ReactivateBursaBehavior",
+            "/EE/Types/Npc/AttackFromCoverTactic",
+            "/Lotus/Types/Behaviors/LotusAttackFromTheOpenBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/PoiBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "CorpusNullifierFormationTactic": {
+            "OnlyEnhancedCanLead": 0,
+            "LeaderPriority": 15
+        },
+        "AttackFromCoverTactic": {
+            "CoverBehaviors": [
+                "/EE/Types/Npc/RunToAttackCoverBehavior",
+                "/EE/Types/Npc/ControlledShootBehavior",
+                "/EE/Types/Npc/WaitBehavior"
+            ],
+            "RunToAttackCoverBehavior": {
+                "MinCoverDistFromEnemy": 5,
+                "DistanceToShoot": 0,
+                "DistanceToTarget": 0
+            },
+            "ControlledShootBehavior": {
+                "AttackSegmentTime": [
+                    8,
+                    12
+                ],
+                "AimWhenPausing": 1,
+                "ReturnToCoverOnDamage": 1,
+                "ReturnToCoverDamageThreshold": 0.15
+            }
+        },
+        "LotusAttackFromTheOpenBehavior": {
+            "ShieldThresholdForAggressiveMovement": 1
+        }
+    }
+}

@@ -1,0 +1,134 @@
+{
+    "parent": "NavMeshDesignOptions",
+    "data": {
+        "MaxBuildStage": 99,
+        "BuildSteps:Type": "NavMeshDefaultBuildSteps",
+        "BuildSteps:NavMeshDefaultBuildSteps": {
+            "BuildSteps": [
+                {
+                    "Function": "AccumulateInputPolygons",
+                    "Parameters": []
+                },
+                {
+                    "Function": "CutBySelf",
+                    "Parameters": {
+                        "CutInputsWithOctree": 1
+                    }
+                },
+                {
+                    "Function": "CutByLights"
+                },
+                {
+                    "Function": "CutByVolumes"
+                },
+                {
+                    "Function": "CutByEntities",
+                    "Parameters": {
+                        "SkipObstacleCuts": 0,
+                        "WorldSpaceCuts": 0,
+                        "Snap": 0
+                    }
+                },
+                {
+                    "Function": "CutByCover"
+                },
+                {
+                    "Function": "GroupPolygons",
+                    "Parameters": {
+                        "TJuncDistance": 0.1,
+                        "PointMergeDistance": 0.01,
+                        "ForceTriangulate": 0,
+                        "SeparateTJuncStage": 0,
+                        "MoveTJuncOntoEdge": 0,
+                        "SimplifyBeforeTJunc": 0,
+                        "Quantize": 0.01,
+                        "AlignAngles": 0,
+                        "MinEdge": 0,
+                        "TinyEdge": 0
+                    }
+                },
+                {
+                    "Function": "AccumulateInputPolygons",
+                    "Parameters": []
+                },
+                {
+                    "Function": "CreateBoundaryPolygons",
+                    "Parameters": {
+                        "ChamferCorners": 1,
+                        "TryMergeBorderPolys": 0
+                    }
+                },
+                {
+                    "Function": "CutByBoundaryPolygons",
+                    "Parameters": {
+                        "CutOrigWithBorders": 1
+                    }
+                },
+                {
+                    "Function": "GroupPolygons",
+                    "Parameters": {
+                        "TJuncDistance": 0.1,
+                        "PointMergeDistance": 0.01,
+                        "ForceTriangulate": 0,
+                        "SeparateTJuncStage": 0,
+                        "MoveTJuncOntoEdge": 0,
+                        "SimplifyBeforeTJunc": 0,
+                        "Quantize": 0.01,
+                        "AlignAngles": 0,
+                        "MinEdge": 0,
+                        "TinyEdge": 0
+                    }
+                },
+                {
+                    "Function": "AfterGroupTesselators",
+                    "Parameters": {
+                        "Merge": 0
+                    }
+                },
+                {
+                    "Function": "RemoveExtraVertices"
+                },
+                {
+                    "Function": "PolyToCutPoly"
+                },
+                {
+                    "Function": "CutByLights"
+                },
+                {
+                    "Function": "CutByCover"
+                },
+                {
+                    "Function": "GroupPolygons",
+                    "Parameters": {
+                        "TJuncDistance": 0,
+                        "PointMergeDistance": 0.0005,
+                        "ForceTriangulate": 0,
+                        "SeparateTJuncStage": 0,
+                        "MoveTJuncOntoEdge": 0,
+                        "SimplifyBeforeTJunc": 0,
+                        "Quantize": 0,
+                        "AlignAngles": 0,
+                        "MinEdge": 0,
+                        "TinyEdge": 0
+                    }
+                },
+                {
+                    "Function": "MakeSections"
+                },
+                {
+                    "Function": "CalculateIllumination",
+                    "Parameters": {
+                        "LightProbeOffset": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "IlluminationSamplePolyVerts": 1,
+                        "IlluminationAverageVerts": 1,
+                        "IlluminationRegularSamplingDistance": 0.5
+                    }
+                }
+            ]
+        }
+    }
+}

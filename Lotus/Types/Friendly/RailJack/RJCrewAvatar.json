@@ -1,0 +1,261 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Tenno/Ember/EmberBody_skel.fbx",
+        "ServerChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Types/Game/MarkerInfos/PreDeathMarkerInfoAttachment",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/Lotus/Types/Friendly/Rescue/SpectreRescueWalk",
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/CrewShip/CrewMember.lua",
+            "Function": "SetupCrewMember",
+            "_flavorTextDataType": "",
+            "_transmissionTag": "",
+            "_forcePlay": 0,
+            "_playLocal": 0,
+            "_isTransmissionPortrait": 0,
+            "_timeBetweenIdleTransmissions": 60,
+            "_transmissionCooldown": 15,
+            "_distanceToPlayTransmissions": 10,
+            "_maxAiIntensityToPlayIdle": 5,
+            "_randomizeTransmissionTag": []
+        },
+        "ReplicaRunScriptInstance": 1,
+        "ReplicationOverride": "RO_ALWAYS",
+        "EyeOffset": [
+            0,
+            1.75,
+            0
+        ],
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "TENNO",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Syndicates/NLSquadAgent.png",
+        "MaxHealth": 300,
+        "BlockInputInCameraSpot": 1,
+        "AnimControllerType": "/Lotus/Types/Friendly/Agents/RJCrewTennoAnimController",
+        "CameraControllerType": "/Lotus/Types/Player/CameraController",
+        "ClimbControllerType": "/Lotus/Types/Player/TennoClimbController",
+        "WallSlideControllerType": "/Lotus/Types/Player/TennoWallSlideController",
+        "DamageControllerType": "/Lotus/Types/Game/CrewShip/CrewMember/CrewMemberDamageController",
+        "GameActionControllerType": "/Lotus/Types/Player/TennoGameActionController",
+        "InputControllerType": "/Lotus/Types/Player/InputController",
+        "InventoryControllerType": "/Lotus/Types/Game/CrewShip/CrewMember/CrewMemberInventoryController",
+        "MotionControllerType": "/Lotus/Types/Player/TennoMotion",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "BoneName": "GAME_C1_HIP1"
+        },
+        "CollisionProxy": {
+            "BoneName": "GAME_C1_HIP1",
+            "Type": "/EE/Types/Physics/FullBodyCollision"
+        },
+        "CreditsOwningPlayerAvatarForDamage": 0,
+        "OnCauseDamageScript": {
+            "Script": "/Lotus/Scripts/CrewShip/CrewMember.lua",
+            "Function": "PlayEnemyDefeatedTransmission",
+            "_flavorTextDataType": "",
+            "_transmissionTag": "EnemyDefeated",
+            "_forcePlay": 0,
+            "_playLocal": 0,
+            "_isTransmissionPortrait": 0,
+            "_timeBetweenIdleTransmissions": 120,
+            "_transmissionCooldown": 30,
+            "_distanceToPlayTransmissions": 10,
+            "_maxAiIntensityToPlayIdle": 5,
+            "_randomizeTransmissionTag": [
+                "EnemyDefeated",
+                "HealSelf"
+            ]
+        },
+        "OnPreDeathScript": {
+            "Script": "/Lotus/Scripts/CrewShip/CrewMember.lua",
+            "Function": "PlayTransmission",
+            "_flavorTextDataType": "",
+            "_transmissionTag": "NeedRevive",
+            "_forcePlay": 1,
+            "_playLocal": 0,
+            "_isTransmissionPortrait": 0,
+            "_timeBetweenIdleTransmissions": 120,
+            "_transmissionCooldown": 30,
+            "_distanceToPlayTransmissions": 10,
+            "_maxAiIntensityToPlayIdle": 5,
+            "_randomizeTransmissionTag": []
+        },
+        "OnDeathScript": {
+            "Script": "/Lotus/Scripts/CrewShip/CrewMember.lua",
+            "Function": "CrewMemberDied",
+            "_flavorTextDataType": "",
+            "_transmissionTag": "Died",
+            "_forcePlay": 1,
+            "_playLocal": 0,
+            "_isTransmissionPortrait": 0,
+            "_timeBetweenIdleTransmissions": 120,
+            "_transmissionCooldown": 30,
+            "_distanceToPlayTransmissions": 10,
+            "_maxAiIntensityToPlayIdle": 5,
+            "_randomizeTransmissionTag": []
+        },
+        "ParticleEvents": [
+            {
+                "EventName": "CephCombatFX",
+                "ParticleSys": "/Lotus/Fx/Gameplay/RailJack/Crew/CephalonIdleFXCombat",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "CephEngineeringFX",
+                "ParticleSys": "/Lotus/Fx/Gameplay/RailJack/Crew/CephalonIdleFXEngineering",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "CephGunneryFX",
+                "ParticleSys": "/Lotus/Fx/Gameplay/RailJack/Crew/CephalonIdleFXGunnery",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "CephSurvivabilityFX",
+                "ParticleSys": "/Lotus/Fx/Gameplay/RailJack/Crew/CephalonIdleFXSurvivability",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "CephPilotingFX",
+                "ParticleSys": "/Lotus/Fx/Gameplay/RailJack/Crew/CephalonIdleFXPiloting",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "CephFX",
+                "ParticleSys": "/Lotus/Fx/Gameplay/RailJack/Crew/CephalonIdleFX",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "KillXPReward": 200,
+        "PreDeathTargetType": "/Lotus/Types/Game/MarkerInfos/PreDeathMarkerInfo",
+        "CodexSecret": 1,
+        "ExcludedFromCodex": 1,
+        "ExcludedFromSimulacrum": 1,
+        "PlayerAvatarType": 1,
+        "CanBeInspected": 0,
+        "DisarmAction": "DA_DAMAGE_ONLY",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HumanoidReactionAnims",
+        "CanUpdateOrderStatus": 1
+    }
+}

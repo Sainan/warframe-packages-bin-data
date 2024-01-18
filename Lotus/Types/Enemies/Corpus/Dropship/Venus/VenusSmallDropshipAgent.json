@@ -1,0 +1,287 @@
+{
+    "parent": "/Lotus/Types/Enemies/EnemyAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "VenusSmallDropshipAvatar"
+        },
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "IgnoredByGroupCoordinators": 1,
+        "CountedAsKillObjective": 0,
+        "AggroController:AggroEntryVisible": {
+            "IncreaseTimeLength": 4,
+            "DecayTimeLength": 2
+        },
+        "BehaviorDatabase": [
+            "/Lotus/Types/Behaviors/FlyReceiveMeleeAttackBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/Lotus/Types/Behaviors/DropshipFlyToOrderTargetBehavior",
+            "/Lotus/Types/Behaviors/FlyEscapeWhenTooFarBehavior",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "FlyReceiveMeleeAttackBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "AfterAttackTime": 1,
+            "DamagePushBackSpeed": 10,
+            "VerticalFactor": 0.5,
+            "ValidProcs": [],
+            "MeleeHitManeuverCooldown": [
+                5,
+                6
+            ],
+            "MeleeHitManeuverProbability": 0.3
+        },
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "DropshipFlyToOrderTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "SpaceMode": 1,
+            "SlowDownDistance": 0,
+            "CloseToDestinationDistance": 6,
+            "DistanceFromLeaveTargetForCleanupScript": 30,
+            "SpeedMultiplier": 1,
+            "OrderSymbolForDropTarget": "DropshipDrop",
+            "OrderSymbolForExitTarget": "DropshipLeave",
+            "CompleteEnteringOrderUponStop": 0,
+            "AllowsEnemyTargetDuringDrop": 1,
+            "AllowsEnemyTargetDuringExit": 1,
+            "DelayBetweenConsecutiveDrops": [
+                15,
+                20
+            ],
+            "DelayAfterFinalDrop": [
+                0,
+                0
+            ],
+            "CorrectDestinationForSolidNodes": 1,
+            "TurretDestructionEndsWaypointDelays": 0,
+            "OutOfSightEscapeScriptDelay": -1,
+            "DropOnTargetInSightDistance": 0,
+            "WipeIrrelevantOrders": 1,
+            "FaceInitialPathTargetOnStart": 0,
+            "LandingZoneSearchRadius": 120,
+            "DropAtDestination": 1,
+            "DoTacPosRefining": 1
+        },
+        "FlyEscapeWhenTooFarBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DistanceFromAllPlayersForEscape": 240,
+            "MinAgentAgeInSeconds": 10,
+            "TimeBeforeDisappearing": 0,
+            "EscapeAngleY": 30,
+            "AllowedMoveError": 16,
+            "SpeedMultiplier": 1,
+            "OnEscapeScript": {
+                "Script": "/Lotus/Types/Enemies/Corpus/Dropship/DropshipActions.lua",
+                "Function": "DropshipExit",
+                "_spawnEffect": "",
+                "_exitEffect": "/Lotus/Fx/Enemies/Corpus/DropShip/DropVenusShipExit",
+                "_dropshipPatrolRoute": "",
+                "_hunterShipOverwatchVolumePair": [],
+                "_hunterShipOverwatchWaypointPair": [],
+                "_nonEventAmbulasSpawnChance": 0.5,
+                "_nonEventAmbulasAreasIdx": [
+                    8
+                ],
+                "_ambulasPerAppearanceLevelIncrementMin": 3,
+                "_ambulasPerAppearanceLevelIncrementMax": 5,
+                "_ambulasWeakType": "/Lotus/Types/Enemies/Corpus/Vip/Ambulas/BossAmbulasRangedAgent",
+                "_ambulasEventTransmissionSet": "",
+                "_ambulasKilledPlayerTransmissionRange": 50,
+                "_ambulasKilledPlayerTransmissionDelay": 5,
+                "_ambulasHackedFx": "",
+                "_spawnOverrideAgentCountMin": 3,
+                "_spawnOverrideAgentCountMax": 6,
+                "_spawnOverrideAgentType": "",
+                "_hunterFarAwayScale": 0.1,
+                "_hunterCloseByScale": 1,
+                "_hunterResizeTime": 2.2,
+                "_hunterShipShallReturn": 0,
+                "_chanceToBeFighterTypeHunter": 0.4,
+                "_hunterFighterFirstAttachToInstance": ""
+            }
+        },
+        "WaitBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOut": 0,
+            "CoverOnly": 0,
+            "AimPosture": 0,
+            "MinimalEnemyDistance": 0,
+            "TrackTarget": 0,
+            "TrackTargetNotVisible": 0,
+            "Peek": 0,
+            "FailOnDamaged": 0,
+            "PreventShooting": 0,
+            "StopMovingOnEnter": 0
+        },
+        "CustomShootBehavior": "/EE/Types/Npc/ScriptedShootBehavior",
+        "LocomotionController:Type": "/Lotus/Types/Game/DynamicSkyFlightLocomotionController",
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderSpace"
+        ],
+        "LocomotionController:DynamicPathFinderSpace": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 1,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerFlight"
+        ],
+        "LocomotionController:DynamicPathFollowerFlight": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 6,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "ForceFaceForwardWhenInactive": 1,
+            "PreferedDistAboveNav": [
+                12,
+                12
+            ],
+            "MoveHeightOffset": 2.5,
+            "DistanceToDisregardTurning": 8,
+            "DistanceToSlow": 64,
+            "MinimumSlowedSpeed": 8,
+            "MinimumSpeed": 0,
+            "RecoverySpeedPct": 0.6,
+            "CorrectHeightOnIdle": 1,
+            "AirplaneControls": 0,
+            "DesiredAngleRangeForBank": [
+                0,
+                0
+            ],
+            "BackUpForRecovery": 0,
+            "CanMoveWithoutPath": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierAvoidance",
+                    "/EE/Types/Npc/LocomotionMoveModifierPID"
+                ],
+                "LocomotionMoveModifierAvoidance": {
+                    "AllowVerticalAvoidance": 0,
+                    "AvoidanceInputMultiplier": [
+                        1.2,
+                        1.2,
+                        0.8
+                    ],
+                    "PreserveVelocity": 1,
+                    "MinAvoidanceReducedVelocityPct": 0,
+                    "FlyerControlMode": 0,
+                    "AllowedObstacleCountForMaxSpeed": 30,
+                    "ObstacleCountForMinSpeed": 200,
+                    "ObstacleSlowdownScalingExponent": 1.8,
+                    "MinSpeedScalingFromObstacles": 0.25,
+                    "AvoidDynamicObstaclesOnly": 0
+                },
+                "LocomotionMoveModifierPID": {
+                    "PosKP": 1,
+                    "PosKI": 0,
+                    "PosKD": 0.1,
+                    "VelKP": 1,
+                    "VelKI": 0,
+                    "VelKD": 0.1,
+                    "ClampValue": 1000,
+                    "PreserveVelocity": 1
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "coverBias": 3,
+            "maxHeight": 2,
+            "nearbyNavSearchRadius": 1,
+            "offNavToleranceRadius": 0,
+            "avoidanceExtraRange": 20,
+            "flightPathClearance": 8,
+            "disallowedNodeFlags": 393
+        },
+        "LocomotionController:ImplicitActionAheadDistance": 0.5,
+        "AccuracyModsType": "/Lotus/Types/Enemies/Grineer/Eidolon/EidolonNpcAccuracyMods",
+        "ViewIdleFov": 90,
+        "IdleVerticalFov": 15,
+        "ViewIdleDistance": 90,
+        "ViewFov": 170,
+        "ViewDistance": 120,
+        "DarkVisionSensitivity": [
+            0.5,
+            1
+        ],
+        "AwarenessDecayTime": 20,
+        "TargetLostTime": 10,
+        "TargetLowHealthPercent": 0.3,
+        "SuperAlertDecayTime": 20,
+        "ReactionControllerType": "/Lotus/Types/Enemies/Grineer/GrineerReactionControllerImpl",
+        "PerceiverType": "/Lotus/Types/Enemies/Grineer/GrineerPerceiver",
+        "SightReactionProbability": 0.8,
+        "CoverEvaluatorType": "/EE/Types/Npc/AdvancingCoverEvaluator"
+    }
+}

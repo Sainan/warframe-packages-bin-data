@@ -1,0 +1,482 @@
+{
+    "parent": "/Lotus/Types/Enemies/TennoReplicants/SyndicateAllies/BaseSyndicateAllyAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "ColonistRescueBaseAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/ClanTech/Energy/Railgun",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "ShouldIgnoreGCS": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/UseActionOrderBehavior",
+            "/EE/Types/Npc/GroundFireBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/MoveToDefenseVolumeBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/AgentOffNavBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/DefenseVolumeDecorator",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "UseActionOrderBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Order": "UseAction",
+            "SuccessRadius": 0.5,
+            "DesiredPosture": "JOG",
+            "OnFailureReevalTime": 1,
+            "OnSuccessReevalTime": 3,
+            "OrderWaitDelayTime": 0.1,
+            "StopMovingOnPause": 0,
+            "StopMovingOnExit": 0
+        },
+        "MoveToDefenseVolumeBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DistFromNav": 4,
+            "MovementSpeedModifier": [
+                0.8,
+                1.2
+            ],
+            "NearDistance": 5,
+            "StopDistance": 1,
+            "EvalDelayTime": 0.1,
+            "DesiredPosture": "JOG",
+            "MinAwareness": "AW_IDLE",
+            "OrderOverride": "MoveToDV",
+            "OnlyRunWithOrder": 0,
+            "AttackAction:Type": "/Lotus/Types/Behaviors/SimpleShootBehavior",
+            "AttackAction:SimpleShootBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "AttackSegmentTime": [
+                    1.5,
+                    3
+                ],
+                "TimeBetweenAttacks": [
+                    2,
+                    4
+                ],
+                "AttackRange": [
+                    0,
+                    20
+                ],
+                "RequireAim": 1,
+                "StartAimAction": "",
+                "StopAimAction": "",
+                "AimHeadingOffset": 0,
+                "AimArc": 90,
+                "ExitIfCannotShoot": 1,
+                "UseAltFire": 0,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_1",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_PLAY_EQUIP_ANIM"
+            }
+        },
+        "AgentOffNavBehavior": {
+            "ToleranceDistance": 1
+        },
+        "DefenseVolumeDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+            "ChildAction:GenericBehaviorSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/EE/Types/Npc/AttackFromCoverTactic",
+                    "/EE/Types/Npc/AttackFromTheOpenBehavior",
+                    "/EE/Types/Npc/GuardBehavior"
+                ],
+                "AttackFromCoverTactic": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "MinCoverDistFromEnemy": 2,
+                    "SeekCoverDelayOnFlanked": 1,
+                    "EvaluationDelayOnEnemyToClose": 1,
+                    "ExitCoverOnDamaged": 0,
+                    "NeverLeaveAssignedCover": 0,
+                    "UseLevelAlertTimeout": 1,
+                    "LevelAlertTimeOut": 8,
+                    "PlayerAllyFaction": "TENNO",
+                    "AllyFollowPlayer": 0,
+                    "CoverBehaviors": [
+                        "/EE/Types/Npc/RunToAttackCoverBehavior",
+                        "/EE/Types/Npc/BlindFireBehavior",
+                        "/EE/Types/Npc/ControlledShootBehavior",
+                        "/EE/Types/Npc/WaitBehavior"
+                    ],
+                    "RunToAttackCoverBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "FailureTimeOutValue": 2.5,
+                        "InitialCoverDelay": [
+                            0,
+                            0
+                        ],
+                        "InvalidatedCoverDelay": [
+                            1,
+                            1
+                        ],
+                        "DontAdvanceUnlessFlanking": 0,
+                        "CloakedRun": 1,
+                        "AllowUselessCoverForVisibleTargets": 0,
+                        "OneShot": 0,
+                        "MinCloakCharge": 0.75,
+                        "MinRecloakCharge": 0.375,
+                        "MinCoverDistFromEnemy": 3,
+                        "DistanceToShoot": 2,
+                        "LastSeenWindow": 5,
+                        "LastDamagedWindow": 5,
+                        "DistanceToTarget": 15,
+                        "MovementSpeedModifier": [
+                            0.8,
+                            1
+                        ],
+                        "SeekCoverDelayOnFail": 1,
+                        "PointBlankDistance": 3,
+                        "BackAwayDistance": 8
+                    },
+                    "BlindFireBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "BlindFireTime": 6,
+                        "WaitTime": [
+                            3,
+                            5
+                        ],
+                        "MinShots": 1,
+                        "MaxHealth": 0.5,
+                        "CrouchCoverOnly": 0
+                    },
+                    "ControlledShootBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "GoodTargetTimeout": 0.2,
+                        "SetAimTarget": 1,
+                        "RequireAim": 1,
+                        "AllowAlternateAim": 1,
+                        "ShootAtCoverEnabled": 1,
+                        "AttackSegmentTime": [
+                            3,
+                            6
+                        ],
+                        "WaitSegmentTime": [
+                            1,
+                            3
+                        ],
+                        "FireBursts": 0,
+                        "AimWhenPausing": 0,
+                        "AimWhenStopping": 0,
+                        "DecorativeReloads": 1,
+                        "UseSuppressiveFire": 1,
+                        "SuppressionTargetDistDiff": 2.5,
+                        "IgnoreColinearTeamMates": 1,
+                        "ReturnToCoverOnDamage": 0,
+                        "ReturnToCoverDamageThreshold": 0.5,
+                        "ExitCoverOnDamageDuringWait": 0,
+                        "ExitCoverOnDamageDuringWaitDamageThreshold": 0.5,
+                        "PushoutFromCrouchDistance": 0.3,
+                        "RequireCover": 1,
+                        "SuppressionUnderFireTime": 3,
+                        "LookAtTarget": 0,
+                        "LookHorizRate": 40,
+                        "LookVertRate": 20,
+                        "LookTargetOffset": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "UseCurrentWeapon": 0,
+                        "PointBlankRange": 0
+                    },
+                    "WaitBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TimeOut": 0,
+                        "CoverOnly": 1,
+                        "AimPosture": 0,
+                        "MinimalEnemyDistance": 0,
+                        "TrackTarget": 0,
+                        "Peek": 0,
+                        "FailOnDamaged": 1,
+                        "PreventShooting": 0,
+                        "StopMovingOnEnter": 0
+                    }
+                },
+                "AttackFromTheOpenBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "MaxStrafeDistance": 15,
+                    "MinStrafeDistance": 0,
+                    "StopRadius": 0.1,
+                    "MovementSpeedModifier": [
+                        0.8,
+                        1.2
+                    ],
+                    "LookAtTarget": 0,
+                    "LookHorizRate": 40,
+                    "LookVertRate": 20,
+                    "LookTargetOffset": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "MinAngleToTurn": 40,
+                    "MinAimMask": 0.9,
+                    "TargetNotVisibleTimeoutRange": [
+                        6,
+                        8
+                    ],
+                    "ShootTime": [
+                        1.5,
+                        3
+                    ],
+                    "WaitTime": [
+                        1.5,
+                        3
+                    ],
+                    "RepositionTime": [
+                        2,
+                        6
+                    ],
+                    "KeepRunningDuringWaitPeriod": 1,
+                    "MoveDuringShoot": 1,
+                    "CrouchDuringShootChance": 0.25,
+                    "AllowCrouchMoveDistance": 0,
+                    "IgnoreTeammateBlockage": 0,
+                    "DecorativeReloads": 1,
+                    "DesiredTimeBetweenReloads": [
+                        3,
+                        6
+                    ],
+                    "RealReloads": 0,
+                    "AllowSuppressingFire": 1,
+                    "SuppressionTargetDistDiff": 2.5,
+                    "OnlyAimDuringShootTime": 0,
+                    "MoveFacingControl": "MFC_FACE_TARGET",
+                    "MovePosture": "WALK",
+                    "MoveToTarget": 0,
+                    "PointBlankRange": 5,
+                    "NumQueryResults": 5,
+                    "disallowedNodeFlags": 0,
+                    "ChangeWeapons": 0,
+                    "WeaponSlot": "SLOT_1",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "UnequipChangedWeaponsWhenStop": 0,
+                    "FiringPreferencesOverride": [],
+                    "RequireRangedWeapon": 0,
+                    "RequireNotForcedMelee": 0,
+                    "UseDefenseVolume": 1
+                },
+                "GuardBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+                    "WaitAction:Enabled": 1,
+                    "WaitAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "WaitAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "RandomFacingChange": [
+                        0,
+                        0
+                    ],
+                    "MinHeadingChangeToTurn": 0
+                },
+                "FailOnChildFailure": 0
+            },
+            "StopWhenChildStops": 1,
+            "HasDefenseVolume": 1
+        },
+        "InvestigateBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ShouldAim": 1,
+            "MaxInvestigateDistance": 50,
+            "NearDestinationRadius": 6,
+            "SpeedMultiplier": 1,
+            "FastSpeedMultiplier": 1,
+            "VisInterval": 0.5,
+            "LookAroundTime": 3,
+            "NumLookAroundDirections": 2,
+            "TeamCoordination": 1,
+            "UseFlare": 0,
+            "CheckThreatFaction": 0,
+            "AllowRun": 1,
+            "RunTowardsNewTargets": 1,
+            "KnowInstigatorPosAtStart": 0,
+            "reactionsToInvestigate": [],
+            "MinAwareness": "AW_ALERT",
+            "minimumTargetInterest": "Investigate",
+            "ReportAttackOnDamage": 1
+        },
+        "GuardTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "LookAtNearbyTeammates": 1,
+            "LookAtNearbyPlayer": 0,
+            "LookAtTarget": 1,
+            "NearbyTeammatesThreshold": 10,
+            "PlayerBias": 0.6,
+            "ReportAttackOnDamage": 1,
+            "PatrolBehavior:Type": "/EE/Types/Npc/PatrolBehavior",
+            "PatrolBehavior:Enabled": 1,
+            "PatrolBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "PatrolBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "PatrolBehavior:DefaultReevaluationDelay": 0,
+            "PatrolBehavior:StopRadius": 1,
+            "PatrolBehavior:NearDistance": 2,
+            "PatrolBehavior:SpeedMultiplier": 1,
+            "PatrolBehavior:AlertSpeedMultiplier": 1,
+            "PatrolBehavior:FailOnTargetAcquired": 1,
+            "PatrolBehavior:AimWhenIdle": 0,
+            "PatrolBehavior:AimWhenAlert": 1,
+            "PatrolBehavior:PermanentAlert": 0,
+            "PatrolBehavior:ForceIdleForSinglePointPatrols": 1,
+            "PatrolBehavior:GenericAnims": [],
+            "PatrolBehavior:MinPlayerDist": [
+                0,
+                0
+            ],
+            "PatrolBehavior:MinPlayerFov": 60,
+            "PatrolBehavior:AutoAssignClosestPatrol": 0,
+            "PatrolBehavior:SameZoneOnly": 1,
+            "PatrolBehavior:AutoPatrolRadius": 30,
+            "RandomWalkBehavior:Type": "/EE/Types/Npc/Action",
+            "RandomWalkBehavior:Enabled": 1,
+            "RandomWalkBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
+            "GuardBehavior:Enabled": 1,
+            "GuardBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "GuardBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "GuardBehavior:DefaultReevaluationDelay": 0,
+            "GuardBehavior:WaitAction:Type": "/EE/Types/Npc/WaitAction",
+            "GuardBehavior:WaitAction:Enabled": 1,
+            "GuardBehavior:WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "GuardBehavior:WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "GuardBehavior:RandomFacingChange": [
+                0,
+                0
+            ],
+            "GuardBehavior:MinHeadingChangeToTurn": 0
+        },
+        "BaseHitChance": [
+            0.8,
+            1
+        ],
+        "IsCoverUseEnabled": 1,
+        "CoverEvaluatorType": "/EE/Types/Npc/AdvancingCoverEvaluator"
+    }
+}

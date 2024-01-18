@@ -1,0 +1,166 @@
+{
+    "parent": "/Lotus/Types/Weapons/BoltoProjectile",
+    "data": {
+        "Mesh": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Tip/TipBlade01_skel.fbx",
+        "MeshScale": 1.8,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    -0.08,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Ostron/Arcanes/AirMeleeProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            }
+        ],
+        "ScriptInstance": {
+            "Script": "MeleeArcaneOnJumpProjectile.lua",
+            "Function": "UpdateProjectile",
+            "_projectileType": "",
+            "_projectileSpawnBone": "GAME_R1_ARM3",
+            "_projectileSpawnOffset": [
+                0,
+                0,
+                0
+            ],
+            "_projectileLaunchAnimEvent": "JumpArcaneProjRelease",
+            "_projectileSpeed": 5,
+            "_aimingProjectileSpeedMultiplier": 2,
+            "_aerialDownThresholdOverride": 75,
+            "_projectileDistanceForPowerUp": 30,
+            "_projectilePowerUpDamageMultiplier": 1,
+            "_projectilePowerUpDamageAddPerLevel": 1,
+            "_projectilePowerUpFx": "/Lotus/Fx/Weapons/Ostron/Arcanes/AirMeleeSoundBarrier",
+            "_startProjectileOnJumpSound": "",
+            "_projectileLoopSound": "",
+            "_explosiveAttackForcedProc": "PT_RAGDOLL"
+        },
+        "ReplicaRunScriptInstance": 1,
+        "AttackData": {
+            "Amount": 50,
+            "ProcChance": 0.2
+        },
+        "DealDamageThroughImpactBehavior": 0,
+        "CriticalChance": 0.2,
+        "CriticalMultiplier": 2,
+        "ExplosiveAttack": {
+            "Type": "DT_VIRAL",
+            "Amount": 72,
+            "ProcChance": 0.2,
+            "ForcedProcs": [
+                "PT_KNOCKBACK"
+            ]
+        },
+        "ForcedSourceProcs": [
+            "PT_STAGGERED",
+            "PT_BIG_STAGGER",
+            "PT_KNOCKED_DOWN"
+        ],
+        "ExplodeOnImpact": 1,
+        "ExplosionFallOff": 0.8,
+        "DisableExplosionRadiusUpgrades": 1,
+        "DamageRadius": 8,
+        "HitEffect": "",
+        "IgnoreTypes": [
+            "/Lotus/Types/Player/TennoAvatar"
+        ],
+        "Toughness": 10000,
+        "MaxLife": 4,
+        "MaxBounces": 1,
+        "BounceOnAvatars": 0,
+        "BounceOnRagdolls": 0,
+        "SetLifeOnImpact": 1,
+        "WhizzBySound": "/Lotus/Sounds/Mods/Proc/Arcane/ArcaneMeleeShockwaveWaveProjectile",
+        "VerticalImpulse": 260,
+        "HorizontalImpulse": 120,
+        "AllowPuncture": 0,
+        "CanBeReflected": 0,
+        "CanBeAttracted": 0,
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_EXPLOSION",
+            "ProcChance": 0,
+            "ForcedProcs": [
+                "PT_KNOCKBACK"
+            ]
+        },
+        "EmbedTime": [
+            0,
+            0
+        ],
+        "EmbedDeathAttack": {
+            "Type": "DT_IMPACT",
+            "ProcChance": 0
+        },
+        "EmbedEffect": "/Lotus/Fx/Weapons/Ostron/Arcanes/AirMeleeProjExplosion",
+        "EmbedDeathEffect": "/Lotus/Fx/Weapons/Ostron/Arcanes/AirMeleeProjEmbedDeath",
+        "KinematicInitialSpeed": 60,
+        "KinematicMaxSpeed": 100,
+        "KinematicNoiseRate": 0.0001,
+        "KinematicGravity": 1,
+        "KinematicGravityMultiplier": 0.8,
+        "KinematicSpinRate": [
+            0,
+            60,
+            0
+        ],
+        "BaseRotation": [
+            0.866025,
+            0,
+            0,
+            0.5
+        ],
+        "OnProjectileStoppedScript": {
+            "Script": "MeleeArcaneOnJumpProjectile.lua",
+            "Function": "ProjectileStopped",
+            "_projectileType": "",
+            "_projectileSpawnBone": "GAME_R1_ARM3",
+            "_projectileSpawnOffset": [
+                0,
+                0,
+                0
+            ],
+            "_projectileLaunchAnimEvent": "JumpArcaneProjRelease",
+            "_projectileSpeed": 5,
+            "_aimingProjectileSpeedMultiplier": 2,
+            "_aerialDownThresholdOverride": 75,
+            "_projectileDistanceForPowerUp": 20,
+            "_projectilePowerUpDamageMultiplier": 2,
+            "_projectilePowerUpDamageAddPerLevel": 1,
+            "_projectilePowerUpFx": "",
+            "_startProjectileOnJumpSound": "",
+            "_projectileLoopSound": "/Lotus/Sounds/Mods/Proc/Arcane/ArcaneMeleeProjectileLoopSeq",
+            "_explosiveAttackForcedProc": "PT_BLEEDING"
+        },
+        "ApplyColorCustomization": 1,
+        "UseBaseOffset": 1,
+        "FlightUpRandomOffset": [
+            0,
+            0.5,
+            0.5
+        ],
+        "RagdollEmbedLife": 3,
+        "EmbedOffset": 0.6,
+        "CanAttachRagdoll": 0,
+        "EmbedHeadOn": 0,
+        "IllusionCanEmbed": 1,
+        "CanExplodeOnContact": 0,
+        "ContactExplosionDamage": 100,
+        "ContactExplosionRadius": 6,
+        "ContactExplosionEffect": "/Lotus/Fx/Common/RadialBlastHeavyImpactMod"
+    }
+}

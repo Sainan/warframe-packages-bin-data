@@ -1,0 +1,75 @@
+{
+    "parent": "/Lotus/Objects/ExplodingTank",
+    "data": {
+        "UseLightMap": 0,
+        "ShadowLightmaps": 1,
+        "Mesh": "CrpBarrelADynamic.fbx",
+        "MaterialParams": [
+            {
+                "name": "TintColor0",
+                "type": "Color",
+                "slot": -1,
+                "value": [
+                    0.11,
+                    0.42,
+                    0.069,
+                    0
+                ]
+            },
+            {
+                "name": "TintColor3",
+                "type": "Color",
+                "slot": -1,
+                "value": [
+                    0.58,
+                    0.83,
+                    0.39,
+                    0
+                ]
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
+        "LocTag": "/Lotus/Language/CorpusGasCity/DestructableBarrelGasName",
+        "LongDesc": "/Lotus/Language/CorpusGasCity/DestructableBarrelGasDesc",
+        "Icon": "/Lotus/Interface/Icons/Objects/CrpExplodingBarrelGas.png",
+        "DamageType": "DT_GAS",
+        "Health": 20,
+        "AcceptedDamageTypes": [
+            "DT_ANY"
+        ],
+        "DestructionDelay": 0.1,
+        "CreateOnDestroy": {
+            "LocalRotation": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "Type": "/Lotus/Fx/Explosions/GasBarrelExplosionShockwave",
+            "Attach": 1
+        },
+        "PlayOnDestroy": "/Lotus/Sounds/Ambience/CorpusGasCity/GameplayRemaster/CrpGasCityBarrelGasExplosion",
+        "DestroyDamageIgnoreSource": 0,
+        "StateChangeScript": {
+            "Script": "/Lotus/Scripts/ExplodingDecoration.lua",
+            "Function": "BonusProcCountOnExplosion",
+            "_effectRadius": 10,
+            "_procCounts": [
+                1
+            ],
+            "_procs": [
+                "PT_ASPHYXIATION"
+            ]
+        },
+        "DestroyDamage": 300,
+        "DestroyDamageType": "DT_GAS",
+        "DestroyProcChance": 1,
+        "DestroyDamageOffset": [
+            0,
+            0.5,
+            0
+        ],
+        "CreateDamageType": "DT_GAS",
+        "NPCLevelDamageMultiplier": 0.2
+    }
+}

@@ -1,0 +1,257 @@
+{
+    "parent": "/Lotus/Types/Game/SpaceFighterBaseAvatar",
+    "data": {
+        "Mesh": "/Lotus/Objects/Sentient/Ships/Fighters/SentientEdiacAssaultFULL_skel.fbx",
+        "MeshScale": 0.3,
+        "OverrideMaterial": [
+            "/Lotus/Objects/Sentient/Ships/Fighters/SentientAssaultMat",
+            "/Lotus/Objects/Sentient/Ships/Fighters/SentientAssaultLaserMat",
+            "/Lotus/Objects/Sentient/Ships/Fighters/SentientAssaultWingsMat"
+        ],
+        "AnimationName": "Guild",
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "ServerChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_BODY1",
+                "Type": "/Lotus/Types/Game/MarkerInfos/SpaceEnemyMarkerInfo",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/Lotus/Types/Enemies/SpaceBattles/Corpus/Ships/FighterSpaceFlight",
+        "HeadBone": "GAME_L1_EYE1",
+        "WeaponBone": "GAME_L1_CANNON3",
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Sentient",
+        "LocTag": "/Lotus/Language/Railjack/SentientFighterAssaultName",
+        "ShortDesc": "/Lotus/Language/Railjack/SentientFighterAssaultDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Railjack/Sentients/SentientAssaultFighter.png",
+        "MaxHealth": 100,
+        "DropTable": "/Lotus/Types/DropTables/SpaceDropTables/Sentient/SpaceFighterSntAssaultDropTable",
+        "AnimControllerType": "SentientSpaceFighterBAnimController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "DamageControllerType": "SplineSntAssaultDamageController",
+        "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
+        "MotionControllerType": "/Lotus/Types/Enemies/SpaceBattles/Corpus/Drones/SpaceDroneMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                3
+            ],
+            "LocalRotation": [
+                0.707107,
+                0,
+                0,
+                0.707107
+            ],
+            "BoneName": "GAME_C1_COG",
+            "Type": "/Lotus/Types/Enemies/SpaceBattles/Grineer/Fighters/Proxies/FighterFullBodyRaycast"
+        },
+        "OnDeathScript": {
+            "Script": "/Lotus/Scripts/KahlMissions/KahlChallenges.lua",
+            "Function": "SpaceFighterOnDeath",
+            "_testChallenges": [],
+            "_transmissionSet": "/Lotus/Sounds/Dialog/Veilbreaker/Quest/KahlQuestTransmissionSet",
+            "_rescueFactionTag": "",
+            "_passwordGlyph": "",
+            "_ventKidsManifest": "",
+            "_kdrivePartPickup": "",
+            "_solaranReleaseAnim": "",
+            "_SolaranReleasedEffect": "",
+            "_cageInstance": "",
+            "_cageOpenAnim": "",
+            "_cageOpenIdleAnim": "",
+            "_cageClosedIdleAnim": "",
+            "_beastPrisonerIdleAnim": "",
+            "_dissolveDelay": 3,
+            "_chippersToolsType": "",
+            "_numPasswordsToFind": 4,
+            "_kahlFloofPickup": "",
+            "_tagToFire": ""
+        },
+        "FacialMorphScript": {
+            "Script": "/Lotus/Scripts/NPC/FacialMorph.lua",
+            "Function": "OnMorphChangeRequested",
+            "_autoRemovePainMorph": 1
+        },
+        "FacialMorphHeadAttachmentType": "/Lotus/Characters/Grineer/Marine/GrineerHeadMorphsDeco",
+        "MorphName:ALERT": "Morphs.Alert",
+        "MorphName:RAGE": "Morphs.Rage",
+        "MorphName:FEAR": "Morphs.Fear",
+        "MorphName:DEAD": "Morphs.Dead",
+        "MorphName:SMUG": "Morphs.Smug",
+        "MorphName:PAIN": "Morphs.Pain",
+        "SoundEvents": [
+            {
+                "EventName": "SFXGrnFighterShipAttackManeuver",
+                "Sound": "/Lotus/Sounds/Gameplay/Veilbreaker/Murex/SentientFighterEnemy/VeilbreakerSentientFighterAttackManeuver",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXManeuverGeneric",
+                "Sound": "/Lotus/Sounds/Gameplay/Veilbreaker/Murex/SentientFighterEnemy/VeilbreakerSentientFighterAttackManeuver",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXManeuverRoll",
+                "Sound": "/Lotus/Sounds/Gameplay/Veilbreaker/Murex/SentientFighterEnemy/VeilbreakerSentientFighterCloseShortFlyBy",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXManeuverSpin",
+                "Sound": "/Lotus/Sounds/Gameplay/Veilbreaker/Murex/SentientFighterEnemy/VeilbreakerSentientFighterRoll",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "ParticleEvents": [
+            {
+                "EventName": "BallCharge",
+                "ParticleSys": "/Lotus/Fx/Enemies/Sentients/SpaceFighter/AssaultEnergyBallCharge",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": 0,
+                "LocalPosition": [
+                    0,
+                    15,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Fire",
+                "ParticleSys": "/Lotus/Fx/Enemies/Sentients/SpaceFighter/AssaultEnergyBallRelease",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    15,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "ChargeFx",
+                "ParticleSys": "/Lotus/Fx/Enemies/Sentients/SpaceFighter/SntAssaultShotCharge",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "DiscShot",
+                "ParticleSys": "/Lotus/Fx/Enemies/Sentients/SpaceFighter/SntAssaultShotChargeBurstAttach",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "KillXPReward": 400,
+        "AiDirEncounterScore": 200,
+        "SpawnOnPreDeath": {
+            "Type": "/Lotus/Fx/Enemies/Sentients/SpaceFighter/SplineSntFighterPreDeath"
+        },
+        "ShowLevelInHud": 0,
+        "ExcludedFromSimulacrum": 1,
+        "MinCollisionDamageSpeed": 10,
+        "WhizzSounds": [
+            {
+                "Sound": "/Lotus/Sounds/Gameplay/Veilbreaker/Murex/SentientFighterEnemy/VeilbreakerSentientFighterCloseShortFlyBy",
+                "AnimEvent": "",
+                "Radius": 80,
+                "MinSpeed": 5,
+                "IsInCrewShip": 1,
+                "UseRelativeSpeed": 1,
+                "Cooldown": 1,
+                "ConeAngle": 120,
+                "StopPrevious": 0
+            },
+            {
+                "Sound": "/Lotus/Sounds/Gameplay/Veilbreaker/Murex/SentientFighterEnemy/VeilbreakerSentientFighterCloseShortFlyBy",
+                "AnimEvent": "",
+                "Radius": 50,
+                "MinSpeed": 5,
+                "IsInCrewShip": 0,
+                "UseRelativeSpeed": 1,
+                "Cooldown": 1,
+                "ConeAngle": 180,
+                "StopPrevious": 0
+            }
+        ],
+        "AttackActions": [],
+        "OnlyDodgeInDirectionsMatchingMoveDir": 1
+    }
+}

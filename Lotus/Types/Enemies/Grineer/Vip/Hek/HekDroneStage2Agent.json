@@ -1,0 +1,155 @@
+{
+    "parent": "HekDroneStage1Agent",
+    "data": {
+        "BehaviorDatabase": [
+            "/Lotus/Types/Behaviors/HekDroneFinisherBehavior",
+            "/Lotus/Types/Behaviors/HekDroneDodgeBehavior",
+            "/EE/Types/Npc/BehaviorParallel",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "HekDroneFinisherBehavior": {
+            "Enabled": 0,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DefaultEvaluationRange": [
+                0,
+                1
+            ],
+            "FavoriteTarget": "",
+            "AlwaysFaceTarget": 1,
+            "FinisherTime": 2,
+            "CanStartIfInBlockingAnim": 0,
+            "TetherToOwner": 0,
+            "TetherRadius": 0,
+            "WaitForMoveToFinish": 0,
+            "RequireTargetInPredeath": 0,
+            "MaxTargetHealthThreshold": -1,
+            "DelayBetweenFinishers": 15,
+            "AlignToActionIn:Type": "/EE/Types/Npc/AlignToAction",
+            "AlignToActionIn:Enabled": 1,
+            "AlignToActionIn:OnStartScript": {
+                "Script": ""
+            },
+            "AlignToActionIn:OnDamagedScript": {
+                "Script": ""
+            },
+            "AlignToActionIn:AlignAngleThreshold": 10,
+            "TurnToTarget:Type": "/EE/Types/Npc/TurnToTargetAction",
+            "TurnToTarget:Enabled": 1,
+            "TurnToTarget:OnStartScript": {
+                "Script": ""
+            },
+            "TurnToTarget:OnDamagedScript": {
+                "Script": ""
+            },
+            "TurnToTarget:MovementGuessMultiplier": 5,
+            "TurnToTarget:AccuracyThreshold": 10,
+            "KeepDistance:Type": "/Lotus/Types/Behaviors/HekHoverNearTargetBehavior",
+            "KeepDistance:Enabled": 1,
+            "KeepDistance:OnStartScript": {
+                "Script": ""
+            },
+            "KeepDistance:OnDamagedScript": {
+                "Script": ""
+            },
+            "KeepDistance:DefaultReevaluationDelay": 0,
+            "KeepDistance:TargetDistance": [
+                1,
+                1.5
+            ],
+            "KeepDistance:StrafeDistance": 2,
+            "KeepDistance:VerticalDistance": 2,
+            "KeepDistance:VerticalDistanceVariance": [
+                0,
+                0
+            ],
+            "KeepDistance:ReachedLocationTolerance": 0.1,
+            "KeepDistance:WaitDuration": [
+                0,
+                1
+            ],
+            "KeepDistance:RecheckInterval": 2,
+            "KeepDistance:MinMovementDistance": 1,
+            "KeepDistance:AlwaysUpdateEvasion": 0,
+            "KeepDistance:ControlFacing": "MFC_FACE_MOVEDIR",
+            "KeepDistance:BoostFacing": "MFC_FACE_MOVEDIR",
+            "KeepDistance:BoostPosture": "WALK",
+            "KeepDistance:SpeedBoostMultiplier": 1,
+            "KeepDistance:BoostRange": 15,
+            "KeepDistance:BoostToTarget": 0,
+            "KeepDistance:ExitAfterWait": 0,
+            "KeepDistance:AdjustDestinationHeight": 0,
+            "KeepDistance:Action": "",
+            "KeepDistance:TurnToTargetDistance": 7,
+            "KeepDistance:AttachDistance": 7,
+            "TakeOvertargetType": "/Lotus/Types/Game/LotusAvatar",
+            "DamagePercentToCauseHeal": 0.85,
+            "WaitAfterLifeDrain": 15
+        },
+        "BehaviorParallel": {
+            "GenericBehaviorSelector": {
+                "UsePowerSuitAbilitiesBehavior": {
+                    "Enabled": 1,
+                    "ValidAbilities": [
+                        0,
+                        1
+                    ]
+                }
+            },
+            "MovementBehaviorSelector": {
+                "Actions": [
+                    "/Lotus/Types/Behaviors/HekHoverNearTargetBehavior",
+                    "/Lotus/Types/Behaviors/HoverNearTeammatesBehavior",
+                    "/Lotus/Types/Behaviors/HekDroneStrafeBehavior"
+                ],
+                "HekHoverNearTargetBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TargetDistance": [
+                        1,
+                        2
+                    ],
+                    "StrafeDistance": 2,
+                    "VerticalDistance": 3,
+                    "VerticalDistanceVariance": [
+                        0,
+                        0
+                    ],
+                    "ReachedLocationTolerance": 0.5,
+                    "WaitDuration": [
+                        0,
+                        1
+                    ],
+                    "RecheckInterval": 2,
+                    "MinMovementDistance": 1.5,
+                    "AlwaysUpdateEvasion": 0,
+                    "ControlFacing": "MFC_FACE_TARGET",
+                    "BoostFacing": "MFC_FACE_TARGET",
+                    "BoostPosture": "WALK",
+                    "SpeedBoostMultiplier": 1,
+                    "BoostRange": 15,
+                    "BoostToTarget": 0,
+                    "ExitAfterWait": 0,
+                    "AdjustDestinationHeight": 0,
+                    "Action": "Cable",
+                    "TurnToTargetDistance": 7,
+                    "AttachDistance": 7
+                },
+                "HekDroneStrafeBehavior": {
+                    "StopRadius": 1.5
+                }
+            }
+        }
+    }
+}

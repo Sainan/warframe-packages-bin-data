@@ -1,0 +1,121 @@
+{
+    "parent": "/Lotus/Types/Weapon/WaveProjectile",
+    "data": {
+        "Mesh": "/Lotus/Fx/Weapons/Corpus/CrpAirPistol/AirPistolProjMesh.fbx",
+        "MeshScale": 10,
+        "OverrideMaterial": [
+            "/Lotus/Fx/Weapons/Corpus/Shotgun/CrpShotgunProjMat"
+        ],
+        "MaterialParams": [
+            {
+                "name": "vScales",
+                "type": "Float4",
+                "slot": -1,
+                "value": 1,
+                "value1": 1,
+                "value2": 0.65,
+                "value3": 0
+            },
+            {
+                "name": "UnlitAtten",
+                "type": "Float",
+                "slot": -1,
+                "value": 0
+            }
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    1
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Corpus/Shotgun/CrpShotgunProjFX",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Corpus/RailJack/ScannerSwarmMuzzleFlare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 0,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "AttackData": {
+            "DT_IMPACT": 0.8,
+            "DT_PUNCTURE": 0.1,
+            "DT_SLASH": 0.1,
+            "ProcChance": 0,
+            "HitType": "DHT_PROJECTILE"
+        },
+        "CriticalMultiplier": 1.5,
+        "GrenadeShootPermissions": [],
+        "GrenadeShootBonus": [],
+        "DamageRadius": 1,
+        "DieSound": "/Lotus/Sounds/Weapons/Corpus/CrpAirPistol/CrpAirPistol3DProjectileExplosion",
+        "PassThroughEffect": "/Lotus/Fx/Weapons/Corpus/Shotgun/CrpShotgunProjExplosion",
+        "Toughness": 10000,
+        "MaxLife": 5,
+        "MaxBounces": 1,
+        "VerticalImpulse": 100,
+        "HorizontalImpulse": 500,
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 100,
+        "KinematicMaxSpeed": 100,
+        "FaceVelocity": 1,
+        "BaseRotation": [
+            0,
+            0,
+            0.707107,
+            0.707107
+        ],
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/CrpShotgun.lua",
+            "Function": "Update"
+        },
+        "ApplyColorCustomization": 1,
+        "RiftStasisWeight": 25,
+        "InitialWidth": 0.4,
+        "InitialRadius": 0.1,
+        "ProjectileResizes": [
+            {
+                "Time": 0.75,
+                "ResizeWidth": 4,
+                "ResizeRadius": 1
+            }
+        ],
+        "DestroyOnContactTypes": [
+            "/Lotus/Types/Enemies/Corpus/Spaceman/AIWeek/NullifyShieldDecoCollision",
+            "/Lotus/Powersuits/Frost/IceShieldDeco",
+            "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/NpcIceShieldDeco"
+        ]
+    }
+}

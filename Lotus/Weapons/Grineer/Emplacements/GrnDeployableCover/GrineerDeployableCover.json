@@ -1,0 +1,174 @@
+{
+    "parent": "/EE/Types/Npc/DynamicCover",
+    "data": {
+        "ShadowLightmaps": 1,
+        "UseAmbient": 1,
+        "Mesh": "GrnDeployableCover_skel.fbx",
+        "Dissolve": 1,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "DeployableCoverPoints",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    -0.707107,
+                    0,
+                    0,
+                    0.707107
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Grineer/DeployableCover/CoverSpawn",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/Effects/MaterialFade.lua",
+            "Function": "DissolveFade",
+            "_OriginalValue": 1,
+            "_NewValue": 0,
+            "_TimeLength": 0.1,
+            "_OriginalScale": 0.1,
+            "_NewScale": 1,
+            "_Peak": 0.5,
+            "_PeakEnd": 0.8,
+            "_PeakValue": 1,
+            "_ValleyValue": 0,
+            "_ValleyEndValue": 0,
+            "_Param": "",
+            "_TargetDeco": [],
+            "_Delay": 0,
+            "_OriginalValueTwo": 1,
+            "_NewValueTwo": 2,
+            "_ParamTwo": "",
+            "_destroyAtEnd": 0,
+            "_showAtStart": 0,
+            "_hideAtEnd": 0,
+            "_meshScaleValley": 0.1,
+            "_meshScalePeak": 1,
+            "_applyEnergyColor": 0,
+            "_energyColorParam": "TintColor",
+            "_getParentFirst": 0,
+            "_applyToParent": 0,
+            "_applyToChildren": 0,
+            "_checkInstigator": 0,
+            "_instigatorDuration": [
+                0,
+                0
+            ],
+            "_instigatorPower": 1,
+            "_isMeleeWeapon": 0,
+            "_isWeapon": 0,
+            "_alphaMult": 1,
+            "_getCastingSpeed": 0,
+            "_gcsGetCreator": 0,
+            "_applyLowHigh": 1,
+            "_scaleForExplosionMod": 0,
+            "_isArchwing": 0,
+            "_powScale": 0,
+            "_invertPowScale": 0,
+            "_powerAmount": 3,
+            "_isRandomMeshScale": 0,
+            "_checkKilled": 0,
+            "_materialSlot": -1
+        },
+        "ReplicaRunScriptInstance": 1,
+        "LocTag": "/Lotus/Language/Game/DeployableCoverName",
+        "UseLocTag": 1,
+        "LongDesc": "/Lotus/Language/Game/DeployableCoverDesc",
+        "Icon": "/Lotus/Interface/Icons/Objects/GrineerDeployableCover.png",
+        "Diorama": "/Lotus/Levels/Episodes/ObjectsBlunt.level",
+        "ReqScans": 12,
+        "SoundEvents": [
+            {
+                "EventName": "SFXCoverDeploy",
+                "Sound": "/Lotus/Sounds/Items/GrineerDeployableCover/GrnDeployableCoverDeploy",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCoverDeflate",
+                "Sound": "/Lotus/Sounds/Items/GrineerDeployableCover/GrnDeployableCoverDeflate",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "FancyAnimationTransition": 1,
+        "ActivatingAnimation": "GrnDeployableCoverOpening_anim.fbx",
+        "ActiveAnimation": "GrnDeployableCoverOpen_anim.fbx",
+        "DamagedAnimation": "GrnDeployableCoverFiredUpon_anim.fbx",
+        "DeactivatingAnimation": "GrnDeployableCoverDeflate_anim.fbx",
+        "InactiveAnimation": "GrnDeployableCoverClosed_anim.fbx",
+        "DyingAnimation": "GrnDeployableCoverDeflate_anim.fbx",
+        "DeadAnimation": "GrnDeployableCoverDeflated_anim.fbx",
+        "RestrictHitType": 1,
+        "ActiveHitProxy": {
+            "LocalPosition": [
+                0,
+                0.82,
+                0
+            ],
+            "Type": "GrineerDeployableCoverOpenCollisionProxy"
+        },
+        "InactiveHitProxy": {
+            "LocalPosition": [
+                0,
+                0.175,
+                0
+            ],
+            "Type": "GrineerDeployableCoverClosedCollisionProxy"
+        },
+        "DeadHitProxy": {
+            "LocalPosition": [
+                0,
+                0.175,
+                0
+            ],
+            "Type": "GrineerDeployableCoverClosedCollisionProxy"
+        },
+        "OnPlacementScript": {
+            "Script": "/Lotus/Scripts/HealthDrainUntilDeath.lua",
+            "Function": "DrainHealth",
+            "_drainHealth": 1,
+            "_delayDrain": 2,
+            "_percentDrainPerTick": 2,
+            "_drainInterval": 1,
+            "_cleanupDelay": 20,
+            "_attachedType": "",
+            "_activateShield": 1
+        }
+    }
+}

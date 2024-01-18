@@ -1,0 +1,282 @@
+{
+    "parent": "/Lotus/Types/Enemies/Sentients/SentientBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SentientCarrierAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SentientCarrierPowersuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "ShouldIgnoreGCS": 1,
+        "IgnoredByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/Logic/LogicGraphAction",
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/SpawnAgentsBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/FlyStormTargetOrderBehavior",
+            "/Lotus/Types/Behaviors/FlySphereStrafeBehavior",
+            "/Lotus/Types/Behaviors/FlyPatrolBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "LogicGraphAction": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "GraphRes": "SentientCarrierLogic"
+        },
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
+        "SpawnAgentsBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "SpawnOffset": [
+                3,
+                -10,
+                3
+            ],
+            "SpawnDelay": [
+                8,
+                15
+            ],
+            "SpawnRange": [
+                10,
+                20
+            ],
+            "SpawnAgents": [
+                "/Lotus/Types/Enemies/Sentients/Troopers/SentientTrooperAgent",
+                "/Lotus/Types/Enemies/Sentients/Troopers/SentientTrooperAgent",
+                "/Lotus/Types/Enemies/Sentients/Troopers/SentientTrooperAgent",
+                "/Lotus/Types/Enemies/Sentients/Troopers/SentientTrooperAgent"
+            ]
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "BlockForPowerCompleteType": "BT_ABILITY_DRIVEN",
+            "AllowInterruptOfAbility": 1
+        },
+        "FlyStormTargetOrderBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceLastSeen": 5,
+            "MaxDistToTarget": 25,
+            "Order": "StormTarget",
+            "SuccessRadius": 1,
+            "DesiredPosture": "RUN",
+            "UseNearTargetPosture": 0,
+            "NearTargetPostureMissionType": "Territory",
+            "DesiredPostureNearTarget": "JOG",
+            "OnFailureReevalTime": 2,
+            "OnSuccessReevalTime": 10,
+            "TargetMovedRadius": 10
+        },
+        "FlySphereStrafeBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "MaxRange": 30,
+            "DesiredRangeFromTarget": 20,
+            "DistToPositionThreshold": 1,
+            "DefaultThrottle": 1,
+            "ControlFiring": 1,
+            "AttackOnMove": 0,
+            "AttackRange": [
+                5,
+                20
+            ],
+            "AttackTime": [
+                3,
+                5
+            ],
+            "TimeBetweenAttacks": [
+                2,
+                4
+            ],
+            "HorizonalAngularSnap": 30,
+            "VerticalAngularSnap": 20,
+            "MaxVerticalAngle": 60,
+            "NumHoriztalSteps": 2,
+            "NumVerticalSteps": 2,
+            "StayInTargetVision": 0,
+            "AssumedTargetFov": 90,
+            "HoverTime": [
+                5,
+                10
+            ],
+            "MoveTimeout": 20,
+            "MoveInFrequency": 0.2,
+            "DesiredMoveInRange": 10,
+            "UsePathing": 1,
+            "MoveDiffThreshold": 1,
+            "RestrictHeight": 0,
+            "HeightRangeFromGround": [
+                25,
+                30
+            ],
+            "ContinuousReposition": 0,
+            "FailOnNonTerrainTargetZone": 0
+        },
+        "FlyPatrolBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DefaultThrottle": 0.75,
+            "WaypointRadius": 5,
+            "AutoAssignClosestPatrol": 1,
+            "SameZoneOnly": 1,
+            "CanRunIfHasTarget": 0,
+            "MovePosture": "WALK",
+            "SlowDownDistance": 0,
+            "SpeedMultiplier": 1,
+            "AutoPatrolRadius": 300,
+            "BackwardWeight": 3,
+            "StationaryThreshold": 10
+        },
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderSpace"
+        ],
+        "LocomotionController:DynamicPathFinderSpace": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 1,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerFlight"
+        ],
+        "LocomotionController:DynamicPathFollowerFlight": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 6,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "ForceFaceForwardWhenInactive": 1,
+            "PreferedDistAboveNav": [
+                12,
+                12
+            ],
+            "MoveHeightOffset": 2.5,
+            "DistanceToDisregardTurning": 8,
+            "DistanceToSlow": 64,
+            "MinimumSlowedSpeed": 8,
+            "MinimumSpeed": 0,
+            "RecoverySpeedPct": 0.6,
+            "CorrectHeightOnIdle": 0,
+            "AirplaneControls": 0,
+            "DesiredAngleRangeForBank": [
+                0,
+                0
+            ],
+            "BackUpForRecovery": 0,
+            "CanMoveWithoutPath": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierAvoidance",
+                    "/EE/Types/Npc/LocomotionMoveModifierPID"
+                ],
+                "LocomotionMoveModifierAvoidance": {
+                    "AllowVerticalAvoidance": 1,
+                    "AvoidanceInputMultiplier": [
+                        1.2,
+                        1.2,
+                        0.8
+                    ],
+                    "PreserveVelocity": 0,
+                    "MinAvoidanceReducedVelocityPct": 0,
+                    "FlyerControlMode": 0,
+                    "AllowedObstacleCountForMaxSpeed": 30,
+                    "ObstacleCountForMinSpeed": 200,
+                    "ObstacleSlowdownScalingExponent": 1.8,
+                    "MinSpeedScalingFromObstacles": 0.25,
+                    "AvoidDynamicObstaclesOnly": 0
+                },
+                "LocomotionMoveModifierPID": {
+                    "PosKP": 1,
+                    "PosKI": 0,
+                    "PosKD": 0.1,
+                    "VelKP": 1,
+                    "VelKI": 0,
+                    "VelKD": 0.1,
+                    "ClampValue": 1,
+                    "PreserveVelocity": 0
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 2,
+            "offNavToleranceRadius": 0,
+            "avoidanceExtraRange": 20,
+            "flightPathClearance": 8,
+            "disallowedNodeFlags": 393
+        },
+        "IdleVerticalFov": 80,
+        "ViewIdleDistance": 60,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "ReactionControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneReactionController",
+        "PerceiverType": "/Lotus/Types/Enemies/Corpus/Drones/DronePerceiver",
+        "CoverEvaluatorType": "/EE/Types/Npc/GenericCoverEvaluator"
+    }
+}

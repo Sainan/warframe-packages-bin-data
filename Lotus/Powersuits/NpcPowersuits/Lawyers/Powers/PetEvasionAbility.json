@@ -1,0 +1,61 @@
+{
+    "parent": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/NpcAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Kingpins/KuvaLichTeleportAbility",
+        "LocalizeDescTag": "/Lotus/Language/Kingpins/KuvaLichTeleportAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/KuvaLich/KuvaTeleport.png",
+        "Script": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Lich/TeleportAbility.lua",
+            "Function": "ActivateAbility",
+            "_minRange": 0,
+            "_maxRange": 20,
+            "_teleportRangeMultiplier": 30,
+            "_teleportFX": "/Lotus/Fx/PowersuitAbilities/Kingpins/Lawyers/DefensiveTeleportFX",
+            "_doShockwave": 0,
+            "_shockwaveEntity": "",
+            "_teleportWindupAnim": "/Lotus/Animations/Corpus/ParvosLich/Kubrow/CastLaser01Start_anim.fbx",
+            "_teleportRecoverAnim": "/Lotus/Animations/Corpus/ParvosLich/Kubrow/CastLaser01End_anim.fbx",
+            "_ScriptedTeleportFx": 1,
+            "_isDefensive": 0,
+            "_resetCooldownOnDamage": 0,
+            "_givePostTeleportDodge": 0,
+            "_postTeleportBulletDodgeDurationPerLevel": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            "_postTeleportBulletDodgeChancePerLevel": [
+                0.25,
+                0.35,
+                0.45,
+                0.55,
+                0.65,
+                0.75
+            ]
+        },
+        "CooldownDuration": 10,
+        "ActivationXP": 0,
+        "EvaluateScript": 0,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/DamageInTimeEvaluator",
+            "/Lotus/Types/Game/AbilityEvaluators/CheckTargetEvaluator"
+        ],
+        "Evaluator:DamageInTimeEvaluator": {
+            "DamagePercent": 0.1,
+            "TimePeriod": 2
+        },
+        "Evaluator:CheckTargetEvaluator": {
+            "TargetRange": [
+                0,
+                20
+            ],
+            "LastSeemTime": 4,
+            "PersonallySeen": 0,
+            "RequireLivingAvatar": 1,
+            "SetAbilityArg": 1
+        }
+    }
+}

@@ -1,0 +1,356 @@
+{
+    "parent": "OrokinGoldenMawAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "OrokinGoldenMawAvatarWithBurrowFinisher",
+            "EXIMUS": "OrokinGoldenMawAvatarWithBurrowFinisher"
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/GoldenMawForceUnburrowBehaviorSelector",
+            "/EE/Types/Npc/TargetEvaluatingBehaviorSelector",
+            "/EE/Types/Npc/PatrolBehavior",
+            "/EE/Types/Npc/RandomTacWalkBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "GoldenMawForceUnburrowBehaviorSelector": {
+            "TargetEvaluatingBehaviorSelector": {
+                "Actions": [
+                    "/EE/Types/Npc/ShootingDecoratorBehavior"
+                ],
+                "ShootingDecoratorBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "FailOnChildFail": 0,
+                    "FailOnDamage": 0,
+                    "ShootTime": [
+                        8,
+                        8
+                    ],
+                    "WaitTime": [
+                        0,
+                        0
+                    ],
+                    "DecorativeReloads": 0,
+                    "DesiredTimeBetweenReloads": [
+                        3,
+                        6
+                    ],
+                    "AllowSuppressingFire": 0,
+                    "SuppressionTargetDistDiff": 2.5,
+                    "PointBlankRange": 5,
+                    "AllowShootingControllerToAim": 0,
+                    "MinAngleToTurn": 40,
+                    "MinAimMask": 0.9,
+                    "LookAtTarget": 1,
+                    "LookHorizRate": 40,
+                    "LookVertRate": 20,
+                    "FiringPreferencesOverride": [],
+                    "Action:Type": "/Lotus/Types/Behaviors/ContinuousMoveToTargetBehavior",
+                    "Action:ContinuousMoveToTargetBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "DesiredPosture": "WALK",
+                        "MaxMovementDistance": 100,
+                        "StopDistance": 0.5,
+                        "ClearAvoidance": 0,
+                        "SpeedModifier": 0.1,
+                        "MoveFacingControl": "MFC_FACE_TARGET",
+                        "OffsetDistance": 0,
+                        "UseEyePos": 0,
+                        "UseLastPosWhenTargetLost": 0
+                    },
+                    "ActivePostures": []
+                }
+            },
+            "ContinuousMoveToTargetBehavior": {
+                "DesiredPosture": "RUN",
+                "SpeedModifier": 0.5
+            }
+        },
+        "TargetEvaluatingBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Actions": [
+                "/Lotus/Types/Behaviors/GoldenMawTargetEvaluator"
+            ],
+            "GoldenMawTargetEvaluator": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/Lotus/Types/Behaviors/OrokinGoldenMawFinisherBehavior",
+                    "/EE/Types/Npc/KeepIdealDistanceBehavior"
+                ],
+                "OrokinGoldenMawFinisherBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "DefaultEvaluationRange": [
+                        0,
+                        1
+                    ],
+                    "FavoriteTarget": "",
+                    "AlwaysFaceTarget": 1,
+                    "FinisherTime": 0,
+                    "CanStartIfInBlockingAnim": 1,
+                    "TetherToOwner": 0,
+                    "TetherRadius": 0,
+                    "WaitForMoveToFinish": 0,
+                    "RequireTargetInPredeath": 0,
+                    "MaxTargetHealthThreshold": -1,
+                    "DelayBetweenFinishers": 0,
+                    "AlignToActionIn:Type": "/EE/Types/Npc/AlignToAction",
+                    "AlignToActionIn:Enabled": 1,
+                    "AlignToActionIn:OnStartScript": {
+                        "Script": ""
+                    },
+                    "AlignToActionIn:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "AlignToActionIn:AlignAngleThreshold": 90,
+                    "TurnToTarget:Type": "/EE/Types/Npc/TurnToTargetAction",
+                    "TurnToTarget:Enabled": 1,
+                    "TurnToTarget:OnStartScript": {
+                        "Script": ""
+                    },
+                    "TurnToTarget:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "TurnToTarget:MovementGuessMultiplier": 5,
+                    "TurnToTarget:AccuracyThreshold": 45,
+                    "KeepDistance:Type": "/Lotus/Types/Behaviors/ContinuousMoveToTargetBehavior",
+                    "KeepDistance:Enabled": 1,
+                    "KeepDistance:OnStartScript": {
+                        "Script": ""
+                    },
+                    "KeepDistance:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "KeepDistance:DefaultReevaluationDelay": 0,
+                    "KeepDistance:DesiredPosture": "RUN",
+                    "KeepDistance:MaxMovementDistance": 100,
+                    "KeepDistance:StopDistance": 0.1,
+                    "KeepDistance:ClearAvoidance": 0,
+                    "KeepDistance:SpeedModifier": 1,
+                    "KeepDistance:MoveFacingControl": "MFC_FACE_TARGET",
+                    "KeepDistance:OffsetDistance": 0,
+                    "KeepDistance:UseEyePos": 0,
+                    "KeepDistance:UseLastPosWhenTargetLost": 0,
+                    "HideAfterFinisher": 1,
+                    "CheckForFullUnburrow": 0
+                },
+                "KeepIdealDistanceBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "RandomizeRange": 0,
+                    "UseWeaponRange": 0,
+                    "IdealDistance": [
+                        0.2,
+                        0.2
+                    ],
+                    "EvaluateDistance": [
+                        0,
+                        100
+                    ],
+                    "MaxMovementDistance": 100,
+                    "AllowRetreat": 1,
+                    "AllowRun": 1,
+                    "AllowChase": 0,
+                    "ForceWalkBelowMinIdealRange": 1,
+                    "WalkRange": [
+                        0,
+                        0
+                    ],
+                    "RequireTeamMeleeLock": 0,
+                    "ReleaseTeamMeleeLock": 1,
+                    "AimWhileMoving": 0,
+                    "MoveFacingControl": "MFC_FACE_MOVEDIR",
+                    "StopRadius": 0.25,
+                    "RunWhenShocked": 0,
+                    "ShockedDamageTime": 30,
+                    "OnlyTravelWhenVisible": 1,
+                    "TravelDuringStruggle": 1,
+                    "AllowPartialPath": 1,
+                    "UpdateDestinationInterval": 0.5,
+                    "UpdateDestinationDistance": 0,
+                    "OffNavRadius": 0,
+                    "OffNavHeight": 0,
+                    "RequiresClearNavTrace": 0,
+                    "HoverHeightOverride": -1,
+                    "RetryWithPathlessMovement": 0,
+                    "PathlessMovementMaxDistance": 16,
+                    "AvoidTargetLineOfSight": 0,
+                    "AvoidanceBias": 10,
+                    "LockTarget": 0,
+                    "LookAtTarget": 0,
+                    "DistanceToShoot": -1,
+                    "WalkWhileShooting": 0,
+                    "AimOnFire": 0,
+                    "AllowReload": 0,
+                    "ChangeWeapons": 0,
+                    "WeaponSlot": "SLOT_1",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "PlayPhrase": 0,
+                    "Bark": "IDLE",
+                    "BarkFilter": "",
+                    "BarkInterval": [
+                        0,
+                        0
+                    ],
+                    "ReportUnreachableOnFailedMove": 0,
+                    "ReportUnreachableOffNav": 0,
+                    "TimeOffNav": 2,
+                    "RestrictToDefenseVolume": 0,
+                    "WalkMovePosture": "WALK"
+                },
+                "FailOnChildFailure": 1
+            },
+            "FailOnChildFailure": 0,
+            "TargetIsSelf": 0,
+            "MaxValidLastTargetBackupTime": 0,
+            "TargetVisibility": "TVB_IGNORE",
+            "TargetFlyer": "TFC_ANY",
+            "MaximumDistance": 100,
+            "TargetHealthPctRange": [
+                0,
+                1
+            ],
+            "IsPreDeath": 0,
+            "IsKilled": 0,
+            "TargetHasOwner": "T_ANY",
+            "ValidPostures": [],
+            "ValidModifiers": [],
+            "InvalidModifiers": [],
+            "ValidAvatarTypes": [
+                "/Lotus/Types/Player/LotusOperatorAvatar",
+                "/Lotus/Types/Player/TennoAvatar"
+            ],
+            "AvatarTag": "",
+            "RestrictedAvatarTag": "",
+            "RestrictedFactions": [],
+            "AnimInterfaceVariables": [],
+            "EvaluateOnForcedMelee": "EFM_IGNORE",
+            "TargetDeltaAttenuation": [
+                0,
+                1
+            ]
+        },
+        "PatrolBehavior": {
+            "SpeedMultiplier": 0.43,
+            "AlertSpeedMultiplier": 0.43
+        },
+        "RandomTacWalkBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StopRadius": 2,
+            "NearDistance": 4,
+            "SpeedMultiplier": 1,
+            "AlertSpeedMultiplier": 1,
+            "AllowTarget": 0,
+            "AimWhenIdle": 0,
+            "AimWhenAlert": 1,
+            "PermanentAlert": 0,
+            "ForceIdleForSinglePointPatrols": 1,
+            "AnimAction": "PatrolIdle",
+            "GenericAnims": [],
+            "MinPlayerDist": [
+                0,
+                0
+            ],
+            "MinPlayerFov": 60,
+            "PauseTime": [
+                3,
+                5
+            ],
+            "TimeBetweenPauses": [
+                15,
+                25
+            ],
+            "ReevaluationDelayOnAbortedMove": 5,
+            "PlayPhrase": 1,
+            "Bark": "IDLE",
+            "BarkFilter": "",
+            "BarkInterval": [
+                0,
+                0
+            ],
+            "StartUpDelay": [
+                0,
+                0
+            ],
+            "UseWasAlert": 0,
+            "ScanLength": 2,
+            "MovementPosture": "WALK",
+            "TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
+            "TeammateBarkBehavior:Enabled": 1,
+            "TeammateBarkBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "TeammateBarkBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "TeammateBarkBehavior:DefaultReevaluationDelay": 0,
+            "TeammateBarkBehavior:StopForTeammateDuration": [
+                3,
+                6
+            ],
+            "TeammateBarkBehavior:DontStopForTeammateDuration": 30,
+            "TeammateBarkBehavior:PostFailureEvaluationDelay": [
+                3,
+                3
+            ],
+            "TeammateBarkBehavior:AllowableTeammateAngle": 90,
+            "TeammateBarkBehavior:TeammateSearchDistance": 5,
+            "TeammateBarkBehavior:TeammateBark": "IDLE",
+            "TeammateBarkBehavior:TeammateBarkFilter": "",
+            "UseDefenseVolume": 0,
+            "EvaluateMoveScript": {
+                "Script": ""
+            },
+            "OnlyFindPositionsOnFlightNav": 0,
+            "MaxPatrolDistanceFromEncounterHint": 0
+        }
+    }
+}

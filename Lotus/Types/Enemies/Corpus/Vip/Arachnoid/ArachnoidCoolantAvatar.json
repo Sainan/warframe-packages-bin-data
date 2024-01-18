@@ -1,0 +1,146 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Guild/Arachnoid/SpiderCoolant/SpiderCoolantBase_skel.fbx",
+        "MeshScale": 1.5,
+        "OverrideMaterial": [
+            "/Lotus/Characters/Guild/Arachnoid/Wraith/WraithCoolantBodyMAT",
+            "/Lotus/Characters/Guild/Arachnoid/Wraith/WraithCoolantBodyMAT",
+            "/Lotus/Characters/Guild/Arachnoid/Wraith/WraithCoolantLegsMAT"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "ATT_C1_COOLANT",
+                "Type": "/Lotus/Characters/Guild/Arachnoid/SpiderCoolant/SpiderCoolantDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "ArachnoidCoolantWalk",
+        "ScriptInstance": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCoolantThrow.lua",
+            "Function": "MoveToTerraCamper",
+            "_distanceFromCamperToThrow": 30,
+            "_overheatMeterChillingPct": 0.1,
+            "_fireCoolantAnim": "",
+            "_fireCoolantSound": "",
+            "_animEventToWaitFor": "Fire",
+            "_projType": "",
+            "_degenerationRate": 0.05,
+            "_tankRetractAnim": "",
+            "_tankRetractedAnim": "",
+            "_cinematicFinisherTrigger": ""
+        },
+        "HeadBone": "GAME_C1_TOP",
+        "UseHeadBoneForEyePosition": 1,
+        "Faction": "Corpus",
+        "LocTag": "/Lotus/Language/SolarisVenus/CoolantSpiderName",
+        "ShortDesc": "/Lotus/Language/SolarisVenus/CoolantSpiderDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Corpus/Venus/ArachnoidCoolant.png",
+        "VoiceBox": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCoolant/Vocals/CrpArachnoidCoolantVoicebox",
+        "DropTable": "/Lotus/Types/DropTables/VenusDropTables/Enemies/VenusCoolantSpiderDropTable",
+        "AnimControllerType": "ArachnoidWraithAnimController",
+        "DamageControllerType": "ArachnoidCoolantDamageController",
+        "InventoryControllerType": "ArachnoidWraithInventory",
+        "MotionControllerType": "ArachnoidHungerMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0.9,
+                0
+            ],
+            "Type": "Proxies/ArachnoidCoolantRaycasts"
+        },
+        "OnDeathScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCamperSpawnAdds.lua",
+            "Function": "OnCoolantSpiderDeath",
+            "_castAnim": "",
+            "_animEventToWaitFor": "",
+            "_spawnFxType": "",
+            "_castSound": "",
+            "_spawnSound": "",
+            "_camperTurretAvatar": "",
+            "_coolantSpiderAgentType": "",
+            "_coolantSpiderHeatAgentType": "",
+            "_heatModeCoolantDropTable": "",
+            "_transmissionset": ""
+        },
+        "SoundEvents": [
+            {
+                "EventName": "StepL",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCoolant/Steps/CrpArachnoidCoolantTankStep",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "StepR",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCoolant/Steps/CrpArachnoidCoolantTankStep",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "StepRotateL",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCoolant/Steps/CrpArachnoidCoolantTankStep",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "StepRotateR",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCoolant/Steps/CrpArachnoidCoolantTankStep",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidWraithMeleeWhoosh",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCoolant/Abilities/CrpArachnoidCoolantMeleeWhoosh",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidCoolantFire",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCoolant/Abilities/CrpArachnoidCoolantTurretFire",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "KillXPReward": 300,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataArachnoidMed",
+        "DisarmAction": "DA_DAMAGE_ONLY",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/ArachnoidWraithReactionAnims",
+        "MultiHealthBar": 1,
+        "MultiHealthShieldColor": [
+            0,
+            213,
+            255,
+            1
+        ]
+    }
+}

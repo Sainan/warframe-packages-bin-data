@@ -1,0 +1,608 @@
+{
+    "parent": "BaseDuviriAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/DuviriMeleeAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "Weapons/DuviriMeleeWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "DuviriMeleeSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "DuviriMovementBehavior": {
+            "GroundMovementIdxMotion": 4294967295,
+            "TakeOffAnimAction": ""
+        },
+        "JetpackSpacemanOnGroundBehavior": {
+            "Actions": [
+                "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "/EE/Types/Npc/BlockingBehavior",
+                "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "/Lotus/Types/Behaviors/WeaponSwapBehavior",
+                "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+                "/EE/Types/Npc/StormTargetOrderBehavior",
+                "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+                "/EE/Types/Npc/MeleeRingTactic",
+                "/EE/Types/Npc/CustomResponseBehavior",
+                "/EE/Types/Npc/InvestigateBehavior",
+                "/EE/Types/Npc/PoiBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ],
+            "UsePowerSuitAbilitiesBehavior": {
+                "ValidAbilities": [
+                    1,
+                    2
+                ]
+            },
+            "MeleeRingTactic": {
+                "RingDist": [
+                    2,
+                    3
+                ],
+                "AllowRun": 1,
+                "MeleeBehaviors": [
+                    "/Lotus/Types/Behaviors/LotusAdvancedMeleeBehavior",
+                    "/EE/Types/Npc/TurnToTargetBehavior",
+                    "/EE/Types/Npc/MeleeWaitBehavior"
+                ],
+                "LotusAdvancedMeleeBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "UseCombatMgr": 0,
+                    "SucceedAfterCombo": 0,
+                    "SucceedAfterDefensive": 0,
+                    "AdjustAimDuringCombo": 0,
+                    "AlwaysCompleteCombo": 0,
+                    "LastSeenTargetStopComboTime": 2,
+                    "AttackFirst": 1,
+                    "DefensiveMoveTowards": 0,
+                    "DefensiveWhenNotAttacking": 0,
+                    "AllowWeaponSwapForDefence": 0,
+                    "DefensiveWhenAimedAt": 0,
+                    "DefensiveHealthPercentage": 0,
+                    "DefensiveForcedWindow": 3,
+                    "StopMovementOnAttack": 1,
+                    "DefensiveParryChance": 0,
+                    "DefensiveTime": [
+                        1,
+                        3
+                    ],
+                    "DoReactiveBlocking": 0,
+                    "ReactiveBlockingDefenseTime": 0.4,
+                    "DefensiveCooldownTime": 1,
+                    "HeavyAttackProcTypeImmunities": [],
+                    "MeleeRange": [
+                        0,
+                        8
+                    ],
+                    "MeleeRangeAttack": [
+                        0,
+                        3
+                    ],
+                    "MeleeRangeDash": [
+                        3,
+                        8
+                    ],
+                    "PlayerBehaviourEvalTime": [
+                        0,
+                        0
+                    ],
+                    "MaxAllowedAttacksBlocked": 0,
+                    "AggressiveHealthThreshold": 0,
+                    "BasicAttackTypes": [],
+                    "DashAttackType": "CC_SLIDING",
+                    "UseEquippedWeapon": 0,
+                    "ChangeWeapons": 1,
+                    "WeaponSlot": "SLOT_6",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "StopWeapons": 0
+                },
+                "TurnToTargetBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AccuracyThreshold": 10,
+                    "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+                    "TurnToAction:Enabled": 1,
+                    "TurnToAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "TurnToAction:OnDamagedScript": {
+                        "Script": ""
+                    }
+                }
+            }
+        },
+        "JetpackSpacemanInAirBehavior": {
+            "Actions": [
+                "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "/EE/Types/Npc/StormTargetOrderBehavior",
+                "DuviriBuffAllyOrderBehavior",
+                "DuviriTennoDamageOrderBehavior",
+                "DuviriFinisherSelector",
+                "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "/EE/Types/Npc/KeepIdealDistanceBehavior",
+                "/EE/Types/Npc/InvestigateBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ],
+            "StormTargetOrderBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeSinceLastSeen": 5,
+                "MaxDistToTarget": 25,
+                "ConsiderOrderType": 1,
+                "Order": "StormTarget",
+                "FailsOnTargetAcquired": 0,
+                "SuccessRadius": 1,
+                "DesiredPosture": "RUN",
+                "UseNearTargetPosture": 0,
+                "DesiredPostureNearTarget": "WALK",
+                "DesiredPostureOutOfView": "RUN",
+                "MaxOffNavDistance": 5,
+                "TargetMovedRadius": 6,
+                "OnFailureReevalTime": 2,
+                "OnSuccessReevalTime": 10,
+                "TryShoot": 1,
+                "TargetFaction": "",
+                "DistanceToOrderTargetForNearPosture": 0,
+                "ClearOrderOnMoveSuccess": 0,
+                "AllowTeleportToCatchUp": 1,
+                "TeleportToDestination": 0,
+                "AllowPartialPath": 1,
+                "RestrictToDV": 0
+            },
+            "DuviriBuffAllyOrderBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/EE/Types/Npc/GenericBehaviorSequence",
+                    "/EE/Types/Npc/WaitBehavior"
+                ],
+                "GenericBehaviorSequence": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeoutBetweenActions": 0.5,
+                    "FailOnChildFailure": 0,
+                    "Logging": 0,
+                    "Behaviors": [
+                        "/EE/Types/Npc/StormTargetOrderBehavior",
+                        "/Lotus/Types/Behaviors/RunScriptBehavior"
+                    ],
+                    "StormTargetOrderBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TimeSinceLastSeen": 5,
+                        "MaxDistToTarget": 30,
+                        "ConsiderOrderType": 1,
+                        "Order": "BuffNearbyAlly",
+                        "FailsOnTargetAcquired": 0,
+                        "SuccessRadius": 2,
+                        "DesiredPosture": "RUN",
+                        "UseNearTargetPosture": 0,
+                        "DesiredPostureNearTarget": "RUN",
+                        "DesiredPostureOutOfView": "RUN",
+                        "MaxOffNavDistance": 5,
+                        "TargetMovedRadius": 12,
+                        "OnFailureReevalTime": 0,
+                        "OnSuccessReevalTime": 0,
+                        "TryShoot": 1,
+                        "TargetFaction": "",
+                        "DistanceToOrderTargetForNearPosture": 0,
+                        "ClearOrderOnMoveSuccess": 0,
+                        "AllowTeleportToCatchUp": 1,
+                        "TeleportToDestination": 0,
+                        "AllowPartialPath": 1,
+                        "RestrictToDV": 0
+                    },
+                    "RunScriptBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "Script": {
+                            "Script": "DuviriAvatarReviveForm.lua",
+                            "Function": "OnAllyBuff",
+                            "_deathEffectType": "",
+                            "_reviveEffect": "",
+                            "_reviveHealthRatio": 0.4,
+                            "_maxRange": 30,
+                            "_struggleDuviriEffect": "",
+                            "_struggleVictimEffect": "",
+                            "_alteredDsp": "",
+                            "_finisherToUse": "",
+                            "_damageRadius": 10,
+                            "_damageAmount": 50,
+                            "_damageRankMod": 3,
+                            "_preDeathEffect": "",
+                            "_cloneEffect": ""
+                        }
+                    }
+                },
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "FailOnChildFailure": 1,
+                "OrderName": "BuffNearbyAlly",
+                "FailOnThisOrder": 0,
+                "RequiredTargetType": "OTT_No_Requirement",
+                "DistanceReaction": "ODTT_No_Requirement",
+                "RequiredDistance": 200
+            },
+            "DuviriTennoDamageOrderBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/EE/Types/Npc/GenericBehaviorSequence",
+                    "/EE/Types/Npc/WaitBehavior"
+                ],
+                "GenericBehaviorSequence": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeoutBetweenActions": 0.5,
+                    "FailOnChildFailure": 0,
+                    "Logging": 0,
+                    "Behaviors": [
+                        "/EE/Types/Npc/StormTargetOrderBehavior",
+                        "/Lotus/Types/Behaviors/RunScriptBehavior"
+                    ],
+                    "StormTargetOrderBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TimeSinceLastSeen": 5,
+                        "MaxDistToTarget": 30,
+                        "ConsiderOrderType": 1,
+                        "Order": "DamageNearbyTenno",
+                        "FailsOnTargetAcquired": 0,
+                        "SuccessRadius": 2.5,
+                        "DesiredPosture": "RUN",
+                        "UseNearTargetPosture": 0,
+                        "DesiredPostureNearTarget": "RUN",
+                        "DesiredPostureOutOfView": "RUN",
+                        "MaxOffNavDistance": 5,
+                        "TargetMovedRadius": 12,
+                        "OnFailureReevalTime": 0,
+                        "OnSuccessReevalTime": 0,
+                        "TryShoot": 1,
+                        "TargetFaction": "",
+                        "DistanceToOrderTargetForNearPosture": 0,
+                        "ClearOrderOnMoveSuccess": 0,
+                        "AllowTeleportToCatchUp": 1,
+                        "TeleportToDestination": 0,
+                        "AllowPartialPath": 1,
+                        "RestrictToDV": 0
+                    },
+                    "RunScriptBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "Script": {
+                            "Script": "DuviriAvatarReviveForm.lua",
+                            "Function": "OnTennoDamage",
+                            "_deathEffectType": "",
+                            "_reviveEffect": "",
+                            "_reviveHealthRatio": 0.4,
+                            "_maxRange": 30,
+                            "_struggleDuviriEffect": "",
+                            "_struggleVictimEffect": "",
+                            "_alteredDsp": "",
+                            "_finisherToUse": "",
+                            "_damageRadius": 10,
+                            "_damageAmount": 50,
+                            "_damageRankMod": 3,
+                            "_preDeathEffect": "",
+                            "_cloneEffect": ""
+                        }
+                    }
+                },
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "FailOnChildFailure": 1,
+                "OrderName": "DamageNearbyTenno",
+                "FailOnThisOrder": 0,
+                "RequiredTargetType": "OTT_No_Requirement",
+                "DistanceReaction": "ODTT_No_Requirement",
+                "RequiredDistance": 200
+            },
+            "DuviriFinisherSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/EE/Types/Npc/GenericBehaviorSequence",
+                    "/EE/Types/Npc/WaitBehavior"
+                ],
+                "GenericBehaviorSequence": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeoutBetweenActions": 0.5,
+                    "FailOnChildFailure": 0,
+                    "Logging": 0,
+                    "Behaviors": [
+                        "/EE/Types/Npc/StormTargetOrderBehavior",
+                        "/Lotus/Types/Behaviors/RunScriptBehavior"
+                    ],
+                    "StormTargetOrderBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TimeSinceLastSeen": 5,
+                        "MaxDistToTarget": 25,
+                        "ConsiderOrderType": 1,
+                        "Order": "DuviriReviveForm",
+                        "FailsOnTargetAcquired": 0,
+                        "SuccessRadius": 2,
+                        "DesiredPosture": "RUN",
+                        "UseNearTargetPosture": 0,
+                        "DesiredPostureNearTarget": "RUN",
+                        "DesiredPostureOutOfView": "RUN",
+                        "MaxOffNavDistance": 5,
+                        "TargetMovedRadius": 12,
+                        "OnFailureReevalTime": 0,
+                        "OnSuccessReevalTime": 0,
+                        "TryShoot": 1,
+                        "TargetFaction": "",
+                        "DistanceToOrderTargetForNearPosture": 0,
+                        "ClearOrderOnMoveSuccess": 0,
+                        "AllowTeleportToCatchUp": 1,
+                        "TeleportToDestination": 0,
+                        "AllowPartialPath": 1,
+                        "RestrictToDV": 0
+                    },
+                    "RunScriptBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "Script": {
+                            "Script": "DuviriAvatarReviveForm.lua",
+                            "Function": "OnEnemyFinisher",
+                            "_deathEffectType": "",
+                            "_reviveEffect": "/Lotus/Fx/Enemies/Zariman/WraithPreDeathAttach",
+                            "_reviveHealthRatio": 0.4,
+                            "_maxRange": 30,
+                            "_struggleDuviriEffect": "",
+                            "_struggleVictimEffect": "",
+                            "_alteredDsp": "",
+                            "_finisherToUse": "DuviriReviveStruggle",
+                            "_damageRadius": 10,
+                            "_damageAmount": 50,
+                            "_damageRankMod": 3,
+                            "_preDeathEffect": "",
+                            "_cloneEffect": ""
+                        }
+                    }
+                },
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "FailOnChildFailure": 1,
+                "OrderName": "DuviriReviveForm",
+                "FailOnThisOrder": 0,
+                "RequiredTargetType": "OTT_No_Requirement",
+                "DistanceReaction": "ODTT_No_Requirement",
+                "RequiredDistance": 200
+            },
+            "UsePowerSuitAbilitiesBehavior": {
+                "ValidAbilities": [
+                    3
+                ]
+            },
+            "KeepIdealDistanceBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "RandomizeRange": 1,
+                "UseWeaponRange": 0,
+                "IdealDistance": [
+                    8,
+                    15
+                ],
+                "EvaluateDistance": [
+                    0,
+                    100
+                ],
+                "MaxMovementDistance": 100,
+                "AllowRetreat": 1,
+                "AllowRun": 1,
+                "AllowChase": 0,
+                "ForceWalkBelowMinIdealRange": 1,
+                "WalkRange": [
+                    0,
+                    0
+                ],
+                "RequireTeamMeleeLock": 0,
+                "ReleaseTeamMeleeLock": 1,
+                "AimWhileMoving": 0,
+                "MoveFacingControl": "MFC_FACE_MOVEDIR",
+                "StopRadius": 0.5,
+                "RunWhenShocked": 0,
+                "ShockedDamageTime": 30,
+                "OnlyTravelWhenVisible": 1,
+                "TravelDuringStruggle": 1,
+                "AllowPartialPath": 0,
+                "UpdateDestinationInterval": 0.5,
+                "UpdateDestinationDistance": 0,
+                "OffNavRadius": 0,
+                "OffNavHeight": 0,
+                "RequiresClearNavTrace": 0,
+                "HoverHeightOverride": -1,
+                "RetryWithPathlessMovement": 0,
+                "PathlessMovementMaxDistance": 16,
+                "AvoidTargetLineOfSight": 0,
+                "AvoidanceBias": 10,
+                "LockTarget": 0,
+                "LookAtTarget": 0,
+                "DistanceToShoot": -1,
+                "WalkWhileShooting": 0,
+                "AimOnFire": 0,
+                "AllowReload": 0,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_1",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                "AttackPhrase": "CHARGE_SCREAM",
+                "AlwaysPlayAttackPhrase": 0,
+                "PlayPhrase": 0,
+                "Bark": "IDLE",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    0,
+                    0
+                ],
+                "ReportUnreachableOnFailedMove": 0,
+                "ReportUnreachableOffNav": 0,
+                "TimeOffNav": 2,
+                "RestrictToDefenseVolume": 0,
+                "WalkMovePosture": "WALK"
+            }
+        },
+        "MusicWeight": 3
+    }
+}

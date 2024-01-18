@@ -1,0 +1,60 @@
+{
+    "parent": "/Lotus/Types/Game/PowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/RhinoChargeAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/RhinoChargeAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/RhinoDash.png",
+        "Script": {
+            "Script": "DuviriMountedDaxGroundSlashAbility.lua",
+            "Function": "ActivateAbility",
+            "_slashAnimation": "/Lotus/Animations/Dax/Melee/Horseback/GroundSlash_anim.fbx",
+            "_chargeFxTypeList": [
+                "/Lotus/Fx/Enemies/Duviri/MountedDaxSlashBladeDeco"
+            ],
+            "_fireFxTypeList": [
+                "/Lotus/Fx/Enemies/Duviri/MountedDaxSlashWaveFire"
+            ],
+            "_groundWaveTypeList": [
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriMountedDaxGroundSlashShockwaveEntity",
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriMountedDaxGroundSlashAngryShockwaveEntity",
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriMountedDaxGroundSlashSadShockwaveEntity",
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriMountedDaxGroundSlashFearShockwaveEntity",
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriMountedDaxGroundSlashHappyShockwaveEntity",
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriMountedDaxGroundSlashEnvyShockwaveEntity"
+            ],
+            "_chargeSound": "/Lotus/Sounds/Enemies/Duviri/DuviriDax/Abilities/DaxMounted/DuviriDaxMountedShockwaveAbilityChargeUp",
+            "_launchSound": "/Lotus/Sounds/Enemies/Duviri/DuviriDax/Abilities/DaxMounted/DuviriDaxMountedShockwaveAbilityCast",
+            "_shockWaveTelegraphType": "/Lotus/Fx/Enemies/Duviri/DuviriMountedDaxGroundSlashTelegraphDeco",
+            "_minRange": 13,
+            "_maxRange": 40,
+            "_groundWaveAttackTime": 3,
+            "_groundWaveInitialSpeed": 10,
+            "_groundWaveEndingSpeed": 12,
+            "_groundWaveFadeTime": 2,
+            "_shockWaveSpeedMultiplier": 3,
+            "_teamCooldown": 20,
+            "_buffedWaveShortDelay": 0.1,
+            "_buffedWaveLongDelay": 0.33334,
+            "_buffedWaveHeadingOffset": 50,
+            "_buffedWaveHeadingOffset2": 100,
+            "_buffedWaveOffset": 8,
+            "_buffedWaveOffsetSmall": 0.5
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "CheckForAbilityInterruption",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "DuviriAbilityUtility.lua",
+                    "Function": "CheckForAbilityInterruptionMounted"
+                }
+            }
+        ],
+        "CooldownDuration": 20,
+        "EnergyRequiredToActivate": 8,
+        "ActivationXP": 0,
+        "TurnToTarget": 1
+    }
+}

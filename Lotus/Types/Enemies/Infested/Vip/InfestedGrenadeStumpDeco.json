@@ -1,0 +1,112 @@
+{
+    "parent": "/EE/Types/Engine/Decoration",
+    "data": {
+        "Mesh": "/Lotus/Objects/Infestation/InfestedSpawnPod.fbx",
+        "MeshScale": 0.3,
+        "ServerChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "GolemNpcSpawnPointOne",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Golem/GolemGrenadeStumpDecoDeath",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicAvatarsWalkThrough",
+        "ScriptInstance": {
+            "Script": "GolemMinionSpawning.lua",
+            "Function": "SpawnMinion",
+            "_maxVIPLevel": 2,
+            "_maxMultiplayerVIPLevel": 5,
+            "_maxPlayerLevel": 5,
+            "_multiPlayerRankMultiplier": 2.5,
+            "_weaponSlotScaling": [
+                1,
+                1,
+                0,
+                0.5,
+                0,
+                0.35,
+                0,
+                0
+            ],
+            "_spawnPoint": "GolemNpcSpawnPointOne",
+            "_podHitProxy": "GolemSpawnerHitProxy",
+            "_initialSpawnDelay": 0.5,
+            "_desiredScale": 1,
+            "_scaleUpTime": 1.5,
+            "_desiredMaxAgents": 3,
+            "_timeBetweenSpawns": 12,
+            "_infestedAgents": [
+                "/Lotus/Types/Enemies/Infested/AiWeek/Quadrupeds/Quadruped",
+                "/Lotus/Types/Enemies/Infested/AiWeek/Runners/LeapingRunner",
+                "/Lotus/Types/Enemies/Infested/AiWeek/Runners/SuicideRunner"
+            ],
+            "_spawnAnims": [
+                "/Lotus/Animations/Infested/Quadruped/Spawn_anim.fbx",
+                "/Lotus/Animations/Infested/Ancient/Spawn_anim.fbx",
+                "/Lotus/Animations/Infested/Ancient/Spawn_anim.fbx"
+            ],
+            "_minionRankMod": 0.75,
+            "_growPod": 1,
+            "_scaleHealth": 1,
+            "_timeToLive": 45
+        },
+        "ReplicaRunScriptInstance": 1,
+        "LocTag": "/Lotus/Language/Game/InfestedSpawnPod",
+        "Health": 400,
+        "DamageMultipliers": {
+            "DT_SLASH": 3,
+            "DT_POISON": 0
+        },
+        "RemoveOnDestroy": 1,
+        "CreateOnDestroy": {
+            "Type": "GolemSpawnPodLootSpawner"
+        },
+        "MasterCreateOnDestroy": {
+            "LocalPosition": [
+                0,
+                0.5,
+                0
+            ],
+            "Type": "/Lotus/Fx/Enemies/Golem/GolemGrenadeDecoDeath"
+        }
+    }
+}

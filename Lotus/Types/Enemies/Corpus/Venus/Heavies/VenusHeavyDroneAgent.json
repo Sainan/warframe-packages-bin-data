@@ -1,0 +1,167 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Venus/VenusDroneBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "VenusHeavyDroneAvatar",
+            "EXIMUS": ""
+        },
+        "MaxLevel": 29,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Corpus/Venus/Weapons/VenusHeavyDroneRifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/VenusHeavyDroneSuit",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/DroneRecoveryBehavior",
+            "/Lotus/Types/Behaviors/WeaponSwapBehavior",
+            "/EE/Types/Npc/AgentOffNavBehaviorDropship",
+            "/Lotus/Types/Behaviors/HoverAttackBehavior",
+            "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+            "/Lotus/Types/Behaviors/PatrolFormationTactic",
+            "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/PoiBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ALWAYS",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 0,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "WeaponSwapBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WeaponSettings": [
+                {
+                    "WeaponSlot": "SLOT_1",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_BOTH"
+                },
+                {
+                    "WeaponSlot": "SLOT_2",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_BOTH"
+                }
+            ],
+            "WeaponHand": "MAIN_HAND",
+            "SwapThreshold": 5,
+            "RandomSwapDelay": [
+                3,
+                4
+            ]
+        },
+        "HoverAttackBehavior": {
+            "FireDuration": [
+                2,
+                3
+            ],
+            "WaitDuration": [
+                0.2,
+                0.5
+            ],
+            "CheckTargetVisible": 0
+        },
+        "HoverNearTargetBehavior": {
+            "TargetDistance": [
+                15,
+                25
+            ],
+            "StrafeDistance": 0,
+            "ReachedLocationTolerance": 0.1,
+            "WaitDuration": [
+                0,
+                1
+            ],
+            "MinMovementDistance": 1
+        },
+        "PatrolFormationTactic": {
+            "MaxDistToLeader": 40,
+            "MoveFacingControl": "MFC_FACE_MOVEDIR",
+            "TurnAngleThreshold": 4.95,
+            "LeaderAction:Actions": [
+                "/EE/Types/Npc/InvestigateBehavior",
+                "/EE/Types/Npc/PatrolBehavior",
+                "/EE/Types/Npc/RandomTacWalkBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ],
+            "LeaderAction:InvestigateBehavior": {
+                "TeamCoordination": 1
+            },
+            "AllowInDefenseVolumes": 1,
+            "PeriodicBarkTiming": [
+                0,
+                0
+            ]
+        },
+        "MoveToDesiredScriptPositionBehavior": {
+            "MovePosture": "RUN",
+            "FacingControl": "MFC_FACE_MOVEDIR",
+            "ClearDesiredPosOnSuccess": 1,
+            "StopMovingOnComplete": 1
+        },
+        "InvestigateBehavior": {
+            "ShouldAim": 1,
+            "TeamCoordination": 1,
+            "RunTowardsNewTargets": 1
+        },
+        "PoiBehavior": {
+            "PoiWhitelist": []
+        }
+    }
+}

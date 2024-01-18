@@ -1,0 +1,63 @@
+{
+    "parent": "GrineerChampionSniperAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "GrineerChampionSniperDecoyAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "ChampionWeapons/SniperDecoyOpticor",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "ChampionWeapons/SniperSheev",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "ChampionPowersuits/NpcSniperDecoySuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/EngageTargetTactic",
+            "/EE/Types/Npc/SearchTacAreaMapForTargetsBehavior",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "EngageTargetTactic": {
+            "AttackBehaviors": [
+                "/Lotus/Types/Behaviors/ChangeToPrimaryWeaponDecoratorBehavior"
+            ],
+            "ChangeToPrimaryWeaponDecoratorBehavior": {
+                "Action:GenericBehaviorSelector": {
+                    "Actions": [
+                        "/EE/Types/Npc/AttackFromTheOpenBehavior"
+                    ]
+                }
+            }
+        },
+        "WaitBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOut": 0,
+            "CoverOnly": 0,
+            "AimPosture": 1,
+            "MinimalEnemyDistance": 0,
+            "TrackTarget": 1,
+            "Peek": 0,
+            "FailOnDamaged": 0,
+            "PreventShooting": 0,
+            "StopMovingOnEnter": 0
+        }
+    }
+}

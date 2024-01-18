@@ -1,0 +1,43 @@
+{
+    "parent": "/EE/Types/Engine/ScriptTrigger",
+    "data": {
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicTrigger",
+        "IsCenterBaseOriented": 1,
+        "Dimensions": [
+            4,
+            1,
+            4
+        ],
+        "Shape": "VES_SPHERE",
+        "Radius": 2.5,
+        "AllowReentrant": 0,
+        "Replication": "BOTH",
+        "Scripts": [
+            {
+                "Target": "",
+                "Script": {
+                    "Script": "/Lotus/Scripts/SlowTraps.lua",
+                    "Function": "OnEnter",
+                    "_onlySlowMovement": 1,
+                    "_slow": 0.3,
+                    "_ignoreFaction": ""
+                }
+            },
+            {
+                "Target": "",
+                "Script": {
+                    "Script": "/Lotus/Scripts/Audio/PlaySoundOnTriggeringEntity.lua",
+                    "Function": "OnEnter",
+                    "_sound": "/Lotus/Sounds/Traps/Orokin/SlowTrap/SlowTrapAvatarEnable"
+                }
+            }
+        ],
+        "ExitScript": {
+            "Script": "/Lotus/Scripts/SlowTraps.lua",
+            "Function": "OnExit",
+            "_onlySlowMovement": 0,
+            "_slow": 0.25,
+            "_ignoreFaction": ""
+        }
+    }
+}

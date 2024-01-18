@@ -1,0 +1,123 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "Mesh": "/Lotus/Weapons/Tenno/ThrowingWeapons/ProximityTaserStar/ProximityTaserStar_skel.fbx",
+        "MeshScale": 0.65,
+        "OverrideMaterial": [
+            "/Lotus/Weapons/Tenno/ThrowingWeapons/ProximityTaserStar/PBRNewLokaThrowingStar"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/GrenadeLauncher/GrenadeLauncherProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicQuery",
+        "AttackData": {
+            "Type": "DT_IMPACT",
+            "Amount": 0,
+            "ProcChance": 0.34
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "CriticalChance": 0.24,
+        "CriticalMultiplier": 2,
+        "ExplosiveAttack": {
+            "Type": "DT_ELECTRICITY",
+            "Amount": 300,
+            "ProcChance": 0.34
+        },
+        "ForcedSourceProcs": [
+            "PT_BIG_STAGGER",
+            "PT_KNOCKED_DOWN"
+        ],
+        "ExplosionIgnoreCover": 0,
+        "ExplosionFallOff": 0.4,
+        "DamageRadius": 3.6,
+        "DieEffect": "/Lotus/Fx/Weapons/Syndicates/NewLoka/NLCastanasExplosionFX",
+        "DieEffectMirror": "/Lotus/Fx/Weapons/Syndicates/NewLoka/NLCastanasExplosionFX",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "Toughness": 10000,
+        "MaxLife": 8,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "Embed": 1,
+        "EmbedAlignToSurface": 1,
+        "EmbedAttack": {
+            "Type": "DT_CORROSIVE",
+            "Amount": 0,
+            "ProcChance": 0.5
+        },
+        "EmbedDamageRadius": 3,
+        "EmbedTime": [
+            0,
+            0
+        ],
+        "EmbedDeathAttack": {
+            "Type": "DT_ELECTRICITY",
+            "Amount": 300,
+            "ForcedProcs": [
+                "PT_ELECTROCUTION"
+            ]
+        },
+        "EmbedEffect": "/Lotus/Fx/Weapons/Syndicates/NewLoka/NLCastanasImpactFX",
+        "OwnEmbedEffect": 1,
+        "EmbedDeathEffect": "/Lotus/Fx/Weapons/Syndicates/NewLoka/NLCastanasExplosionFX",
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 60,
+        "KinematicMaxSpeed": 60,
+        "KinematicGravity": 1,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            40,
+            0.1,
+            0
+        ],
+        "SweepRadius": 0,
+        "ProjectileReplication": "SYNCED_AUTONOMOUS",
+        "FaceVelocity": 1,
+        "BaseRotation": [
+            -0.707107,
+            0,
+            0,
+            0.707107
+        ],
+        "KinematicIgnoredTypes": [
+            "/Lotus/Types/Game/PickUps/LotusPickUp"
+        ],
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/StickyBomb.lua",
+            "Function": "OnContact",
+            "_explosionDelay": 1,
+            "_animation": "/Lotus/Animations/Tenno/Movement/Throwing/StickyBombCloseToOpenWEP_anim.fbx",
+            "_sequencer": "",
+            "_loop": 0,
+            "_animRate": 0.25,
+            "_destroyOnContact": 0
+        },
+        "SilentProjectile": 1
+    }
+}

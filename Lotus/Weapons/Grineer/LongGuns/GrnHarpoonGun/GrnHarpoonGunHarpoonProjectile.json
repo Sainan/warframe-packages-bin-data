@@ -1,0 +1,109 @@
+{
+    "parent": "/Lotus/Types/Weapon/JavelinProjectile",
+    "data": {
+        "Mesh": "GrnHarpoonProjective.fbx",
+        "MeshScale": 2.5,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    -0.707107,
+                    0,
+                    0.707107
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Basic/Ballistic/Muzzle/BallisticProjectileTrailSmoke",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 1,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "AttackData": {
+            "DT_IMPACT": 0.4,
+            "DT_PUNCTURE": 0.5,
+            "DT_SLASH": 0.1,
+            "Amount": 100,
+            "ProcChance": 0.13,
+            "ForcedProcs": [
+                "PT_FRAILTY"
+            ]
+        },
+        "CriticalChance": 0.25,
+        "CriticalMultiplier": 2.3,
+        "HitEffect": "/Lotus/Fx/Weapons/Basic/Ballistic/Impacts/BallisticHitEffectMedium",
+        "AllowPuncture": 0,
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_PUNCTURE",
+            "Amount": 0,
+            "ProcChance": 0
+        },
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 60,
+        "KinematicMaxSpeed": 60,
+        "KinematicGravity": 1,
+        "KinematicSpinRate": [
+            -4,
+            0,
+            0
+        ],
+        "FaceVelocity": 1,
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/GrnHarpoonGrapple.lua",
+            "Function": "OnFire",
+            "_beamType": "/Lotus/Fx/Weapons/Grineer/HarpoonGun/HarpoonBeam",
+            "_beamAttachBone": "GAME_C1_FX",
+            "_missEffect": "",
+            "_enemyEffect": "",
+            "_invalidTargetTypes": [],
+            "_avatarType": "",
+            "_pullForce": 20,
+            "_maxRange": 40,
+            "_avatarPullAnimation": "",
+            "_weaponPullAnimation": "",
+            "_arbitrationModType": "",
+            "_arbitrationDmgPct": [
+                2,
+                2.2,
+                2.4,
+                2.6,
+                2.8,
+                3
+            ]
+        },
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/GrnHarpoonGrapple.lua",
+            "Function": "OnHit",
+            "_beamType": "/Lotus/Fx/Weapons/Grineer/HarpoonGun/HarpoonBeam",
+            "_beamAttachBone": "GAME_C1_FX",
+            "_missEffect": "",
+            "_enemyEffect": "/Lotus/Fx/Weapons/Basic/Ballistic/Impacts/BallisticHitSpangMediumFX",
+            "_invalidTargetTypes": [],
+            "_avatarType": "/EE/Types/Game/Avatar",
+            "_pullForce": 10,
+            "_maxRange": 40,
+            "_avatarPullAnimation": "/Lotus/Weapons/Infested/LongGuns/QuantaFullyInfested/QuantaPull_anim.fbx",
+            "_weaponPullAnimation": "/Lotus/Weapons/Infested/LongGuns/QuantaFullyInfested/QuantaPullWEP_anim.fbx",
+            "_arbitrationModType": "",
+            "_arbitrationDmgPct": [
+                2,
+                2.2,
+                2.4,
+                2.6,
+                2.8,
+                3
+            ]
+        },
+        "ApplyColorCustomization": 1,
+        "EmbedOffset": -0.15
+    }
+}

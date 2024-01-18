@@ -1,0 +1,76 @@
+{
+    "parent": "CorpusShipSolarianAmbientNpc",
+    "data": {
+        "Mesh": "/Lotus/Characters/Solaris/SolarisStrikerOne/SolarisStrikerOneBody_skel.fbx",
+        "MaterialParams": [
+            {
+                "name": "EmissiveMapAtten",
+                "type": "Float4",
+                "slot": -1,
+                "value": 0.1,
+                "value1": 0,
+                "value2": 0,
+                "value3": 0
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicTrigger",
+        "Tag": "Solarans",
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/CrewShip/SpawnPrisoners.lua",
+            "Function": "SetPrisonerMaterialOverridesAndEmissives",
+            "_minPrisonersToSpawn": 3,
+            "_maxPrisonersToSpawn": 5,
+            "_releasedAnimation": "",
+            "_releasedEffect": "",
+            "_prisonerTypes": []
+        },
+        "ReplicationOverride": "RO_ALWAYS",
+        "Radius": 7,
+        "SoundEvents": [
+            {
+                "EventName": "SFXCapturedSolarinStepL",
+                "Sound": "/Lotus/Sounds/Characters/Solaris/SolarisWorker/Steps/SolarisWorkerMetalLegStepDefault",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCapturedSolarinStepR",
+                "Sound": "/Lotus/Sounds/Characters/Solaris/SolarisWorker/Steps/SolarisWorkerMetalLegStepDefault",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCapturedSolarinMetalMovement",
+                "Sound": "/Lotus/Sounds/Characters/Solaris/SolarisWorker/RestrainedFoley/SolarisRestrainedFoley",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXSolarinRelease",
+                "Sound": "/Lotus/Sounds/Ambience/CorpusShipRemaster/Gameplay/CrpShipSolarianRescuedLockOpen",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "InactiveAnims": [
+            "/Lotus/Animations/LevelEvents/CorpusShip/CapturedSolarinIdle_anim.fbx"
+        ],
+        "TriggeredAnims": [
+            {
+                "Tag": "ReleasePrisoner",
+                "AnimList": [
+                    "/Lotus/Animations/LevelEvents/CorpusShip/CapturedSolarinReleased_anim.fbx"
+                ]
+            }
+        ],
+        "OnlyAnimDictatesState": 1
+    }
+}

@@ -1,0 +1,155 @@
+{
+    "parent": "/Lotus/Types/Enemies/SpaceBattles/SpaceFighterBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SpaceFighterOutriderAvatar"
+        },
+        "MinLevel": 6,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SpaceFighterOutriderSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/SpaceBattles/Grineer/Weapons/SpaceFighterDredgerWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehaviorFighter",
+            "/Lotus/Types/Behaviors/FighterManeuverBehavior",
+            "/Lotus/Types/Behaviors/FlyRetreatOffMapBehaviour",
+            "/EE/Types/Npc/TargetEvaluatingBehaviorSelector",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/FighterBehaviorStateMachine",
+            "/Lotus/Types/Behaviors/FlyBackToCombatZoneFighterBehavior",
+            "/Lotus/Types/Behaviors/FlyAfterTargetBehavior",
+            "/EE/Types/Npc/AwarenessDecorator",
+            "/Lotus/Types/Behaviors/FlyInFormationFighterTactic",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "FighterManeuverBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ManeuverCooldown": [
+                5,
+                8
+            ],
+            "ManeuverProbability": 0.5,
+            "ManeuverCooldownFacingAwayTarget": [
+                3,
+                4
+            ],
+            "ManeuverProbabilityFacingAwayTarget": 0.85,
+            "UnderFireManeuverDistance": 150,
+            "CloseToTargetManeuverDistance": 80,
+            "ShouldManeuverUnderFire": 1,
+            "ShouldManeuverOnBeingTargeted": 0,
+            "PostDodgeMaintainSpeedDuration": 0,
+            "FiringPreventsDodge": 0
+        },
+        "TargetEvaluatingBehaviorSelector": {
+            "Actions": [],
+            "TargetIsSelf": 0,
+            "TargetHealthPctRange": [
+                0,
+                0.8
+            ]
+        },
+        "FighterBehaviorStateMachine": {
+            "AttackAction:CombatPosture": "WALK",
+            "AttackAction:OffsetTargetDestination": 100,
+            "AttackAction:OffsetTargetDestinationByTargetWidthMultiplier": 1,
+            "AttackAction:AlwaysHeadForOffsetDestination": 1,
+            "AttackAction:MinSpeedModifier": 1,
+            "DisengageAction:SimpleForwardDisengage": 1,
+            "DisengageAction:DisengageDistance": 240,
+            "CircleAction:TrackTarget": 1,
+            "ScriptTargetRange": 180,
+            "TargetInRangeScript": {
+                "Script": "/Lotus/Scripts/GrnOutriderScript.lua",
+                "Function": "OnStartAttacking",
+                "_turretAgentTypes": [],
+                "_turretAvatarType": "SpaceFighterOutriderGunTurretAvatar",
+                "_weakPointDecoType": "",
+                "_engineFxOffest": [
+                    -5,
+                    0,
+                    0
+                ],
+                "_engineSpeedUpEffect": "",
+                "_combatModeSound": "/Lotus/Sounds/Enemies/GrineerPursuitSpaceShip/GrineerPursuitSpaceShipTurretWindUp",
+                "_disengageSound": "",
+                "_shipSequencerType": "",
+                "_shipCloseSequencerType": "",
+                "_ENGINE_BONE": "GAME_C1_EXHAUSTFX",
+                "_ShiftEmissives": 0
+            },
+            "TargetLeftRangeScript": {
+                "Script": "/Lotus/Scripts/GrnOutriderScript.lua",
+                "Function": "OnStartDisengaging",
+                "_turretAgentTypes": [],
+                "_turretAvatarType": "SpaceFighterOutriderGunTurretAvatar",
+                "_weakPointDecoType": "",
+                "_engineFxOffest": [
+                    -1,
+                    0,
+                    0
+                ],
+                "_engineSpeedUpEffect": "/Lotus/Fx/SpaceBattle/Ships/GrineerPursuit/PursuitJetAfterBurner",
+                "_combatModeSound": "",
+                "_disengageSound": "/Lotus/Sounds/Vehicles/GrineerPursuitSpaceShip/GrineerPursuitSpaceshipEnginesBackOnline",
+                "_shipSequencerType": "",
+                "_shipCloseSequencerType": "",
+                "_ENGINE_BONE": "GAME_C1_EXHAUSTFX",
+                "_ShiftEmissives": 0
+            },
+            "ScriptTargetInRangeMoveSpeedModifier": 0.35
+        },
+        "FlyBackToCombatZoneFighterBehavior": {
+            "SpeedMultiplier": 1.4
+        },
+        "AwarenessDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/EE/Types/Npc/Action",
+            "ChildAction:Action": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                }
+            },
+            "StopWhenChildStops": 1,
+            "onMatch": "MT_Include",
+            "AwarenessLevels": [
+                "AW_COMBAT"
+            ]
+        },
+        "FlyInFormationFighterTactic": {
+            "SlowDownSpeedModifier": 0.4
+        },
+        "LocomotionController:PathingPreferences": {
+            "avoidanceRadius": 32
+        },
+        "ViewCombatDistance": 3500,
+        "VoiceBoxTeam": "GrineerFighters"
+    }
+}

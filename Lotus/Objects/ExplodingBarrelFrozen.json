@@ -1,0 +1,114 @@
+{
+    "parent": "ExplodingTank",
+    "data": {
+        "UseLightMap": 0,
+        "ShadowLightmaps": 1,
+        "Mesh": "Guild/Props/CRPBarrel.fbx",
+        "OverrideMaterial": [
+            "Guild/Props/DecoCrate2New"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "ExplodingTankRangeDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 20
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
+        "LocTag": "/Lotus/Language/Game/ExplosiveBarrelFrozen",
+        "LongDesc": "/Lotus/Language/Game/ExplosiveBarrelFrozenDesc",
+        "Icon": "/Lotus/Interface/Icons/Objects/CryoBarrel.png",
+        "DamageType": "DT_FREEZE",
+        "Health": 20,
+        "AcceptedDamageTypes": [
+            "DT_ANY"
+        ],
+        "DestructionDelay": 0.35,
+        "CreateOnDestroy": {
+            "LocalRotation": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "Type": "/Lotus/Fx/Explosions/Generic/ExplosionFXScifiLargeShockwave",
+            "Attach": 1
+        },
+        "PlayOnDestroy": "/Lotus/Sounds/Explosions/FrozenBarrelExplosion",
+        "DestroyDamageIgnoreSource": 0,
+        "StateChangeScript": {
+            "Script": "/Lotus/Scripts/ExplodingDecoration.lua",
+            "Function": "BonusProcCountOnExplosion",
+            "_effectRadius": 10,
+            "_procCounts": [
+                10
+            ],
+            "_procs": [
+                "PT_CHILLED"
+            ],
+            "_useSelfAsAimEntity": 1,
+            "_useDebugDraw": 0,
+            "_explosionRangeDisplayOffset": [
+                0,
+                0,
+                0
+            ],
+            "_explosionRadiusDisplayColor": [
+                255,
+                255,
+                255,
+                255
+            ]
+        },
+        "DestroyDamage": 300,
+        "DestroyDamageType": "DT_FREEZE",
+        "DestroyProcChance": 1,
+        "DestroyDamageOffset": [
+            0,
+            0.5,
+            0
+        ],
+        "CreateDamageType": "DT_FREEZE",
+        "DestroyDamageProcDistanceThresholds": [],
+        "NPCLevelDamageMultiplier": 0.7
+    }
+}

@@ -1,0 +1,1279 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/Eidolon/GrineerSkiff/UnmannedSkiff/FlyingVehicleAvatar",
+    "data": {
+        "Mesh": "/Lotus/Objects/Grineer/Ships/GrinnerSpeeder/GrineerSpeederNoPilot_skel.fbx",
+        "MeshScale": 1,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_SHIELDATTCH",
+                "Type": "/Lotus/Objects/Grineer/Ships/GrinnerSpeeder/GrineerSpeederEidolonVipArmourDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "UnmannedSkiff/SkiffFlightJetPack",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "ServerChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    -4,
+                    -1.5
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "UnmannedSkiff/UseEidolonSkiff",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    -0.5,
+                    -1.25
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "UnmannedSkiff/HijackEidolonSkiff",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "SetChildrenVisibility": 1,
+        "PhysicsBehavior": "EidolonSkiffGroundFlight",
+        "ScriptInstance": {
+            "Script": "UnmannedSkiff/SpawnAndMountRider.lua",
+            "Function": "OnCreated",
+            "_riderType": "/Lotus/Types/Enemies/Grineer/Eidolon/EidolonSkiffPilotAgent",
+            "_mannedCreatorAgentName": "GrineerSkiffMannedSpawnAgent"
+        },
+        "ReplicationOverride": "RO_ALWAYS",
+        "SurvivesMigration": 1,
+        "EyeOffset": [
+            0,
+            2,
+            0
+        ],
+        "LocTag": "/Lotus/Language/Enemies/EidolonGrineerSkiffName",
+        "MaxHealth": 300,
+        "RespondsToWorldCollisions": 1,
+        "ClimbControllerType": "UnmannedSkiff/SkiffClimbController",
+        "DamageControllerType": "UnmannedSkiff/UnmannedSkiffDamageController",
+        "RecreateCameraControllerOnPlayerChanged": 0,
+        "OnPreDeathScript": {
+            "Script": "UnmannedSkiff/HandlePilotOnSkiffDeath.lua",
+            "Function": "RagdollPilot",
+            "_pilotAvatarType": "/Lotus/Types/Enemies/Grineer/Eidolon/Avatars/EidolonSkiffPilotAvatar"
+        },
+        "OnDeathScript": {
+            "_explosionFx": "/Lotus/Fx/Enemies/Grineer/Skiff/EidolonSkiffExplosion"
+        },
+        "SoundEvents": [
+            {
+                "EventName": "SFXDargynMount",
+                "Sound": "/Lotus/Sounds/Vehicles/GrineerDargyn/GrnDargynMount",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "PaintedTargetType": "/Lotus/Types/Game/MarkerInfos/PaintedMarkerInfo",
+        "WaypointDuration": 60,
+        "WaypointIcons": [
+            "/Lotus/Interface/Icons/Markers/PlayerMarker1.png",
+            "/Lotus/Interface/Icons/Markers/PlayerMarker2.png",
+            "/Lotus/Interface/Icons/Markers/PlayerMarker3.png",
+            "/Lotus/Interface/Icons/Markers/PlayerMarker4.png",
+            "/Lotus/Interface/Icons/Markers/PlayerMarker5.png",
+            "/Lotus/Interface/Icons/Markers/PlayerMarker6.png",
+            "/Lotus/Interface/Icons/Markers/PlayerMarker7.png",
+            "/Lotus/Interface/Icons/Markers/PlayerMarker8.png"
+        ],
+        "LeaderWaypointIcon": "/Lotus/Interface/Icons/Markers/LeaderMarker1.png",
+        "LeaderWaypointIconScale": 1.3,
+        "WaypointSound": "/Lotus/Sounds/Misc/ButtonPressUI",
+        "WaypointLocTag": "/Lotus/Language/Game/Marker_Waypoint",
+        "ContextPaintableTypes": [
+            {
+                "type": "",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "PanicButtonTag",
+                "icon": "/Lotus/Interface/Icons/Markers/MiniMapPanicButton.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Game/Marker_PanicButton",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_GENERAL_MARKER"
+            },
+            {
+                "type": "/Lotus/Types/Friendly/Rescue/DefenseAvatarMale",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Painted.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Game/GenericOperativeAgentName",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_GENERAL_MARKER"
+            },
+            {
+                "type": "/Lotus/Types/Friendly/Rescue/RescueAvatar",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Painted.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Game/Hostage",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_GENERAL_MARKER"
+            },
+            {
+                "type": "/Lotus/Types/Game/LotusNpcAvatar",
+                "antiType": "",
+                "factionRequirement": "ALLY",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Painted.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Game/Marker_Ally",
+                "markerType": "MMMT_ALLY",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_GENERAL_MARKER"
+            },
+            {
+                "type": "/Lotus/Types/Game/LotusNpcAvatar",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Greyscale/MiniMapEnemyPainted.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Game/Marker_Enemy",
+                "markerType": "MMMT_PAINTED_ENEMY",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_ENEMY"
+            },
+            {
+                "type": "",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "DoorSwitch",
+                "icon": "",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Game/Marker_DoorSwitch",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_GENERAL_MARKER"
+            },
+            {
+                "type": "",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "ElevatorSwitch",
+                "icon": "",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Game/Marker_ElevatorSwitch",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_GENERAL_MARKER"
+            },
+            {
+                "type": "/Lotus/Upgrades/Mods/FusionBundles/CrewShipFusionBundles/BaseCrewShipFusionBundle",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/EndoMarker.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Menu/CrewShipFusionPointsName",
+                "markerType": "MMMT_FUSION_BUNDLE",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_LOOT"
+            },
+            {
+                "type": "/Lotus/Types/Items/FusionBundle",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/EndoMarker.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Game/Marker_FusionBundle",
+                "markerType": "MMMT_FUSION_BUNDLE",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_LOOT"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/UpgradeDrops/BaseUpgradePickup",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/ModPainted.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Game/Marker_Module",
+                "markerType": "MMMT_MODULE",
+                "duration": 120,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_LOOT"
+            },
+            {
+                "type": "/Lotus/Types/Game/RecipeItem",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Loot.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "",
+                "markerType": "MMMT_LOOT",
+                "duration": 120,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_LOOT"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/Plastids",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentPlastids.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/Plastids",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/OrokinCell",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentCell.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/OrokinCell",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/Rubedo",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentRubedo.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/Rubedo",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/Salvage",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentSalvage.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/Salvage",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/NeuralSensor",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/NeuralSensor.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/NeuralSensor",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/AlloyPlate",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/AlloyPlate.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/AlloyPlate",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/ArgonCrystal",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ArgonCrystal.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/ArgonCrystal",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/Circuits",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentCircuits.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/Circuits",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/ControlModule",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ControlModule.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/ControlModule",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/Ferrite",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentFerrite.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/Ferrite",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/Gallium",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentGallium.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/Gallium",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/Morphic",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentMorphic.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/Morphic",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/Neurode",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentNeurode.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/Neurode",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/Nanospores",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentNanospores.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/Nanospores",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/PolymerBundle",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/PolymerBundle.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Items/PolymerBundle",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/MiscItems/MiscItemBase",
+                "antiType": "/Lotus/Types/Items/SyndicateDogTags/AutoSharedDogTag",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Loot.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "",
+                "markerType": "MMMT_LOOT",
+                "duration": 120,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_LOOT"
+            },
+            {
+                "type": "/Lotus/Types/Game/CollectibleDeco",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Syndicates/FactionOddityGold.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "",
+                "markerType": "MMMT_GENERIC",
+                "duration": 120,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1.5,
+                    1.5,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Lore/LoreFragmentScanDeco",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/MiniMapFragment.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/LoreFragment",
+                "markerType": "MMMT_LORE_FRAGMENT",
+                "duration": 90,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/PlastidsContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentPlastids.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/PlastidsContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/OrokinCellContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentCell.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/OrokinCellContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/RubedoContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentRubedo.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/RubedoContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/SalvageContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentSalvage.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/SalvageContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/NeuralSensorContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/NeuralSensor.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/NeuralSensorContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/AlloyPlateContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/AlloyPlate.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/AlloyPlateContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/ArgonCrystalContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ArgonCrystal.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/ArgonCrystalContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/CircuitsContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentCircuits.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/CircuitsContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/ControlModuleContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ControlModule.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/ControlModuleContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/FerriteContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentFerrite.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/FerriteContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/GalliumContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentGallium.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/GalliumContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/MorphicsContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentMorphic.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/MorphicsContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/NeurodesContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentNeurode.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/NeurodesContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/NanoSporesContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/ComponentNanospores.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/NanoSporesContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/PickUps/ResourceContainers/PolymerBundleContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Store/PolymerBundle.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/PolymerBundleContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    1.97,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Items/FusionTreasure",
+                "antiType": "/Lotus/Types/Items/FusionTreasures/FusionOrnament",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/ModdingIcons/TreasuresIcon.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Menu/FusionTreasureMgr_Treasure",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1.3,
+                    1.3,
+                    1
+                ],
+                "colorId": "HCC_LOOT"
+            },
+            {
+                "type": "/Lotus/Types/Gameplay/Eidolon/Resources/IraditeContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Objects/Eidolon/Iradite.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/EidolonPlains/IraditeContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    2,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Gameplay/Eidolon/Resources/GrokdrulContainer",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Objects/Eidolon/Grokdrul.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/EidolonPlains/GrokdrulContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    2,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Gameplay/Eidolon/Resources/FruitTree",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Objects/Eidolon/EidolonFruit.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/EidolonPlains/FruitTree",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    2,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Gameplay/Eidolon/Resources/Nistlebrush",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Objects/Eidolon/Nistlepod.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/EidolonPlains/NistlepodContainer",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 0,
+                "iconScale": [
+                    3,
+                    2,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Lore/SongFragmentScanDeco",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/MiniMapJukeboxFragment.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/SongFragment",
+                "markerType": "MMMT_SONG_FRAGMENT",
+                "duration": 90,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "/Lotus/Types/Game/DarkSectors/DarkSectorTimePickup",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Loot.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Onslaught/Stability",
+                "markerType": "MMMT_LOOT",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_LOOT"
+            },
+            {
+                "type": "/Lotus/Types/Lore/FighterFragmentScanDeco",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/MinimapFragmentArcade.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Game/FighterFragment",
+                "markerType": "MMMT_FIGHTER_FRAGMENT",
+                "duration": 90,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_WHITE"
+            },
+            {
+                "type": "",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "WeakPoint",
+                "icon": "/Lotus/Interface/Icons/Markers/Greyscale/MiniMapEnemyPainted.png",
+                "sound": "/Lotus/Sounds/Misc/ButtonPressUI",
+                "locTag": "/Lotus/Language/Game/Marker_Enemy",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_ENEMY"
+            },
+            {
+                "type": "/Lotus/Types/Items/Deimos/InfestedWyrmBloodPickup",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Painted.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Fish/DiemosInfestedFishBaitA",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_LOOT"
+            },
+            {
+                "type": "/Lotus/Types/Items/Deimos/EntratiWyrmBloodPickup",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Painted.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/Fish/DiemosOrokinFishBaitA",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_LOOT"
+            },
+            {
+                "type": "/Lotus/Fx/Levels/InfestedMicroplanet/WyrmBattle/WyrmDestructibleDecoInfested",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Painted.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/InfestedMicroplanet/WyrmDebrisInfestedName",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_GENERAL_MARKER"
+            },
+            {
+                "type": "/Lotus/Fx/Levels/InfestedMicroplanet/WyrmBattle/WyrmDestructibleDecoEntrati",
+                "antiType": "",
+                "factionRequirement": "NONE",
+                "idTag": "",
+                "icon": "/Lotus/Interface/Icons/Markers/Painted.png",
+                "sound": "",
+                "locTag": "/Lotus/Language/InfestedMicroplanet/WyrmDebrisEntratiName",
+                "markerType": "MMMT_PAINTED",
+                "duration": -1,
+                "showIconBacker": 1,
+                "iconScale": [
+                    1,
+                    1,
+                    1
+                ],
+                "colorId": "HCC_GENERAL_MARKER"
+            }
+        ],
+        "DisarmAction": "DA_DAMAGE_ONLY",
+        "AIMountedSkiffAgentType": "GrineerSkiffAgent",
+        "UnmannedSkiffAgentType": "GrineerSkiffUnmannedAgent",
+        "MountActionType": "UnmannedSkiff/UseEidolonSkiff",
+        "HijackActionType": "UnmannedSkiff/HijackEidolonSkiff",
+        "OnSkiffTennoAnimController": "UnmannedSkiff/TennoOnSkiffAnimController",
+        "GetOffAnimation": "/Lotus/Animations/Grineer/Speeder/DismountWarframe_cin.fbx",
+        "PlayerMountVehicleAnim": "/Lotus/Animations/Grineer/Speeder/MountWarframe_cin.fbx",
+        "RiderCinMap": [
+            {
+                "OriginalCinID": "Marine",
+                "NewCinID": "Tenno"
+            }
+        ],
+        "PlayerHijackMountVehicleAnim": "/Lotus/Animations/Grineer/Speeder/HijackMountWarframecin",
+        "HijackVehicleAnim": "/Lotus/Animations/FlightSuit/StealthFinisherGrineerSpeederPlainsHijackMockup_cin.fbx",
+        "MountAnimationEndEventSymbol": "VehicleMountEnd",
+        "DismountAnimationEndEventSymbol": "VehicleDismountEnd",
+        "HijackingAnimationEndEventSymbol": "HijackingCompleted",
+        "MountActionSymbol": "EmplacementMount",
+        "IdleActionSymbol": "EmplacementIdle",
+        "DismountActionSymbol": "EmplacementDismount",
+        "ActionFinishedSymbol": "IDLE",
+        "MountedEffects": [
+            {
+                "LocalPosition": [
+                    0,
+                    -1,
+                    0.3
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "PositionDeviation": [
+                    0,
+                    0
+                ],
+                "RotationDeviation": [
+                    0,
+                    0
+                ],
+                "BoneName": "GAME_C1_SHIELDATTCH",
+                "Type": "/Lotus/Fx/Levels/Grineer/SkiffFlareSmall",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    -1,
+                    0
+                ],
+                "LocalRotation": [
+                    0.707107,
+                    0,
+                    0,
+                    0.707107
+                ],
+                "PositionDeviation": [
+                    0,
+                    0
+                ],
+                "RotationDeviation": [
+                    0,
+                    0
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Gameplay/SpaceFlight/ArchwingTerrainCaster",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "HudEntityType": "/Lotus/Weapons/Grineer/Emplacements/GrnEmplcmntStndng/EmplacementHudEntity",
+        "HudMovie": "/Lotus/Interface/EmplacementHud.swf",
+        "HudLocalAttachPos": [
+            0.2,
+            4.15,
+            0.1
+        ],
+        "HudScale": [
+            0.5,
+            0.6,
+            0.5
+        ]
+    }
+}

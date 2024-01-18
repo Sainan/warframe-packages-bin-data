@@ -1,0 +1,810 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "KubrowAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "KubrowMeleeWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/KubrowSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "AggroController:Entries": [
+            "/EE/Types/Npc/AggroEntryNearDeath"
+        ],
+        "AggroController:AggroEntryNearDeath": {
+            "Enabled": 0,
+            "IncreaseTimeLength": 1,
+            "DecayTimeLength": 1,
+            "LowHeatlthBackOffValue": 50
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/KubrowBrain"
+        ],
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
+        "KubrowBrain": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "AggressionDuration": 6,
+            "Actions": [
+                "/EE/Types/Npc/AgentOffNavBehavior",
+                "/EE/Types/Npc/FleeToHomePointBehavior",
+                "/Lotus/Types/Behaviors/KubrowCombatBehavior",
+                "/EE/Types/Npc/ReinforceBehavior",
+                "/EE/Types/Npc/IntimidateBehavior",
+                "/Lotus/Types/Behaviors/KubrowInvestigateBehavior",
+                "/Lotus/Types/Behaviors/KubrowPackBehavior",
+                "/EE/Types/Npc/RandomTacWalkBehavior",
+                "/EE/Types/Npc/GuardBehavior"
+            ],
+            "AgentOffNavBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOffNav": 2,
+                "ToleranceDistance": 0,
+                "DisableWhenFlying": 0,
+                "RerunDelay": 5,
+                "OffNavBehaviors": [
+                    "/EE/Types/Npc/DodgeJumpBackToNavBehavior"
+                ],
+                "DodgeJumpBackToNavBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "Action": "DodgeJump",
+                    "SweepForValidPos": 1,
+                    "OnlyIfRecentlyDamaged": 0,
+                    "RequestDelay": 0,
+                    "FaceDirectionOfPathFollowerTarget": 0,
+                    "JumpToClosestNavPoint": 0
+                }
+            },
+            "FleeToHomePointBehavior": {
+                "Enabled": 0,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "HomeTag": "KubrowDen",
+                "EngageDistance": 3,
+                "HomeDistance": 5,
+                "ConfidenceThreshold": 25,
+                "TeammateConfidenceMultiplier": 5,
+                "HealthConfidenceMultiplier": 40,
+                "Actions": [
+                    "/EE/Types/Npc/GuardBehavior"
+                ],
+                "GuardBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+                    "WaitAction:Enabled": 1,
+                    "WaitAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "WaitAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "RandomFacingChange": [
+                        0,
+                        0
+                    ],
+                    "MinHeadingChangeToTurn": 0
+                }
+            },
+            "KubrowCombatBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": "/Lotus/Scripts/KubrowController.lua",
+                    "Function": "NightEyes",
+                    "_denTypeRes": "",
+                    "_spawnType": "",
+                    "_eyeFlareType": "KubrowEyeFlare",
+                    "_kubrowAvatar": "",
+                    "_kubrowAgent": "",
+                    "_packTeams": [],
+                    "_minDesiredDenCount": 4,
+                    "_maxDesiredDenCount": 8,
+                    "_spawnDist": 80,
+                    "_minPackSize": 4,
+                    "_maxPackSize": 6,
+                    "_playerMultiplier": 1.5,
+                    "_nightPackSizeMulti": 1.5,
+                    "_spawnsPerDen": 3,
+                    "_maxRespawnCount": 2,
+                    "_childDenSearchRadius": 25,
+                    "_packSpawnChance": 0.2,
+                    "_loopsToWait": 10,
+                    "_nightEyes": 1
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "EngageDistance": 7,
+                "TargetableOnAttack": 1,
+                "Actions": [
+                    "/Lotus/Types/Behaviors/KubrowChargeBehavior",
+                    "/EE/Types/Npc/FinisherBehavior",
+                    "/EE/Types/Npc/CircleBehindTargetBehavior"
+                ],
+                "KubrowChargeBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "ChargeAction:Type": "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                    "ChargeAction:Enabled": 1,
+                    "ChargeAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ChargeAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "ChargeAction:DefaultReevaluationDelay": 0.25,
+                    "ChargeAction:BlockForPowerCompleteType": "BT_ALWAYS",
+                    "ChargeAction:AllowInterruptOfAbility": 0,
+                    "ChargeAction:StopFiring": 1,
+                    "ChargeAction:StopMovingOnStart": 0,
+                    "ChargeAction:ExtraReevaluationDelay": 0,
+                    "ChargeAction:ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ChargeAction:ActiveAction:Enabled": 1,
+                    "ChargeAction:ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ChargeAction:ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "ChargeAction:EvaluateAction": 1,
+                    "ChargeAction:FaceTarget": 0,
+                    "ChargeAction:TurnAccuracyThreshold": 10,
+                    "ChargeAction:TurnTimeout": 2,
+                    "ChargeAction:AimTimeout": 0.5,
+                    "ChargeAction:ValidAbilities": [],
+                    "ChargeAction:MaxProcessPerEval": 0,
+                    "ChargeAction:AimAtTarget": 0,
+                    "ChargeAction:CheckIfAbilityUnlocked": 0,
+                    "ChargeAction:MultipleConcurrentAbilities": 0,
+                    "ChargeAction:EvaluateDelayRange": [
+                        0.5,
+                        1
+                    ],
+                    "ChargeAction:PreventUsageOnWeaponUse": 0,
+                    "ChargeAction:TurnDuringAbility": 0,
+                    "ChargeAction:DeactivateAbilitiesOnPredeath": 0,
+                    "ChargeAction:ResetEvalTimerOnEnemySpotted": 0,
+                    "FinisherAction:Type": "/EE/Types/Npc/FinisherBehavior",
+                    "FinisherAction:Enabled": 1,
+                    "FinisherAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "FinisherAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "FinisherAction:DefaultReevaluationDelay": 0,
+                    "FinisherAction:DefaultEvaluationRange": [
+                        0,
+                        1
+                    ],
+                    "FinisherAction:FavoriteTarget": "",
+                    "FinisherAction:AlwaysFaceTarget": 1,
+                    "FinisherAction:FinisherTime": 2,
+                    "FinisherAction:CanStartIfInBlockingAnim": 0,
+                    "FinisherAction:TetherToOwner": 0,
+                    "FinisherAction:TetherRadius": 0,
+                    "FinisherAction:WaitForMoveToFinish": 0,
+                    "FinisherAction:RequireTargetInPredeath": 0,
+                    "FinisherAction:MaxTargetHealthThreshold": -1,
+                    "FinisherAction:DelayBetweenFinishers": 10,
+                    "FinisherAction:AlignToActionIn:Type": "/EE/Types/Npc/AlignToAction",
+                    "FinisherAction:AlignToActionIn:Enabled": 1,
+                    "FinisherAction:AlignToActionIn:OnStartScript": {
+                        "Script": ""
+                    },
+                    "FinisherAction:AlignToActionIn:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "FinisherAction:AlignToActionIn:AlignAngleThreshold": 10,
+                    "FinisherAction:TurnToTarget:Type": "/EE/Types/Npc/TurnToTargetAction",
+                    "FinisherAction:TurnToTarget:Enabled": 1,
+                    "FinisherAction:TurnToTarget:OnStartScript": {
+                        "Script": ""
+                    },
+                    "FinisherAction:TurnToTarget:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "FinisherAction:TurnToTarget:MovementGuessMultiplier": 5,
+                    "FinisherAction:TurnToTarget:AccuracyThreshold": 10,
+                    "FinisherAction:KeepDistance:Type": "/EE/Types/Npc/KeepIdealDistanceBehavior",
+                    "FinisherAction:KeepDistance:Enabled": 1,
+                    "FinisherAction:KeepDistance:OnStartScript": {
+                        "Script": ""
+                    },
+                    "FinisherAction:KeepDistance:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "FinisherAction:KeepDistance:DefaultReevaluationDelay": 0,
+                    "FinisherAction:KeepDistance:RandomizeRange": 1,
+                    "FinisherAction:KeepDistance:UseWeaponRange": 0,
+                    "FinisherAction:KeepDistance:IdealDistance": [
+                        1,
+                        2
+                    ],
+                    "FinisherAction:KeepDistance:EvaluateDistance": [
+                        0,
+                        100
+                    ],
+                    "FinisherAction:KeepDistance:MaxMovementDistance": 100,
+                    "FinisherAction:KeepDistance:AllowRetreat": 1,
+                    "FinisherAction:KeepDistance:AllowRun": 1,
+                    "FinisherAction:KeepDistance:AllowChase": 0,
+                    "FinisherAction:KeepDistance:ForceWalkBelowMinIdealRange": 1,
+                    "FinisherAction:KeepDistance:WalkRange": [
+                        0,
+                        0
+                    ],
+                    "FinisherAction:KeepDistance:RequireTeamMeleeLock": 0,
+                    "FinisherAction:KeepDistance:ReleaseTeamMeleeLock": 1,
+                    "FinisherAction:KeepDistance:AimWhileMoving": 0,
+                    "FinisherAction:KeepDistance:MoveFacingControl": "MFC_FACE_MOVEDIR",
+                    "FinisherAction:KeepDistance:StopRadius": 0.5,
+                    "FinisherAction:KeepDistance:RunWhenShocked": 0,
+                    "FinisherAction:KeepDistance:ShockedDamageTime": 30,
+                    "FinisherAction:KeepDistance:OnlyTravelWhenVisible": 1,
+                    "FinisherAction:KeepDistance:TravelDuringStruggle": 1,
+                    "FinisherAction:KeepDistance:AllowPartialPath": 0,
+                    "FinisherAction:KeepDistance:UpdateDestinationInterval": 0.5,
+                    "FinisherAction:KeepDistance:UpdateDestinationDistance": 0,
+                    "FinisherAction:KeepDistance:OffNavRadius": 4,
+                    "FinisherAction:KeepDistance:OffNavHeight": 3,
+                    "FinisherAction:KeepDistance:RequiresClearNavTrace": 0,
+                    "FinisherAction:KeepDistance:HoverHeightOverride": -1,
+                    "FinisherAction:KeepDistance:RetryWithPathlessMovement": 0,
+                    "FinisherAction:KeepDistance:PathlessMovementMaxDistance": 16,
+                    "FinisherAction:KeepDistance:AvoidTargetLineOfSight": 0,
+                    "FinisherAction:KeepDistance:AvoidanceBias": 10,
+                    "FinisherAction:KeepDistance:LockTarget": 0,
+                    "FinisherAction:KeepDistance:LookAtTarget": 0,
+                    "FinisherAction:KeepDistance:DistanceToShoot": -1,
+                    "FinisherAction:KeepDistance:WalkWhileShooting": 0,
+                    "FinisherAction:KeepDistance:AimOnFire": 0,
+                    "FinisherAction:KeepDistance:AllowReload": 0,
+                    "FinisherAction:KeepDistance:ChangeWeapons": 0,
+                    "FinisherAction:KeepDistance:WeaponSlot": "SLOT_1",
+                    "FinisherAction:KeepDistance:WeaponHand": "MAIN_HAND",
+                    "FinisherAction:KeepDistance:EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "FinisherAction:KeepDistance:AttackPhrase": "CHARGE_SCREAM",
+                    "FinisherAction:KeepDistance:AlwaysPlayAttackPhrase": 0,
+                    "FinisherAction:KeepDistance:PlayPhrase": 0,
+                    "FinisherAction:KeepDistance:Bark": "IDLE",
+                    "FinisherAction:KeepDistance:BarkFilter": "",
+                    "FinisherAction:KeepDistance:BarkInterval": [
+                        0,
+                        0
+                    ],
+                    "FinisherAction:KeepDistance:ReportUnreachableOnFailedMove": 0,
+                    "FinisherAction:KeepDistance:ReportUnreachableOffNav": 0,
+                    "FinisherAction:KeepDistance:TimeOffNav": 2,
+                    "FinisherAction:KeepDistance:RestrictToDefenseVolume": 0,
+                    "FinisherAction:KeepDistance:WalkMovePosture": "WALK"
+                },
+                "FinisherBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "DefaultEvaluationRange": [
+                        0,
+                        1
+                    ],
+                    "FavoriteTarget": "",
+                    "AlwaysFaceTarget": 1,
+                    "FinisherTime": 2.33,
+                    "CanStartIfInBlockingAnim": 0,
+                    "TetherToOwner": 0,
+                    "TetherRadius": 0,
+                    "WaitForMoveToFinish": 1,
+                    "RequireTargetInPredeath": 0,
+                    "MaxTargetHealthThreshold": -1,
+                    "DelayBetweenFinishers": 20,
+                    "AlignToActionIn:Type": "/EE/Types/Npc/AlignToAction",
+                    "AlignToActionIn:Enabled": 1,
+                    "AlignToActionIn:OnStartScript": {
+                        "Script": ""
+                    },
+                    "AlignToActionIn:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "AlignToActionIn:AlignAngleThreshold": 5,
+                    "TurnToTarget:Type": "/EE/Types/Npc/TurnToTargetAction",
+                    "TurnToTarget:Enabled": 1,
+                    "TurnToTarget:OnStartScript": {
+                        "Script": ""
+                    },
+                    "TurnToTarget:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "TurnToTarget:MovementGuessMultiplier": 5,
+                    "TurnToTarget:AccuracyThreshold": 5,
+                    "KeepDistance:Type": "/EE/Types/Npc/KeepIdealDistanceBehavior",
+                    "KeepDistance:Enabled": 1,
+                    "KeepDistance:OnStartScript": {
+                        "Script": ""
+                    },
+                    "KeepDistance:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "KeepDistance:DefaultReevaluationDelay": 0,
+                    "KeepDistance:RandomizeRange": 0,
+                    "KeepDistance:UseWeaponRange": 1,
+                    "KeepDistance:IdealDistance": [
+                        1,
+                        2
+                    ],
+                    "KeepDistance:EvaluateDistance": [
+                        0,
+                        10
+                    ],
+                    "KeepDistance:MaxMovementDistance": 25,
+                    "KeepDistance:AllowRetreat": 1,
+                    "KeepDistance:AllowRun": 1,
+                    "KeepDistance:AllowChase": 1,
+                    "KeepDistance:ForceWalkBelowMinIdealRange": 1,
+                    "KeepDistance:WalkRange": [
+                        0,
+                        0
+                    ],
+                    "KeepDistance:RequireTeamMeleeLock": 0,
+                    "KeepDistance:ReleaseTeamMeleeLock": 1,
+                    "KeepDistance:AimWhileMoving": 0,
+                    "KeepDistance:MoveFacingControl": "MFC_FACE_MOVEDIR",
+                    "KeepDistance:StopRadius": 0.5,
+                    "KeepDistance:RunWhenShocked": 0,
+                    "KeepDistance:ShockedDamageTime": 30,
+                    "KeepDistance:OnlyTravelWhenVisible": 1,
+                    "KeepDistance:TravelDuringStruggle": 0,
+                    "KeepDistance:AllowPartialPath": 0,
+                    "KeepDistance:UpdateDestinationInterval": 0.5,
+                    "KeepDistance:UpdateDestinationDistance": 0,
+                    "KeepDistance:OffNavRadius": 4,
+                    "KeepDistance:OffNavHeight": 3,
+                    "KeepDistance:RequiresClearNavTrace": 0,
+                    "KeepDistance:HoverHeightOverride": -1,
+                    "KeepDistance:RetryWithPathlessMovement": 0,
+                    "KeepDistance:PathlessMovementMaxDistance": 16,
+                    "KeepDistance:AvoidTargetLineOfSight": 0,
+                    "KeepDistance:AvoidanceBias": 10,
+                    "KeepDistance:LockTarget": 0,
+                    "KeepDistance:LookAtTarget": 0,
+                    "KeepDistance:DistanceToShoot": -1,
+                    "KeepDistance:WalkWhileShooting": 0,
+                    "KeepDistance:AimOnFire": 0,
+                    "KeepDistance:AllowReload": 0,
+                    "KeepDistance:ChangeWeapons": 0,
+                    "KeepDistance:WeaponSlot": "SLOT_1",
+                    "KeepDistance:WeaponHand": "MAIN_HAND",
+                    "KeepDistance:EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "KeepDistance:AttackPhrase": "CHARGE_SCREAM",
+                    "KeepDistance:AlwaysPlayAttackPhrase": 0,
+                    "KeepDistance:PlayPhrase": 0,
+                    "KeepDistance:Bark": "IDLE",
+                    "KeepDistance:BarkFilter": "",
+                    "KeepDistance:BarkInterval": [
+                        0,
+                        0
+                    ],
+                    "KeepDistance:ReportUnreachableOnFailedMove": 0,
+                    "KeepDistance:ReportUnreachableOffNav": 0,
+                    "KeepDistance:TimeOffNav": 2,
+                    "KeepDistance:RestrictToDefenseVolume": 0,
+                    "KeepDistance:WalkMovePosture": "WALK"
+                },
+                "CircleBehindTargetBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "RetreatDistance": 6,
+                    "MeleeDistance": 1.5,
+                    "JogRange": [
+                        2,
+                        4
+                    ],
+                    "TravelRanges": [
+                        2,
+                        5
+                    ],
+                    "CircleBehindTarget": 1,
+                    "FaceTarget": 1,
+                    "RingShape": "ELLIPSE",
+                    "RepathDistance": 1.2,
+                    "PathStopRange": [
+                        0,
+                        0.5
+                    ],
+                    "FailOnChildFail": 0,
+                    "MeleeAction:Type": "/EE/Types/Npc/MeleeContinousBehavior",
+                    "MeleeAction:Enabled": 1,
+                    "MeleeAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "MeleeAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "MeleeAction:DefaultReevaluationDelay": 0,
+                    "MeleeAction:SwingAttackRange": [
+                        0,
+                        2
+                    ],
+                    "MeleeAction:LungeAttackRange": [
+                        0,
+                        1
+                    ],
+                    "MeleeAction:TeamBbLungeSym": "",
+                    "MeleeAction:TimeBetweenTeamLunges": 5,
+                    "MeleeAction:LungeToPredictedPos": 0,
+                    "MeleeAction:UseMeleeFov": 0,
+                    "MeleeAction:StopIfOutsideMeleeFov": 0,
+                    "MeleeAction:MeleeFov": 45,
+                    "MeleeAction:AllowMeleeingFromBehind": 0,
+                    "MeleeAction:TimeSinceRendered": 3,
+                    "MeleeAction:MeleeFromBehindFOV": 90,
+                    "MeleeAction:SwingInputCode": "MELEE",
+                    "MeleeAction:LungeInputCode": "MELEE_SWING",
+                    "MeleeAction:ModifyAttackRangeBasedOnPlayerVelocity": 1,
+                    "MeleeAction:PredictedSwingTime": 0.5,
+                    "MeleeAction:PredictedLungeTime": 1,
+                    "MeleeAction:StopMovingWhenAttacking": 0,
+                    "MeleeAction:DisablePostureChangers": 0,
+                    "MeleeAction:TimeBetweenLunges": 2,
+                    "MeleeAction:LowTargetThreshold": 0.8,
+                    "MeleeAction:NormalAttack": "MELEE",
+                    "MeleeAction:LowAttack": "MELEE",
+                    "MeleeAction:ClearCoverReservationOnStart": 0,
+                    "MeleeAction:UseCombatManager": 0,
+                    "MeleeAction:VipAvatarType": "",
+                    "MeleeAction:TimeBetweenBarks": 2,
+                    "MeleeAction:VisibilityTimeout": 2,
+                    "MeleeAction:MaxReachableHeight": -9223372036854775808.0,
+                    "MeleeAction:Bark": "ATTACK_SCREAM",
+                    "MeleeAction:IsOffHandWeapon": 0,
+                    "Taunt:Type": "/EE/Types/Npc/TauntBehavior",
+                    "Taunt:Enabled": 1,
+                    "Taunt:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Taunt:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Taunt:DefaultReevaluationDelay": 0,
+                    "Taunt:CoolDownTimeRange": [
+                        5,
+                        10
+                    ],
+                    "Taunt:TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+                    "Taunt:TurnToAction:Enabled": 1,
+                    "Taunt:TurnToAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Taunt:TurnToAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Taunt:Anims": [
+                        "/Lotus/Animations/Creatures/KubrowFeral/Howl_anim.fbx"
+                    ],
+                    "Taunt:Phrases": [
+                        "CHARGE_SCREAM",
+                        "ATTACK_SCREAM"
+                    ],
+                    "Taunt:IsReactionBehavior": 0,
+                    "Taunt:RequireVisibleTarget": 1,
+                    "Taunt:ActivationProbability": 0.25,
+                    "Taunt:ExitOnTargeted": 0,
+                    "Taunt:ExitOnTargetDot": 0.8,
+                    "Taunt:TauntOnTargetBeFinished": 1,
+                    "Taunt:StopMovingWhenTaunting": 0
+                }
+            },
+            "ReinforceBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SpeedMultiplier": 1.5,
+                "DistanceFromTarget": 3
+            },
+            "IntimidateBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": "/Lotus/Scripts/KubrowController.lua",
+                    "Function": "NightEyes",
+                    "_denTypeRes": "",
+                    "_spawnType": "",
+                    "_eyeFlareType": "KubrowEyeFlare",
+                    "_kubrowAvatar": "",
+                    "_kubrowAgent": "",
+                    "_packTeams": [],
+                    "_minDesiredDenCount": 4,
+                    "_maxDesiredDenCount": 8,
+                    "_spawnDist": 80,
+                    "_minPackSize": 4,
+                    "_maxPackSize": 6,
+                    "_playerMultiplier": 1.5,
+                    "_nightPackSizeMulti": 1.5,
+                    "_spawnsPerDen": 3,
+                    "_maxRespawnCount": 2,
+                    "_childDenSearchRadius": 25,
+                    "_packSpawnChance": 0.2,
+                    "_loopsToWait": 10,
+                    "_nightEyes": 1
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "StartDistance": 16,
+                "ExitDistance": 24,
+                "Reposition": 1,
+                "RepositionCooldown": 2,
+                "IdealDistance": 19,
+                "DistanceMultiplier": 1,
+                "Duration": [
+                    12,
+                    16
+                ],
+                "PlayPhrase": 1,
+                "Bark": "INTIMIDATE",
+                "BarkFilter": "KubrowIntimidateVocal",
+                "BarkInterval": [
+                    0,
+                    0.5
+                ],
+                "PlayStartPhrase": 1,
+                "StartBark": "FOLLOW_ME",
+                "StartBarkFilter": "KubrowVocalCall"
+            },
+            "KubrowInvestigateBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "HomeTag": "KubrowDen",
+                "SecondaryHomeTag": "",
+                "GoHomePosture": "RUN",
+                "GoToInvestigateTgtFarPosture": "WALK",
+                "GoToInvestigateTgtNearPosture": "JOG",
+                "NearThreshold": 15,
+                "PickupDistance": 15,
+                "RagdollDistance": 20,
+                "HomeDistance": 8
+            },
+            "KubrowPackBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "DistanceToLeader": 6
+            },
+            "RandomTacWalkBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": "/Lotus/Scripts/KubrowController.lua",
+                    "Function": "NightEyes",
+                    "_denTypeRes": "",
+                    "_spawnType": "",
+                    "_eyeFlareType": "KubrowEyeFlare",
+                    "_kubrowAvatar": "",
+                    "_kubrowAgent": "",
+                    "_packTeams": [],
+                    "_minDesiredDenCount": 4,
+                    "_maxDesiredDenCount": 8,
+                    "_spawnDist": 80,
+                    "_minPackSize": 4,
+                    "_maxPackSize": 6,
+                    "_playerMultiplier": 1.5,
+                    "_nightPackSizeMulti": 1.5,
+                    "_spawnsPerDen": 3,
+                    "_maxRespawnCount": 2,
+                    "_childDenSearchRadius": 25,
+                    "_packSpawnChance": 0.2,
+                    "_loopsToWait": 10,
+                    "_nightEyes": 0
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "StopRadius": 2,
+                "NearDistance": 6,
+                "SpeedMultiplier": 1,
+                "AlertSpeedMultiplier": 1,
+                "AllowTarget": 1,
+                "AimWhenIdle": 0,
+                "AimWhenAlert": 1,
+                "PermanentAlert": 0,
+                "ForceIdleForSinglePointPatrols": 1,
+                "AnimAction": "",
+                "GenericAnims": [
+                    "/Lotus/Animations/Creatures/KubrowFeral/Howl_anim.fbx",
+                    "/Lotus/Animations/Creatures/KubrowFeral/IdleBark_anim.fbx"
+                ],
+                "MinPlayerDist": [
+                    0,
+                    0
+                ],
+                "MinPlayerFov": 60,
+                "PauseTime": [
+                    3,
+                    5
+                ],
+                "TimeBetweenPauses": [
+                    15,
+                    25
+                ],
+                "ReevaluationDelayOnAbortedMove": 5,
+                "PlayPhrase": 1,
+                "Bark": "IDLE",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    0,
+                    0
+                ],
+                "StartUpDelay": [
+                    0.5,
+                    1.5
+                ],
+                "UseWasAlert": 0,
+                "ScanLength": 2,
+                "MovementPosture": "WALK",
+                "TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
+                "TeammateBarkBehavior:Enabled": 1,
+                "TeammateBarkBehavior:OnStartScript": {
+                    "Script": ""
+                },
+                "TeammateBarkBehavior:OnDamagedScript": {
+                    "Script": ""
+                },
+                "TeammateBarkBehavior:DefaultReevaluationDelay": 0,
+                "TeammateBarkBehavior:StopForTeammateDuration": [
+                    3,
+                    6
+                ],
+                "TeammateBarkBehavior:DontStopForTeammateDuration": 30,
+                "TeammateBarkBehavior:PostFailureEvaluationDelay": [
+                    3,
+                    3
+                ],
+                "TeammateBarkBehavior:AllowableTeammateAngle": 90,
+                "TeammateBarkBehavior:TeammateSearchDistance": 5,
+                "TeammateBarkBehavior:TeammateBark": "IDLE",
+                "TeammateBarkBehavior:TeammateBarkFilter": "",
+                "UseDefenseVolume": 0,
+                "EvaluateMoveScript": {
+                    "Script": ""
+                },
+                "OnlyFindPositionsOnFlightNav": 0,
+                "MaxPatrolDistanceFromEncounterHint": 0
+            },
+            "GuardBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+                "WaitAction:Enabled": 1,
+                "WaitAction:OnStartScript": {
+                    "Script": ""
+                },
+                "WaitAction:OnDamagedScript": {
+                    "Script": ""
+                },
+                "RandomFacingChange": [
+                    0,
+                    0
+                ],
+                "MinHeadingChangeToTurn": 0
+            }
+        },
+        "LocomotionController:waterRestriction": "WS_NONE",
+        "LocomotionController:PathingPreferences": {
+            "avoidSpeedMultiplier": 1.2
+        },
+        "ViewFov": 240,
+        "ViewDistance": 50,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "AwarenessDecayTime": 5,
+        "ReactionControllerType": "KubrowReactionControllerImpl",
+        "PerceiverType": "KubrowPerceiver",
+        "OnlyTargetAvatars": 1,
+        "CoverEvaluatorType": "/EE/Types/Npc/UtilityCoverEvaluator",
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/MeleeTargetEvaluator"
+    }
+}

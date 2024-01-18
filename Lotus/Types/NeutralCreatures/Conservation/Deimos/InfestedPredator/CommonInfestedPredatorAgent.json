@@ -1,0 +1,234 @@
+{
+    "parent": "BaseInfestedPredatorAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "CommonInfestedPredatorAvatar"
+        },
+        "BlackboardBehaviorSelector": {
+            "Actions": [
+                {
+                    "VarName": "KUBROW_CHARGE",
+                    "Action:Type": "/EE/Types/Npc/ReachableBehaviorSelector",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0,
+                    "Action:Actions": [
+                        "/Lotus/Types/Behaviors/RunScriptBehavior"
+                    ],
+                    "Action:RunScriptBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "Script": {
+                            "Script": "/Lotus/Types/NeutralCreatures/Conservation/LegendaryKubrow/LegendaryKubrowFlee.lua",
+                            "Function": "ChargeComplete",
+                            "_chargeSym": "KUBROW_CHARGE",
+                            "_fleeSym": "KUBROW_FLEE"
+                        }
+                    },
+                    "Action:FailOnChildFailure": 0,
+                    "Action:TargetReachable": 0,
+                    "Action:RequiresTarget": 1
+                },
+                {
+                    "VarName": "KUBROW_CHARGE",
+                    "Action:Type": "/EE/Types/Npc/GenericBehaviorSequence",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0.25,
+                    "Action:TimeoutBetweenActions": 0.5,
+                    "Action:FailOnChildFailure": 1,
+                    "Action:Logging": 0,
+                    "Action:Behaviors": [
+                        "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                        "/Lotus/Types/Behaviors/RunScriptBehavior"
+                    ],
+                    "Action:UsePowerSuitAbilitiesBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0.25,
+                        "BlockForPowerCompleteType": "BT_ALWAYS",
+                        "AllowInterruptOfAbility": 0,
+                        "StopFiring": 1,
+                        "StopMovingOnStart": 0,
+                        "ExtraReevaluationDelay": 0,
+                        "ActiveAction:Type": "/EE/Types/Npc/Action",
+                        "ActiveAction:Enabled": 1,
+                        "ActiveAction:OnStartScript": {
+                            "Script": ""
+                        },
+                        "ActiveAction:OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "EvaluateAction": 1,
+                        "FaceTarget": 1,
+                        "TurnAccuracyThreshold": 10,
+                        "TurnTimeout": 2,
+                        "AimTimeout": 0.5,
+                        "ValidAbilities": [
+                            0
+                        ],
+                        "MaxProcessPerEval": 0,
+                        "AimAtTarget": 0,
+                        "CheckIfAbilityUnlocked": 0,
+                        "MultipleConcurrentAbilities": 0,
+                        "EvaluateDelayRange": [
+                            0.5,
+                            1
+                        ],
+                        "PreventUsageOnWeaponUse": 0,
+                        "TurnDuringAbility": 0,
+                        "DeactivateAbilitiesOnPredeath": 0,
+                        "ResetEvalTimerOnEnemySpotted": 0
+                    },
+                    "Action:RunScriptBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "Script": {
+                            "Script": "/Lotus/Types/NeutralCreatures/Conservation/LegendaryKubrow/LegendaryKubrowFlee.lua",
+                            "Function": "ChargeComplete",
+                            "_chargeSym": "KUBROW_CHARGE",
+                            "_fleeSym": "KUBROW_FLEE"
+                        }
+                    }
+                },
+                {
+                    "VarName": "KUBROW_CHARGE",
+                    "Action:Type": "/EE/Types/Npc/KeepIdealDistanceBehavior",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0,
+                    "Action:RandomizeRange": 0,
+                    "Action:UseWeaponRange": 0,
+                    "Action:IdealDistance": [
+                        0,
+                        8
+                    ],
+                    "Action:EvaluateDistance": [
+                        0,
+                        100
+                    ],
+                    "Action:MaxMovementDistance": 100,
+                    "Action:AllowRetreat": 1,
+                    "Action:AllowRun": 1,
+                    "Action:AllowChase": 1,
+                    "Action:ForceWalkBelowMinIdealRange": 1,
+                    "Action:WalkRange": [
+                        0,
+                        0
+                    ],
+                    "Action:RequireTeamMeleeLock": 0,
+                    "Action:ReleaseTeamMeleeLock": 0,
+                    "Action:AimWhileMoving": 0,
+                    "Action:MoveFacingControl": "MFC_FACE_MOVEDIR",
+                    "Action:StopRadius": 1.5,
+                    "Action:RunWhenShocked": 0,
+                    "Action:ShockedDamageTime": 30,
+                    "Action:OnlyTravelWhenVisible": 0,
+                    "Action:TravelDuringStruggle": 1,
+                    "Action:AllowPartialPath": 0,
+                    "Action:UpdateDestinationInterval": 0.5,
+                    "Action:UpdateDestinationDistance": 0,
+                    "Action:OffNavRadius": 2,
+                    "Action:OffNavHeight": 3,
+                    "Action:RequiresClearNavTrace": 0,
+                    "Action:HoverHeightOverride": -1,
+                    "Action:RetryWithPathlessMovement": 0,
+                    "Action:PathlessMovementMaxDistance": 16,
+                    "Action:AvoidTargetLineOfSight": 1,
+                    "Action:AvoidanceBias": 10,
+                    "Action:LockTarget": 0,
+                    "Action:LookAtTarget": 0,
+                    "Action:DistanceToShoot": -1,
+                    "Action:WalkWhileShooting": 0,
+                    "Action:AimOnFire": 0,
+                    "Action:AllowReload": 0,
+                    "Action:ChangeWeapons": 0,
+                    "Action:WeaponSlot": "SLOT_1",
+                    "Action:WeaponHand": "MAIN_HAND",
+                    "Action:EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "Action:PlayPhrase": 0,
+                    "Action:Bark": "IDLE",
+                    "Action:BarkFilter": "",
+                    "Action:BarkInterval": [
+                        0,
+                        0
+                    ],
+                    "Action:ReportUnreachableOnFailedMove": 1,
+                    "Action:ReportUnreachableOffNav": 1,
+                    "Action:TimeOffNav": 3,
+                    "Action:RestrictToDefenseVolume": 0,
+                    "Action:WalkMovePosture": "WALK"
+                },
+                {
+                    "VarName": "KUBROW_FLEE",
+                    "Action:Type": "/EE/Types/Npc/FleeFromPerceptionBehavior",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0,
+                    "Action:PerceptionLevel": "PTL_INVESTIGATE",
+                    "Action:OnlyReactOnParticularFaction": 0,
+                    "Action:Faction": "",
+                    "Action:FleeDirectionRandomness": 0.15,
+                    "Action:SpeedMultiplier": 1,
+                    "Action:FleeContinuationMode": "FCM_FLEE_FOREVER",
+                    "Action:FleePointTag": "",
+                    "Action:DisappearAfterTime": 1,
+                    "Action:TimeForDisappearance": 10,
+                    "Action:DisappearStartTimeBlackboardSymbol": "FleeStartTime",
+                    "Action:DisappearMaxTimeBlackboardSymbol": "FleeMaxTime",
+                    "Action:DisappearOutOfRangeTime": 0,
+                    "Action:AnimActionOnFleeEnd": "Despawn",
+                    "Action:SetAwarenessOnFleeEnd": 0,
+                    "Action:NewAlertness": "AW_ALERT",
+                    "Action:TimeBeforeFleeing": [
+                        0,
+                        0
+                    ],
+                    "Action:MaxPerceptionDistance": 200,
+                    "Action:StopRadius": 1.5,
+                    "Action:ComfortableDistance": 0,
+                    "Action:DissolveTime": 0,
+                    "Action:FleeWhenAlert": 0,
+                    "Action:PlayPhrase": 0
+                }
+            ]
+        }
+    }
+}

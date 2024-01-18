@@ -1,0 +1,50 @@
+{
+    "parent": "/Lotus/Upgrades/Invigorations/BaseArchonCrystalUpgrade",
+    "data": {
+        "LocalizeTag": "[HC]ORANGE ARCHON SHARD: Every 5 kills on enemies affected by Heat, permanently increases secondary crit chance by 1% (sooo long of a description)",
+        "LocalizeDescTag": "",
+        "Upgrades": [
+            {
+                "UpgradeType": "NONE",
+                "OperationType": "ADD",
+                "Value": 0.01,
+                "DamageType": "DT_ANY",
+                "AutoType": 1,
+                "ValidType": "",
+                "SymbolFilter": "",
+                "UpgradeObject": "",
+                "ValidPostures": [],
+                "ValidModifiers": [],
+                "ValidProcTypes": [],
+                "OverrideLocalization": 1,
+                "LocTag": "/Lotus/Language/Alchemy/ArchonUpgradeWarframeCritBoostFromHeat",
+                "LocKeyWordScript": {
+                    "Script": "/Lotus/Scripts/Mods/UpgradeMaxCritOnKill.lua",
+                    "Function": "GetDescription",
+                    "_critBoostLimitAmount": 0.01,
+                    "_buffMax": 0.5,
+                    "_objectType": "",
+                    "_hudBuffType": ""
+                },
+                "SmallerIsBetter": 0,
+                "RoundTo": 0.1,
+                "RoundingMode": "RM_ROUND"
+            }
+        ],
+        "ApplyUpgradesByDefault": 0,
+        "FusionLimit": "QA_NONE",
+        "ItemCompatibility": "/Lotus/Types/Game/PowerSuits/PlayerPowerSuit",
+        "Script": {
+            "Script": "/Lotus/Scripts/Mods/UpgradeMaxCritOnKill.lua",
+            "Function": "OnKill",
+            "_critBoostLimitAmount": 0.01,
+            "_buffMax": 0.5,
+            "_objectType": "/Lotus/Weapons/Tenno/Pistol/LotusPistol",
+            "_hudBuffType": "SecondaryCritBoostFromHeatHudBuff"
+        },
+        "UpgradeChance": 1,
+        "ConditionalUpgrades": [
+            "On5HeatKillCondition"
+        ]
+    }
+}

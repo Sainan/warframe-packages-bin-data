@@ -1,0 +1,647 @@
+{
+    "parent": "/EE/Types/Engine/AnimTreeController",
+    "data": {
+        "AnimTree": "ArachnoidHungerAnimTree.animtree",
+        "DefaultMovementMode": "ATMM_PHYSICS_DRIVEN",
+        "DefaultMovementModeRemotePlayers": "ATMM_PHYSICS_DRIVEN",
+        "LookIKFov": 180,
+        "DefaultLookIkHeadingTrackSpeed": 180,
+        "DefaultLookIkPitchTrackSpeed": 90,
+        "ApplyScaleToRootMotion": 1,
+        "Actions": [
+            {
+                "Action": "IDLE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 0
+                    }
+                ],
+                "Query": []
+            },
+            {
+                "Action": "DodgeJump",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ]
+            },
+            {
+                "Action": "BerserkStart",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ]
+            },
+            {
+                "Action": "Jump",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ]
+            },
+            {
+                "Action": "FreeFall",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ]
+            },
+            {
+                "Action": "Land",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 0
+                    }
+                ],
+                "Query": []
+            },
+            {
+                "Action": "DodgeForward",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "FORWARD"
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "FORWARD"
+                    }
+                ]
+            },
+            {
+                "Action": "DodgeBackward",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "BACKWARD"
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "BACKWARD"
+                    }
+                ]
+            },
+            {
+                "Action": "DodgeLeft",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "LEFT"
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "LEFT"
+                    }
+                ]
+            },
+            {
+                "Action": "DodgeRight",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "RIGHT"
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "RIGHT"
+                    }
+                ]
+            },
+            {
+                "Action": "DodgeForwardLeft",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "UPWARD"
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "UPWARD"
+                    }
+                ]
+            },
+            {
+                "Action": "DodgeForwardRight",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "DOWNWARD"
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    },
+                    {
+                        "Variable": "IV_DODGE",
+                        "Value": "DOWNWARD"
+                    }
+                ]
+            }
+        ],
+        "ContextActions": [
+            {
+                "Action": "JUMP",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ]
+            },
+            {
+                "Action": "JUMP_LOOP",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ]
+            },
+            {
+                "Action": "JUMP_LAND",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 5
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 5
+                    }
+                ]
+            },
+            {
+                "Action": "DROP_VAULT_OVER_EDGE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 7
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 7
+                    }
+                ]
+            },
+            {
+                "Action": "STEP_UP",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 8
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 8
+                    }
+                ]
+            },
+            {
+                "Action": "STEP_DOWN",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 9
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 9
+                    }
+                ]
+            },
+            {
+                "Action": "VAULT_OVER",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 10
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 10
+                    }
+                ]
+            },
+            {
+                "Action": "JUMP_DOWN",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 11
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 11
+                    }
+                ]
+            },
+            {
+                "Action": "JUMP_ACROSS",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 12
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 12
+                    }
+                ]
+            },
+            {
+                "Action": "VAULT_UP",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 13
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 13
+                    }
+                ]
+            },
+            {
+                "Action": "VAULT_PREPARE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ]
+            }
+        ],
+        "SoundEvents": [
+            {
+                "EventName": "SFXCrpArachnoidHungerMeleeWhoosh",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Abilities/CrpArachnoidHungerMeleeWhoosh",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidHungerGroundSpray",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Abilities/CrpArachnoidHungerGroundSpray",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidHungerLeapWhoosh",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Abilities/CrpArachnoidHungerLeapWhoosh",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidHungerGrappleFire",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Abilities/CrpArachnoidHungerGrappleFire",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXHungerRuptureExplosion",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Abilities/CrpArachnoidHungerRupturedExplosion",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXHungerRuptureInflate",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Abilities/CrpArachnoidHungerRupturedInflate",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXHungerJumpLanding",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Steps/CrpArachnoidHungerJumpLanding",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidHungerLeapFootStab",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Abilities/CrpArachnoidHungerFootStab",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidWraithSpawnDrop",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidWraith/Spawn/CrpArachnoidWraithSpawnDrop",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidWraithSpawnDropImpact",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidWraith/Spawn/CrpArachnoidWraithSpawnDropImpact",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidWraithSpawnDropImpact",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidWraith/Spawn/CrpArachnoidWraithSpawnDropImpact",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpArachnoidHungerSpawnUnravel",
+                "Sound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Spawn/CrpArachnoidHungerSpawnUnravel",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "VoiceBoxEvents": [
+            {
+                "EventName": "SFXCrpArachnoidHungerVocalLeap",
+                "Phrase": "CHARGE_SCREAM",
+                "Filter": "CrpArachnoidHungerVocalLeap",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXCrpArachnoidHungerGrappleVocal",
+                "Phrase": "USING_ABILITY",
+                "Filter": "CrpArachnoidHungerGrappleVocal",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXHungerRupturePainVocal",
+                "Phrase": "NEAR_DEATH",
+                "Filter": "SFXHungerRupturePainVocal",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXHungerRuptureInflateVocal",
+                "Phrase": "PREDEATH",
+                "Filter": "SFXHungerRuptureInflateVocal",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXCrpArachnoidSpawnVocal",
+                "Phrase": "CHARGE_SCREAM",
+                "Filter": "SFXCrpArachnoidSpawnVocal",
+                "Chance": 1
+            }
+        ],
+        "SurfaceSensitiveEffects": [
+            {
+                "AnimEventSymbols": [
+                    "StepL"
+                ],
+                "RaycasterBoneName": "GAME_L1_FORELEG0",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Steps/CrpArachnoidHungerStepHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepR"
+                ],
+                "RaycasterBoneName": "GAME_R1_FORELEG0",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Steps/CrpArachnoidHungerStepHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 1,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepLB"
+                ],
+                "RaycasterBoneName": "GAME_L1_HINDLEG0",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Steps/CrpArachnoidHungerStepHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepRB"
+                ],
+                "RaycasterBoneName": "GAME_R1_HINDLEG0",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Steps/CrpArachnoidHungerStepHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepRotateL"
+                ],
+                "RaycasterBoneName": "GAME_L1_FORELEG0",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Steps/CrpArachnoidHungerStepRotateHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepRotateR"
+                ],
+                "RaycasterBoneName": "GAME_R1_FORELEG0",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Steps/CrpArachnoidHungerStepRotateHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepRotateLB"
+                ],
+                "RaycasterBoneName": "GAME_L1_HINDLEG0",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Steps/CrpArachnoidHungerStepRotateHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepRotateRB"
+                ],
+                "RaycasterBoneName": "GAME_R1_HINDLEG0",
+                "HitEffect": "/Lotus/Sounds/Enemies/Corpus/ArachnoidHunger/Steps/CrpArachnoidHungerStepRotateHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            }
+        ]
+    }
+}

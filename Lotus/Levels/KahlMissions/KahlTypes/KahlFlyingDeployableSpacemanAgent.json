@@ -1,0 +1,1153 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Venus/Heavies/VenusFlyingSpacemanAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "KahlDeployableFlyingSpacemanAvatar",
+            "EXIMUS": ""
+        },
+        "MinLevel": 15,
+        "MaxLevel": 9999,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Corpus/GasCity/Weapon/GasDeployableRifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Tenno/Grenades/NpcThrowGrenadeWeapon",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/FlyingDeployableSpacemanSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "PlayerAlly": 1,
+        "NeverPauseByAiDirector": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/Logic/LogicGraphAction",
+            "/Lotus/Types/Behaviors/JetpackSpacemanMovementBehavior",
+            "/Lotus/Types/Enemies/Corpus/Venus/Heavies/JetpackSpacemanInAirBehavior",
+            "/Lotus/Types/Enemies/Corpus/Venus/Heavies/JetpackSpacemanOnGroundBehavior",
+            "/EE/Types/Npc/AgentOffNavBehavior",
+            "/EE/Types/Npc/EngageTargetTactic",
+            "/EE/Types/Npc/PursueTargetBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/LotusFollowBbChooseAvatarBehavior",
+            "/EE/Types/Npc/SearchTacAreaMapForTargetsBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardBehavior",
+            "/EE/Types/Npc/GuardTactic",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior"
+        ],
+        "LogicGraphAction": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "GraphRes": "KahlCorpusBuddyLogicGraph"
+        },
+        "JetpackSpacemanMovementBehavior": {
+            "JetpackType": "/Lotus/Types/Enemies/Corpus/GasCity/Attachments/GasFlyingSpacemanJetPack"
+        },
+        "JetpackSpacemanInAirBehavior": {
+            "Actions": [
+                "/EE/Types/Npc/BlockingBehavior",
+                "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "/EE/Types/Npc/DroneRecoveryBehavior",
+                "/Lotus/Types/Behaviors/FlyStormTargetOrderBehavior",
+                "/Lotus/Types/Behaviors/JetpackDodgeBehavior",
+                "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+                "/Lotus/Types/Behaviors/HoverAttackBehavior",
+                "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+                "/EE/Types/Npc/InvestigateBehavior",
+                "/EE/Types/Npc/PoiBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ],
+            "UsePowerSuitAbilitiesBehavior": {
+                "ExtraReevaluationDelay": 2,
+                "FaceTarget": 1
+            },
+            "DroneRecoveryBehavior": {
+                "TimeOffNav": 8,
+                "FlyDescendToNavBehavior": {
+                    "UseLastGoodPosition": 1
+                }
+            },
+            "JetpackDodgeBehavior": {
+                "JetpackType": "/Lotus/Types/Enemies/Corpus/GasCity/Attachments/GasFlyingSpacemanJetPack"
+            },
+            "PoiBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "PoiSearchRadius": 100,
+                "MinPlayerDist": 9,
+                "MinPlayerFov": 180,
+                "NearDistance": 1,
+                "PoiWhitelist": [
+                    "JetpackerPointAir"
+                ],
+                "StopWhenAlerted": 1,
+                "CantHaltOnceArrived": 0
+            },
+            "GuardTactic": {
+                "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
+                "RandomWalkBehavior:DefaultReevaluationDelay": 0,
+                "RandomWalkBehavior:StopRadius": 2,
+                "RandomWalkBehavior:NearDistance": 4,
+                "RandomWalkBehavior:SpeedMultiplier": 1,
+                "RandomWalkBehavior:AlertSpeedMultiplier": 1,
+                "RandomWalkBehavior:AllowTarget": 0,
+                "RandomWalkBehavior:AimWhenIdle": 0,
+                "RandomWalkBehavior:AimWhenAlert": 1,
+                "RandomWalkBehavior:PermanentAlert": 0,
+                "RandomWalkBehavior:ForceIdleForSinglePointPatrols": 1,
+                "RandomWalkBehavior:AnimAction": "",
+                "RandomWalkBehavior:GenericAnims": [],
+                "RandomWalkBehavior:MinPlayerDist": [
+                    0,
+                    0
+                ],
+                "RandomWalkBehavior:MinPlayerFov": 60,
+                "RandomWalkBehavior:PauseTime": [
+                    3,
+                    5
+                ],
+                "RandomWalkBehavior:TimeBetweenPauses": [
+                    15,
+                    25
+                ],
+                "RandomWalkBehavior:ReevaluationDelayOnAbortedMove": 5,
+                "RandomWalkBehavior:PlayPhrase": 1,
+                "RandomWalkBehavior:Bark": "IDLE",
+                "RandomWalkBehavior:BarkFilter": "",
+                "RandomWalkBehavior:BarkInterval": [
+                    0,
+                    0
+                ],
+                "RandomWalkBehavior:StartUpDelay": [
+                    0,
+                    0
+                ],
+                "RandomWalkBehavior:UseWasAlert": 0,
+                "RandomWalkBehavior:ScanLength": 2,
+                "RandomWalkBehavior:MovementPosture": "WALK",
+                "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
+                "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
+                "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
+                    "Script": ""
+                },
+                "RandomWalkBehavior:TeammateBarkBehavior:OnDamagedScript": {
+                    "Script": ""
+                },
+                "RandomWalkBehavior:TeammateBarkBehavior:DefaultReevaluationDelay": 0,
+                "RandomWalkBehavior:TeammateBarkBehavior:StopForTeammateDuration": [
+                    3,
+                    6
+                ],
+                "RandomWalkBehavior:TeammateBarkBehavior:DontStopForTeammateDuration": 30,
+                "RandomWalkBehavior:TeammateBarkBehavior:PostFailureEvaluationDelay": [
+                    3,
+                    3
+                ],
+                "RandomWalkBehavior:TeammateBarkBehavior:AllowableTeammateAngle": 90,
+                "RandomWalkBehavior:TeammateBarkBehavior:TeammateSearchDistance": 5,
+                "RandomWalkBehavior:TeammateBarkBehavior:TeammateBark": "IDLE",
+                "RandomWalkBehavior:TeammateBarkBehavior:TeammateBarkFilter": "",
+                "RandomWalkBehavior:UseDefenseVolume": 0,
+                "RandomWalkBehavior:EvaluateMoveScript": {
+                    "Script": ""
+                },
+                "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
+                "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0
+            }
+        },
+        "JetpackSpacemanOnGroundBehavior": {
+            "Actions": [
+                "/EE/Types/Npc/BlockingBehavior",
+                "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "/EE/Types/Npc/InterruptResponseBehavior",
+                "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+                "/EE/Types/Npc/StormTargetOrderBehavior",
+                "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+                "/EE/Types/Npc/MeleeTactic",
+                "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+                "/EE/Types/Npc/UseGrenadeBehavior",
+                "/EE/Types/Npc/AttackFromTheOpenBehavior",
+                "/EE/Types/Npc/CustomResponseBehavior",
+                "/Lotus/Types/Behaviors/LotusFollowBbChooseAvatarBehavior",
+                "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+                "/EE/Types/Npc/InvestigateBehavior",
+                "/EE/Types/Npc/PoiBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ],
+            "StormTargetOrderBehavior": {
+                "TargetFaction": "Sentient"
+            },
+            "MoveTowardsTacEnemyInfluence": {
+                "EnemyFaction": "Narmer"
+            },
+            "LotusFollowBbChooseAvatarBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/Lotus/Types/Behaviors/LotusFollowBbTeleportBehavior",
+                    "/Lotus/Types/Behaviors/LotusFollowBbCatchUpBehavior",
+                    "/Lotus/Types/Behaviors/LotusFollowBbMoveFiring",
+                    "/Lotus/Types/Behaviors/LotusFollowBbMoveWithBehavior"
+                ],
+                "LotusFollowBbTeleportBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "DestinationOffset": [
+                        3,
+                        0,
+                        -2
+                    ],
+                    "ForceTeleportFromWater": 1,
+                    "TimeBeforeTeleport": 3,
+                    "TeleportDistance": 30,
+                    "DestinationMustBeOnNav": 1,
+                    "ClearBlackboardOnComplete": 0,
+                    "ForceTeleport": 0,
+                    "AlwaysTeleportOnRegionDifference": 0,
+                    "EnableRailjackZoneDiffTeleport": 1
+                },
+                "LotusFollowBbCatchUpBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "RunDistance": 10,
+                    "CaughtUpDistance": 5,
+                    "DestinationOffset": [
+                        3,
+                        0,
+                        -1
+                    ],
+                    "GeneratePointsDistance": [
+                        4,
+                        10
+                    ],
+                    "GenerateSpacing": 2,
+                    "IdealFollowDistanceRange": [
+                        7.5,
+                        10
+                    ],
+                    "ScoreIdealFollowCurve": {
+                        "m": 1,
+                        "k": -1,
+                        "b": 1,
+                        "c": 0.3,
+                        "logistic": 1
+                    },
+                    "FollowRange": 15,
+                    "FollowMoveThreshold": 3,
+                    "RepathDestinationDistance": 3,
+                    "StopDistance": 3,
+                    "SpeedMultiplier": 1,
+                    "FarAwaySpeedMultiplier": 3,
+                    "FarAwaySpeedRange": [
+                        30,
+                        100
+                    ],
+                    "RepositionTime": 2,
+                    "AlwaysUseSimplePos": 0,
+                    "StopWhenCaughtUp": 0,
+                    "ClearBlackboardOnComplete": 0,
+                    "PriorityTargetAvatars": [],
+                    "MinFollowBarkInterval": 20
+                },
+                "LotusFollowBbMoveFiring": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "SpeedMultiplier": 1.3,
+                    "RunDistance": 20,
+                    "WalkDistance": 1,
+                    "StopDistance": 2,
+                    "FollowRange": 5,
+                    "TetherRange": 50,
+                    "DoReloads": 1,
+                    "MinReloadRange": 10,
+                    "MaxDistToShootUnalertedEnemy": 100,
+                    "MaxDuration": 30,
+                    "PostTimeoutDelay": 0,
+                    "DestinationOffset": [
+                        2,
+                        0,
+                        -1
+                    ],
+                    "DestinationOffsetMultiplier": 1,
+                    "GeneratePointsDistance": [
+                        4,
+                        10
+                    ],
+                    "GenerateSpacing": 2,
+                    "IdealFollowDistanceRange": [
+                        7.5,
+                        15
+                    ],
+                    "ScoreIdealFollowCurve": {
+                        "m": 1,
+                        "k": -1,
+                        "b": 1,
+                        "c": 0.3,
+                        "logistic": 1
+                    },
+                    "ControlShootingFromBehavior": 1,
+                    "MaxTimeSinceCreatorAttack": 0,
+                    "LookAtTarget": 0,
+                    "LookHorizRate": 40,
+                    "LookVertRate": 20,
+                    "LookTargetOffset": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "CheckAimStatusForFire": 1
+                },
+                "LotusFollowBbMoveWithBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "StealthyAction:Type": "/EE/Types/Npc/Action",
+                    "StealthyAction:Action": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        }
+                    },
+                    "RevealedAction:Type": "/EE/Types/Npc/Action",
+                    "RevealedAction:Action": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        }
+                    },
+                    "GeneratePointsDistance": [
+                        4,
+                        10
+                    ],
+                    "GenerateSpacing": 2,
+                    "UseCameraView": 1,
+                    "BiasTowardsObjective": 0,
+                    "MaxAngleFromObjective": 60,
+                    "MaxObjectiveSearchDepth": 1,
+                    "MaxSearchDistanceFromTarget": 10,
+                    "MinDistanceFromTargetLine": 1,
+                    "RevealedOffset": [
+                        3,
+                        0,
+                        -1
+                    ],
+                    "StealthOffset": [
+                        2,
+                        0,
+                        -2
+                    ],
+                    "SpecialOffsettingWeapons": [],
+                    "SpecialWeaponOffset": [
+                        -2,
+                        0,
+                        -2
+                    ],
+                    "SpecialWeaponLineOfFireThreshold": 25,
+                    "IdealFollowDistanceRange": [
+                        0,
+                        10
+                    ],
+                    "ScoreIdealFollowCurve": {
+                        "m": 1,
+                        "k": -1,
+                        "b": 1,
+                        "c": 0.3,
+                        "logistic": 1
+                    },
+                    "StopRadius": 3,
+                    "FollowRange": 15,
+                    "FollowMoveThreshold": 3,
+                    "RepositionTime": 2,
+                    "RelocateOnTargetRotate": 0,
+                    "FollowRotationThreshold": 15,
+                    "AllowPlayerLookingAtFollower": 1,
+                    "MatchSpeedDistance": 5,
+                    "TargetableWhenStealthy": 1,
+                    "UsePrediction": 0,
+                    "PredictionDist": 5,
+                    "ObjectiveWeight": 1,
+                    "InfluenceWeight": 0.5,
+                    "InfluenceDeltaWeight": 1,
+                    "AlwaysUseSimplePos": 0,
+                    "PriorityTargetAvatars": [],
+                    "MinFollowBarkInterval": 20,
+                    "MatchCrouchState": 1,
+                    "CrouchInLineOfFireThreshold": 10,
+                    "WaypointTag": "",
+                    "WaypointSearchRadius": 0
+                },
+                "FollowPairedAgent": 0,
+                "FollowOrderTarget": "",
+                "MustHavePlayer": 1,
+                "FollowOwningAvatar": 0,
+                "DistanceMeasurement": "DMS_LEADING_PLAYER",
+                "AlwaysFollowWeaponGiver": 0,
+                "FollowingRefreshTime": 1,
+                "AttackToStealthTime": 5,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_2",
+                "BackupWeaponSlot": "SLOT_1",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_PLAY_EQUIP_ANIM"
+            },
+            "FollowAllyPlayerBehavior": {
+                "AllowTeleport": 1
+            },
+            "PoiBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "PoiSearchRadius": 100,
+                "MinPlayerDist": 9,
+                "MinPlayerFov": 180,
+                "NearDistance": 1,
+                "PoiWhitelist": [
+                    "JetpackerPointGround"
+                ],
+                "StopWhenAlerted": 1,
+                "CantHaltOnceArrived": 0
+            }
+        },
+        "AgentOffNavBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOffNav": 4,
+            "ToleranceDistance": 0.5,
+            "DisableWhenFlying": 0,
+            "RerunDelay": 5,
+            "OffNavBehaviors": [
+                "/EE/Types/Npc/DodgeJumpBackToNavBehavior"
+            ],
+            "DodgeJumpBackToNavBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Action": "DodgeForward",
+                "SweepForValidPos": 1,
+                "OnlyIfRecentlyDamaged": 0,
+                "RequestDelay": 0,
+                "FaceDirectionOfPathFollowerTarget": 1,
+                "JumpToClosestNavPoint": 1
+            }
+        },
+        "EngageTargetTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceVisible": 5,
+            "ReportEnemyActivityInfluence": "EnemyActivity",
+            "AttackBehaviors": []
+        },
+        "PursueTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceVisibleToPursue": [
+                0,
+                30
+            ],
+            "SpeedMultiplier": 1,
+            "StopRadius": 0.5,
+            "NearDistance": 2,
+            "MovePosture": "JOG",
+            "PauseTimeout": 0,
+            "GotoLastKnownPosFirst": 1
+        },
+        "CustomResponseBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Responses": [
+                {
+                    "reaction": "INVESTIGATE_DEATH",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_ALERT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "INVESTIGATE_COMBAT",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_ALERT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "LIGHT_OUT",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "WHAT_WAS_THAT",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 2,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                }
+            ],
+            "BlockingResponse": 1
+        },
+        "LotusFollowBbChooseAvatarBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Actions": [
+                "/Lotus/Types/Behaviors/LotusFollowBbTeleportBehavior",
+                "/Lotus/Types/Behaviors/LotusFollowBbCatchUpBehavior",
+                "/Lotus/Types/Behaviors/LotusFollowBbMoveFiring",
+                "/Lotus/Types/Behaviors/LotusFollowBbMoveWithBehavior"
+            ],
+            "LotusFollowBbTeleportBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "DestinationOffset": [
+                    3,
+                    0,
+                    -2
+                ],
+                "ForceTeleportFromWater": 1,
+                "TimeBeforeTeleport": 3,
+                "TeleportDistance": 30,
+                "DestinationMustBeOnNav": 1,
+                "ClearBlackboardOnComplete": 0,
+                "ForceTeleport": 0,
+                "AlwaysTeleportOnRegionDifference": 0,
+                "EnableRailjackZoneDiffTeleport": 1
+            },
+            "LotusFollowBbCatchUpBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "RunDistance": 10,
+                "CaughtUpDistance": 5,
+                "DestinationOffset": [
+                    3,
+                    0,
+                    -1
+                ],
+                "GeneratePointsDistance": [
+                    4,
+                    10
+                ],
+                "GenerateSpacing": 2,
+                "IdealFollowDistanceRange": [
+                    7.5,
+                    15
+                ],
+                "ScoreIdealFollowCurve": {
+                    "m": 1,
+                    "k": -1,
+                    "b": 1,
+                    "c": 0.3,
+                    "logistic": 1
+                },
+                "FollowRange": 15,
+                "FollowMoveThreshold": 3,
+                "RepathDestinationDistance": 3,
+                "StopDistance": 3,
+                "SpeedMultiplier": 1,
+                "FarAwaySpeedMultiplier": 3,
+                "FarAwaySpeedRange": [
+                    30,
+                    100
+                ],
+                "RepositionTime": 2,
+                "AlwaysUseSimplePos": 0,
+                "StopWhenCaughtUp": 0,
+                "ClearBlackboardOnComplete": 0,
+                "PriorityTargetAvatars": [],
+                "MinFollowBarkInterval": 20
+            },
+            "LotusFollowBbMoveFiring": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SpeedMultiplier": 1.3,
+                "RunDistance": 20,
+                "WalkDistance": 1,
+                "StopDistance": 2,
+                "FollowRange": 5,
+                "TetherRange": 50,
+                "DoReloads": 1,
+                "MinReloadRange": 10,
+                "MaxDistToShootUnalertedEnemy": 100,
+                "MaxDuration": 30,
+                "PostTimeoutDelay": 0,
+                "DestinationOffset": [
+                    2,
+                    0,
+                    -1
+                ],
+                "DestinationOffsetMultiplier": 1,
+                "GeneratePointsDistance": [
+                    4,
+                    10
+                ],
+                "GenerateSpacing": 2,
+                "IdealFollowDistanceRange": [
+                    7.5,
+                    15
+                ],
+                "ScoreIdealFollowCurve": {
+                    "m": 1,
+                    "k": -1,
+                    "b": 1,
+                    "c": 0.3,
+                    "logistic": 1
+                },
+                "ControlShootingFromBehavior": 1,
+                "MaxTimeSinceCreatorAttack": 0,
+                "LookAtTarget": 0,
+                "LookHorizRate": 40,
+                "LookVertRate": 20,
+                "LookTargetOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "CheckAimStatusForFire": 1
+            },
+            "LotusFollowBbMoveWithBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "StealthyAction:Type": "/EE/Types/Npc/Action",
+                "StealthyAction:Action": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    }
+                },
+                "RevealedAction:Type": "/EE/Types/Npc/Action",
+                "RevealedAction:Action": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    }
+                },
+                "GeneratePointsDistance": [
+                    4,
+                    10
+                ],
+                "GenerateSpacing": 2,
+                "UseCameraView": 1,
+                "BiasTowardsObjective": 0,
+                "MaxAngleFromObjective": 60,
+                "MaxObjectiveSearchDepth": 1,
+                "MaxSearchDistanceFromTarget": 10,
+                "MinDistanceFromTargetLine": 1,
+                "RevealedOffset": [
+                    3,
+                    0,
+                    -1
+                ],
+                "StealthOffset": [
+                    2,
+                    0,
+                    -2
+                ],
+                "SpecialOffsettingWeapons": [],
+                "SpecialWeaponOffset": [
+                    -2,
+                    0,
+                    -2
+                ],
+                "SpecialWeaponLineOfFireThreshold": 25,
+                "IdealFollowDistanceRange": [
+                    0,
+                    10
+                ],
+                "ScoreIdealFollowCurve": {
+                    "m": 1,
+                    "k": -1,
+                    "b": 1,
+                    "c": 0.3,
+                    "logistic": 1
+                },
+                "StopRadius": 3,
+                "FollowRange": 15,
+                "FollowMoveThreshold": 3,
+                "RepositionTime": 2,
+                "RelocateOnTargetRotate": 0,
+                "FollowRotationThreshold": 15,
+                "AllowPlayerLookingAtFollower": 1,
+                "MatchSpeedDistance": 5,
+                "TargetableWhenStealthy": 1,
+                "UsePrediction": 0,
+                "PredictionDist": 5,
+                "ObjectiveWeight": 1,
+                "InfluenceWeight": 0.5,
+                "InfluenceDeltaWeight": 1,
+                "AlwaysUseSimplePos": 0,
+                "PriorityTargetAvatars": [],
+                "MinFollowBarkInterval": 20,
+                "MatchCrouchState": 1,
+                "CrouchInLineOfFireThreshold": 10,
+                "WaypointTag": "",
+                "WaypointSearchRadius": 0
+            },
+            "FollowPairedAgent": 0,
+            "FollowOrderTarget": "",
+            "MustHavePlayer": 1,
+            "FollowOwningAvatar": 0,
+            "DistanceMeasurement": "DMS_LEADING_PLAYER",
+            "AlwaysFollowWeaponGiver": 0,
+            "FollowingRefreshTime": 1,
+            "AttackToStealthTime": 5,
+            "ChangeWeapons": 0,
+            "WeaponSlot": "SLOT_2",
+            "BackupWeaponSlot": "SLOT_1",
+            "WeaponHand": "MAIN_HAND",
+            "EquipStyle": "ES_PLAY_EQUIP_ANIM"
+        },
+        "SearchTacAreaMapForTargetsBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "RequireAlert": 0,
+            "SpeedMultiplier": 1,
+            "StopRadius": 0.5,
+            "NearDistance": 2,
+            "MovePosture": "JOG",
+            "PauseTimeout": 0,
+            "EnemyActivityInfluence": "EnemyActivity",
+            "FailOnAreaUninfluenced": 0
+        },
+        "InvestigateBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ShouldAim": 1,
+            "MaxInvestigateDistance": 55,
+            "NearDestinationRadius": 6,
+            "SpeedMultiplier": 1,
+            "FastSpeedMultiplier": 1,
+            "VisInterval": 0.5,
+            "LookAroundTime": 3,
+            "NumLookAroundDirections": 2,
+            "TeamCoordination": 1,
+            "UseFlare": 0,
+            "CheckThreatFaction": 0,
+            "AllowRun": 1,
+            "RunTowardsNewTargets": 1,
+            "KnowInstigatorPosAtStart": 0,
+            "reactionsToInvestigate": [],
+            "MinAwareness": "AW_ALERT",
+            "minimumTargetInterest": "Investigate",
+            "ReportAttackOnDamage": 1,
+            "RestrictToDefenseVolume": 0
+        },
+        "GuardBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+            "WaitAction:Enabled": 1,
+            "WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "RandomFacingChange": [
+                0,
+                0
+            ],
+            "MinHeadingChangeToTurn": 0
+        },
+        "GuardTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "LookAtNearbyTeammates": 1,
+            "LookAtNearbyPlayer": 0,
+            "LookAtTarget": 1,
+            "NearbyTeammatesThreshold": 10,
+            "PlayerBias": 0.6,
+            "ReportAttackOnDamage": 1,
+            "PatrolBehavior:Type": "/EE/Types/Npc/PatrolBehavior",
+            "PatrolBehavior:Enabled": 1,
+            "PatrolBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "PatrolBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "PatrolBehavior:DefaultReevaluationDelay": 0,
+            "PatrolBehavior:StopRadius": 1,
+            "PatrolBehavior:NearDistance": 2,
+            "PatrolBehavior:SpeedMultiplier": 1,
+            "PatrolBehavior:AlertSpeedMultiplier": 1,
+            "PatrolBehavior:FailOnTargetAcquired": 1,
+            "PatrolBehavior:AimWhenIdle": 0,
+            "PatrolBehavior:AimWhenAlert": 1,
+            "PatrolBehavior:PermanentAlert": 0,
+            "PatrolBehavior:ForceIdleForSinglePointPatrols": 1,
+            "PatrolBehavior:GenericAnims": [],
+            "PatrolBehavior:MinPlayerDist": [
+                0,
+                0
+            ],
+            "PatrolBehavior:MinPlayerFov": 60,
+            "PatrolBehavior:AutoAssignClosestPatrol": 0,
+            "PatrolBehavior:SameZoneOnly": 1,
+            "PatrolBehavior:AutoPatrolRadius": 30,
+            "RandomWalkBehavior:Enabled": 1,
+            "RandomWalkBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
+            "GuardBehavior:Enabled": 1,
+            "GuardBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "GuardBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "GuardBehavior:DefaultReevaluationDelay": 0,
+            "GuardBehavior:WaitAction:Type": "/EE/Types/Npc/WaitAction",
+            "GuardBehavior:WaitAction:Enabled": 1,
+            "GuardBehavior:WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "GuardBehavior:WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "GuardBehavior:RandomFacingChange": [
+                0,
+                0
+            ],
+            "GuardBehavior:MinHeadingChangeToTurn": 0
+        },
+        "FollowAllyPlayerBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StopRadius": 4,
+            "TightStopRadius": 1.5,
+            "AllowRun": 1,
+            "AllowPartial": 0,
+            "IllumRange": [
+                0,
+                1
+            ],
+            "CoverRadius": 0,
+            "FromPlayerRadius": 6,
+            "OffsetFromPlayer": [
+                0,
+                0,
+                -1
+            ],
+            "Randomness": 5,
+            "CoverSelectFov": 45,
+            "MinTimeBetweenMoves": 2,
+            "DoEnterCover": 0,
+            "CoverLeftOffset": [
+                0,
+                0,
+                0
+            ],
+            "CoverRightOffset": [
+                0,
+                0,
+                0
+            ],
+            "AllowTeleport": 1,
+            "TeleportForBadPath": 0,
+            "MaxBadPathCountBeforeTeleport": 10,
+            "PhaseOutDuration": [
+                2,
+                4
+            ],
+            "TeleportToPlayerDistSqr": 225,
+            "TeleportLeaveEffect": "",
+            "TeleportLeaveSound": "",
+            "TeleportLeaveAnimation": "",
+            "TeleportArriveEffect": "",
+            "TeleportArriveSound": "",
+            "TeleportArriveAnimation": "",
+            "TimeSinceLastSeen": 5,
+            "MaxDistToTarget": 25,
+            "Order": "",
+            "FactionFilter": "TENNO",
+            "OnlyExitIfHaveWeapon": 1,
+            "RequiresOwner": 0,
+            "MoveAction:Type": "/EE/Types/Npc/LocomotionFollowPath",
+            "MoveAction:Enabled": 1,
+            "MoveAction:OnStartScript": {
+                "Script": ""
+            },
+            "MoveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "MoveAction:TrackEntity": 0,
+            "MoveAction:TrackingRate": 0.5,
+            "MoveAction:FaceTarget": 0,
+            "MoveAction:SucceedEarly": 0,
+            "MoveAction:SuccessRadius": 0.5,
+            "MoveAction:SucceedImmediately": 0,
+            "MoveAction:SucceedOnAbort": 0,
+            "WaitAction:Type": "/EE/Types/Npc/WaitBehavior",
+            "WaitAction:Enabled": 1,
+            "WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "WaitAction:DefaultReevaluationDelay": 0,
+            "WaitAction:TimeOut": 5,
+            "WaitAction:CoverOnly": 0,
+            "WaitAction:AimPosture": 0,
+            "WaitAction:MinimalEnemyDistance": 0,
+            "WaitAction:TrackTarget": 0,
+            "WaitAction:TrackTargetNotVisible": 0,
+            "WaitAction:Peek": 0,
+            "WaitAction:FailOnDamaged": 1,
+            "WaitAction:PreventShooting": 0,
+            "WaitAction:StopMovingOnEnter": 0
+        }
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "parent": "/Lotus/Upgrades/Boons/BaseBoon",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Boons/KnockdownResistancePerNearbyEnemyName",
+        "StatusDescTag": "/Lotus/Language/Buffs/StableStanceBoonBuffDesc",
+        "Icon": "/Lotus/Interface/Icons/DrifterBoons/DrifterBoonIcon14.png",
+        "Upgrades": [
+            {
+                "UpgradeType": "NONE",
+                "OperationType": "ADD",
+                "Value": 0,
+                "DamageType": "DT_ANY",
+                "AutoType": 1,
+                "ValidType": "",
+                "SymbolFilter": "",
+                "UpgradeObject": "",
+                "ValidPostures": [],
+                "ValidModifiers": [],
+                "ValidProcTypes": [],
+                "OverrideLocalization": 1,
+                "LocTag": "/Lotus/Language/Boons/KnockdownResistancePerNearbyEnemyDesc",
+                "LocKeyWordScript": {
+                    "Script": "ResistancePerNearbyEnemy.lua",
+                    "Function": "GetDescription",
+                    "_searchRadius": 20,
+                    "_resistancePerEnemy": 0.25,
+                    "_procsToResist": [
+                        "PT_KNOCKBACK"
+                    ]
+                },
+                "SmallerIsBetter": 0,
+                "RoundTo": 0.1,
+                "RoundingMode": "RM_ROUND"
+            }
+        ],
+        "Script": {
+            "Script": "ResistancePerNearbyEnemy.lua",
+            "Function": "Start",
+            "_searchRadius": 20,
+            "_resistancePerEnemy": 0.25,
+            "_procsToResist": [
+                "PT_STAGGERED",
+                "PT_BIG_STAGGER",
+                "PT_STUNNED",
+                "PT_KNOCKED_DOWN",
+                "PT_RAGDOLL"
+            ]
+        },
+        "UnappliedScript": {
+            "Script": "ResistancePerNearbyEnemy.lua",
+            "Function": "OnUnapplied",
+            "_searchRadius": 20,
+            "_resistancePerEnemy": 0.25,
+            "_procsToResist": [
+                "PT_STAGGERED",
+                "PT_BIG_STAGGER",
+                "PT_STUNNED",
+                "PT_KNOCKED_DOWN",
+                "PT_RAGDOLL"
+            ]
+        },
+        "HudBuffIcon": "/Lotus/Interface/Icons/ModBuffIndicators/DrifterBoons/DrifterBoonIcon14Buff.png"
+    }
+}

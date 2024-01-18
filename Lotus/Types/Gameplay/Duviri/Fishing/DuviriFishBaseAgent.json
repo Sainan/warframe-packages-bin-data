@@ -1,0 +1,164 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "DuviriFishBaseAvatar"
+        },
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "BehaviorDatabase": [
+            "/Lotus/Types/Behaviors/DuviriFishBehavior"
+        ],
+        "DuviriFishBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DestinationTag": "DuviriFishPOI",
+            "NavShorteningType": "ST_NAVMESH",
+            "StuckRepathThreshold": 5,
+            "StuckSpeedThreshold": 2.5,
+            "PosCheckTimeInterval": 4,
+            "DestroyIfDistanceLessThan": 0.25,
+            "OnlyDestroyIfNotSeenByHumanAvatars": 1,
+            "MaxDistanceToWaypoint": 10000,
+            "FaceInitialPathTargetOnStart": 1,
+            "SnapToRoadNetwork": 0,
+            "StopRadius": 2,
+            "DesiredPosture": "WALK",
+            "DesiredPostureWhenAlert": "RUN"
+        },
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderFlight"
+        ],
+        "LocomotionController:DynamicPathFinderFlight": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 0,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1,
+            "MaxDestinationHeightCorrectionDistance": 50
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerFlight"
+        ],
+        "LocomotionController:DynamicPathFollowerFlight": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 1,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "ForceFaceForwardWhenInactive": 1,
+            "PreferedDistAboveNav": [
+                2,
+                5
+            ],
+            "MoveHeightOffset": 0,
+            "DistanceToDisregardTurning": 1,
+            "DistanceToSlow": 6,
+            "MinimumSlowedSpeed": 2,
+            "MinimumSpeed": 0,
+            "RecoverySpeedPct": 0.6,
+            "CorrectHeightOnIdle": 0,
+            "AirplaneControls": 0,
+            "DesiredAngleRangeForBank": [
+                0,
+                0
+            ],
+            "BackUpForRecovery": 0,
+            "CanMoveWithoutPath": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierAvoidance",
+                    "/EE/Types/Npc/LocomotionMoveModifierPID"
+                ],
+                "LocomotionMoveModifierAvoidance": {
+                    "AllowVerticalAvoidance": 1,
+                    "AvoidanceInputMultiplier": [
+                        1.2,
+                        1.2,
+                        0.8
+                    ],
+                    "PreserveVelocity": 1,
+                    "MinAvoidanceReducedVelocityPct": 0,
+                    "FlyerControlMode": 0,
+                    "AllowedObstacleCountForMaxSpeed": 30,
+                    "ObstacleCountForMinSpeed": 200,
+                    "ObstacleSlowdownScalingExponent": 1.8,
+                    "MinSpeedScalingFromObstacles": 0.25,
+                    "AvoidDynamicObstaclesOnly": 0
+                },
+                "LocomotionMoveModifierPID": {
+                    "PosKP": 1,
+                    "PosKI": 0,
+                    "PosKD": 0.1,
+                    "VelKP": 1,
+                    "VelKI": 0,
+                    "VelKD": 0.1,
+                    "ClampValue": 1000,
+                    "PreserveVelocity": 1
+                }
+            }
+        ],
+        "LocomotionController:waterRestriction": "WS_IN_WATER",
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 10,
+            "offNavToleranceRadius": 0,
+            "useAvoidance": 0,
+            "avoidanceRadius": 1,
+            "flightPathClearance": 4
+        },
+        "RegisterAvoidance": 0,
+        "AccuracyModsType": "/EE/Types/Npc/NpcArchwingAccuracyMods",
+        "ViewIdleFov": 180,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 30,
+        "ViewIdleFovSphereRadius": 15,
+        "ExtraViewConeIdleFovFactor": 1.5,
+        "ExtraViewConeIdleDistFactor": 0.5,
+        "ViewDistance": 30,
+        "ViewAlertFovSphereRadius": 15,
+        "ExtraViewConeAlertDistFactor": 0.5,
+        "DarkVisionSensitivity": [
+            0.5,
+            1
+        ],
+        "ViewCenteredOnAvatar": 1,
+        "AwarenessDecayTime": 2,
+        "TargetLostTime": 10,
+        "TargetLowHealthPercent": 0.3,
+        "AlertDecayTime": 2,
+        "AlertUpdateInterval": 1,
+        "SuperAlertRadius": 20,
+        "ReactionControllerType": "DuviriFishReactionController",
+        "PerceiverType": "DuviriFishPerceiver",
+        "BaseHitChance": [
+            0.25,
+            0.75
+        ],
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/Water/Grineer/Avatars/WaterRangedTargetEvaluator",
+        "MusicWeight": 0
+    }
+}

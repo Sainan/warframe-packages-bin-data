@@ -1,0 +1,85 @@
+{
+    "parent": "SentientRightArmLaserBehaviorSelector",
+    "data": {
+        "ItemType": "/Lotus/Weapons/Sentients/SentientLaserLeft",
+        "Hand": "OFF_HAND",
+        "SubBehaviors": [
+            "SentientOffHandMeleeDecorator",
+            "/Lotus/Types/Behaviors/SentientWeaponDecoratorBehavior",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "SentientOffHandMeleeDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/EE/Types/Npc/MeleeContinousBehavior",
+            "ChildAction:MeleeContinousBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SwingAttackRange": [
+                    0,
+                    3
+                ],
+                "LungeAttackRange": [
+                    5,
+                    20
+                ],
+                "TeamBbLungeSym": "LaserSweep",
+                "TimeBetweenTeamLunges": 5,
+                "LungeToPredictedPos": 0,
+                "UseMeleeFov": 0,
+                "StopIfOutsideMeleeFov": 0,
+                "MeleeFov": 45,
+                "AllowMeleeingFromBehind": 0,
+                "TimeSinceRendered": 3,
+                "MeleeFromBehindFOV": 90,
+                "SwingInputCode": "MELEE",
+                "LungeInputCode": "MELEE_SWING",
+                "ModifyAttackRangeBasedOnPlayerVelocity": 0,
+                "PredictedSwingTime": 0.5,
+                "PredictedLungeTime": 1,
+                "StopMovingWhenAttacking": 0,
+                "DisablePostureChangers": 0,
+                "TimeBetweenLunges": 16,
+                "LowTargetThreshold": 0.8,
+                "NormalAttack": "MELEE",
+                "LowAttack": "MELEE",
+                "ClearCoverReservationOnStart": 0,
+                "UseCombatManager": 0,
+                "VipAvatarType": "",
+                "TimeBetweenBarks": 2,
+                "VisibilityTimeout": 0,
+                "MaxReachableHeight": 15,
+                "Bark": "ATTACK_SCREAM",
+                "IsOffHandWeapon": 1
+            },
+            "StopWhenChildStops": 1,
+            "DualWieldRestrictAction": "DualWield",
+            "DualWieldRestriction": "DWR_DUAL_WEILDING",
+            "RequiredConfig": "WC_ANY",
+            "NumRequiredRangedWeapons": 0,
+            "NumRequiredMeleeWeapons": 0,
+            "RequiresSpecifiedNumbers": 0
+        },
+        "SentientWeaponDecoratorBehavior": {
+            "ChildAction:IndependentWeaponShootingBehavior": {
+                "StartAimAction": "AimLeft",
+                "StopAimAction": "StopAimLeft",
+                "AimHeadingOffset": -60,
+                "WeaponHand": "OFF_HAND",
+                "ChainName": "IKT_LEFT_HAND"
+            }
+        }
+    }
+}

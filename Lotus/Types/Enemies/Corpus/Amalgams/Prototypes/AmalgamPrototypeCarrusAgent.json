@@ -1,0 +1,78 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Amalgams/AmalgamCarrusAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/AmalgamPrototypeCarrusAvatar",
+            "EXIMUS": ""
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Corpus/Amalgams/Weapons/PrototypeCarrusCannon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/AmalgamCarrusSuit",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/DroneRecoveryBehavior",
+            "/EE/Types/Npc/DistanceRangeDecorator",
+            "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "DistanceRangeDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/Lotus/Types/Behaviors/HoverAttackBehavior",
+            "ChildAction:HoverAttackBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "FireDuration": [
+                    4.5,
+                    4.5
+                ],
+                "WaitDuration": [
+                    2,
+                    2
+                ],
+                "CheckTargetVisible": 1,
+                "BaitType": "",
+                "MaxBaitRadius": 1000,
+                "FaceTarget": 1,
+                "StopMovingOnShoot": 0
+            },
+            "StopWhenChildStops": 1,
+            "UseWeaponRange": 1,
+            "Range": [
+                0,
+                9999
+            ],
+            "AllowNoTarget": 0,
+            "UseTargetNavPos": 0
+        },
+        "HoverNearTargetBehavior": {
+            "TargetDistance": [
+                4,
+                8
+            ]
+        }
+    }
+}

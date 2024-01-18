@@ -1,0 +1,571 @@
+{
+    "parent": "/Lotus/Types/Enemies/Sentients/Troopers/SentientBaseTrooperAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SentientRopalolystAvatar"
+        },
+        "MaxLevel": 50,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SentientRopalolystPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "DefaultSlot": "SLOT_1",
+        "ShouldIgnoreGCS": 0,
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "SuicideOnWaterRestrictionViolation": 0,
+        "IgnoredByGroupCoordinators": 1,
+        "AggroController:UseDynamicDifficulty": 0,
+        "AggroController:ForceAgentAggro": 1,
+        "AggroController:Entries": [
+            "/EE/Types/Npc/AggroEntry"
+        ],
+        "AggroController:AggroEntry": {
+            "Enabled": 1,
+            "IncreaseTimeLength": 1,
+            "DecayTimeLength": 1
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/RopalolystMovementModeBehavior",
+            "/Lotus/Types/Enemies/Sentients/Eidolon/Ropalolyst/RopalolystInAirBehaviors",
+            "/Lotus/Types/Enemies/Sentients/Eidolon/Ropalolyst/RopalolystOnGroundBehaviors",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "RopalolystMovementModeBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DiveAnimAction": "DIVE_LANDING",
+            "TakeOffAnimAction": "TAKE_OFF",
+            "MaxSearchDistance": 300,
+            "TakeOffHeight": 30
+        },
+        "RopalolystInAirBehaviors": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Actions": [
+                "/Lotus/Types/Behaviors/FlightDodgeBehavior",
+                "/EE/Types/Npc/BehaviorParallel"
+            ],
+            "FlightDodgeBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeBetweenDodges": [
+                    7,
+                    10
+                ],
+                "MinDodgeDistance": 15,
+                "MaxDodgeDistance": 40,
+                "MinDodgeAngle": 30,
+                "DodgeActions": [
+                    {
+                        "direction": "FORWARD",
+                        "action": "DodgeForward"
+                    },
+                    {
+                        "direction": "BACKWARD",
+                        "action": "DodgeBackward"
+                    },
+                    {
+                        "direction": "LEFT",
+                        "action": "DodgeLeft"
+                    },
+                    {
+                        "direction": "RIGHT",
+                        "action": "DodgeRight"
+                    },
+                    {
+                        "direction": "UPWARD",
+                        "action": "DodgeUp"
+                    }
+                ]
+            },
+            "BehaviorParallel": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "RequireAllToRun": 0,
+                "FailOnChildFailure": 0,
+                "Behaviors": [
+                    "/EE/Types/Npc/GenericBehaviorSelector",
+                    "/Lotus/Types/Enemies/Sentients/Eidolon/Ropalolyst/RopalolystFlightAbilities"
+                ],
+                "GenericBehaviorSelector": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "Actions": [
+                        "/Lotus/Types/Behaviors/FlyMultiTargetPositioningBehavior",
+                        "/EE/Types/Npc/MultiTargetFaceBehavior",
+                        "/EE/Types/Npc/WaitBehavior"
+                    ],
+                    "FlyMultiTargetPositioningBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "MoveFacingControl": "MFC_FACE_TARGET",
+                        "RepositionTime": 10,
+                        "DesiredDistToTargetMidPoint": [
+                            20,
+                            30
+                        ],
+                        "MaxTargetDistance": 100,
+                        "SuccessRadius": 4,
+                        "MinValidMidPointDist": 5,
+                        "MaxValidMidPointDist": 35,
+                        "MidPointRecalcDist": 4,
+                        "OnlyConsiderCurrTarget": 1
+                    },
+                    "MultiTargetFaceBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "AgentTargetWeight": 1,
+                        "MainHandTargetWeight": 1,
+                        "OffHandTargetWeight": 1,
+                        "RequiresWeapon": 1,
+                        "ChildAction:Type": "/EE/Types/Npc/Action",
+                        "ChildAction:Enabled": 1,
+                        "ChildAction:OnStartScript": {
+                            "Script": ""
+                        },
+                        "ChildAction:OnDamagedScript": {
+                            "Script": ""
+                        }
+                    },
+                    "WaitBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TimeOut": 5,
+                        "CoverOnly": 0,
+                        "AimPosture": 0,
+                        "MinimalEnemyDistance": 0,
+                        "TrackTarget": 0,
+                        "TrackTargetNotVisible": 0,
+                        "Peek": 0,
+                        "FailOnDamaged": 1,
+                        "PreventShooting": 0,
+                        "StopMovingOnEnter": 0
+                    },
+                    "FailOnChildFailure": 0
+                },
+                "RopalolystFlightAbilities": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.25,
+                    "BlockForPowerCompleteType": "BT_NEVER",
+                    "AllowInterruptOfAbility": 0,
+                    "StopFiring": 1,
+                    "StopMovingOnStart": 0,
+                    "ExtraReevaluationDelay": 0,
+                    "ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ActiveAction:Enabled": 1,
+                    "ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "EvaluateAction": 1,
+                    "FaceTarget": 0,
+                    "TurnAccuracyThreshold": 10,
+                    "TurnTimeout": 2,
+                    "AimTimeout": 0.5,
+                    "ValidAbilities": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "MaxProcessPerEval": 0,
+                    "AimAtTarget": 0,
+                    "CheckIfAbilityUnlocked": 0,
+                    "MultipleConcurrentAbilities": 0,
+                    "EvaluateDelayRange": [
+                        0,
+                        0
+                    ],
+                    "PreventUsageOnWeaponUse": 0,
+                    "TurnDuringAbility": 0,
+                    "DeactivateAbilitiesOnPredeath": 0,
+                    "ResetEvalTimerOnEnemySpotted": 0
+                }
+            },
+            "FailOnChildFailure": 0,
+            "RequiresFlightState": "RFS_FLYING",
+            "MovementIdx": 0
+        },
+        "RopalolystOnGroundBehaviors": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Actions": [
+                "/Lotus/Types/Enemies/Sentients/Eidolon/Ropalolyst/RopalolystGroundAbilities",
+                "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+                "/EE/Types/Npc/WaitBehavior"
+            ],
+            "RopalolystGroundAbilities": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0.25,
+                "BlockForPowerCompleteType": "BT_ABILITY_DRIVEN",
+                "AllowInterruptOfAbility": 0,
+                "StopFiring": 1,
+                "StopMovingOnStart": 0,
+                "ExtraReevaluationDelay": 0.2,
+                "ActiveAction:Type": "/EE/Types/Npc/Action",
+                "ActiveAction:Enabled": 1,
+                "ActiveAction:OnStartScript": {
+                    "Script": ""
+                },
+                "ActiveAction:OnDamagedScript": {
+                    "Script": ""
+                },
+                "EvaluateAction": 1,
+                "FaceTarget": 0,
+                "TurnAccuracyThreshold": 10,
+                "TurnTimeout": 2,
+                "AimTimeout": 0.5,
+                "ValidAbilities": [
+                    1,
+                    3
+                ],
+                "MaxProcessPerEval": 0,
+                "AimAtTarget": 0,
+                "CheckIfAbilityUnlocked": 0,
+                "MultipleConcurrentAbilities": 0,
+                "EvaluateDelayRange": [
+                    0.5,
+                    1
+                ],
+                "PreventUsageOnWeaponUse": 0,
+                "TurnDuringAbility": 1,
+                "DeactivateAbilitiesOnPredeath": 0,
+                "ResetEvalTimerOnEnemySpotted": 0
+            },
+            "TacPosIdealDistanceBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "FailOnQueryFailure": 0,
+                "ReevaluationDelayOnQueryFail": 0,
+                "RandomizeRange": 0,
+                "UseWeaponRange": 0,
+                "IdealDistance": [
+                    0,
+                    5
+                ],
+                "NumResults": 3,
+                "MinDistFromNavEdge": 10,
+                "GenerateFromTarget": 0,
+                "navType": "NT_NAVMESH",
+                "ScoreDistanceFromTarget": 1,
+                "DistanceFromTargetScoreRange": [
+                    0,
+                    50
+                ],
+                "HeightFromTargetRange": [
+                    0,
+                    0
+                ],
+                "UseTacAreaFilter": 0,
+                "ScoreDirectionFromTarget": 0,
+                "DistanceFromSelfRange": [
+                    0,
+                    30
+                ],
+                "EvaluateDistance": [
+                    0,
+                    200
+                ],
+                "StopRadius": 4,
+                "UpdateDestinationInterval": 0.5,
+                "UpdateDestinationDistance": 1,
+                "ForceRepositionTime": 5,
+                "OnlyTravelWhenVisible": 0,
+                "CompleteTravelWhenTargetLost": 1,
+                "AllowRetreat": 1,
+                "AllowRun": 0,
+                "LookAtTarget": 0,
+                "LockTarget": 0,
+                "OnlyFindPositionsOnFlightNav": 0,
+                "WalkFacingControl": "MFC_FACE_MOVEDIR",
+                "RunFacingControl": "MFC_FACE_MOVEDIR",
+                "SpeedMultiplier": [
+                    1,
+                    1
+                ],
+                "StopMovingOnExit": 1,
+                "SamplePointSpacing": 2,
+                "DoTacVisTrace": 0,
+                "DoVisRaycast": 0,
+                "WantTargetVisible": 0,
+                "WaitPeriodAfterVisibilityViolation": 0,
+                "PrioritizeVisibility": 0,
+                "DistanceScoreCurve": {
+                    "m": -1,
+                    "k": 2,
+                    "b": 1,
+                    "c": 0,
+                    "logistic": 0
+                },
+                "DirectionScoreCurve": {
+                    "m": 0,
+                    "k": 1,
+                    "b": 1,
+                    "c": 0,
+                    "logistic": 0
+                },
+                "AimWhileMoving": 0,
+                "ShootingDistance": 0,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_1",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                "ForceWeaponCancelOnStopFiring": 0
+            },
+            "WaitBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOut": 5,
+                "CoverOnly": 0,
+                "AimPosture": 0,
+                "MinimalEnemyDistance": 0,
+                "TrackTarget": 0,
+                "TrackTargetNotVisible": 0,
+                "Peek": 0,
+                "FailOnDamaged": 1,
+                "PreventShooting": 0,
+                "StopMovingOnEnter": 1
+            },
+            "FailOnChildFailure": 0,
+            "RequiresFlightState": "RFS_ON_GROUND",
+            "MovementIdx": 1
+        },
+        "WaitBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOut": 0,
+            "CoverOnly": 0,
+            "AimPosture": 0,
+            "MinimalEnemyDistance": 0,
+            "TrackTarget": 0,
+            "TrackTargetNotVisible": 0,
+            "Peek": 0,
+            "FailOnDamaged": 0,
+            "PreventShooting": 0,
+            "StopMovingOnEnter": 1
+        },
+        "CustomTravelBehavior": "/Lotus/Types/Enemies/Sentients/Eidolon/TeralystTravelBehavior",
+        "LocomotionController:Type": "/EE/Types/Npc/DynamicLocomotionController",
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderFlight",
+            "/EE/Types/Npc/DynamicPathFinderGround"
+        ],
+        "LocomotionController:DynamicPathFinderFlight": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 0,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1,
+            "MaxDestinationHeightCorrectionDistance": 0
+        },
+        "LocomotionController:DynamicPathFinderGround": {
+            "UseCover": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerFlight",
+            "/EE/Types/Npc/DynamicPathFollowerGround"
+        ],
+        "LocomotionController:DynamicPathFollowerFlight": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": 8,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 8,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "ForceFaceForwardWhenInactive": 1,
+            "PreferedDistAboveNav": [
+                12,
+                12
+            ],
+            "MoveHeightOffset": 5.5,
+            "DistanceToDisregardTurning": 8,
+            "DistanceToSlow": 30,
+            "MinimumSlowedSpeed": 8,
+            "MinimumSpeed": 0,
+            "RecoverySpeedPct": 0.6,
+            "CorrectHeightOnIdle": 0,
+            "AirplaneControls": 0,
+            "DesiredAngleRangeForBank": [
+                0,
+                0
+            ],
+            "BackUpForRecovery": 0,
+            "CanMoveWithoutPath": 0
+        },
+        "LocomotionController:DynamicPathFollowerGround": {
+            "MoveFailureTime": 0.4,
+            "MoveFailureThreshold": 0.9,
+            "LockedInPlaceTimeout": 5,
+            "KeepPathWhileBlocking": 0,
+            "MinimumMoveDistance": 0.1,
+            "MinimumRunDistance": 3,
+            "ShortDistanceSpeedMultiplier": 2,
+            "ForceSidestepDistance": 0,
+            "RunStopDist": 0.5,
+            "WalkStopDist": 0.3,
+            "MinWalkWhenTurningAngle": 120,
+            "StopWhenTurningAngle": 40,
+            "CheckFunnelForTightTurns": 1,
+            "MinReducedSpeed": 2,
+            "TurnAccelerationCompensation": 1,
+            "ReduceSpeedForTightTurns": 1,
+            "TraceOffset": [
+                0,
+                0.5,
+                0
+            ],
+            "TraceScoreCurve": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 0.99,
+                "logistic": 0
+            },
+            "TraceFwdBias": 2,
+            "SlopeThrottleMapping": [],
+            "EnableViewChange": 1,
+            "InitialAngleDiffForTurn": 0,
+            "ForceLookTarget": 0,
+            "ForcePredictUsingDesiredViewHeading": 0,
+            "TransitionDistance": 2,
+            "CoverWalkTransitionDistance": 0.5,
+            "AlternateCoverPoseTransitionDistance": 0,
+            "UseEndPoseForCoverWarp": 0,
+            "CanUseBendTransition": 0,
+            "MaximumHeightDifferenceForAlternateCover": 0,
+            "MaximumAngleForAlternateCover": 0,
+            "RoadNetworkTargetMinDistanceSqr": 50,
+            "RoadNetworkTargetMaxDistanceSqr": 400,
+            "UseVIPNav": 0,
+            "AvoidDynamicOnly": 0
+        },
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 10,
+            "minHeight": -10,
+            "preferredHeight": 12,
+            "nearbyNavSearchRadius": 5,
+            "offNavToleranceRadius": 0.25,
+            "maxShortenSteps": 0,
+            "useAvoidance": 1,
+            "disallowedNodeFlags": 409
+        },
+        "RegisterAvoidance": 0,
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 300,
+        "ViewFov": 360,
+        "VerticalFov": 90,
+        "ViewDistance": 300,
+        "ReactionControllerType": "",
+        "PerceiverType": "/Lotus/Types/Enemies/Sentients/Eidolon/Ropalolyst/RopalolystPerceiver",
+        "IsCoverUseEnabled": 0,
+        "CoverEvaluatorType": "/EE/Types/Npc/SimpleCoverEvaluator"
+    }
+}

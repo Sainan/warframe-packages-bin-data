@@ -1,0 +1,446 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "BaseInfestedMergooAvatar"
+        },
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "IgnoredByGroupCoordinators": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/BlackboardBehaviorSelector",
+            "/Lotus/Types/Behaviors/TargetFactionDecorator",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+            "/Lotus/Types/Behaviors/FlyInCirclesBehavior",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
+        "BlackboardBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlackboardType": "BBT_AGENT",
+            "Actions": [
+                {
+                    "VarName": "Flee",
+                    "Action:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0,
+                    "Action:Actions": [
+                        "/Lotus/Types/Behaviors/FlyEscapeWhenTooFarBehavior",
+                        "/EE/Types/Npc/FleeFromPerceptionFlyingBehavior"
+                    ],
+                    "Action:FlyEscapeWhenTooFarBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "DistanceFromAllPlayersForEscape": 300,
+                        "MinAgentAgeInSeconds": 10,
+                        "TimeBeforeDisappearing": 0,
+                        "EscapeAngleY": 30,
+                        "AllowedMoveError": 6,
+                        "SpeedMultiplier": 1,
+                        "OnEscapeScript": {
+                            "Script": "/Lotus/Scripts/Eidolon/Encounters/AnimalSpawns.lua",
+                            "Function": "BirdEscape",
+                            "_agentTypes": [],
+                            "_agentWeights": [
+                                1
+                            ],
+                            "_animalNightAvailable": [
+                                1
+                            ],
+                            "_animalDayAvailable": [
+                                1
+                            ],
+                            "_resourceAgentType": "",
+                            "_resourceAgentSpawnChance": 0.2,
+                            "_attackerAgentType": "",
+                            "_spawnOffsetVectorsList": [
+                                [
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            ],
+                            "_patrolHintOrderName": "PatrolTarget",
+                            "_patrolRadiusFromHintPos": 5,
+                            "_birdSpawnLocationBaseType": "",
+                            "_birdSpawnLocationTag": "BirdSpawn",
+                            "_birdSpawnIdlePerchType": "",
+                            "_birdSpawnIdleRoamingType": "",
+                            "_birdSpawnMinCount": 2,
+                            "_birdSpawnMaxCount": 2,
+                            "_randomizeRotation": 0,
+                            "_doDestroyOnEscape": 0,
+                            "_escapeDissolveTime": 1,
+                            "_carrionTypes": [],
+                            "_spawnDynamicBones": [
+                                1
+                            ],
+                            "_dynamicBoneTypes": [],
+                            "_dynamicBoneWeight": [
+                                1
+                            ],
+                            "_numBirdsMin": 3,
+                            "_numBirdsMax": 5,
+                            "_grineerAttackerChance": 0.2,
+                            "_rodentSpawnMinCount": 1,
+                            "_rodentSpawnMaxCount": 3,
+                            "_predatorAgentTypes": [],
+                            "_spawnAnimation": "",
+                            "_spawnCallSound": ""
+                        }
+                    },
+                    "Action:FleeFromPerceptionFlyingBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "PerceptionLevel": "PTL_INVESTIGATE",
+                        "OnlyReactOnParticularFaction": 0,
+                        "Faction": "",
+                        "FleeDirectionRandomness": 0.15,
+                        "SpeedMultiplier": 3,
+                        "FleeContinuationMode": "FCM_FLEE_FOREVER",
+                        "FleePointTag": "",
+                        "DisappearAfterTime": 0,
+                        "DisappearOutOfRangeTime": 0,
+                        "SetAwarenessOnFleeEnd": 0,
+                        "NewAlertness": "AW_SLEEPING",
+                        "TimeBeforeFleeing": [
+                            0.1,
+                            0.2
+                        ],
+                        "MaxPerceptionDistance": 160,
+                        "StopRadius": 1.5,
+                        "ComfortableDistance": 0,
+                        "DissolveTime": 0,
+                        "FleeWhenAlert": 1,
+                        "PlayPhrase": 1,
+                        "Bark": "RETREAT",
+                        "FlyingPhysicsBehavior": "",
+                        "DistanceToRun": [
+                            100,
+                            150
+                        ],
+                        "DistanceFromGround": 50,
+                        "DetectCollisionRange": 8
+                    },
+                    "Action:FailOnChildFailure": 0
+                }
+            ],
+            "FailOnChildFailure": 1
+        },
+        "TargetFactionDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/EE/Types/Npc/SetBlackboardVarBoolDecorator",
+            "ChildAction:SetBlackboardVarBoolDecorator": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "ChildAction:Type": "/EE/Types/Npc/Action",
+                "ChildAction:Action": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    }
+                },
+                "StopWhenChildStops": 1,
+                "VariableName": "Flee",
+                "BlackboardType": "BBT_AGENT",
+                "ClearOnStop": 0,
+                "Value": 1
+            },
+            "StopWhenChildStops": 1,
+            "Faction": "TENNO"
+        },
+        "CustomResponseBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Responses": [
+                {
+                    "reaction": "UNDER_FIRE",
+                    "responseAction:Type": "/EE/Types/Npc/SetBlackboardVarBoolDecorator",
+                    "responseAction:SetBlackboardVarBoolDecorator": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "ChildAction:Type": "/EE/Types/Npc/Action",
+                        "ChildAction:Action": {
+                            "Enabled": 1,
+                            "OnStartScript": {
+                                "Script": ""
+                            },
+                            "OnDamagedScript": {
+                                "Script": ""
+                            }
+                        },
+                        "StopWhenChildStops": 1,
+                        "VariableName": "Flee",
+                        "BlackboardType": "BBT_AGENT",
+                        "ClearOnStop": 0,
+                        "Value": 1
+                    }
+                }
+            ],
+            "BlockingResponse": 1
+        },
+        "MoveToDesiredScriptPositionBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "SpeedMultiplier": 1,
+            "StopRadius": 0.5,
+            "NearDistance": 2,
+            "FacingThreshold": 10,
+            "SucceedWhenNearPosition": 0,
+            "MovePosture": "RUN",
+            "FacingControl": "MFC_FACE_MOVEDIR",
+            "ClearDesiredPosOnAwareness": 0,
+            "TargetAwarenessToClear": "AW_SLEEPING",
+            "ClearDesiredPosOnSuccess": 1,
+            "StopMovingOnComplete": 1,
+            "TryRecover": 0,
+            "RecoverDist": 10,
+            "MaxRecoverTime": 10,
+            "StuckTime": 2,
+            "MaxFailures": 5,
+            "AllowFiring": 0
+        },
+        "FlyInCirclesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "RequireOrderTargetToEnable": 1,
+            "PatrolCenterOverrideOrder": "PatrolTarget",
+            "CirclingRadius": 12,
+            "CirclingRadiusJitter": 0,
+            "AngleBetweenConsecutiveMoveTargets": 0.523,
+            "StopRadius": 0.2,
+            "NeverCorrectDestHeight": 0,
+            "PreferredMinHeightFromGroundRange": [
+                10,
+                15
+            ],
+            "HeightDiffFromTargetForInvalidPos": 100,
+            "MovePosture": "RUN",
+            "MovePostureWhileAlert": "RUN",
+            "ForceToClockwiseDirection": 1,
+            "TurnOnDamageTime": 10,
+            "UseCreatorAsPatrolCenter": 0
+        },
+        "WaitBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOut": 5,
+            "CoverOnly": 0,
+            "AimPosture": 0,
+            "MinimalEnemyDistance": 0,
+            "TrackTarget": 0,
+            "TrackTargetNotVisible": 0,
+            "Peek": 0,
+            "FailOnDamaged": 1,
+            "PreventShooting": 0,
+            "StopMovingOnEnter": 0
+        },
+        "LocomotionController:Type": "/Lotus/Types/Game/DynamicSkyFlightLocomotionController",
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderSpace"
+        ],
+        "LocomotionController:DynamicPathFinderSpace": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 0,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerFlight"
+        ],
+        "LocomotionController:DynamicPathFollowerFlight": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 0.25,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "ForceFaceForwardWhenInactive": 1,
+            "PreferedDistAboveNav": [
+                8,
+                12
+            ],
+            "MoveHeightOffset": 0,
+            "DistanceToDisregardTurning": 1,
+            "DistanceToSlow": 12,
+            "MinimumSlowedSpeed": 8,
+            "MinimumSpeed": 0,
+            "RecoverySpeedPct": 0.6,
+            "CorrectHeightOnIdle": 0,
+            "AirplaneControls": 0,
+            "DesiredAngleRangeForBank": [
+                0,
+                0
+            ],
+            "BackUpForRecovery": 0,
+            "CanMoveWithoutPath": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierAvoidance",
+                    "/EE/Types/Npc/LocomotionMoveModifierPID"
+                ],
+                "LocomotionMoveModifierAvoidance": {
+                    "AllowVerticalAvoidance": 1,
+                    "AvoidanceInputMultiplier": [
+                        1.2,
+                        1.2,
+                        0.8
+                    ],
+                    "PreserveVelocity": 1,
+                    "MinAvoidanceReducedVelocityPct": 0,
+                    "FlyerControlMode": 0,
+                    "AllowedObstacleCountForMaxSpeed": 30,
+                    "ObstacleCountForMinSpeed": 200,
+                    "ObstacleSlowdownScalingExponent": 1.8,
+                    "MinSpeedScalingFromObstacles": 0.25,
+                    "AvoidDynamicObstaclesOnly": 0
+                },
+                "LocomotionMoveModifierPID": {
+                    "PosKP": 1,
+                    "PosKI": 0,
+                    "PosKD": 0.1,
+                    "VelKP": 1,
+                    "VelKI": 0,
+                    "VelKD": 0.1,
+                    "ClampValue": 1000,
+                    "PreserveVelocity": 1
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 3,
+            "nearbyNavSearchRadius": 1,
+            "offNavToleranceRadius": 0,
+            "useAvoidance": 0,
+            "disallowedNodeFlags": 393
+        },
+        "LocomotionController:ImplicitActionAheadDistance": 0.5,
+        "RegisterAvoidance": 0,
+        "ViewIdleFov": 90,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 20,
+        "ViewFov": 120,
+        "ViewDistance": 40,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "ReactionControllerType": "/Lotus/Types/NeutralCreatures/EarthConservation/CreatureReactionController",
+        "PerceiverType": "/Lotus/Types/NeutralCreatures/Conservation/BirdOfPrey/BirdOfPreyPerceiver",
+        "IsCoverUseEnabled": 0,
+        "CoverEvaluatorType": ""
+    }
+}

@@ -1,0 +1,165 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/GrineerMarineRifle",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "RifleLancerAvatar",
+            "EXIMUS": "RifleLancerLeaderAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Grenades/NpcOrokinThrowGrenadeWeapon",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            },
+            {
+                "item": "/Lotus/Weapons/Grineer/GrineerRifle/Rifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/MeleeTactic",
+            "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+            "/EE/Types/Npc/BuddyShieldTactic",
+            "/EE/Types/Npc/AttackFromCoverTactic",
+            "/EE/Types/Npc/UseGrenadeBehavior",
+            "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "InterruptResponseBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Responses": [
+                {
+                    "reaction": "ABOUT_TO_ENGAGE",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 1,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "/Lotus/Animations/Grineer/Movement/Point01Short",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 20,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                }
+            ],
+            "BlockingResponse": 1
+        },
+        "MeleeTactic": {
+            "SimpleMeleeAttackBehavior": {
+                "RequiresClearNavTrace": 0
+            }
+        },
+        "BuddyShieldTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Role": "GUNNER",
+            "DesiredOffsetFromBuddy": [
+                0,
+                0,
+                -1.2
+            ],
+            "MaxDistToShield": 10,
+            "ShootingOffset": [
+                0,
+                1.7,
+                1
+            ],
+            "ShootingOffsetFromBuddy": 1,
+            "AttackTime": [
+                2.5,
+                4
+            ],
+            "WaitTime": [
+                2,
+                3
+            ],
+            "PredictionTime": 0.5,
+            "UseBehindShieldPosture": 0,
+            "RunToFormUp": 1,
+            "JustStandBehindShield": 0,
+            "DecorativeReloads": 1,
+            "DesiredTimeBetweenReloads": [
+                3,
+                4
+            ],
+            "PositionPreferences": {
+                "canHide": 0,
+                "minSearchDistance": 0,
+                "maxSearchDistance": 10,
+                "distanceFromTarget": [
+                    0,
+                    20
+                ],
+                "tacLevel": 1,
+                "useTacAreaMap": 0,
+                "waterRestriction": "WS_OUT_WATER",
+                "coneDirection": [
+                    0,
+                    0,
+                    0
+                ],
+                "coneInclusionDot": 0
+            },
+            "MinDistanceToTarget": 6,
+            "StopRadius": 0.15,
+            "NearDistance": 0.3,
+            "SpeedMultiplier": 1
+        },
+        "AttackFromTheOpenBehavior": {
+            "ShootTime": [
+                3,
+                5
+            ],
+            "WaitTime": [
+                1,
+                2
+            ]
+        },
+        "ReactionControllerType": "OrokinReactionController",
+        "BaseHitChance": [
+            0.6,
+            1
+        ]
+    }
+}

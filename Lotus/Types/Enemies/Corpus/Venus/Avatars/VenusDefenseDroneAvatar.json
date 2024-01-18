@@ -1,0 +1,119 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Guild/Spaceman/CorpusSpacemanNullifierDroneVariant_skel.fbx",
+        "MeshScale": 3,
+        "OverrideMaterial": [
+            "VenusDefenseDrone/VenusDefenseDroneTop"
+        ],
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    -0.56,
+                    0.05
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_BASE",
+                "Type": "VenusDefenseDrone/VenusDefenseDroneHeadDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Characters/Corpus/Osprey/ShieldOsprey/Engine/ShieldOspreyLeaderFlyingHumSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/VenusDefenseDroneHover",
+        "Tag": "VenusDefenseDrone",
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/DroneHover.lua",
+            "Function": "DroneHover",
+            "_hoverSound": "",
+            "_pitchMin": 0.95,
+            "_pitchMax": 1.05,
+            "_boneDirectorInit": "",
+            "_boneOffset": [
+                0,
+                0,
+                0
+            ],
+            "_boneScale": [
+                1,
+                1,
+                1
+            ],
+            "_sequencerForEmissives": "",
+            "_minEmissive": 0.2
+        },
+        "EyeOffset": [
+            0,
+            0.5,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Corpus",
+        "LocTag": "/Lotus/Language/SolarisVenus/VenusDefenseDrone",
+        "LongDesc": "/Lotus/Language/SolarisVenus/VenusDefenseDroneDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Corpus/Venus/VenusDefenseDrone.png",
+        "MaxHealth": 500,
+        "DefaultThreatLevel": 2,
+        "DropTable": "/Lotus/Types/DropTables/CorpusShieldDroneAgentDropTable",
+        "AnimControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/VenusDefenseDroneAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "DamageControllerType": "/Lotus/Types/Enemies/Corpus/Drones/AIWeek/VenusDefenseDroneDamageController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/DroneInventoryController",
+        "MotionControllerType": "/Lotus/Types/Enemies/Grineer/GhostTower/GhostMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "BoneName": "GAME_C1_BASE",
+            "Type": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/HitProxies/VenusDefenseDroneFullBody"
+        },
+        "OnPreDeathScript": {
+            "Script": "/Lotus/Scripts/Venus/Encounters/DynamicDroneDefense.lua",
+            "Function": "OnPreDeath",
+            "_disableDroneSound": "",
+            "_containerAgentType": "",
+            "_enableBonus": 1,
+            "_allowAutoEncounters": 1,
+            "_initialSpawns": 0,
+            "_enemyFaction": "Corpus",
+            "_maxKillsOverride": 0
+        },
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataImmuneAll",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HoverDroneReactionAnims"
+    }
+}

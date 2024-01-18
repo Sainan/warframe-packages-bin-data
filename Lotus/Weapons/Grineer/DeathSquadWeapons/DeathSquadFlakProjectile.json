@@ -1,0 +1,85 @@
+{
+    "parent": "/Lotus/Types/Weapons/GunProjectile",
+    "data": {
+        "BakeShadowsOnLightMaps": 0,
+        "UseAmbient": 1,
+        "Mesh": "/Lotus/Weapons/Grineer/LongGuns/GrineerFlakCannon/FlakProjectileMesh.fbx",
+        "MeshScale": 4,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Grineer/DeathSquad/FlakProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicQuery",
+        "OnlyRegisterBounds": 0,
+        "AttackData": {
+            "DT_IMPACT": 0.2,
+            "DT_PUNCTURE": 0.2,
+            "DT_SLASH": 0.6,
+            "Amount": 30
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "CriticalChance": 0.05,
+        "CriticalMultiplier": 2,
+        "HitEffect": "/Lotus/Fx/Weapons/Grineer/FlakCannon/DeathSquadFlakCannonHitEffect",
+        "DieEffectOffset": [
+            0.05,
+            0.05,
+            0.05
+        ],
+        "IgnoreCollisionsWithSameType": 1,
+        "IgnoreTypes": [
+            "/Lotus/Types/Game/LotusNpcAvatar"
+        ],
+        "BounceOnAvatars": 0,
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_ELECTRICITY",
+            "Amount": 25,
+            "ProcChance": 0.2
+        },
+        "EmbedDamageRadius": 4,
+        "EmbedTime": [
+            5,
+            5
+        ],
+        "EmbedDeathAttack": {
+            "Amount": 100,
+            "ProcChance": 1
+        },
+        "EmbedEffect": "/Lotus/Fx/Enemies/Grineer/DeathSquad/FlakEmbedLightning",
+        "OwnEmbedEffect": 1,
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 20,
+        "KinematicMaxSpeed": 20,
+        "KinematicNoise": 0.05,
+        "KinematicGravity": 1,
+        "KinematicGravityMultiplier": 0,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/DeathSquadFlak.lua",
+            "Function": "OnAttached",
+            "_damagePerSecond": 0
+        }
+    }
+}

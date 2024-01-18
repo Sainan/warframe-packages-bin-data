@@ -1,0 +1,292 @@
+{
+    "parent": "/Lotus/Types/Enemies/TennoReplicants/TennoReplicantAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Narmer/ArchonArmar/ArchonAmar_skel.fbx",
+        "MeshScale": 1.25,
+        "AnimationName": "ArchonAmar",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Archon/AmarEphemeraFX",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "ArchonHoverWalk",
+        "Tag": "ArchonAmarAvatar",
+        "ScriptInstance": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Archon/AmarHowl2.lua",
+            "Function": "initBoss",
+            "_minRange": 15,
+            "_maxRange": 45,
+            "_teleportWindupAnim": "",
+            "_healthThreshold": 0.9,
+            "_attackCloneDeco": "",
+            "_idleAnim": "",
+            "_cloneCount": 15,
+            "_castSound": "",
+            "_maxHealAmount": 3000,
+            "_healRate": 150,
+            "_healFxType": "",
+            "_isPostNewWar": 0,
+            "_explosionTime": [
+                4,
+                3,
+                2,
+                1,
+                0.5
+            ],
+            "_shockwave": "",
+            "_shockwaveActivateAnim": "",
+            "_shockwaveCastSound": "",
+            "_nearbyCutoffRange": 20,
+            "_overguardAmount": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "_struggleSym": "ArchonStruggle",
+            "_healRateMultipler": [
+                0.3,
+                0.9,
+                1.3,
+                1.9
+            ],
+            "_bossKillMarker": "",
+            "_paintedMarkerInfo": "/Lotus/Types/Game/MarkerInfos/PaintedMarkerInfo"
+        },
+        "ReplicaRunScriptInstance": 0,
+        "Faction": "Sentient",
+        "LocTag": "/Lotus/Language/Narmer/ArchonAmar",
+        "Icon": "/Lotus/Interface/Icons/Store/Excalibur.png",
+        "MaxHealth": 18000,
+        "VoiceBoxVariants": [
+            "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Vocals/ArchonAmarVoiceBox"
+        ],
+        "DropTable": "",
+        "AnimControllerType": "ArchonAmarAnimController",
+        "DamageControllerType": "ArchonAmarDamageController",
+        "MotionControllerType": "ArchonFlyingMotionController",
+        "RaycastProxy": {
+            "Type": "Proxies/AmarFullBody"
+        },
+        "OnPreDeathScript": {
+            "Script": "ArchonAvatarScript.lua",
+            "Function": "OnPreDeath",
+            "_counterDecayDelay": 5,
+            "_damageCounterDecay": 0.01,
+            "_damageCounterPct": 0.01,
+            "_niraPropInstance": "",
+            "_chaseNiraSprintMult": 2.5,
+            "_chaseNiraWalkMult": 0.3,
+            "_chaseNiraSprintDist": 30,
+            "_chaseNiraWalkDist": 10,
+            "_killPlayerIfClose": 0,
+            "_killObjectiveMarkerType": "/Lotus/Types/Game/MarkerInfos/ObjectiveMarkerInfo",
+            "_TimeInvulBeforePreDeath": 1,
+            "_finisherAction": "ArchonAmarDrifterFinisherAction",
+            "_drifterOperatorFinisherType": "",
+            "_adultOperatorCinematicId": "AdultOperator",
+            "_victimCinematicId": "ArchonNira",
+            "_healthThreshold": 0.7,
+            "_flatDistanceToNavOnPreDeathToTeleport": 1.7,
+            "_distanceToNavOnPreDeathToTeleport": 3,
+            "_archonTeleportFx": "/Lotus/Fx/Quests/SecondDream/StalkerTeleportIn",
+            "_smokeDecoType": "/Lotus/Fx/PowersuitAbilities/Drifter/DrifterSmokeBombDeco",
+            "_smokeProjectileType": "/Lotus/Types/Friendly/PlayerControllable/Abilities/DrifterTossProjectile",
+            "_struggleSym": "ArchonStruggle",
+            "_struggleHealthThresholds": [
+                0.7,
+                0.4,
+                0.1
+            ],
+            "_isPostNewWar": 0
+        },
+        "SoundEvents": [
+            {
+                "EventName": "SFXAmarJumpHeavyLand",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Movement/ArchonAmarJumpHeavyLand",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXAmarJumpLaunch",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Movement/ArchonAmarJumpLaunch",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXAmarFurySwipeEndGrowl",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Vocals/ArchonAmarFurySwipeEndGrowl",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXAmarHowl",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Vocals/ArchonAmarAlertedHowl",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXAmarFlameCoilShot",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Abilities/ArchonAmarFlameCoilAbilityShot",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXAmarReanimateCast",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Abilities/ArchonAmarReanimateAbilityCast",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXAmarChargeFoley",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Abilities/ArchonAmarChargeAbilityFoley",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": "SFXAmarChargeFoleyStop"
+            },
+            {
+                "EventName": "SFXAmarAbilityWarningScream",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Vocals/ArchonAmarAbilityWarningScream",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXAmarFinisherMiniDeath",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Finishers/ArchonAmarFinisherMiniDeath",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXGemRipAmar",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/FinisherGemRips/ArchonFinisherRipGemAmar",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXAmarDeathScream",
+                "Sound": "/Lotus/Sounds/Quests/TheNewWar/Enemies/Archon/Amar/Vocals/ArchonAmarDeathScream",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "VoiceBoxEvents": [
+            {
+                "EventName": "SFXAmarGrunt",
+                "Phrase": "INTIMIDATE",
+                "Filter": "AmarGrunt",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXAmarAttack",
+                "Phrase": "CHARGE_SCREAM",
+                "Filter": "AmarAttack",
+                "Chance": 1
+            },
+            {
+                "EventName": "SFXAmarMeleeGrunt",
+                "Phrase": "USING_ABILITY",
+                "Filter": "MeleeGrunt",
+                "Chance": 1
+            }
+        ],
+        "ForceFeedbackEffectEvents": [
+            {
+                "EventName": "",
+                "ForceFeedbackEffect": ""
+            }
+        ],
+        "ParticleEvents": [
+            {
+                "EventName": "HeadDissolve",
+                "ParticleSys": "/Lotus/Fx/Enemies/Archon/ArchonDeathHeadDissolveFX",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "FXGemRip",
+                "ParticleSys": "/Lotus/Fx/Quests/NewWar/PartTwo/ArchonGemPullFXAmar",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_GEM",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "KillXPReward": 1500,
+        "UINameAttachOffset": [
+            0,
+            0.75,
+            0
+        ],
+        "ShowLevelInHud": 0,
+        "ExcludedFromSimulacrum": 1,
+        "CodexScansRequiredOverride": 1,
+        "AbilityResistanceData": "AbilityResistanceDataArchon",
+        "ReactionAnims": ""
+    }
+}

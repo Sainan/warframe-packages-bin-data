@@ -1,0 +1,449 @@
+{
+    "parent": "/Lotus/Types/NeutralCreatures/Kubrow/KubrowAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "DuvSheepAvatar"
+        },
+        "AiDirThreatWeight": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/FormationTactic"
+        ],
+        "FormationTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "GroupType": "GT_LEADER_FORMATION",
+            "SwapSlotsRandomly": 0,
+            "SwapSlotInterval": [
+                5,
+                10
+            ],
+            "MaxDistToLeader": 10,
+            "RingDist": [
+                1,
+                3
+            ],
+            "MaxMovementDistance": 100,
+            "MaxJoinDistanceWileFleeing": 20,
+            "SuccessRadius": 0.5,
+            "StopRadius": 0.5,
+            "AllowRun": 1,
+            "MoveFacingControl": "MFC_FACE_MOVEDIR",
+            "MinDistToTarget": 0,
+            "ExitReevaluationTime": 5,
+            "TurnAngleThreshold": 30,
+            "FollowerPositions": [],
+            "Formation:Type": "/EE/Types/Npc/FixedFormation",
+            "Formation:FixedFormation": {
+                "FollowerPositions": [
+                    [
+                        2,
+                        0,
+                        2
+                    ],
+                    [
+                        2,
+                        0,
+                        -2
+                    ],
+                    [
+                        -2,
+                        0,
+                        2
+                    ],
+                    [
+                        -2,
+                        0,
+                        -2
+                    ],
+                    [
+                        1,
+                        0,
+                        3
+                    ],
+                    [
+                        3,
+                        0,
+                        1
+                    ],
+                    [
+                        -1,
+                        0,
+                        3
+                    ],
+                    [
+                        -3,
+                        0,
+                        -1
+                    ],
+                    [
+                        6,
+                        0,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        5
+                    ],
+                    [
+                        -5,
+                        0,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        -6
+                    ],
+                    [
+                        4,
+                        0,
+                        5
+                    ],
+                    [
+                        -4,
+                        0,
+                        5
+                    ],
+                    [
+                        4,
+                        0,
+                        -5
+                    ],
+                    [
+                        -4,
+                        0,
+                        5
+                    ],
+                    [
+                        2,
+                        0,
+                        5.5
+                    ],
+                    [
+                        -2,
+                        0,
+                        5.5
+                    ],
+                    [
+                        2,
+                        0,
+                        -5.5
+                    ],
+                    [
+                        -2,
+                        0,
+                        -5.5
+                    ],
+                    [
+                        1,
+                        0,
+                        7
+                    ],
+                    [
+                        1,
+                        0,
+                        -7
+                    ],
+                    [
+                        -2,
+                        0,
+                        -7
+                    ],
+                    [
+                        4,
+                        0,
+                        -3
+                    ]
+                ]
+            },
+            "ForceLeader": "FL_SELECT_BEST_LEADER",
+            "OnlyEnhancedCanLead": 0,
+            "LeaderPriority": 0,
+            "EnhancedPriorityBoost": 1,
+            "CombatSetting": "CS_NO_RESTRICTION",
+            "NeedsTarget": 0,
+            "PatrolRouteOnly": 0,
+            "RecruitFromPatrols": 0,
+            "FormationIdentifier": "",
+            "MergeThreshold": 0,
+            "LeaderAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+            "LeaderAction:Enabled": 1,
+            "LeaderAction:OnStartScript": {
+                "Script": ""
+            },
+            "LeaderAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "LeaderAction:DefaultReevaluationDelay": 0,
+            "LeaderAction:Actions": [
+                "/EE/Types/Npc/FleeFromPerceptionBehavior",
+                "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+                "/EE/Types/Npc/RadialPatrolBehavior",
+                "/EE/Types/Npc/OrderConstrainedRandomTacWalkBehavior",
+                "/EE/Types/Npc/GuardBehavior"
+            ],
+            "LeaderAction:FleeFromPerceptionBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "PerceptionLevel": "PTL_INVESTIGATE",
+                "OnlyReactOnParticularFaction": 0,
+                "Faction": "",
+                "FleeDirectionRandomness": 0,
+                "SpeedMultiplier": 1,
+                "FleeContinuationMode": "FCM_FLEE_FOREVER",
+                "FleePointTag": "CreatureHome",
+                "DesiredDistanceToFleePoint": 1,
+                "PerceiptionDirectionWeightFactor": 0,
+                "DisappearAfterTime": 0,
+                "DisappearOutOfRangeTime": 0,
+                "AnimActionOnFleeEnd": "",
+                "SetAwarenessOnFleeEnd": 0,
+                "NewAlertness": "AW_SLEEPING",
+                "TimeBeforeFleeing": [
+                    0.05,
+                    0.15
+                ],
+                "MaxPerceptionDistance": 80,
+                "StopRadius": 1.5,
+                "ComfortableDistance": 60,
+                "DissolveTime": 0,
+                "FleeWhenAlert": 0,
+                "PlayPhrase": 1,
+                "Bark": "RETREAT"
+            },
+            "LeaderAction:MoveToDesiredScriptPositionBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SpeedMultiplier": 1,
+                "StopRadius": 0.5,
+                "NearDistance": 2,
+                "FacingThreshold": 10,
+                "SucceedWhenNearPosition": 0,
+                "MovePosture": "JOG",
+                "FacingControl": "MFC_FACE_MOVEDIR",
+                "ClearDesiredPosOnAwareness": 0,
+                "TargetAwarenessToClear": "AW_SLEEPING",
+                "ClearDesiredPosOnSuccess": 1,
+                "StopMovingOnComplete": 1,
+                "TryRecover": 0,
+                "RecoverDist": 10,
+                "MaxRecoverTime": 10,
+                "StuckTime": 2,
+                "MaxFailures": 5,
+                "AllowFiring": 0
+            },
+            "LeaderAction:RadialPatrolBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "StopRadius": 0.5,
+                "NearDistance": 1,
+                "SpeedMultiplier": 0.7,
+                "AlertSpeedMultiplier": 1,
+                "MinPlayerDist": [
+                    0,
+                    0
+                ],
+                "MinPlayerFov": 60,
+                "NumPoints": 8,
+                "PatrolRadius": 8,
+                "WaitTIme": [
+                    15,
+                    20
+                ],
+                "ExitBehaviorInsteadOfWaiting": 0,
+                "CanExecuteWithValidTarget": 1,
+                "CanExecuteWhileAiming": 1,
+                "DefaultPosture": "WALK",
+                "UseRunPostureIfTargetIsValid": 0
+            },
+            "LeaderAction:OrderConstrainedRandomTacWalkBehavior": {
+                "Enabled": 0,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "StopRadius": 2,
+                "NearDistance": 4,
+                "SpeedMultiplier": 0.7,
+                "AlertSpeedMultiplier": 1,
+                "AllowTarget": 1,
+                "AimWhenIdle": 0,
+                "AimWhenAlert": 0,
+                "PermanentAlert": 0,
+                "ForceIdleForSinglePointPatrols": 1,
+                "AnimAction": "PatrolIdle",
+                "GenericAnims": [],
+                "MinPlayerDist": [
+                    0,
+                    0
+                ],
+                "MinPlayerFov": 60,
+                "PauseTime": [
+                    15,
+                    20
+                ],
+                "TimeBetweenPauses": [
+                    0,
+                    0
+                ],
+                "ReevaluationDelayOnAbortedMove": 5,
+                "PlayPhrase": 1,
+                "Bark": "IDLE",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    0,
+                    0
+                ],
+                "StartUpDelay": [
+                    0,
+                    0
+                ],
+                "UseWasAlert": 0,
+                "ScanLength": 2,
+                "MovementPosture": "WALK",
+                "TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
+                "TeammateBarkBehavior:Enabled": 1,
+                "TeammateBarkBehavior:OnStartScript": {
+                    "Script": ""
+                },
+                "TeammateBarkBehavior:OnDamagedScript": {
+                    "Script": ""
+                },
+                "TeammateBarkBehavior:DefaultReevaluationDelay": 0,
+                "TeammateBarkBehavior:StopForTeammateDuration": [
+                    3,
+                    6
+                ],
+                "TeammateBarkBehavior:DontStopForTeammateDuration": 30,
+                "TeammateBarkBehavior:PostFailureEvaluationDelay": [
+                    3,
+                    3
+                ],
+                "TeammateBarkBehavior:AllowableTeammateAngle": 90,
+                "TeammateBarkBehavior:TeammateSearchDistance": 5,
+                "TeammateBarkBehavior:TeammateBark": "IDLE",
+                "TeammateBarkBehavior:TeammateBarkFilter": "",
+                "UseDefenseVolume": 0,
+                "EvaluateMoveScript": {
+                    "Script": ""
+                },
+                "OnlyFindPositionsOnFlightNav": 0,
+                "MaxPatrolDistanceFromEncounterHint": 0,
+                "OrderName": "PatrolTarget"
+            },
+            "LeaderAction:GuardBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+                "WaitAction:Enabled": 1,
+                "WaitAction:OnStartScript": {
+                    "Script": ""
+                },
+                "WaitAction:OnDamagedScript": {
+                    "Script": ""
+                },
+                "RandomFacingChange": [
+                    0,
+                    0
+                ],
+                "MinHeadingChangeToTurn": 0
+            },
+            "LeaderAction:FailOnChildFailure": 0,
+            "FollowerAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+            "FollowerAction:Enabled": 1,
+            "FollowerAction:OnStartScript": {
+                "Script": ""
+            },
+            "FollowerAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "FollowerAction:DefaultReevaluationDelay": 0,
+            "FollowerAction:Actions": [
+                "/EE/Types/Npc/WaitBehavior"
+            ],
+            "FollowerAction:WaitBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOut": 0,
+                "CoverOnly": 0,
+                "AimPosture": 0,
+                "MinimalEnemyDistance": 0,
+                "TrackTarget": 0,
+                "Peek": 0,
+                "FailOnDamaged": 0,
+                "PreventShooting": 0,
+                "StopMovingOnEnter": 0
+            },
+            "FollowerAction:FailOnChildFailure": 0,
+            "AllowInDefenseVolumes": 1,
+            "AllowSlotRearrangement": 1,
+            "RearrangeThreshold": 0,
+            "FollowerCrouchWhenInFormation": 0,
+            "FollowerIdleAnim": "",
+            "RandomFollowerDelay": 1,
+            "FollowerDelayRange": [
+                0,
+                1
+            ],
+            "PeriodicBarkTiming": [
+                0.5,
+                2
+            ],
+            "PeriodicBark": "IDLE",
+            "CatchUpDistance": 10,
+            "CatchUpMult": 1
+        },
+        "UseExtraViewCone": 1,
+        "ViewIdleFov": 360,
+        "ViewIdleDistance": 25,
+        "ExtraViewConeIdleFovFactor": 1.8,
+        "ViewFov": 360,
+        "ViewDistance": 100,
+        "ExtraViewConeAlertFovFactor": 1.8,
+        "ReactionControllerType": "/Lotus/Types/NeutralCreatures/EarthConservation/CreatureReactionController",
+        "PerceiverType": "/Lotus/Types/NeutralCreatures/Conservation/ForestRodent/ForestRodentPerceiver",
+        "MusicWeight": 0
+    }
+}

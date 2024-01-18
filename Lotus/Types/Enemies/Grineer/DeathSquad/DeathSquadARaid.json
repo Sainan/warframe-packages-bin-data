@@ -1,0 +1,477 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/GrineerMarineRifle",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/DeathSquadAvatarA"
+        },
+        "MinLevel": 6,
+        "BaseLevel": 6,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Grenades/EliteGrineerNpcThrowGrenadeWeapon",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            },
+            {
+                "item": "/Lotus/Weapons/Grineer/DeathSquadWeapons/DeathSquadFlakCannon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/DefensiveDodgeJumpBehavior",
+            "/Lotus/Types/Behaviors/PursueDodgeJumpBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/MeleeTactic",
+            "/EE/Types/Npc/BuddyShieldTactic",
+            "/EE/Types/Npc/AttackFromCoverTactic",
+            "/EE/Types/Npc/UseGrenadeBehavior",
+            "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "InterruptResponseBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Responses": [
+                {
+                    "reaction": "CONTEXT_BARK",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 1,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "DODGE_MELEE_ATTACK",
+                    "responseAction:Type": "/Lotus/Types/Behaviors/DodgeMeleeAttackReaction",
+                    "responseAction:DodgeMeleeAttackReaction": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "/Lotus/Animations/Grineer/MeleeDodge/DodgeLeft",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0,
+                        "DodgeAnims": {
+                            "STATIONARY": "",
+                            "FORWARD": "",
+                            "BACKWARD": "/Lotus/Animations/Grineer/MeleeDodge/DodgeBackwards",
+                            "LEFT": "/Lotus/Animations/Grineer/MeleeDodge/DodgeLeft",
+                            "RIGHT": "/Lotus/Animations/Grineer/MeleeDodge/DodgeRight",
+                            "STOPPING": "",
+                            "UPWARD": "",
+                            "DOWNWARD": ""
+                        },
+                        "DistanceFromTargetPoint": 0.4
+                    }
+                }
+            ],
+            "BlockingResponse": 1
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "ExtraReevaluationDelay": 2,
+            "FaceTarget": 1,
+            "ValidAbilities": [
+                0
+            ]
+        },
+        "DefensiveDodgeJumpBehavior": {
+            "Enabled": 0,
+            "OnStartScript": {
+                "Script": "/Lotus/Scripts/Effects/AttachFX.lua",
+                "Function": "AttachToAvatarFromBehavior",
+                "_typeToKill": "",
+                "_typesToKill": [],
+                "_typeToAttach": "/Lotus/Fx/Enemies/Grineer/DeathSquad/DodgeEffect",
+                "_attachToThis": "",
+                "_attachToArray": [],
+                "_isAttachedToThis": "",
+                "_isAttachedToThisArray": [],
+                "_attachPos": [
+                    0,
+                    0,
+                    0
+                ],
+                "_attachRot": [
+                    0,
+                    0,
+                    0
+                ],
+                "_delay": 0,
+                "_attachmentType": "",
+                "_isEnable": 1,
+                "_bone": "",
+                "_newMesh": "",
+                "_masterOnly": 1,
+                "_stopSpewing": 0,
+                "_destrySelfIfNotLocal": 0,
+                "_beamAttachBones": [],
+                "_beamEndBones": []
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "UseDirectionalActions": 0,
+            "DirectionalActions:STATIONARY": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:FORWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:BACKWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:LEFT": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:RIGHT": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:STOPPING": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:UPWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:DOWNWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "FullBodyAction": "FBA_NONE",
+            "Action": "DodgeJump",
+            "UseTacPosMgr": 0,
+            "IdealJumpDist": [
+                2,
+                5
+            ],
+            "MaxJumpDist": 200,
+            "ShouldFaceTarget": 0,
+            "GeneratePointsAroundTarget": 0,
+            "GeneratePointsDistance": [
+                6,
+                10
+            ],
+            "GenerateSpacing": 3,
+            "MinDistanceToNavEdge": 0,
+            "PreventDodgeOnAnimBlocked": 0,
+            "DoTacVisTrace": 1,
+            "DoGeoRaycast": 0,
+            "StaticShapesOnly": 1,
+            "TacVisToTarget": 1,
+            "ScoreDistToTarget": 1,
+            "ScoreDistanceResponseCurve": {
+                "m": -3,
+                "k": 2,
+                "b": 1,
+                "c": 0.5,
+                "logistic": 0
+            },
+            "ScoreDirectionFromTarget": {
+                "m": 10,
+                "k": 1,
+                "b": 0,
+                "c": 0.25,
+                "logistic": 1
+            },
+            "DoTargetViewScore": 0,
+            "ScoreDirectionFromTargetView": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 1,
+                "logistic": 0
+            },
+            "NumResults": 1,
+            "TargetRange": 0,
+            "DodgeIfAimedAtDistance": 30,
+            "DamageThreshold": 100,
+            "RepositionTime": 1,
+            "DodgeIfAimedAt": 0,
+            "ForceDodge": 0
+        },
+        "PursueDodgeJumpBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": "/Lotus/Scripts/Effects/AttachFX.lua",
+                "Function": "AttachToAvatarFromBehavior",
+                "_typeToKill": "",
+                "_typesToKill": [],
+                "_typeToAttach": "/Lotus/Fx/Enemies/Grineer/DeathSquad/DodgeEffect",
+                "_attachToThis": "",
+                "_attachToArray": [],
+                "_isAttachedToThis": "",
+                "_isAttachedToThisArray": [],
+                "_attachPos": [
+                    0,
+                    0,
+                    0
+                ],
+                "_attachRot": [
+                    0,
+                    0,
+                    0
+                ],
+                "_delay": 0,
+                "_attachmentType": "",
+                "_isEnable": 1,
+                "_bone": "",
+                "_newMesh": "",
+                "_masterOnly": 1,
+                "_stopSpewing": 0,
+                "_destrySelfIfNotLocal": 0,
+                "_beamAttachBones": [],
+                "_beamEndBones": []
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "UseDirectionalActions": 0,
+            "DirectionalActions:STATIONARY": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:FORWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:BACKWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:LEFT": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:RIGHT": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:STOPPING": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:UPWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:DOWNWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "FullBodyAction": "FBA_NONE",
+            "Action": "DodgeJump",
+            "UseTacPosMgr": 1,
+            "IdealJumpDist": [
+                10,
+                50
+            ],
+            "MaxJumpDist": 200,
+            "ShouldFaceTarget": 0,
+            "GeneratePointsAroundTarget": 1,
+            "GeneratePointsDistance": [
+                12,
+                20
+            ],
+            "GenerateSpacing": 5,
+            "MinDistanceToNavEdge": 0,
+            "PreventDodgeOnAnimBlocked": 0,
+            "DoTacVisTrace": 0,
+            "DoGeoRaycast": 0,
+            "StaticShapesOnly": 1,
+            "TacVisToTarget": 1,
+            "ScoreDistToTarget": 0,
+            "ScoreDistanceResponseCurve": {
+                "m": -1,
+                "k": 1,
+                "b": 1,
+                "c": 0,
+                "logistic": 0
+            },
+            "ScoreDirectionFromTarget": {
+                "m": 0,
+                "k": 1,
+                "b": 1,
+                "c": 0,
+                "logistic": 1
+            },
+            "DoTargetViewScore": 0,
+            "ScoreDirectionFromTargetView": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 1,
+                "logistic": 0
+            },
+            "NumResults": 1,
+            "RepositionTime": 2,
+            "DistanceToTarget": [
+                20,
+                200
+            ],
+            "LastSeenTime": 5,
+            "MustHaveSeenTargetPersonally": 0,
+            "PursueWhenPlayersDown": 0,
+            "OnlyPursueTENNO": 0
+        },
+        "MeleeTactic": {
+            "SimpleMeleeAttackBehavior": {
+                "RequiresClearNavTrace": 0
+            }
+        },
+        "BuddyShieldTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Role": "GUNNER",
+            "DesiredOffsetFromBuddy": [
+                0,
+                0,
+                -1.2
+            ],
+            "MaxDistToShield": 10,
+            "ShootingOffset": [
+                0,
+                1.7,
+                1
+            ],
+            "ShootingOffsetFromBuddy": 1,
+            "AttackTime": [
+                2.5,
+                4
+            ],
+            "WaitTime": [
+                2,
+                3
+            ],
+            "PredictionTime": 0.5,
+            "UseBehindShieldPosture": 0,
+            "RunToFormUp": 1,
+            "JustStandBehindShield": 0,
+            "DecorativeReloads": 1,
+            "DesiredTimeBetweenReloads": [
+                3,
+                4
+            ],
+            "PositionPreferences": {
+                "canHide": 0,
+                "minSearchDistance": 0,
+                "maxSearchDistance": 10,
+                "distanceFromTarget": [
+                    0,
+                    20
+                ],
+                "tacLevel": 1,
+                "useTacAreaMap": 0,
+                "waterRestriction": "WS_OUT_WATER",
+                "coneDirection": [
+                    0,
+                    0,
+                    0
+                ],
+                "coneInclusionDot": 0
+            },
+            "MinDistanceToTarget": 6,
+            "StopRadius": 0.3,
+            "NearDistance": 0.5,
+            "SpeedMultiplier": 1
+        },
+        "AttackFromTheOpenBehavior": {
+            "ShootTime": [
+                6,
+                6
+            ],
+            "WaitTime": [
+                1,
+                2
+            ]
+        },
+        "ViewIdleFov": 120,
+        "IdleVerticalFov": 40,
+        "ViewIdleDistance": 120,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "AncientTargetTime": 300,
+        "SuperAlertRadius": 20000,
+        "IgnoredFactions": [
+            "Infestation",
+            "Corpus",
+            "Orokin"
+        ],
+        "CustomLevelScalingScript": {
+            "Script": "/Lotus/Types/Enemies/SimpleBossScaling.lua",
+            "Function": "CalculateVIPLevel"
+        }
+    }
+}

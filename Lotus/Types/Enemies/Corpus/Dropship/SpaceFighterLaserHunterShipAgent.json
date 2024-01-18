@@ -1,0 +1,190 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SpaceFighterLaserHunterShipAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "GasFighterProjWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "BehaviorDatabase": [
+            "/Lotus/Types/Behaviors/FlyEscapeWhenTooFarBehavior",
+            "/Lotus/Types/Behaviors/SimpleShootBehavior",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "FlyEscapeWhenTooFarBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DistanceFromAllPlayersForEscape": 300,
+            "MinAgentAgeInSeconds": 30,
+            "TimeBeforeDisappearing": 0,
+            "EscapeAngleY": 30,
+            "AllowedMoveError": 100,
+            "SpeedMultiplier": 1,
+            "OnEscapeScript": {
+                "Script": ""
+            }
+        },
+        "SimpleShootBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "AttackSegmentTime": [
+                60,
+                60
+            ],
+            "TimeBetweenAttacks": [
+                0.1,
+                0.1
+            ],
+            "AttackRange": [
+                0,
+                100
+            ],
+            "RequireAim": 0,
+            "StartAimAction": "",
+            "StopAimAction": "",
+            "AimHeadingOffset": 0,
+            "AimArc": 90,
+            "ExitIfCannotShoot": 1,
+            "UseAltFire": 0,
+            "ChangeWeapons": 0,
+            "WeaponSlot": "SLOT_1",
+            "WeaponHand": "MAIN_HAND",
+            "EquipStyle": "ES_PLAY_EQUIP_ANIM"
+        },
+        "WaitBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOut": 5,
+            "CoverOnly": 0,
+            "AimPosture": 0,
+            "MinimalEnemyDistance": 0,
+            "TrackTarget": 0,
+            "Peek": 0,
+            "FailOnDamaged": 1,
+            "PreventShooting": 0,
+            "StopMovingOnEnter": 0
+        },
+        "LocomotionController:Type": "/EE/Types/Npc/DynamicLocomotionControllerHover",
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderSpace"
+        ],
+        "LocomotionController:DynamicPathFinderSpace": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 1,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerFlight"
+        ],
+        "LocomotionController:DynamicPathFollowerFlight": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 4,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "PreferedDistAboveNav": [
+                8,
+                12
+            ],
+            "MoveHeightOffset": 0,
+            "DistanceToDisregardTurning": 1,
+            "DistanceToSlow": 12,
+            "MinimumSlowedSpeed": 8,
+            "MinimumSpeed": 0,
+            "RecoverySpeedPct": 0.6,
+            "CorrectHeightOnIdle": 0,
+            "AirplaneControls": 0,
+            "DesiredAngleRangeForBank": [
+                0,
+                0
+            ],
+            "BackUpForRecovery": 0,
+            "CanMoveWithoutPath": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierPID"
+                ],
+                "LocomotionMoveModifierPID": {
+                    "PosKP": 1,
+                    "PosKI": 0,
+                    "PosKD": 0.1,
+                    "VelKP": 1,
+                    "VelKI": 0,
+                    "VelKD": 0.1,
+                    "ClampValue": 1000,
+                    "PreserveVelocity": 1
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 5,
+            "minHeight": 0,
+            "preferredHeight": 1,
+            "offNavToleranceRadius": 1,
+            "maxShortenSteps": 20,
+            "useAvoidance": 0,
+            "disallowedNodeFlags": 393
+        },
+        "LocomotionController:ImplicitActionAheadDistance": 0.5,
+        "ViewIdleFov": 180,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 300,
+        "ViewDistance": 300,
+        "DarkVisionSensitivity": [
+            0.5,
+            1
+        ],
+        "AwarenessDecayTime": 20,
+        "TargetLostTime": 10,
+        "TargetLowHealthPercent": 0.3,
+        "SuperAlertDecayTime": 20,
+        "ReactionControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneReactionController",
+        "PerceiverType": "/Lotus/Types/Enemies/Corpus/Drones/DronePerceiver",
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/RangedTargetEvaluator"
+    }
+}

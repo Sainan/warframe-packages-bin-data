@@ -1,0 +1,66 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/QuadRobot/QuadRobotAgentNEW",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "QuadRobotAvatarDuviri"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "DuviriQuadRobotRifleNEW",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/Corpus/QuadRobot/BurstGrenadeLauncherNEW",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/QuadRobotBossDuviriSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "LogicGraphAction": {
+            "GraphRes": "/Lotus/Types/Enemies/Corpus/QuadRobot/QuadRobotLogicGraphDuviri"
+        },
+        "LocomotionController:PathFinder": [
+            "/EE/Types/Npc/VipDynamicPathFinderGround"
+        ],
+        "LocomotionController:VipDynamicPathFinderGround": {
+            "UseCover": 0,
+            "StripContextActionsIfFlyer": 1
+        },
+        "LocomotionController:DynamicPathFollowerGround": {
+            "MoveFailureThreshold": 0.9,
+            "MinimumRunDistance": 3,
+            "ShortDistanceSpeedMultiplier": 2,
+            "StopWhenTurningAngle": 90,
+            "UseVIPNav": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/Lotus/Types/Game/VipNavLocomotionModifier",
+                    "/EE/Types/Npc/LocomotionMoveModifierVipDodgeJumpBackToNav"
+                ],
+                "VipNavLocomotionModifier": [],
+                "LocomotionMoveModifierVipDodgeJumpBackToNav": {
+                    "DodgeJumpSymbol": "DodgeJump",
+                    "OffNavTimeRequired": 2,
+                    "TotallyStuckTimeRequired": 4,
+                    "SkipPathOnStuck": 0,
+                    "MinTimeSinceLastSeenRequired": 0,
+                    "SkipFallingOrLaunchingAvatars": 1,
+                    "DistanceToInstantTeleport": 100
+                }
+            }
+        ],
+        "LocomotionController:limitToNav": 1,
+        "LocomotionController:PathingPreferences": {
+            "offNavToleranceRadius": 1,
+            "shorteningType": "ST_NAVMESH",
+            "minRequiredNavEdgeWidth": 3
+        }
+    }
+}

@@ -1,0 +1,112 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "Mesh": "/Lotus/Fx/Common/Sphere.fbx",
+        "MeshScale": 0.75,
+        "OverrideMaterial": [
+            "/Lotus/Fx/PowersuitAbilities/Anti/DropProjMat"
+        ],
+        "MaterialParams": [
+            {
+                "name": "TintColor",
+                "type": "Float4",
+                "slot": -1,
+                "value": 1,
+                "value1": 1,
+                "value2": 1,
+                "value3": 1
+            }
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Levels/AladVTrailer/PetDropProjAttachDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicQuery",
+        "AttackData": {
+            "Type": "DT_FREEZE",
+            "Amount": 20
+        },
+        "ExplosiveAttack": {
+            "Type": "DT_FREEZE",
+            "Amount": 20
+        },
+        "ExplosionIgnoreSource": 1,
+        "DamageRadius": 8,
+        "HitEffect": "/Lotus/Types/Weapons/PlasmaGrenadeHitEffect",
+        "DieEffect": "/Lotus/Fx/Weapons/Grenades/PlasmaGrenadeBurst",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "MaxLife": 0.1,
+        "SetLifeOnImpact": 1,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "Health": 1,
+        "AngleSpeed": [
+            0.5,
+            2
+        ],
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_ELECTRICITY",
+            "Amount": 0
+        },
+        "EmbedTime": [
+            7,
+            7
+        ],
+        "EmbedDeathAttack": {
+            "Type": "DT_FREEZE",
+            "Amount": 50
+        },
+        "EmbedDeathEffect": "/Lotus/Fx/Enemies/CaptainVor/CptVorZapTrapProjDeath",
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 6,
+        "KinematicMaxSpeed": 30,
+        "KinematicGravity": 1,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicAngleSpeed": [
+            15,
+            20
+        ],
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            0,
+            90,
+            0
+        ],
+        "ProjectileReplication": "REPLICATED",
+        "OnProjectileStoppedScript": {
+            "Script": "SlowMoBall.lua",
+            "Function": "Zap",
+            "_duration": 2,
+            "_range": 8,
+            "_targetType": "/Lotus/Types/Game/LotusAvatar",
+            "_slowMoSound": "/Lotus/Sounds/Enemies/AladVPet/Abilities/AladPetEnergyFreeze"
+        },
+        "SilentProjectile": 1
+    }
+}

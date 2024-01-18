@@ -1,0 +1,106 @@
+{
+    "parent": "/EE/Types/Engine/Decoration",
+    "data": {
+        "UseLightMap": 0,
+        "BakeShadowsOnLightMaps": 0,
+        "ShadowLightmaps": 1,
+        "UseAmbient": 1,
+        "IrradianceVolumeGain": 0.5,
+        "Mesh": "/Lotus/Objects/Grineer/Forest/GftKubrowDen.fbx",
+        "MeshScale": 0.9,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0.25,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    1,
+                    0,
+                    0
+                ],
+                "BoneName": "",
+                "Type": "KubrowSpawnPoint",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
+        "Tag": "KubrowDen",
+        "ReplicationOverride": "RO_ALWAYS",
+        "SurvivesMigration": 1,
+        "LocTag": "/Lotus/Language/Game/KubrowDen",
+        "LongDesc": "/Lotus/Language/Game/KubrowDenLongDesc",
+        "Icon": "/Lotus/Interface/Icons/Objects/KubrowDen.png",
+        "ReplicaPositionNoise": [
+            0,
+            0,
+            0.1,
+            0.1
+        ],
+        "ReplicaRotationNoise": [
+            10,
+            0,
+            0,
+            0.3
+        ],
+        "Health": 1250,
+        "DamageMultipliers": {
+            "DT_IMPACT": 0
+        },
+        "SimulateClientSideDamage": 1,
+        "DestroyedMesh": "/Lotus/Objects/Grineer/Forest/GftKubrowDenDestroyed.fbx",
+        "CreateOnDestroy": {
+            "Type": "/Lotus/Fx/Enemies/Kubrow/KubrowDenDestroy"
+        },
+        "MasterCreateOnDestroy": {
+            "LocalPosition": [
+                0,
+                0.6,
+                0.8
+            ]
+        },
+        "OnDamageScript": {
+            "Script": "/Lotus/Scripts/KubrowController.lua",
+            "Function": "OnDamaged",
+            "_denType": "",
+            "_spawnType": "KubrowSpawnPoint",
+            "_eyeFlareType": "KubrowEyeFlare",
+            "_kubrowAvatar": "KubrowAvatar",
+            "_kubrowAgent": "KubrowAgent",
+            "_packTeams": [],
+            "_minDesiredDenCount": 4,
+            "_maxDesiredDenCount": 8,
+            "_spawnDist": 80,
+            "_minPackSize": 4,
+            "_maxPackSize": 6,
+            "_playerMultiplier": 1.5,
+            "_nightPackSizeMulti": 1.5,
+            "_spawnsPerDen": 3,
+            "_maxRespawnCount": 2,
+            "_childDenSearchRadius": 15,
+            "_packSpawnChance": 0.2,
+            "_loopsToWait": 10,
+            "_nightEyes": 0
+        },
+        "StateChangeScript": {
+            "Script": "/Lotus/Scripts/MissionScripts/OverrideKubrowDenDropTable.lua",
+            "Function": "OverrideDropTable",
+            "_questDropTable": "/Lotus/Types/DropTables/ContainerDropTables/KubrowQuestDenDropTable",
+            "_defaultDropTable": "/Lotus/Types/DropTables/ContainerDropTables/KubrowDenDropTable",
+            "_delay": 0,
+            "_placement": [
+                0,
+                4,
+                0
+            ]
+        },
+        "DestroyXP": 50
+    }
+}

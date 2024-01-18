@@ -1,0 +1,155 @@
+{
+    "parent": "/Lotus/Types/Enemies/KuvaLich/KuvaLichAAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/MITW/Slinky/Slinky_skel.fbx",
+        "MeshScale": 1.35,
+        "AnimationName": "Guild",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Mitw/SlinkyFXDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "MITWSlinkyWalk",
+        "ScriptInstance": {
+            "Script": "/Lotus/Types/Enemies/ManInTheWall/MITWBarkController.lua",
+            "Function": "IdleVoiceBoxLoop"
+        },
+        "EyeOffset": [
+            0,
+            1.8,
+            0
+        ],
+        "HeadBone": "GAME_C1_ROOT",
+        "WeaponBone": "GAME_R1_CANNON4",
+        "Faction": "MITW",
+        "LocTag": "/Lotus/Language/EntratiLab/EntratiGeneral/SlinkyName",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Murmur/Slinky.png",
+        "MaxHealth": 15000,
+        "VoiceBox": "/Lotus/Sounds/Dialog/Barks/Battle/MiTW/MITWSlinky/MITWSlinkyVoiceBoxA",
+        "DropTable": "/Lotus/Types/DropTables/ManInTheWall/MITWSlinkyAgentDropTable",
+        "AnimControllerType": "MITWSlinkyAnimTreeController",
+        "DamageControllerType": "MITWSlinkyDamageController",
+        "MotionControllerType": "MITWSlinkyDynamicMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                -0.6,
+                0
+            ],
+            "BoneName": "GAME_C1_BODY10",
+            "Type": "HitProxies/MITWSlinkyFullBody"
+        },
+        "OnDeathScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/MITWEnnemiesVFX.lua",
+            "Function": "DissolveOnDeath",
+            "_dissolveEffect": "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveArmSpawner",
+            "_dissolveSound": "/Lotus/Sounds/Enemies/ManInTheWall/Triangle/MITWTriangleDeathDissolve",
+            "_dissolveProj": [
+                "/Lotus/Fx/Enemies/Mitw/MitwSandProj",
+                "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveExtrudeDynProj",
+                "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveGlitterProj"
+            ],
+            "_attachmentToTriggeredFade": [],
+            "_attachmentToDissolveAndHide": [],
+            "_boneToAttachTo": "GAME_C1_BODY14",
+            "_attachOffset": [
+                0,
+                0,
+                0
+            ],
+            "_gravityOnDeath": 0,
+            "_gravityVector": [
+                0,
+                0,
+                0
+            ],
+            "_disableCollision": 1,
+            "_totalFadeOutDuration": 3.6,
+            "_waitBeforeDissolve": 1.4,
+            "_waitBeforeStart": 0.2,
+            "_DestroyAfterFade": 1,
+            "_waitBeforeDestroy": 0,
+            "_SpawnerToDestroy": "",
+            "_OriginalValue": 1,
+            "_NewValue": 2,
+            "_deathProjectileType": "",
+            "_deathProjectileCount": 0,
+            "_deathProjectileBone": "GAME_C1_CENTERPIECE1",
+            "_octopedeEventDropTables": []
+        },
+        "FacialMorphScript": {
+            "Script": ""
+        },
+        "FacialMorphHeadAttachmentType": "",
+        "MorphName:ALERT": "",
+        "MorphName:RAGE": "",
+        "MorphName:FEAR": "",
+        "MorphName:DEAD": "",
+        "MorphName:SMUG": "",
+        "MorphName:PAIN": "",
+        "SoundEvents": [
+            {
+                "EventName": "SFXSlinkyRollLoop",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/Slinky/MITWSlinkyRollLoop",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": "SFXSlinkyRollEnd"
+            },
+            {
+                "EventName": "SFXSlinkyMovementRattle",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/Slinky/MITWSlinkyMovementRattle",
+                "Chance": 0.5,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXSlinkyMovementRattleIdle",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/Slinky/MITWSlinkyMovementRattle",
+                "Chance": 0.25,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMITWSpawnLargeEnemy",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/EnemyGameplay/MITWSpawnLargeEnemy",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "VoiceBoxEvents": [
+            {
+                "EventName": "SFXMITWSpawnLargeEnemyBark",
+                "Phrase": "MODE_CHANGED",
+                "Filter": "SFXMITWSpawnLargeEnemyBark",
+                "Chance": 1
+            }
+        ],
+        "KillXPReward": 500,
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/MITWSlinkyReactionAnims",
+        "DifficultyTableOverride": ""
+    }
+}

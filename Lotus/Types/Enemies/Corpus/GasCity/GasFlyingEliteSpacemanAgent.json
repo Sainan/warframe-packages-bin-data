@@ -1,0 +1,122 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Venus/Heavies/VenusFlyingSpacemanAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/GasEliteFlyingSpacemanAvatar",
+            "EXIMUS": "Avatars/GasEliteFlyingSpacemanAvatarLeader"
+        },
+        "MinLevel": 15,
+        "MaxLevel": 9999,
+        "NewAdditionalInventory": [
+            {
+                "item": "Weapon/GasEliteShapeBlastShotgun",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Tenno/Grenades/NpcThrowGrenadeWeapon",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            }
+        ],
+        "JetpackSpacemanMovementBehavior": {
+            "JetpackType": "Attachments/GasFlyingSpacemanJetPack"
+        },
+        "JetpackSpacemanInAirBehavior": {
+            "Actions": [
+                "/EE/Types/Npc/BlockingBehavior",
+                "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "/EE/Types/Npc/DroneRecoveryBehavior",
+                "/Lotus/Types/Behaviors/FlyStormTargetOrderBehavior",
+                "/Lotus/Types/Behaviors/JetpackDodgeBehavior",
+                "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+                "/Lotus/Types/Behaviors/HoverAttackBehavior",
+                "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+                "/EE/Types/Npc/InvestigateBehavior",
+                "/EE/Types/Npc/PoiBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ],
+            "DroneRecoveryBehavior": {
+                "TimeOffNav": 8,
+                "FlyDescendToNavBehavior": {
+                    "UseLastGoodPosition": 1
+                }
+            },
+            "JetpackDodgeBehavior": {
+                "JetpackType": "Attachments/GasFlyingSpacemanJetPack"
+            },
+            "TacPosIdealDistanceBehavior": {
+                "IdealDistance": [
+                    5,
+                    35
+                ]
+            },
+            "HoverNearTargetBehavior": {
+                "TargetDistance": [
+                    5,
+                    35
+                ]
+            },
+            "PoiBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "PoiSearchRadius": 100,
+                "MinPlayerDist": 9,
+                "MinPlayerFov": 180,
+                "NearDistance": 1,
+                "PoiWhitelist": [
+                    "JetpackerPointAir"
+                ],
+                "StopWhenAlerted": 1,
+                "CantHaltOnceArrived": 0
+            }
+        },
+        "JetpackSpacemanOnGroundBehavior": {
+            "Actions": [
+                "/EE/Types/Npc/BlockingBehavior",
+                "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "/EE/Types/Npc/InterruptResponseBehavior",
+                "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+                "/EE/Types/Npc/StormTargetOrderBehavior",
+                "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+                "/EE/Types/Npc/MeleeTactic",
+                "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+                "/EE/Types/Npc/UseGrenadeBehavior",
+                "/EE/Types/Npc/AttackFromTheOpenBehavior",
+                "/EE/Types/Npc/CustomResponseBehavior",
+                "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+                "/EE/Types/Npc/InvestigateBehavior",
+                "/EE/Types/Npc/PoiBehavior",
+                "/EE/Types/Npc/GuardTactic"
+            ],
+            "PoiBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "PoiSearchRadius": 250,
+                "MinPlayerDist": 9,
+                "MinPlayerFov": 180,
+                "NearDistance": 1,
+                "PoiWhitelist": [
+                    "JetpackerPointGround"
+                ],
+                "StopWhenAlerted": 1,
+                "CantHaltOnceArrived": 0
+            },
+            "GuardTactic": {
+                "RandomWalkBehavior:Type": "/EE/Types/Npc/Action"
+            }
+        }
+    }
+}

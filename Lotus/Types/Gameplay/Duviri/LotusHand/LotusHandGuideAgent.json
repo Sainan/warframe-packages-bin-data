@@ -1,0 +1,264 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Drones/DroneAttackAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "LotusHandGuideAvatar",
+            "EXIMUS": ""
+        },
+        "MaxLevel": 1,
+        "CanScaleLevel": 0,
+        "NewAdditionalInventory": [],
+        "IncludeInCombatAxis": 0,
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/StormRoadTargetOrderBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/DroneRecoveryBehavior",
+            "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/EE/Types/Npc/GuardBehavior"
+        ],
+        "StormRoadTargetOrderBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Order": "Guide",
+            "MinDistFromOrder": 20,
+            "DistanceFromRoadToStart": 15,
+            "SuccessRadius": 1,
+            "RoadSuccessRadius": 15,
+            "DesiredPosture": "RUN",
+            "MaxOffNavDistance": 5,
+            "TargetMovedRadius": 5,
+            "EvaluateByDistance": 1,
+            "EvaluateByZone": 0,
+            "OnFailureReevalTime": 5,
+            "OnSuccessReevalTime": 0.5
+        },
+        "StormTargetOrderBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceLastSeen": 5,
+            "MaxDistToTarget": 25,
+            "ConsiderOrderType": 1,
+            "Order": "Guide",
+            "FailsOnTargetAcquired": 0,
+            "SuccessRadius": 1,
+            "DesiredPosture": "RUN",
+            "UseNearTargetPosture": 0,
+            "DesiredPostureNearTarget": "RUN",
+            "DesiredPostureOutOfView": "RUN",
+            "MaxOffNavDistance": 5,
+            "TargetMovedRadius": 6,
+            "OnFailureReevalTime": 0,
+            "OnSuccessReevalTime": 0.7,
+            "TryShoot": 0,
+            "TargetFaction": "",
+            "DistanceToOrderTargetForNearPosture": 0,
+            "ClearOrderOnMoveSuccess": 0,
+            "AllowTeleportToCatchUp": 0,
+            "TeleportToDestination": 0,
+            "AllowPartialPath": 1,
+            "RestrictToDV": 0
+        },
+        "DroneRecoveryBehavior": {
+            "TimeOffNav": 1,
+            "OffNavBehaviors": [
+                "/EE/Types/Npc/FlyDescendToNavBehavior"
+            ]
+        },
+        "MoveToDesiredScriptPositionBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "SpeedMultiplier": 1,
+            "StopRadius": 0.5,
+            "NearDistance": 2,
+            "FacingThreshold": 10,
+            "SucceedWhenNearPosition": 0,
+            "MovePosture": "RUN",
+            "FacingControl": "MFC_FACE_MOVEDIR",
+            "ClearDesiredPosOnAwareness": 0,
+            "TargetAwarenessToClear": "AW_SLEEPING",
+            "ClearDesiredPosOnSuccess": 1,
+            "StopMovingOnComplete": 1,
+            "TryRecover": 0,
+            "RecoverDist": 10,
+            "MaxRecoverTime": 10,
+            "StuckTime": 2,
+            "MaxFailures": 5,
+            "AllowFiring": 0
+        },
+        "FollowAllyPlayerBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StopRadius": 4,
+            "TightStopRadius": 1.5,
+            "AllowRun": 1,
+            "AllowPartial": 0,
+            "IllumRange": [
+                0,
+                1
+            ],
+            "CoverRadius": 0,
+            "FromPlayerRadius": 3,
+            "OffsetFromPlayer": [
+                0,
+                0,
+                -1
+            ],
+            "Randomness": 5,
+            "CoverSelectFov": 45,
+            "MinTimeBetweenMoves": 2,
+            "DoEnterCover": 0,
+            "CoverLeftOffset": [
+                0,
+                0,
+                0
+            ],
+            "CoverRightOffset": [
+                0,
+                0,
+                0
+            ],
+            "AllowTeleport": 1,
+            "TeleportForBadPath": 0,
+            "MaxBadPathCountBeforeTeleport": 10,
+            "PhaseOutDuration": [
+                2,
+                4
+            ],
+            "TeleportToPlayerDistSqr": 225,
+            "TeleportLeaveEffect": "",
+            "TeleportLeaveSound": "",
+            "TeleportLeaveAnimation": "",
+            "TeleportArriveEffect": "",
+            "TeleportArriveSound": "",
+            "TeleportArriveAnimation": "",
+            "TimeSinceLastSeen": 1,
+            "MaxDistToTarget": 25,
+            "Order": "FollowPlayer",
+            "FactionFilter": "",
+            "OnlyExitIfHaveWeapon": 0,
+            "RequiresOwner": 0,
+            "MoveAction:Type": "/EE/Types/Npc/LocomotionFollowPath",
+            "MoveAction:Enabled": 1,
+            "MoveAction:OnStartScript": {
+                "Script": ""
+            },
+            "MoveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "MoveAction:TrackEntity": 0,
+            "MoveAction:TrackingRate": 0.5,
+            "MoveAction:FaceTarget": 0,
+            "MoveAction:SucceedEarly": 0,
+            "MoveAction:SuccessRadius": 0.5,
+            "MoveAction:SucceedImmediately": 0,
+            "MoveAction:SucceedOnAbort": 0,
+            "WaitAction:Type": "/EE/Types/Npc/WaitBehavior",
+            "WaitAction:Enabled": 1,
+            "WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "WaitAction:DefaultReevaluationDelay": 0,
+            "WaitAction:TimeOut": 5,
+            "WaitAction:CoverOnly": 0,
+            "WaitAction:AimPosture": 0,
+            "WaitAction:MinimalEnemyDistance": 0,
+            "WaitAction:TrackTarget": 0,
+            "WaitAction:TrackTargetNotVisible": 0,
+            "WaitAction:Peek": 0,
+            "WaitAction:FailOnDamaged": 1,
+            "WaitAction:PreventShooting": 0,
+            "WaitAction:StopMovingOnEnter": 0
+        },
+        "GuardBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+            "WaitAction:Enabled": 1,
+            "WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "RandomFacingChange": [
+                0,
+                0
+            ],
+            "MinHeadingChangeToTurn": 0
+        },
+        "LocomotionController:DynamicPathFinderGround": {
+            "FindLeastTurningRoadDestination": 0
+        },
+        "LocomotionController:DynamicPathFollowerHover": {
+            "RoadNetworkTargetMinDistanceSqr": 25
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierAdjustLeadingSpeed"
+                ],
+                "LocomotionMoveModifierAdjustLeadingSpeed": {
+                    "IdealDistanceAhead": 30,
+                    "AdjustedSpeedRange": [
+                        0.3,
+                        5
+                    ],
+                    "MaxSpeedScalingDistanceFromIdealDistance": 12,
+                    "LookAheadPathCount": 10,
+                    "MinLookAheadDistance": 8,
+                    "MaxSpeedMultiplierChangePerSecond": 1.5
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 6,
+            "minHeight": -5,
+            "preferredHeight": 1.8,
+            "offNavToleranceRadius": 0.15
+        },
+        "ViewIdleFov": 0,
+        "IdleVerticalFov": 0,
+        "ViewIdleDistance": 0,
+        "ViewFov": 0,
+        "VerticalFov": 0,
+        "ViewDistance": 0,
+        "PerceiverType": "/EE/Types/Npc/NpcPerceiver"
+    }
+}

@@ -1,0 +1,191 @@
+{
+    "parent": "/EE/Types/Engine/GuidedProjectile",
+    "data": {
+        "Mesh": "/Lotus/Weapons/Grineer/LongGuns/Ogris/OgrisRocket.fbx",
+        "OverrideMaterial": [
+            "/Lotus/Fx/PowersuitAbilities/Loki/InvisibilityMat"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    -0.6,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "MinionProjectileDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "HitProxies/J3MinionHitProxy",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Infested/Golem/InfestedGolemMinionProjVocalSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0.4,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/J3Golem/MinionProjectileFlare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0.4,
+                    -0.3
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Zombies/Space/MinionProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "ScriptInstance": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/J3GolemSpaceMinionSwarmAbility.lua",
+            "Function": "UpdateProjectile",
+            "_minRange": 50,
+            "_maxRange": 300,
+            "_minCritters": 3,
+            "_maxCritters": 6,
+            "_minRaidCritters": 5,
+            "_maxRaidCritters": 8,
+            "_minBurstDelay": 0.3,
+            "_maxBurstDelay": 0.3,
+            "_chargeSound": "",
+            "_shootSound": "",
+            "_beamChargeAnimEvent": "BeamCharge",
+            "_beamStartAnimEvent": "BeamStart",
+            "_beamStopAnimEvent": "BeamStop",
+            "_launchBone": "GAME_C1_HEAD",
+            "_projectileType": "",
+            "_chargeFx": "",
+            "_muzzleFx": "",
+            "_golemRaidAvatar": ""
+        },
+        "ReplicationOverride": "RO_ALWAYS",
+        "AttackData": {
+            "Type": "DT_IMPACT",
+            "Amount": 20,
+            "ProcChance": 0,
+            "HitType": "DHT_PROJECTILE"
+        },
+        "ExplosiveAttack": {
+            "Amount": 20,
+            "ProcChance": 0,
+            "HitType": "DHT_RADIAL"
+        },
+        "PostFireInvulnDuration": 1,
+        "DamageRadius": 5,
+        "DieEffect": "/Lotus/Fx/Enemies/J3Golem/MinionProjDeath",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "IgnoreCollisionsWithSameType": 1,
+        "MaxLife": 30,
+        "BounceOnAvatars": 0,
+        "Health": 100,
+        "EmbedAttack": {
+            "ProcChance": 0
+        },
+        "KinematicMovement": 1,
+        "KinematicAccel": 0.5,
+        "KinematicVelocityAccel": 0.5,
+        "KinematicInitialSpeed": 5,
+        "KinematicMaxSpeed": 12,
+        "ProjectileReplication": "REPLICATED",
+        "FaceVelocity": 1,
+        "ForwardVel": 18,
+        "UnguidedFlightTime": 2.5,
+        "AvatarTargetPart": "TORSO",
+        "AimRate": 100,
+        "ReducedAimRate": 100,
+        "FlareProjectileDetectionRadius": 20,
+        "FlareSearchDelay": 0.25,
+        "OnSetTargetScript": {
+            "Script": "/Lotus/Scripts/MissileLockOnWarning.lua",
+            "Function": "OnSetTarget",
+            "_missileWarningCooldown": 10,
+            "_missileWarningTag": "",
+            "_transmissionEndSoundRes": ""
+        }
+    }
+}

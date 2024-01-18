@@ -1,0 +1,354 @@
+{
+    "parent": "/Lotus/Types/Enemies/Orokin/RifleLancer",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "ClemSpecterAvatar",
+            "EXIMUS": ""
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Grineer/LongGuns/GrineerAssaultRifle/TwinGrakatas",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "DefaultSlot": "SLOT_2",
+        "ShouldIgnoreGCS": 1,
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "AggroController:ForceAgentAggro": 1,
+        "AggroController:ForcedAgentAggroRange": [
+            0.5,
+            1
+        ],
+        "AggroController:AggroEntryVisible": {
+            "IncreaseTimeLength": 5,
+            "DecayTimeLength": 1
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/GroundFireBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/ReviveAllyBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MeleeTactic",
+            "/Lotus/Types/Behaviors/LotusFollowAvatarBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+            "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "/EE/Types/Npc/GuardBehavior"
+        ],
+        "GroundFireBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "NeverGetUp": 1,
+            "DownedTime": [
+                5,
+                7
+            ],
+            "VisibilityDelay": [
+                7,
+                7
+            ],
+            "ReloadDelay": [
+                2,
+                3
+            ],
+            "FovAllowed": 90,
+            "ChangeWeapons": 1,
+            "WeaponSlot": "SLOT_1",
+            "WeaponHand": "MAIN_HAND",
+            "EquipStyle": "ES_INSTANT_EQUIP"
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_NEVER",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 5,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 1,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 1,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "ReviveAllyBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "MaxDistanceToAlly": 30,
+            "StopRadius": 2,
+            "TeamOnly": 1,
+            "RevivePercent": 0.5,
+            "ReviveAction": "ReviveAlly",
+            "AttackTargetsOnRoute": 1,
+            "Cooldown": 10,
+            "PriortizePlayer": 0,
+            "OnStartReviveScript": {
+                "Script": ""
+            },
+            "OnStopReviveScript": {
+                "Script": ""
+            }
+        },
+        "MeleeTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "AttackState": "AS_MELEE",
+            "ReportUnreachable": 0,
+            "RequireMeleeWeapon": 0,
+            "RequireWeaponInInventory": 0,
+            "TimeOffNavForReport": 3,
+            "UnreachableTime": 2,
+            "MeleeBehaviors": [
+                "/Lotus/Types/Behaviors/LotusAdvancedMeleeBehavior"
+            ],
+            "LotusAdvancedMeleeBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SucceedAfterCombo": 0,
+                "AdjustAimDuringCombo": 0,
+                "AlwaysCompleteCombo": 0,
+                "AttackFirst": 1,
+                "DefensiveMoveTowards": 0,
+                "StopMovementOnAttack": 1,
+                "DefensiveParryChance": 0.5,
+                "DefensiveTime": [
+                    1,
+                    3
+                ],
+                "MeleeRange": [
+                    0,
+                    3
+                ],
+                "MeleeRangeAttack": [
+                    0,
+                    3
+                ],
+                "MeleeRangeDash": [
+                    3,
+                    6
+                ],
+                "PlayerBehaviourEvalTime": [
+                    0.5,
+                    2
+                ],
+                "BasicAttackTypes": [],
+                "DashAttackType": "CC_SLIDING",
+                "UseEquippedWeapon": 0,
+                "ChangeWeapons": 1,
+                "WeaponSlot": "SLOT_6",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_INSTANT_EQUIP",
+                "StopWeapons": 0
+            }
+        },
+        "LotusFollowAvatarBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "GeneratePointsDistance": [
+                4,
+                10
+            ],
+            "GenerateSpacing": 2,
+            "DefaultOffset": [
+                2,
+                0,
+                -1
+            ],
+            "StealthOffset": [
+                1,
+                0,
+                -2
+            ],
+            "FollowLeadingPlayer": 0,
+            "AlwaysFollowWeaponGiver": 0,
+            "RefreshFollowingTimer": 0,
+            "IdealFollowDistanceRange": [
+                0,
+                10
+            ],
+            "ScoreIdealFollowCurve": {
+                "m": 1,
+                "k": -1,
+                "b": 1,
+                "c": 0.3,
+                "logistic": 1
+            },
+            "StopRadius": 0.25,
+            "FollowRange": 10,
+            "FollowMoveThreshold": 2,
+            "RepositionTime": 2,
+            "RunDistance": 10,
+            "MaxEngageDistance": 20,
+            "MatchSpeedDistance": 3,
+            "MatchWalkSpeedDistance": 3,
+            "OnlyTargetableWhenAttacking": 0,
+            "AllowFiring": 1,
+            "FaceTargetWhileWalking": 1,
+            "UsePrediction": 0,
+            "PredictionDist": 5,
+            "ObjectiveWeight": 1,
+            "InfluenceWeight": 0.5,
+            "InfluenceDeltaWeight": 1,
+            "AlwaysUseSimplePos": 0,
+            "AllowTeleport": 1,
+            "ForceTeleportFromWater": 1,
+            "TimeBeforeTeleport": 5,
+            "TeleportDistance": 50,
+            "TeleportLeaveEffect": "",
+            "TeleportLeaveSound": "",
+            "TeleportLeaveAnimation": "",
+            "TeleportArriveEffect": "",
+            "TeleportArriveSound": "",
+            "TeleportArriveAnimation": "",
+            "ChangeWeapons": 1,
+            "WeaponSlot": "SLOT_2",
+            "WeaponHand": "MAIN_HAND",
+            "EquipStyle": "ES_INSTANT_EQUIP",
+            "DecorativeReloads": 1,
+            "DesiredTimeBetweenReloads": [
+                1,
+                3
+            ],
+            "FollowPairedAgent": 0,
+            "MatchWalkSpeed": 0,
+            "PriorityTargetAvatars": [],
+            "MinFollowBarkInterval": 20,
+            "MaxWalkSpeedMultiplier": 1.8,
+            "CheckAimStatusForFire": 1
+        },
+        "UsePanicButtonBehavior": {
+            "Enabled": 0
+        },
+        "AttackFromTheOpenBehavior": {
+            "MovementSpeedModifier": [
+                0.9,
+                1.2
+            ],
+            "WaitTime": [
+                0.5,
+                1
+            ],
+            "CrouchDuringShootChance": 0.5,
+            "DesiredTimeBetweenReloads": [
+                3,
+                4
+            ],
+            "PointBlankRange": 20,
+            "ChangeWeapons": 1,
+            "WeaponSlot": "SLOT_2"
+        },
+        "GuardBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+            "WaitAction:Enabled": 1,
+            "WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "RandomFacingChange": [
+                0,
+                0
+            ],
+            "MinHeadingChangeToTurn": 0
+        },
+        "CustomShootBehavior": "",
+        "LocomotionController:PathingPreferences": {
+            "coverBias": 10,
+            "maxHeight": 4
+        },
+        "LocomotionController:RepathOnNavBridgeNearbyChanged": 1,
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 45,
+        "ViewIdleDistance": 75,
+        "ViewFov": 360,
+        "ViewDistance": 150,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "AwarenessDecayTime": 120,
+        "TargetLostTime": 5,
+        "TargetLowHealthPercent": 0.2,
+        "SuperAlertDecayTime": 5,
+        "ReactionControllerType": "/EE/Types/Npc/ReactionControllerImpl",
+        "PerceiverType": "/Lotus/Types/Sentinels/SentinelPerceiver",
+        "SightReactionProbability": 0.6,
+        "BaseHitChance": [
+            0.5,
+            1
+        ],
+        "IsCoverUseEnabled": 0,
+        "CoverEvaluatorType": "/EE/Types/Npc/GenericCoverEvaluator"
+    }
+}

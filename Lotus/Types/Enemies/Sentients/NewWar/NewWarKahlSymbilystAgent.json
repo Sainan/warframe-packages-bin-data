@@ -1,0 +1,50 @@
+{
+    "parent": "/Lotus/Types/Enemies/Sentients/Symbilyst/SentientSymbilystAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "NewWarKahlSymbilystAvatar"
+        },
+        "MinLevel": 1,
+        "NewAdditionalInventory": [
+            {
+                "item": "Weapons/NewWarSymbilystLaserLeft",
+                "forceEquip": 1,
+                "hand": "OFF_HAND"
+            },
+            {
+                "item": "NewWarKahlSentientSymbilystPowerSuit",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/Sentients/Symbilyst/SentientSymbilystMeleeWeaponRight",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorParallel": {
+            "GenericBehaviorSelector": {
+                "KeepIdealDistanceBehavior": {
+                    "RestrictToDefenseVolume": 1
+                },
+                "MultiTargetFaceBehavior": {
+                    "ChildAction:BehaviorParallel": {
+                        "GenericBehaviorSelector": {
+                            "SentientRangedCircleDecorator": {
+                                "ChildAction:MultiTargetCircleBehavior": {
+                                    "UseDefenseVolume": 1
+                                }
+                            }
+                        }
+                    }
+                },
+                "GuardTactic": {
+                    "RandomWalkBehavior:UseDefenseVolume": 1
+                }
+            }
+        },
+        "LocomotionController:PathingPreferences": {
+            "minHeight": -2
+        }
+    }
+}

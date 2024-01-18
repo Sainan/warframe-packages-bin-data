@@ -1,0 +1,640 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/GrineerMarineRifle",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/DeathSquadAvatarC"
+        },
+        "MinLevel": 6,
+        "BaseLevel": 6,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Grineer/DeathSquadWeapons/DeathSquadHandCannon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Grineer/Shield/Shield",
+                "forceEquip": 1,
+                "hand": "OFF_HAND"
+            }
+        ],
+        "DefaultSlot": "SLOT_2",
+        "IgnoredByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/DefensiveDodgeJumpBehavior",
+            "/Lotus/Types/Behaviors/PursueDodgeJumpBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/SpecialWeaponTactic",
+            "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "InterruptResponseBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Responses": [
+                {
+                    "reaction": "CONTEXT_BARK",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 1,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "DODGE_MELEE_ATTACK",
+                    "responseAction:Type": "/Lotus/Types/Behaviors/DodgeMeleeAttackReaction",
+                    "responseAction:DodgeMeleeAttackReaction": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "/Lotus/Animations/Grineer/MeleeDodge/DodgeLeft",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0,
+                        "DodgeAnims": {
+                            "STATIONARY": "",
+                            "FORWARD": "",
+                            "BACKWARD": "/Lotus/Animations/Grineer/MeleeDodge/DodgeBackwards",
+                            "LEFT": "/Lotus/Animations/Grineer/MeleeDodge/DodgeLeft",
+                            "RIGHT": "/Lotus/Animations/Grineer/MeleeDodge/DodgeRight",
+                            "STOPPING": "",
+                            "UPWARD": "",
+                            "DOWNWARD": ""
+                        },
+                        "DistanceFromTargetPoint": 0.4
+                    }
+                }
+            ],
+            "BlockingResponse": 1
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "ExtraReevaluationDelay": 2,
+            "FaceTarget": 1,
+            "ValidAbilities": [
+                0
+            ]
+        },
+        "DefensiveDodgeJumpBehavior": {
+            "Enabled": 0,
+            "OnStartScript": {
+                "Script": "/Lotus/Scripts/Effects/AttachFX.lua",
+                "Function": "AttachToAvatarFromBehavior",
+                "_typeToKill": "",
+                "_typesToKill": [],
+                "_typeToAttach": "/Lotus/Fx/Enemies/Grineer/DeathSquad/DodgeEffect",
+                "_attachToThis": "",
+                "_attachToArray": [],
+                "_isAttachedToThis": "",
+                "_isAttachedToThisArray": [],
+                "_attachPos": [
+                    0,
+                    0,
+                    0
+                ],
+                "_attachRot": [
+                    0,
+                    0,
+                    0
+                ],
+                "_delay": 0,
+                "_attachmentType": "",
+                "_isEnable": 1,
+                "_bone": "",
+                "_newMesh": "",
+                "_masterOnly": 1,
+                "_stopSpewing": 0,
+                "_destrySelfIfNotLocal": 0,
+                "_beamAttachBones": [],
+                "_beamEndBones": []
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "UseDirectionalActions": 0,
+            "DirectionalActions:STATIONARY": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:FORWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:BACKWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:LEFT": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:RIGHT": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:STOPPING": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:UPWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:DOWNWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "FullBodyAction": "FBA_NONE",
+            "Action": "DodgeJump",
+            "UseTacPosMgr": 0,
+            "IdealJumpDist": [
+                2,
+                5
+            ],
+            "MaxJumpDist": 200,
+            "ShouldFaceTarget": 0,
+            "GeneratePointsAroundTarget": 0,
+            "GeneratePointsDistance": [
+                6,
+                10
+            ],
+            "GenerateSpacing": 3,
+            "MinDistanceToNavEdge": 0,
+            "PreventDodgeOnAnimBlocked": 0,
+            "DoTacVisTrace": 1,
+            "DoGeoRaycast": 0,
+            "StaticShapesOnly": 1,
+            "TacVisToTarget": 1,
+            "ScoreDistToTarget": 1,
+            "ScoreDistanceResponseCurve": {
+                "m": -3,
+                "k": 2,
+                "b": 1,
+                "c": 0.5,
+                "logistic": 0
+            },
+            "ScoreDirectionFromTarget": {
+                "m": 10,
+                "k": 1,
+                "b": 0,
+                "c": 0.25,
+                "logistic": 1
+            },
+            "DoTargetViewScore": 0,
+            "ScoreDirectionFromTargetView": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 1,
+                "logistic": 0
+            },
+            "NumResults": 1,
+            "TargetRange": 0,
+            "DodgeIfAimedAtDistance": 30,
+            "DamageThreshold": 100,
+            "RepositionTime": 1,
+            "DodgeIfAimedAt": 0,
+            "ForceDodge": 0
+        },
+        "PursueDodgeJumpBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": "/Lotus/Scripts/Effects/AttachFX.lua",
+                "Function": "AttachToAvatarFromBehavior",
+                "_typeToKill": "",
+                "_typesToKill": [],
+                "_typeToAttach": "/Lotus/Fx/Enemies/Grineer/DeathSquad/DodgeEffect",
+                "_attachToThis": "",
+                "_attachToArray": [],
+                "_isAttachedToThis": "",
+                "_isAttachedToThisArray": [],
+                "_attachPos": [
+                    0,
+                    0,
+                    0
+                ],
+                "_attachRot": [
+                    0,
+                    0,
+                    0
+                ],
+                "_delay": 0,
+                "_attachmentType": "",
+                "_isEnable": 1,
+                "_bone": "",
+                "_newMesh": "",
+                "_masterOnly": 1,
+                "_stopSpewing": 0,
+                "_destrySelfIfNotLocal": 0,
+                "_beamAttachBones": [],
+                "_beamEndBones": []
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "UseDirectionalActions": 0,
+            "DirectionalActions:STATIONARY": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:FORWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:BACKWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:LEFT": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:RIGHT": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:STOPPING": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:UPWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:DOWNWARD": {
+                "fullBodyAction": "FBA_ROLL",
+                "action": "DodgeJump"
+            },
+            "FullBodyAction": "FBA_NONE",
+            "Action": "DodgeJump",
+            "UseTacPosMgr": 1,
+            "IdealJumpDist": [
+                10,
+                50
+            ],
+            "MaxJumpDist": 200,
+            "ShouldFaceTarget": 0,
+            "GeneratePointsAroundTarget": 1,
+            "GeneratePointsDistance": [
+                12,
+                20
+            ],
+            "GenerateSpacing": 5,
+            "MinDistanceToNavEdge": 0,
+            "PreventDodgeOnAnimBlocked": 0,
+            "DoTacVisTrace": 0,
+            "DoGeoRaycast": 0,
+            "StaticShapesOnly": 1,
+            "TacVisToTarget": 1,
+            "ScoreDistToTarget": 0,
+            "ScoreDistanceResponseCurve": {
+                "m": -1,
+                "k": 1,
+                "b": 1,
+                "c": 0,
+                "logistic": 0
+            },
+            "ScoreDirectionFromTarget": {
+                "m": 0,
+                "k": 1,
+                "b": 1,
+                "c": 0,
+                "logistic": 1
+            },
+            "DoTargetViewScore": 0,
+            "ScoreDirectionFromTargetView": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 1,
+                "logistic": 0
+            },
+            "NumResults": 1,
+            "RepositionTime": 2,
+            "DistanceToTarget": [
+                20,
+                200
+            ],
+            "LastSeenTime": 5,
+            "MustHaveSeenTargetPersonally": 0,
+            "PursueWhenPlayersDown": 0,
+            "OnlyPursueTENNO": 0
+        },
+        "SpecialWeaponTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "AttackState": "AS_SHORT_RANGE",
+            "SpecialWeaponBehaviors": [
+                "/EE/Types/Npc/CloseToCombatRangeBehavior",
+                "/Lotus/Types/Enemies/Grineer/Behaviors/ShieldTactic",
+                "/EE/Types/Npc/BasicChargeBehavior",
+                "/EE/Types/Npc/ShieldEngageBehavior"
+            ],
+            "CloseToCombatRangeBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SpeedMultiplier": 1,
+                "ShouldRunToTarget": 0,
+                "DoAimCalculation": 1,
+                "AimPreference": "NO_AIM",
+                "RestrictToDefenseVolume": 0
+            },
+            "ShieldTactic": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Role": "SHIELD",
+                "DesiredOffsetFromBuddy": [
+                    0,
+                    0,
+                    -1.2
+                ],
+                "MaxDistToShield": 10,
+                "ShootingOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "ShootingOffsetFromBuddy": 1,
+                "AttackTime": [
+                    1,
+                    2
+                ],
+                "WaitTime": [
+                    1,
+                    2
+                ],
+                "PredictionTime": 0.5,
+                "UseBehindShieldPosture": 0,
+                "RunToFormUp": 1,
+                "JustStandBehindShield": 0,
+                "DecorativeReloads": 1,
+                "DesiredTimeBetweenReloads": [
+                    10,
+                    15
+                ],
+                "PositionPreferences": {
+                    "canHide": 0,
+                    "minSearchDistance": 0,
+                    "maxSearchDistance": 10,
+                    "distanceFromTarget": [
+                        0,
+                        20
+                    ],
+                    "tacLevel": 1,
+                    "useTacAreaMap": 0,
+                    "waterRestriction": "WS_OUT_WATER",
+                    "coneDirection": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "coneInclusionDot": 0
+                },
+                "MinDistanceToTarget": 1,
+                "StopRadius": 0.5,
+                "NearDistance": 2,
+                "SpeedMultiplier": 1
+            },
+            "BasicChargeBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "UseChargeRange": 1,
+                "ChargeAttackRange": [
+                    0,
+                    10
+                ],
+                "ChargePastTargetDistance": 2,
+                "ForceBashWithinTargetDistance": 3,
+                "ChargeInputCode": "MELEE",
+                "CoolOffTimeRange": [
+                    3,
+                    6
+                ],
+                "CheckKneeVisibility": 1,
+                "EarlyOutDistance": 2,
+                "TargetCameraFOVMultiplier": 1,
+                "SpecialWeapon": "",
+                "ChargeSpeedMultiplier": 1,
+                "TimeToHeatSeek": 10,
+                "HeatSeakMaxAngle": 15,
+                "DistanceToRePath": 1,
+                "OnHeldMaxRunningTime": 5,
+                "FirstPersonAnim": "",
+                "PushBackArgs": {
+                    "Force": 100,
+                    "Time": 0.2,
+                    "DecelForce": 30,
+                    "MaxVelocity": 10
+                },
+                "PushBackDamage": 50,
+                "PushBackDamageType": "DT_IMPACT",
+                "PushBackHitType": "DHT_MELEE",
+                "OnlyOnePush": 1,
+                "ShouldKnockdown": 1,
+                "MovePosture": "RUN",
+                "ClearAvoidance": 1,
+                "SwapWeapon": 0,
+                "ExitOnDamage": 0,
+                "UseAttackInputRange": 3,
+                "PredictedSwingTime": 0.3,
+                "ModifyAttackRangeBasedOnPlayerVelocity": 1,
+                "PushBackRangeWhileAttacking": 2.5,
+                "PushBackAnimEvent": "MeleeStart",
+                "PushBackEffect": "/Lotus/Fx/GrineerShieldHitEffect",
+                "WeaponHand": "MAIN_HAND",
+                "UseMultiSamplePrediction": 0,
+                "InterruptMeleeOnStop": 0,
+                "PlayPhrase": 1,
+                "Bark": "CHARGE_SCREAM",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    0,
+                    0
+                ],
+                "PlayAttackPhrase": 0,
+                "AttackBark": "ATTACK_SCREAM",
+                "AttackBarkFilter": "",
+                "AttackSound": ""
+            },
+            "ShieldEngageBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "PositionPreferences": {
+                    "canHide": 0,
+                    "minSearchDistance": 0,
+                    "maxSearchDistance": 10,
+                    "distanceFromTarget": [
+                        0,
+                        20
+                    ],
+                    "tacLevel": 1,
+                    "useTacAreaMap": 0,
+                    "waterRestriction": "WS_OUT_WATER",
+                    "coneDirection": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "coneInclusionDot": 0
+                },
+                "StopRadius": 0.5,
+                "NearDistance": 2,
+                "SpeedMultiplier": 0.7,
+                "BackwardsSpeedMultiplier": 0.7,
+                "MoveDelay": [
+                    2,
+                    4
+                ],
+                "StayWithBuddy": 0,
+                "Aim": 0,
+                "Shoot": 1,
+                "ShootWhileBackingUp": 1,
+                "StopToShoot": 1,
+                "AttackTime": [
+                    3.5,
+                    4.5
+                ],
+                "WaitTime": [
+                    1,
+                    3
+                ],
+                "KeepMoving": 0,
+                "StayWithTeammates": 0,
+                "DropWeaponWhenAlone": 0,
+                "HeadingAdjustment": 0,
+                "KeepTargetInLight": 0,
+                "MultipleAgentsSpreadOut": 0,
+                "SpreadOutDistance": 10,
+                "ResistSwarmWhenActive": 0
+            },
+            "SpecialWeapon": "/Lotus/Weapons/Grineer/Shield/Shield",
+            "OffHandWeapon": 1,
+            "NeedsTarget": 1,
+            "EquipDefaultWeaponOnStop": 1,
+            "DropWeaponOnProxyDestroyed": 0,
+            "BarkOnDropWeapon": "RELOADING_WEAP",
+            "BarkFilter": "",
+            "ReactWhenWeaponDamaged": 0,
+            "ShieldProxy": "",
+            "ShieldDamageReactionType": "DT_INVALID",
+            "HorizontalSlashLeftReaction": "BLOCK_LEFT",
+            "HorizontalSlashRightReaction": "BLOCK_LEFT",
+            "VerticalSlashUpReaction": "INVALID",
+            "VerticalSlashDownReaction": "INVALID",
+            "ShieldArmourType": ""
+        },
+        "AttackFromTheOpenBehavior": {
+            "ShootTime": [
+                3,
+                5
+            ],
+            "WaitTime": [
+                1,
+                2
+            ]
+        },
+        "ViewIdleFov": 120,
+        "IdleVerticalFov": 40,
+        "ViewIdleDistance": 120,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "AncientTargetTime": 300,
+        "SuperAlertRadius": 20000,
+        "IgnoredFactions": [
+            "Infestation",
+            "Corpus",
+            "Orokin"
+        ],
+        "CustomLevelScalingScript": {
+            "Script": "/Lotus/Types/Enemies/SimpleBossScaling.lua",
+            "Function": "CalculateVIPLevel"
+        }
+    }
+}

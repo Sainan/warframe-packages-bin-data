@@ -1,0 +1,736 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 18,
+                "value": {
+                    "type": "Selector"
+                }
+            },
+            {
+                "key": 19,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 21,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 22,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 23,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 24,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 25,
+                "value": {
+                    "type": "Condition"
+                }
+            },
+            {
+                "key": 26,
+                "value": {
+                    "type": "Condition"
+                }
+            }
+        ],
+        "NodeProperties": {
+            "18": {
+                "links": []
+            },
+            "19": {
+                "Type": "/EE/Types/Npc/WaitBehavior",
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 19,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 18,
+                            "prop": 6
+                        }
+                    }
+                ]
+            },
+            "21": {
+                "Type": "/EE/Types/Npc/BlockingBehavior",
+                "BlockingBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "BlockOnBeingAttached": 0,
+                    "ShouldRemovePerception": 1
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 21,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 18,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "22": {
+                "Type": "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "UsePowerSuitAbilitiesBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.25,
+                    "BlockForPowerCompleteType": "BT_ALWAYS",
+                    "AllowInterruptOfAbility": 0,
+                    "StopFiring": 1,
+                    "StopMovingOnStart": 0,
+                    "ExtraReevaluationDelay": 0,
+                    "ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ActiveAction:Enabled": 1,
+                    "ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "EvaluateAction": 1,
+                    "FaceTarget": 0,
+                    "TurnAccuracyThreshold": 10,
+                    "TurnTimeout": 2,
+                    "AimTimeout": 0.5,
+                    "ValidAbilities": [],
+                    "MaxProcessPerEval": 0,
+                    "AimAtTarget": 0,
+                    "CheckIfAbilityUnlocked": 0,
+                    "MultipleConcurrentAbilities": 0,
+                    "EvaluateDelayRange": [
+                        0.5,
+                        1
+                    ],
+                    "PreventUsageOnWeaponUse": 0,
+                    "TurnDuringAbility": 0,
+                    "DeactivateAbilitiesOnPredeath": 1,
+                    "ResetEvalTimerOnEnemySpotted": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 22,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 18,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "23": {
+                "Type": "/Lotus/Types/Behaviors/SimpleShootBehavior",
+                "SimpleShootBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": "DragonGroundBoss.lua",
+                        "Function": "SetLookAtTarget",
+                        "_dragonAgentType": "GroundDragonBossAgent",
+                        "_dragonAvatarType": "GroundDragonBossAvatar",
+                        "_agentSpawnAtTaggedObject": "",
+                        "_roarAnim": "",
+                        "_roarAnimEvent": "",
+                        "_collapseAnim": "",
+                        "_collapseIdleAnim": "",
+                        "_riseAnim": "",
+                        "_predeathHealthPortions": [
+                            0.75,
+                            0.5,
+                            0.25,
+                            0.01
+                        ],
+                        "_colourPhaseSymbols": [
+                            "ColorPhase1Fowarder",
+                            "ColorPhase2Fowarder",
+                            "ColorPhase3Fowarder"
+                        ],
+                        "_destroyedStatuePortForwarders": [
+                            "Statue4PortForwarder",
+                            "Statue1PortForwarder",
+                            "Statue2PortForwarder",
+                            "Statue3PortForwarder"
+                        ],
+                        "_archgunSpawnSound": "/Lotus/Sounds/Enemies/Duviri/DuviriVoidDragon/Gameplay/DuviriVoidDragonArchgunSpawn",
+                        "_contextActionOffset": 20,
+                        "_portalContextAction": "",
+                        "_addDropTableOverride": "",
+                        "_centralOffsets": [
+                            [
+                                10,
+                                15,
+                                0
+                            ],
+                            [
+                                -10,
+                                15,
+                                0
+                            ],
+                            [
+                                0,
+                                15,
+                                10
+                            ],
+                            [
+                                0,
+                                15,
+                                -10
+                            ]
+                        ],
+                        "_horseAgent": "",
+                        "_horseAvatar": "",
+                        "_horseSpawnFx": "",
+                        "_horsePhaseInputFilter": "",
+                        "_WeakpointHitEffect": "",
+                        "_numBabyDragonsSpline": 3,
+                        "_numBabyDragonsShield": 3,
+                        "_babyDragonAvatar": "/Lotus/Types/Enemies/Duviri/Dragon/Baby/BabyDragonAvatar",
+                        "_babyDragonSplineAgent": "",
+                        "_babyDragonGroundAgent": "",
+                        "_babyDragonMarkerType": "",
+                        "_splineTarget": "",
+                        "_orbSplineTarget": "OrbSplineTarget",
+                        "_maxActiveBabyDragons": 4,
+                        "_horsePhaseSpeedTrigger": "",
+                        "_horsePhaseBeamHelper": "",
+                        "_babyDragonSpawnPointTag": "BabyDragonSpawn",
+                        "_statueTags": [
+                            "Statue1",
+                            "Statue2",
+                            "Statue3",
+                            "Statue4"
+                        ],
+                        "_addSpawnPointTag": "AddsSpawn",
+                        "_addSpawnFx": "",
+                        "_addNormalTypes": [],
+                        "_addSpecialTypes": [],
+                        "_addSpec": "",
+                        "_baseDragonLevel": 1,
+                        "_steelPathDragonLevel": 30,
+                        "_baseAddLevel": 50,
+                        "_steelPathAddLevel": 170,
+                        "_floorIsLavaType": "",
+                        "_floorHazardTag": "FloorHazard",
+                        "_floorIsLavaWaitTime": 20,
+                        "_horsePhaseEndWallType": "",
+                        "_horsePhaseEndWallWaitTime": 20,
+                        "_archGunDelay": 30,
+                        "_archGunPickupType": "",
+                        "_archGunWeaponType": "",
+                        "_archGunLoadout": "",
+                        "_dragonStageBeamAnim": "",
+                        "_dragonStageBeamAnimEvent": "",
+                        "_dragonStageBeamHelperType": "",
+                        "_dragonStageBeamType": "",
+                        "_dragonStageBeamEndPointType": "",
+                        "_dragonStageBeamTriggerType": "",
+                        "_debugStartTag": "DebugSpheres",
+                        "_debugSphereDistanceThreshold": 0.5,
+                        "_debugSphereOffset": [
+                            3,
+                            0,
+                            0
+                        ],
+                        "_debugPortForwardSetup": [
+                            "DamageForwarder",
+                            "CleanForwarder",
+                            "ColorCinematicForwarder"
+                        ],
+                        "_debugPortShow": [
+                            "ArenaBarrier"
+                        ],
+                        "_debugPortDestroy": [
+                            "StaticDestroyedWall",
+                            "CineDebris",
+                            "DebrisCeilWall",
+                            "CineDebris"
+                        ],
+                        "_horsePhasePortForwarderSetup": "BannerFadeForwarder",
+                        "_portalType": "/Lotus/Types/Gameplay/Duviri/CaveGateway/CaveGateway",
+                        "_portalMarkerType": "/Lotus/Types/Game/MarkerInfos/ObjectiveMarkerInfo",
+                        "_pickupSpawnPointTag": "PickupSpawnPoint",
+                        "_arenaCollisionTag": "DragonArenaCollision",
+                        "_landscapeSirocco": "",
+                        "_horseSiroccoWeapon": "",
+                        "_lockedChest": "/Lotus/Types/Gameplay/Duviri/SideActivities/LockedChest",
+                        "_openChest": "/Lotus/Types/Gameplay/Duviri/SideActivities/LockedChestStaticOpen",
+                        "_dragonChestOpenedTrigger": "/Lotus/Types/Gameplay/Duviri/DragonChestOpened",
+                        "_chestSpawnLocationTag": "DragonLookAtTarget",
+                        "_ammoHelperType": "",
+                        "_weakPointHealthMult": 0.35,
+                        "_dragonNames": [
+                            "/Lotus/Language/Duviri/Mathila",
+                            "/Lotus/Language/Duviri/DragonName",
+                            "/Lotus/Language/Duviri/Bombastine",
+                            "/Lotus/Language/Duviri/Luscinia",
+                            "/Lotus/Language/Duviri/Sythel",
+                            "/Lotus/Language/Duviri/DragonName"
+                        ],
+                        "_FIRE_BREATH_BONE": "GAME_C1_HEADTENTACLE15",
+                        "_transmissionSetList": [],
+                        "_merulinaAvatarType": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AttackSegmentTime": [
+                        3,
+                        10
+                    ],
+                    "TimeBetweenAttacks": [
+                        3,
+                        5
+                    ],
+                    "AttackRange": [
+                        0,
+                        100
+                    ],
+                    "RequireAim": 0,
+                    "StartAimAction": "",
+                    "StopAimAction": "",
+                    "AimHeadingOffset": 0,
+                    "AimArc": 180,
+                    "ExitIfCannotShoot": 1,
+                    "UseAltFire": 0,
+                    "ChangeWeapons": 0,
+                    "WeaponSlot": "SLOT_1",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_PLAY_EQUIP_ANIM"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 23,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 26,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "24": {
+                "Type": "/Lotus/Types/Behaviors/DragonRotateBehaviour",
+                "DragonRotateBehaviour": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "EvaluationTime": 20
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 24,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 25,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "25": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/ScriptCondition",
+                "conditionProperties:Script": {
+                    "Script": "DragonGroundBoss.lua",
+                    "Function": "DoingSpecialPhase",
+                    "_dragonAgentType": "GroundDragonBossAgent",
+                    "_dragonAvatarType": "GroundDragonBossAvatar",
+                    "_agentSpawnAtTaggedObject": "",
+                    "_roarAnim": "",
+                    "_roarAnimEvent": "",
+                    "_collapseAnim": "",
+                    "_collapseIdleAnim": "",
+                    "_riseAnim": "",
+                    "_predeathHealthPortions": [
+                        0.75,
+                        0.5,
+                        0.25,
+                        0.01
+                    ],
+                    "_colourPhaseSymbols": [
+                        "ColorPhase1Fowarder",
+                        "ColorPhase2Fowarder",
+                        "ColorPhase3Fowarder"
+                    ],
+                    "_destroyedStatuePortForwarders": [
+                        "Statue4PortForwarder",
+                        "Statue1PortForwarder",
+                        "Statue2PortForwarder",
+                        "Statue3PortForwarder"
+                    ],
+                    "_archgunSpawnSound": "/Lotus/Sounds/Enemies/Duviri/DuviriVoidDragon/Gameplay/DuviriVoidDragonArchgunSpawn",
+                    "_contextActionOffset": 20,
+                    "_portalContextAction": "",
+                    "_addDropTableOverride": "",
+                    "_centralOffsets": [
+                        [
+                            20,
+                            15,
+                            0
+                        ],
+                        [
+                            -20,
+                            15,
+                            0
+                        ],
+                        [
+                            0,
+                            15,
+                            20
+                        ],
+                        [
+                            0,
+                            15,
+                            -20
+                        ]
+                    ],
+                    "_horseAgent": "",
+                    "_horseAvatar": "",
+                    "_horseSpawnFx": "",
+                    "_horsePhaseInputFilter": "",
+                    "_WeakpointHitEffect": "",
+                    "_numBabyDragonsSpline": 3,
+                    "_numBabyDragonsShield": 3,
+                    "_babyDragonAvatar": "/Lotus/Types/Enemies/Duviri/Dragon/Baby/BabyDragonAvatar",
+                    "_babyDragonSplineAgent": "",
+                    "_babyDragonGroundAgent": "",
+                    "_babyDragonMarkerType": "",
+                    "_splineTarget": "SplineTarget",
+                    "_orbSplineTarget": "OrbSplineTarget",
+                    "_maxActiveBabyDragons": 4,
+                    "_horsePhaseSpeedTrigger": "",
+                    "_horsePhaseBeamHelper": "",
+                    "_babyDragonSpawnPointTag": "BabyDragonSpawn",
+                    "_statueTags": [
+                        "Statue1",
+                        "Statue2",
+                        "Statue3",
+                        "Statue4"
+                    ],
+                    "_addSpawnPointTag": "AddsSpawn",
+                    "_addSpawnFx": "",
+                    "_addNormalTypes": [],
+                    "_addSpecialTypes": [],
+                    "_addSpec": "",
+                    "_baseDragonLevel": 1,
+                    "_steelPathDragonLevel": 30,
+                    "_baseAddLevel": 50,
+                    "_steelPathAddLevel": 170,
+                    "_floorIsLavaType": "",
+                    "_floorHazardTag": "FloorHazard",
+                    "_floorIsLavaWaitTime": 20,
+                    "_horsePhaseEndWallType": "",
+                    "_horsePhaseEndWallWaitTime": 20,
+                    "_archGunDelay": 30,
+                    "_archGunPickupType": "",
+                    "_archGunWeaponType": "",
+                    "_archGunLoadout": "",
+                    "_dragonStageBeamAnim": "",
+                    "_dragonStageBeamAnimEvent": "",
+                    "_dragonStageBeamHelperType": "",
+                    "_dragonStageBeamType": "",
+                    "_dragonStageBeamEndPointType": "",
+                    "_dragonStageBeamTriggerType": "",
+                    "_debugStartTag": "DebugSpheres",
+                    "_debugSphereDistanceThreshold": 0.5,
+                    "_debugSphereOffset": [
+                        3,
+                        0,
+                        0
+                    ],
+                    "_debugPortForwardSetup": [
+                        "DamageForwarder",
+                        "CleanForwarder",
+                        "ColorCinematicForwarder"
+                    ],
+                    "_debugPortShow": [
+                        "ArenaBarrier"
+                    ],
+                    "_debugPortDestroy": [
+                        "StaticDestroyedWall",
+                        "CineDebris",
+                        "DebrisCeilWall",
+                        "CineDebris"
+                    ],
+                    "_horsePhasePortForwarderSetup": "BannerFadeForwarder",
+                    "_portalType": "/Lotus/Types/Gameplay/Duviri/CaveGateway/CaveGateway",
+                    "_portalMarkerType": "/Lotus/Types/Game/MarkerInfos/ObjectiveMarkerInfo",
+                    "_pickupSpawnPointTag": "PickupSpawnPoint",
+                    "_arenaCollisionTag": "DragonArenaCollision",
+                    "_landscapeSirocco": "",
+                    "_horseSiroccoWeapon": "",
+                    "_lockedChest": "/Lotus/Types/Gameplay/Duviri/SideActivities/LockedChest",
+                    "_openChest": "/Lotus/Types/Gameplay/Duviri/SideActivities/LockedChestStaticOpen",
+                    "_dragonChestOpenedTrigger": "/Lotus/Types/Gameplay/Duviri/DragonChestOpened",
+                    "_chestSpawnLocationTag": "DragonLookAtTarget",
+                    "_ammoHelperType": "",
+                    "_weakPointHealthMult": 0.35,
+                    "_dragonNames": [
+                        "/Lotus/Language/Duviri/Mathila",
+                        "/Lotus/Language/Duviri/DragonName",
+                        "/Lotus/Language/Duviri/Bombastine",
+                        "/Lotus/Language/Duviri/Luscinia",
+                        "/Lotus/Language/Duviri/Sythel",
+                        "/Lotus/Language/Duviri/DragonName"
+                    ],
+                    "_FIRE_BREATH_BONE": "GAME_C1_HEADTENTACLE15",
+                    "_transmissionSetList": [],
+                    "_merulinaAvatarType": ""
+                },
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 25,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 18,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "26": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/ScriptCondition",
+                "conditionProperties:Script": {
+                    "Script": "DragonGroundBoss.lua",
+                    "Function": "DoingSpecialPhase",
+                    "_dragonAgentType": "GroundDragonBossAgent",
+                    "_dragonAvatarType": "GroundDragonBossAvatar",
+                    "_agentSpawnAtTaggedObject": "",
+                    "_roarAnim": "",
+                    "_roarAnimEvent": "",
+                    "_collapseAnim": "",
+                    "_collapseIdleAnim": "",
+                    "_riseAnim": "",
+                    "_predeathHealthPortions": [
+                        0.75,
+                        0.5,
+                        0.25,
+                        0.01
+                    ],
+                    "_colourPhaseSymbols": [
+                        "ColorPhase1Fowarder",
+                        "ColorPhase2Fowarder",
+                        "ColorPhase3Fowarder"
+                    ],
+                    "_destroyedStatuePortForwarders": [
+                        "Statue4PortForwarder",
+                        "Statue1PortForwarder",
+                        "Statue2PortForwarder",
+                        "Statue3PortForwarder"
+                    ],
+                    "_archgunSpawnSound": "/Lotus/Sounds/Enemies/Duviri/DuviriVoidDragon/Gameplay/DuviriVoidDragonArchgunSpawn",
+                    "_contextActionOffset": 20,
+                    "_portalContextAction": "",
+                    "_addDropTableOverride": "",
+                    "_centralOffsets": [
+                        [
+                            20,
+                            15,
+                            0
+                        ],
+                        [
+                            -20,
+                            15,
+                            0
+                        ],
+                        [
+                            0,
+                            15,
+                            20
+                        ],
+                        [
+                            0,
+                            15,
+                            -20
+                        ]
+                    ],
+                    "_horseAgent": "",
+                    "_horseAvatar": "",
+                    "_horseSpawnFx": "",
+                    "_horsePhaseInputFilter": "",
+                    "_WeakpointHitEffect": "",
+                    "_numBabyDragonsSpline": 3,
+                    "_numBabyDragonsShield": 3,
+                    "_babyDragonAvatar": "/Lotus/Types/Enemies/Duviri/Dragon/Baby/BabyDragonAvatar",
+                    "_babyDragonSplineAgent": "",
+                    "_babyDragonGroundAgent": "",
+                    "_babyDragonMarkerType": "",
+                    "_splineTarget": "SplineTarget",
+                    "_orbSplineTarget": "OrbSplineTarget",
+                    "_maxActiveBabyDragons": 4,
+                    "_horsePhaseSpeedTrigger": "",
+                    "_horsePhaseBeamHelper": "",
+                    "_babyDragonSpawnPointTag": "BabyDragonSpawn",
+                    "_statueTags": [
+                        "Statue1",
+                        "Statue2",
+                        "Statue3",
+                        "Statue4"
+                    ],
+                    "_addSpawnPointTag": "AddsSpawn",
+                    "_addSpawnFx": "",
+                    "_addNormalTypes": [],
+                    "_addSpecialTypes": [],
+                    "_addSpec": "",
+                    "_baseDragonLevel": 1,
+                    "_steelPathDragonLevel": 30,
+                    "_baseAddLevel": 50,
+                    "_steelPathAddLevel": 170,
+                    "_floorIsLavaType": "",
+                    "_floorHazardTag": "FloorHazard",
+                    "_floorIsLavaWaitTime": 20,
+                    "_horsePhaseEndWallType": "",
+                    "_horsePhaseEndWallWaitTime": 20,
+                    "_archGunDelay": 30,
+                    "_archGunPickupType": "",
+                    "_archGunWeaponType": "",
+                    "_archGunLoadout": "",
+                    "_dragonStageBeamAnim": "",
+                    "_dragonStageBeamAnimEvent": "",
+                    "_dragonStageBeamHelperType": "",
+                    "_dragonStageBeamType": "",
+                    "_dragonStageBeamEndPointType": "",
+                    "_dragonStageBeamTriggerType": "",
+                    "_debugStartTag": "DebugSpheres",
+                    "_debugSphereDistanceThreshold": 0.5,
+                    "_debugSphereOffset": [
+                        3,
+                        0,
+                        0
+                    ],
+                    "_debugPortForwardSetup": [
+                        "DamageForwarder",
+                        "CleanForwarder",
+                        "ColorCinematicForwarder"
+                    ],
+                    "_debugPortShow": [
+                        "ArenaBarrier"
+                    ],
+                    "_debugPortDestroy": [
+                        "StaticDestroyedWall",
+                        "CineDebris",
+                        "DebrisCeilWall",
+                        "CineDebris"
+                    ],
+                    "_horsePhasePortForwarderSetup": "BannerFadeForwarder",
+                    "_portalType": "/Lotus/Types/Gameplay/Duviri/CaveGateway/CaveGateway",
+                    "_portalMarkerType": "/Lotus/Types/Game/MarkerInfos/ObjectiveMarkerInfo",
+                    "_pickupSpawnPointTag": "PickupSpawnPoint",
+                    "_arenaCollisionTag": "DragonArenaCollision",
+                    "_landscapeSirocco": "",
+                    "_horseSiroccoWeapon": "",
+                    "_lockedChest": "/Lotus/Types/Gameplay/Duviri/SideActivities/LockedChest",
+                    "_openChest": "/Lotus/Types/Gameplay/Duviri/SideActivities/LockedChestStaticOpen",
+                    "_dragonChestOpenedTrigger": "/Lotus/Types/Gameplay/Duviri/DragonChestOpened",
+                    "_chestSpawnLocationTag": "DragonLookAtTarget",
+                    "_ammoHelperType": "",
+                    "_weakPointHealthMult": 0.35,
+                    "_dragonNames": [
+                        "/Lotus/Language/Duviri/Mathila",
+                        "/Lotus/Language/Duviri/DragonName",
+                        "/Lotus/Language/Duviri/Bombastine",
+                        "/Lotus/Language/Duviri/Luscinia",
+                        "/Lotus/Language/Duviri/Sythel",
+                        "/Lotus/Language/Duviri/DragonName"
+                    ],
+                    "_FIRE_BREATH_BONE": "GAME_C1_HEADTENTACLE15",
+                    "_transmissionSetList": [],
+                    "_merulinaAvatarType": ""
+                },
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 26,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 18,
+                            "prop": 5
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 18
+    }
+}

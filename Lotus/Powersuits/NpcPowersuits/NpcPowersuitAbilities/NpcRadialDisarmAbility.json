@@ -1,0 +1,42 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PlayerPowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/RadialDisarmAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/RadialDisarmAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/LokiRadialDisarm.png",
+        "UniquePowerIdentifier": "LOKI_DISARM",
+        "AdditionalPowerIdentifiers": [
+            "EFFECT_DEBUFF"
+        ],
+        "Script": {
+            "Script": "/Lotus/Powersuits/PowersuitAbilities/RadialDisarm.lua",
+            "Function": "ActivateAbility",
+            "_agentType": "/Lotus/Types/Enemies/GenericDisarmedAgent",
+            "_meleeweapon": "/Lotus/Weapons/Tenno/Melee/DisarmBasicMeleeWeapon",
+            "_disarmAnim": "/Lotus/Animations/Tenno/Powers/Loki/RadialDisarm_anim.fbx",
+            "_tennoAvatarType": "/Lotus/Types/Player/TennoAvatar",
+            "_confusedEffect": "/Lotus/Fx/Gameplay/StatusEffects/Confused",
+            "_npcMaxRange": 10
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "DisablePlayers",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/RadialDisarm.lua",
+                    "Function": "DisablePlayers",
+                    "_agentType": "",
+                    "_meleeweapon": "",
+                    "_disarmAnim": "",
+                    "_tennoAvatarType": "",
+                    "_confusedEffect": "",
+                    "_npcMaxRange": 10
+                }
+            }
+        ],
+        "CooldownDuration": 15,
+        "EnergyRequiredToActivate": 0
+    }
+}

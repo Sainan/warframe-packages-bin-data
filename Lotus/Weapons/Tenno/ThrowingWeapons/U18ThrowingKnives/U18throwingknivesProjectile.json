@@ -1,0 +1,127 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "Mesh": "U18ThrowingKnives_skel.fbx",
+        "AnimationScene": "/Lotus/Animations/Tenno/Movement/Throwing/U18ThrowingKnivesOpenedWEP_anim.fbx",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/GrenadeLauncher/GrenadeLauncherProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicQuery",
+        "AttackData": {
+            "Type": "DT_IMPACT",
+            "Amount": 0,
+            "ProcChance": 0.26
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "CriticalChance": 0.22,
+        "CriticalMultiplier": 2,
+        "ExplosiveAttack": {
+            "Amount": 120
+        },
+        "ForcedSourceProcs": [
+            "PT_STAGGERED",
+            "PT_BIG_STAGGER",
+            "PT_KNOCKED_DOWN"
+        ],
+        "ExplosionIgnoreCover": 0,
+        "ExplosionFallOff": 0.5,
+        "AllowedDamageTypes": [
+            "DT_IMPACT",
+            "DT_FIRE",
+            "DT_EXPLOSION",
+            "DT_PHYSICAL"
+        ],
+        "DamageRadius": 4.8,
+        "DieEffect": "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledMedium",
+        "DieEffectMirror": "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledMediumCheap",
+        "DieSound": "/Lotus/Sounds/Weapons/Tenno/ThrowingKniveStickyBomb/ThrowingKniveStickyBombExplosion",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "Toughness": 10000,
+        "MaxLife": 8,
+        "VerticalImpulse": 50,
+        "HorizontalImpulse": 75,
+        "Embed": 1,
+        "EmbedAlignToSurface": 1,
+        "EmbedAttack": {
+            "Type": "DT_CORROSIVE",
+            "Amount": 0,
+            "ProcChance": 0.5
+        },
+        "EmbedDamageRadius": 4,
+        "EmbedTime": [
+            0,
+            0
+        ],
+        "EmbedDeathAttack": {
+            "Amount": 250,
+            "ForcedProcs": [
+                "PT_FRAILTY",
+                "PT_RAGDOLL"
+            ]
+        },
+        "EmbedEffect": "/Lotus/Fx/Weapons/Tenno/ThrowingWeapons/U18ThrowingEmbed",
+        "OwnEmbedEffect": 1,
+        "EmbedDeathEffect": "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledMedium",
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 60,
+        "KinematicMaxSpeed": 60,
+        "KinematicGravity": 1,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            20,
+            0.1,
+            0
+        ],
+        "SweepRadius": 0,
+        "ProjectileReplication": "SYNCED_AUTONOMOUS",
+        "FaceVelocity": 1,
+        "BaseRotation": [
+            -0.707107,
+            0,
+            0,
+            0.707107
+        ],
+        "KinematicIgnoredTypes": [
+            "/Lotus/Types/Game/PickUps/LotusPickUp"
+        ],
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/StickyBomb.lua",
+            "Function": "OnContact",
+            "_explosionDelay": 1,
+            "_animation": "/Lotus/Animations/Tenno/Movement/Throwing/StickyBombCloseToOpenWEP_anim.fbx",
+            "_sequencer": "",
+            "_loop": 0,
+            "_animRate": 1,
+            "_destroyOnContact": 0
+        },
+        "SilentProjectile": 1,
+        "ApplyColorCustomization": 1
+    }
+}

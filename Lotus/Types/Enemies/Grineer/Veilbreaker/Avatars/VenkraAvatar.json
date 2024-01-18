@@ -1,0 +1,235 @@
+{
+    "parent": "/Lotus/Types/Game/LotusBossNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Grineer/VenKraTel/VenKraTel_skel.fbx",
+        "MeshScale": 1.3,
+        "AnimationName": "Guild",
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    -0.3,
+                    0.17,
+                    0
+                ],
+                "LocalRotation": [
+                    0.454519,
+                    -0.541675,
+                    0.454519,
+                    0.541675
+                ],
+                "BoneName": "GAME_C1_SPINE2",
+                "Type": "/Lotus/Types/Enemies/Grineer/AIWeek/Avatars/GrineerBossJetPackDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    1,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Types/Game/MarkerInfos/BossKillMarker",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    1.875,
+                    -0.46,
+                    0
+                ],
+                "LocalRotation": [
+                    0.430459,
+                    -0.560986,
+                    0.430459,
+                    0.560985
+                ],
+                "BoneName": "GAME_C1_HEAD1",
+                "Type": "/Lotus/Types/Enemies/Narmer/NarmerMaskDecoAlternate",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "VenkraHover",
+        "HeadBone": "GAME_C1_HEAD1",
+        "HeadRotation": [
+            270,
+            0,
+            0
+        ],
+        "UseHeadBoneForEyePosition": 1,
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Narmer",
+        "LocTag": "/Lotus/Language/Game/GrineerJetpackSniper",
+        "ShortDesc": "/Lotus/Language/Game/GrineerJetpackSniperDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Venkra.png",
+        "MaxHealth": 1200,
+        "VoiceBox": "/Lotus/Sounds/Dialog/Barks/Battle/VenkraTel/VenkraTelVoicebox",
+        "DropTable": "/Lotus/Types/DropTables/GrineerFemaleJetpackDropTable",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
+        "AnimControllerType": "/Lotus/Types/Enemies/Grineer/AIWeek/Avatars/JetpackGrineerAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "WallSlideControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWallSlideController",
+        "DamageControllerType": "/Lotus/Types/Enemies/Grineer/Veilbreaker/VenkraDamageController",
+        "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/JetpackSniperInventory",
+        "MotionControllerType": "/Lotus/Types/Enemies/Grineer/AIWeek/Avatars/JetpackMotionController",
+        "RaycastProxy": {
+            "BoneName": "GAME_C1_HIP1",
+            "Type": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/HitProxies/GrineerFullBody"
+        },
+        "AllowDieWhenRisingFromRagdoll": 0,
+        "OnPreDeathScript": {
+            "Script": "/Lotus/Types/Enemies/Grineer/Veilbreaker/Scripts/VenkraBossLogic.lua",
+            "Function": "VenkraPreDeathScript",
+            "_venkraShieldObj": "/Lotus/Types/Enemies/Grineer/Veilbreaker/Weapons/VenkraEnergyShieldDeco",
+            "_venkraShieldScaleTime": 0.5
+        },
+        "OnDeathScript": {
+            "Script": "/Lotus/Types/Enemies/Grineer/Veilbreaker/Scripts/VenkraBossLogic.lua",
+            "Function": "VenkraDeathScript",
+            "_venkraShieldObj": "/Lotus/Types/Enemies/Grineer/Veilbreaker/Weapons/VenkraEnergyShieldDeco",
+            "_venkraShieldScaleTime": 0.5
+        },
+        "FacialMorphHeadAttachmentType": "/Lotus/Characters/Grineer/Female/GrineerFemaleHeadMorphsDeco",
+        "MorphName:ALERT": "Morphs.Alert",
+        "MorphName:RAGE": "Morphs.Rage",
+        "MorphName:FEAR": "Morphs.Fear",
+        "MorphName:DEAD": "Morphs.Dead",
+        "MorphName:SMUG": "Morphs.Smug",
+        "MorphName:PAIN": "Morphs.Pain",
+        "SoundEvents": [
+            {
+                "EventName": "SFXSummonDrone",
+                "Sound": "/Lotus/Sounds/Enemies/Veilbreaker/Venkra/VenkraSummonDrone",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "DeployCoverStart",
+                "Sound": "/Lotus/Sounds/Enemies/Veilbreaker/Venkra/VenkraDeployableCoverOpen",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXVenkraJetpackTakeOff",
+                "Sound": "/Lotus/Sounds/Enemies/Veilbreaker/Venkra/VenkraJetpackThrusterBurst",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXVenkraTakeOff",
+                "Sound": "/Lotus/Sounds/Enemies/Veilbreaker/Venkra/VenkraJetpackLaunchUp",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "VoiceBoxEvents": [
+            {
+                "EventName": "SFXSummonDrone",
+                "Phrase": "USING_ABILITY",
+                "Filter": "DroneSummon"
+            },
+            {
+                "EventName": "SFXVeilbreakerPainBark",
+                "Phrase": "PAIN",
+                "Filter": ""
+            },
+            {
+                "EventName": "SFXVeilbreakerPainVenkra",
+                "Phrase": "DEATH",
+                "Filter": ""
+            }
+        ],
+        "AnimationEvents": [
+            {
+                "EventName": "SFXSummonDrone",
+                "Animation": "/Lotus/Animations/Grineer/Sprag/SummonDrone_anim.fbx",
+                "BlendIndex": 0,
+                "Rate": 1,
+                "Loop": 0,
+                "Queue": 0,
+                "Transition": 0,
+                "FreezeAtEnd": 0,
+                "PreserveDelta": 0,
+                "ChildrenOnly": 0
+            },
+            {
+                "EventName": "DeployCoverStart",
+                "Animation": "/Lotus/Animations/Grineer/Movement/CoverDeploy_anim.fbx",
+                "BlendIndex": 0,
+                "Rate": 1,
+                "Loop": 0,
+                "Queue": 0,
+                "Transition": 0,
+                "FreezeAtEnd": 0,
+                "PreserveDelta": 0,
+                "ChildrenOnly": 0
+            },
+            {
+                "EventName": "SFXVenkraJetpackTakeOff",
+                "Animation": "/Lotus/Animations/Corpus/JetPack/TakeOff_anim.fbx",
+                "BlendIndex": 0,
+                "Rate": 1,
+                "Loop": 0,
+                "Queue": 0,
+                "Transition": 0,
+                "FreezeAtEnd": 0,
+                "PreserveDelta": 0,
+                "ChildrenOnly": 0
+            },
+            {
+                "EventName": "SFXVenkraSpawn",
+                "Animation": "/Lotus/Animations/Grineer/JetPack/Spawn_anim.fbx",
+                "BlendIndex": 0,
+                "Rate": 1,
+                "Loop": 0,
+                "Queue": 0,
+                "Transition": 0,
+                "FreezeAtEnd": 0,
+                "PreserveDelta": 0,
+                "ChildrenOnly": 0
+            }
+        ],
+        "KillXPReward": 1000,
+        "ShowLevelInHud": 0,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataBoss",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HumanoidReactionAnims"
+    }
+}

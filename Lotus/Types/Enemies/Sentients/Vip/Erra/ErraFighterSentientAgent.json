@@ -1,0 +1,198 @@
+{
+    "parent": "ErraSentientAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "ErraFighterSentientAvatar"
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/OrderBasedBehaviorSelector",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/ErraQuestFightingBehavior",
+            "/EE/Types/Npc/GuardBehavior"
+        ],
+        "OrderBasedBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Actions": [
+                "/EE/Types/Npc/WaitBehavior"
+            ],
+            "WaitBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOut": 0,
+                "CoverOnly": 0,
+                "AimPosture": 0,
+                "MinimalEnemyDistance": 0,
+                "TrackTarget": 0,
+                "Peek": 0,
+                "FailOnDamaged": 0,
+                "PreventShooting": 1,
+                "StopMovingOnEnter": 1
+            },
+            "FailOnChildFailure": 0,
+            "OrderName": "ThroneDialog",
+            "FailOnThisOrder": 0,
+            "RequiredTargetType": "OTT_No_Requirement",
+            "DistanceReaction": "ODTT_No_Requirement",
+            "RequiredDistance": 5
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "BlockForPowerCompleteType": "BT_ALWAYS",
+            "ExtraReevaluationDelay": 0,
+            "EvaluateDelayRange": [
+                0.1,
+                0.1
+            ],
+            "TurnDuringAbility": 0
+        },
+        "ErraQuestFightingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DebugDraw": 0,
+            "MeleeAction:Type": "/EE/Types/Npc/SimpleMeleeAttackBehavior",
+            "MeleeAction:Enabled": 1,
+            "MeleeAction:OnStartScript": {
+                "Script": ""
+            },
+            "MeleeAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "MeleeAction:DefaultReevaluationDelay": 0,
+            "MeleeAction:AttackRange": [
+                0,
+                3.3
+            ],
+            "MeleeAction:AlternateAttackRange": [
+                0,
+                3.3
+            ],
+            "MeleeAction:UseMeleeFov": 0,
+            "MeleeAction:MeleeFov": 180,
+            "MeleeAction:AllowMeleeingFromBehind": 0,
+            "MeleeAction:TimeSinceRendered": 0,
+            "MeleeAction:MeleeFromBehindFOV": 90,
+            "MeleeAction:RequiresClearNavTrace": 0,
+            "MeleeAction:InputCode": "MELEE",
+            "MeleeAction:AlternateAttackInputCode": "MELEE",
+            "MeleeAction:InTimer": 0.25,
+            "MeleeAction:Timer": 5,
+            "MeleeAction:TimeBetweenAttacksRange": [
+                0.1,
+                0.1
+            ],
+            "MeleeAction:ShouldModifyPosture": 1,
+            "MeleeAction:UsePredictedPosition": 0,
+            "MeleeAction:MeleeAttackTime": 0.5,
+            "MeleeAction:AttackEvenIfTargetLeavesRange": 1,
+            "MeleeAction:TurnToFaceTarget": 1,
+            "MeleeAction:StopMeleeOnStop": 0,
+            "MeleeAction:WaitForMeleeToEnd": 0,
+            "MeleeAction:StopMovingWhenAttacking": 1,
+            "MaxDistanceFromTarget": 5,
+            "MaxDistanceFromFightingLane": 0.5,
+            "MaxDistanceFromStartingPoint": 10,
+            "DistanceFromTargetPostDamage": 4,
+            "MaxDisengagingTime": 3,
+            "WaitingTimeRangeForAttack": [
+                1,
+                2
+            ],
+            "ParryingChance": 0.35,
+            "ParryingTime": [
+                0.9,
+                2.1
+            ],
+            "InvincibleAttackOrder": "InvincibleAttack",
+            "BackAwayToMiddleOrder": "BackAway",
+            "ParryingScript": {
+                "Script": "/Lotus/Scripts/Sentient/ErraQuest.lua",
+                "Function": "StartBlocking",
+                "_boneName": "GAME_L1_ARM2END",
+                "_createType": "",
+                "_explosionDamage": 10,
+                "_explosionRadius": 1.5,
+                "_parryAnimation": "/Lotus/Animations/Sentient/Erra/Block_anim.fbx"
+            },
+            "StopParryingScript": {
+                "Script": "/Lotus/Scripts/Sentient/ErraQuest.lua",
+                "Function": "StopBlocking",
+                "_boneName": "GAME_L1_ARM2END",
+                "_createType": "",
+                "_explosionDamage": 10,
+                "_explosionRadius": 1.5,
+                "_parryAnimation": ""
+            },
+            "AllowableMoveError": 0.5
+        },
+        "GuardBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+            "WaitAction:Enabled": 1,
+            "WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "RandomFacingChange": [
+                0,
+                0
+            ],
+            "MinHeadingChangeToTurn": 0
+        },
+        "CustomTravelBehavior": "ErraFighterTravelBehavior",
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierVelocitySimulator",
+                    "/EE/Types/Npc/LocomotionMoveModifierDodgeJumpBackToNav"
+                ],
+                "LocomotionMoveModifierVelocitySimulator": {
+                    "ApplyToSpecificMoveStyle": "MFC_FACE_TARGET"
+                },
+                "LocomotionMoveModifierDodgeJumpBackToNav": {
+                    "DodgeJumpSymbol": "DodgeJump",
+                    "OffNavTimeRequired": 2,
+                    "TotallyStuckTimeRequired": 4,
+                    "SkipPathOnStuck": 0,
+                    "MinTimeSinceLastSeenRequired": 10,
+                    "SkipFallingOrLaunchingAvatars": 0,
+                    "DistanceToInstantTeleport": 100
+                }
+            }
+        ],
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 100,
+        "ViewFov": 360,
+        "VerticalFov": 90,
+        "ViewDistance": 100
+    }
+}

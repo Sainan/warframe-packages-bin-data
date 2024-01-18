@@ -1,0 +1,683 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "TeshinAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "TeshinKatana",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/TeshinPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/SearchForTargetBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/TargetOffNavBehavior",
+            "/Lotus/Types/Behaviors/BossPhaseTactic",
+            "/Lotus/Types/Behaviors/BossPhase1Tactic"
+        ],
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
+        "StormTargetOrderBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceLastSeen": 5,
+            "MaxDistToTarget": 25,
+            "ConsiderOrderType": 1,
+            "Order": "StormTarget",
+            "FailsOnTargetAcquired": 1,
+            "SuccessRadius": 1,
+            "DesiredPosture": "JOG",
+            "UseNearTargetPosture": 0,
+            "DesiredPostureNearTarget": "WALK",
+            "DesiredPostureOutOfView": "RUN",
+            "MaxOffNavDistance": 5,
+            "TargetMovedRadius": 6,
+            "OnFailureReevalTime": 0.01,
+            "OnSuccessReevalTime": 10,
+            "TryShoot": 1,
+            "TargetFaction": "",
+            "DistanceToOrderTargetForNearPosture": 0,
+            "ClearOrderOnMoveSuccess": 0,
+            "AllowTeleportToCatchUp": 1,
+            "TeleportToDestination": 0,
+            "AllowPartialPath": 1
+        },
+        "SearchForTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StartAtTimeSinceLastSeen": [
+                12,
+                18
+            ],
+            "ReInvestigateTimeRange": [
+                12,
+                18
+            ],
+            "ShouldAim": 1,
+            "CanRun": 1,
+            "StopSearchIfNoTarget": 0,
+            "StopSearchOnAwarenessLevel": "AW_IDLE",
+            "MaintainedAwarenessLevel": "AW_ALERT",
+            "SeekCoverDelayPostSearch": 5,
+            "OnArrivalBehaviors": []
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ABILITY_DRIVEN",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 0,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 1,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "TargetOffNavBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "OffNavTime": [
+                5,
+                10
+            ],
+            "StopChildrenOnFail": 0,
+            "StopIfAgentIsOffNav": 0,
+            "ReportUnreachableOffNav": 0,
+            "OffNavBehaviors": []
+        },
+        "BossPhaseTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "PhaseBehaviors": [
+                "/EE/Types/Npc/DefensiveDodgeJumpBehavior",
+                "/Lotus/Types/Behaviors/LotusAdvancedMeleeBehavior",
+                "/EE/Types/Npc/KeepMeleeDistanceBehavior"
+            ],
+            "DefensiveDodgeJumpBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "UseDirectionalActions": 0,
+                "DirectionalActions:STATIONARY": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:FORWARD": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:BACKWARD": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:LEFT": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:RIGHT": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:STOPPING": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:UPWARD": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:DOWNWARD": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "FullBodyAction": "FBA_ROLL",
+                "Action": "DodgeRoll",
+                "UseTacPosMgr": 1,
+                "IdealJumpDist": [
+                    2,
+                    5
+                ],
+                "MaxJumpDist": 6,
+                "ShouldFaceTarget": 1,
+                "GeneratePointsAroundTarget": 0,
+                "GeneratePointsDistance": [
+                    0,
+                    5
+                ],
+                "GenerateSpacing": 3,
+                "MinDistanceToNavEdge": 0,
+                "PreventDodgeOnAnimBlocked": 0,
+                "DoTacVisTrace": 1,
+                "DoGeoRaycast": 0,
+                "StaticShapesOnly": 1,
+                "TacVisToTarget": 1,
+                "ScoreDistToTarget": 1,
+                "ScoreDistanceResponseCurve": {
+                    "m": -3,
+                    "k": 2,
+                    "b": 1,
+                    "c": 0.5,
+                    "logistic": 0
+                },
+                "ScoreDirectionFromTarget": {
+                    "m": 10,
+                    "k": 1,
+                    "b": 0,
+                    "c": 0.25,
+                    "logistic": 1
+                },
+                "DoTargetViewScore": 0,
+                "RestrictToDefenseVolume": 0,
+                "ScoreDirectionFromTargetView": {
+                    "m": -1,
+                    "k": 2,
+                    "b": 1,
+                    "c": 1,
+                    "logistic": 0
+                },
+                "NumResults": 1,
+                "DelayBetweenDodges": 2,
+                "TargetRange": 6,
+                "DodgeIfAimedAtDistance": 30,
+                "DamageThreshold": 0,
+                "RepositionTime": 0.5,
+                "DodgeIfAimedAt": 0,
+                "ForceDodge": 0
+            },
+            "LotusAdvancedMeleeBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "UseCombatMgr": 0,
+                "SucceedAfterCombo": 0,
+                "SucceedAfterDefensive": 0,
+                "AdjustAimDuringCombo": 1,
+                "AlwaysCompleteCombo": 0,
+                "LastSeenTargetStopComboTime": 2,
+                "AttackFirst": 0,
+                "DefensiveMoveTowards": 0,
+                "DefensiveWhenNotAttacking": 0,
+                "AllowWeaponSwapForDefence": 0,
+                "DefensiveWhenAimedAt": 0,
+                "DefensiveHealthPercentage": 0,
+                "DefensiveForcedWindow": 3,
+                "StopMovementOnAttack": 1,
+                "DefensiveParryChance": 1,
+                "DefensiveTime": [
+                    0,
+                    5
+                ],
+                "DoReactiveBlocking": 0,
+                "ReactiveBlockingDefenseTime": 0.4,
+                "DefensiveCooldownTime": 1,
+                "HeavyAttackProcTypeImmunities": [],
+                "MeleeRange": [
+                    0.3,
+                    5
+                ],
+                "MeleeRangeAttack": [
+                    0,
+                    0
+                ],
+                "MeleeRangeDash": [
+                    0,
+                    0
+                ],
+                "PlayerBehaviourEvalTime": [
+                    0.5,
+                    1
+                ],
+                "MaxAllowedAttacksBlocked": 0,
+                "AggressiveHealthThreshold": 0,
+                "BasicAttackTypes": [],
+                "DashAttackType": "CC_SLIDING",
+                "UseEquippedWeapon": 1,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_6",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_INSTANT_EQUIP",
+                "StopWeapons": 0
+            },
+            "KeepMeleeDistanceBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "RandomizeRange": 1,
+                "UseWeaponRange": 0,
+                "IdealDistance": [
+                    7.5,
+                    15
+                ],
+                "EvaluateDistance": [
+                    6,
+                    50
+                ],
+                "MaxMovementDistance": 100,
+                "AllowRetreat": 0,
+                "AllowRun": 1,
+                "AllowChase": 0,
+                "ForceWalkBelowMinIdealRange": 1,
+                "WalkRange": [
+                    0,
+                    0
+                ],
+                "RequireTeamMeleeLock": 0,
+                "ReleaseTeamMeleeLock": 0,
+                "AimWhileMoving": 0,
+                "MoveFacingControl": "MFC_FACE_MOVEDIR",
+                "StopRadius": 0.5,
+                "RunWhenShocked": 0,
+                "ShockedDamageTime": 30,
+                "OnlyTravelWhenVisible": 0,
+                "TravelDuringStruggle": 1,
+                "AllowPartialPath": 0,
+                "UpdateDestinationInterval": 0.5,
+                "UpdateDestinationDistance": 2,
+                "OffNavRadius": 3,
+                "OffNavHeight": 4,
+                "RequiresClearNavTrace": 0,
+                "HoverHeightOverride": -1,
+                "RetryWithPathlessMovement": 0,
+                "PathlessMovementMaxDistance": 16,
+                "AvoidTargetLineOfSight": 0,
+                "AvoidanceBias": 10,
+                "LockTarget": 0,
+                "LookAtTarget": 0,
+                "DistanceToShoot": -1,
+                "WalkWhileShooting": 0,
+                "AimOnFire": 0,
+                "AllowReload": 0,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_1",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                "AttackPhrase": "CHARGE_SCREAM",
+                "AlwaysPlayAttackPhrase": 0,
+                "PlayPhrase": 0,
+                "Bark": "IDLE",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    0,
+                    0
+                ],
+                "ReportUnreachableOnFailedMove": 1,
+                "ReportUnreachableOffNav": 1,
+                "TimeOffNav": 2,
+                "RestrictToDefenseVolume": 0,
+                "WalkMovePosture": "WALK"
+            },
+            "Phases": [
+                0
+            ]
+        },
+        "BossPhase1Tactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "PhaseBehaviors": [
+                "/EE/Types/Npc/DefensiveDodgeJumpBehavior",
+                "/Lotus/Types/Behaviors/LotusAdvancedMeleeBehavior",
+                "/EE/Types/Npc/KeepMeleeDistanceBehavior"
+            ],
+            "DefensiveDodgeJumpBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "UseDirectionalActions": 0,
+                "DirectionalActions:STATIONARY": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:FORWARD": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:BACKWARD": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:LEFT": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:RIGHT": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:STOPPING": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:UPWARD": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "DirectionalActions:DOWNWARD": {
+                    "fullBodyAction": "FBA_ROLL",
+                    "action": "DodgeJump"
+                },
+                "FullBodyAction": "FBA_ROLL",
+                "Action": "DodgeRoll",
+                "UseTacPosMgr": 1,
+                "IdealJumpDist": [
+                    2,
+                    5
+                ],
+                "MaxJumpDist": 6,
+                "ShouldFaceTarget": 0,
+                "GeneratePointsAroundTarget": 0,
+                "GeneratePointsDistance": [
+                    0,
+                    5
+                ],
+                "GenerateSpacing": 3,
+                "MinDistanceToNavEdge": 0,
+                "PreventDodgeOnAnimBlocked": 0,
+                "DoTacVisTrace": 0,
+                "DoGeoRaycast": 0,
+                "StaticShapesOnly": 1,
+                "TacVisToTarget": 0,
+                "ScoreDistToTarget": 0,
+                "ScoreDistanceResponseCurve": {
+                    "m": -3,
+                    "k": 2,
+                    "b": 1,
+                    "c": 0.5,
+                    "logistic": 0
+                },
+                "ScoreDirectionFromTarget": {
+                    "m": 10,
+                    "k": 1,
+                    "b": 0,
+                    "c": 0.25,
+                    "logistic": 1
+                },
+                "DoTargetViewScore": 0,
+                "RestrictToDefenseVolume": 0,
+                "ScoreDirectionFromTargetView": {
+                    "m": -1,
+                    "k": 2,
+                    "b": 1,
+                    "c": 1,
+                    "logistic": 0
+                },
+                "NumResults": 1,
+                "DelayBetweenDodges": 2,
+                "TargetRange": 2.5,
+                "DodgeIfAimedAtDistance": 30,
+                "DamageThreshold": 0,
+                "RepositionTime": 6,
+                "DodgeIfAimedAt": 0,
+                "ForceDodge": 0
+            },
+            "LotusAdvancedMeleeBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "UseCombatMgr": 0,
+                "SucceedAfterCombo": 0,
+                "SucceedAfterDefensive": 0,
+                "AdjustAimDuringCombo": 1,
+                "AlwaysCompleteCombo": 0,
+                "LastSeenTargetStopComboTime": 2,
+                "AttackFirst": 0,
+                "DefensiveMoveTowards": 1,
+                "DefensiveWhenNotAttacking": 0,
+                "AllowWeaponSwapForDefence": 0,
+                "DefensiveWhenAimedAt": 0,
+                "DefensiveHealthPercentage": 0,
+                "DefensiveForcedWindow": 3,
+                "StopMovementOnAttack": 1,
+                "DefensiveParryChance": 1,
+                "DefensiveTime": [
+                    0.5,
+                    3
+                ],
+                "DoReactiveBlocking": 0,
+                "ReactiveBlockingDefenseTime": 0.4,
+                "DefensiveCooldownTime": 1,
+                "HeavyAttackProcTypeImmunities": [],
+                "MeleeRange": [
+                    0.3,
+                    5
+                ],
+                "MeleeRangeAttack": [
+                    0,
+                    3
+                ],
+                "MeleeRangeDash": [
+                    3,
+                    5
+                ],
+                "PlayerBehaviourEvalTime": [
+                    0.5,
+                    1
+                ],
+                "MaxAllowedAttacksBlocked": 0,
+                "AggressiveHealthThreshold": 0,
+                "BasicAttackTypes": [
+                    "CC_GROUND",
+                    "CC_GROUND_BRANCH_A",
+                    "CC_GROUND_BRANCH_B",
+                    "CC_GROUND_BRANCH_C",
+                    "CC_GROUND_HEAVY"
+                ],
+                "DashAttackType": "CC_SLIDING",
+                "UseEquippedWeapon": 1,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_6",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_INSTANT_EQUIP",
+                "StopWeapons": 0
+            },
+            "KeepMeleeDistanceBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "RandomizeRange": 0,
+                "UseWeaponRange": 0,
+                "IdealDistance": [
+                    0.5,
+                    2
+                ],
+                "EvaluateDistance": [
+                    0,
+                    50
+                ],
+                "MaxMovementDistance": 100,
+                "AllowRetreat": 0,
+                "AllowRun": 1,
+                "AllowChase": 1,
+                "ForceWalkBelowMinIdealRange": 1,
+                "WalkRange": [
+                    0,
+                    10
+                ],
+                "RequireTeamMeleeLock": 0,
+                "ReleaseTeamMeleeLock": 0,
+                "AimWhileMoving": 1,
+                "MoveFacingControl": "MFC_FACE_MOVEDIR",
+                "StopRadius": 0.5,
+                "RunWhenShocked": 0,
+                "ShockedDamageTime": 30,
+                "OnlyTravelWhenVisible": 0,
+                "TravelDuringStruggle": 1,
+                "AllowPartialPath": 0,
+                "UpdateDestinationInterval": 0.5,
+                "UpdateDestinationDistance": 2,
+                "OffNavRadius": 3,
+                "OffNavHeight": 4,
+                "RequiresClearNavTrace": 0,
+                "HoverHeightOverride": -1,
+                "RetryWithPathlessMovement": 0,
+                "PathlessMovementMaxDistance": 16,
+                "AvoidTargetLineOfSight": 0,
+                "AvoidanceBias": 10,
+                "LockTarget": 0,
+                "LookAtTarget": 1,
+                "DistanceToShoot": -1,
+                "WalkWhileShooting": 0,
+                "AimOnFire": 0,
+                "AllowReload": 0,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_1",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                "AttackPhrase": "CHARGE_SCREAM",
+                "AlwaysPlayAttackPhrase": 0,
+                "PlayPhrase": 0,
+                "Bark": "ATTACK",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    0,
+                    0
+                ],
+                "ReportUnreachableOnFailedMove": 1,
+                "ReportUnreachableOffNav": 1,
+                "TimeOffNav": 2,
+                "RestrictToDefenseVolume": 0,
+                "WalkMovePosture": "WALK"
+            },
+            "Phases": [
+                1
+            ]
+        },
+        "LocomotionController:DynamicPathFollowerGround": {
+            "MinWalkWhenTurningAngle": 80,
+            "StopWhenTurningAngle": 50
+        },
+        "LocomotionController:limitToNav": 1,
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 3
+        },
+        "ViewIdleFov": 180,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 150,
+        "AlertDecayTime": 600,
+        "SuperAlertDecayTime": 600,
+        "PerceiverType": "/Lotus/Types/Enemies/Grineer/GrineerPerceiver",
+        "IsCoverUseEnabled": 0,
+        "TargetEvaluatorType": "TeshinTargetEvaluator"
+    }
+}

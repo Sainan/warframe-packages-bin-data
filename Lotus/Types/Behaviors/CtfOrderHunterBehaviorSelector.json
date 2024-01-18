@@ -1,0 +1,142 @@
+{
+    "parent": "/EE/Types/Npc/OrderBasedBehaviorSelector",
+    "data": {
+        "Actions": [
+            "/EE/Types/Npc/EngageTargetTactic",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/PursueTargetBehavior"
+        ],
+        "EngageTargetTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceVisible": 2,
+            "ReportEnemyActivityInfluence": "BestRed",
+            "AttackBehaviors": [
+                "/EE/Types/Npc/EngageTargetMovementBehavior"
+            ],
+            "EngageTargetMovementBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "FailOnQueryFailure": 0,
+                "SamplePointSpacing": 2,
+                "DistanceFromSelfRange": [
+                    5,
+                    10
+                ],
+                "AggressiveTargetDistanceRange": [
+                    10,
+                    20
+                ],
+                "AggressiveTargetDistanceScoreCurve": {
+                    "m": -3,
+                    "k": 2,
+                    "b": 1,
+                    "c": 0.5,
+                    "logistic": 0
+                },
+                "AggressiveTargetFacingDirectionScoreCurve": {
+                    "m": -3,
+                    "k": 2,
+                    "b": 1,
+                    "c": 0.5,
+                    "logistic": 0
+                },
+                "AggressiveVisibleScore": 1,
+                "AggressiveHiddenScore": 0.25,
+                "DefensiveTargetDistanceRange": [
+                    10,
+                    20
+                ],
+                "DefensiveTargetDistanceScoreCurve": {
+                    "m": 1,
+                    "k": 1,
+                    "b": 0,
+                    "c": 0.5,
+                    "logistic": 1
+                },
+                "DefensiveVisibleScore": 0.25,
+                "DefensiveHiddenScore": 1,
+                "UseAssignedDefenseVolume": 0,
+                "StopRadius": 0.5,
+                "NearDistance": 2,
+                "MovementModifiers": [
+                    {
+                        "HealthRange": [
+                            0,
+                            100
+                        ],
+                        "MovePosture": "JOG",
+                        "SpeedMultiplier": 1
+                    }
+                ],
+                "FacingControl": "MFC_FACE_MOVEDIR",
+                "MinDistanceToTarget": 5,
+                "RepositionWhenCloseTime": 2,
+                "DPSConverge": 0.1,
+                "DPSPeriod": 0.25,
+                "MoveRandomDirection": 0
+            }
+        },
+        "StormTargetOrderBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceLastSeen": 5,
+            "MaxDistToTarget": 25,
+            "ConsiderOrderType": 0,
+            "Order": "",
+            "FailsOnTargetAcquired": 1,
+            "SuccessRadius": 1,
+            "DesiredPosture": "JOG",
+            "UseNearTargetPosture": 0,
+            "DesiredPostureNearTarget": "WALK",
+            "DesiredPostureOutOfView": "RUN",
+            "MaxOffNavDistance": 5,
+            "TargetMovedRadius": 6,
+            "OnFailureReevalTime": 2,
+            "OnSuccessReevalTime": 10,
+            "TryShoot": 0,
+            "TargetFaction": "",
+            "ClearOrderOnMoveSuccess": 0,
+            "AllowTeleportToCatchUp": 1
+        },
+        "PursueTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceVisibleToPursue": [
+                0,
+                30
+            ],
+            "SpeedMultiplier": 1,
+            "StopRadius": 0.5,
+            "NearDistance": 2,
+            "MovePosture": "JOG",
+            "PauseTimeout": 0,
+            "GotoLastKnownPosFirst": 1
+        },
+        "OrderName": "Hunter"
+    }
+}

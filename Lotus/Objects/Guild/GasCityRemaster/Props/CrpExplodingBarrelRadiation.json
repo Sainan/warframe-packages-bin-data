@@ -1,0 +1,78 @@
+{
+    "parent": "/Lotus/Objects/ExplodingTank",
+    "data": {
+        "UseLightMap": 0,
+        "ShadowLightmaps": 1,
+        "Mesh": "CrpBarrelADynamic.fbx",
+        "OverrideMaterial": [
+            "/Lotus/Objects/Guild/GasCityRemaster/GasPropTrimADynamicBarrels"
+        ],
+        "MaterialParams": [
+            {
+                "name": "TintColor0",
+                "type": "Color",
+                "slot": -1,
+                "value": [
+                    0.068,
+                    0.56,
+                    0.46,
+                    0.76
+                ]
+            },
+            {
+                "name": "TintColor3",
+                "type": "Color",
+                "slot": -1,
+                "value": [
+                    0.48,
+                    0.69,
+                    0.44,
+                    0
+                ]
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
+        "LocTag": "/Lotus/Language/CorpusGasCity/DestructableBarrelRadiationName",
+        "LongDesc": "/Lotus/Language/CorpusGasCity/DestructableBarrelRadiationDesc",
+        "Icon": "/Lotus/Interface/Icons/Objects/CryoBarrel.png",
+        "DamageType": "DT_RADIATION",
+        "Health": 20,
+        "AcceptedDamageTypes": [
+            "DT_ANY"
+        ],
+        "DestructionDelay": 0.1,
+        "CreateOnDestroy": {
+            "LocalRotation": [
+                0,
+                0,
+                0,
+                1
+            ],
+            "Type": "/Lotus/Fx/Explosions/RadiationBarrelExplosionShockwave",
+            "Attach": 1
+        },
+        "PlayOnDestroy": "/Lotus/Sounds/Ambience/CorpusGasCity/GameplayRemaster/CrpGasCityRadiationBarrelExplosion",
+        "DestroyDamageIgnoreSource": 0,
+        "StateChangeScript": {
+            "Script": "/Lotus/Scripts/ExplodingDecoration.lua",
+            "Function": "BonusProcCountOnExplosion",
+            "_effectRadius": 10,
+            "_procCounts": [
+                10
+            ],
+            "_procs": [
+                "PT_RAD_TOX"
+            ]
+        },
+        "DestroyDamage": 300,
+        "DestroyDamageType": "DT_RADIATION",
+        "DestroyProcChance": 1,
+        "DestroyDamageOffset": [
+            0,
+            0.5,
+            0
+        ],
+        "CreateDamageType": "DT_RADIATION",
+        "NPCLevelDamageMultiplier": 0.7
+    }
+}

@@ -1,0 +1,140 @@
+{
+    "parent": "/Lotus/Types/Enemies/Infested/AiWeek/GreyStrain/GreyStrainAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SplitterSplitAvatar",
+            "EXIMUS": "SplitterSplitAvatarEximus"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "SplitterSplitMeleeWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SplitterSplitPowersuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/AgentOffNavBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MeleeRingTactic",
+            "/EE/Types/Npc/SearchForTargetBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "InterruptResponseBehavior": {
+            "Responses": [
+                {
+                    "reaction": "ABOUT_TO_ENGAGE",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 1,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 20,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                }
+            ]
+        },
+        "StormTargetOrderBehavior": {
+            "MaxDistToTarget": 50
+        },
+        "MeleeRingTactic": {
+            "RingDist": [
+                0,
+                2
+            ],
+            "SuccessRadius": 0.5,
+            "AllowRun": 1,
+            "MeleeBehaviors": [
+                "/EE/Types/Npc/SimpleMeleeAttackBehavior",
+                "/EE/Types/Npc/MeleeWaitBehavior"
+            ],
+            "SimpleMeleeAttackBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "AttackRange": [
+                    0,
+                    2
+                ],
+                "AlternateAttackRange": [
+                    6,
+                    7
+                ],
+                "UseMeleeFov": 1,
+                "MeleeFov": 120,
+                "AllowMeleeingFromBehind": 1,
+                "TimeSinceRendered": 10,
+                "MeleeFromBehindFOV": 120,
+                "RequiresClearNavTrace": 0,
+                "InputCode": "MELEE",
+                "AlternateAttackInputCode": "MELEE_SWING",
+                "InTimer": 1,
+                "Timer": 5,
+                "TimeBetweenAttacksRange": [
+                    0.1,
+                    0.1
+                ],
+                "ShouldModifyPosture": 1,
+                "UsePredictedPosition": 1,
+                "MeleeAttackTime": 0.3,
+                "AttackEvenIfTargetLeavesRange": 1,
+                "TurnToFaceTarget": 1,
+                "StopMeleeOnStop": 0,
+                "WaitForMeleeToEnd": 1,
+                "StopMovingWhenAttacking": 1
+            },
+            "MeleeWaitBehavior": {
+                "TimeOut": 5,
+                "AimPosture": 1,
+                "PlayPhrase": 0,
+                "BarkInterval": [
+                    3.5,
+                    5
+                ]
+            }
+        },
+        "LocomotionController:PathingPreferences": {
+            "avoidanceRadius": 1,
+            "dangerRadius": 1,
+            "avoidSpeedMultiplier": 1.2
+        },
+        "ViewFov": 360,
+        "ViewCombatFov": 360,
+        "PerceiverType": "/Lotus/Types/Enemies/Infested/InfestedMicroplanet/MicroPlanetInfestedPerceiver"
+    }
+}

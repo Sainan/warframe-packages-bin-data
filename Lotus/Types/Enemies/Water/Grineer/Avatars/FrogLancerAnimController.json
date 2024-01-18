@@ -1,0 +1,314 @@
+{
+    "parent": "/Lotus/Types/Player/SpaceBattle/SpaceMoveAnimController",
+    "data": {
+        "AnimTree": "FrogLancerAnimTree.animtree",
+        "Actions": [
+            {
+                "Action": "RELOAD",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_RELOAD",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_RELOAD",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "FIRE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "MELEE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "MELEE_SWING",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "IDLE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 0
+                    }
+                ],
+                "Query": []
+            },
+            {
+                "Action": "DODGE_RIGHT",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ]
+            },
+            {
+                "Action": "DODGE_LEFT",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ]
+            },
+            {
+                "Action": "DODGE_UP",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ]
+            },
+            {
+                "Action": "DODGE_DOWN",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ]
+            },
+            {
+                "Action": "DODGE_FORWARD",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 5
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 5
+                    }
+                ]
+            },
+            {
+                "Action": "DODGE_BACKWARD",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    }
+                ]
+            }
+        ],
+        "SoundEvents": [
+            {
+                "EventName": "SFXFrogmanBreathe",
+                "Sound": "/Lotus/Sounds/Enemies/GrineerFrogman/Breathing/GrineerFrogmanBreathe",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXFrogmanBreatheIdle",
+                "Sound": "/Lotus/Sounds/Enemies/GrineerFrogman/Breathing/GrineerFrogmanBreathe",
+                "Chance": 0.25,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "StartMoving",
+                "Sound": "/Lotus/Sounds/Vehicles/GrineerFrogman/GrineerFrogmanBurstTransition",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXStartMoving",
+                "Sound": "/Lotus/Sounds/Vehicles/GrineerFrogman/GrineerFrogmanBurstTransition",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "ParticleEvents": [
+            {
+                "EventName": "FrogmenWaterEffect",
+                "ParticleSys": "/Lotus/Fx/Enemies/Grineer/Water/FrogmanWaterMotionEffect",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_SPINE2",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "SurfaceSensitiveEffects": [
+            {
+                "AnimEventSymbols": [
+                    "StepL"
+                ],
+                "RaycasterBoneName": "GAME_L1_LEG4",
+                "HitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps",
+                "OverridePostures": [
+                    {
+                        "Posture": "RUN",
+                        "OverrideHitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps"
+                    },
+                    {
+                        "Posture": "WALLRUNNING_LEFT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_RIGHT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_UP",
+                        "OverrideHitEffect": ""
+                    }
+                ],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepR"
+                ],
+                "RaycasterBoneName": "GAME_R1_LEG4",
+                "HitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps",
+                "OverridePostures": [
+                    {
+                        "Posture": "RUN",
+                        "OverrideHitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps"
+                    },
+                    {
+                        "Posture": "WALLRUNNING_LEFT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_RIGHT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_UP",
+                        "OverrideHitEffect": ""
+                    }
+                ],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 1,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "LandSoft"
+                ],
+                "RaycasterBoneName": "GAME_C1_HIP1",
+                "HitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerLandHeavy",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "LandHeavy"
+                ],
+                "RaycasterBoneName": "GAME_C1_HIP1",
+                "HitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerLandHeavy",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            }
+        ],
+        "CinematicID": "Skiff",
+        "AlternateVictimCinematicID": ""
+    }
+}

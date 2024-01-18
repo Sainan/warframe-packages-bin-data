@@ -1,0 +1,141 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Drones/AIWeek/ShieldDroneAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/MITW/Triangle/Triangle_skel.fbx",
+        "MeshScale": 1.25,
+        "DissolveOverride": "/Lotus/Fx/Common/PointNoise_d.png",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/ManInTheWall/Triangle/MITWTriangleMoveLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "MITWSupportTriangleSelfShieldHelper",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "TriangleHover",
+        "ScriptInstance": {
+            "Script": "/Lotus/Types/Enemies/ManInTheWall/MITWBarkController.lua",
+            "Function": "IdleVoiceBoxLoop"
+        },
+        "WeaponBone": "GAME_C1_HEAD1",
+        "Faction": "MITW",
+        "LocTag": "/Lotus/Language/EntratiLab/EntratiGeneral/SupportTriangleName",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Murmur/Triangle.png",
+        "MaxHealth": 5,
+        "VoiceBox": "/Lotus/Sounds/Dialog/Barks/Battle/MiTW/MITWTriangle/MITWTriangleVoiceBoxA",
+        "DropTable": "/Lotus/Types/DropTables/ManInTheWall/MITWSupportTriangleAgentDropTable",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/DemolystAgentController",
+        "AnimControllerType": "MITWSupportTriangleAnimTreeController",
+        "DamageControllerType": "MITWSupportTriangleDamageController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                2,
+                0.2
+            ],
+            "BoneName": "GAME_C1_HEAD",
+            "Type": "TriangleHitProxies/MITWTriangleFullBody"
+        },
+        "EnableCameraCollisionCulling": 0,
+        "OnDeathScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/MITWEnnemiesVFX.lua",
+            "Function": "DissolveOnDeath",
+            "_dissolveEffect": "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveGenericSpawner",
+            "_dissolveSound": "/Lotus/Sounds/Enemies/ManInTheWall/Triangle/MITWTriangleDeathDissolve",
+            "_dissolveProj": [
+                "/Lotus/Fx/Enemies/Mitw/MitwSandProj",
+                "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveExtrudeDynProj",
+                "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveGlitterProj"
+            ],
+            "_attachmentToTriggeredFade": [
+                "/Lotus/Fx/Enemies/Mitw/TriangleShieldDeco"
+            ],
+            "_attachmentToDissolveAndHide": [],
+            "_boneToAttachTo": "GAME_C1_PYRAMIDMAIN",
+            "_attachOffset": [
+                0,
+                0,
+                0
+            ],
+            "_gravityOnDeath": 1,
+            "_gravityVector": [
+                0,
+                -2.2,
+                0
+            ],
+            "_disableCollision": 1,
+            "_totalFadeOutDuration": 2,
+            "_waitBeforeDissolve": 0.5,
+            "_waitBeforeStart": 0,
+            "_DestroyAfterFade": 1,
+            "_waitBeforeDestroy": 0,
+            "_SpawnerToDestroy": "",
+            "_OriginalValue": 1,
+            "_NewValue": 2,
+            "_deathProjectileType": "",
+            "_deathProjectileCount": 0,
+            "_deathProjectileBone": "GAME_C1_CENTERPIECE1",
+            "_octopedeEventDropTables": [],
+            "_octopedeEventSPDropTables": []
+        },
+        "SoundEvents": [
+            {
+                "EventName": "SFXMITWSpawnLargeEnemy",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/EnemyGameplay/MITWSpawnLargeEnemy",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "VoiceBoxEvents": [
+            {
+                "EventName": "SFXMITWSpawnLargeEnemyBark",
+                "Phrase": "MODE_CHANGED",
+                "Filter": "SFXMITWSpawnLargeEnemyBark",
+                "Chance": 1
+            }
+        ],
+        "KillXPReward": 500,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataAmalgamBoss",
+        "CanShowMainTargetStatus": 0
+    }
+}

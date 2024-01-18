@@ -1,0 +1,74 @@
+{
+    "parent": "/Lotus/Types/Weapons/BoltoProjectile",
+    "data": {
+        "Mesh": "/Lotus/Weapons/ProxyBolt.fbx",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Weapons/CrossBolt/Projectile/BoltProjectileLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 1,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 1,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            }
+        ],
+        "AttackData": {
+            "Type": "DT_POISON",
+            "Amount": 10,
+            "ForcedProcs": [
+                "PT_POISONED"
+            ]
+        },
+        "CriticalChance": 0.05,
+        "CriticalMultiplier": 2,
+        "HitEffect": "/Lotus/Fx/Weapons/AcidDart/AcidDartHitEffect",
+        "DieEffect": "/Lotus/Fx/Weapons/AcidDart/AcidDartHitSpang",
+        "SpikeAttack": {
+            "Type": "DT_IMPACT"
+        },
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_IMPACT"
+        },
+        "EmbedTime": [
+            10,
+            10
+        ],
+        "StopOnCollision": 1,
+        "KinematicPostCollisionsSpeedFactor": 0.3,
+        "KinematicInitialSpeed": 65,
+        "KinematicMaxSpeed": 65,
+        "KinematicNoise": 0.14,
+        "KinematicGravityMultiplier": 1.5,
+        "SweepRadius": 0,
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/AcidDart.lua",
+            "Function": "Dissolve",
+            "_deathFx": "/Lotus/Fx/PowersuitAbilities/Asp/DissolveDeathOnEnemyDeath",
+            "_avatarType": "/EE/Types/Game/Avatar",
+            "_ragdollType": "/EE/Types/Physics/Ragdoll",
+            "_hitProxyPhysicsType": "/EE/Types/Engine/HitProxyPhysics",
+            "_excludedAvatarTypes": []
+        },
+        "CanStickOnDeath": 0,
+        "EmbedOffset": -0.25,
+        "AttachmentOffsets": [
+            0.5
+        ],
+        "AlwaysEmbed": 1
+    }
+}

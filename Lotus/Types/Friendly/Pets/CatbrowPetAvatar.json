@@ -1,0 +1,116 @@
+{
+    "parent": "PetAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Wildlife/Catbrow/Catbrow_skel.fbx",
+        "AnimationName": "Kubrow",
+        "PhysicsBehavior": "KubrowPetWalk",
+        "ScriptInstance": {
+            "Script": "CatbrowPetBehaviors/CatbrowVampireBiteAbility.lua",
+            "Function": "ApplyVampireEffects",
+            "_activateAnim": "",
+            "_biteAnimEvent": "Bite",
+            "_dmg": [
+                100,
+                200,
+                300,
+                400,
+                500,
+                600
+            ],
+            "_healPct": [
+                0.025,
+                0.05,
+                0.075,
+                0.1
+            ],
+            "_vampireEffectDmgReduction": 0.25,
+            "_maxVampireEffectDays": 4,
+            "_specialVoiceBoxes": [
+                "/Lotus/Sounds/Enemies/Catbrow/Pet/CatbrowVampirePetVoicebox",
+                "/Lotus/Sounds/Characters/HuntingCritters/Vulpaphyla/VulpaphylaPetVoicebox"
+            ],
+            "_specialSuitsForVoiceBoxes": [
+                "/Lotus/Types/Game/CatbrowPet/VampireCatbrowPetPowerSuit",
+                "CreaturePets/BaseInfestedCatbrowPetPowerSuit"
+            ],
+            "_cureRadius": 20,
+            "_catbrowType": "",
+            "_infectionFx": "/Lotus/Fx/Enemies/Creatures/VampireKavatInfectionProj",
+            "_cureFx": "",
+            "_curedFx": "",
+            "_catbrowTailType": "/Lotus/Characters/Wildlife/Catbrow/InfestedKavats/Cloth/InfestedKavatsTailSkeletalCloth",
+            "_larvaSuitCustWRes": "/Lotus/Types/Game/CatbrowPet/BodyTypes/InfestedCatbrowPetKittenBodyCustomization",
+            "_exception": ""
+        },
+        "LocTag": "/Lotus/Language/Game/CatbrowName",
+        "ShortDesc": "/Lotus/Language/Game/PetCatbrowDesc",
+        "LongDesc": "/Lotus/Language/Game/PetCatbrowLongDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Kubrow.png",
+        "VoiceBox": "/Lotus/Sounds/Enemies/Catbrow/Pet/CatbrowPetVoicebox",
+        "AnimControllerType": "CatbrowPetAnimController",
+        "DamageControllerType": "CatbrowPetDamageController",
+        "InventoryControllerType": "/Lotus/Types/Game/CatbrowPet/CatbrowPetInventoryController",
+        "AllowDieWhenRisingFromRagdoll": 0,
+        "OnPreDeathScript": {
+            "Script": "CreaturePets/CreaturePrecepts/InfestedCritterDeathRespawn.lua",
+            "Function": "OnPreDeath",
+            "_respawnTime": 30,
+            "_respawnPowersuitType": "CreaturePets/BaseInfestedCatbrowPetPowerSuit",
+            "_respawnSentinelAgent": "CreaturePets/CreaturePreceptComponents/InfestedCritterSentinelAgent",
+            "_respawnSelfUpgradeType": "CreaturePets/CreaturePrecepts/InfestedCatbrowRespawn",
+            "_sentinelDeathFX": "/Lotus/Fx/Sentinels/Precepts/InfestedPredators/CatbrowSentinelDeathBurstFX",
+            "_infestedPetSuits": [
+                "CreaturePets/HornedInfestedCatbrowPetPowerSuit",
+                "CreaturePets/ArmoredInfestedCatbrowPetPowerSuit",
+                "CreaturePets/VulpineInfestedCatbrowPetPowerSuit"
+            ],
+            "_infestedSentinelSuits": [
+                "CreaturePets/CreaturePreceptComponents/HornedInfestedCritterSentinelPowerSuit",
+                "CreaturePets/CreaturePreceptComponents/ArmoredCritterSentinelPowerSuit",
+                "CreaturePets/CreaturePreceptComponents/VulpineInfestedCritterSentinelPowerSuit"
+            ],
+            "_damageArray": [
+                5,
+                10,
+                15,
+                20
+            ],
+            "_durationArray": [
+                2,
+                4,
+                6,
+                8
+            ],
+            "_amountArray": [
+                0.05,
+                0.1,
+                0.15,
+                0.2
+            ]
+        },
+        "OnDeathScript": {
+            "Script": "/Lotus/Scripts/Effects/KubrowEffects.lua",
+            "Function": "OnDeath",
+            "_deathEffectA": "/Lotus/Fx/Sentinels/Precepts/InfestedPredators/CatbrowSentinelDeathBurstFX",
+            "_attachOffset": [
+                0,
+                0,
+                0
+            ]
+        },
+        "MiniMapAllyMarker": "MMMT_CATBROW",
+        "ReviveInvulnTime": 5,
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/CatbrowReactionAnims",
+        "SentinelOnReviveScript": {
+            "Script": "/Lotus/Types/Sentinels/SentinelAbilities/SentinelOnRevive.lua",
+            "Function": "OnReviveFromPredeath",
+            "_reviveBank": "/Lotus/Sounds/Characters/Tenno/CompanionResurrect/CompanionResurrect",
+            "_reviveEffect": "/Lotus/Fx/Sentinels/Precepts/Mod/ReviveCompanionSpawner",
+            "_reviveProj": "/Lotus/Fx/Sentinels/Precepts/Mod/ReviveCompanionProj",
+            "_reviveEffectBone": "GAME_C1_SPINE3"
+        },
+        "OnOwnerDeath": "MDS_REMOVE",
+        "CanSelfRespawn": 1,
+        "BaseSelfRespawnTime": 60
+    }
+}

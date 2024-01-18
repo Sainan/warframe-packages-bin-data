@@ -1,0 +1,282 @@
+{
+    "parent": "/Lotus/Types/Enemies/Sentients/Troopers/SentientBaseTrooperAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SentientBoardingHackerAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Sentients/SentientMeleeWeaponLeft",
+                "forceEquip": 1,
+                "hand": "OFF_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Sentients/SentientMeleeWeaponRight",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "SentientBoardingHackerPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Enemies/Sentients/Troopers/Behaviors/SentientRetreatDecorator",
+            "/EE/Types/Npc/BlackboardBehaviorSelector",
+            "/EE/Types/Npc/PoiBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/EE/Types/Npc/BehaviorParallel"
+        ],
+        "SentientRetreatDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/Lotus/Types/Behaviors/GetPickUpBehavior",
+            "ChildAction:GetPickUpBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "GoToInvestigateTgtFarPosture": "JOG",
+                "GoToInvestigateTgtNearPosture": "WALK",
+                "NearThreshold": 15,
+                "NearSpeedMultiplier": [
+                    0.5,
+                    0.6
+                ],
+                "FarSpeedMultiplier": [
+                    0.4,
+                    0.5
+                ],
+                "PickupDistance": 300,
+                "AllowedPickupTypes": [
+                    "/Lotus/Weapons/Sentients/SentientDualWieldPickupAction",
+                    "/Lotus/Types/Enemies/Sentients/Sparks/SentientSparkPickupAction"
+                ],
+                "PickupWaitTime": 6.5,
+                "OnlyDroppedItems": 0,
+                "AllowFire": 0
+            },
+            "StopWhenChildStops": 1,
+            "DualWieldRestrictAction": "",
+            "DualWieldRestriction": "DWR_NONE",
+            "RequiredConfig": "WC_NONE",
+            "NumRequiredRangedWeapons": 0,
+            "NumRequiredMeleeWeapons": 0,
+            "RequiresSpecifiedNumbers": 0
+        },
+        "BlackboardBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlackboardType": "BBT_AGENT",
+            "Actions": [
+                {
+                    "VarName": "SearchWeapons",
+                    "Action:Type": "/Lotus/Types/Behaviors/SentientPickupDecorator",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0,
+                    "Action:ChildAction:Type": "/Lotus/Types/Behaviors/GetPickUpBehavior",
+                    "Action:ChildAction:GetPickUpBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "GoToInvestigateTgtFarPosture": "JOG",
+                        "GoToInvestigateTgtNearPosture": "WALK",
+                        "NearThreshold": 15,
+                        "NearSpeedMultiplier": [
+                            0.5,
+                            0.6
+                        ],
+                        "FarSpeedMultiplier": [
+                            0.4,
+                            0.5
+                        ],
+                        "PickupDistance": 30,
+                        "AllowedPickupTypes": [
+                            "/Lotus/Types/Enemies/Sentients/Sparks/SentientSparkPickupAction",
+                            "/Lotus/Weapons/Sentients/SentientDualWieldPickupAction"
+                        ],
+                        "PickupWaitTime": 0,
+                        "OnlyDroppedItems": 0,
+                        "AllowFire": 0
+                    },
+                    "Action:StopWhenChildStops": 1
+                },
+                {
+                    "VarName": "RegenWeapons",
+                    "Action:Type": "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0.25,
+                    "Action:BlockForPowerCompleteType": "BT_ALWAYS",
+                    "Action:AllowInterruptOfAbility": 0,
+                    "Action:StopFiring": 1,
+                    "Action:StopMovingOnStart": 0,
+                    "Action:ExtraReevaluationDelay": 0,
+                    "Action:ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "Action:ActiveAction:Enabled": 1,
+                    "Action:ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:EvaluateAction": 1,
+                    "Action:FaceTarget": 0,
+                    "Action:TurnAccuracyThreshold": 10,
+                    "Action:TurnTimeout": 2,
+                    "Action:AimTimeout": 0.5,
+                    "Action:ValidAbilities": [],
+                    "Action:MaxProcessPerEval": 0,
+                    "Action:AimAtTarget": 0,
+                    "Action:CheckIfAbilityUnlocked": 0,
+                    "Action:MultipleConcurrentAbilities": 0,
+                    "Action:EvaluateDelayRange": [
+                        0.5,
+                        1
+                    ],
+                    "Action:PreventUsageOnWeaponUse": 0,
+                    "Action:TurnDuringAbility": 0,
+                    "Action:DeactivateAbilitiesOnPredeath": 0,
+                    "Action:ResetEvalTimerOnEnemySpotted": 0
+                }
+            ],
+            "FailOnChildFailure": 0
+        },
+        "PoiBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "PoiSearchRadius": 1000,
+            "MinPlayerDist": 0,
+            "MinPlayerFov": 0,
+            "NearDistance": 1,
+            "PoiWhitelist": [
+                "SentientHackerPoint"
+            ],
+            "StopWhenAlerted": 0,
+            "CantHaltOnceArrived": 1
+        },
+        "BehaviorParallel": {
+            "GenericBehaviorSelector": {
+                "Actions": [
+                    "/EE/Types/Npc/StormTargetOrderBehavior",
+                    "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+                    "/EE/Types/Npc/KeepIdealDistanceBehavior",
+                    "/EE/Types/Npc/MultiTargetFaceBehavior",
+                    "/EE/Types/Npc/CustomResponseBehavior",
+                    "/Lotus/Types/Enemies/Sentients/Troopers/Behaviors/SentientRetreatDecorator",
+                    "/Lotus/Types/Behaviors/SentientPickupDecorator",
+                    "/EE/Types/Npc/SearchForTargetBehavior",
+                    "/Lotus/Types/Behaviors/HoverNearTeammatesBehavior",
+                    "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+                    "/EE/Types/Npc/InvestigateBehavior",
+                    "/EE/Types/Npc/PoiBehavior",
+                    "/EE/Types/Npc/GuardTactic"
+                ],
+                "SentientRetreatDecorator": {
+                    "ChildAction:Type": "/EE/Types/Npc/PlayAnimationBehavior",
+                    "ChildAction:PlayAnimationBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "AnimScene": "/Lotus/Animations/Sentient/Trooper/StunIdle_anim.fbx",
+                        "Loop": 0,
+                        "Freeze": 0,
+                        "MovementMode": "ATMM_DEFAULT",
+                        "CoolDown": 0,
+                        "StopMoving": 1
+                    }
+                },
+                "SentientPickupDecorator": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "ChildAction:Type": "/Lotus/Types/Behaviors/GetPickUpBehavior",
+                    "ChildAction:GetPickUpBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "GoToInvestigateTgtFarPosture": "JOG",
+                        "GoToInvestigateTgtNearPosture": "WALK",
+                        "NearThreshold": 15,
+                        "NearSpeedMultiplier": [
+                            0.5,
+                            0.6
+                        ],
+                        "FarSpeedMultiplier": [
+                            0.4,
+                            0.5
+                        ],
+                        "PickupDistance": 30,
+                        "AllowedPickupTypes": [
+                            "/Lotus/Types/Enemies/Sentients/Sparks/SentientSparkPickupAction",
+                            "/Lotus/Weapons/Sentients/SentientDualWieldPickupAction"
+                        ],
+                        "PickupWaitTime": 6.5,
+                        "OnlyDroppedItems": 0,
+                        "AllowFire": 0
+                    },
+                    "StopWhenChildStops": 1
+                },
+                "InvestigateBehavior": {
+                    "NearDestinationRadius": 5
+                }
+            }
+        }
+    }
+}

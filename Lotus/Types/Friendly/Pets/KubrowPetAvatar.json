@@ -1,0 +1,146 @@
+{
+    "parent": "/Lotus/Types/Game/Pets/PetAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Wildlife/Kubrow/KubrowDomesticated_skel.fbx",
+        "AnimationName": "Kubrow",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_L1_EYE1",
+                "Type": "/Lotus/Types/NeutralCreatures/Kubrow/KubrowEyeFlare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_R1_EYE1",
+                "Type": "/Lotus/Types/NeutralCreatures/Kubrow/KubrowEyeFlare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "KubrowPetWalk",
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/KubrowPet.lua",
+            "Function": "OnSpawnPetKubrow",
+            "_specialVoiceBoxes": [
+                "/Lotus/Sounds/Enemies/Kubrow/InfCharger/KubrowInfChargerTameVoicebox",
+                "/Lotus/Sounds/Characters/HuntingCritters/Predasite/PredasitePetVoicebox"
+            ],
+            "_specialSuitsForVoiceBoxes": [
+                "/Lotus/Types/Game/KubrowPet/ChargerKubrowPetPowerSuit",
+                "CreaturePets/BasePredatorKubrowPetPowerSuit"
+            ]
+        },
+        "ReplicaRunScriptInstance": 1,
+        "HeadBone": "GAME_C1_HEAD1",
+        "HeadRotation": [
+            270,
+            0,
+            0
+        ],
+        "UseHeadBoneForEyePosition": 1,
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "Faction": "TENNO",
+        "LocTag": "/Lotus/Language/Game/PetKubrowName",
+        "ShortDesc": "/Lotus/Language/Game/PetKubrowDesc",
+        "LongDesc": "/Lotus/Language/Game/PetKubrowLongDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Kubrow.png",
+        "MaxHealth": 300,
+        "VoiceBox": "/Lotus/Sounds/Enemies/Kubrow/Tame/KubrowTameVoicebox",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
+        "AnimControllerType": "KubrowPetAnimController",
+        "ClimbControllerType": "/Lotus/Types/Player/TennoClimbController",
+        "WallSlideControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWallSlideController",
+        "DamageControllerType": "KubrowPetDamageController",
+        "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
+        "InventoryControllerType": "/Lotus/Types/Game/KubrowPet/KubrowPetInventoryController",
+        "MotionControllerType": "KubrowPetMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0.7,
+                0
+            ],
+            "LocalRotation": [
+                0.707107,
+                0,
+                0,
+                0.707107
+            ],
+            "Type": "/Lotus/Types/NeutralCreatures/Kubrow/HitProxies/KubrowFullBody"
+        },
+        "AllowDieWhenRisingFromRagdoll": 0,
+        "OnDeathScript": {
+            "Script": "/Lotus/Scripts/Effects/KubrowEffects.lua",
+            "Function": "OnDeath",
+            "_deathEffectA": "/Lotus/Fx/Sentinels/Kubrows/KubrowDeath",
+            "_attachOffset": [
+                0,
+                0,
+                0
+            ]
+        },
+        "MorphName:ALERT": "Morphs.Alert",
+        "MorphName:RAGE": "Morphs.Rage",
+        "MorphName:FEAR": "Morphs.Fear",
+        "MorphName:DEAD": "Morphs.Dead",
+        "MorphName:SMUG": "Morphs.Smug",
+        "MorphName:PAIN": "Morphs.Pain",
+        "SendReviveInfo": 1,
+        "PreDeathTargetType": "/Lotus/Types/Game/MarkerInfos/PreDeathMarkerInfo",
+        "ShowMiniMapMarker": 1,
+        "MiniMapAllyMarker": "MMMT_KUBROW",
+        "ExcludedFromCodex": 1,
+        "ExcludedFromSimulacrum": 1,
+        "ReviveInvulnTime": 5,
+        "DisarmAction": "DA_REACTION_ANIM_ONLY",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/KubrowReactionAnims",
+        "EnhancementLocTag": "/Lotus/Language/EnemyLeaders/KubrowLeaderName",
+        "SentinelOnReviveScript": {
+            "Script": "/Lotus/Types/Sentinels/SentinelAbilities/SentinelOnRevive.lua",
+            "Function": "OnReviveFromPredeath",
+            "_reviveBank": "/Lotus/Sounds/Characters/Tenno/CompanionResurrect/CompanionResurrect",
+            "_reviveEffect": "/Lotus/Fx/Sentinels/Precepts/Mod/ReviveCompanionSpawner",
+            "_reviveProj": "/Lotus/Fx/Sentinels/Precepts/Mod/ReviveCompanionProj",
+            "_reviveEffectBone": "GAME_C1_SPINE2"
+        },
+        "OnOwnerDeath": "MDS_REMOVE",
+        "CanSelfRespawn": 1,
+        "BaseSelfRespawnTime": 60
+    }
+}

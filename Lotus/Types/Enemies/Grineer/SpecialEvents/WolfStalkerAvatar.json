@@ -1,0 +1,211 @@
+{
+    "parent": "/Lotus/Types/Game/LotusBossNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Grineer/Wolf/Wolf_skel.fbx",
+        "MeshScale": 1.5,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Characters/Grineer/Wolf/WolfHeadMorphsDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Grineer/Wolf/WolfStalkerSpawnIn",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "WolfWalk",
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/StalkerInvulnerability.lua",
+            "Function": "Initialize",
+            "_spawnAnimation": "/Lotus/Animations/Grineer/HammerLeader/FireShieldEnd_anim.fbx",
+            "_getupAnimation": "/Lotus/Animations/Tenno/Menu/KneelToStand_anim.fbx",
+            "_despawnAnimation": "/Lotus/Animations/Tenno/Menu/StandToKneel_anim.fbx",
+            "_newEnergyColor": [
+                251,
+                178,
+                24,
+                255
+            ],
+            "_playSpawnAnimationHere": 1,
+            "_healthBonusMultiplierPerPerson": 0.75,
+            "_hideLevel": 0
+        },
+        "ReplicaRunScriptInstance": 1,
+        "EyeOffset": [
+            0,
+            1.6,
+            0
+        ],
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "Faction": "Neutral",
+        "LocTag": "/Lotus/Language/Enemies/WolfStalkerName",
+        "ShortDesc": "/Lotus/Language/Enemies/WolfStalkerDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Seasonal/WolfStalker.png",
+        "Diorama": "/Lotus/Types/Episodes/WolfOfSaturnSix",
+        "MaxHealth": 1500,
+        "VoiceBox": "/Lotus/Sounds/Dialog/Barks/Battle/GrineerWolf/GrineerWolfVoicebox",
+        "DropTable": "/Lotus/Types/DropTables/WolfStalkerAgentDropTable",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
+        "AnimControllerType": "WolfStalkerAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "WallSlideControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWallSlideController",
+        "DamageControllerType": "/Lotus/Types/Enemies/Grineer/AIWeek/DamageControllers/WolfStalkerDamageController",
+        "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Stalker/InventoryController",
+        "MotionControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerMotionController",
+        "OnPreDeathScript": {
+            "Script": "WolfStalker.lua",
+            "Function": "WolfDespawn",
+            "_spawnOutEffect": "/Lotus/Fx/Enemies/Grineer/Wolf/WolfStalkerSpawnIn",
+            "_spawnEffectBone": "GAME_C1_SPINE1"
+        },
+        "SoundEvents": [
+            {
+                "EventName": "SFXGrnWolfSpinAttackCharge",
+                "Sound": "/Lotus/Sounds/Enemies/GrineerWolf/GrnWolfSpinAttackCharge",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXGrnWolfThrowAttack",
+                "Sound": "/Lotus/Sounds/Enemies/GrineerWolf/GrnWolfThrowAttack",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "ParticleEvents": [
+            {
+                "EventName": "MeleeWhoosh",
+                "ParticleSys": "/Lotus/Fx/Enemies/Grineer/Wolf/WolfStalkerHammerTrail",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_WEAPON1",
+                "LocalPosition": [
+                    0,
+                    0.1,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "WolfFxSwing",
+                "ParticleSys": "/Lotus/Fx/Enemies/Grineer/Wolf/WolfStalkerHammerTrail",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_WEAPON1",
+                "LocalPosition": [
+                    0,
+                    0.1,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "WolfFxSwingTwirl",
+                "ParticleSys": "/Lotus/Fx/Enemies/Grineer/Wolf/WolfStalkerHammerTrail",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_WEAPON1",
+                "LocalPosition": [
+                    0,
+                    0.1,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "WolfFxSwingTwirl",
+                "ParticleSys": "/Lotus/Fx/Enemies/Grineer/Wolf/WolfStalkerHammerTrailCharge",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_SPINE2",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "KillXPReward": 1500,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataBoss",
+        "DisarmAction": "DA_DAMAGE_ONLY",
+        "ExclusiveTargetEffect": {
+            "Type": "/Lotus/Fx/Enemies/Stalker/StalkerExclusiveProjector"
+        },
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/MeleeHumanoidReactionAnims",
+        "AllowVipNameOverride": 0
+    }
+}

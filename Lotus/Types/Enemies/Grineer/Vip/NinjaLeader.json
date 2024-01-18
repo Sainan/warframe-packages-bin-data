@@ -1,0 +1,286 @@
+{
+    "parent": "/Lotus/Types/Enemies/Grineer/GrineerMarineRifle",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/NinjaLeaderAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Melee/NinjaLeaderWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/NinjaLeaderSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "SuicideOffNavAndHidden": 0,
+        "TransmissionScript": {
+            "Script": "/Lotus/Scripts/BossTransmissions.lua",
+            "Function": "Run",
+            "_introTransmission": "/Lotus/Sounds/Lotus/LotusTransmissionsBosses/Grineer/BossTylRegorTransmissionEvent",
+            "_transmissions": [
+                "/Lotus/Sounds/Lotus/LotusTransmissionsBosses/Grineer/BossTylRegorVariationTransmissionEvent",
+                "/Lotus/Sounds/Dialog/Taunts/Grineer/TylInGameTaunt"
+            ],
+            "_combatTransmissions": [
+                "/Lotus/Sounds/Dialog/Taunts/Grineer/TylInCombatTaunt"
+            ],
+            "_minCombatTransDelay": 20,
+            "_maxCombatTransDelay": 30,
+            "_minDistToTarget": 75,
+            "_playCombatTaunts": 1,
+            "_waitForCombatTaunt": 0,
+            "_delayForCombatTaunt": 5,
+            "_targetNumTransmission": 5
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/SearchForTargetBehavior",
+            "/EE/Types/Npc/MeleeRingTactic",
+            "/EE/Types/Npc/AttackFromCoverTactic",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "SearchForTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StartAtTimeSinceLastSeen": [
+                12,
+                18
+            ],
+            "ReInvestigateTimeRange": [
+                12,
+                18
+            ],
+            "ShouldAim": 1,
+            "CanRun": 0,
+            "StopSearchIfNoTarget": 0,
+            "StopSearchOnAwarenessLevel": "AW_IDLE",
+            "MaintainedAwarenessLevel": "AW_ALERT",
+            "SeekCoverDelayPostSearch": 5,
+            "OnArrivalBehaviors": []
+        },
+        "MeleeRingTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "OnlyEvalWithValidSlot": 0,
+            "MaxMovementDistance": 25,
+            "MaxRingSlots": 6,
+            "MaxUsableSlots": 4,
+            "RingDist": [
+                1,
+                2
+            ],
+            "SuccessRadius": 0.5,
+            "StopRadius": 0.5,
+            "RingReplacerDistanceOffset": 8,
+            "AllowRun": 1,
+            "LastSeenThreshold": 10,
+            "ReportUnreachable": 0,
+            "TimeOffNavForReport": 3,
+            "UnreachableTime": 2,
+            "VipAvatarType": "",
+            "MeleeBehaviors": [
+                "/EE/Types/Npc/MeleeContinousBehavior",
+                "/EE/Types/Npc/AttackFromCoverTactic",
+                "/EE/Types/Npc/MeleeWaitBehavior"
+            ],
+            "MeleeContinousBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SwingAttackRange": [
+                    0,
+                    3.5
+                ],
+                "LungeAttackRange": [
+                    3.5,
+                    5
+                ],
+                "TeamBbLungeSym": "",
+                "TimeBetweenTeamLunges": 5,
+                "LungeToPredictedPos": 0,
+                "UseMeleeFov": 1,
+                "StopIfOutsideMeleeFov": 0,
+                "MeleeFov": 120,
+                "AllowMeleeingFromBehind": 1,
+                "TimeSinceRendered": 10,
+                "MeleeFromBehindFOV": 90,
+                "SwingInputCode": "MELEE",
+                "LungeInputCode": "MELEE_SWING",
+                "ModifyAttackRangeBasedOnPlayerVelocity": 1,
+                "PredictedSwingTime": 0.5,
+                "PredictedLungeTime": 1,
+                "StopMovingWhenAttacking": 0,
+                "DisablePostureChangers": 0,
+                "TimeBetweenLunges": 2,
+                "LowTargetThreshold": 0.8,
+                "NormalAttack": "MELEE",
+                "LowAttack": "MELEE",
+                "ClearCoverReservationOnStart": 0,
+                "UseCombatManager": 1,
+                "VipAvatarType": "",
+                "TimeBetweenBarks": 2,
+                "VisibilityTimeout": 0,
+                "MaxReachableHeight": -9223372036854775808.0,
+                "Bark": "ATTACK_SCREAM",
+                "IsOffHandWeapon": 0
+            },
+            "AttackFromCoverTactic": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "MinCoverDistFromEnemy": 2,
+                "SeekCoverDelayOnFlanked": 1,
+                "EvaluationDelayOnEnemyToClose": 1,
+                "ExitCoverOnDamaged": 0,
+                "NeverLeaveAssignedCover": 0,
+                "UseLevelAlertTimeout": 1,
+                "LevelAlertTimeOut": 8,
+                "PlayerAllyFaction": "TENNO",
+                "AllyFollowPlayer": 1,
+                "CoverBehaviors": [
+                    "/EE/Types/Npc/RunToAttackCoverBehavior",
+                    "/EE/Types/Npc/WaitBehavior"
+                ],
+                "RunToAttackCoverBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "FailureTimeOutValue": 2.5,
+                    "InitialCoverDelay": [
+                        0,
+                        0
+                    ],
+                    "InvalidatedCoverDelay": [
+                        1,
+                        1
+                    ],
+                    "DontAdvanceUnlessFlanking": 0,
+                    "CloakedRun": 1,
+                    "AllowUselessCoverForVisibleTargets": 0,
+                    "OneShot": 0,
+                    "MinCloakCharge": 0.75,
+                    "MinRecloakCharge": 0.375,
+                    "MinCoverDistFromEnemy": 5,
+                    "DistanceToShoot": -1,
+                    "LastSeenWindow": 5,
+                    "LastDamagedWindow": 5,
+                    "DistanceToTarget": 0,
+                    "MovementSpeedModifier": [
+                        1,
+                        1
+                    ],
+                    "SeekCoverDelayOnFail": 1,
+                    "PointBlankDistance": 3,
+                    "BackAwayDistance": 8
+                },
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 1,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 1,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                }
+            },
+            "MeleeWaitBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOut": 5,
+                "CoverOnly": 0,
+                "AimPosture": 1,
+                "MinimalEnemyDistance": 0,
+                "TrackTarget": 1,
+                "Peek": 0,
+                "FailOnDamaged": 1,
+                "PreventShooting": 0,
+                "StopMovingOnEnter": 0,
+                "EndMeleeAction": 1,
+                "PlayPhrase": 0,
+                "Bark": "IDLE",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    3.5,
+                    5
+                ],
+                "MaxDistanceToTarget": 0
+            },
+            "OnlyUseMeleeWeapon": 0,
+            "WalkInThisRangeForcefully": [
+                0,
+                0
+            ]
+        },
+        "AttackFromCoverTactic": {
+            "MinCoverDistFromEnemy": 5,
+            "CoverBehaviors": [
+                "/EE/Types/Npc/RunToAttackCoverBehavior",
+                "/EE/Types/Npc/WaitBehavior"
+            ],
+            "RunToAttackCoverBehavior": {
+                "MinCoverDistFromEnemy": 5,
+                "DistanceToShoot": -1,
+                "DistanceToTarget": 6,
+                "MovementSpeedModifier": [
+                    1,
+                    1
+                ]
+            }
+        },
+        "ViewIdleFov": 140,
+        "ViewFov": 180,
+        "ViewDistance": 250,
+        "CoverEvaluatorType": "/Lotus/Types/Enemies/Grineer/GrineerMeleeUtilityCoverEvaluator",
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/Grineer/GrineerMeleeTargetEvaluator"
+    }
+}

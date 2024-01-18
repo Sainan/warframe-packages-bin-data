@@ -1,0 +1,122 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Venus/VenusLaserDiscBipedAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/NarmerShipMoaDiscAvatar",
+            "EXIMUS": ""
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Narmer/Weapons/NarmerMoaDiscWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/Corpus/CorpusShipRemastered/PowerSuits/ShipMoaCommandSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/AgentOffNavBehaviorDropship",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/CorpusNullifierFormationTactic",
+            "/EE/Types/Npc/GenericBehaviorSequence",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveToDefenseVolumeBehavior",
+            "/Lotus/Types/Behaviors/BipedRobotShootBehavior",
+            "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/Lotus/Types/Behaviors/PatrolFormationTactic",
+            "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/DefensiveCombatBehavior",
+            "/EE/Types/Npc/PoiBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "GenericBehaviorSequence": {
+            "TacPosIdealDistanceBehavior": {
+                "IdealDistance": [
+                    20,
+                    30
+                ]
+            }
+        },
+        "StormTargetOrderBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeSinceLastSeen": 5,
+            "MaxDistToTarget": 25,
+            "ConsiderOrderType": 1,
+            "Order": "StormTarget",
+            "FailsOnTargetAcquired": 1,
+            "SuccessRadius": 10,
+            "DesiredPosture": "RUN",
+            "UseNearTargetPosture": 0,
+            "DesiredPostureNearTarget": "WALK",
+            "DesiredPostureOutOfView": "RUN",
+            "MaxOffNavDistance": 5,
+            "TargetMovedRadius": 6,
+            "OnFailureReevalTime": 2,
+            "OnSuccessReevalTime": 10,
+            "TryShoot": 1,
+            "TargetFaction": "",
+            "DistanceToOrderTargetForNearPosture": 0,
+            "ClearOrderOnMoveSuccess": 0,
+            "AllowTeleportToCatchUp": 1,
+            "TeleportToDestination": 0,
+            "AllowPartialPath": 1
+        },
+        "BipedRobotShootBehavior": {
+            "EvaluateRange": [
+                0,
+                100
+            ],
+            "ShootingStateMaxFacingAngle": 60,
+            "StrafeChance": 0.5,
+            "ShootTime": [
+                3,
+                5
+            ],
+            "WaitTime": [
+                1,
+                2
+            ]
+        },
+        "TacPosIdealDistanceBehavior": {
+            "RandomizeRange": 1,
+            "IdealDistance": [
+                20,
+                30
+            ]
+        },
+        "PatrolFormationTactic": {
+            "MaxDistToLeader": 25,
+            "SuccessRadius": 1,
+            "StopRadius": 1,
+            "LeaderAction:InvestigateBehavior": {
+                "TeamCoordination": 0
+            },
+            "PeriodicBarkTiming": [
+                5,
+                12
+            ]
+        },
+        "MoveTowardsTacEnemyInfluence": {
+            "StopRadius": 0.1,
+            "NearDistance": 1,
+            "NoCoverAfterExitTime": 5
+        }
+    }
+}

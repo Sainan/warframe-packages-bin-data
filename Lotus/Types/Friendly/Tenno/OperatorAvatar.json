@@ -1,0 +1,582 @@
+{
+    "parent": "/Lotus/Types/Player/LotusOperatorAvatar",
+    "data": {
+        "AnimationName": "Operator",
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/ApplyOperatorCustomization.lua",
+            "Function": "ApplyCustomizationAndUpdate",
+            "_operatorTransferenceInFx": "/Lotus/Fx/PowersuitAbilities/Operator/OperatorTransferenceIn",
+            "_warframeToOperatorFx": "/Lotus/Fx/Levels/TheWarWithin/Cinematics/TennoToOperatorTransference",
+            "_setInvisibleOnSpawn": 1
+        },
+        "ReplicateCreator": 1,
+        "AnimControllerType": "OperatorAnimController",
+        "CameraControllerType": "OperatorCameraController",
+        "ClimbControllerType": "OperatorClimbController",
+        "GameActionControllerType": "OperatorGameActionController",
+        "InputControllerType": "/Lotus/Types/Game/LotusOperatorInputController",
+        "InventoryControllerType": "OperatorInventoryController",
+        "MotionControllerType": "OperatorMotionController",
+        "FallDamageVelocityThreshold": 20,
+        "FallDamageBase": 100,
+        "FallDamageScaling": 10,
+        "NumJumps": 1,
+        "NumAirDodges": 5,
+        "AirJumpHeightMultiplier": 1,
+        "JumpStaminaCosts": {
+            "JUMP_BULLET_JUMP": 10000
+        },
+        "SoundEvents": [
+            {
+                "EventName": "SFXWolfPlayerEmote",
+                "Sound": "/Lotus/Sounds/Dialog/Barks/Battle/GrineerWolf/GrnWolfPlayerEmoteHowl3D",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXArbitrationPlayerEmote",
+                "Sound": "/Lotus/Sounds/Gameplay/Arbitration/ArbitrationEmote3D",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXTennocon2019PlayerEmote",
+                "Sound": "/Lotus/Sounds/Emotes/TennoconTwentyNineteen/Tennocon2019Emote3D",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "ForceFeedbackEffectEvents": [
+            {
+                "EventName": "VoidBeamBurstFeedback",
+                "ForceFeedbackEffect": "/Lotus/Sounds/Weapons/ForceFeedbackSettings/Powers/ForceFeedbackPowerImpactMedium"
+            }
+        ],
+        "CanSlide": 0,
+        "SlideAttack": {
+            "Type": "DT_RADIANT",
+            "Amount": 30,
+            "ForcedProcs": [
+                "PT_RAGDOLL",
+                "PT_VOID"
+            ]
+        },
+        "SlideEffects": [
+            {
+                "SurfaceType": "ST_DEFAULT",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopDefault"
+            },
+            {
+                "SurfaceType": "ST_METAL",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopMetal"
+            },
+            {
+                "SurfaceType": "ST_PERFORATED_METAL",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopMetal"
+            },
+            {
+                "SurfaceType": "ST_STONE",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideStone",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeslideLoopDirt"
+            },
+            {
+                "SurfaceType": "ST_DIRT",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideDirt",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeslideLoopDirt"
+            },
+            {
+                "SurfaceType": "ST_FLUID",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideFluid",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopWater"
+            },
+            {
+                "SurfaceType": "ST_SNOW",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideIce",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopSnow"
+            },
+            {
+                "SurfaceType": "ST_ICE",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlideIce",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopIce"
+            },
+            {
+                "SurfaceType": "ST_IRON",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopMetal"
+            },
+            {
+                "SurfaceType": "ST_VEGETATION",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeslideLoopDirt"
+            },
+            {
+                "SurfaceType": "ST_GRASS",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeslideLoopDirt"
+            },
+            {
+                "SurfaceType": "ST_WATER_STREAM",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopWater"
+            },
+            {
+                "SurfaceType": "ST_COOLANT",
+                "Effect": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "",
+                    "Type": "/Lotus/Fx/Avatar/KneeSlide",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "Sound": "/Lotus/Sounds/Characters/Tenno/KneeSlide/KneeSlideLoopWater"
+            }
+        ],
+        "MaxSlideVelocity": 25,
+        "NeedSpawnDissolve": 0,
+        "AimGravityScript": {
+            "Script": ""
+        },
+        "AimGravityTime": 0,
+        "TransferenceScript": {
+            "_hidden": 1
+        },
+        "DashSpeed": 50,
+        "DashSpeedMax": 50,
+        "DashAcceleration": 0,
+        "DashContactRadius": 2,
+        "DashEnergyCost": 25,
+        "DashContactEnergyGain": 10,
+        "EnergyIncreaseItem": "/Lotus/Types/PickUps/EnergyIncreaseBaseItem",
+        "DashDuration": 0.25,
+        "DashStartEffect": "/Lotus/Fx/PowersuitAbilities/Operator/DashEffect",
+        "DashEndEffect": "/Lotus/Fx/PowersuitAbilities/Operator/DashEnd",
+        "DashIntoEnemySound": "/Lotus/Sounds/Focus/Operators/Powers/WraithMovement/OperatorWraithDashImpact",
+        "DashIgnoreObjectTypes": [
+            "/Lotus/Fx/Water/GenericWaterPlane",
+            "/EE/Types/Engine/HitProxy",
+            "/EE/Types/Engine/BaseAvatar",
+            "/Lotus/Upgrades/Focus/Defense/Objects/CloakShieldDeco",
+            "/Lotus/Powersuits/Frost/IceShieldDeco"
+        ],
+        "VoidModeScript": {
+            "Script": "/Lotus/Scripts/OperatorVoidMode.lua",
+            "Function": "VoidMode",
+            "_energyDrainRate": 13,
+            "_enterVoidEffect": "/Lotus/Fx/PowersuitAbilities/Operator/CloakEnter",
+            "_exitVoidEffect": "/Lotus/Fx/PowersuitAbilities/Operator/CloakExit",
+            "_cameraColorCorrection": "/Lotus/Fx/ColorGradingData/OperatorVoidColorGrading",
+            "_enterVoidSound": "/Lotus/Sounds/Focus/Operators/Powers/WraithMovement/OperatorWraithVoidEnter",
+            "_enterVoidLocalSound": "/Lotus/Sounds/Focus/Operators/Powers/WraithMovement/OperatorWraithVoidEnterLocal",
+            "_exitVoidSound": "/Lotus/Sounds/Focus/Operators/Powers/WraithMovement/OperatorWraithVoidExit",
+            "_exitVoidLocalSound": "/Lotus/Sounds/Focus/Operators/Powers/WraithMovement/OperatorWraithVoidExitLocal",
+            "_inVoidSequencer": "",
+            "_inVoidLocalSequencer": "/Lotus/Sounds/Focus/Operators/Powers/WraithMovement/OperatorWraithVoidLoopSeq",
+            "_blindBurstSound": "/Lotus/Sounds/Focus/Operators/Powers/Attack/OperatorFocusCloakBlindBurst",
+            "_startDashFireSound": "/Lotus/Sounds/Focus/Operators/Powers/Attack/OperatorFocusDashFireStart",
+            "_cloakPulseEndSound": "",
+            "_dashWaveSound": "",
+            "_amarXrayVision": "/Lotus/Fx/PowersuitAbilities/Drifter/DrifterRadarAttachFX",
+            "_blindProjector": "/Lotus/Upgrades/Focus/Attack/Objects/DashBlindSpawner",
+            "_blindBurst": "/Lotus/Fx/PowersuitAbilities/Excalibur/BlindSpawner",
+            "_dashFireHelperType": "/Lotus/Upgrades/Focus/Attack/Objects/TrailScriptHelper",
+            "_dashFireTriggerType": "/Lotus/Upgrades/Focus/Attack/Objects/TrailTrigger",
+            "_dashFireEffect": "/Lotus/Fx/PowersuitAbilities/Operator/DashFireTrail",
+            "_cloakShieldType": "/Lotus/Upgrades/Focus/Defense/Objects/CloakShieldDeco",
+            "_shockwaveType": "/Lotus/Upgrades/Focus/Defense/Active/DashShockwaveProjectile",
+            "_dashWaveType": "/Lotus/Fx/PowersuitAbilities/Operator/DashWaveDeco",
+            "_cloakStaticTriggerType": "/Lotus/Upgrades/Focus/Power/Objects/CloakStaticTrigger",
+            "_cloakStaticEffectType": "/Lotus/Fx/PowersuitAbilities/Operator/CloakDischarge",
+            "_cloakPullTriggerType": "/Lotus/Upgrades/Focus/Power/Objects/CloakPullTrigger",
+            "_dashElectricBallType": "/Lotus/Upgrades/Focus/Power/Objects/ElectricBall",
+            "_beamType": "",
+            "_beamFx": "",
+            "_zapSound": "",
+            "_cloakRevealType": "/Lotus/Fx/PowersuitAbilities/Operator/PowerEnemyVision",
+            "_cloakReduceDamageAuraType": "/Lotus/Upgrades/Focus/Ward/Objects/CloakReduceDamageAura",
+            "_cloakAllyCloakAuraType": "/Lotus/Upgrades/Focus/Ward/Objects/CloakAllyCloakAura"
+        },
+        "MeleeAttackScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/OperatorMeleeWeapon.lua",
+            "Function": "OnMeleeAttack",
+            "_fireballProjType": "/Lotus/Upgrades/Focus/Attack/Objects/FireProjectile",
+            "_handBone": "GAME_L1_ARM3",
+            "_launchSound": "",
+            "_selfShieldSpawner": "",
+            "_bulletAttractorType": "",
+            "_damagePickupType": "",
+            "_disarmAgentType": "",
+            "_disarmMeleeWeapon": "",
+            "_blastBurstType": "/Lotus/Fx/PowersuitAbilities/Operator/OperatorBlastBurst",
+            "_blastAllyShieldEffect": "/Lotus/Fx/PowersuitAbilities/Operator/BlastAllyShield",
+            "_blastAllyShieldAvatarEffect": "/Lotus/Fx/PowersuitAbilities/Operator/BlastAllyShieldOnAvatar",
+            "_blastRobotStunnedEffect": "/Lotus/Fx/PowersuitAbilities/Operator/BlastRobotStun",
+            "_blastRobotStunExplosion": "/Lotus/Fx/PowersuitAbilities/Operator/BlastRobotStunExplosion"
+        },
+        "PostFinisherUpgradeScript": {
+            "Script": "/Lotus/Powersuits/PowersuitAbilities/OperatorTransference.lua",
+            "Function": "GiveFinisherTransferenceUpgrades",
+            "_shipAvatarType": "",
+            "_hubAvatarType": "",
+            "_duviriAvatarType": "/Lotus/Types/Friendly/PlayerControllable/ControllableDuviriDrifterTennoAvatar",
+            "_weaponType": "",
+            "_meleeWeaponType": "",
+            "_combatMeleeWeaponType": "",
+            "_shieldMeleeWeaponType": "",
+            "_chargeableMeleeWeaponTypes": [],
+            "_podCameraSpotType": "",
+            "_transferenceCameraSpotType": "",
+            "_podAnim": "",
+            "_closePodAnim": "",
+            "_sitIdleAnim": "",
+            "_podSitIdleAnim": "",
+            "_operatorPreDeathAnim": "",
+            "_operatorPreDeathAnimAlt": "",
+            "_operatorSpawnImmunityDuration": 4,
+            "_warframeTransferenceDamageReduction": 0.2,
+            "_adultHubCameraController": "",
+            "_mechExclusivityActionType": "",
+            "_fallenMechAvatarType": "",
+            "_mechAvatarType": "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/EntratiTechAvatar",
+            "_mechMarkerType": "/Lotus/Types/Game/MarkerInfos/MechMarkerInfo",
+            "_suitMarkerType": "/Lotus/Types/Game/MarkerInfos/SuitMarkerInfo",
+            "_controllableDuviriDrifterTennoAvatarType": "/Lotus/Types/Friendly/PlayerControllable/ControllableDuviriDrifterTennoAvatar",
+            "_powerSuitCollapsedAnim": "",
+            "_powerSuitCollapsedAnimThrowablesOverride": "",
+            "_umbraKneelAnim": "/Lotus/Animations/Tenno/Emotes/Generic/StandToKneel_anim.fbx",
+            "_operatorTransferenceOutFx": "",
+            "_operatorDeathTransferenceOutFx": "",
+            "_operatorTransferenceInFx": "",
+            "_transferenceAnim": "",
+            "_transferenceReturnAnim": "",
+            "_warframeToOperatorFx": "",
+            "_riftJumpCompleteFx": "",
+            "_riftJumpStartFx": "",
+            "_warframeToOperatorBank": "",
+            "_operatorToWarframeBank": "",
+            "_mechTransferenceInFx": "",
+            "_mechTransferenceOutFx": "",
+            "_warframeMechTransferenceInFx": "",
+            "_warframeMechTransferenceOutFx": "",
+            "_operatorMechTransferenceInFx": "",
+            "_operatorMechTransferenceOutFx": "",
+            "_exitVoidEffect": "",
+            "_cameraColorCorrection": "",
+            "_inVoidLocalSequencer": "",
+            "_umbraAgent": "",
+            "_echoesAgent": "",
+            "_abilityType": "",
+            "_RequireValidPosture": 0,
+            "_ValidNpcPosture": "PM_STUN",
+            "_blockingInputFilter": "",
+            "_powerMenuInputFilter": "",
+            "_hubInputFilter": "",
+            "_npcTransferenceEnergyPerSecond": 1,
+            "_npcSearchRangeOnAimingFailure": 12,
+            "_mechForceTransferenceScript": 0,
+            "_sUnmannedVehicle": "UnmannedVehicle",
+            "_vehicleClientTransferenceHelper": ""
+        },
+        "DashDisarmScript": {
+            "Script": "/Lotus/Powersuits/PowersuitAbilities/OperatorDisarmingProjection.lua",
+            "Function": "DisarmTarget",
+            "_disarmAgentType": "/Lotus/Types/Enemies/GenericDisarmedAgent",
+            "_disarmMeleeWeaponType": "/Lotus/Weapons/Tenno/Melee/DisarmBasicMeleeWeapon"
+        },
+        "ActivateVoidModeCooldown": 0.5,
+        "GhostProjectileType": "OperatorGrappleGlaiveProj",
+        "DodgeGhostMinTravelDistance": 8,
+        "DodgeGhostMaxTravelDistance": 24,
+        "DodgeGhostChargeDuration": 0.3,
+        "GhostJumpExtendEnergyCost": 20,
+        "GhostThrowBeamType": {
+            "BoneName": "GAME_R1_WEAPON1",
+            "Type": "/Lotus/Fx/PowersuitAbilities/Operator/OperatorProjectionBeam"
+        },
+        "HealPulseScript": {
+            "Script": "/Lotus/Powersuits/PowersuitAbilities/OperatorSonicVortex.lua",
+            "Function": "HealAllyPulse",
+            "_activateAnim": "",
+            "_projectileType": "",
+            "_dissipationFx": "",
+            "_launchSound": "",
+            "_sonicDissipationVortexType": "",
+            "_sonicDissipationHealFX": "/Lotus/Fx/Focus/Guardian/HealAllStatsBlast"
+        }
+    }
+}

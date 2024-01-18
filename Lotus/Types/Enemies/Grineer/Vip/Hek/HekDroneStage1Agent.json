@@ -1,0 +1,253 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Drones/DroneAttackAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "HekDroneAvatar",
+            "EXIMUS": ""
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "Weapons/HekDroneRifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "HekDronePowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "Auras/HekDroneGrineerBuffs",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "Auras/HekDroneTennoDebuffs",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "Auras/HekDroneReducedMagProc",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "BehaviorDatabase": [
+            "/Lotus/Types/Behaviors/HekDroneDodgeBehavior",
+            "/EE/Types/Npc/BehaviorParallel",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "HekDroneDodgeBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeBetweenDodges": 2.5,
+            "DodgeDistance": 13,
+            "Action": "Dodge",
+            "Decceleration": 0.25,
+            "TimeAfterDamaged": [
+                0.1,
+                0.25
+            ],
+            "MinMovement": 1
+        },
+        "BehaviorParallel": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "RequireAllToRun": 0,
+            "FailOnChildFailure": 0,
+            "Behaviors": [
+                "/EE/Types/Npc/GenericBehaviorSelector",
+                "MovementBehaviorSelector"
+            ],
+            "GenericBehaviorSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/Lotus/Types/Behaviors/HekDronePropagandaBehavior",
+                    "/Lotus/Types/Behaviors/HoverAttackBehavior",
+                    "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior"
+                ],
+                "HekDronePropagandaBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0
+                },
+                "HoverAttackBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "FireDuration": [
+                        3,
+                        4
+                    ],
+                    "WaitDuration": [
+                        2,
+                        3
+                    ],
+                    "CheckTargetVisible": 1,
+                    "BaitType": "",
+                    "MaxBaitRadius": 1000,
+                    "FaceTarget": 0,
+                    "StopMovingOnShoot": 0
+                },
+                "UsePowerSuitAbilitiesBehavior": {
+                    "Enabled": 0,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.25,
+                    "BlockForPowerCompleteType": "BT_ALWAYS",
+                    "AllowInterruptOfAbility": 0,
+                    "StopFiring": 1,
+                    "StopMovingOnStart": 0,
+                    "ExtraReevaluationDelay": 0,
+                    "ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ActiveAction:Enabled": 1,
+                    "ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "EvaluateAction": 1,
+                    "FaceTarget": 0,
+                    "TurnAccuracyThreshold": 10,
+                    "TurnTimeout": 2,
+                    "AimTimeout": 0.5,
+                    "ValidAbilities": [],
+                    "MaxProcessPerEval": 0,
+                    "AimAtTarget": 0,
+                    "CheckIfAbilityUnlocked": 0,
+                    "MultipleConcurrentAbilities": 0,
+                    "EvaluateDelayRange": [
+                        0.5,
+                        1
+                    ],
+                    "PreventUsageOnWeaponUse": 0,
+                    "TurnDuringAbility": 0,
+                    "DeactivateAbilitiesOnPredeath": 0,
+                    "ResetEvalTimerOnEnemySpotted": 0
+                },
+                "FailOnChildFailure": 0
+            },
+            "MovementBehaviorSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/Lotus/Types/Behaviors/HoverNearTeammatesBehavior",
+                    "/Lotus/Types/Behaviors/HekDroneStrafeBehavior"
+                ],
+                "HoverNearTeammatesBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 7,
+                    "TargetDistance": [
+                        5,
+                        10
+                    ],
+                    "StrafeDistance": 2,
+                    "VerticalDistance": 3.5,
+                    "VerticalDistanceVariance": [
+                        0,
+                        0
+                    ],
+                    "ReachedLocationTolerance": 2,
+                    "WaitDuration": [
+                        1,
+                        3
+                    ],
+                    "RecheckInterval": 2,
+                    "MinMovementDistance": 1,
+                    "AlwaysUpdateEvasion": 0,
+                    "ControlFacing": "MFC_FACE_TARGET",
+                    "BoostFacing": "MFC_FACE_MOVEDIR",
+                    "BoostPosture": "WALK",
+                    "SpeedBoostMultiplier": 2,
+                    "BoostRange": 5,
+                    "BoostToTarget": 1,
+                    "ExitAfterWait": 1,
+                    "AdjustDestinationHeight": 0,
+                    "TeammateMaxProximity": 5,
+                    "TeammateTargetProximity": 10,
+                    "IgnoreTeammatesOfSameType": 1,
+                    "HoverNearEngagedEnemies": 1,
+                    "StayInTargetDistance": 0
+                },
+                "HekDroneStrafeBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "StrafeRadius": 10,
+                    "StopRadius": 1,
+                    "TimeAfterDamaged": 5
+                },
+                "FailOnChildFailure": 0
+            }
+        },
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 15,
+            "preferredHeight": 5,
+            "nearbyNavSearchRadius": 5
+        },
+        "ViewIdleFov": 170,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 120,
+        "AlertDecayTime": 600,
+        "SuperAlertRadius": 20000,
+        "SuperAlertDecayTime": 600,
+        "CustomLevelScalingScript": {
+            "Script": "/Lotus/Types/Enemies/SimpleBossScaling.lua",
+            "Function": "CalculateVIPLevel"
+        }
+    }
+}

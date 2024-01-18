@@ -1,0 +1,82 @@
+{
+    "parent": "ErraSentientAvatar",
+    "data": {
+        "MeshScale": 1,
+        "AnimationName": "Erra",
+        "PhysicsBehavior": "ErraSentientFighterWalk",
+        "ShowDamageNumbers": 0,
+        "Tag": "ErraAvatar",
+        "MaxHealth": 1000000,
+        "AnimControllerType": "ErraFighterAnimTreeController",
+        "DamageControllerType": "ErraFighterDamageController",
+        "MotionControllerType": "ErraFighterMotionController",
+        "CollisionProxy": {
+            "Type": "ErraFighterCollisionProxy"
+        },
+        "OnDamageScript": {
+            "Script": "/Lotus/Scripts/Sentient/ErraQuest.lua",
+            "Function": "Damaged",
+            "_boneName": "GAME_L1_ARM2END",
+            "_createType": "/Lotus/Fx/HitEffects/ParryHitEffectSpawner",
+            "_explosionDamage": 10,
+            "_explosionRadius": 5,
+            "_parryAnimation": ""
+        },
+        "ParticleEvents": [
+            {
+                "EventName": "VFXTrailAttackL",
+                "ParticleSys": "/Lotus/Fx/Sentients/ErraFighterAttackSwing",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_ARM2END",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "VFXTrailAttackR",
+                "ParticleSys": "/Lotus/Fx/Sentients/ErraFighterAttackSwing",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_ARM2END",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "ScriptEvents": [
+            {
+                "EventName": "MeleeExplode",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Scripts/Sentient/ErraQuest.lua",
+                    "Function": "CreateEntityOnMelee",
+                    "_boneName": "GAME_L1_ARM2END",
+                    "_createType": "/Lotus/Fx/Sentients/ErraFighterMeleeShockwave",
+                    "_explosionDamage": 0,
+                    "_explosionRadius": 1.5,
+                    "_parryAnimation": ""
+                }
+            }
+        ]
+    }
+}

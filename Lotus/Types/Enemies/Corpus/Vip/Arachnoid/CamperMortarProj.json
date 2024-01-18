@@ -1,0 +1,205 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "Mesh": "/Lotus/Powersuits/Trapper/Deployables/DeploySphere.x",
+        "MeshScale": 15,
+        "OverrideMaterial": [
+            "/Lotus/Fx/Enemies/SargasRuk/FireballProjectileMat"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperCannonProjFlare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Weapons/CrpArachnoidCamperArtilleryCannonProjLaunchSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperCannonProjSmokeTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperCannonProjGlowTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperCannonProjGlow",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicQuery",
+        "AttackData": {
+            "Type": "DT_EXPLOSION",
+            "Amount": 150,
+            "ProcChance": 0,
+            "ForcedProcs": [
+                "PT_KNOCKED_DOWN"
+            ]
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "CriticalMultiplier": 2,
+        "ExplosiveAttack": {
+            "Amount": 150,
+            "ProcChance": 0,
+            "ForcedProcs": [
+                "PT_KNOCKED_DOWN"
+            ]
+        },
+        "ExplosionIgnoreSource": 1,
+        "DamageRadius": 15,
+        "HitEffect": "/Lotus/Fx/Weapons/GrenadeLauncher/GrenadeLauncherHitEffect",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "IgnoreTypes": [
+            "/Lotus/Types/Friendly/Venus/DynamicExcavatorAvatar",
+            "/Lotus/Types/Enemies/Corpus/Venus/Avatars/VenusDefenseDroneAvatar",
+            "/Lotus/Types/Game/CreatureBaseAvatar"
+        ],
+        "WhizzBySound": "/Lotus/Sounds/Enemies/Corpus/ArachnoidCamper/Weapons/CrpArachnoidCamperMissileProjIncoming",
+        "WhizzByRadius": 60,
+        "ContactDelayTimer": 1,
+        "EmbedAttack": {
+            "Type": "DT_POISON",
+            "Amount": 20
+        },
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 40,
+        "KinematicMaxSpeed": 500,
+        "KinematicGravity": 1,
+        "KinematicRestitution": 0.5,
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            0,
+            0.1,
+            0
+        ],
+        "ProjectileReplication": "SYNCED_AUTONOMOUS",
+        "KinematicIgnoredTypes": [
+            "/Lotus/Types/Game/PickUps/LotusPickUp"
+        ],
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/WeaponStuff.lua",
+            "Function": "grenadeSound",
+            "_grenadeLaunch": "/Lotus/Sounds/Enemies/Raptor/MortarRaptor/RaptorMortarLaunch"
+        },
+        "OnProjectileDeathScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Arachnoid/ArachnoidCamperCannon.lua",
+            "Function": "CreateExplosion",
+            "_fireAnim": "",
+            "_fireAnimPerched": "",
+            "_firingEvent": "Fire",
+            "_perchMaxRange": 300,
+            "_combatMaxRange": 500,
+            "_medRange": 100,
+            "_minRange": 50,
+            "_maxAngleAdjustOnlyRange": 100,
+            "_projectileResource": "",
+            "_fireBones": [
+                "FX_L1_PEWPEW",
+                "FX_R1_PEWPEW"
+            ],
+            "_fireIterations": 4,
+            "_fireDelayBetweenIterations": 0.2,
+            "_blindFiringSpotValidDuration": 20,
+            "_muzzleFxType": "",
+            "_telegraphFxType": "",
+            "_explosionFxType": "/Lotus/Fx/Enemies/Corpus/Arachnoid/CamperCannonProjDeath",
+            "_beaconStartScale": 3,
+            "_beaconScaleTime": 2
+        }
+    }
+}

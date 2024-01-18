@@ -1,0 +1,392 @@
+{
+    "parent": "/EE/Types/Engine/AnimTreeController",
+    "data": {
+        "AnimTree": "BallasSentientAnimTree.animtree",
+        "DefaultMovementMode": "ATMM_PHYSICS_DRIVEN",
+        "DefaultMovementModeRemotePlayers": "ATMM_PHYSICS_DRIVEN",
+        "SnapSpeedForCollisions": 2,
+        "MaximumAimDirH": 180,
+        "UseRootMotion": 0,
+        "Actions": [
+            {
+                "Action": "Search Left",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ]
+            },
+            {
+                "Action": "Search Right",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ]
+            },
+            {
+                "Action": "Search Forward",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ]
+            },
+            {
+                "Action": "Search Up",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ]
+            },
+            {
+                "Action": "Cancel Search",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 0
+                    }
+                ],
+                "Query": []
+            }
+        ],
+        "SoundEvents": [
+            {
+                "EventName": "StepL",
+                "Sound": "/Lotus/Sounds/Enemies/BallasChimera/Steps/BallasChimeraStepMovement",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "StepR",
+                "Sound": "/Lotus/Sounds/Enemies/BallasChimera/Steps/BallasChimeraStepMovement",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXChimeraBallasSwordCall",
+                "Sound": "/Lotus/Sounds/Levels/Quests/ChimeraPrologue/Gameplay/ChimeraBallasSwordAssemblyCall",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "VoiceBoxEvents": [
+            {
+                "EventName": "PainVocal",
+                "Phrase": "PAIN",
+                "Filter": ""
+            },
+            {
+                "EventName": "VocalWeaponJam",
+                "Phrase": "INTIMIDATE",
+                "Filter": "VocalWeaponJam"
+            }
+        ],
+        "ParticleEvents": [
+            {
+                "EventName": "Dust",
+                "ParticleSys": "/Lotus/Types/Player/Effects/TennoDust",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_FINGER1",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "Dust",
+                "ParticleSys": "/Lotus/Types/Player/Effects/TennoDust",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_FINGER1",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "PunchCharge",
+                "ParticleSys": "/Lotus/Fx/Weapons/Grineer/BlasterPunchFlare",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_WEAPON1",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "CaptPhaserMeleeTakedownHit",
+                "ParticleSys": "/Lotus/Fx/Weapons/Melee/BlasterPunchBurstStealth",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_WEAPON1",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "CaptPhaserMeleeTakedownHit",
+                "ParticleSys": "/Lotus/Fx/Projectors/BlasterPunchGlow",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 1,
+                "Bone": "GAME_C1_SPINE2",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "CaptPhaserStealthMeleeTakedown",
+                "ParticleSys": "/Lotus/Fx/Weapons/Melee/BlasterPunchBurstStealth",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_R1_WEAPON1",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "CaptPhaserStealthMeleeTakedown",
+                "ParticleSys": "/Lotus/Fx/Projectors/BlasterStealthTakedownGlow",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 1,
+                "Bone": "GAME_C1_SPINE2",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "GrineerMineImpact",
+                "ParticleSys": "/Lotus/Fx/Env/VS/PlayerGrineerMineImpact",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_C1_SPINE2",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_LOCAL_ONLY"
+            },
+            {
+                "EventName": "Disarm",
+                "ParticleSys": "/Lotus/Fx/PowersuitAbilities/Loki/DisarmBurst",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "GAME_L1_WEAPON1",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "SurfaceSensitiveEffects": [
+            {
+                "AnimEventSymbols": [
+                    "StepL"
+                ],
+                "RaycasterBoneName": "GAME_L1_LEG4",
+                "HitEffect": "/Lotus/Sounds/Enemies/BallasChimera/Steps/BallasChimeraStep",
+                "OverridePostures": [
+                    {
+                        "Posture": "RUN",
+                        "OverrideHitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/CorpusCrewmanSteps"
+                    },
+                    {
+                        "Posture": "WALLRUNNING_LEFT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_RIGHT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_UP",
+                        "OverrideHitEffect": ""
+                    }
+                ],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepR"
+                ],
+                "RaycasterBoneName": "GAME_R1_LEG4",
+                "HitEffect": "/Lotus/Sounds/Enemies/BallasChimera/Steps/BallasChimeraStep",
+                "OverridePostures": [
+                    {
+                        "Posture": "RUN",
+                        "OverrideHitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/CorpusCrewmanSteps"
+                    },
+                    {
+                        "Posture": "WALLRUNNING_LEFT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_RIGHT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_UP",
+                        "OverrideHitEffect": ""
+                    }
+                ],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 1,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "LandSoft"
+                ],
+                "RaycasterBoneName": "GAME_L1_LEG4",
+                "HitEffect": "",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "LandHeavy"
+                ],
+                "RaycasterBoneName": "GAME_R1_LEG4",
+                "HitEffect": "",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": []
+            }
+        ],
+        "CinematicID": "Marine"
+    }
+}

@@ -1,0 +1,205 @@
+{
+    "parent": "/Lotus/Types/Enemies/Sentients/Troopers/SentientBaseTrooperAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SentientDolicholystAvatar"
+        },
+        "BaseLevel": 10,
+        "NewAdditionalInventory": [
+            {
+                "item": "SentientDolicholystSmallGunRight",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "SentientDolicholystSmallGunLeft",
+                "forceEquip": 1,
+                "hand": "OFF_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SentientDolicholystPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/BehaviorParallel"
+        ],
+        "BehaviorParallel": {
+            "GenericBehaviorSelector": {
+                "Actions": [
+                    "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                    "/EE/Types/Npc/DroneRecoveryBehavior",
+                    "/EE/Types/Npc/StormTargetOrderBehavior",
+                    "/EE/Types/Npc/SetupAmbushBehavior",
+                    "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+                    "/EE/Types/Npc/KeepIdealDistanceBehavior",
+                    "/EE/Types/Npc/MultiTargetFaceBehavior",
+                    "/Lotus/Types/Enemies/Sentients/Troopers/Behaviors/SentientRetreatDecorator",
+                    "/EE/Types/Npc/CustomResponseBehavior",
+                    "/EE/Types/Npc/SearchForTargetBehavior",
+                    "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+                    "/EE/Types/Npc/InvestigateBehavior",
+                    "/EE/Types/Npc/PoiBehavior",
+                    "/EE/Types/Npc/GuardTactic"
+                ],
+                "UsePowerSuitAbilitiesBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.25,
+                    "BlockForPowerCompleteType": "BT_ALWAYS",
+                    "AllowInterruptOfAbility": 0,
+                    "StopFiring": 0,
+                    "StopMovingOnStart": 1,
+                    "ExtraReevaluationDelay": 0.2,
+                    "ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ActiveAction:Enabled": 1,
+                    "ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "EvaluateAction": 1,
+                    "FaceTarget": 0,
+                    "TurnAccuracyThreshold": 10,
+                    "TurnTimeout": 2,
+                    "AimTimeout": 0.5,
+                    "ValidAbilities": [],
+                    "MaxProcessPerEval": 0,
+                    "AimAtTarget": 0,
+                    "CheckIfAbilityUnlocked": 0,
+                    "MultipleConcurrentAbilities": 0,
+                    "EvaluateDelayRange": [
+                        0.5,
+                        1
+                    ],
+                    "PreventUsageOnWeaponUse": 0,
+                    "TurnDuringAbility": 1,
+                    "DeactivateAbilitiesOnPredeath": 0,
+                    "ResetEvalTimerOnEnemySpotted": 0
+                },
+                "DroneRecoveryBehavior": {
+                    "FlyDescendToNavBehavior": {
+                        "DelayEvaluationOnNavFindFailure": 12
+                    }
+                },
+                "SetupAmbushBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "IdealDistance": [
+                        20,
+                        30
+                    ],
+                    "NumResults": 1,
+                    "MinDistFromNavEdge": 5,
+                    "DistanceFromTargetScoreRange": [
+                        10,
+                        40
+                    ],
+                    "StopRadius": 0.5,
+                    "SamplePointSpacing": 2,
+                    "DistanceScoreCurve": {
+                        "m": 1,
+                        "k": 2,
+                        "b": 0,
+                        "c": 0,
+                        "logistic": 0
+                    }
+                },
+                "MoveTowardsTacEnemyInfluence": {
+                    "MustBeFurtherFromObjective": 1,
+                    "DistAheadToAdvance": 0
+                },
+                "KeepIdealDistanceBehavior": {
+                    "AllowRun": 0,
+                    "WalkMovePosture": "JOG"
+                },
+                "MultiTargetFaceBehavior": {
+                    "ChildAction:SentientRangedCircleDecorator": {
+                        "ChildAction:MultiTargetCircleBehavior": {
+                            "IdealDistance": [
+                                6,
+                                20
+                            ],
+                            "SpeedModifier": 3,
+                            "MovementPosture": "JOG"
+                        }
+                    }
+                },
+                "SentientRetreatDecorator": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "ChildAction:Type": "/EE/Types/Npc/TacAreaFleeBehavior",
+                    "ChildAction:TacAreaFleeBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "MovementSpeedModifier": 1,
+                        "StopRadius": 0.1,
+                        "NearDistance": 1,
+                        "OnlyActiveAreas": 1,
+                        "EvaluateTime": 0,
+                        "DoorWeight": 0.75,
+                        "NeighborWeight": 0.25,
+                        "PrevNodeWeight": 2,
+                        "BreadCrumbRadius": 15,
+                        "BreadCrumbDropRate": 5,
+                        "BreadCrumbWeight": 5,
+                        "AllowFiringAtTarget": 0,
+                        "TimeSinceSeenTarget": 5,
+                        "MaxNodeWeight": 15
+                    },
+                    "StopWhenChildStops": 1,
+                    "DualWieldRestrictAction": "",
+                    "DualWieldRestriction": "DWR_NONE",
+                    "RequiredConfig": "WC_NONE",
+                    "NumRequiredRangedWeapons": 0,
+                    "NumRequiredMeleeWeapons": 0,
+                    "RequiresSpecifiedNumbers": 0
+                }
+            }
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierCrossOverDoor"
+                ],
+                "LocomotionMoveModifierCrossOverDoor": {
+                    "TotalNextStep": 2,
+                    "DistanceToDoor": 3,
+                    "CrouchDoorHeight": 0,
+                    "VolumeCrouchHeightThreshold": 2
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "preferredHeight": 1,
+            "useAvoidance": 1
+        }
+    }
+}

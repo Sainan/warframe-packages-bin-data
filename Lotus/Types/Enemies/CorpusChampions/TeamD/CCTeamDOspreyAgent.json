@@ -1,0 +1,79 @@
+{
+    "parent": "/Lotus/Types/Enemies/CorpusChampions/CorpusChampionDroneBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "CCTeamDOspreyAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionWeapons/CorpusChampionRiotRifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionPowerSuits/NpcTeamDOspreySuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Upgrades/Mods/Aura/EnemyShieldDroneAuraMod",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "ChangeToPrimaryWeaponDecoratorBehavior": {
+            "Action:GenericBehaviorSelector": {
+                "ShootingDecoratorBehavior": {
+                    "Action:GenericBehaviorSelector": {
+                        "Actions": [
+                            "/Lotus/Types/Behaviors/CautiousApproachToPickUpBehavior",
+                            "/Lotus/Types/Behaviors/CtfOrderPointBankerBehaviorSelector",
+                            "/Lotus/Types/Behaviors/CorpusArenaIgnoreInfestedBehaviorSelector",
+                            "/EE/Types/Npc/LeaveDeathAreaBehavior",
+                            "/Lotus/Types/Behaviors/CtfOrderProtectorBehaviorSelector",
+                            "/Lotus/Types/Behaviors/CtfOrderAttackerBehaviorSelector",
+                            "/Lotus/Types/Behaviors/CtfOrderDefenderBehaviorSelector",
+                            "/Lotus/Types/Behaviors/CtfOrderHunterBehaviorSelector",
+                            "/EE/Types/Npc/EngageTargetMovementBehavior",
+                            "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+                            "/EE/Types/Npc/WaitBehavior"
+                        ],
+                        "CautiousApproachToPickUpBehavior": {
+                            "Enabled": 1,
+                            "OnStartScript": {
+                                "Script": ""
+                            },
+                            "OnDamagedScript": {
+                                "Script": ""
+                            },
+                            "DefaultReevaluationDelay": 0,
+                            "PickUpTargetTypes": [
+                                "/Lotus/Types/Gameplay/Arena/GreedPointPickupAction"
+                            ],
+                            "EvaluateValueType": "EVT_HEALTH",
+                            "EvalValueComparator": "CT_ACTIVATE_WHEN_PLENTY",
+                            "OnPickupTakenScript": {
+                                "Script": ""
+                            },
+                            "EvaluateValueVsDistanceRange": [
+                                0.2,
+                                1
+                            ],
+                            "SearchRadius": 30,
+                            "GrabAnywayDistance": 5,
+                            "FailsOnEnemyCloserByPct": 1.5,
+                            "NearRadius": 3,
+                            "StopRadius": 2,
+                            "MaxOffNavDist": 10,
+                            "DelayAfterFailure": 1,
+                            "MovementPosture": "JOG",
+                            "PreferredHeight": -1,
+                            "HumanPlayerNearbyRange": -1,
+                            "AnimActionBeforeGrabbing": ""
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

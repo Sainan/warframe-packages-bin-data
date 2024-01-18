@@ -1,0 +1,203 @@
+{
+    "parent": "/EE/Types/Npc/DynamicCover",
+    "data": {
+        "ShadowLightmaps": 1,
+        "UseAmbient": 1,
+        "Mesh": "CrpDeployableCoverNew_skel.fbx",
+        "Dissolve": 1,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "CrpDeployableCoverPoints",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/Effects/MaterialFade.lua",
+            "Function": "DissolveFade",
+            "_OriginalValue": 1,
+            "_NewValue": 0,
+            "_TimeLength": 0.1,
+            "_OriginalScale": 0.1,
+            "_NewScale": 1,
+            "_Peak": 0.5,
+            "_PeakEnd": 0.8,
+            "_PeakValue": 1,
+            "_ValleyValue": 0,
+            "_ValleyEndValue": 0,
+            "_Param": "",
+            "_TargetDeco": [],
+            "_Delay": 0,
+            "_OriginalValueTwo": 1,
+            "_NewValueTwo": 2,
+            "_ParamTwo": "",
+            "_destroyAtEnd": 0,
+            "_showAtStart": 0,
+            "_hideAtEnd": 0,
+            "_meshScaleValley": 0.1,
+            "_meshScalePeak": 1,
+            "_applyEnergyColor": 0,
+            "_energyColorParam": "TintColor",
+            "_getParentFirst": 0,
+            "_applyToParent": 0,
+            "_applyToChildren": 0,
+            "_checkInstigator": 0,
+            "_instigatorDuration": [
+                0,
+                0
+            ],
+            "_instigatorPower": 1,
+            "_isMeleeWeapon": 0,
+            "_isWeapon": 0,
+            "_alphaMult": 1,
+            "_getCastingSpeed": 0,
+            "_gcsGetCreator": 0,
+            "_applyLowHigh": 1,
+            "_scaleForExplosionMod": 0,
+            "_isArchwing": 0,
+            "_powScale": 0,
+            "_invertPowScale": 0,
+            "_powerAmount": 3,
+            "_isRandomMeshScale": 0,
+            "_checkKilled": 0,
+            "_materialSlot": -1
+        },
+        "ReplicaRunScriptInstance": 1,
+        "LocTag": "/Lotus/Language/Equipment/CorpusDeployableCoverName",
+        "UseLocTag": 1,
+        "LongDesc": "/Lotus/Language/Game/DeployableCoverDesc",
+        "Icon": "/Lotus/Interface/Icons/Objects/CorpusDeployableCover.png",
+        "Diorama": "/Lotus/Levels/Episodes/ObjectsVectorShield.level",
+        "ReqScans": 12,
+        "SoundEvents": [
+            {
+                "EventName": "SFXCrpCoverDeploy",
+                "Sound": "/Lotus/Sounds/Items/CorpusDeployableCover/CrpDeployableCoverDeploy",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpCoverDestroy",
+                "Sound": "/Lotus/Sounds/Items/CorpusDeployableCover/CrpDeployableCoverDestroy",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "ParticleEvents": [
+            {
+                "EventName": "SFXCoverDestroy",
+                "ParticleSys": "ShieldDestroySpawner",
+                "Attached": 0,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "ScriptEvents": [
+            {
+                "EventName": "SFXCrpCoverDestroy",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Scripts/HealthDrainUntilDeath.lua",
+                    "Function": "SetEnergyShieldVisibility",
+                    "_drainHealth": 1,
+                    "_delayDrain": 2,
+                    "_percentDrainPerTick": 2,
+                    "_drainInterval": 1,
+                    "_cleanupDelay": 20,
+                    "_attachedType": "/Lotus/Fx/Enemies/Corpus/DeployableShield/CrpDeployableShieldEnergyDeco",
+                    "_activateShield": 0
+                }
+            },
+            {
+                "EventName": "CreateEnergyShield",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Scripts/HealthDrainUntilDeath.lua",
+                    "Function": "SetEnergyShieldVisibility",
+                    "_drainHealth": 1,
+                    "_delayDrain": 2,
+                    "_percentDrainPerTick": 2,
+                    "_drainInterval": 1,
+                    "_cleanupDelay": 20,
+                    "_attachedType": "/Lotus/Fx/Enemies/Corpus/DeployableShield/CrpDeployableShieldEnergyDeco",
+                    "_activateShield": 1
+                }
+            }
+        ],
+        "FancyAnimationTransition": 1,
+        "ActivatingAnimation": "CrpDeployableCoverNewActivated_anim.fbx",
+        "ActiveAnimation": "CrpDeployableCoverNewActivatedOpenState_anim.fbx",
+        "DeactivatingAnimation": "CrpDeployableCoverNewDeactivated_anim.fbx",
+        "InactiveAnimation": "CrpDeployableCoverNewDeactivatedClosedState_anim.fbx",
+        "DyingAnimation": "CrpDeployableCoverNewDeactivated_anim.fbx",
+        "DeadAnimation": "CrpDeployableCoverNewDeactivatedClosedState_anim.fbx",
+        "AllowedHitType": "DHT_NONE",
+        "ActiveHitProxy": {
+            "LocalPosition": [
+                0,
+                1.2,
+                0
+            ],
+            "Type": "CrpDeployableCoverOpenCollisionProxy"
+        },
+        "InactiveHitProxy": {
+            "LocalPosition": [
+                0,
+                0.5,
+                0
+            ],
+            "Type": "CrpDeployableCoverClosedCollisionProxy"
+        },
+        "DeadHitProxy": {
+            "LocalPosition": [
+                0,
+                0.5,
+                0
+            ],
+            "Type": "CrpDeployableCoverClosedCollisionProxy"
+        },
+        "OnPlacementScript": {
+            "Script": "/Lotus/Scripts/HealthDrainUntilDeath.lua",
+            "Function": "DrainHealth",
+            "_drainHealth": 1,
+            "_delayDrain": 2,
+            "_percentDrainPerTick": 0.75,
+            "_drainInterval": 0.3,
+            "_cleanupDelay": 2.5,
+            "_attachedType": "CrpEnergyShieldDeco",
+            "_activateShield": 1
+        }
+    }
+}

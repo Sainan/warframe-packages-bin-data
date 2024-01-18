@@ -1,0 +1,95 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "Mesh": "/Lotus/Characters/Tenno/Engineer/ZapTrap.fbx",
+        "UseParentDissolve": 0,
+        "UseParentVisibility": 0,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Venus/VenusTerraMortarMoa/Abilities/VenusTerraMortarMoaMineDropSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicQuery",
+        "ReplicationOverride": "RO_NEVER",
+        "AttackData": {
+            "Type": "DT_EXPLOSION",
+            "Amount": 15
+        },
+        "DieEffect": "/Lotus/Fx/Enemies/Corpus/Venus/VenusTerraMortarMoaMineTrapDeath",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "Toughness": 1000,
+        "SetLifeOnImpact": 1,
+        "VerticalImpulse": 500,
+        "HorizontalImpulse": 300,
+        "AngleSpeed": [
+            10,
+            10
+        ],
+        "Embed": 1,
+        "EmbedAlignToSurface": 1,
+        "EmbedAttack": {
+            "Type": "DT_FIRE",
+            "Amount": 0
+        },
+        "EmbedTime": [
+            0,
+            0
+        ],
+        "EmbedDeathAttack": {
+            "Amount": 90
+        },
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 5,
+        "KinematicMaxSpeed": 5,
+        "KinematicGravity": 1,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicAngleSpeed": [
+            15,
+            20
+        ],
+        "KinematicBulletRaycast": 0,
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Powersuits/PowersuitAbilities/ZapProbe.lua",
+            "Function": "ProjectileCustomization",
+            "_agentType": "",
+            "_latchedEffect": "",
+            "_latchedBurstEffect": "",
+            "_chargingDecoType": "",
+            "_chargingAnim": "",
+            "_chargingReleaseBeam": ""
+        },
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Venus/Bounce.lua",
+            "Function": "DeployBouncePad",
+            "_bounceFx": "/Lotus/Fx/Enemies/Corpus/Moa/VenusTerraMortarMoaMineTrapIndicator",
+            "_bounceTriggerType": "MineTrigger",
+            "_maxLifeTime": 30
+        },
+        "SilentProjectile": 1,
+        "ScriptsPreventDestruction": 1
+    }
+}

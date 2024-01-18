@@ -1,0 +1,133 @@
+{
+    "parent": "NpcAbility",
+    "data": {
+        "Script": {
+            "Script": "MachetePull.lua",
+            "Function": "ActivateAbility",
+            "_sound": "/Lotus/Sounds/Enemies/Infested/Ancient/Attacks/InfestedAncientGrappleThrow",
+            "_soundDetach": "/Lotus/Sounds/Enemies/Infested/Ancient/Attacks/InfestedAncientGrappleRetract",
+            "_soundRopeCut": "",
+            "_activateAnim": "/Lotus/Animations/Infested/MiniBoss/PullStartAnim",
+            "_LoopAnim": "/Lotus/Animations/Infested/MiniBoss/PullLoopAnim",
+            "_EndAnim": "/Lotus/Animations/Infested/MiniBoss/PullEndAnim",
+            "_beamType": "/Lotus/Fx/Enemies/Zombies/Ancients/ThrowBeam",
+            "_slideSound": "",
+            "_animEventToWaitFor": "StartPull",
+            "_Hand": "GAME_R1_SARM13",
+            "_ObstructionCheckBone": "GAME_C1_SPINE4",
+            "_projType": "/Lotus/Types/Enemies/Infested/AiWeek/Ancients/AncientSpikeProjectile",
+            "_postPullCreateFx": "",
+            "_abilityType": "AncientPullAbility",
+            "_canBeBlocked": 1,
+            "_canBeDodged": 1,
+            "_maxTime": 1.5,
+            "_minRange": 8,
+            "_maxRange": 20,
+            "_forbiddenTargetTypes": [
+                "/Lotus/Powersuits/PowersuitAbilities/DecoyAvatar",
+                "/Lotus/Powersuits/Saryn/ShedDecoyAvatar",
+                "/Lotus/Powersuits/Harlequin/IllusionMirrorAvatar"
+            ],
+            "_targetWhenStanding": 1,
+            "_targetWhenKnockedDown": 0,
+            "_clearTargetDataOnDeactivation": 1,
+            "_kickFx": "",
+            "_chargeFx": "",
+            "_tetherType": "",
+            "_pullDelayTime": 1.5,
+            "_ropeCutDecoType": "MachetePullHitOnlyDecoration",
+            "_ropeCutOffset": [
+                0,
+                1,
+                0
+            ],
+            "_pullLoopAnim": "",
+            "_useCutMechanic": 1,
+            "_pushVelMagnitude": 5,
+            "_cutReadyEffect": "/Lotus/Fx/Enemies/MachetePullCutReady",
+            "_ropeCutProxyType": "",
+            "_ropeCutHitboxScale": 0.25,
+            "_backfireImpulse": 1500
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "DoPull",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "MachetePull.lua",
+                    "Function": "DoPull",
+                    "_sound": "",
+                    "_soundDetach": "/Lotus/Sounds/Weapons/Grapple/GrapplePullback",
+                    "_soundRopeCut": "/Lotus/Sounds/Enemies/Infested/Ancient/Attacks/InfestedAncientGrappleBreak",
+                    "_activateAnim": "",
+                    "_LoopAnim": "",
+                    "_EndAnim": "/Lotus/Animations/Infested/MiniBoss/PullEndAnim",
+                    "_beamType": "/Lotus/Fx/Enemies/Zombies/Ancients/PullBeam",
+                    "_slideSound": "",
+                    "_animEventToWaitFor": "",
+                    "_Hand": "GAME_R1_SARM13",
+                    "_ObstructionCheckBone": "",
+                    "_projType": "",
+                    "_postPullCreateFx": "",
+                    "_abilityType": "",
+                    "_canBeBlocked": 1,
+                    "_canBeDodged": 1,
+                    "_maxTime": 4,
+                    "_minRange": 5,
+                    "_maxRange": 15,
+                    "_forbiddenTargetTypes": [
+                        "/Lotus/Powersuits/PowersuitAbilities/DecoyAvatar",
+                        "/Lotus/Powersuits/Saryn/ShedDecoyAvatar",
+                        "/Lotus/Powersuits/Harlequin/IllusionMirrorAvatar"
+                    ],
+                    "_targetWhenStanding": 1,
+                    "_targetWhenKnockedDown": 0,
+                    "_clearTargetDataOnDeactivation": 1,
+                    "_kickFx": "",
+                    "_chargeFx": "",
+                    "_tetherType": "",
+                    "_pullDelayTime": 1,
+                    "_ropeCutDecoType": "MachetePullHitOnlyDecoration",
+                    "_ropeCutOffset": [
+                        0,
+                        1,
+                        0
+                    ],
+                    "_pullLoopAnim": "/Lotus/Animations/Infested/MiniBoss/PullLoopAnim",
+                    "_useCutMechanic": 1,
+                    "_pushVelMagnitude": 5,
+                    "_cutReadyEffect": "/Lotus/Fx/Enemies/MachetePullCutReady",
+                    "_ropeCutProxyType": "MachetePullRopeHitProxy",
+                    "_ropeCutHitboxScale": 0.75,
+                    "_backfireImpulse": 1500
+                }
+            }
+        ],
+        "CooldownDuration": 15,
+        "ActivationXP": 0,
+        "EvaluateScript": 0,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/MachetePullEvaluator"
+        ],
+        "Evaluator:MachetePullEvaluator": {
+            "TargetWhenKnockedDown": 0,
+            "TargetWhenStanding": 1,
+            "Range": [
+                5,
+                100
+            ]
+        },
+        "SoundEvents": [
+            {
+                "EventName": "SFXInfestedAncientGrappleWindup",
+                "Sound": "/Lotus/Sounds/Enemies/Infested/Ancient/Attacks/InfestedAncientGrappleWindup",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ]
+    }
+}

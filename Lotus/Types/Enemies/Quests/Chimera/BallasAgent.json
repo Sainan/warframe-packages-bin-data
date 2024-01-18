@@ -1,0 +1,320 @@
+{
+    "parent": "/EE/Types/Npc/NpcAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "BallasAvatar"
+        },
+        "MaxLevel": 1,
+        "CanScaleLevel": 0,
+        "IgnoredByAiDirector": 1,
+        "AllowTeleportedByAiDirector": 0,
+        "SuicideOffNavAndHidden": 0,
+        "SuicideOnWaterRestrictionViolation": 0,
+        "IgnoredByGroupCoordinators": 1,
+        "CountedAsKillObjective": 0,
+        "AggroController:AggroEntryVisible": {
+            "IncreaseTimeLength": 4,
+            "DecayTimeLength": 2
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlackboardBehaviorSelector",
+            "/Lotus/Types/Behaviors/RunScriptBehavior",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "BlackboardBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlackboardType": "BBT_AGENT",
+            "Actions": [
+                {
+                    "VarName": "BallasDetection",
+                    "Action:Type": "/Lotus/Types/Behaviors/RunScriptBehavior",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0,
+                    "Action:Script": {
+                        "Script": "/Lotus/Scripts/Quests/ChimeraBallas.lua",
+                        "Function": "PlayerDetection",
+                        "_startAnim": "",
+                        "_eyeFlareType": "/Lotus/Fx/Quests/Chimera/BallasEyeFlare",
+                        "_eyeLightType": "/Lotus/Fx/Quests/Chimera/BallasEyeVolLight",
+                        "_eyeLightDecoType": "",
+                        "_eyeProjType": "",
+                        "_eyeFxOffset": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "_eyeBaseColor": [
+                            157,
+                            119,
+                            100,
+                            255
+                        ],
+                        "_eyeDetectionColor": [
+                            220,
+                            132,
+                            89,
+                            255
+                        ],
+                        "_detectionDecoType": "/Lotus/Fx/Quests/Chimera/DetectionEffectDecoA",
+                        "_eyeDetectionAngle": 45,
+                        "_detectionIncreaseSpeed": 1,
+                        "_detectionDecreaseSpeed": 1,
+                        "_detectionStopThreshold": 0.1,
+                        "_detectionCooldown": 3,
+                        "_detectionRange": 5,
+                        "_suspiciousTime": 3,
+                        "_detectedSequencerType": "",
+                        "_waypointType": "",
+                        "_lookSound": "",
+                        "_distanceMin": 3,
+                        "_distanceMax": 6,
+                        "_coneAngleMin": 30,
+                        "_coneAngleMax": 70,
+                        "_minOcclusion": 0,
+                        "_maxOcclusion": 1,
+                        "_minGain": 1,
+                        "_maxGain": 1,
+                        "_disableAfterPlayerIsSafe": 0,
+                        "_debugConeOcclusion": 0
+                    }
+                },
+                {
+                    "VarName": "BallasSearching",
+                    "Action:Type": "/EE/Types/Npc/GenericBehaviorSequence",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0,
+                    "Action:TimeoutBetweenActions": 0.5,
+                    "Action:FailOnChildFailure": 1,
+                    "Action:Logging": 0,
+                    "Action:Behaviors": [
+                        "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+                        "/Lotus/Types/Behaviors/RunScriptBehavior"
+                    ],
+                    "Action:MoveToDesiredScriptPositionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "SpeedMultiplier": 1,
+                        "StopRadius": 0.8,
+                        "NearDistance": 0.8,
+                        "FacingThreshold": 5,
+                        "SucceedWhenNearPosition": 1,
+                        "MovePosture": "WALK",
+                        "FacingControl": "MFC_FACE_MOVEDIR",
+                        "ClearDesiredPosOnAwareness": 0,
+                        "TargetAwarenessToClear": "AW_SLEEPING",
+                        "ClearDesiredPosOnSuccess": 1,
+                        "StopMovingOnComplete": 1,
+                        "TryRecover": 0,
+                        "RecoverDist": 10,
+                        "MaxRecoverTime": 10,
+                        "StuckTime": 2,
+                        "MaxFailures": 5,
+                        "AllowFiring": 0
+                    },
+                    "Action:RunScriptBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "Script": {
+                            "Script": "/Lotus/Scripts/Quests/ChimeraBallas.lua",
+                            "Function": "ReachedSearchPoint",
+                            "_startAnim": "",
+                            "_eyeFlareType": "",
+                            "_eyeLightType": "",
+                            "_eyeLightDecoType": "",
+                            "_eyeProjType": "",
+                            "_eyeFxOffset": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "_eyeBaseColor": [
+                                255,
+                                255,
+                                255,
+                                255
+                            ],
+                            "_eyeDetectionColor": [
+                                255,
+                                255,
+                                255,
+                                255
+                            ],
+                            "_detectionDecoType": "",
+                            "_eyeDetectionAngle": 45,
+                            "_detectionIncreaseSpeed": 1,
+                            "_detectionDecreaseSpeed": 1,
+                            "_detectionStopThreshold": 0.1,
+                            "_detectionCooldown": 3,
+                            "_detectionRange": 5,
+                            "_suspiciousTime": 3,
+                            "_detectedSequencerType": "",
+                            "_waypointType": "",
+                            "_lookSound": "/Lotus/Sounds/Levels/Quests/ChimeraPrologue/Gameplay/ChimeraBallasLookWhoosh",
+                            "_distanceMin": 3,
+                            "_distanceMax": 6,
+                            "_coneAngleMin": 30,
+                            "_coneAngleMax": 70,
+                            "_minOcclusion": 0,
+                            "_maxOcclusion": 1,
+                            "_minGain": 1,
+                            "_maxGain": 1,
+                            "_disableAfterPlayerIsSafe": 0,
+                            "_debugConeOcclusion": 0
+                        }
+                    }
+                }
+            ],
+            "FailOnChildFailure": 0
+        },
+        "RunScriptBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Script": {
+                "Script": "/Lotus/Scripts/Quests/ChimeraBallas.lua",
+                "Function": "WaitingForSearchPoint",
+                "_startAnim": "",
+                "_eyeFlareType": "",
+                "_eyeLightType": "",
+                "_eyeLightDecoType": "",
+                "_eyeProjType": "",
+                "_eyeFxOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "_eyeBaseColor": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "_eyeDetectionColor": [
+                    255,
+                    255,
+                    255,
+                    255
+                ],
+                "_detectionDecoType": "",
+                "_eyeDetectionAngle": 45,
+                "_detectionIncreaseSpeed": 1,
+                "_detectionDecreaseSpeed": 1,
+                "_detectionStopThreshold": 0.1,
+                "_detectionCooldown": 3,
+                "_detectionRange": 5,
+                "_suspiciousTime": 3,
+                "_detectedSequencerType": "",
+                "_waypointType": "",
+                "_lookSound": "",
+                "_distanceMin": 3,
+                "_distanceMax": 6,
+                "_coneAngleMin": 30,
+                "_coneAngleMax": 70,
+                "_minOcclusion": 0,
+                "_maxOcclusion": 1,
+                "_minGain": 1,
+                "_maxGain": 1,
+                "_disableAfterPlayerIsSafe": 0,
+                "_debugConeOcclusion": 0
+            }
+        },
+        "WaitBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOut": 5,
+            "CoverOnly": 0,
+            "AimPosture": 0,
+            "MinimalEnemyDistance": 0,
+            "TrackTarget": 0,
+            "Peek": 0,
+            "FailOnDamaged": 1,
+            "PreventShooting": 0,
+            "StopMovingOnEnter": 0
+        },
+        "CustomShootBehavior": "/EE/Types/Npc/ScriptedShootBehavior",
+        "LocomotionController:DynamicPathFinderGround": {
+            "UseCover": 0
+        },
+        "LocomotionController:limitToNav": 1,
+        "LocomotionController:PathingPreferences": {
+            "coverBias": 3,
+            "maxHeight": 3,
+            "offNavToleranceRadius": 0.2,
+            "shorteningType": "ST_NONE",
+            "useAvoidance": 0,
+            "minRequiredNavEdgeWidth": 0.5
+        },
+        "RegisterAvoidance": 0,
+        "ViewIdleFov": 90,
+        "IdleVerticalFov": 15,
+        "ViewIdleDistance": 30,
+        "ViewFov": 170,
+        "ViewDistance": 120,
+        "DarkVisionSensitivity": [
+            0.5,
+            1
+        ],
+        "AwarenessDecayTime": 20,
+        "TargetLostTime": 10,
+        "TargetLowHealthPercent": 0.3,
+        "SuperAlertDecayTime": 20,
+        "ReactionControllerType": "/Lotus/Types/Enemies/Grineer/GrineerReactionControllerImpl",
+        "PerceiverType": "/Lotus/Types/Enemies/Grineer/GrineerPerceiver",
+        "SightReactionProbability": 0.8,
+        "CoverEvaluatorType": "/Lotus/Types/Enemies/Grineer/GrineerShotgunAdvancingCoverEvaluator",
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/RangedTargetEvaluator"
+    }
+}

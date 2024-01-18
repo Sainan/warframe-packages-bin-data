@@ -1,0 +1,215 @@
+{
+    "parent": "/Lotus/Types/Enemies/CorpusChampions/CorpusChampionBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "CCTeamCSimplifiedHackerAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionWeapons/CorpusChampionRailgunSpear",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionWeapons/CorpusChampionSonicor",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionPowerSuits/NpcTeamCHackerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "DefaultSlot": "SLOT_6",
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/EE/Types/Npc/UseContextActionBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/CoordinatedEntityPlacementBehavior",
+            "/Lotus/Types/Behaviors/ActiveDodgeBehavior",
+            "/EE/Types/Npc/AgentOffNavBehavior",
+            "/Lotus/Types/Behaviors/ChangeToMeleeWeaponDecoratorBehavior",
+            "/Lotus/Types/Behaviors/ChangeToPrimaryWeaponDecoratorBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "UseContextActionBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StopOnDamage": 1,
+            "SkipMoveActionIfInRange": 1,
+            "DamageThresholdToStop": 0.5,
+            "SearchRadius": 16,
+            "CombatOnly": 0,
+            "ShouldRun": 1,
+            "StopRadius": 0.15,
+            "FindAnimations": 1,
+            "ActionInterval": 0,
+            "GlobalActionCooldown": 30,
+            "ValidActionTags": [],
+            "ValidActionTypes": [
+                "/Lotus/Types/Actions/ArenaTurretActivationAction"
+            ],
+            "KeepTrying": 1,
+            "DrawDest": 0,
+            "MoveAction:Type": "/EE/Types/Npc/LocomotionFollowPath",
+            "MoveAction:Enabled": 1,
+            "MoveAction:OnStartScript": {
+                "Script": ""
+            },
+            "MoveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "MoveAction:TrackEntity": 0,
+            "MoveAction:TrackingRate": 0.5,
+            "MoveAction:FaceTarget": 0,
+            "MoveAction:SucceedEarly": 0,
+            "MoveAction:SuccessRadius": 0.5,
+            "MoveAction:SucceedImmediately": 0,
+            "MoveAction:SucceedOnAbort": 0,
+            "AlignToAction:Type": "/EE/Types/Npc/AlignToAction",
+            "AlignToAction:Enabled": 1,
+            "AlignToAction:OnStartScript": {
+                "Script": ""
+            },
+            "AlignToAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "AlignToAction:AlignAngleThreshold": 10,
+            "MinDistFromEnemy": 3,
+            "EvaluationDelayOnEnemyToClose": 8,
+            "MatchActionAttachOwnerFaction": 0,
+            "AttackTargetsOnRoute": 0
+        },
+        "CoordinatedEntityPlacementBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "CreateEntityType": "/Lotus/Types/Enemies/CorpusChampions/TeleporterDevice",
+            "MaxEntityCount": 8,
+            "MinDistanceBetweenEntity": 16,
+            "StartAnim": "/Lotus/Types/Friendly/TennoGrenadeThrow",
+            "EndAnim": "",
+            "InDangerReevaluationDelay": 5,
+            "FailureReevaluationDelay": 4,
+            "ExpectedGroupMemberCount": 4,
+            "GroupTimeBetweenPlacement": 8,
+            "ExtraPlacementTimeRange": [
+                1,
+                3
+            ],
+            "TimeSinceEnemyVisible": 4
+        },
+        "ActiveDodgeBehavior": {
+            "DirectionalActions:STATIONARY": {
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:FORWARD": {
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:BACKWARD": {
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:LEFT": {
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:RIGHT": {
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:STOPPING": {
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:UPWARD": {
+                "action": "DodgeJump"
+            },
+            "DirectionalActions:DOWNWARD": {
+                "action": "DodgeJump"
+            }
+        },
+        "AgentOffNavBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOffNav": 2,
+            "ToleranceDistance": 0,
+            "DisableWhenFlying": 0,
+            "RerunDelay": 5,
+            "OffNavBehaviors": []
+        },
+        "ChangeToMeleeWeaponDecoratorBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "FailOnChildFail": 0,
+            "FailOnDamage": 0,
+            "RequireWeapon": 1,
+            "CheckAmmoForSlot": 0,
+            "RestorePreviousWeaponOnExit": 0,
+            "UseTimedGunCycling": 0,
+            "WeaponType": "",
+            "WeaponSlot": "SLOT_6",
+            "WeaponHand": "MAIN_HAND",
+            "EquipStyle": "ES_INSTANT_EQUIP",
+            "CycleWeapons": [],
+            "Action:Type": "/EE/Types/Npc/Action",
+            "Action:Action": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                }
+            }
+        },
+        "ChangeToPrimaryWeaponDecoratorBehavior": {
+            "UseTimedGunCycling": 1,
+            "CycleWeapons": [
+                {
+                    "WeaponType": "",
+                    "WeaponSlot": "SLOT_2",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "UseDurationRange": [
+                        1000,
+                        1000
+                    ]
+                },
+                {
+                    "WeaponType": "",
+                    "WeaponSlot": "SLOT_1",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "UseDurationRange": [
+                        12,
+                        16
+                    ]
+                }
+            ]
+        }
+    }
+}

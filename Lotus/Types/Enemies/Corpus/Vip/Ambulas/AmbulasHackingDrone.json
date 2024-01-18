@@ -1,0 +1,275 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Drones/DroneAttackAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "AmbulasHackingDroneAvatarB"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "AmbulasHackDroneRifle",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/ServiceDroneSuit",
+                "forceEquip": 0,
+                "hand": "EXTRA1"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/DroneRecoveryBehavior",
+            "/Lotus/Types/Behaviors/ReactivateBursaBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/DroneDodgeBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/Lotus/Types/Behaviors/HoverAttackBehavior",
+            "/Lotus/Types/Behaviors/HoverNearTypeBehavior",
+            "/Lotus/Types/Behaviors/HoverNearTeammatesBehavior",
+            "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "BlockingBehavior": {
+            "BlockOnBeingAttached": 1
+        },
+        "ReactivateBursaBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": "/Lotus/Scripts/RiotMoaHack.lua",
+                "Function": "RangedHackFx",
+                "_hackedFx": "",
+                "_damageOnFail": 10000,
+                "_successDamageToMoaPct": 0.2,
+                "_postHackedAnim": "",
+                "_eventScriptTrigger": "",
+                "_hackedLiveTime": 20,
+                "_hackedNoTargetSuicideTime": 5,
+                "_hackMessageLocTag": "Hack successful. Target list overwritten",
+                "_ambulasUnHackImpactMessageLocTag": "",
+                "_ambulasHackPanelDecoType": "",
+                "_ambulasPlayerHackMaterial": "",
+                "_ambulasHackActionType": "",
+                "_ambulasNpcOnlyHackActionType": "",
+                "_ambulasHackAction": "HackPanel",
+                "_ambulasRangedHackBeam": "AmbulasDroneHackingBeam",
+                "_ambulasRangedHackBeamAttachBone": "GAME_C1_TAIL5",
+                "_ambulasRangedHackBeamMoaBone": "GAME_C1_SPINE1",
+                "_ambulasBossMarkerInfo": "/Lotus/Types/Enemies/CaptureTargets/KillObjectiveMarker",
+                "_ambulasHackedMarkerInfo": "/Lotus/Types/Enemies/CaptureTargets/CaptureTargetObjectiveNoKillMarker",
+                "_ambulasHackKeepPlayerNpcUse": 0,
+                "_ambulasDataFragmentType": "",
+                "_ambulasEventTransmissionSet": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StopOnDamage": 0,
+            "SkipMoveActionIfInRange": 1,
+            "DamageThresholdToStop": 1,
+            "SearchRadius": 300,
+            "CombatOnly": 0,
+            "ShouldRun": 1,
+            "StopRadius": 0.15,
+            "FindAnimations": 1,
+            "ActionInterval": 0,
+            "GlobalActionCooldown": 0,
+            "ValidActionTags": [],
+            "ValidActionTypes": [
+                "BossAmbulasOspreyOnlyHackAction"
+            ],
+            "KeepTrying": 1,
+            "DrawDest": 0,
+            "MoveAction:Type": "/EE/Types/Npc/LocomotionFollowPath",
+            "MoveAction:Enabled": 1,
+            "MoveAction:OnStartScript": {
+                "Script": ""
+            },
+            "MoveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "MoveAction:TrackEntity": 0,
+            "MoveAction:TrackingRate": 1,
+            "MoveAction:FaceTarget": 0,
+            "MoveAction:SucceedEarly": 1,
+            "MoveAction:SuccessRadius": 5,
+            "MoveAction:SucceedImmediately": 0,
+            "MoveAction:SucceedOnAbort": 0,
+            "AlignToAction:Type": "/EE/Types/Npc/AlignToAction",
+            "AlignToAction:Enabled": 1,
+            "AlignToAction:OnStartScript": {
+                "Script": ""
+            },
+            "AlignToAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "AlignToAction:AlignAngleThreshold": 10,
+            "MinDistFromEnemy": 0,
+            "EvaluationDelayOnEnemyToClose": 0,
+            "MatchActionAttachOwnerFaction": 1,
+            "AttackTargetsOnRoute": 0
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
+            "BlockForPowerCompleteType": "BT_ALWAYS",
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 1,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 1,
+            "DeactivateAbilitiesOnPredeath": 1,
+            "ResetEvalTimerOnEnemySpotted": 0
+        },
+        "DroneDodgeBehavior": {
+            "TimeBetweenDodges": 0.5,
+            "MinimumDodgeDistance": 2
+        },
+        "HoverAttackBehavior": {
+            "FireDuration": [
+                2.5,
+                3
+            ],
+            "CheckTargetVisible": 0
+        },
+        "HoverNearTypeBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TargetDistance": [
+                1,
+                2
+            ],
+            "StrafeDistance": 0,
+            "VerticalDistance": 2,
+            "VerticalDistanceVariance": [
+                0,
+                0
+            ],
+            "ReachedLocationTolerance": 1,
+            "WaitDuration": [
+                0,
+                1
+            ],
+            "RecheckInterval": 0.5,
+            "MinMovementDistance": 1,
+            "AlwaysUpdateEvasion": 1,
+            "ControlFacing": "MFC_NONE",
+            "BoostFacing": "MFC_NONE",
+            "BoostPosture": "WALK",
+            "SpeedBoostMultiplier": 1,
+            "BoostRange": 15,
+            "BoostToTarget": 1,
+            "ExitAfterWait": 0,
+            "AdjustDestinationHeight": 0,
+            "TargetType": "BossAmbulasRangedAvatar",
+            "HeightOffset": 1,
+            "TargetSearchRange": 50
+        },
+        "HoverNearTeammatesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TargetDistance": [
+                3,
+                12
+            ],
+            "StrafeDistance": 0,
+            "VerticalDistance": 2,
+            "VerticalDistanceVariance": [
+                0,
+                0
+            ],
+            "ReachedLocationTolerance": 1,
+            "WaitDuration": [
+                0,
+                1
+            ],
+            "RecheckInterval": 0.5,
+            "MinMovementDistance": 1,
+            "AlwaysUpdateEvasion": 1,
+            "ControlFacing": "MFC_NONE",
+            "BoostFacing": "MFC_NONE",
+            "BoostPosture": "WALK",
+            "SpeedBoostMultiplier": 1,
+            "BoostRange": 15,
+            "BoostToTarget": 1,
+            "ExitAfterWait": 0,
+            "AdjustDestinationHeight": 0,
+            "TeammateMaxProximity": 10,
+            "IgnoreTeammatesOfSameType": 1,
+            "HoverNearEngagedEnemies": 1
+        },
+        "HoverNearTargetBehavior": {
+            "TargetDistance": [
+                3,
+                12
+            ],
+            "StrafeDistance": 0,
+            "ReachedLocationTolerance": 10,
+            "WaitDuration": [
+                0,
+                1
+            ]
+        },
+        "GuardTactic": {
+            "RandomWalkBehavior:Type": "/EE/Types/Npc/Action"
+        },
+        "LocomotionController:PathingPreferences": {
+            "preferredHeight": 3
+        },
+        "ShootingController:DefaultFiringPrefs": {
+            "firingPreferences": {
+                "fireRate": [
+                    0.3,
+                    0.3
+                ]
+            }
+        },
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 100,
+        "ViewFov": 360,
+        "ViewDistance": 100
+    }
+}

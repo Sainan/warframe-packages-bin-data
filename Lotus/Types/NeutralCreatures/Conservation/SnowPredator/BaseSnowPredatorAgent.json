@@ -1,0 +1,580 @@
+{
+    "parent": "/Lotus/Types/NeutralCreatures/Kubrow/KubrowAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "BaseSnowPredatorAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/NeutralCreatures/Catbrow/CatbrowMeleeWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/SnowPredatorSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/BlackboardBehaviorSelector",
+            "/Lotus/Types/Behaviors/TargetFactionDecorator",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/PostureCheckDecorator",
+            "/EE/Types/Npc/OrderBasedBehaviorSelector",
+            "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+            "/EE/Types/Npc/PostureChangingBehaviorSelector",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "BlackboardBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlackboardType": "BBT_AGENT",
+            "Actions": [
+                {
+                    "VarName": "Flee",
+                    "Action:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0,
+                    "Action:Actions": [
+                        "/EE/Types/Npc/DelayDecorator",
+                        "/EE/Types/Npc/FleeFromPerceptionBehavior"
+                    ],
+                    "Action:DelayDecorator": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "ChildAction:Type": "/EE/Types/Npc/PlayAnimationBehavior",
+                        "ChildAction:PlayAnimationBehavior": {
+                            "Enabled": 1,
+                            "OnStartScript": {
+                                "Script": ""
+                            },
+                            "OnDamagedScript": {
+                                "Script": ""
+                            },
+                            "DefaultReevaluationDelay": 0,
+                            "AnimScene": "/Lotus/Animations/Creatures/KubrowTame/DespawnUp_anim.fbx",
+                            "Loop": 0,
+                            "Freeze": 0,
+                            "MovementMode": "ATMM_ANIMATION_DRIVEN",
+                            "CoolDown": 0,
+                            "StopMoving": 0
+                        },
+                        "StopWhenChildStops": 1,
+                        "DelayDuration": [
+                            5,
+                            5
+                        ],
+                        "ResetDelayOnFailedEval": 1
+                    },
+                    "Action:FleeFromPerceptionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "PerceptionLevel": "PTL_INVESTIGATE",
+                        "OnlyReactOnParticularFaction": 0,
+                        "Faction": "",
+                        "FleeDirectionRandomness": 0.15,
+                        "SpeedMultiplier": 0.45,
+                        "FleeContinuationMode": "FCM_FLEE_FOREVER",
+                        "FleePointTag": "",
+                        "DisappearAfterTime": 1,
+                        "TimeForDisappearance": 22.5,
+                        "DisappearStartTimeBlackboardSymbol": "FleeStartTime",
+                        "DisappearMaxTimeBlackboardSymbol": "FleeMaxTime",
+                        "DisappearOutOfRangeTime": 10,
+                        "AnimActionOnFleeEnd": "",
+                        "SetAwarenessOnFleeEnd": 0,
+                        "NewAlertness": "AW_SLEEPING",
+                        "TimeBeforeFleeing": [
+                            0.1,
+                            0.8
+                        ],
+                        "MaxPerceptionDistance": 80,
+                        "StopRadius": 1.5,
+                        "ComfortableDistance": 0,
+                        "DissolveTime": 0,
+                        "FleeWhenAlert": 0,
+                        "PlayPhrase": 0
+                    },
+                    "Action:FailOnChildFailure": 0
+                }
+            ],
+            "FailOnChildFailure": 1
+        },
+        "TargetFactionDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/EE/Types/Npc/SetBlackboardVarBoolDecorator",
+            "ChildAction:SetBlackboardVarBoolDecorator": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "ChildAction:Type": "/EE/Types/Npc/Action",
+                "ChildAction:Action": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    }
+                },
+                "StopWhenChildStops": 1,
+                "VariableName": "Flee",
+                "BlackboardType": "BBT_AGENT",
+                "ClearOnStop": 0,
+                "Value": 1
+            },
+            "StopWhenChildStops": 1,
+            "Faction": "TENNO"
+        },
+        "CustomResponseBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Responses": [
+                {
+                    "reaction": "UNDER_FIRE",
+                    "responseAction:Type": "/EE/Types/Npc/SetBlackboardVarBoolDecorator",
+                    "responseAction:SetBlackboardVarBoolDecorator": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "ChildAction:Type": "/EE/Types/Npc/Action",
+                        "ChildAction:Action": {
+                            "Enabled": 1,
+                            "OnStartScript": {
+                                "Script": ""
+                            },
+                            "OnDamagedScript": {
+                                "Script": ""
+                            }
+                        },
+                        "StopWhenChildStops": 1,
+                        "VariableName": "Flee",
+                        "BlackboardType": "BBT_AGENT",
+                        "ClearOnStop": 0,
+                        "Value": 1
+                    }
+                }
+            ],
+            "BlockingResponse": 1
+        },
+        "PostureCheckDecorator": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/EE/Types/Npc/DistanceRangeDecorator",
+            "ChildAction:DistanceRangeDecorator": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "ChildAction:Type": "/Lotus/Types/Behaviors/ToggleVisualPerceptionDecorator",
+                "ChildAction:ToggleVisualPerceptionDecorator": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "ChildAction:Type": "/EE/Types/Npc/PlayAnimationBehavior",
+                    "ChildAction:PlayAnimationBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "AnimScene": "/Lotus/Animations/Creatures/KubrowTame/DespawnUp_anim.fbx",
+                        "Loop": 0,
+                        "Freeze": 0,
+                        "MovementMode": "ATMM_ANIMATION_DRIVEN",
+                        "CoolDown": 5,
+                        "StopMoving": 0
+                    },
+                    "StopWhenChildStops": 1,
+                    "BlindOnStart": 0,
+                    "BlindOnStop": 1,
+                    "BlindDuration": -1,
+                    "ClearTarget": 0
+                },
+                "StopWhenChildStops": 1,
+                "UseWeaponRange": 0,
+                "Range": [
+                    10,
+                    9999
+                ],
+                "AllowNoTarget": 1,
+                "UseTargetNavPos": 0
+            },
+            "StopWhenChildStops": 1,
+            "Posture": "WALK"
+        },
+        "OrderBasedBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Actions": [
+                "/EE/Types/Npc/TimerDecorator",
+                "/EE/Types/Npc/RandomTacWalkBehavior",
+                "/EE/Types/Npc/WaitBehavior"
+            ],
+            "TimerDecorator": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "ChildAction:Type": "/EE/Types/Npc/PostureChangingBehaviorSelector",
+                "ChildAction:PostureChangingBehaviorSelector": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "Actions": [
+                        "/EE/Types/Npc/WaitBehavior"
+                    ],
+                    "WaitBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TimeOut": 0,
+                        "CoverOnly": 0,
+                        "AimPosture": 0,
+                        "MinimalEnemyDistance": 0,
+                        "TrackTarget": 0,
+                        "Peek": 0,
+                        "FailOnDamaged": 0,
+                        "PreventShooting": 0,
+                        "StopMovingOnEnter": 0
+                    },
+                    "FailOnChildFailure": 0,
+                    "SetPosture": "CROUCH",
+                    "SetAnimVariable": "IV_NONE",
+                    "SetAnimVariableValue": 0,
+                    "RevertPosturesOnExit": 1,
+                    "FaceTargetBeforePosture": 0,
+                    "FaceTargetTimeout": 6,
+                    "AllowableFacingAngleDifference": 15,
+                    "LookAtTarget": 1,
+                    "LookHorizRate": 40,
+                    "LookVertRate": 40,
+                    "LookTargetOffset": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "StopWhenChildStops": 1,
+                "TimerDuration": [
+                    5,
+                    6
+                ],
+                "EvaluationDelay": 20
+            },
+            "RandomTacWalkBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "StopRadius": 2,
+                "NearDistance": 4,
+                "SpeedMultiplier": 1,
+                "AlertSpeedMultiplier": 1,
+                "AllowTarget": 0,
+                "AimWhenIdle": 0,
+                "AimWhenAlert": 1,
+                "PermanentAlert": 0,
+                "ForceIdleForSinglePointPatrols": 1,
+                "AnimAction": "PatrolIdle",
+                "GenericAnims": [],
+                "MinPlayerDist": [
+                    0,
+                    0
+                ],
+                "MinPlayerFov": 60,
+                "PauseTime": [
+                    3,
+                    5
+                ],
+                "TimeBetweenPauses": [
+                    15,
+                    25
+                ],
+                "ReevaluationDelayOnAbortedMove": 2,
+                "PlayPhrase": 1,
+                "Bark": "IDLE",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    0,
+                    0
+                ],
+                "StartUpDelay": [
+                    0,
+                    0
+                ],
+                "UseWasAlert": 0,
+                "ScanLength": 2,
+                "MovementPosture": "WALK",
+                "TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
+                "TeammateBarkBehavior:Enabled": 1,
+                "TeammateBarkBehavior:OnStartScript": {
+                    "Script": ""
+                },
+                "TeammateBarkBehavior:OnDamagedScript": {
+                    "Script": ""
+                },
+                "TeammateBarkBehavior:DefaultReevaluationDelay": 0,
+                "TeammateBarkBehavior:StopForTeammateDuration": [
+                    3,
+                    6
+                ],
+                "TeammateBarkBehavior:DontStopForTeammateDuration": 30,
+                "TeammateBarkBehavior:PostFailureEvaluationDelay": [
+                    3,
+                    3
+                ],
+                "TeammateBarkBehavior:AllowableTeammateAngle": 90,
+                "TeammateBarkBehavior:TeammateSearchDistance": 5,
+                "TeammateBarkBehavior:TeammateBark": "IDLE",
+                "TeammateBarkBehavior:TeammateBarkFilter": "",
+                "UseDefenseVolume": 0,
+                "EvaluateMoveScript": {
+                    "Script": ""
+                },
+                "OnlyFindPositionsOnFlightNav": 0,
+                "MaxPatrolDistanceFromEncounterHint": 0
+            },
+            "WaitBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOut": 0,
+                "CoverOnly": 0,
+                "AimPosture": 0,
+                "MinimalEnemyDistance": 0,
+                "TrackTarget": 0,
+                "Peek": 0,
+                "FailOnDamaged": 0,
+                "PreventShooting": 0,
+                "StopMovingOnEnter": 0
+            },
+            "FailOnChildFailure": 0,
+            "OrderName": "PatrolTarget",
+            "FailOnThisOrder": 0,
+            "RequiredTargetType": "OTT_No_Requirement",
+            "DistanceReaction": "ODTT_No_Requirement",
+            "RequiredDistance": 5
+        },
+        "MoveToDesiredScriptPositionBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "SpeedMultiplier": 1,
+            "StopRadius": 0.5,
+            "NearDistance": 2,
+            "FacingThreshold": 10,
+            "SucceedWhenNearPosition": 1,
+            "MovePosture": "WALK",
+            "FacingControl": "MFC_FACE_MOVEDIR",
+            "ClearDesiredPosOnAwareness": 0,
+            "TargetAwarenessToClear": "AW_ALERT",
+            "ClearDesiredPosOnSuccess": 1,
+            "StopMovingOnComplete": 1,
+            "TryRecover": 0,
+            "RecoverDist": 10,
+            "MaxRecoverTime": 10,
+            "StuckTime": 2,
+            "MaxFailures": 5,
+            "AllowFiring": 0
+        },
+        "PostureChangingBehaviorSelector": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Actions": [
+                "/Lotus/Types/Behaviors/ToggleVisualPerceptionDecorator"
+            ],
+            "ToggleVisualPerceptionDecorator": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "ChildAction:Type": "/EE/Types/Npc/WaitBehavior",
+                "ChildAction:WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 5,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 1,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 1
+                },
+                "StopWhenChildStops": 1,
+                "BlindOnStart": 0,
+                "BlindOnStop": 1,
+                "BlindDuration": -1,
+                "ClearTarget": 0
+            },
+            "FailOnChildFailure": 0,
+            "SetPosture": "CROUCH",
+            "SetAnimVariable": "IV_NONE",
+            "SetAnimVariableValue": 0,
+            "RevertPosturesOnExit": 1,
+            "FaceTargetBeforePosture": 0,
+            "FaceTargetTimeout": 6,
+            "AllowableFacingAngleDifference": 15,
+            "LookAtTarget": 0,
+            "LookHorizRate": 40,
+            "LookVertRate": 40,
+            "LookTargetOffset": [
+                0,
+                0,
+                0
+            ]
+        },
+        "WaitBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOut": 5,
+            "CoverOnly": 0,
+            "AimPosture": 0,
+            "MinimalEnemyDistance": 0,
+            "TrackTarget": 0,
+            "Peek": 0,
+            "FailOnDamaged": 1,
+            "PreventShooting": 0,
+            "StopMovingOnEnter": 0
+        },
+        "ViewIdleFov": 230,
+        "ViewFov": 300,
+        "ViewDistance": 25,
+        "hearingSensitivity": -55,
+        "alertRadiusBounds": [
+            0,
+            5
+        ],
+        "AlertDecayTime": 5,
+        "AlertUpdateInterval": 2,
+        "ReactionControllerType": "/Lotus/Types/NeutralCreatures/EarthConservation/CreatureReactionController",
+        "PerceiverType": "SnowPredatorPerceiver",
+        "TargetEvaluatorType": "/Lotus/Types/Game/LotusUtilityTargetEvaluator"
+    }
+}

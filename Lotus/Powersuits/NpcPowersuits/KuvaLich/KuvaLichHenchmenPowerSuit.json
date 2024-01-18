@@ -1,0 +1,101 @@
+{
+    "parent": "/Lotus/Types/Game/PowerSuit",
+    "data": {
+        "ArmourRatingOverride": 0,
+        "ParticleEvents": [
+            {
+                "EventName": "FXLichCharge",
+                "ParticleSys": "/Lotus/Fx/PowersuitAbilities/Kingpins/ChargeSpawn",
+                "Attached": 1,
+                "OwnedByAvatar": 1,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            },
+            {
+                "EventName": "FXDodgeAttach",
+                "ParticleSys": "/Lotus/Fx/PowersuitAbilities/Kingpins/DodgeJumpAttach",
+                "Attached": 1,
+                "OwnedByAvatar": 0,
+                "UseOtherEntity": 0,
+                "Bone": "",
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "Context": "PEC_ALL"
+            }
+        ],
+        "ScriptEvents": [
+            {
+                "EventName": "FXLichRemoveChargeWind",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Scripts/Effects/AttachFX.lua",
+                    "Function": "KillAttachedOnSelf",
+                    "_typeToKill": "/Lotus/Fx/PowersuitAbilities/Kingpins/ChargeSpawn",
+                    "_typesToKill": [],
+                    "_typeToAttach": "",
+                    "_attachToThis": "",
+                    "_attachToArray": [],
+                    "_isAttachedToThis": "",
+                    "_isAttachedToThisArray": [],
+                    "_attachPos": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "_attachRot": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "_delay": 0,
+                    "_attachmentType": "",
+                    "_isEnable": 1,
+                    "_bone": "",
+                    "_newMesh": "",
+                    "_masterOnly": 1,
+                    "_stopSpewing": 0,
+                    "_destrySelfIfNotLocal": 0,
+                    "_beamAttachBones": [],
+                    "_beamEndBones": []
+                }
+            },
+            {
+                "EventName": "LAND",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Lich/LeapAbility.lua",
+                    "Function": "SpawnSlamFx",
+                    "_jumpAnims": [],
+                    "_minEvalDist": 20,
+                    "_maxEvalDist": 100,
+                    "_maxJumpDistance": 20,
+                    "_maxOffsetDistance": 2,
+                    "_predictionTime": 1.5,
+                    "_shockwaveEntity": "/Lotus/Fx/PowersuitAbilities/Kingpins/LeapLaunchSpawn",
+                    "_launchEffect": "",
+                    "_landingEffect": "/Lotus/Fx/PowersuitAbilities/Kingpins/LeapLandingSpawn",
+                    "_isDefensive": 0
+                }
+            }
+        ]
+    }
+}

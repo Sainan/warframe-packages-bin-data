@@ -1,0 +1,124 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/PlasmaGrenadeProjectile",
+    "data": {
+        "Mesh": "CorpusGrenade.fbx",
+        "MeshScale": 2.5,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Corpus/RiotMoa/NullifierGrenadeProjLensflare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/VayHek/HekGrenadeProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/RiotMoa/Attacks/RiotMoaTetherFireSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "",
+        "AttackData": {
+            "Type": "DT_IMPACT",
+            "Amount": 75
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "CriticalChance": 0.1,
+        "CriticalMultiplier": 2,
+        "ExplosiveAttack": {
+            "Amount": 420
+        },
+        "ExplosionFallOff": 0.5,
+        "DamageRadius": 4,
+        "HitEffect": "/Lotus/Sounds/Characters/Corpus/Osprey/MineOsprey/MineProjectile/MineImpactHitEffect",
+        "DieEffect": "/Lotus/Fx/Enemies/Corpus/EnergyDiscDrone/EnergyDiscDroneProjDeath",
+        "IgnoreCollisionsWithSameType": 1,
+        "IgnoreTypes": [
+            "/EE/Types/Game/Avatar"
+        ],
+        "MaxLife": 10,
+        "Health": 0,
+        "CanStick": 1,
+        "EmbedTime": [
+            10,
+            10
+        ],
+        "EmbedDeathAttack": {
+            "Amount": 350
+        },
+        "EmbedDeathEffect": "/Lotus/Fx/Enemies/Corpus/EnergyDiscDrone/EnergyDiscDroneProjDeath",
+        "KinematicInitialSpeed": 20,
+        "KinematicMaxSpeed": 25,
+        "KinematicGravityMultiplier": 0.9,
+        "KinematicAngleSpeed": [
+            0,
+            0
+        ],
+        "ProjectileReplication": "SYNCED_AUTONOMOUS",
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/WeaponStuff.lua",
+            "Function": "grenadeSound",
+            "_grenadeLaunch": ""
+        },
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/Mods/PentaTetherMine.lua",
+            "Function": "OnProjectileStop",
+            "_triggerType": "PentaTetherMineTrigger",
+            "_faction": "TENNO"
+        }
+    }
+}

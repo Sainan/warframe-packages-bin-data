@@ -1,0 +1,84 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PlayerPowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/RhinoChargeAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/RhinoChargeAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/RhinoDash.png",
+        "UniquePowerIdentifier": "RHINO_CHARGE",
+        "AdditionalPowerIdentifiers": [
+            "EFFECT_MOBILITY",
+            "EFFECT_DAMAGE"
+        ],
+        "Script": {
+            "Script": "RhinoChargeReplicantAbility.lua",
+            "Function": "ActivateAbility",
+            "_sprintProjector": "/Lotus/Fx/PowersuitAbilities/Rhino/ChargeAttachPower",
+            "_sound": "",
+            "_expfx": "/Lotus/Fx/PowersuitAbilities/Rhino/ChargeBlast",
+            "_pvpHitEffect": "/Lotus/Fx/PowersuitAbilities/Rhino/ChargePvpHit",
+            "_pvpImpactSound": "",
+            "_pathDamage": 1,
+            "_pathDamageRange": 0.75,
+            "_ChargeStartAnim": "/Lotus/Animations/Tenno/Powers/Rhino/RhinoStart_anim.fbx",
+            "_ChargeAnims": [
+                "/Lotus/Animations/Tenno/Powers/Rhino/RhinoCharge_anim.fbx",
+                "/Lotus/Animations/Tenno/Powers/Rhino/RhinoChargeA_anim.fbx",
+                "/Lotus/Animations/Tenno/Powers/Rhino/RhinoChargeB_anim.fbx",
+                "/Lotus/Animations/Tenno/Powers/Rhino/RhinoChargeD_anim.fbx"
+            ],
+            "_npcMinRange": 5,
+            "_npcMaxRange": 20,
+            "_npcAbilityLevel": 5
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "Augment",
+                "executionMode": "EM_HOST",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "RhinoChargeReplicantAbility.lua",
+                    "Function": "SetupAugment",
+                    "_sprintProjector": "",
+                    "_sound": "",
+                    "_expfx": "",
+                    "_pvpHitEffect": "",
+                    "_pvpImpactSound": "",
+                    "_pathDamage": 100,
+                    "_pathDamageRange": 0.75,
+                    "_ChargeStartAnim": "",
+                    "_ChargeAnims": [],
+                    "_npcMinRange": 5,
+                    "_npcMaxRange": 20,
+                    "_npcAbilityLevel": 5
+                }
+            },
+            {
+                "tag": "PvPImpact",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "RhinoChargeReplicantAbility.lua",
+                    "Function": "PvpHitTarget",
+                    "_sprintProjector": "",
+                    "_sound": "",
+                    "_expfx": "",
+                    "_pvpHitEffect": "",
+                    "_pvpImpactSound": "/Lotus/Sounds/Warframes/Rhino/RhinoGenericAbilityImpact",
+                    "_pathDamage": 100,
+                    "_pathDamageRange": 0.75,
+                    "_ChargeStartAnim": "",
+                    "_ChargeAnims": [],
+                    "_npcMinRange": 5,
+                    "_npcMaxRange": 20,
+                    "_npcAbilityLevel": 5
+                }
+            }
+        ],
+        "CooldownDuration": 15,
+        "EnergyRequiredToActivate": 0,
+        "PvpEnergyRequiredToActivate": 0,
+        "EvaluateScript": 0
+    }
+}

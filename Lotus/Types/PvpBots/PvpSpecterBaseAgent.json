@@ -1,0 +1,345 @@
+{
+    "parent": "/Lotus/Types/Enemies/CorpusChampions/CorpusArenaAllyBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "BasePvpBotAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/SpecterWeapons/SpectorBurston",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/SpecterWeapons/SpecterSkana",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Types/Enemies/CorpusChampions/ChampionPowerSuits/AllyEmberNpc",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/EE/Types/Npc/DodgeJumpBackToNavBehavior",
+            "/Lotus/Types/Behaviors/ChangeToMeleeWeaponDecoratorBehavior",
+            "/Lotus/Types/Behaviors/ChangeToPrimaryWeaponDecoratorBehavior",
+            "/Lotus/Types/Behaviors/CorpusArenaFallbackBehaviorSelector",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "ChangeToMeleeWeaponDecoratorBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "FailOnChildFail": 0,
+            "FailOnDamage": 0,
+            "RequireWeapon": 1,
+            "CheckAmmoForSlot": 0,
+            "RestorePreviousWeaponOnExit": 0,
+            "UseTimedGunCycling": 0,
+            "WeaponType": "",
+            "WeaponSlot": "SLOT_6",
+            "WeaponHand": "MAIN_HAND",
+            "EquipStyle": "ES_INSTANT_EQUIP",
+            "CycleWeapons": [],
+            "Action:Type": "/EE/Types/Npc/TargetEvaluatingBehaviorSelector",
+            "Action:TargetEvaluatingBehaviorSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/EE/Types/Npc/MeleeTactic"
+                ],
+                "MeleeTactic": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AttackState": "AS_MELEE",
+                    "ReportUnreachable": 0,
+                    "RequireMeleeWeapon": 0,
+                    "RequireWeaponInInventory": 0,
+                    "TimeOffNavForReport": 3,
+                    "UnreachableTime": 2,
+                    "MeleeBehaviors": [
+                        "/Lotus/Types/Behaviors/LotusAdvancedMeleeBehavior",
+                        "/EE/Types/Npc/KeepIdealDistanceBehavior",
+                        "/EE/Types/Npc/MeleeWaitBehavior"
+                    ],
+                    "LotusAdvancedMeleeBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "SucceedAfterCombo": 1,
+                        "AdjustAimDuringCombo": 1,
+                        "AlwaysCompleteCombo": 0,
+                        "AttackFirst": 1,
+                        "DefensiveMoveTowards": 1,
+                        "StopMovementOnAttack": 1,
+                        "DefensiveParryChance": 1,
+                        "DefensiveTime": [
+                            1,
+                            1
+                        ],
+                        "MeleeRange": [
+                            0,
+                            3
+                        ],
+                        "MeleeRangeAttack": [
+                            0,
+                            3
+                        ],
+                        "MeleeRangeDash": [
+                            3,
+                            4
+                        ],
+                        "PlayerBehaviourEvalTime": [
+                            0.5,
+                            2
+                        ],
+                        "BasicAttackTypes": [
+                            "CC_GROUND",
+                            "CC_GROUND_BRANCH_A",
+                            "CC_GROUND_BRANCH_B",
+                            "CC_GROUND_BRANCH_C"
+                        ],
+                        "DashAttackType": "CC_SLIDING",
+                        "UseEquippedWeapon": 0,
+                        "ChangeWeapons": 1,
+                        "WeaponSlot": "SLOT_6",
+                        "WeaponHand": "MAIN_HAND",
+                        "EquipStyle": "ES_INSTANT_EQUIP",
+                        "StopWeapons": 0
+                    },
+                    "KeepIdealDistanceBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0.5,
+                        "RandomizeRange": 0,
+                        "UseWeaponRange": 0,
+                        "IdealDistance": [
+                            0.5,
+                            1.5
+                        ],
+                        "EvaluateDistance": [
+                            0,
+                            100
+                        ],
+                        "MaxMovementDistance": 3,
+                        "AllowRetreat": 0,
+                        "AllowRun": 1,
+                        "AllowChase": 0,
+                        "ForceWalkBelowMinIdealRange": 1,
+                        "WalkRange": [
+                            0,
+                            0
+                        ],
+                        "RequireTeamMeleeLock": 0,
+                        "ReleaseTeamMeleeLock": 0,
+                        "AimWhileMoving": 0,
+                        "MoveFacingControl": "MFC_FACE_MOVEDIR",
+                        "StopRadius": 0.5,
+                        "RunWhenShocked": 0,
+                        "ShockedDamageTime": 30,
+                        "OnlyTravelWhenVisible": 0,
+                        "TravelDuringStruggle": 1,
+                        "AllowPartialPath": 1,
+                        "UpdateDestinationInterval": 0.5,
+                        "UpdateDestinationDistance": 2,
+                        "OffNavRadius": 4,
+                        "OffNavHeight": 3,
+                        "RequiresClearNavTrace": 0,
+                        "HoverHeightOverride": -1,
+                        "RetryWithPathlessMovement": 0,
+                        "PathlessMovementMaxDistance": 16,
+                        "AvoidTargetLineOfSight": 0,
+                        "AvoidanceBias": 10,
+                        "LockTarget": 0,
+                        "LookAtTarget": 0,
+                        "DistanceToShoot": -1,
+                        "WalkWhileShooting": 0,
+                        "AimOnFire": 0,
+                        "AllowReload": 0,
+                        "ChangeWeapons": 0,
+                        "WeaponSlot": "SLOT_1",
+                        "WeaponHand": "MAIN_HAND",
+                        "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                        "PlayPhrase": 1,
+                        "Bark": "CHARGE_SCREAM",
+                        "BarkFilter": "",
+                        "BarkInterval": [
+                            0,
+                            0
+                        ],
+                        "ReportUnreachableOnFailedMove": 0,
+                        "ReportUnreachableOffNav": 0,
+                        "TimeOffNav": 2,
+                        "RestrictToDefenseVolume": 0,
+                        "WalkMovePosture": "WALK"
+                    },
+                    "MeleeWaitBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TimeOut": 0,
+                        "CoverOnly": 0,
+                        "AimPosture": 1,
+                        "MinimalEnemyDistance": 0,
+                        "TrackTarget": 1,
+                        "Peek": 0,
+                        "FailOnDamaged": 0,
+                        "PreventShooting": 0,
+                        "StopMovingOnEnter": 0,
+                        "EndMeleeAction": 1,
+                        "PlayPhrase": 0,
+                        "Bark": "IDLE",
+                        "BarkFilter": "",
+                        "BarkInterval": [
+                            3.5,
+                            5
+                        ],
+                        "MaxDistanceToTarget": 4
+                    }
+                },
+                "FailOnChildFailure": 0,
+                "TargetIsSelf": 0,
+                "TargetVisibility": "TVB_IGNORE",
+                "TargetFlyer": "TFC_ANY",
+                "MaximumDistance": 100,
+                "TargetHealthPctRange": [
+                    0,
+                    1
+                ],
+                "IsPreDeath": 0,
+                "TargetHasOwner": "T_ANY",
+                "ValidPostures": [],
+                "ValidModifiers": [],
+                "InvalidModifiers": [],
+                "ValidAvatarTypes": [],
+                "AvatarTag": "",
+                "RestrictedAvatarTag": "",
+                "RestrictedFactions": [],
+                "AnimInterfaceVariables": [],
+                "EvaluateOnForcedMelee": "EFM_IGNORE",
+                "TargetDeltaAttenuation": [
+                    0,
+                    1
+                ]
+            }
+        },
+        "ChangeToPrimaryWeaponDecoratorBehavior": {
+            "Action:GenericBehaviorSelector": {
+                "ShootingDecoratorBehavior": {
+                    "Action:GenericBehaviorSelector": {
+                        "Actions": [
+                            "PickUpOroBehavior",
+                            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                            "/EE/Types/Npc/EngageTargetMovementBehavior",
+                            "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+                            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+                            "/EE/Types/Npc/SearchTacAreaMapForTargetsBehavior",
+                            "/EE/Types/Npc/WaitBehavior"
+                        ],
+                        "PickUpOroBehavior": {
+                            "Enabled": 1,
+                            "OnStartScript": {
+                                "Script": ""
+                            },
+                            "OnDamagedScript": {
+                                "Script": ""
+                            },
+                            "DefaultReevaluationDelay": 0,
+                            "PickUpTargetTypes": [
+                                "/Lotus/Types/PickUps/KillConfirmedPickUp"
+                            ],
+                            "EvaluateValueType": "EVT_HEALTH",
+                            "EvalValueComparator": "CT_ACTIVATE_WHEN_PLENTY",
+                            "OnPickupTakenScript": {
+                                "Script": ""
+                            },
+                            "EvaluateValueVsDistanceRange": [
+                                0.2,
+                                1
+                            ],
+                            "SearchRadius": 12,
+                            "GrabAnywayDistance": 6,
+                            "FailsOnEnemyCloserByPct": 1.3,
+                            "NearRadius": 1.5,
+                            "StopRadius": 1,
+                            "MaxOffNavDist": 10,
+                            "DelayAfterFailure": 1,
+                            "MovementPosture": "JOG",
+                            "PreferredHeight": -1,
+                            "HumanPlayerNearbyRange": -1,
+                            "AnimActionBeforeGrabbing": ""
+                        },
+                        "EngageTargetMovementBehavior": {
+                            "MovementModifiers": [
+                                {
+                                    "HealthRange": [
+                                        0,
+                                        100
+                                    ],
+                                    "MovePosture": "JOG",
+                                    "SpeedMultiplier": 1.4
+                                }
+                            ]
+                        },
+                        "SearchTacAreaMapForTargetsBehavior": {
+                            "Enabled": 1,
+                            "OnStartScript": {
+                                "Script": ""
+                            },
+                            "OnDamagedScript": {
+                                "Script": ""
+                            },
+                            "DefaultReevaluationDelay": 0,
+                            "RequireAlert": 0,
+                            "SpeedMultiplier": 1.4,
+                            "StopRadius": 0.5,
+                            "NearDistance": 2,
+                            "MovePosture": "RUN",
+                            "PauseTimeout": 0,
+                            "EnemyActivityInfluence": "EnemyActivity",
+                            "FailOnAreaUninfluenced": 0
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "parent": "/Lotus/Types/Weapon/JavelinProjectile",
+    "data": {
+        "Mesh": "/Lotus/Weapons/Infested/InfestedGrenade/InfestedGrenade.fbx",
+        "AttackData": {
+            "Type": "DT_POISON",
+            "Amount": 15,
+            "ProcChance": 0.3
+        },
+        "HitEffect": "/Lotus/Fx/Weapons/Infested/ShockSwarmRifle/ShockSwarmProjHitEffect",
+        "AllowPuncture": 0,
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_POISON",
+            "Amount": 15,
+            "ProcChance": 0.3
+        },
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 80,
+        "KinematicMaxSpeed": 80,
+        "FaceVelocity": 1,
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/InfQuantaGrapple.lua",
+            "Function": "OnFire",
+            "_beamType": "/Lotus/Fx/Weapons/Infested/QuantaFullyInfested/QuantaBeam",
+            "_beamAttachBone": "GAME_C1_FX",
+            "_enemyEffect": "",
+            "_invalidTargetTypes": [],
+            "_avatarType": "/EE/Types/Game/Avatar",
+            "_pullForce": 20,
+            "_maxRange": 50,
+            "_avatarPullAnimation": "QuantaPull_anim.fbx",
+            "_weaponPullAnimation": "QuantaPullWEP_anim.fbx"
+        },
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/InfQuantaGrapple.lua",
+            "Function": "OnHit",
+            "_beamType": "/Lotus/Fx/Weapons/Infested/QuantaFullyInfested/QuantaBeam",
+            "_beamAttachBone": "GAME_C1_FX",
+            "_enemyEffect": "/Lotus/Fx/Weapons/Infested/QuantaFullyInfested/QuantaHookEnemyAttach",
+            "_invalidTargetTypes": [],
+            "_avatarType": "/EE/Types/Game/Avatar",
+            "_pullForce": 30,
+            "_maxRange": 50,
+            "_avatarPullAnimation": "QuantaPull_anim.fbx",
+            "_weaponPullAnimation": "QuantaPullWEP_anim.fbx"
+        },
+        "EmbedOffset": -0.15
+    }
+}

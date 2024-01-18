@@ -1,0 +1,495 @@
+{
+    "parent": "/Lotus/Types/Game/LotusFightingGameRules",
+    "data": {
+        "ConsumablesMovie": "/Lotus/Interface/ConsumablesOverlay.swf",
+        "GhostAvatarType": "LotusGhostAvatar",
+        "ChallengeMgrType": "",
+        "PauseMenuMovie": "/Lotus/Interface/TopMenu.swf",
+        "HudMovie": "/Lotus/Interface/HudFighter.swf",
+        "AlternateHudMovie": "/Lotus/Interface/HudFighter.swf",
+        "SubTitleMovie": "/Lotus/Interface/Subtitles.swf",
+        "TeamInfo": [
+            {
+                "Faction": "Team0",
+                "AvatarTypes": [
+                    "/Lotus/Types/Player/FightingTennoAvatar"
+                ],
+                "AgentTypes": [],
+                "MaxPlayers": 1
+            },
+            {
+                "Faction": "Team1",
+                "AvatarTypes": [
+                    "/Lotus/Types/Player/FightingTennoAvatar"
+                ],
+                "AgentTypes": [],
+                "MaxPlayers": 1
+            }
+        ],
+        "Script": {
+            "Script": "/Lotus/Scripts/PVP/FightingGameRules.lua",
+            "Function": "OnPlayerSpawned",
+            "_cameraSpotSymbol": "FightCameraSpot",
+            "_deathColorCorrection": "/Lotus/Fx/ColorGradingData/RedColorGrading",
+            "_deathColorCorrectionFade": 0.5,
+            "_deathColorCorrectionDuration": 3,
+            "_combatSong": "/Lotus/Music/FightingGame/FightingGameCombatMusicA",
+            "_titleSong": "/Lotus/Music/Diorama/DioramaMusicEdit",
+            "_idleOverride": "/Lotus/Types/Player/Animation/WarframeAnimTrees/FightingTennoIdleSubTree.animtree",
+            "_playerHealth": 100,
+            "_cameraZMinOffset": -1,
+            "_cameraZMaxOffset": 3,
+            "_playerMaxDistance": 8,
+            "_fadeSpeed": 1,
+            "_fadeDelay": 2,
+            "_hitCameraShakeHitTime": 0.2,
+            "_parryCameraShakeHitTime": 0.1,
+            "_hitCameraShakeStrength": 3,
+            "_hitCameraShakeSpeed": 3,
+            "_parryHitCameraShakeStrength": 2,
+            "_parryHitCameraShakeSpeed": 2,
+            "_attackerEnergyPerHit": 2,
+            "_victimEnergyPerHit": 3,
+            "_deathSlomoltiplier": 0.4,
+            "_deathSlomoTime": 3,
+            "_smoothFactor": 10,
+            "_perSuitSpeedMultiplier": 1.1,
+            "_perSuitFireRateMultilpier": 65,
+            "_perSuitDamageMultiplier": 1.3,
+            "_gameStartSound": "/Lotus/Sounds/Ambience/FightArena/MatchStartHit",
+            "_gameStartCountdownSound": "/Lotus/Sounds/Dialog/FightingGame/DFGCountdown0040Teshin",
+            "_gameWonSound": "/Lotus/Sounds/Dialog/FightingGame/DFGWin0010Teshin",
+            "_gameLostSound": "/Lotus/Sounds/Dialog/FightingGame/DFGLoss0020Teshin",
+            "_gameDrawSound": "/Lotus/Sounds/Ambience/FightArena/MatchDrawHit"
+        },
+        "RunScriptOnClients": 1,
+        "AllowSentinelSpawning": 0,
+        "RespawnEnergy": 0,
+        "MessageDisplayScript": {
+            "Script": "/Lotus/Scripts/DisplayMessage.lua",
+            "Function": "DisplayMessage"
+        },
+        "RespawnNukeAnim": "/Lotus/Animations/Tenno/Contextual/RevivePowerBoost_anim.fbx",
+        "RespawnNukeAnimSpace": "/Lotus/Animations/FlightSuit/RevivePowerBoost_anim.fbx",
+        "AvatarInRiftScripts": [
+            {
+                "Script": "/Lotus/Scripts/EnterTheRift.lua",
+                "Function": "AvatarInTheRift",
+                "_friendlyRiftFx": "/Lotus/Fx/PowersuitAbilities/Magician/EnterTheRiftAvatarProj",
+                "_enemyRiftFx": "/Lotus/Fx/PowersuitAbilities/Magician/EnterTheRiftEnemyAttach",
+                "_avatarLocalRiftFx": "/Lotus/Fx/PowersuitAbilities/Magician/EnterTheRiftLocalAttach",
+                "_exitRiftEffect": "/Lotus/Fx/PowersuitAbilities/Magician/ExitTheRiftBurst",
+                "_cameraColorCorrection": "/Lotus/Fx/ColorGradingData/RiftColorGrading",
+                "_enterRiftSound": "",
+                "_enterRiftLocalSound": "/Lotus/Sounds/Warframes/Magician/MagicianRiftEnter",
+                "_exitRiftSound": "",
+                "_exitRiftLocalSound": "/Lotus/Sounds/Warframes/Magician/MagicianRiftExit",
+                "_inRiftSequencer": "/Lotus/Sounds/Warframes/Magician/MagicianRiftLoopSeq",
+                "_inRiftLocalSequencer": "",
+                "_riftEnergyGainPerSecond": 2
+            }
+        ],
+        "CheckMissionRequirementsScript": {
+            "Script": "/Lotus/Scripts/LotusGameRules.lua",
+            "Function": "CheckMissionRequirements"
+        },
+        "UseTemporaryRespawnImmunity": 0,
+        "OddityMsgMovie": "/Lotus/Interface/UnlockOddityMessage.swf",
+        "LibraryScannerMsgMovie": "/Lotus/Interface/LibraryScanMessage.swf",
+        "EndOfMatchMovie": "/Lotus/Interface/EndOfMatch.swf",
+        "FocusBoostScript": {
+            "Script": "/Lotus/Scripts/FocusBoost.lua",
+            "Function": "TrackFocusBoosters",
+            "_minWaitTime": 30,
+            "_maxWaitTime": 360,
+            "_minSpawnDistance": 30,
+            "_maxSpawnDistance": 60,
+            "_boostPickUp": "/Lotus/Types/PickUps/FocusBoost",
+            "_boostPickUpFx": "",
+            "_boostEndFx": "",
+            "_focusBoostAbilityType": "",
+            "_focusGainScreen": "",
+            "_attachEffect": "",
+            "_childDecoType": "",
+            "_spawnSound": ""
+        },
+        "ConditionalDrops": [
+            "/Lotus/Types/Items/Research/DojoColors/GenericDojoColorConditionalDrop",
+            "/Lotus/Types/DropTables/SpaceDropTables/SpaceResourceConditionalDrop",
+            "/Lotus/Types/DropTables/ConditionalDrops/EventRegionResourceConditionalDrop",
+            "/Lotus/Types/DropTables/ConditionalDrops/SortieConditionalDrop"
+        ],
+        "CollectorTargetHealthThreshold": 0.35,
+        "MissionDataTypes": {
+            "MT_RAID": "MissionData/RaidJ3GolemMissionData"
+        },
+        "RoundEndTime": 3,
+        "MatchEndTime": 4,
+        "AllPlayersInTime": 2,
+        "PrepareRoundTime": 2,
+        "PrepareRoundMessage": "/Lotus/Language/Game/RoundFight",
+        "FightMessage": "/Lotus/Language/Game/Fight",
+        "WinMessage": "/Lotus/Language/Game/Win",
+        "BeforeFreezeFrames": 2,
+        "PowerEnergyCost": 25,
+        "NoPowersFilter": "/Lotus/Types/Player/FightingNoPowersInputFilter",
+        "FightingFists": "/Lotus/Weapons/Tenno/Melee/Fist/FightingFists",
+        "DefaultPowerSuit": "/Lotus/Powersuits/Excalibur/Excalibur",
+        "WarframeManifest": [
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Ninja/Ninja",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Ninja/AshPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Brawler/Brawler",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Banshee/Banshee",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Banshee/BansheePrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Dragon/Dragon",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Dragon/ChromaPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Ember/Ember",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Ember/EmberPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/YinYang/YinYang",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/YinYang/EquinoxPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Excalibur/Excalibur",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Excalibur/ExcaliburPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Frost/Frost",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Frost/FrostPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Glass/Glass",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Priest/Priest",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Pirate/Pirate",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Pirate/HydroidPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Sandman/Sandman",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Ranger/Ranger",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Khora/Khora",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Magician/Magician",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Magician/LimboPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Loki/Loki",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Loki/LokiPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Mag/Mag",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Mag/MagPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Cowgirl/Cowgirl",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Cowgirl/MesaPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Harlequin/Harlequin",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Harlequin/MiragePrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Necro/Necro",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Necro/NekrosPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Nezha/Nezha",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Infestation/Infestation",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/AntiMatter/Anti",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/AntiMatter/NovaPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Jade/Jade",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Jade/NyxPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Paladin/Paladin",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Paladin/PaladinPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Bard/Bard",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Rhino/Rhino",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Rhino/RhinoPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Saryn/Saryn",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Saryn/SarynPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Fairy/Fairy",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Trinity/Trinity",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Trinity/TrinityPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Berserker/Berserker",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Berserker/ValkyrPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Trapper/Trapper",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Trapper/TrapperPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Volt/Volt",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Volt/VoltPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/MonkeyKing/MonkeyKing",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Tengu/Tengu",
+                "PrimeVersion": "/Lotus/StoreItems/Powersuits/Tengu/ZephyrPrime"
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Excalibur/ExcaliburUmbra",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Revenant/Revenant",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Garuda/Garuda",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Excalibur/DarkExcalibur",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Runner/Runner",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Pacifist/Pacifist",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/IronFrame/IronFrame",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Wisp/Wisp",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Devourer/Devourer",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Odalisk/Odalisk",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Alchemist/Alchemist",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Wraith/Wraith",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/BrokenFrame/BrokenFrame",
+                "PrimeVersion": ""
+            },
+            {
+                "NormalVersion": "/Lotus/StoreItems/Powersuits/Yareli/Yareli",
+                "PrimeVersion": ""
+            }
+        ],
+        "WarframeDependencies": [
+            "/Lotus/Powersuits/Ninja/Ninja",
+            "/Lotus/Powersuits/Brawler/Brawler",
+            "/Lotus/Powersuits/Banshee/Banshee",
+            "/Lotus/Powersuits/Dragon/Dragon",
+            "/Lotus/Powersuits/Ember/Ember",
+            "/Lotus/Powersuits/YinYang/YinYang",
+            "/Lotus/Powersuits/Frost/Frost",
+            "/Lotus/Powersuits/Glass/Glass",
+            "/Lotus/Powersuits/Priest/Priest",
+            "/Lotus/Powersuits/Pirate/Pirate",
+            "/Lotus/Powersuits/Sandman/Sandman",
+            "/Lotus/Powersuits/Ranger/Ranger",
+            "/Lotus/Powersuits/Khora/Khora",
+            "/Lotus/Powersuits/Magician/Magician",
+            "/Lotus/Powersuits/Loki/Loki",
+            "/Lotus/Powersuits/Cowgirl/Cowgirl",
+            "/Lotus/Powersuits/Harlequin/Harlequin",
+            "/Lotus/Powersuits/Necro/Necro",
+            "/Lotus/Powersuits/Nezha/Nezha",
+            "/Lotus/Powersuits/Infestation/Infestation",
+            "/Lotus/Powersuits/AntiMatter/Anti",
+            "/Lotus/Powersuits/Jade/Jade",
+            "/Lotus/Powersuits/Paladin/Paladin",
+            "/Lotus/Powersuits/Bard/Bard",
+            "/Lotus/Powersuits/Rhino/Rhino",
+            "/Lotus/Powersuits/Saryn/Saryn",
+            "/Lotus/Powersuits/Fairy/Fairy",
+            "/Lotus/Powersuits/Trinity/Trinity",
+            "/Lotus/Powersuits/Berserker/Berserker",
+            "/Lotus/Powersuits/Trapper/Trapper",
+            "/Lotus/Powersuits/MonkeyKing/MonkeyKing",
+            "/Lotus/Powersuits/Tengu/Tengu",
+            "/Lotus/Powersuits/Excalibur/ExcaliburUmbra",
+            "/Lotus/Powersuits/Garuda/Garuda",
+            "/Lotus/Powersuits/Excalibur/DarkExcalibur",
+            "/Lotus/Upgrades/Skins/Ninja/NinjaHelmet",
+            "/Lotus/Upgrades/Skins/Ninja/NinjaSkin",
+            "/Lotus/Upgrades/Skins/Ninja/AshEffectsSetDefault",
+            "/Lotus/Interface/Icons/Abilities/NinjaStar.png",
+            "/Lotus/Upgrades/Skins/Brawler/BrawlerHelmet",
+            "/Lotus/Upgrades/Skins/Brawler/BrawlerSkin",
+            "/Lotus/Interface/Icons/Abilities/AtlasRockPunch.png",
+            "/Lotus/Upgrades/Skins/Decree/DecreeHelmet",
+            "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/BansheeArmLeftArmor",
+            "/Lotus/Upgrades/Skins/Decree/BansheeSkin",
+            "/Lotus/Interface/Icons/Abilities/BansheeSonicBoom.png",
+            "/Lotus/Upgrades/Skins/Dragon/DragonHelmet",
+            "/Lotus/Upgrades/Skins/Dragon/ChromaSkin",
+            "/Lotus/Interface/Icons/Abilities/DragonElementalAttack.png",
+            "/Lotus/Upgrades/Skins/Ember/EmberHelmet",
+            "/Lotus/Upgrades/Skins/Ember/EmberSkin",
+            "/Lotus/Upgrades/Skins/Ember/EmberEffectsSetDefault",
+            "/Lotus/Interface/Icons/Abilities/EmberFireBall.png",
+            "/Lotus/Upgrades/Skins/Anima/AnimaHelmet",
+            "/Lotus/Upgrades/Skins/YinYang/YinYangSkin",
+            "/Lotus/Upgrades/Skins/Excalibur/ExcaliburHelmet",
+            "/Lotus/Upgrades/Skins/Excalibur/ExcaliburSkin",
+            "/Lotus/Upgrades/Skins/Excalibur/ExcaliburEffectsSetDefault",
+            "/Lotus/Interface/Icons/Abilities/Power04.png",
+            "/Lotus/Upgrades/Skins/Frost/FrostHelmet",
+            "/Lotus/Upgrades/Skins/Frost/FrostSkin",
+            "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/FrostArmArmor",
+            "/Lotus/Interface/Icons/Abilities/FrostFreeze.png",
+            "/Lotus/Upgrades/Skins/Glass/GlassHelmet",
+            "/Lotus/Upgrades/Skins/Glass/GlassSkin",
+            "/Lotus/Interface/Icons/Abilities/GlassShank.png",
+            "/Lotus/Upgrades/Skins/Priest/PriestHelmet",
+            "/Lotus/Upgrades/Skins/Priest/PriestSkin",
+            "/Lotus/Interface/Icons/Abilities/PriestCondemn.png",
+            "/Lotus/Upgrades/Skins/Pirate/PirateDefaultHelmet",
+            "/Lotus/Upgrades/Skins/Hydroid/HydroidSkin",
+            "/Lotus/Upgrades/Skins/Sandman/SandmanHelmet",
+            "/Lotus/Upgrades/Skins/Sandman/SandmanSkin",
+            "/Lotus/Interface/Icons/Abilities/SandmanBlast.png",
+            "/Lotus/Upgrades/Skins/Ranger/RangerHelmet",
+            "/Lotus/Upgrades/Skins/Ranger/RangerSkin",
+            "/Lotus/Interface/Icons/Abilities/RangerVersatileQuiver.png",
+            "/Lotus/Upgrades/Skins/Khora/KhoraHelmet",
+            "/Lotus/Upgrades/Skins/Khora/KhoraSkin",
+            "/Lotus/Upgrades/Skins/Khora/KhoraEffectsSetDefault",
+            "/Lotus/Characters/Tenno/Accessory/Scarves/WarframeDefaults/Quill/QuillCanistersSyandana_skel.fbx",
+            "/Lotus/Interface/Icons/Abilities/KhoraCrack.png",
+            "/Lotus/Upgrades/Skins/Magician/MagicianHelmet",
+            "/Lotus/Upgrades/Skins/Magician/MagicianSkin",
+            "/Lotus/Characters/Tenno/Magician/MagicianHelmet_skel.fbx",
+            "/Lotus/Interface/Icons/Abilities/LimboBanish.png",
+            "/Lotus/Characters/Tenno/Loki/LokiHelmet",
+            "/Lotus/Upgrades/Skins/Loki/LokiEffectsSetDefault",
+            "/Lotus/Characters/Tenno/Loki/LokiHelmet_skel.fbx",
+            "/Lotus/Interface/Icons/Abilities/LokiSwitchTeleport.png",
+            "/Lotus/Upgrades/Skins/Mag/MagHelmet",
+            "/Lotus/Upgrades/Skins/Cowgirl/CowgirlHelmet",
+            "/Lotus/Interface/Icons/Abilities/GunslingerGunFu.png",
+            "/Lotus/Upgrades/Skins/Harlequin/HarlequinHelmet",
+            "/Lotus/Upgrades/Skins/Harlequin/MirageSkin",
+            "/Lotus/Upgrades/Skins/Necro/NecroHelmet",
+            "/Lotus/Interface/Icons/Abilities/NecroSoulPunch.png",
+            "/Lotus/Upgrades/Skins/Nezha/NezhaHelmet",
+            "/Lotus/Upgrades/Skins/Nezha/NezhaSkin",
+            "/Lotus/Characters/Tenno/Nezha/NezhaHelmet",
+            "/Lotus/Interface/Icons/Abilities/NezhaRing.png",
+            "/Lotus/Upgrades/Skins/Infestation/InfestationHelmet",
+            "/Lotus/Upgrades/Skins/Infestation/InfestationSkin",
+            "/Lotus/Upgrades/Skins/AntiMatter/AntiHelmet",
+            "/Lotus/Upgrades/Skins/AntiMatter/NovaSkin",
+            "/Lotus/Characters/Tenno/Antimatter/AntimatterHelmet",
+            "/Lotus/Interface/Icons/Abilities/NovaAntimatterDrop.png",
+            "/Lotus/Upgrades/Skins/Jade/JadeHelmet",
+            "/Lotus/Upgrades/Skins/Jade/NyxSkin",
+            "/Lotus/Interface/Icons/Abilities/NyxPsychicBolts.png",
+            "/Lotus/Upgrades/Skins/Paladin/PaladinHelmet",
+            "/Lotus/Upgrades/Skins/Paladin/PaladinSkin",
+            "/Lotus/Interface/Icons/Abilities/PaladinSmite.png",
+            "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/OberonArmArmor",
+            "/Lotus/Upgrades/Skins/Bard/BardHelmet",
+            "/Lotus/Upgrades/Skins/Bard/BardSkin",
+            "/Lotus/Interface/Icons/Abilities/BardMusicBox.png",
+            "/Lotus/Upgrades/Skins/Rhino/RhinoHelmet",
+            "/Lotus/Upgrades/Skins/Rhino/RhinoSkin",
+            "/Lotus/Upgrades/Skins/Rhino/RhinoEffectsSetDefault",
+            "/Lotus/Interface/Icons/Abilities/RhinoStomp.png",
+            "/Lotus/Upgrades/Skins/Asp/AspHelmet",
+            "/Lotus/Upgrades/Skins/Saryn/SarynSkin",
+            "/Lotus/Interface/Icons/Abilities/SarynVenom.png",
+            "/Lotus/Upgrades/Skins/Fairy/FairyHelmet",
+            "/Lotus/Upgrades/Skins/Fairy/FairySkin",
+            "/Lotus/Interface/Icons/Abilities/FaerieLamp.png",
+            "/Lotus/Upgrades/Skins/Trinity/TrinityHelmet",
+            "/Lotus/Upgrades/Skins/Trinity/TrinityEffectsSetDefault",
+            "/Lotus/Interface/Icons/Abilities/TrinityWellOfLife.png",
+            "/Lotus/Upgrades/Skins/Berserker/BerserkerHelmet",
+            "/Lotus/Upgrades/Skins/Berserker/BerserkerSkin",
+            "/Lotus/Interface/Icons/Abilities/BerserkerGrapplingHook.png",
+            "/Lotus/Upgrades/Skins/Trapper/TrapperDefaultHelmet",
+            "/Lotus/Upgrades/Skins/Trapper/TrapperSkin",
+            "/Lotus/Interface/Icons/Abilities/VaubanZap.png",
+            "/Lotus/Upgrades/Skins/Volt/VoltHelmet",
+            "/Lotus/Upgrades/Skins/Volt/VoltSkin",
+            "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/VoltArmArmor",
+            "/Lotus/Upgrades/Skins/Volt/VoltEffectsSetDefault",
+            "/Lotus/Interface/Icons/Abilities/VoltChainLightning.png",
+            "/Lotus/Upgrades/Skins/MonkeyKing/MonkeyKingHelmet",
+            "/Lotus/Upgrades/Skins/MonkeyKing/MonkeyKingSkin",
+            "/Lotus/Interface/Icons/Abilities/MonkeyPoke.png",
+            "/Lotus/Upgrades/Skins/Tengu/TenguHelmet",
+            "/Lotus/Upgrades/Skins/Tengu/TenguSkin",
+            "/Lotus/Interface/Icons/Abilities/TenguTailWind.png",
+            "/Lotus/Upgrades/Skins/Excalibur/ExcaliburUmbraHelmet",
+            "/Lotus/Upgrades/Skins/Umbra/UmbraSkin",
+            "/Lotus/Interface/Icons/Abilities/ExcaliburUmbraRoar.png",
+            "/Lotus/Upgrades/Skins/Revenant/RevenantHelmet",
+            "/Lotus/Upgrades/Skins/Revenant/RevenantSkin",
+            "/Lotus/Interface/Icons/Abilities/RevenantReave.png",
+            "/Lotus/StoreItems/Upgrades/Skins/Garuda/GarudaSkin",
+            "/Lotus/StoreItems/Upgrades/Skins/Garuda/GarudaHelmet",
+            "/Lotus/Interface/Icons/Abilities/GarudaBoneZone.png"
+        ]
+    }
+}

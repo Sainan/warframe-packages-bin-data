@@ -1,0 +1,85 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PlayerPowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Kingpins/KuvaLichStairwayToHeavenAbility",
+        "LocalizeDescTag": "/Lotus/Language/Kingpins/KuvaLichStairwayToHeavenAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/PaladinHallowedGround.png",
+        "UniquePowerIdentifier": "OBERON_HALLOWED_GROUNDNPC",
+        "AdditionalPowerIdentifiers": [
+            "EFFECT_DAMAGE"
+        ],
+        "Script": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Lich/StairwayToHeaven.lua",
+            "Function": "ActivateAbility",
+            "_activateStartAnim": "",
+            "_activateAnim": "/Lotus/Animations/Grineer/KuvaLich/PowerCast4_anim.fbx",
+            "_activateAnimEvent": "TrapCast",
+            "_scriptHelperType": "",
+            "_triggerType": "",
+            "_coverageEffect": "/Lotus/Fx/PowersuitAbilities/Kingpins/StairwayToHeavenCoverageDeco",
+            "_floorSequencer": "",
+            "_castEffect": "",
+            "_castBurst": "/Lotus/Fx/PowersuitAbilities/Kingpins/GroundSlam",
+            "_augmentOneExplosion": "",
+            "_augmentOneCenterExplosion": "",
+            "_patchMesh": "/Lotus/Fx/PowersuitAbilities/Kingpins/StairwayToHeavenPatchEntityA",
+            "_patchMeshPrime": "/Lotus/Fx/PowersuitAbilities/Paladin/StairwayToHeavenPatchEntityPrime",
+            "_isCrpLich": 0,
+            "_raycastIgnoreTypes": [
+                "/EE/Types/Game/Avatar",
+                "/EE/Types/Game/PickUp",
+                "/EE/Types/Physics/Ragdoll",
+                "/EE/Types/Engine/HitProxy"
+            ]
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "CreateEffects",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Lich/StairwayToHeaven.lua",
+                    "Function": "CreateFloorEffects",
+                    "_activateStartAnim": "",
+                    "_activateAnim": "",
+                    "_activateAnimEvent": "",
+                    "_scriptHelperType": "/Lotus/Powersuits/Paladin/StairwayScriptHelper",
+                    "_triggerType": "/Lotus/Powersuits/Paladin/StairwayTrigger",
+                    "_coverageEffect": "/Lotus/Fx/PowersuitAbilities/Kingpins/StairwayToHeavenCoverageDeco",
+                    "_floorSequencer": "/Lotus/Sounds/Enemies/KuvaLich/Abilities/Offensive/KuvaLichStairwayToHeavenLoopSeq",
+                    "_castEffect": "",
+                    "_castBurst": "",
+                    "_augmentOneExplosion": "/Lotus/Fx/PowersuitAbilities/Paladin/HallowedGroundAugmentOneSmallBurst",
+                    "_augmentOneCenterExplosion": "/Lotus/Fx/PowersuitAbilities/Paladin/HallowedGroundAugmentOneBigBurst",
+                    "_patchMesh": "/Lotus/Fx/PowersuitAbilities/Kingpins/StairwayToHeavenPatchEntityA",
+                    "_patchMeshPrime": "/Lotus/Fx/PowersuitAbilities/Paladin/StairwayToHeavenPatchEntityPrime",
+                    "_isCrpLich": 0,
+                    "_raycastIgnoreTypes": []
+                }
+            }
+        ],
+        "NpcCooldownDuration": 0,
+        "EnergyRequiredToActivate": 0,
+        "PvpEnergyRequiredToActivate": 0,
+        "AllowToggle": 1,
+        "ActivationXP": 50,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/CooldownEvaluator",
+            "/Lotus/Types/Game/AbilityEvaluators/CheckTargetEvaluator"
+        ],
+        "Evaluator:CooldownEvaluator": {
+            "MinCooldownTime": 45
+        },
+        "Evaluator:CheckTargetEvaluator": {
+            "TargetRange": [
+                5,
+                50
+            ],
+            "LastSeemTime": 0.2,
+            "PersonallySeen": 1,
+            "RequireLivingAvatar": 1,
+            "SetAbilityArg": 1
+        }
+    }
+}

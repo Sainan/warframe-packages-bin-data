@@ -1,0 +1,70 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PlayerPowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/WeaponPoisonAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/WeaponPoisonAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/SarynContagion.png",
+        "UniquePowerIdentifier": "SARYN_CONTAGION",
+        "AdditionalPowerIdentifiers": [
+            "EFFECT_DAMAGE"
+        ],
+        "Script": {
+            "Script": "/Lotus/Powersuits/PowersuitAbilities/WeaponPoison.lua",
+            "Function": "ActivateAbility",
+            "_activateAnim": "/Lotus/Animations/Tenno/Powers/Asp/MeleePoison_anim.fbx",
+            "_attachFx": "/Lotus/Fx/PowersuitAbilities/Asp/WeaponPoison",
+            "_primeAttachFx": "/Lotus/Fx/PowersuitAbilities/Asp/WeaponPoisonPrime",
+            "_venomNodeType": "",
+            "_endSound": "/Lotus/Sounds/Warframes/Saryn/SarynContagionEnd",
+            "_augmentCloudFx": "",
+            "_augmentCloudMeleeFx": "",
+            "_augmentCloudElement": "",
+            "_augmentCloudRangeDeco": "",
+            "_augmentDamageMult": 1
+        },
+        "AbilityEvents": [
+            {
+                "tag": "AugmentOne",
+                "eventType": "ET_ON_MELEE_KILL",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/WeaponPoison.lua",
+                    "Function": "GetAbilityUpgradeLevelInfo",
+                    "_activateAnim": "",
+                    "_attachFx": "",
+                    "_primeAttachFx": "",
+                    "_venomNodeType": "",
+                    "_endSound": "",
+                    "_augmentCloudFx": "/Lotus/Fx/PowersuitAbilities/Asp/ContagionAugmentOneSmoke",
+                    "_augmentCloudMeleeFx": "",
+                    "_augmentCloudElement": "/Lotus/Powersuits/Saryn/WeaponPoisonCloudElement",
+                    "_augmentCloudRangeDeco": "",
+                    "_augmentDamageMult": 1
+                }
+            },
+            {
+                "tag": "OnHit",
+                "eventType": "ET_ON_HIT",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/WeaponPoison.lua",
+                    "Function": "OnHit",
+                    "_activateAnim": "",
+                    "_attachFx": "",
+                    "_primeAttachFx": "",
+                    "_venomNodeType": "/Lotus/Fx/PowersuitAbilities/Asp/ExplosiveGrowthMeshDeco",
+                    "_endSound": "",
+                    "_augmentCloudFx": "/Lotus/Fx/PowersuitAbilities/Asp/ContagionAugmentOneSmoke",
+                    "_augmentCloudMeleeFx": "",
+                    "_augmentCloudElement": "",
+                    "_augmentCloudRangeDeco": "",
+                    "_augmentDamageMult": 1
+                }
+            }
+        ],
+        "CooldownDuration": 12,
+        "EnergyRequiredToActivate": 0,
+        "AllowReactivate": 1,
+        "AllowOnZipLines": 1,
+        "ActivationXP": 50,
+        "CastSound": "/Lotus/Sounds/Warframes/Saryn/SarynContagionCast"
+    }
+}

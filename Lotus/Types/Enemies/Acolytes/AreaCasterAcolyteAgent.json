@@ -1,0 +1,123 @@
+{
+    "parent": "BaseAcolyteAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "AreaCasterAcolyteAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "AreaCasterAcolyteSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Tenno/Melee/Scythe/EtherScytheWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/SearchForTargetBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/MeleeTactic",
+            "/EE/Types/Npc/MultiTargetCircleBehavior",
+            "/EE/Types/Npc/KeepIdealDistanceBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "UsePowerSuitAbilitiesBehavior": {
+            "TurnDuringAbility": 1
+        },
+        "MeleeTactic": {
+            "MeleeBehaviors": [
+                "/Lotus/Types/Behaviors/LotusSimpleMeleeBehavior",
+                "/EE/Types/Npc/DefensiveDodgeJumpBehavior",
+                "/EE/Types/Npc/KeepMeleeDistanceBehavior"
+            ],
+            "DefensiveDodgeJumpBehavior": {
+                "FullBodyAction": "FBA_NONE"
+            },
+            "KeepMeleeDistanceBehavior": {
+                "MaxMovementDistance": 15,
+                "AimWhileMoving": 0
+            }
+        },
+        "MultiTargetCircleBehavior": {
+            "Enabled": 0,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "CloseInDistance": [
+                0,
+                20
+            ],
+            "IdealDistance": [
+                10,
+                15
+            ],
+            "MovementRange": [
+                5,
+                10
+            ],
+            "UpdateDistance": 3,
+            "SpeedModifier": 1,
+            "MovementPosture": "WALK",
+            "FaceDirection": "MFC_FACE_TARGET",
+            "PredictPosition": 0,
+            "CircleTime": [
+                5,
+                8
+            ],
+            "SamplePointSpacing": 2,
+            "AgentTargetWeight": 1,
+            "MainHandTargetWeight": 0,
+            "OffHandTargetWeight": 0,
+            "UseDefenseVolume": 0
+        },
+        "KeepIdealDistanceBehavior": {
+            "IdealDistance": [
+                5,
+                10
+            ],
+            "AllowRun": 0,
+            "ReleaseTeamMeleeLock": 0,
+            "StopRadius": 1,
+            "UpdateDestinationInterval": 1
+        },
+        "InvestigateBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ShouldAim": 1,
+            "MaxInvestigateDistance": 55,
+            "NearDestinationRadius": 6,
+            "SpeedMultiplier": 1,
+            "FastSpeedMultiplier": 1,
+            "VisInterval": 0.5,
+            "LookAroundTime": 3,
+            "NumLookAroundDirections": 2,
+            "TeamCoordination": 1,
+            "UseFlare": 0,
+            "CheckThreatFaction": 0,
+            "AllowRun": 1,
+            "RunTowardsNewTargets": 1,
+            "KnowInstigatorPosAtStart": 0,
+            "reactionsToInvestigate": [],
+            "MinAwareness": "AW_ALERT",
+            "minimumTargetInterest": "Investigate",
+            "ReportAttackOnDamage": 1
+        }
+    }
+}

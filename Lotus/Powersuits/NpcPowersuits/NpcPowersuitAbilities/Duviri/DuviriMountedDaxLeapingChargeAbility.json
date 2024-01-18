@@ -1,0 +1,210 @@
+{
+    "parent": "/Lotus/Types/Game/PowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/RhinoChargeAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/RhinoChargeAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/RhinoDash.png",
+        "Script": {
+            "Script": "DuviriMountedDaxLeapingChargeAbility.lua",
+            "Function": "ActivateAbility",
+            "_chargeUpAnimation": "/Lotus/Animations/Creatures/ErstazHorse/Idle06_anim.fbx",
+            "_gallopAnimation": "/Lotus/Animations/Creatures/ErstazHorse/GallopCycleForward_anim.fbx",
+            "_jumpAnimation": "/Lotus/Animations/Creatures/ErstazHorse/DoubleJump01_anim.fbx",
+            "_landingAnimation": "/Lotus/Animations/Creatures/ErstazHorse/JumpHeavyLanding_anim.fbx",
+            "_rearUpAttackAnimation": "/Lotus/Animations/Creatures/ErstazHorse/Idle06RearUpTrimAnim",
+            "_leapingChargeAnimation": "/Lotus/Animations/Dax/Melee/Horseback/LeapingCharge_anim.fbx",
+            "_exhaustedAnimation": "/Lotus/Animations/Creatures/ErstazHorse/Idle02HeadShakeTrim",
+            "_exhaustedRiderAnimation": "/Lotus/Animations/Dax/Melee/Horseback/StunEnd_anim.fbx",
+            "_chargeFxType": "/Lotus/Fx/Enemies/Duviri/MountedDaxLeapChargeFX",
+            "_jumpFxType": "/Lotus/Fx/Enemies/Duviri/MountedDaxLeapFX",
+            "_leapingChargeEnergyDecoType": "/Lotus/Fx/Enemies/Duviri/MountedDaxLeapTrailFX",
+            "_leapingChargeEnergyDecoScale": 2,
+            "_landFxTypeList": [
+                "/Lotus/Fx/Enemies/Duviri/MountedDaxLeapWaveFX"
+            ],
+            "_aoeAttackDecoTypeList": [
+                "/Lotus/Fx/Enemies/Duviri/DaxEnergyBnWFast"
+            ],
+            "_aoeAttackDecoScale": 5,
+            "_telegraphFxType": "/Lotus/Fx/Enemies/Duviri/DaxPlungeTelegraph",
+            "_telegraphBnwDecalType": "/Lotus/Fx/Enemies/Duviri/DaxPlungeTelegraphBnW",
+            "_beamTypeList": [
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeLaserBeam",
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeAngryLaserBeam",
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeSadLaserBeam",
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeFearLaserBeam",
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeHappyLaserBeam",
+                "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeEnvyLaserBeam"
+            ],
+            "_beamBnWType": "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeBnWLaserBeam",
+            "_buffLandingProjectileTypeList": [
+                "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeLaunchedProjectile",
+                "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeAngryLaunchedProjectile",
+                "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeSadLaunchedProjectile",
+                "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeFearLaunchedProjectile",
+                "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeHappyLaunchedProjectile",
+                "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeEnvyLaunchedProjectile"
+            ],
+            "_buffLandingRuptureTypeList": [
+                "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledLarge",
+                "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledLarge",
+                "/Lotus/Fx/Enemies/Duviri/RangedDaxSadDisengageExplode",
+                "/Lotus/Fx/Enemies/Duviri/DaxFearPlungeExplode",
+                "/Lotus/Fx/Enemies/Duviri/DaxHappyPlungeExplode",
+                "/Lotus/Fx/Enemies/Duviri/RangedDaxEnvyBeamProjExplosion"
+            ],
+            "_buffLaunchProjectileFxType": "/Lotus/Fx/Explosions/Generic/SurfaceHitEffects/ExplosionHitEffectLargeRipple",
+            "_buffProjectileTelegraph": "",
+            "_jumpSound": "/Lotus/Sounds/Enemies/Duviri/EnemyHorse/DuviriEnemyHorseStomp",
+            "_landSound": "/Lotus/Sounds/Enemies/Duviri/EnemyHorse/DuviriEnemyHorseStomp",
+            "_minRange": 9,
+            "_maxRange": 22,
+            "_baseAoeDamage": 40,
+            "_aoeSize": 5.5,
+            "_beamMaxDistance": 40,
+            "_beamPitchStart": 60,
+            "_beamPitchEnd": 0,
+            "_beamTurnRateLow": 80,
+            "_beamTurnRateHigh": 250,
+            "_buffNumLandingProjectilesPerTick": 3,
+            "_buffNumProjectileTicks": 12,
+            "_buffProjectileSpeedRange": [
+                10,
+                25
+            ],
+            "_buffContinuousVolleyTime": 20,
+            "_buffContinuousVolleyUnaimedTime": [
+                0.125,
+                0.25
+            ],
+            "_buffContinuousVolleyAimedTime": [
+                3,
+                4
+            ],
+            "_buffContinuousVolleyHeight": 30,
+            "_teamCooldown": 20,
+            "_leapAimPredictionTime": 0.25
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "ContinuousVolley",
+                "executionMode": "EM_HOST",
+                "inheritPrimary": 1,
+                "functionName": "ContinuousVolley",
+                "scriptInstance": {
+                    "Script": "DuviriMountedDaxLeapingChargeAbility.lua",
+                    "Function": "ContinuousVolley",
+                    "_chargeUpAnimation": "/Lotus/Animations/Creatures/ErstazHorse/Idle06_anim.fbx",
+                    "_gallopAnimation": "/Lotus/Animations/Creatures/ErstazHorse/GallopCycleForward_anim.fbx",
+                    "_jumpAnimation": "/Lotus/Animations/Creatures/ErstazHorse/DoubleJump01_anim.fbx",
+                    "_landingAnimation": "/Lotus/Animations/Creatures/ErstazHorse/JumpHeavyLanding_anim.fbx",
+                    "_rearUpAttackAnimation": "/Lotus/Animations/Creatures/ErstazHorse/Idle06RearUpTrimAnim",
+                    "_leapingChargeAnimation": "/Lotus/Animations/Dax/Melee/Horseback/LeapingCharge_anim.fbx",
+                    "_exhaustedAnimation": "/Lotus/Animations/Creatures/ErstazHorse/Idle02HeadShakeTrim",
+                    "_exhaustedRiderAnimation": "/Lotus/Animations/Dax/Melee/Horseback/StunEnd_anim.fbx",
+                    "_chargeFxType": "/Lotus/Fx/Enemies/Duviri/MountedDaxLeapChargeFX",
+                    "_jumpFxType": "/Lotus/Fx/Enemies/Duviri/MountedDaxLeapFX",
+                    "_leapingChargeEnergyDecoType": "/Lotus/Fx/Enemies/Duviri/MountedDaxLeapTrailFX",
+                    "_leapingChargeEnergyDecoScale": 2,
+                    "_landFxTypeList": [
+                        "/Lotus/Fx/Enemies/Duviri/MountedDaxLeapWaveFX"
+                    ],
+                    "_aoeAttackDecoTypeList": [
+                        "/Lotus/Fx/Enemies/Duviri/DaxEnergyBnWFast"
+                    ],
+                    "_aoeAttackDecoScale": 5,
+                    "_telegraphFxType": "/Lotus/Fx/Enemies/Duviri/DaxPlungeTelegraph",
+                    "_telegraphBnwDecalType": "/Lotus/Fx/Enemies/Duviri/DaxPlungeTelegraphBnW",
+                    "_beamTypeList": [
+                        "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeLaserBeam",
+                        "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeAngryLaserBeam",
+                        "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeSadLaserBeam",
+                        "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeFearLaserBeam",
+                        "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeHappyLaserBeam",
+                        "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeEnvyLaserBeam"
+                    ],
+                    "_beamBnWType": "/Lotus/Types/Enemies/Duviri/Mounted/DuviriDaxMountedLeapingChargeBnWLaserBeam",
+                    "_buffLandingProjectileTypeList": [
+                        "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeLaunchedProjectile",
+                        "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeAngryLaunchedProjectile",
+                        "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeSadLaunchedProjectile",
+                        "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeFearLaunchedProjectile",
+                        "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeHappyLaunchedProjectile",
+                        "/Lotus/Types/Enemies/Duviri/Mounted/LeapingChargeEnvyLaunchedProjectile"
+                    ],
+                    "_buffLandingRuptureTypeList": [
+                        "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledLarge",
+                        "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledLarge",
+                        "/Lotus/Fx/Enemies/Duviri/RangedDaxSadDisengageExplode",
+                        "/Lotus/Fx/Enemies/Duviri/DaxFearPlungeExplode",
+                        "/Lotus/Fx/Enemies/Duviri/DaxHappyPlungeExplode",
+                        "/Lotus/Fx/Enemies/Duviri/RangedDaxEnvyBeamProjExplosion"
+                    ],
+                    "_buffLaunchProjectileFxType": "/Lotus/Fx/Explosions/Generic/SurfaceHitEffects/ExplosionHitEffectLargeRipple",
+                    "_buffProjectileTelegraph": "",
+                    "_jumpSound": "/Lotus/Sounds/Enemies/Duviri/EnemyHorse/DuviriEnemyHorseStomp",
+                    "_landSound": "/Lotus/Sounds/Enemies/Duviri/EnemyHorse/DuviriEnemyHorseStomp",
+                    "_minRange": 9,
+                    "_maxRange": 22,
+                    "_baseAoeDamage": 40,
+                    "_aoeSize": 5.5,
+                    "_beamMaxDistance": 40,
+                    "_beamPitchStart": 60,
+                    "_beamPitchEnd": 0,
+                    "_beamTurnRateLow": 80,
+                    "_beamTurnRateHigh": 250,
+                    "_buffNumLandingProjectilesPerTick": 3,
+                    "_buffNumProjectileTicks": 12,
+                    "_buffProjectileSpeedRange": [
+                        10,
+                        25
+                    ],
+                    "_buffContinuousVolleyTime": 20,
+                    "_buffContinuousVolleyUnaimedTime": [
+                        0.125,
+                        0.25
+                    ],
+                    "_buffContinuousVolleyAimedTime": [
+                        3,
+                        4
+                    ],
+                    "_buffContinuousVolleyHeight": 30,
+                    "_teamCooldown": 20,
+                    "_leapAimPredictionTime": 0.25
+                }
+            },
+            {
+                "tag": "CheckForAbilityInterruption",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "DuviriAbilityUtility.lua",
+                    "Function": "CheckForAbilityInterruptionMounted"
+                }
+            }
+        ],
+        "CooldownDuration": 20,
+        "EnergyRequiredToActivate": 8,
+        "ActivationXP": 0,
+        "TurnToTarget": 1,
+        "SoundEvents": [
+            {
+                "EventName": "SFXDuviriHorseBossLeap",
+                "Sound": "/Lotus/Sounds/Enemies/Duviri/DuviriDax/Abilities/DaxMounted/DuviriDaxMountedLeapAbilityJump",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXBarkHorseScreechJump",
+                "Sound": "/Lotus/Sounds/Vehicles/Duviri/DuviriHorse/Vocals/DuviriHorseVocalScreechJump",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ]
+    }
+}

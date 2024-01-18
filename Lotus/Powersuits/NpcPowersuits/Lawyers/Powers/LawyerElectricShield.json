@@ -1,0 +1,82 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PlayerPowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/ShieldAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Kingpins/SisterAbilityElectricShield",
+        "Icon": "/Lotus/Interface/Icons/Abilities/VoltShield.png",
+        "UniquePowerIdentifier": "VOLT_ELECTRIC_SHIELD",
+        "AdditionalPowerIdentifiers": [
+            "EFFECT_BUFF"
+        ],
+        "Script": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Lich/ElectricShield.lua",
+            "Function": "ActivateAbility",
+            "_shieldDeco": "/Lotus/Types/Enemies/Corpus/Lawyers/ShieldPowerDeco",
+            "_activateAnim": "/Lotus/Animations/Grineer/KuvaLich/PowerCast3_anim.fbx",
+            "_launchSound": "",
+            "_chargedUpEffect": "",
+            "_chargedUpBeamEffect": "",
+            "_positionOffset": [
+                0,
+                1.1,
+                1
+            ],
+            "_maxUsageRange": 20,
+            "_healthThreshold": 0.75
+        },
+        "AbilityEvents": [
+            {
+                "tag": "ForceDropShield",
+                "eventType": "ET_ON_ABILITY_ACTIVATE",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/Shield.lua",
+                    "Function": "ForceDropShield",
+                    "_activateAnim": "",
+                    "_launchSound": "",
+                    "_castBeamType": "",
+                    "_shieldElementType": "",
+                    "_chargedUpEffect": "",
+                    "_chargedUpBeamEffect": "",
+                    "_actionType": "",
+                    "_pickupSound": "",
+                    "_dropSound": "/Lotus/Sounds/Warframes/Volt/VoltShieldDrop",
+                    "_knockdownTriggerType": "",
+                    "_augmentOneTriggerType": "",
+                    "_augmentPvpTriggerType": "",
+                    "_augmentOneAttachEffect": "/Lotus/Fx/PowersuitAbilities/Volt/ShieldAugmentIndicator",
+                    "_grabEffect": ""
+                }
+            }
+        ],
+        "InputEvents": [
+            {
+                "tag": "TryPickup",
+                "inputCode": "USE",
+                "onDown": 0,
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/Shield.lua",
+                    "Function": "TryPickup",
+                    "_activateAnim": "",
+                    "_launchSound": "",
+                    "_castBeamType": "",
+                    "_shieldElementType": "",
+                    "_chargedUpEffect": "",
+                    "_chargedUpBeamEffect": "",
+                    "_actionType": "/Lotus/Powersuits/Volt/ShieldAction",
+                    "_pickupSound": "",
+                    "_dropSound": "",
+                    "_knockdownTriggerType": "",
+                    "_augmentOneTriggerType": "",
+                    "_augmentPvpTriggerType": "",
+                    "_augmentOneAttachEffect": "/Lotus/Fx/PowersuitAbilities/Volt/ShieldAugmentIndicator",
+                    "_grabEffect": ""
+                }
+            }
+        ],
+        "NpcCooldownDuration": 24,
+        "EnergyRequiredToActivate": 0,
+        "ActivationXP": 0,
+        "CastSound": "/Lotus/Sounds/Enemies/Corpus/CorpusLich/CorpusLichAgents/Abilities/Electricity/CrpLichElectricShieldCast",
+        "VideoTexture": "/Lotus/Interface/AbilityVideos/VoltPower3.bk2"
+    }
+}

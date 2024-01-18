@@ -1,0 +1,142 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 0,
+                "value": {
+                    "type": "Selector"
+                }
+            },
+            {
+                "key": 1,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 2,
+                "value": {
+                    "type": "Action"
+                }
+            },
+            {
+                "key": 3,
+                "value": {
+                    "type": "Action"
+                }
+            }
+        ],
+        "NodeProperties": {
+            "0": {
+                "links": []
+            },
+            "1": {
+                "Type": "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "WaitForSpawnAnimationBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 1,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "2": {
+                "Type": "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+                "MoveToDesiredScriptPositionBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "SpeedMultiplier": 1,
+                    "StopRadius": 0.5,
+                    "NearDistance": 2,
+                    "FacingThreshold": 10,
+                    "SucceedWhenNearPosition": 0,
+                    "MovePosture": "RUN",
+                    "FacingControl": "MFC_FACE_MOVEDIR",
+                    "ClearDesiredPosOnAwareness": 0,
+                    "TargetAwarenessToClear": "AW_SLEEPING",
+                    "ClearDesiredPosOnSuccess": 1,
+                    "StopMovingOnComplete": 1,
+                    "TryRecover": 0,
+                    "RecoverDist": 10,
+                    "MaxRecoverTime": 10,
+                    "StuckTime": 2,
+                    "MaxFailures": 5,
+                    "AllowFiring": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 2,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "3": {
+                "Type": "/EE/Types/Npc/WaitBehavior",
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 3,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 4
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 0
+    }
+}

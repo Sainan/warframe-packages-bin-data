@@ -1,0 +1,194 @@
+{
+    "parent": "/Lotus/Types/NeutralCreatures/Kubrow/KubrowAnimController",
+    "data": {
+        "AnimTree": "DuviriOwlAnimTree.animtree",
+        "Actions": [
+            {
+                "Action": "IDLE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 0
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 0
+                    }
+                ]
+            },
+            {
+                "Action": "Perching",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ]
+            },
+            {
+                "Action": "Roaming",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ]
+            },
+            {
+                "Action": "StealthDetection",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ]
+            },
+            {
+                "Action": "StealthDetectionSpotted",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ]
+            },
+            {
+                "Action": "StartDive",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 6
+                    }
+                ]
+            }
+        ],
+        "ContextActions": [],
+        "SoundEvents": [],
+        "VoiceBoxEvents": [],
+        "ScriptEvents": [
+            {
+                "EventName": "SetGroundPhysicsBehavior",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Scripts/SetPhysicsBehavior.lua",
+                    "Function": "SetPhysicsBehavior",
+                    "_newPhysicsBehavior": "/Lotus/Types/NeutralCreatures/Conservation/BirdOfPrey/BirdWalk"
+                }
+            },
+            {
+                "EventName": "SetFlyingPhysicsBehavior",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Scripts/SetPhysicsBehavior.lua",
+                    "Function": "SetPhysicsBehavior",
+                    "_newPhysicsBehavior": "/Lotus/Types/NeutralCreatures/Conservation/BirdOfPrey/BirdHover"
+                }
+            }
+        ],
+        "SurfaceSensitiveEffects": [
+            {
+                "AnimEventSymbols": [
+                    "StepL"
+                ],
+                "RaycasterBoneName": "GAME_L1_LEG4",
+                "HitEffect": "/Lotus/Sounds/Characters/BirdOfPrey/Footsteps/BirdOfPreyStepHitEffect",
+                "OverridePostures": [
+                    {
+                        "Posture": "RUN",
+                        "OverrideHitEffect": "/Lotus/Sounds/Characters/BirdOfPrey/Footsteps/BirdOfPreyStepHitEffect"
+                    }
+                ],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepR"
+                ],
+                "RaycasterBoneName": "GAME_R1_LEG4",
+                "HitEffect": "/Lotus/Sounds/Characters/BirdOfPrey/Footsteps/BirdOfPreyStepHitEffect",
+                "OverridePostures": [
+                    {
+                        "Posture": "RUN",
+                        "OverrideHitEffect": "/Lotus/Sounds/Characters/BirdOfPrey/Footsteps/BirdOfPreyStepHitEffect"
+                    }
+                ],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 1,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "LandSoft"
+                ],
+                "RaycasterBoneName": "",
+                "HitEffect": "/Lotus/Sounds/Enemies/Kubrow/Footsteps/KubrowLandHeavy",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "LandHeavy"
+                ],
+                "RaycasterBoneName": "",
+                "HitEffect": "/Lotus/Sounds/Enemies/Kubrow/Footsteps/KubrowLandHeavy",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "SFXBirdBodyFall"
+                ],
+                "RaycasterBoneName": "GAME_C1_SPINE2",
+                "HitEffect": "/Lotus/Sounds/Characters/HuntingCritters/BirdOfPrey/BirdOfPreyBodyFallHitEffect",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            }
+        ],
+        "CinematicID": "DuvOwl1"
+    }
+}

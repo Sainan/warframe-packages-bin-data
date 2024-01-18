@@ -1,0 +1,373 @@
+{
+    "parent": "/EE/Types/Game/ZipLineAction",
+    "data": {
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicTrigger",
+        "ReplicationOverride": "RO_NEVER",
+        "ShouldAddToNav": 1,
+        "ActionPriority": "CA_PRIORITY_VERY_LOW",
+        "ActionText": "/Lotus/Language/Game/ZiplineAction",
+        "PreparationDistance": 1,
+        "HudIndicatorOffset": [
+            0,
+            1.5,
+            0.75
+        ],
+        "HudIndicatorBillboard": 1,
+        "MinimapMarkerCanStopHere": 0,
+        "CableFollowerType": "/EE/Types/Effects/CableFollower",
+        "CustomCableFollowers": [
+            {
+                "AvatarType": "/Lotus/Types/Player/TennoAvatar",
+                "CableFollowerType": "/Lotus/Types/Player/TennoCableFollower"
+            },
+            {
+                "AvatarType": "/Lotus/Types/Enemies/Corpus/AladVPet/AladVPetAvatar",
+                "CableFollowerType": "/Lotus/Types/Enemies/Corpus/AladVPet/ZanukaCableFollower"
+            },
+            {
+                "AvatarType": "/Lotus/Types/Game/Pets/PetAvatar",
+                "CableFollowerType": "/Lotus/Types/Enemies/Corpus/AladVPet/ZanukaCableFollower"
+            },
+            {
+                "AvatarType": "/Lotus/Types/NeutralCreatures/Kubrow/KubrowAvatar",
+                "CableFollowerType": "/Lotus/Types/Enemies/Corpus/AladVPet/ZanukaCableFollower"
+            },
+            {
+                "AvatarType": "/Lotus/Types/Enemies/Corpus/BipedRobot/BipedRobotAvatar",
+                "CableFollowerType": "/Lotus/Types/Enemies/Corpus/BipedRobot/BipedCableFollower"
+            },
+            {
+                "AvatarType": "/Lotus/Types/Enemies/Infested/AiWeek/Ancients/AncientAvatar",
+                "CableFollowerType": "/Lotus/Types/Enemies/Infested/AiWeek/Ancients/AncientCableFollower"
+            },
+            {
+                "AvatarType": "/Lotus/Types/Enemies/Corpus/Spaceman/ModularSpacemanAvatarSkatingDetector",
+                "CableFollowerType": "/Lotus/Types/Enemies/Corpus/Spaceman/ModularCorpusSkatingCableFollower"
+            },
+            {
+                "AvatarType": "/Lotus/Types/Enemies/Corpus/Spaceman/ModularSpacemanAvatarSkatingLaser",
+                "CableFollowerType": "/Lotus/Types/Enemies/Corpus/Spaceman/ModularCorpusSkatingCableFollower"
+            },
+            {
+                "AvatarType": "/Lotus/Types/Enemies/Corpus/Spaceman/ModularSpacemanAvatarSkatingShield",
+                "CableFollowerType": "/Lotus/Types/Enemies/Corpus/Spaceman/ModularCorpusSkatingCableFollower"
+            },
+            {
+                "AvatarType": "/Lotus/Types/Enemies/Corpus/Spaceman/ModularSpacemanAvatarSkatingTesla",
+                "CableFollowerType": "/Lotus/Types/Enemies/Corpus/Spaceman/ModularCorpusSkatingCableFollower"
+            }
+        ],
+        "PreAttachTimeHorizon": 0.35,
+        "PreAttachThreshold": 0.15,
+        "CollisionHeight": 0.6,
+        "ZipLineEffectType": "/Lotus/Fx/Avatar/ZipLineSlide",
+        "ZipLineSlidingSequencer": "/Lotus/Sounds/Gadgets/Zipline/ParkourZipline/ZiplineFastLoopSlidingSeq",
+        "ZipLineDismountSound": "/Lotus/Sounds/Gadgets/Zipline/ParkourZipline/ZiplineRelease",
+        "MaxZipLineVelocity": 10,
+        "ZipLineGain": [
+            -5,
+            5
+        ],
+        "SoundStates": [
+            {
+                "stateName": "Stop",
+                "sound": "",
+                "gainSpeedRange": [
+                    0,
+                    1
+                ],
+                "gainAtMin": 0,
+                "gainAtMax": 0,
+                "pitchSpeedRange": [
+                    0,
+                    1
+                ],
+                "pitchAtMin": 1,
+                "pitchAtMax": 1,
+                "transitions": [
+                    {
+                        "op": "CO_GREATER",
+                        "var": "CV_SPEED",
+                        "val": 0.05,
+                        "nextState": "Slow",
+                        "nextStateIdx": 1,
+                        "fadeOutTime": 3,
+                        "fadeInTime": 0
+                    }
+                ]
+            },
+            {
+                "stateName": "Slow",
+                "sound": "",
+                "gainSpeedRange": [
+                    0,
+                    2
+                ],
+                "gainAtMin": -10,
+                "gainAtMax": 0,
+                "pitchSpeedRange": [
+                    0,
+                    5
+                ],
+                "pitchAtMin": 0.8,
+                "pitchAtMax": 1,
+                "transitions": [
+                    {
+                        "op": "CO_GREATER",
+                        "var": "CV_SPEED",
+                        "val": 7,
+                        "nextState": "Fast",
+                        "nextStateIdx": 3,
+                        "fadeOutTime": 3,
+                        "fadeInTime": 0.8
+                    },
+                    {
+                        "op": "CO_GREATER",
+                        "var": "CV_SPEED",
+                        "val": 2,
+                        "nextState": "Medium",
+                        "nextStateIdx": 2,
+                        "fadeOutTime": 3,
+                        "fadeInTime": 0.5
+                    },
+                    {
+                        "op": "CO_LESS",
+                        "var": "CV_SPEED",
+                        "val": 0.05,
+                        "nextState": "Stop",
+                        "nextStateIdx": 0,
+                        "fadeOutTime": 1,
+                        "fadeInTime": 0.2
+                    },
+                    {
+                        "op": "CO_EQUALS",
+                        "var": "CV_BRAKING",
+                        "val": 1,
+                        "nextState": "Braking",
+                        "nextStateIdx": 4,
+                        "fadeOutTime": 2,
+                        "fadeInTime": 0.2
+                    }
+                ]
+            },
+            {
+                "stateName": "Medium",
+                "sound": "",
+                "gainSpeedRange": [
+                    0,
+                    7
+                ],
+                "gainAtMin": 0,
+                "gainAtMax": 0,
+                "pitchSpeedRange": [
+                    0,
+                    7
+                ],
+                "pitchAtMin": 0.9,
+                "pitchAtMax": 1,
+                "transitions": [
+                    {
+                        "op": "CO_LESS",
+                        "var": "CV_SPEED",
+                        "val": 2,
+                        "nextState": "Slow",
+                        "nextStateIdx": 1,
+                        "fadeOutTime": 3,
+                        "fadeInTime": 0.5
+                    },
+                    {
+                        "op": "CO_GREATER",
+                        "var": "CV_SPEED",
+                        "val": 7,
+                        "nextState": "Fast",
+                        "nextStateIdx": 3,
+                        "fadeOutTime": 3,
+                        "fadeInTime": 0.5
+                    },
+                    {
+                        "op": "CO_EQUALS",
+                        "var": "CV_BRAKING",
+                        "val": 1,
+                        "nextState": "Braking",
+                        "nextStateIdx": 4,
+                        "fadeOutTime": 5,
+                        "fadeInTime": 0.2
+                    }
+                ]
+            },
+            {
+                "stateName": "Fast",
+                "sound": "",
+                "gainSpeedRange": [
+                    0,
+                    1
+                ],
+                "gainAtMin": 0,
+                "gainAtMax": 0,
+                "pitchSpeedRange": [
+                    0,
+                    1
+                ],
+                "pitchAtMin": 0.9,
+                "pitchAtMax": 1,
+                "transitions": [
+                    {
+                        "op": "CO_LESS",
+                        "var": "CV_SPEED",
+                        "val": 2,
+                        "nextState": "Slow",
+                        "nextStateIdx": 1,
+                        "fadeOutTime": 3,
+                        "fadeInTime": 0.5
+                    },
+                    {
+                        "op": "CO_LESS",
+                        "var": "CV_SPEED",
+                        "val": 7,
+                        "nextState": "Medium",
+                        "nextStateIdx": 2,
+                        "fadeOutTime": 3,
+                        "fadeInTime": 0.5
+                    },
+                    {
+                        "op": "CO_EQUALS",
+                        "var": "CV_BRAKING",
+                        "val": 1,
+                        "nextState": "FastBrake",
+                        "nextStateIdx": 5,
+                        "fadeOutTime": 5,
+                        "fadeInTime": 0.2
+                    }
+                ]
+            },
+            {
+                "stateName": "Braking",
+                "sound": "",
+                "gainSpeedRange": [
+                    0,
+                    1
+                ],
+                "gainAtMin": 0,
+                "gainAtMax": 0,
+                "pitchSpeedRange": [
+                    0,
+                    1
+                ],
+                "pitchAtMin": 1,
+                "pitchAtMax": 1,
+                "transitions": [
+                    {
+                        "op": "CO_LESS",
+                        "var": "CV_SPEED",
+                        "val": 0.5,
+                        "nextState": "Stop",
+                        "nextStateIdx": 0,
+                        "fadeOutTime": 0.2,
+                        "fadeInTime": 0.2
+                    },
+                    {
+                        "op": "CO_EQUALS",
+                        "var": "CV_BRAKING",
+                        "val": 1,
+                        "nextState": "",
+                        "nextStateIdx": 4294967295,
+                        "fadeOutTime": 0.2,
+                        "fadeInTime": 0.2
+                    },
+                    {
+                        "op": "CO_LESS",
+                        "var": "CV_SPEED",
+                        "val": 5,
+                        "nextState": "Slow",
+                        "nextStateIdx": 1,
+                        "fadeOutTime": 0.2,
+                        "fadeInTime": 0.2
+                    },
+                    {
+                        "op": "CO_LESS",
+                        "var": "CV_SPEED",
+                        "val": 2,
+                        "nextState": "Medium",
+                        "nextStateIdx": 2,
+                        "fadeOutTime": 0.2,
+                        "fadeInTime": 0.2
+                    },
+                    {
+                        "op": "CO_GREATER",
+                        "var": "CV_SPEED",
+                        "val": 7,
+                        "nextState": "Fast",
+                        "nextStateIdx": 3,
+                        "fadeOutTime": 0.2,
+                        "fadeInTime": 0.2
+                    }
+                ]
+            },
+            {
+                "stateName": "FastBrake",
+                "sound": "",
+                "gainSpeedRange": [
+                    0,
+                    1
+                ],
+                "gainAtMin": 0,
+                "gainAtMax": 0,
+                "pitchSpeedRange": [
+                    0,
+                    1
+                ],
+                "pitchAtMin": 1,
+                "pitchAtMax": 0.8,
+                "transitions": [
+                    {
+                        "op": "CO_LESS",
+                        "var": "CV_SPEED",
+                        "val": 0.5,
+                        "nextState": "Stop",
+                        "nextStateIdx": 0,
+                        "fadeOutTime": 0.2,
+                        "fadeInTime": 0.2
+                    },
+                    {
+                        "op": "CO_EQUALS",
+                        "var": "CV_BRAKING",
+                        "val": 1,
+                        "nextState": "",
+                        "nextStateIdx": 4294967295,
+                        "fadeOutTime": 0.2,
+                        "fadeInTime": 0.2
+                    },
+                    {
+                        "op": "CO_LESS",
+                        "var": "CV_SPEED",
+                        "val": 5,
+                        "nextState": "Slow",
+                        "nextStateIdx": 1,
+                        "fadeOutTime": 0.2,
+                        "fadeInTime": 0.2
+                    },
+                    {
+                        "op": "CO_LESS",
+                        "var": "CV_SPEED",
+                        "val": 2,
+                        "nextState": "Medium",
+                        "nextStateIdx": 2,
+                        "fadeOutTime": 0.2,
+                        "fadeInTime": 0.2
+                    },
+                    {
+                        "op": "CO_GREATER",
+                        "var": "CV_SPEED",
+                        "val": 7,
+                        "nextState": "Fast",
+                        "nextStateIdx": 3,
+                        "fadeOutTime": 0.2,
+                        "fadeInTime": 0.2
+                    }
+                ]
+            }
+        ],
+        "BaseJumpBoost": 3,
+        "BaseJumpVerticalBoost": 5
+    }
+}

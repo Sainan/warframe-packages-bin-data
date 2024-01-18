@@ -1,0 +1,41 @@
+{
+    "parent": "/Lotus/Types/Game/PowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/RhinoChargeAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/RhinoChargeAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/RhinoDash.png",
+        "Script": {
+            "Script": "BurrowAbility.lua",
+            "Function": "ActivateAbility",
+            "_burrowAvatarType": "/Lotus/Types/NeutralCreatures/Conservation/SnowPredator/BaseSnowPredatorAvatar",
+            "_burrowAgentType": "/Lotus/Types/NeutralCreatures/Conservation/SnowPredator/BurrowedSnowPredatorAgent",
+            "_startBurrowed": 1,
+            "_targetRange": 30,
+            "_speed": 0.5,
+            "_burrowAnim": "/Lotus/Animations/Orokin/GoldenMaw/BurrowEnter_anim.fbx",
+            "_spawnBone": "GAME_C1_HIP1"
+        },
+        "CooldownDuration": 2,
+        "ActivationXP": 25,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/BlackboardVarEvaluator",
+            "/Lotus/Types/Game/AbilityEvaluators/TargetsInFrontAndInRangeEvaluator"
+        ],
+        "Evaluator:BlackboardVarEvaluator": {
+            "VarName": "",
+            "Var": "LastChargeAbilityTime",
+            "Value": 5,
+            "Check": "VC_LAST_TIME_GREATER",
+            "Team": 1
+        },
+        "Evaluator:TargetsInFrontAndInRangeEvaluator": {
+            "TargetRange": [
+                5,
+                30
+            ],
+            "MaxHeightDiff": 2.5,
+            "DirectionAngle": 28.139721,
+            "SetFirstValidTarget": 0
+        }
+    }
+}

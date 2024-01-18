@@ -1,0 +1,35 @@
+{
+    "parent": "CorpusChampionBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "CorpusChampionBipedRobotBaseAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/GrineerChampions/ChampionWeapons/GruntSobek",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "ChangeToPrimaryWeaponDecoratorBehavior": {
+            "Action:GenericBehaviorSelector": {
+                "ShootingDecoratorBehavior": {
+                    "LookAtTarget": 1,
+                    "LookHorizRate": 360,
+                    "LookVertRate": 90,
+                    "Action:GenericBehaviorSelector": {
+                        "CtfOrderAttackerBehaviorSelector": {
+                            "Actions": [
+                                "/EE/Types/Npc/PostureChangingBehaviorSelector",
+                                "/EE/Types/Npc/EngageTargetTactic",
+                                "/EE/Types/Npc/PursueTargetBehavior",
+                                "/Lotus/Types/Behaviors/CtfSearchTacAreaMapForPriorityBehavior",
+                                "/EE/Types/Npc/SearchTacAreaMapForTargetsBehavior"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

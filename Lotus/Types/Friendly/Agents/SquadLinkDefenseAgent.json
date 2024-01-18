@@ -1,0 +1,83 @@
+{
+    "parent": "DefenseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SquadLinkDefenseAvatar"
+        },
+        "NeverPauseByAiDirector": 1,
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderSpace"
+        ],
+        "LocomotionController:DynamicPathFinderSpace": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 0,
+                "UseEndNodePos": 1,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerFlight"
+        ],
+        "LocomotionController:DynamicPathFollowerFlight": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 5,
+            "MinRecoveryAttemptTime": 5,
+            "MoveSuccessRadius": 40,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "PreferedDistAboveNav": [
+                0,
+                0
+            ],
+            "MoveHeightOffset": 0,
+            "DistanceToDisregardTurning": 0,
+            "DistanceToSlow": 0,
+            "MinimumSlowedSpeed": 8,
+            "MinimumSpeed": 0,
+            "RecoverySpeedPct": 0.6,
+            "CorrectHeightOnIdle": 0,
+            "AirplaneControls": 0,
+            "DesiredAngleRangeForBank": [
+                0,
+                0
+            ],
+            "BackUpForRecovery": 0,
+            "CanMoveWithoutPath": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierTurnSpeed"
+                ],
+                "LocomotionMoveModifierTurnSpeed": {
+                    "MinWalkWhenTurningAngle": 360,
+                    "StopWhenTurningAngle": 360,
+                    "CheckFunnelForTightTurns": 0,
+                    "MinReducedSpeed": 0.5,
+                    "TurnAccelerationCompensation": 1
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "useBoxAvoidance": 0,
+            "avoidanceRadius": 5,
+            "dangerRadius": 10,
+            "avoidSpeedMultiplier": 0
+        }
+    }
+}

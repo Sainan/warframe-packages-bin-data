@@ -1,0 +1,381 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/BipedRobot/AIWeek/LaserCannonBipedAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "BossAmbulasRangedAvatar",
+            "EXIMUS": ""
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "AmbulasRifle",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/BossAmbulasRangedSuit",
+                "forceEquip": 0,
+                "hand": "EXTRA2"
+            }
+        ],
+        "NeverPauseByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/AgentOffNavBehavior",
+            "/EE/Types/Npc/ShootingDecoratorBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
+        "InterruptResponseBehavior": {
+            "Responses": [
+                {
+                    "reaction": "CONTEXT_BARK",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 1,
+                        "UpdateTarget": 0,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_IDLE",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                },
+                {
+                    "reaction": "DODGE_MELEE_ATTACK",
+                    "responseAction:Type": "/Lotus/Types/Behaviors/DodgeMeleeAttackReaction",
+                    "responseAction:DodgeMeleeAttackReaction": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 0,
+                        "StopMoving": 0,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 0,
+                        "TimeSinceLevelAlert": 5,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0,
+                        "DodgeAnims": {
+                            "STATIONARY": "/Lotus/Animations/Corpus/Ambulas/JumpBack_anim.fbx",
+                            "FORWARD": "",
+                            "BACKWARD": "/Lotus/Animations/Corpus/Ambulas/JumpBack_anim.fbx",
+                            "LEFT": "/Lotus/Animations/Infested/Biped/DodgeLeft_anim.fbx",
+                            "RIGHT": "/Lotus/Animations/Infested/Biped/DodgeRight_anim.fbx",
+                            "STOPPING": "",
+                            "UPWARD": "",
+                            "DOWNWARD": ""
+                        },
+                        "DistanceFromTargetPoint": 0.4
+                    }
+                }
+            ]
+        },
+        "UsePowerSuitAbilitiesBehavior": {
+            "BlockForPowerCompleteType": "BT_ABILITY_DRIVEN",
+            "ExtraReevaluationDelay": 1,
+            "FaceTarget": 0,
+            "ValidAbilities": [],
+            "DeactivateAbilitiesOnPredeath": 1
+        },
+        "AgentOffNavBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "TimeOffNav": 1,
+            "ToleranceDistance": 0.5,
+            "DisableWhenFlying": 0,
+            "RerunDelay": 5,
+            "OffNavBehaviors": [
+                "/EE/Types/Npc/DodgeJumpBackToNavBehavior"
+            ],
+            "DodgeJumpBackToNavBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Action": "DodgeForward",
+                "SweepForValidPos": 1,
+                "OnlyIfRecentlyDamaged": 0,
+                "RequestDelay": 0,
+                "FaceDirectionOfPathFollowerTarget": 1,
+                "JumpToClosestNavPoint": 0
+            }
+        },
+        "ShootingDecoratorBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "FailOnChildFail": 0,
+            "FailOnDamage": 0,
+            "ShootTime": [
+                1,
+                2
+            ],
+            "WaitTime": [
+                1.5,
+                2.5
+            ],
+            "DecorativeReloads": 0,
+            "DesiredTimeBetweenReloads": [
+                3,
+                6
+            ],
+            "AllowSuppressingFire": 0,
+            "SuppressionTargetDistDiff": 2.5,
+            "PointBlankRange": 5,
+            "AllowShootingControllerToAim": 0,
+            "MinAngleToTurn": 45,
+            "MinAimMask": 0.9,
+            "LookAtTarget": 1,
+            "LookHorizRate": 360,
+            "LookVertRate": 90,
+            "FiringPreferencesOverride": [],
+            "Action:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+            "Action:GenericBehaviorSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/EE/Types/Npc/TacPosIdealDistanceBehavior",
+                    "/EE/Types/Npc/EngageTargetMovementBehavior"
+                ],
+                "TacPosIdealDistanceBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "FailOnQueryFailure": 0,
+                    "ReevaluationDelayOnQueryFail": 0,
+                    "RandomizeRange": 0,
+                    "UseWeaponRange": 0,
+                    "IdealDistance": [
+                        6,
+                        18
+                    ],
+                    "NumResults": 1,
+                    "MinDistFromNavEdge": 0,
+                    "GenerateFromTarget": 1,
+                    "navType": "NT_NAVMESH",
+                    "ScoreDistanceFromTarget": 1,
+                    "DistanceFromTargetScoreRange": [
+                        0,
+                        0
+                    ],
+                    "HeightFromTargetRange": [
+                        0,
+                        0
+                    ],
+                    "UseTacAreaFilter": 0,
+                    "ScoreDirectionFromTarget": 0,
+                    "DistanceFromSelfRange": [
+                        6,
+                        18
+                    ],
+                    "EvaluateDistance": [
+                        18,
+                        100
+                    ],
+                    "StopRadius": 0.5,
+                    "UpdateDestinationInterval": 0,
+                    "UpdateDestinationDistance": 10,
+                    "ForceRepositionTime": 0,
+                    "OnlyTravelWhenVisible": 0,
+                    "CompleteTravelWhenTargetLost": 1,
+                    "AllowRetreat": 1,
+                    "AllowRun": 1,
+                    "LookAtTarget": 0,
+                    "LockTarget": 0,
+                    "OnlyFindPositionsOnFlightNav": 0,
+                    "WalkFacingControl": "MFC_FACE_TARGET",
+                    "RunFacingControl": "MFC_FACE_MOVEDIR",
+                    "SpeedMultiplier": [
+                        1,
+                        1
+                    ],
+                    "StopMovingOnExit": 1,
+                    "SamplePointSpacing": 3,
+                    "DoTacVisTrace": 1,
+                    "DoVisRaycast": 0,
+                    "WantTargetVisible": 1,
+                    "WaitPeriodAfterVisibilityViolation": 3,
+                    "PrioritizeVisibility": 1,
+                    "DistanceScoreCurve": {
+                        "m": -3,
+                        "k": 2,
+                        "b": 1,
+                        "c": 0.5,
+                        "logistic": 0
+                    },
+                    "DirectionScoreCurve": {
+                        "m": -3,
+                        "k": 2,
+                        "b": 1,
+                        "c": 0.75,
+                        "logistic": 0
+                    },
+                    "AimWhileMoving": 1,
+                    "ShootingDistance": 0,
+                    "ChangeWeapons": 0,
+                    "WeaponSlot": "SLOT_1",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "ForceWeaponCancelOnStopFiring": 0
+                },
+                "EngageTargetMovementBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "FailOnQueryFailure": 0,
+                    "SamplePointSpacing": 2.5,
+                    "DistanceFromSelfRange": [
+                        5,
+                        10
+                    ],
+                    "AggressiveTargetDistanceRange": [
+                        6,
+                        12
+                    ],
+                    "AggressiveTargetDistanceScoreCurve": {
+                        "m": -3,
+                        "k": 2,
+                        "b": 1,
+                        "c": 0.6,
+                        "logistic": 0
+                    },
+                    "AggressiveTargetFacingDirectionScoreCurve": {
+                        "m": 10,
+                        "k": -1,
+                        "b": 1,
+                        "c": 0.6,
+                        "logistic": 0
+                    },
+                    "AggressiveVisibleScore": 1,
+                    "AggressiveHiddenScore": 0.25,
+                    "DefensiveTargetDistanceRange": [
+                        6,
+                        18
+                    ],
+                    "DefensiveTargetDistanceScoreCurve": {
+                        "m": 1,
+                        "k": 1,
+                        "b": 0,
+                        "c": 0.5,
+                        "logistic": 1
+                    },
+                    "DefensiveVisibleScore": 0.25,
+                    "DefensiveHiddenScore": 1,
+                    "UseAssignedDefenseVolume": 0,
+                    "StopRadius": 0.5,
+                    "NearDistance": 2,
+                    "MovementModifiers": [
+                        {
+                            "HealthRange": [
+                                0,
+                                100
+                            ],
+                            "MovePosture": "WALK",
+                            "SpeedMultiplier": 1
+                        }
+                    ],
+                    "FacingControl": "MFC_FACE_MOVEDIR",
+                    "MinDistanceToTarget": 5,
+                    "RepositionWhenCloseTime": 2,
+                    "WaitTime": [
+                        0,
+                        0
+                    ],
+                    "DPSConverge": 0.1,
+                    "DPSPeriod": 0.25,
+                    "MoveRandomDirection": 0
+                },
+                "FailOnChildFailure": 0
+            },
+            "ActivePostures": []
+        },
+        "InvestigateBehavior": {
+            "MaxInvestigateDistance": 55,
+            "SpeedMultiplier": 1,
+            "FastSpeedMultiplier": 1,
+            "LookAroundTime": 3
+        },
+        "ViewFov": 240,
+        "ViewDistance": 300
+    }
+}

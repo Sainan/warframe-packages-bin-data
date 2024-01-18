@@ -1,0 +1,174 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Venus/VenusSpacemanBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "VenusCombatSpacemanAvatar",
+            "EXIMUS": "VenusCombatSpacemanAvatarLeader"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Corpus/LongGuns/VenusHeavyWeapon/CrpAiArchRocketCrossbow",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Corpus/LongGuns/VenusAntiAWMissileLauncher",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/AgentOffNavBehaviorDropship",
+            "/Lotus/Types/Behaviors/CorpusNullifierFormationTactic",
+            "/Lotus/Types/Behaviors/WeaponSwapBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveToDefenseVolumeBehavior",
+            "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+            "/EE/Types/Npc/CombatEngageBehavior",
+            "/EE/Types/Npc/UseContextActionBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/Lotus/Types/Behaviors/PatrolFormationTactic",
+            "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/PoiBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "CorpusNullifierFormationTactic": {
+            "LeaderAction:MoveToDefenseVolumeBehavior": {
+                "MovementSpeedModifier": [
+                    1,
+                    1
+                ]
+            },
+            "LeaderAction:SearchForTargetBehavior": {
+                "ShouldAim": 0,
+                "SearchForTargetInAreaBehavior": {
+                    "ShouldAim": 0
+                }
+            },
+            "LeaderAction:TacPosIdealDistanceBehavior": {
+                "AimWhileMoving": 0
+            },
+            "LeaderAction:ControlledShootBehavior": {
+                "AimWhenPausing": 0
+            },
+            "FollowerAction:ControlledShootBehavior": {
+                "AimWhenPausing": 0,
+                "AimWhenStopping": 0
+            }
+        },
+        "WeaponSwapBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WeaponSettings": [
+                {
+                    "WeaponSlot": "SLOT_2",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_LAND_ONLY"
+                },
+                {
+                    "WeaponSlot": "SLOT_1",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_AIR_ONLY"
+                }
+            ],
+            "WeaponHand": "MAIN_HAND",
+            "SwapThreshold": 5,
+            "RandomSwapDelay": [
+                3,
+                4
+            ]
+        },
+        "BasicMoraleBrokenBehavior": {
+            "WaitBehavior:GenericBehaviorSelector": {
+                "AttackFromTheOpenBehavior": {
+                    "MovementSpeedModifier": [
+                        1,
+                        1
+                    ],
+                    "ShootTime": [
+                        1.5,
+                        4
+                    ],
+                    "MoveDuringShoot": 0
+                }
+            }
+        },
+        "StormTargetOrderBehavior": {
+            "SuccessRadius": 10
+        },
+        "MoveToDefenseVolumeBehavior": {
+            "MovementSpeedModifier": [
+                1,
+                1
+            ]
+        },
+        "CombatEngageBehavior": {
+            "CombatBehaviors": [
+                "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "/EE/Types/Npc/SearchForTargetBehavior",
+                "/EE/Types/Npc/MeleeTactic",
+                "/Lotus/Types/Behaviors/LotusAttackFromTheOpenBehavior"
+            ],
+            "SearchForTargetBehavior": {
+                "CanRun": 0
+            },
+            "LotusAttackFromTheOpenBehavior": {
+                "MovementSpeedModifier": [
+                    1,
+                    1
+                ],
+                "MinAngleToTurn": 20,
+                "TargetNotVisibleTimeoutRange": [
+                    4,
+                    6
+                ],
+                "ShootTime": [
+                    2,
+                    4
+                ],
+                "MoveDuringShoot": 0,
+                "CrouchDuringShootChance": 0,
+                "DesiredTimeBetweenReloads": [
+                    15,
+                    25
+                ],
+                "OnlyAimDuringShootTime": 1,
+                "ShieldThresholdForAggressiveMovement": 0
+            }
+        },
+        "FollowAllyPlayerBehavior": {
+            "AllowRun": 0
+        },
+        "PatrolFormationTactic": {
+            "LeaderAction:InvestigateBehavior": {
+                "AllowRun": 0,
+                "RunTowardsNewTargets": 0
+            }
+        },
+        "InvestigateBehavior": {
+            "SpeedMultiplier": 1,
+            "AllowRun": 0,
+            "RunTowardsNewTargets": 0
+        },
+        "GuardTactic": {
+            "RandomWalkBehavior:UseDefenseVolume": 1
+        },
+        "CustomRunToCoverBehavior": ""
+    }
+}

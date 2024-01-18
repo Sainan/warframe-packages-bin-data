@@ -1,0 +1,353 @@
+{
+    "parent": "GrineerMeleeMarine",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "GrineerAvatars/GrineerMarineShieldAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Pistol/BurstPistol",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Grineer/Shield/Shield",
+                "forceEquip": 1,
+                "hand": "OFF_HAND"
+            }
+        ],
+        "DefaultSlot": "SLOT_2",
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/SpecialWeaponTactic",
+            "/EE/Types/Npc/AttackFromTheOpenBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "SpecialWeaponTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "AttackState": "AS_SHORT_RANGE",
+            "SpecialWeaponBehaviors": [
+                "/EE/Types/Npc/CloseToCombatRangeBehavior",
+                "Behaviors/ShieldTactic",
+                "/EE/Types/Npc/BasicChargeBehavior",
+                "/EE/Types/Npc/ShieldEngageBehavior"
+            ],
+            "CloseToCombatRangeBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SpeedMultiplier": 1,
+                "ShouldRunToTarget": 0,
+                "DoAimCalculation": 1,
+                "AimPreference": "NO_AIM",
+                "RestrictToDefenseVolume": 0
+            },
+            "ShieldTactic": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Role": "SHIELD",
+                "DesiredOffsetFromBuddy": [
+                    0,
+                    0,
+                    -1.2
+                ],
+                "MaxDistToShield": 10,
+                "ShootingOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "ShootingOffsetFromBuddy": 1,
+                "AttackTime": [
+                    1,
+                    2
+                ],
+                "WaitTime": [
+                    1,
+                    2
+                ],
+                "PredictionTime": 0.5,
+                "UseBehindShieldPosture": 0,
+                "RunToFormUp": 1,
+                "JustStandBehindShield": 0,
+                "DecorativeReloads": 1,
+                "DesiredTimeBetweenReloads": [
+                    10,
+                    15
+                ],
+                "PositionPreferences": {
+                    "canHide": 0,
+                    "minSearchDistance": 0,
+                    "maxSearchDistance": 10,
+                    "distanceFromTarget": [
+                        0,
+                        20
+                    ],
+                    "tacLevel": 1,
+                    "useTacAreaMap": 0,
+                    "waterRestriction": "WS_OUT_WATER",
+                    "coneDirection": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "coneInclusionDot": 0
+                },
+                "MinDistanceToTarget": 6,
+                "StopRadius": 0.5,
+                "NearDistance": 2,
+                "SpeedMultiplier": 1
+            },
+            "BasicChargeBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "UseChargeRange": 1,
+                "ChargeAttackRange": [
+                    0,
+                    15
+                ],
+                "ChargePastTargetDistance": 2,
+                "ChargeNextToTargetAngle": 0,
+                "ChargeNextToTargetDirectionOdds": 0.5,
+                "ForceBashWithinTargetDistance": 3,
+                "ChargeInputCode": "MELEE",
+                "CoolOffTimeRange": [
+                    3,
+                    6
+                ],
+                "CheckKneeVisibility": 1,
+                "EarlyOutDistance": 2,
+                "TargetCameraFOVMultiplier": 1,
+                "SpecialWeapon": "",
+                "ChargeSpeedMultiplier": 1,
+                "TimeToHeatSeek": 10,
+                "HeatSeakMaxAngle": 15,
+                "DistanceToRePath": 1,
+                "OnHeldMaxRunningTime": 5,
+                "FirstPersonAnim": "",
+                "PushBackArgs": {
+                    "Force": 100,
+                    "Time": 0.2,
+                    "DecelForce": 30,
+                    "MaxVelocity": 10
+                },
+                "PushBackDamage": 50,
+                "PushBackDamageType": "DT_IMPACT",
+                "PushBackHitType": "DHT_MELEE",
+                "OnlyOnePush": 1,
+                "ShouldKnockdown": 1,
+                "MovePosture": "RUN",
+                "ClearAvoidance": 1,
+                "SwapWeapon": 0,
+                "ExitOnDamage": 0,
+                "UseAttackInputRange": 3,
+                "PredictedSwingTime": 0.3,
+                "ModifyAttackRangeBasedOnPlayerVelocity": 1,
+                "PushBackRangeWhileAttacking": 2.5,
+                "PushBackAnimEvent": "MeleeStart",
+                "PushBackEffect": "/Lotus/Fx/GrineerShieldHitEffect",
+                "WeaponHand": "MAIN_HAND",
+                "UseMultiSamplePrediction": 0,
+                "InterruptMeleeOnStop": 0,
+                "PlayPhrase": 1,
+                "Bark": "CHARGE_SCREAM",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    0,
+                    0
+                ],
+                "PlayAttackPhrase": 0,
+                "AttackBark": "ATTACK_SCREAM",
+                "AttackBarkFilter": "",
+                "AttackSound": ""
+            },
+            "ShieldEngageBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "PositionPreferences": {
+                    "canHide": 0,
+                    "minSearchDistance": 0,
+                    "maxSearchDistance": 10,
+                    "distanceFromTarget": [
+                        0,
+                        20
+                    ],
+                    "tacLevel": 1,
+                    "useTacAreaMap": 0,
+                    "waterRestriction": "WS_OUT_WATER",
+                    "coneDirection": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "coneInclusionDot": 0
+                },
+                "StopRadius": 0.5,
+                "NearDistance": 2,
+                "SpeedMultiplier": 0.7,
+                "BackwardsSpeedMultiplier": 0.7,
+                "MoveDelay": [
+                    2,
+                    4
+                ],
+                "StayWithBuddy": 0,
+                "Aim": 0,
+                "Shoot": 1,
+                "ShootWhileBackingUp": 1,
+                "StopToShoot": 1,
+                "AttackTime": [
+                    3.5,
+                    4.5
+                ],
+                "WaitTime": [
+                    1,
+                    3
+                ],
+                "KeepMoving": 0,
+                "StayWithTeammates": 0,
+                "DropWeaponWhenAlone": 0,
+                "HeadingAdjustment": 0,
+                "KeepTargetInLight": 0,
+                "MultipleAgentsSpreadOut": 0,
+                "SpreadOutDistance": 10,
+                "ResistSwarmWhenActive": 0
+            },
+            "SpecialWeapon": "/Lotus/Weapons/Grineer/Shield/Shield",
+            "OffHandWeapon": 1,
+            "NeedsTarget": 1,
+            "EquipDefaultWeaponOnStop": 1,
+            "DropWeaponOnProxyDestroyed": 0,
+            "BarkOnDropWeapon": "RELOADING_WEAP",
+            "BarkFilter": "",
+            "ReactWhenWeaponDamaged": 0,
+            "ShieldProxy": "",
+            "ShieldDamageReactionType": "DT_INVALID",
+            "HorizontalSlashLeftReaction": "BLOCK_LEFT",
+            "HorizontalSlashRightReaction": "BLOCK_LEFT",
+            "VerticalSlashUpReaction": "INVALID",
+            "VerticalSlashDownReaction": "INVALID",
+            "ShieldArmourType": ""
+        },
+        "AttackFromTheOpenBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "MaxStrafeDistance": 15,
+            "MinStrafeDistance": 0,
+            "StopRadius": 0.1,
+            "MovementSpeedModifier": [
+                0.8,
+                1.2
+            ],
+            "MovementLineOfFireScoring": 0,
+            "DistanceFromTeammates": [
+                1.5,
+                100
+            ],
+            "MaxNumTeammatesForScoring": 4,
+            "LookAtTarget": 0,
+            "LookHorizRate": 40,
+            "LookVertRate": 20,
+            "LookTargetOffset": [
+                0,
+                0,
+                0
+            ],
+            "MinAngleToTurn": 40,
+            "MinAimMask": 0.9,
+            "TargetNotVisibleTimeoutRange": [
+                6,
+                8
+            ],
+            "ShootTime": [
+                1.5,
+                3
+            ],
+            "WaitTime": [
+                1.5,
+                3
+            ],
+            "RepositionTime": [
+                2,
+                6
+            ],
+            "StartRepositionTimerAtDest": 1,
+            "KeepRunningDuringWaitPeriod": 1,
+            "MoveDuringShoot": 1,
+            "CrouchDuringShootChance": 0.25,
+            "AllowCrouchMoveDistance": 0,
+            "IgnoreTeammateBlockage": 0,
+            "DecorativeReloads": 1,
+            "DesiredTimeBetweenReloads": [
+                5,
+                8
+            ],
+            "RealReloads": 0,
+            "AllowSuppressingFire": 1,
+            "SuppressionTargetDistDiff": 2.5,
+            "OnlyAimDuringShootTime": 0,
+            "MoveFacingControl": "MFC_FACE_TARGET",
+            "MovePosture": "WALK",
+            "MoveToTarget": 0,
+            "PointBlankRange": 5,
+            "NumQueryResults": 5,
+            "disallowedNodeFlags": 0,
+            "ChangeWeapons": 0,
+            "WeaponSlot": "SLOT_1",
+            "WeaponHand": "MAIN_HAND",
+            "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+            "UnequipChangedWeaponsWhenStop": 0,
+            "FiringPreferencesOverride": [],
+            "RequireRangedWeapon": 0,
+            "RequireNotForcedMelee": 0,
+            "UseDefenseVolume": 0,
+            "ShouldConstantlyBarkAttack": 0
+        },
+        "InvestigateBehavior": {
+            "ShouldAim": 0,
+            "AllowRun": 0
+        },
+        "CustomShootBehavior": "",
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/RangedTargetEvaluator"
+    }
+}

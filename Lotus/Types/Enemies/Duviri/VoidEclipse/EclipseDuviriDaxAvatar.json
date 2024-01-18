@@ -1,0 +1,188 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Dax/Duviri/DaxDuviri_skel.fbx",
+        "MeshScale": 1.3,
+        "OverrideMaterial": [
+            "/Lotus/Fx/Gameplay/VoidEclipse/DaxGhostMatArmor",
+            "/Lotus/Fx/Gameplay/VoidEclipse/DaxGhostMatHelmet",
+            "/Lotus/Fx/Gameplay/VoidEclipse/DaxGhostMatSkeleton",
+            "/Lotus/Fx/Gameplay/VoidEclipse/DaxGhostMatSyandana"
+        ],
+        "AnimationName": "Guild",
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_SPINE3",
+                "Type": "/Lotus/Fx/Enemies/Duviri/DaxGuardBWProj",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_SPINE2",
+                "Type": "/Lotus/Fx/Gameplay/VoidEclipse/DaxGhostEnergyDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_SPINE2",
+                "Type": "/Lotus/Fx/Gameplay/VoidEclipse/DaxGhostLight",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Gameplay/VoidEclipse/VoidEclipseDaxLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "EclipseDaxWalk",
+        "Tag": "DaxAvatar",
+        "HeadBone": "GAME_C1_HEAD1",
+        "HeadRotation": [
+            270,
+            0,
+            0
+        ],
+        "UseHeadBoneForEyePosition": 1,
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Duviri",
+        "LocTag": "/Lotus/Language/VoidEclipse/EclipseDuviriDaxName",
+        "Icon": "/Lotus/Interface/Icons/Npcs/RifleLancerAvatar.png",
+        "MaxHealth": 250,
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
+        "AnimControllerType": "EclipseDuviriDaxAnimController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "WallSlideControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWallSlideController",
+        "DamageControllerType": "EclipseDuviriDaxDamageController",
+        "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
+        "InventoryControllerType": "EclipseDuviriDaxInventory",
+        "MotionControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "BoneName": "GAME_C1_HIP1",
+            "Type": "EclipseDaxFullBody"
+        },
+        "OnDamageScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Duviri/DuviriDaxPlungeAbility.lua",
+            "Function": "OnDamaged",
+            "_plungeAnim": "",
+            "_plungeAnimEvent": "",
+            "_plungeLoopAnim": "",
+            "_followupAnim": "",
+            "_followupAnimEvent": "",
+            "_teamCooldown": 30,
+            "_chargeSound": "",
+            "_castSound": "",
+            "_plungeHitSound": "",
+            "_useBark": 0,
+            "_bark": "VoiceBox_USING_ABILITY",
+            "_barkFilter": "",
+            "_plungeFxList": [],
+            "_followupFxList": [],
+            "_plungeShockwaveList": [],
+            "_plungeTriggerList": [],
+            "_plungeExtraList": [],
+            "_damageTypeList": [
+                "DT_IMPACT"
+            ],
+            "_range": 10,
+            "_channelDuration": 5,
+            "_tickRate": 0.5,
+            "_plungeDamage": 50,
+            "_plungeAoe": 15,
+            "_procType": "PT_KNOCKED_DOWN",
+            "_counterDecayDelay": 8,
+            "_damageCounterDecay": 0.05,
+            "_damageCounterPct": 0.03
+        },
+        "FacialMorphScript": {
+            "Script": "/Lotus/Scripts/NPC/FacialMorph.lua",
+            "Function": "OnMorphChangeRequested",
+            "_autoRemovePainMorph": 1
+        },
+        "FacialMorphHeadAttachmentType": "/Lotus/Characters/Grineer/Marine/GrineerHeadMorphsDeco",
+        "MorphName:ALERT": "Morphs.Alert",
+        "MorphName:RAGE": "Morphs.Rage",
+        "MorphName:FEAR": "Morphs.Fear",
+        "MorphName:DEAD": "Morphs.Dead",
+        "MorphName:SMUG": "Morphs.Smug",
+        "MorphName:PAIN": "Morphs.Pain",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HumanoidReactionAnims",
+        "DisarmWeapon": "/Lotus/Weapons/Grineer/Melee/GrineerCombatKnife/NPCGrineerCombatKnife"
+    }
+}

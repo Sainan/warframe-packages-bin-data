@@ -1,0 +1,110 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Spaceman/AIWeek/RifleSpacemanAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "OrokinNullifySpacemanAvatar",
+            "EXIMUS": "OrokinNullifySpacemanAvatarLeader"
+        },
+        "MinLevel": 15,
+        "MaxLevel": 9999,
+        "BaseLevel": 15,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Corpus/Spaceman/AIWeek/SniperRifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/CorpusNullifierFormationTactic",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/MeleeTactic",
+            "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
+            "/EE/Types/Npc/AttackFromCoverTactic",
+            "/Lotus/Types/Behaviors/LotusAttackFromTheOpenBehavior",
+            "/EE/Types/Npc/CustomResponseBehavior",
+            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "CorpusNullifierFormationTactic": {
+            "OnlyEnhancedCanLead": 0,
+            "LeaderPriority": 15
+        },
+        "InterruptResponseBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "Responses": [
+                {
+                    "reaction": "ABOUT_TO_ENGAGE",
+                    "responseAction:Type": "/EE/Types/Npc/SimpleReactionBehavior",
+                    "responseAction:SimpleReactionBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "TurnToFace": 1,
+                        "TurnDelay": 0,
+                        "FaceAttackDirection": 0,
+                        "LookAt": 0,
+                        "DoAim": 0,
+                        "UpdateTarget": 1,
+                        "StopMoving": 1,
+                        "PauseTime": 0,
+                        "AnimAction": "",
+                        "Animation": "/Lotus/Animations/Grineer/Movement/Point01Short",
+                        "NewAlertness": "AW_COMBAT",
+                        "SetAwarenessAfterReact": 0,
+                        "TempLevelAlertTime": 20,
+                        "TimeSinceLevelAlert": 30,
+                        "AlertTeammates": 0,
+                        "AwarenessPropagationDistance": -1,
+                        "ReportAttackAfterReact": 0
+                    }
+                }
+            ],
+            "BlockingResponse": 1
+        },
+        "AttackFromCoverTactic": {
+            "CoverBehaviors": [
+                "/EE/Types/Npc/RunToAttackCoverBehavior",
+                "/EE/Types/Npc/ControlledShootBehavior",
+                "/EE/Types/Npc/WaitBehavior"
+            ],
+            "RunToAttackCoverBehavior": {
+                "MinCoverDistFromEnemy": 5,
+                "DistanceToShoot": 0,
+                "DistanceToTarget": 0
+            },
+            "ControlledShootBehavior": {
+                "AttackSegmentTime": [
+                    8,
+                    12
+                ],
+                "AimWhenPausing": 1,
+                "ReturnToCoverOnDamage": 1,
+                "ReturnToCoverDamageThreshold": 0.15
+            }
+        },
+        "LotusAttackFromTheOpenBehavior": {
+            "ShieldThresholdForAggressiveMovement": 1
+        },
+        "ReactionControllerType": "OrokinReactionController"
+    }
+}

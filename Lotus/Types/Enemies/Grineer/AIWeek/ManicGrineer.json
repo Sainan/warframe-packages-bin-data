@@ -1,0 +1,553 @@
+{
+    "parent": "GrineerMeleeStaffAgentNoLeader",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "Avatars/ManicGrineerAvatar"
+        },
+        "MinLevel": 15,
+        "BaseLevel": 1,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Tenno/Melee/ManicGrineerMeleeWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/NpcRadialBlastSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/Logic/LogicGraphAction",
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/ManicBehaviorStateMachine",
+            "/EE/Types/Npc/GuardTactic"
+        ],
+        "LogicGraphAction": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "GraphRes": "ManicGrineerLogic"
+        },
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 0
+        },
+        "BlockingBehavior": {
+            "Enabled": 0
+        },
+        "ManicBehaviorStateMachine": {
+            "Enabled": 0,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "RetreatDistance": 3,
+            "RushAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+            "RushAction:Enabled": 1,
+            "RushAction:OnStartScript": {
+                "Script": ""
+            },
+            "RushAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "RushAction:DefaultReevaluationDelay": 0,
+            "RushAction:Actions": [
+                "/Lotus/Types/Behaviors/DodgeMovementBehavior",
+                "/Lotus/Types/Behaviors/PlanZigZagApproachTargetBehavior",
+                "/EE/Types/Npc/KeepIdealDistanceBehavior",
+                "/EE/Types/Npc/WaitBehavior"
+            ],
+            "RushAction:DodgeMovementBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "UpdateDestination": 1,
+                "DebugDraw": 0
+            },
+            "RushAction:PlanZigZagApproachTargetBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0.1,
+                "HopLength": 12,
+                "HopLateralDeviation": 0.5,
+                "HopMaxLateralDeviation": 3.5,
+                "GoalRadius": 5.5,
+                "UseTargetVelocity": 1,
+                "WaypointHopTolerance": 1.6,
+                "TimeBetweenJumps": [
+                    2,
+                    2.5
+                ],
+                "DodgeOnTakingDamage": 1,
+                "TargetOffNavTolerance": 10,
+                "DrawDebug": 0
+            },
+            "RushAction:KeepIdealDistanceBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "RandomizeRange": 0,
+                "UseWeaponRange": 0,
+                "IdealDistance": [
+                    1,
+                    2
+                ],
+                "EvaluateDistance": [
+                    0,
+                    100
+                ],
+                "MaxMovementDistance": 100,
+                "AllowRetreat": 0,
+                "AllowRun": 1,
+                "AllowChase": 1,
+                "ForceWalkBelowMinIdealRange": 1,
+                "WalkRange": [
+                    0,
+                    0
+                ],
+                "RequireTeamMeleeLock": 0,
+                "ReleaseTeamMeleeLock": 0,
+                "AimWhileMoving": 0,
+                "MoveFacingControl": "MFC_FACE_MOVEDIR",
+                "StopRadius": 0.5,
+                "RunWhenShocked": 0,
+                "ShockedDamageTime": 30,
+                "OnlyTravelWhenVisible": 0,
+                "TravelDuringStruggle": 1,
+                "AllowPartialPath": 0,
+                "UpdateDestinationInterval": 0.5,
+                "UpdateDestinationDistance": 2,
+                "OffNavRadius": 4,
+                "OffNavHeight": 4,
+                "RequiresClearNavTrace": 0,
+                "HoverHeightOverride": -1,
+                "RetryWithPathlessMovement": 0,
+                "PathlessMovementMaxDistance": 16,
+                "AvoidTargetLineOfSight": 0,
+                "AvoidanceBias": 10,
+                "LockTarget": 0,
+                "LookAtTarget": 0,
+                "DistanceToShoot": -1,
+                "WalkWhileShooting": 0,
+                "AimOnFire": 0,
+                "AllowReload": 0,
+                "ChangeWeapons": 0,
+                "WeaponSlot": "SLOT_1",
+                "WeaponHand": "MAIN_HAND",
+                "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                "PlayPhrase": 1,
+                "Bark": "CHARGE_SCREAM",
+                "BarkFilter": "",
+                "BarkInterval": [
+                    0,
+                    0
+                ],
+                "ReportUnreachableOnFailedMove": 0,
+                "ReportUnreachableOffNav": 0,
+                "TimeOffNav": 2,
+                "RestrictToDefenseVolume": 0,
+                "WalkMovePosture": "WALK"
+            },
+            "RushAction:WaitBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOut": 0,
+                "CoverOnly": 0,
+                "AimPosture": 0,
+                "MinimalEnemyDistance": 0,
+                "TrackTarget": 0,
+                "Peek": 0,
+                "FailOnDamaged": 0,
+                "PreventShooting": 0,
+                "StopMovingOnEnter": 0
+            },
+            "RushAction:FailOnChildFailure": 1,
+            "TackleAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+            "TackleAction:Enabled": 1,
+            "TackleAction:OnStartScript": {
+                "Script": "/Lotus/Scripts/Effects/ManicGrineerEffects.lua",
+                "Function": "Tackle",
+                "_startFx": "/Lotus/Fx/Enemies/Grineer/Manic/TackleStart",
+                "_effectDecoType": "/Lotus/Fx/Enemies/Grineer/Manic/ManicGrineerTeleportDeco"
+            },
+            "TackleAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "TackleAction:DefaultReevaluationDelay": 12,
+            "TackleAction:Actions": [
+                "/Lotus/Types/Behaviors/ManicGrineerTacklingStruggleBehavior",
+                "/Lotus/Types/Behaviors/DodgeMovementBehavior",
+                "/Lotus/Types/Behaviors/PlanZigZagApproachTargetBehavior"
+            ],
+            "TackleAction:ManicGrineerTacklingStruggleBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "DebugDraw": 0,
+                "Cooldown": 13,
+                "StartingRange": [
+                    15,
+                    20
+                ],
+                "FailureRangeDuringCharge": [
+                    0,
+                    25
+                ],
+                "DistanceFromTargetForFinisher": [
+                    0,
+                    0
+                ],
+                "TackleContactRange": 0.9,
+                "SafetyDistanceFromNavEdge": 1.4,
+                "TeleportToOriginalPos": 1,
+                "AnimWaitTime": 2,
+                "ParryDamage": 0,
+                "TackleImpactDamage": 10,
+                "ChargeStartAnimation": "/Lotus/Animations/Grineer/GrineerManic/ChargeSprint_anim.fbx",
+                "ChargeAnimAction": "ChargeLoop",
+                "ChargeEndAnimation": "/Lotus/Animations/Grineer/GrineerManic/DodgeForward_anim.fbx",
+                "PostTeleportConfusedAnimation": "",
+                "InvisibleAfterTeleport": 0,
+                "TeleportEffect": "/Lotus/Fx/Enemies/Grineer/Manic/ManicGrineerTeleportIn",
+                "WarnTargetEffect": "/Lotus/Fx/Enemies/TeleportElectroLightning",
+                "TeleportSound": "",
+                "MaxSpeed": 35,
+                "DamageToInterrupt": 10,
+                "TakeOvertargetType": ""
+            },
+            "TackleAction:DodgeMovementBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "UpdateDestination": 1,
+                "DebugDraw": 0
+            },
+            "TackleAction:PlanZigZagApproachTargetBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0.1,
+                "HopLength": 12,
+                "HopLateralDeviation": 0.5,
+                "HopMaxLateralDeviation": 3.5,
+                "GoalRadius": 15,
+                "UseTargetVelocity": 0,
+                "WaypointHopTolerance": 1.6,
+                "TimeBetweenJumps": [
+                    0.5,
+                    1.2
+                ],
+                "DodgeOnTakingDamage": 1,
+                "TargetOffNavTolerance": 20,
+                "DrawDebug": 0
+            },
+            "TackleAction:FailOnChildFailure": 0,
+            "AttackAction:Type": "/EE/Types/Npc/TimerDecorator",
+            "AttackAction:Enabled": 1,
+            "AttackAction:OnStartScript": {
+                "Script": ""
+            },
+            "AttackAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "AttackAction:DefaultReevaluationDelay": 0,
+            "AttackAction:ChildAction:Type": "/EE/Types/Npc/MeleeContinousBehavior",
+            "AttackAction:ChildAction:MeleeContinousBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "SwingAttackRange": [
+                    0,
+                    3
+                ],
+                "LungeAttackRange": [
+                    3,
+                    6
+                ],
+                "TeamBbLungeSym": "",
+                "TimeBetweenTeamLunges": 5,
+                "LungeToPredictedPos": 0,
+                "UseMeleeFov": 0,
+                "StopIfOutsideMeleeFov": 0,
+                "MeleeFov": 45,
+                "AllowMeleeingFromBehind": 1,
+                "TimeSinceRendered": 3,
+                "MeleeFromBehindFOV": 90,
+                "SwingInputCode": "MELEE",
+                "LungeInputCode": "MELEE_SWING",
+                "ModifyAttackRangeBasedOnPlayerVelocity": 1,
+                "PredictedSwingTime": 0.5,
+                "PredictedLungeTime": 1,
+                "StopMovingWhenAttacking": 1,
+                "DisablePostureChangers": 0,
+                "TimeBetweenLunges": 0,
+                "LowTargetThreshold": 0.8,
+                "NormalAttack": "MELEE",
+                "LowAttack": "MELEE",
+                "ClearCoverReservationOnStart": 0,
+                "UseCombatManager": 0,
+                "VipAvatarType": "",
+                "TimeBetweenBarks": 2,
+                "VisibilityTimeout": 0,
+                "MaxReachableHeight": 2,
+                "Bark": "ATTACK_SCREAM",
+                "IsOffHandWeapon": 0
+            },
+            "AttackAction:StopWhenChildStops": 1,
+            "AttackAction:TimerDuration": [
+                1.5,
+                2
+            ],
+            "AttackAction:EvaluationDelay": 0,
+            "RetreatLeapAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+            "RetreatLeapAction:Enabled": 1,
+            "RetreatLeapAction:OnStartScript": {
+                "Script": ""
+            },
+            "RetreatLeapAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "RetreatLeapAction:DefaultReevaluationDelay": 0,
+            "RetreatLeapAction:Actions": [
+                "/Lotus/Types/Behaviors/PlanRetreatLeap",
+                "/Lotus/Types/Behaviors/FarCloakDecorator"
+            ],
+            "RetreatLeapAction:PlanRetreatLeap": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 3,
+                "HopLength": [
+                    6,
+                    14
+                ],
+                "SafeDistance": 8,
+                "ValidEnemies": [],
+                "InvalidEnemies": []
+            },
+            "RetreatLeapAction:FarCloakDecorator": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "ChildAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+                "ChildAction:Enabled": 1,
+                "ChildAction:OnStartScript": {
+                    "Script": ""
+                },
+                "ChildAction:OnDamagedScript": {
+                    "Script": ""
+                },
+                "ChildAction:DefaultReevaluationDelay": 0,
+                "ChildAction:Actions": [
+                    "/Lotus/Types/Behaviors/DodgeMovementBehavior"
+                ],
+                "ChildAction:DodgeMovementBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "UpdateDestination": 1,
+                    "DebugDraw": 0
+                },
+                "ChildAction:FailOnChildFailure": 1,
+                "MinDistance": 8,
+                "ExitWhenEnemiesNearby": 0
+            },
+            "RetreatLeapAction:FailOnChildFailure": 0,
+            "HideAction:Type": "/Lotus/Types/Behaviors/FarCloakDecorator",
+            "HideAction:Enabled": 1,
+            "HideAction:OnStartScript": {
+                "Script": ""
+            },
+            "HideAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "HideAction:DefaultReevaluationDelay": 0,
+            "HideAction:ChildAction:Type": "/EE/Types/Npc/TimerDecorator",
+            "HideAction:ChildAction:Enabled": 1,
+            "HideAction:ChildAction:OnStartScript": {
+                "Script": ""
+            },
+            "HideAction:ChildAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "HideAction:ChildAction:DefaultReevaluationDelay": 0,
+            "HideAction:ChildAction:ChildAction:Type": "/EE/Types/Npc/WaitBehavior",
+            "HideAction:ChildAction:ChildAction:WaitBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "TimeOut": 5,
+                "CoverOnly": 0,
+                "AimPosture": 0,
+                "MinimalEnemyDistance": 0,
+                "TrackTarget": 0,
+                "Peek": 0,
+                "FailOnDamaged": 1,
+                "PreventShooting": 0,
+                "StopMovingOnEnter": 0
+            },
+            "HideAction:ChildAction:StopWhenChildStops": 0,
+            "HideAction:ChildAction:TimerDuration": [
+                1.5,
+                3
+            ],
+            "HideAction:ChildAction:EvaluationDelay": 0,
+            "HideAction:MinDistance": 8,
+            "HideAction:ExitWhenEnemiesNearby": 1,
+            "ReactiveTeleportAction:Type": "/EE/Types/Npc/TimerDecorator",
+            "ReactiveTeleportAction:Enabled": 1,
+            "ReactiveTeleportAction:OnStartScript": {
+                "Script": ""
+            },
+            "ReactiveTeleportAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "ReactiveTeleportAction:DefaultReevaluationDelay": 0,
+            "ReactiveTeleportAction:ChildAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+            "ReactiveTeleportAction:ChildAction:GenericBehaviorSelector": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "Actions": [
+                    "/Lotus/Types/Behaviors/DodgeMovementBehavior",
+                    "/Lotus/Types/Behaviors/PlanRetreatLeap"
+                ],
+                "DodgeMovementBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "UpdateDestination": 1,
+                    "DebugDraw": 0
+                },
+                "PlanRetreatLeap": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.1,
+                    "HopLength": [
+                        15,
+                        25
+                    ],
+                    "SafeDistance": 10000,
+                    "ValidEnemies": [],
+                    "InvalidEnemies": []
+                },
+                "FailOnChildFailure": 0
+            },
+            "ReactiveTeleportAction:StopWhenChildStops": 1,
+            "ReactiveTeleportAction:TimerDuration": [
+                1,
+                1
+            ],
+            "ReactiveTeleportAction:EvaluationDelay": 0,
+            "DisengageAction:Type": "/Lotus/Types/Behaviors/RelocateForAmbushBehavior",
+            "DisengageAction:Enabled": 1,
+            "DisengageAction:OnStartScript": {
+                "Script": ""
+            },
+            "DisengageAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "DisengageAction:DefaultReevaluationDelay": 0,
+            "DisengageAction:TeleportEffect": "",
+            "DisengageAction:TeleportSound": "",
+            "DisengageAction:QueryRange": [
+                0,
+                100
+            ],
+            "DisengageAction:IdealTargetRange": [
+                7,
+                15
+            ],
+            "DisengageAction:GenerateSpacing": 2
+        },
+        "CustomUseContextActionBehavior": "/Lotus/Types/Enemies/Grineer/Behaviors/ManicUseContextActionBehavior",
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 4,
+            "nearbyNavSearchRadius": 5
+        },
+        "ViewFov": 360
+    }
+}

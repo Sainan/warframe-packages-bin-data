@@ -1,0 +1,131 @@
+{
+    "parent": "/Lotus/Types/Weapon/Glaive",
+    "data": {
+        "Mesh": "InfBoomerang_skel.fbx",
+        "MotionBlurred": 1,
+        "AnimationScene": "/Lotus/Animations/Tenno/Melee/Glaive/GlaiveOpen_anim.fbx",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Weapons/Infested/InfBoomerang/InfBoomerangLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/GlaivePhysics",
+        "DamageUpgradeTypes": [
+            "WEAPON_DAMAGE_AMOUNT",
+            "WEAPON_MELEE_DAMAGE"
+        ],
+        "AttackData": {
+            "UseNewFormat": 1,
+            "DT_IMPACT": 49,
+            "DT_PUNCTURE": 43,
+            "DT_SLASH": 78,
+            "DT_FIRE": 0,
+            "DT_FREEZE": 0,
+            "DT_ELECTRICITY": 0,
+            "DT_POISON": 0,
+            "DT_EXPLOSION": 0,
+            "DT_RADIATION": 0,
+            "DT_GAS": 0,
+            "DT_MAGNETIC": 0,
+            "DT_VIRAL": 118,
+            "DT_CORROSIVE": 0,
+            "DT_RADIANT": 0,
+            "Amount": 288,
+            "ProcChance": 0.33
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "CriticalChance": 0.17,
+        "CriticalMultiplier": 2.3,
+        "ExplosiveAttack": {
+            "Type": "DT_VIRAL",
+            "Amount": 393,
+            "ProcChance": 0.33
+        },
+        "ForcedSourceProcs": [
+            "PT_IMMOLATION",
+            "PT_STAGGERED",
+            "PT_BIG_STAGGER"
+        ],
+        "ExplodeOnFriendlies": 0,
+        "ExplosionFallOff": 0.5,
+        "ExplodeEffect": "/Lotus/Fx/Weapons/Melee/WeaponTrails/Glaives/Infested/InfestedGlaiveProjectileRecallSparks",
+        "DamageRadius": 4.9,
+        "Toughness": 10000,
+        "MaxLife": 11,
+        "RaycastMovement": 0,
+        "VerticalImpulse": 0.05,
+        "HorizontalImpulse": 0.2,
+        "KinematicAccel": 100,
+        "KinematicInitialSpeed": 30,
+        "KinematicMaxSpeed": 30,
+        "KinematicNoiseRate": 0.0001,
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/InfBoomerang.lua",
+            "Function": "SpawnSporePeriodically",
+            "_agentType": "InfBoomerangSpawnAgent",
+            "_growthType": "InfBoomerangPodSpawnDeco"
+        },
+        "SilentProjectile": 1,
+        "HeavyRecallDamageAtten": 2,
+        "HeavyRecallProcs": [
+            "PT_KNOCKBACK",
+            "PT_INFECTED"
+        ],
+        "SeekDistance": 20,
+        "SeekCone": 4,
+        "BounceSeekCone": 180,
+        "OnlySeekAliveTargets": 1,
+        "TryScanWithBounceDirection": 1,
+        "IgnoreFriendlyTargets": 1,
+        "TurningSpeed": 0.1,
+        "BankNoise": 15,
+        "BankNoiseSpeed": 0.2,
+        "RotationOffset": [
+            0,
+            0,
+            -90
+        ],
+        "ImpactVelocityDampen": 1,
+        "AutoRecallTimer": 0.75,
+        "DestructionTimer": 0.6,
+        "CatchRadius": 5,
+        "MaxReflections": 4,
+        "MinFlightDistance": 29.5,
+        "MinFlightDistancePerReflect": 29.5,
+        "MinFlightDistancePerExplosion": 0.05,
+        "AfterTouchFOVSpeed": 1.8,
+        "CollisionEffect": "/Lotus/Fx/Weapons/Melee/Clean/HitEffects/MeleeHitEffectDagger",
+        "InFlightEffect": {
+            "Type": "/Lotus/Fx/Weapons/Melee/Clean/SwingEffects/GlaiveProjectileCleanFX"
+        },
+        "ChargedRecallEffect": {
+            "Type": "/Lotus/Fx/Weapons/Melee/Clean/Slams/GlaiveExplosionCleanFx"
+        },
+        "ReflectionExplodeEffect": "/Lotus/Fx/Explosions/Generic/ExplosionFXOrganicMedium",
+        "OnGlaiveImpactScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/InfBoomerang.lua",
+            "Function": "OnProjectileHit",
+            "_agentType": "InfBoomerangSpawnAgent",
+            "_growthType": "InfBoomerangPodSpawnDeco"
+        }
+    }
+}

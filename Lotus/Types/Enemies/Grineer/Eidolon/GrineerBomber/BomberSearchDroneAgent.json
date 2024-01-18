@@ -1,0 +1,164 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Drones/DroneAttackAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "BomberSearchDroneAvatar",
+            "EXIMUS": ""
+        },
+        "NewAdditionalInventory": [],
+        "IgnoredByAiDirector": 1,
+        "IgnoredByGroupCoordinators": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/ContinuousMoveToTargetBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/RandomTacWalkBehavior",
+            "/EE/Types/Npc/GuardBehavior"
+        ],
+        "ContinuousMoveToTargetBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/DeploySearchDroneAbility.lua",
+                "Function": "DroneDiscoveredEnemy",
+                "_projType": "",
+                "_launchSound": "",
+                "_droneAgentType": "",
+                "_alarmSound": "/Lotus/Sounds/Enemies/GrineerCameraDrone/GrineerCameraDroneAlarm",
+                "_droneDuration": 16
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "DesiredPosture": "RUN",
+            "MaxMovementDistance": 300,
+            "StopDistance": 3,
+            "ClearAvoidance": 0,
+            "SpeedModifier": 1,
+            "MoveFacingControl": "MFC_FACE_TARGET",
+            "OffsetDistance": 0,
+            "UseEyePos": 0,
+            "UseLastPosWhenTargetLost": 0
+        },
+        "InvestigateBehavior": {
+            "ShouldAim": 1,
+            "MaxInvestigateDistance": 400,
+            "TeamCoordination": 1,
+            "RunTowardsNewTargets": 1
+        },
+        "RandomTacWalkBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "StopRadius": 2,
+            "NearDistance": 4,
+            "SpeedMultiplier": 1,
+            "AlertSpeedMultiplier": 1,
+            "AllowTarget": 0,
+            "AimWhenIdle": 0,
+            "AimWhenAlert": 1,
+            "PermanentAlert": 0,
+            "ForceIdleForSinglePointPatrols": 1,
+            "AnimAction": "PatrolIdle",
+            "GenericAnims": [],
+            "MinPlayerDist": [
+                0,
+                0
+            ],
+            "MinPlayerFov": 60,
+            "PauseTime": [
+                3,
+                5
+            ],
+            "TimeBetweenPauses": [
+                15,
+                25
+            ],
+            "ReevaluationDelayOnAbortedMove": 5,
+            "PlayPhrase": 1,
+            "Bark": "IDLE",
+            "BarkFilter": "",
+            "BarkInterval": [
+                0,
+                0
+            ],
+            "StartUpDelay": [
+                0,
+                0
+            ],
+            "UseWasAlert": 0,
+            "ScanLength": 2,
+            "MovementPosture": "WALK",
+            "TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
+            "TeammateBarkBehavior:Enabled": 1,
+            "TeammateBarkBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "TeammateBarkBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "TeammateBarkBehavior:DefaultReevaluationDelay": 0,
+            "TeammateBarkBehavior:StopForTeammateDuration": [
+                3,
+                6
+            ],
+            "TeammateBarkBehavior:DontStopForTeammateDuration": 30,
+            "TeammateBarkBehavior:PostFailureEvaluationDelay": [
+                3,
+                3
+            ],
+            "TeammateBarkBehavior:AllowableTeammateAngle": 90,
+            "TeammateBarkBehavior:TeammateSearchDistance": 5,
+            "TeammateBarkBehavior:TeammateBark": "IDLE",
+            "TeammateBarkBehavior:TeammateBarkFilter": "",
+            "UseDefenseVolume": 0,
+            "EvaluateMoveScript": {
+                "Script": ""
+            },
+            "OnlyFindPositionsOnFlightNav": 0,
+            "MaxPatrolDistanceFromEncounterHint": 0
+        },
+        "GuardBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+            "WaitAction:Enabled": 1,
+            "WaitAction:OnStartScript": {
+                "Script": ""
+            },
+            "WaitAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "RandomFacingChange": [
+                0,
+                0
+            ],
+            "MinHeadingChangeToTurn": 0
+        },
+        "LocomotionController:PathingPreferences": {
+            "nearbyNavSearchRadius": 5
+        },
+        "AccuracyModsType": "/Lotus/Types/Enemies/Grineer/Eidolon/EidolonNpcAccuracyMods",
+        "ViewIdleFov": 50,
+        "IdleVerticalFov": 50,
+        "ViewIdleDistance": 200,
+        "ViewFov": 120,
+        "ViewDistance": 300,
+        "SuperAlertDecayTime": 5,
+        "PerceiverType": "/Lotus/Types/Enemies/Grineer/GrineerPerceiver",
+        "IgnoredFactions": [
+            "Guild"
+        ]
+    }
+}
