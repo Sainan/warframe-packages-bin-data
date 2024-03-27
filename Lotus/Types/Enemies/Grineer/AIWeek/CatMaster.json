@@ -100,13 +100,14 @@
                     ]
                 ]
             },
-            "ForceLeader": "FL_SELECT_BEST_LEADER",
+            "ForceLeader": "FL_ALWAYS_LEAD",
             "OnlyEnhancedCanLead": 0,
             "LeaderPriority": 6,
             "EnhancedPriorityBoost": 1,
             "CombatSetting": "CS_NO_RESTRICTION",
             "NeedsTarget": 0,
             "PatrolRouteOnly": 0,
+            "RecruitFromPatrols": 0,
             "FormationIdentifier": "CatPack",
             "MergeThreshold": 0,
             "LeaderAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
@@ -250,6 +251,12 @@
                             0.8,
                             1.2
                         ],
+                        "MovementLineOfFireScoring": 0,
+                        "DistanceFromTeammates": [
+                            1.5,
+                            100
+                        ],
+                        "MaxNumTeammatesForScoring": 4,
                         "LookAtTarget": 0,
                         "LookHorizRate": 40,
                         "LookVertRate": 20,
@@ -276,6 +283,7 @@
                             2,
                             6
                         ],
+                        "StartRepositionTimerAtDest": 1,
                         "KeepRunningDuringWaitPeriod": 1,
                         "MoveDuringShoot": 1,
                         "CrouchDuringShootChance": 0.5,
@@ -304,7 +312,8 @@
                         "FiringPreferencesOverride": [],
                         "RequireRangedWeapon": 1,
                         "RequireNotForcedMelee": 0,
-                        "UseDefenseVolume": 1
+                        "UseDefenseVolume": 1,
+                        "ShouldConstantlyBarkAttack": 0
                     },
                     "GuardBehavior": {
                         "Enabled": 1,
@@ -327,7 +336,8 @@
                             0,
                             0
                         ],
-                        "MinHeadingChangeToTurn": 0
+                        "MinHeadingChangeToTurn": 0,
+                        "AimWhenAlert": 1
                     },
                     "FailOnChildFailure": 0
                 }
@@ -361,7 +371,8 @@
                 "ClearOrderOnMoveSuccess": 0,
                 "AllowTeleportToCatchUp": 1,
                 "TeleportToDestination": 0,
-                "AllowPartialPath": 1
+                "AllowPartialPath": 1,
+                "RestrictToDV": 0
             },
             "LeaderAction:MoveTowardsTacEnemyInfluence": {
                 "Enabled": 1,
@@ -422,6 +433,7 @@
                 "ValidActionTypes": [],
                 "KeepTrying": 0,
                 "DrawDest": 0,
+                "ClearTarget": 0,
                 "MoveAction:Type": "/EE/Types/Npc/LocomotionFollowPath",
                 "MoveAction:Enabled": 1,
                 "MoveAction:OnStartScript": {
@@ -481,6 +493,12 @@
                         0.8,
                         1.2
                     ],
+                    "MovementLineOfFireScoring": 0,
+                    "DistanceFromTeammates": [
+                        1.5,
+                        100
+                    ],
+                    "MaxNumTeammatesForScoring": 4,
                     "LookAtTarget": 0,
                     "LookHorizRate": 40,
                     "LookVertRate": 20,
@@ -507,6 +525,7 @@
                         2,
                         6
                     ],
+                    "StartRepositionTimerAtDest": 1,
                     "KeepRunningDuringWaitPeriod": 1,
                     "MoveDuringShoot": 1,
                     "CrouchDuringShootChance": 0.5,
@@ -535,7 +554,8 @@
                     "FiringPreferencesOverride": [],
                     "RequireRangedWeapon": 0,
                     "RequireNotForcedMelee": 0,
-                    "UseDefenseVolume": 0
+                    "UseDefenseVolume": 0,
+                    "ShouldConstantlyBarkAttack": 0
                 },
                 "WeaponSlot": "SLOT_1"
             },
@@ -588,6 +608,7 @@
                         5
                     ],
                     "TeamBbLungeSym": "",
+                    "LungeAnimAction": "",
                     "TimeBetweenTeamLunges": 5,
                     "LungeToPredictedPos": 0,
                     "UseMeleeFov": 1,
@@ -674,6 +695,8 @@
                     "WeaponSlot": "SLOT_1",
                     "WeaponHand": "MAIN_HAND",
                     "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "AttackPhrase": "CHARGE_SCREAM",
+                    "AlwaysPlayAttackPhrase": 0,
                     "PlayPhrase": 0,
                     "Bark": "IDLE",
                     "BarkFilter": "",
@@ -701,6 +724,7 @@
                     "AimPosture": 1,
                     "MinimalEnemyDistance": 0,
                     "TrackTarget": 1,
+                    "TrackTargetNotVisible": 0,
                     "Peek": 0,
                     "FailOnDamaged": 1,
                     "PreventShooting": 0,
@@ -779,6 +803,8 @@
                 "WeaponSlot": "SLOT_1",
                 "WeaponHand": "MAIN_HAND",
                 "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                "AttackPhrase": "CHARGE_SCREAM",
+                "AlwaysPlayAttackPhrase": 0,
                 "PlayPhrase": 1,
                 "Bark": "CHARGE_SCREAM",
                 "BarkFilter": "",
@@ -808,6 +834,12 @@
                     0.8,
                     1.2
                 ],
+                "MovementLineOfFireScoring": 0,
+                "DistanceFromTeammates": [
+                    1.5,
+                    100
+                ],
+                "MaxNumTeammatesForScoring": 4,
                 "LookAtTarget": 0,
                 "LookHorizRate": 40,
                 "LookVertRate": 20,
@@ -834,6 +866,7 @@
                     2,
                     6
                 ],
+                "StartRepositionTimerAtDest": 1,
                 "KeepRunningDuringWaitPeriod": 1,
                 "MoveDuringShoot": 1,
                 "CrouchDuringShootChance": 0,
@@ -862,7 +895,8 @@
                 "FiringPreferencesOverride": [],
                 "RequireRangedWeapon": 0,
                 "RequireNotForcedMelee": 0,
-                "UseDefenseVolume": 0
+                "UseDefenseVolume": 0,
+                "ShouldConstantlyBarkAttack": 0
             },
             "LeaderAction:CustomResponseBehavior": {
                 "Enabled": 1,
@@ -1088,6 +1122,7 @@
                 "WaitAction:AimPosture": 0,
                 "WaitAction:MinimalEnemyDistance": 0,
                 "WaitAction:TrackTarget": 0,
+                "WaitAction:TrackTargetNotVisible": 0,
                 "WaitAction:Peek": 0,
                 "WaitAction:FailOnDamaged": 1,
                 "WaitAction:PreventShooting": 0,
@@ -1119,7 +1154,8 @@
                 "reactionsToInvestigate": [],
                 "MinAwareness": "AW_ALERT",
                 "minimumTargetInterest": "Investigate",
-                "ReportAttackOnDamage": 1
+                "ReportAttackOnDamage": 1,
+                "RestrictToDefenseVolume": 0
             },
             "LeaderAction:GuardTactic": {
                 "Enabled": 1,
@@ -1163,6 +1199,9 @@
                 "PatrolBehavior:AutoAssignClosestPatrol": 0,
                 "PatrolBehavior:SameZoneOnly": 1,
                 "PatrolBehavior:AutoPatrolRadius": 30,
+                "PatrolBehavior:OnCompleteScript": {
+                    "Script": ""
+                },
                 "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
                 "RandomWalkBehavior:Enabled": 1,
                 "RandomWalkBehavior:OnStartScript": {
@@ -1211,6 +1250,8 @@
                 "RandomWalkBehavior:UseWasAlert": 0,
                 "RandomWalkBehavior:ScanLength": 2,
                 "RandomWalkBehavior:MovementPosture": "WALK",
+                "RandomWalkBehavior:MinimumTacWalkAreas": 4,
+                "RandomWalkBehavior:WanderWhenNotEnoughTacAreas": 1,
                 "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
                 "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
                 "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
@@ -1260,7 +1301,8 @@
                     0,
                     0
                 ],
-                "GuardBehavior:MinHeadingChangeToTurn": 0
+                "GuardBehavior:MinHeadingChangeToTurn": 0,
+                "GuardBehavior:AimWhenAlert": 1
             },
             "LeaderAction:FailOnChildFailure": 0,
             "FollowerAction:Type": "/EE/Types/Npc/Action",

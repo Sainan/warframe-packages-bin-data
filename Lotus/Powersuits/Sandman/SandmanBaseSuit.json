@@ -214,6 +214,8 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -257,25 +259,37 @@
             "Script": "SandmanPassive.lua",
             "Function": "AddUpgrades",
             "_customDC": "SandmanDamageController",
-            "_customMC": "SandmanMotionController",
-            "_customHud": "",
-            "_predeathDevourEnemyAttach": "/Lotus/Fx/PowersuitAbilities/Sandman/PreDeathDevourAttach",
-            "_predeathDevourSandmanAttach": "/Lotus/Fx/PowersuitAbilities/Sandman/PreDeathDevourSandmanAttach",
+            "_predeathAttach": "",
+            "_predeathSpawnBurst": "",
             "_predeathExitSubTree": "PreDeathSubTree.animtree",
-            "_devourBeamType": "/Lotus/Fx/PowersuitAbilities/Sandman/PreDeathDevourPullBeam",
-            "_stareSequencerType": "/Lotus/Sounds/Warframes/Mummy/MummySarcophagusLeechLoopSeq"
+            "_sandCloneIdleSubTree": "/Lotus/Types/Player/Animation/WarframeAnimTrees/SandmanSandCloneIdleSubTree.animtree",
+            "_predeathChargeIncreased": "",
+            "_avatarType": "SandCloneAvatar",
+            "_sandCloneAvatarType": "SandCloneAvatar",
+            "_sandCloneAttach": "/Lotus/Fx/PowersuitAbilities/Sandman/SandmanAvatarCloneAttach",
+            "_sandCloneLocalAttach": "/Lotus/Fx/PowersuitAbilities/Sandman/SandmanAvatarCloneAttachLocal",
+            "_sandCloneStartAnim": "/Lotus/Animations/Tenno/Powers/Mummy/PreDeathEnterSandClone_anim.fbx",
+            "_sandCloneFistType": "SandCloneFist",
+            "_customHud": "/Lotus/Interface/PowerSuitCustomHuds/SandmanResurrectMeter.swf",
+            "_seqType": "/Lotus/Sounds/Warframes/Mummy/MummyPassiveCloneLoopSeq"
         },
         "OnRemovedScript": {
             "Script": "SandmanPassive.lua",
             "Function": "RemoveUpgrades",
             "_customDC": "",
-            "_customMC": "",
-            "_customHud": "",
-            "_predeathDevourEnemyAttach": "/Lotus/Fx/PowersuitAbilities/Sandman/PreDeathDevourAttach",
-            "_predeathDevourSandmanAttach": "/Lotus/Fx/PowersuitAbilities/Sandman/PreDeathDevourSandmanAttach",
+            "_predeathAttach": "",
+            "_predeathSpawnBurst": "",
             "_predeathExitSubTree": "",
-            "_devourBeamType": "",
-            "_stareSequencerType": "/Lotus/Sounds/Warframes/Mummy/MummySarcophagusLeechLoopSeq"
+            "_sandCloneIdleSubTree": "/Lotus/Types/Player/Animation/WarframeAnimTrees/SandmanSandCloneIdleSubTree.animtree",
+            "_predeathChargeIncreased": "",
+            "_avatarType": "",
+            "_sandCloneAvatarType": "SandCloneAvatar",
+            "_sandCloneAttach": "",
+            "_sandCloneLocalAttach": "",
+            "_sandCloneStartAnim": "",
+            "_sandCloneFistType": "",
+            "_customHud": "",
+            "_seqType": "/Lotus/Sounds/Warframes/Mummy/MummyPassiveCloneLoopSeq"
         },
         "LevelUpgrades": [
             {
@@ -782,8 +796,8 @@
         "Mesh": "/Lotus/Characters/Tenno/Mummy/MummyBody_skel.fbx",
         "AbilityTypes": [
             "/Lotus/Powersuits/PowersuitAbilities/SandmanBlastAbility",
-            "/Lotus/Powersuits/PowersuitAbilities/SandmanDevourAbility",
             "/Lotus/Powersuits/PowersuitAbilities/SandmanStormAbility",
+            "/Lotus/Powersuits/PowersuitAbilities/SandmanArmorAbility",
             "/Lotus/Powersuits/PowersuitAbilities/SandmanSwarmAbility"
         ],
         "PassiveAbilityLocTag": "/Lotus/Language/Suits/InarosPassiveAbility",
@@ -990,7 +1004,7 @@
             },
             {
                 "EventName": "MummySarcophagusRevive",
-                "Sound": "/Lotus/Sounds/Warframes/Mummy/MummySarcophagusRevive",
+                "Sound": "/Lotus/Sounds/Warframes/Mummy/MummyPassiveRevive",
                 "Chance": 1,
                 "Period": 1,
                 "Context": "PEC_ALL",
@@ -1003,9 +1017,18 @@
                 "Period": 1,
                 "Context": "PEC_ALL",
                 "CancelEventName": ""
+            },
+            {
+                "EventName": "MummyCloneSpawn",
+                "Sound": "/Lotus/Sounds/Warframes/Mummy/MummyPassiveCloneSpawn",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
             }
         ],
         "SimCollision": "SandManSuitSimCollision",
+        "CustomHudMovie": "/Lotus/Interface/PowerSuitCustomHuds/InarosCustomHud.swf",
         "MiniMapIcon": "/Lotus/Interface/Icons/Markers/Powersuits/InarosPortrait.png",
         "MiniMapLargeIcon": "/Lotus/Interface/Icons/Markers/Powersuits/LargePortraits/InarosLargePortrait.png"
     }

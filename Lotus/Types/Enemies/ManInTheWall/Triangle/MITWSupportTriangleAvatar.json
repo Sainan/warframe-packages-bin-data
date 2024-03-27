@@ -55,14 +55,16 @@
             "Script": "/Lotus/Types/Enemies/ManInTheWall/MITWBarkController.lua",
             "Function": "IdleVoiceBoxLoop"
         },
+        "HeadBone": "GAME_C1_HEAD1",
+        "UseHeadBoneForEyePosition": 1,
         "WeaponBone": "GAME_C1_HEAD1",
         "Faction": "MITW",
         "LocTag": "/Lotus/Language/EntratiLab/EntratiGeneral/SupportTriangleName",
         "Icon": "/Lotus/Interface/Icons/Npcs/Murmur/Triangle.png",
-        "MaxHealth": 5,
+        "MaxHealth": 5000,
         "VoiceBox": "/Lotus/Sounds/Dialog/Barks/Battle/MiTW/MITWTriangle/MITWTriangleVoiceBoxA",
         "DropTable": "/Lotus/Types/DropTables/ManInTheWall/MITWSupportTriangleAgentDropTable",
-        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/DemolystAgentController",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
         "AnimControllerType": "MITWSupportTriangleAnimTreeController",
         "DamageControllerType": "MITWSupportTriangleDamageController",
         "RaycastProxy": {
@@ -124,6 +126,22 @@
                 "Period": 1,
                 "Context": "PEC_ALL",
                 "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMITWGroundHit",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/EnemyGameplay/MITWFinisherGroundHit",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMITWFinisherImpact",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/EnemyGameplay/MITWFinisherImpact",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
             }
         ],
         "VoiceBoxEvents": [
@@ -132,10 +150,18 @@
                 "Phrase": "MODE_CHANGED",
                 "Filter": "SFXMITWSpawnLargeEnemyBark",
                 "Chance": 1
+            },
+            {
+                "EventName": "SFXBarkPain",
+                "Phrase": "PAIN",
+                "Filter": "SFXBarkPain",
+                "Chance": 1
             }
         ],
-        "KillXPReward": 500,
+        "KillXPReward": 250,
+        "CodexScansRequiredOverride": 3,
         "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataAmalgamBoss",
+        "DisarmAction": "DA_DAMAGE_ONLY",
         "CanShowMainTargetStatus": 0
     }
 }

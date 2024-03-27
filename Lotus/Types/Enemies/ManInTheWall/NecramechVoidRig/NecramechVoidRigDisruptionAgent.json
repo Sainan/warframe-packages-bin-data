@@ -1,0 +1,111 @@
+{
+    "parent": "NecramechVoidRigAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "NecramechVoidRigDisruptionAvatar",
+            "EXIMUS": ""
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "DisruptionVoidrigLongGun",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "NechramechVoidRigDemolystNpcSuit",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            }
+        ],
+        "NeverPauseByAiDirector": 1,
+        "AllowTeleportedByAiDirector": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/EE/Types/Npc/AgentOffNavBehavior",
+            "/EE/Types/Npc/MeleeTactic",
+            "/EE/Types/Npc/StormTargetOrderBehavior",
+            "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/NechroTech/Behaviors/NechroTechLeftArmMeleeBehaviorSelector",
+            "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/NechroTech/Behaviors/NechroTechRightArmGunBehaviorSelector",
+            "/EE/Types/Npc/KeepIdealDistanceBehavior",
+            "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
+            "/EE/Types/Npc/SearchForTargetBehavior",
+            "/EE/Types/Npc/InvestigateBehavior",
+            "/EE/Types/Npc/GuardTactic",
+            "/EE/Types/Npc/WaitBehavior"
+        ],
+        "UsePowerSuitAbilitiesBehavior": {
+            "FaceTarget": 0,
+            "ResetEvalTimerOnEnemySpotted": 1
+        },
+        "MeleeTactic": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "AttackState": "AS_MELEE",
+            "ReportUnreachable": 0,
+            "RequireMeleeWeapon": 0,
+            "RequireWeaponInInventory": 0,
+            "TimeOffNavForReport": 3,
+            "UnreachableTime": 2,
+            "MeleeBehaviors": [
+                "/EE/Types/Npc/SimpleMeleeAttackBehavior"
+            ],
+            "SimpleMeleeAttackBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "AttackRange": [
+                    0,
+                    3
+                ],
+                "AlternateAttackRange": [
+                    0,
+                    2
+                ],
+                "UseMeleeFov": 1,
+                "MeleeFov": 45,
+                "AllowMeleeingFromBehind": 0,
+                "TimeSinceRendered": 0,
+                "MeleeFromBehindFOV": 90,
+                "RequiresClearNavTrace": 0,
+                "InputCode": "MELEE",
+                "AlternateAttackInputCode": "MELEE",
+                "InTimer": 0.25,
+                "Timer": 0.5,
+                "TimeBetweenAttacksRange": [
+                    1,
+                    2
+                ],
+                "ShouldModifyPosture": 1,
+                "UsePredictedPosition": 1,
+                "MeleeAttackTime": 0.5,
+                "AttackEvenIfTargetLeavesRange": 1,
+                "TurnToFaceTarget": 1,
+                "StopMeleeOnStop": 0,
+                "WaitForMeleeToEnd": 0,
+                "StopMovingWhenAttacking": 1
+            }
+        },
+        "StormTargetOrderBehavior": {
+            "FailsOnTargetAcquired": 0,
+            "DesiredPosture": "WALK",
+            "DesiredPostureOutOfView": "WALK",
+            "TargetFaction": "",
+            "AllowPartialPath": 0
+        },
+        "CustomShootBehavior": "/EE/Types/Npc/ScriptedShootBehavior"
+    }
+}

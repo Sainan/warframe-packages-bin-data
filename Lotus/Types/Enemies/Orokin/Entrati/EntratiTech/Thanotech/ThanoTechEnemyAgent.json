@@ -11,12 +11,12 @@
                 "hand": "OFF_HAND"
             },
             {
-                "item": "/Lotus/Powersuits/EntratiMech/ThanoTechNpcSuit",
+                "item": "/Lotus/Powersuits/EntratiMech/NecramechBonewidowNpcSuit",
                 "forceEquip": 1,
                 "hand": "EXTRA1"
             },
             {
-                "item": "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/NechroTech/NechroTechAILongGun",
+                "item": "/Lotus/Types/Enemies/ManInTheWall/NecramechBonewindow/ThanoTechAIGrenadeLauncher",
                 "forceEquip": 1,
                 "hand": "MAIN_HAND"
             },
@@ -238,6 +238,8 @@
                         "WeaponSlot": "SLOT_1",
                         "WeaponHand": "MAIN_HAND",
                         "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                        "AttackPhrase": "CHARGE_SCREAM",
+                        "AlwaysPlayAttackPhrase": 0,
                         "PlayPhrase": 0,
                         "Bark": "IDLE",
                         "BarkFilter": "",
@@ -330,6 +332,7 @@
                             "logistic": 1
                         },
                         "AimWhileMoving": 1,
+                        "SetViewWhileMoving": 1,
                         "ShootingDistance": 0,
                         "ChangeWeapons": 0,
                         "WeaponSlot": "SLOT_1",
@@ -356,6 +359,7 @@
                         ],
                         "ShouldAim": 1,
                         "CanRun": 0,
+                        "StopRadius": 4.2,
                         "StopSearchIfNoTarget": 0,
                         "StopSearchOnAwarenessLevel": "AW_IDLE",
                         "MaintainedAwarenessLevel": "AW_ALERT",
@@ -404,6 +408,9 @@
                         "PatrolBehavior:AutoAssignClosestPatrol": 0,
                         "PatrolBehavior:SameZoneOnly": 1,
                         "PatrolBehavior:AutoPatrolRadius": 30,
+                        "PatrolBehavior:OnCompleteScript": {
+                            "Script": ""
+                        },
                         "RandomWalkBehavior:Type": "/EE/Types/Npc/Action",
                         "RandomWalkBehavior:Enabled": 1,
                         "RandomWalkBehavior:OnStartScript": {
@@ -433,7 +440,8 @@
                             0,
                             0
                         ],
-                        "GuardBehavior:MinHeadingChangeToTurn": 0
+                        "GuardBehavior:MinHeadingChangeToTurn": 0,
+                        "GuardBehavior:AimWhenAlert": 1
                     },
                     "Action:WaitBehavior": {
                         "Enabled": 1,
@@ -449,6 +457,7 @@
                         "AimPosture": 1,
                         "MinimalEnemyDistance": 0,
                         "TrackTarget": 1,
+                        "TrackTargetNotVisible": 0,
                         "Peek": 0,
                         "FailOnDamaged": 0,
                         "PreventShooting": 0,
@@ -510,8 +519,8 @@
                         0,
                         8
                     ],
-                    "UseMeleeFov": 0,
-                    "MeleeFov": 45,
+                    "UseMeleeFov": 1,
+                    "MeleeFov": 30,
                     "AllowMeleeingFromBehind": 0,
                     "TimeSinceRendered": 0,
                     "MeleeFromBehindFOV": 90,
@@ -532,8 +541,8 @@
                     "StopMeleeOnStop": 0,
                     "WaitForMeleeToEnd": 0,
                     "StopMovingWhenAttacking": 0,
-                    "QuickMelee": 0,
-                    "TimeBetweenAttacks": 0,
+                    "QuickMelee": 1,
+                    "TimeBetweenAttacks": 0.1,
                     "IgnoreQueue": 0,
                     "UseOutOfRangeStopTimer": 0,
                     "OutOfRangeStopDelay": 0,
@@ -600,6 +609,8 @@
                     "WeaponSlot": "SLOT_1",
                     "WeaponHand": "MAIN_HAND",
                     "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "AttackPhrase": "CHARGE_SCREAM",
+                    "AlwaysPlayAttackPhrase": 0,
                     "PlayPhrase": 0,
                     "Bark": "IDLE",
                     "BarkFilter": "",
@@ -765,6 +776,7 @@
                     "AimPosture": 0,
                     "MinimalEnemyDistance": 0,
                     "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
                     "Peek": 0,
                     "FailOnDamaged": 0,
                     "PreventShooting": 0,
@@ -812,7 +824,8 @@
             "ClearOrderOnMoveSuccess": 0,
             "AllowTeleportToCatchUp": 1,
             "TeleportToDestination": 0,
-            "AllowPartialPath": 1
+            "AllowPartialPath": 1,
+            "RestrictToDV": 0
         },
         "NechroTechRightArmGunBehaviorSelector": {
             "Enabled": 1,
@@ -823,7 +836,7 @@
                 "Script": ""
             },
             "DefaultReevaluationDelay": 0,
-            "ItemType": "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/NechroTech/NechroTechAILongGun",
+            "ItemType": "/Lotus/Types/Enemies/ManInTheWall/NecramechBonewindow/ThanoTechAIGrenadeLauncher",
             "Hand": "MAIN_HAND",
             "FailOnChildFailure": 0,
             "SubBehaviors": [
@@ -1071,6 +1084,8 @@
                     "WeaponSlot": "SLOT_1",
                     "WeaponHand": "MAIN_HAND",
                     "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "AttackPhrase": "CHARGE_SCREAM",
+                    "AlwaysPlayAttackPhrase": 0,
                     "PlayPhrase": 0,
                     "Bark": "IDLE",
                     "BarkFilter": "",
@@ -1160,6 +1175,7 @@
             ],
             "ShouldAim": 1,
             "CanRun": 0,
+            "StopRadius": 4.2,
             "StopSearchIfNoTarget": 0,
             "StopSearchOnAwarenessLevel": "AW_IDLE",
             "MaintainedAwarenessLevel": "AW_ALERT",
@@ -1171,7 +1187,6 @@
             "FastSpeedMultiplier": 0.5,
             "LookAroundTime": 3,
             "TeamCoordination": 0,
-            "AllowRun": 0,
             "RunTowardsNewTargets": 0,
             "MinAwareness": "AW_IDLE"
         },
@@ -1189,6 +1204,7 @@
             "AimPosture": 0,
             "MinimalEnemyDistance": 0,
             "TrackTarget": 0,
+            "TrackTargetNotVisible": 0,
             "Peek": 0,
             "FailOnDamaged": 1,
             "PreventShooting": 0,
@@ -1211,7 +1227,8 @@
             }
         ],
         "LocomotionController:PathingPreferences": {
-            "shorteningType": "ST_NONE"
+            "shorteningType": "ST_NONE",
+            "minRequiredNavEdgeWidth": 2
         },
         "ShootingController:DefaultFiringPrefs": {
             "firingPreferences": {
@@ -1228,6 +1245,6 @@
         },
         "PerceiverType": "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/NechroTech/NechroTechPerceiver",
         "TargetEvaluatorType": "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/EntratiTechTargetEvaluator",
-        "MusicWeight": 3
+        "MusicWeight": 2
     }
 }

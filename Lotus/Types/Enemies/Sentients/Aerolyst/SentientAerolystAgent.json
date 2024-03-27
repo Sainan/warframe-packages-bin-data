@@ -56,7 +56,8 @@
             "ClearOrderOnMoveSuccess": 0,
             "AllowTeleportToCatchUp": 0,
             "TeleportToDestination": 0,
-            "AllowPartialPath": 1
+            "AllowPartialPath": 1,
+            "RestrictToDV": 0
         },
         "DelayDecorator": {
             "Enabled": 1,
@@ -147,6 +148,8 @@
                     "logistic": 0
                 },
                 "DoTargetViewScore": 0,
+                "RestrictToDefenseVolume": 0,
+                "MaxDistanceFromEncounterHint": 0,
                 "ScoreDirectionFromTargetView": {
                     "m": -1,
                     "k": 2,
@@ -165,6 +168,7 @@
                 "MustHaveSeenTargetPersonally": 0,
                 "PursueWhenPlayersDown": 0,
                 "OnlyPursueTENNO": 0,
+                "DodgeOnlyWhenDamaged": 0,
                 "MaxHoverHeight": 4,
                 "MinDodgeDistance": 3
             },
@@ -288,6 +292,7 @@
                 "logistic": 1
             },
             "AimWhileMoving": 1,
+            "SetViewWhileMoving": 1,
             "ShootingDistance": 1,
             "ChangeWeapons": 0,
             "WeaponSlot": "SLOT_1",
@@ -329,6 +334,7 @@
             ],
             "ShouldAim": 0,
             "CanRun": 0,
+            "StopRadius": 4.2,
             "StopSearchIfNoTarget": 0,
             "StopSearchOnAwarenessLevel": "AW_IDLE",
             "MaintainedAwarenessLevel": "AW_ALERT",
@@ -446,6 +452,7 @@
             "WaitAction:AimPosture": 0,
             "WaitAction:MinimalEnemyDistance": 0,
             "WaitAction:TrackTarget": 0,
+            "WaitAction:TrackTargetNotVisible": 0,
             "WaitAction:Peek": 0,
             "WaitAction:FailOnDamaged": 1,
             "WaitAction:PreventShooting": 0,
@@ -477,7 +484,8 @@
             "reactionsToInvestigate": [],
             "MinAwareness": "AW_ALERT",
             "minimumTargetInterest": "Investigate",
-            "ReportAttackOnDamage": 1
+            "ReportAttackOnDamage": 1,
+            "RestrictToDefenseVolume": 0
         },
         "PoiBehavior": {
             "Enabled": 1,
@@ -538,6 +546,10 @@
             "PatrolBehavior:AutoAssignClosestPatrol": 0,
             "PatrolBehavior:SameZoneOnly": 1,
             "PatrolBehavior:AutoPatrolRadius": 30,
+            "PatrolBehavior:OnCompleteScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
             "RandomWalkBehavior:Enabled": 1,
             "RandomWalkBehavior:OnStartScript": {
                 "Script": ""
@@ -545,6 +557,76 @@
             "RandomWalkBehavior:OnDamagedScript": {
                 "Script": ""
             },
+            "RandomWalkBehavior:DefaultReevaluationDelay": 0,
+            "RandomWalkBehavior:StopRadius": 2,
+            "RandomWalkBehavior:NearDistance": 4,
+            "RandomWalkBehavior:SpeedMultiplier": 1,
+            "RandomWalkBehavior:AlertSpeedMultiplier": 1,
+            "RandomWalkBehavior:AllowTarget": 0,
+            "RandomWalkBehavior:AimWhenIdle": 0,
+            "RandomWalkBehavior:AimWhenAlert": 1,
+            "RandomWalkBehavior:PermanentAlert": 0,
+            "RandomWalkBehavior:ForceIdleForSinglePointPatrols": 1,
+            "RandomWalkBehavior:AnimAction": "PatrolIdle",
+            "RandomWalkBehavior:GenericAnims": [],
+            "RandomWalkBehavior:MinPlayerDist": [
+                0,
+                0
+            ],
+            "RandomWalkBehavior:MinPlayerFov": 60,
+            "RandomWalkBehavior:PauseTime": [
+                3,
+                5
+            ],
+            "RandomWalkBehavior:TimeBetweenPauses": [
+                15,
+                25
+            ],
+            "RandomWalkBehavior:ReevaluationDelayOnAbortedMove": 5,
+            "RandomWalkBehavior:PlayPhrase": 1,
+            "RandomWalkBehavior:Bark": "IDLE",
+            "RandomWalkBehavior:BarkFilter": "",
+            "RandomWalkBehavior:BarkInterval": [
+                0,
+                0
+            ],
+            "RandomWalkBehavior:StartUpDelay": [
+                0,
+                0
+            ],
+            "RandomWalkBehavior:UseWasAlert": 0,
+            "RandomWalkBehavior:ScanLength": 2,
+            "RandomWalkBehavior:MovementPosture": "WALK",
+            "RandomWalkBehavior:MinimumTacWalkAreas": 4,
+            "RandomWalkBehavior:WanderWhenNotEnoughTacAreas": 1,
+            "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
+            "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
+            "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:TeammateBarkBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:TeammateBarkBehavior:DefaultReevaluationDelay": 0,
+            "RandomWalkBehavior:TeammateBarkBehavior:StopForTeammateDuration": [
+                3,
+                6
+            ],
+            "RandomWalkBehavior:TeammateBarkBehavior:DontStopForTeammateDuration": 30,
+            "RandomWalkBehavior:TeammateBarkBehavior:PostFailureEvaluationDelay": [
+                3,
+                3
+            ],
+            "RandomWalkBehavior:TeammateBarkBehavior:AllowableTeammateAngle": 90,
+            "RandomWalkBehavior:TeammateBarkBehavior:TeammateSearchDistance": 5,
+            "RandomWalkBehavior:TeammateBarkBehavior:TeammateBark": "IDLE",
+            "RandomWalkBehavior:TeammateBarkBehavior:TeammateBarkFilter": "",
+            "RandomWalkBehavior:UseDefenseVolume": 0,
+            "RandomWalkBehavior:EvaluateMoveScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
+            "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
             "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
             "GuardBehavior:Enabled": 1,
             "GuardBehavior:OnStartScript": {
@@ -566,7 +648,8 @@
                 0,
                 0
             ],
-            "GuardBehavior:MinHeadingChangeToTurn": 0
+            "GuardBehavior:MinHeadingChangeToTurn": 0,
+            "GuardBehavior:AimWhenAlert": 1
         },
         "LocomotionController:DynamicPathFollowerHover": {
             "MinMoveDistToCorrectHeight": -1,

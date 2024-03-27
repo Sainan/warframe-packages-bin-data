@@ -110,6 +110,7 @@
             "CombatSetting": "CS_NO_RESTRICTION",
             "NeedsTarget": 0,
             "PatrolRouteOnly": 0,
+            "RecruitFromPatrols": 0,
             "FormationIdentifier": "CatPack",
             "MergeThreshold": 0,
             "LeaderAction:Type": "/EE/Types/Npc/Action",
@@ -146,6 +147,7 @@
                 "AimPosture": 0,
                 "MinimalEnemyDistance": 0,
                 "TrackTarget": 0,
+                "TrackTargetNotVisible": 0,
                 "Peek": 0,
                 "FailOnDamaged": 1,
                 "PreventShooting": 0,
@@ -199,7 +201,8 @@
             "ClearOrderOnMoveSuccess": 0,
             "AllowTeleportToCatchUp": 1,
             "TeleportToDestination": 0,
-            "AllowPartialPath": 1
+            "AllowPartialPath": 1,
+            "RestrictToDV": 0
         },
         "UsePowerSuitAbilitiesBehavior": {
             "Enabled": 1,
@@ -342,6 +345,8 @@
             "KeepDistance:WeaponSlot": "SLOT_1",
             "KeepDistance:WeaponHand": "MAIN_HAND",
             "KeepDistance:EquipStyle": "ES_PLAY_EQUIP_ANIM",
+            "KeepDistance:AttackPhrase": "CHARGE_SCREAM",
+            "KeepDistance:AlwaysPlayAttackPhrase": 0,
             "KeepDistance:PlayPhrase": 0,
             "KeepDistance:Bark": "IDLE",
             "KeepDistance:BarkFilter": "",
@@ -404,6 +409,7 @@
                     4
                 ],
                 "TeamBbLungeSym": "",
+                "LungeAnimAction": "",
                 "TimeBetweenTeamLunges": 5,
                 "LungeToPredictedPos": 0,
                 "UseMeleeFov": 1,
@@ -490,6 +496,8 @@
                 "WeaponSlot": "SLOT_1",
                 "WeaponHand": "MAIN_HAND",
                 "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                "AttackPhrase": "CHARGE_SCREAM",
+                "AlwaysPlayAttackPhrase": 0,
                 "PlayPhrase": 0,
                 "Bark": "IDLE",
                 "BarkFilter": "",
@@ -517,6 +525,7 @@
                 "AimPosture": 1,
                 "MinimalEnemyDistance": 0,
                 "TrackTarget": 0,
+                "TrackTargetNotVisible": 0,
                 "Peek": 0,
                 "FailOnDamaged": 1,
                 "PreventShooting": 0,
@@ -579,6 +588,9 @@
             "PatrolBehavior:AutoAssignClosestPatrol": 0,
             "PatrolBehavior:SameZoneOnly": 1,
             "PatrolBehavior:AutoPatrolRadius": 30,
+            "PatrolBehavior:OnCompleteScript": {
+                "Script": ""
+            },
             "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
             "RandomWalkBehavior:Enabled": 1,
             "RandomWalkBehavior:OnStartScript": {
@@ -627,6 +639,8 @@
             "RandomWalkBehavior:UseWasAlert": 0,
             "RandomWalkBehavior:ScanLength": 2,
             "RandomWalkBehavior:MovementPosture": "WALK",
+            "RandomWalkBehavior:MinimumTacWalkAreas": 4,
+            "RandomWalkBehavior:WanderWhenNotEnoughTacAreas": 1,
             "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
             "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
             "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
@@ -676,7 +690,8 @@
                 0,
                 0
             ],
-            "GuardBehavior:MinHeadingChangeToTurn": 0
+            "GuardBehavior:MinHeadingChangeToTurn": 0,
+            "GuardBehavior:AimWhenAlert": 1
         },
         "TargetEvaluatorType": "/Lotus/Types/NeutralCreatures/Catbrow/CatbrowTargetEvaluator"
     }

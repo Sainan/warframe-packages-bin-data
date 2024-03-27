@@ -1,9 +1,10 @@
 {
-    "parent": "/Lotus/Types/Enemies/KuvaLich/KuvaLichAAvatar",
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
     "data": {
         "Mesh": "/Lotus/Characters/MITW/Slinky/Slinky_skel.fbx",
         "MeshScale": 1.35,
         "AnimationName": "Guild",
+        "RootMotionChannel": "GAME_C1_ROOT",
         "AutoSimChildren": [
             {
                 "LocalPosition": [
@@ -33,21 +34,39 @@
             "Script": "/Lotus/Types/Enemies/ManInTheWall/MITWBarkController.lua",
             "Function": "IdleVoiceBoxLoop"
         },
+        "ReplicaRunScriptInstance": 1,
         "EyeOffset": [
             0,
             1.8,
             0
         ],
         "HeadBone": "GAME_C1_ROOT",
+        "HeadRotation": [
+            0,
+            90,
+            0
+        ],
+        "UseHeadBoneForEyePosition": 1,
         "WeaponBone": "GAME_R1_CANNON4",
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
         "Faction": "MITW",
         "LocTag": "/Lotus/Language/EntratiLab/EntratiGeneral/SlinkyName",
         "Icon": "/Lotus/Interface/Icons/Npcs/Murmur/Slinky.png",
-        "MaxHealth": 15000,
+        "MaxHealth": 7500,
         "VoiceBox": "/Lotus/Sounds/Dialog/Barks/Battle/MiTW/MITWSlinky/MITWSlinkyVoiceBoxA",
         "DropTable": "/Lotus/Types/DropTables/ManInTheWall/MITWSlinkyAgentDropTable",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
         "AnimControllerType": "MITWSlinkyAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "WallSlideControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWallSlideController",
         "DamageControllerType": "MITWSlinkyDamageController",
+        "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInventory",
         "MotionControllerType": "MITWSlinkyDynamicMotionController",
         "RaycastProxy": {
             "LocalPosition": [
@@ -62,7 +81,7 @@
             "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/MITWEnnemiesVFX.lua",
             "Function": "DissolveOnDeath",
             "_dissolveEffect": "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveArmSpawner",
-            "_dissolveSound": "/Lotus/Sounds/Enemies/ManInTheWall/Triangle/MITWTriangleDeathDissolve",
+            "_dissolveSound": "/Lotus/Sounds/Enemies/ManInTheWall/Slinky/MITWSlinkyDeathDissolve",
             "_dissolveProj": [
                 "/Lotus/Fx/Enemies/Mitw/MitwSandProj",
                 "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveExtrudeDynProj",
@@ -94,18 +113,9 @@
             "_deathProjectileType": "",
             "_deathProjectileCount": 0,
             "_deathProjectileBone": "GAME_C1_CENTERPIECE1",
-            "_octopedeEventDropTables": []
+            "_octopedeEventDropTables": [],
+            "_octopedeEventSPDropTables": []
         },
-        "FacialMorphScript": {
-            "Script": ""
-        },
-        "FacialMorphHeadAttachmentType": "",
-        "MorphName:ALERT": "",
-        "MorphName:RAGE": "",
-        "MorphName:FEAR": "",
-        "MorphName:DEAD": "",
-        "MorphName:SMUG": "",
-        "MorphName:PAIN": "",
         "SoundEvents": [
             {
                 "EventName": "SFXSlinkyRollLoop",
@@ -138,6 +148,22 @@
                 "Period": 1,
                 "Context": "PEC_ALL",
                 "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMITWGroundHit",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/EnemyGameplay/MITWFinisherGroundHit",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMITWFinisherImpact",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/EnemyGameplay/MITWFinisherImpact",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
             }
         ],
         "VoiceBoxEvents": [
@@ -146,10 +172,23 @@
                 "Phrase": "MODE_CHANGED",
                 "Filter": "SFXMITWSpawnLargeEnemyBark",
                 "Chance": 1
+            },
+            {
+                "EventName": "SFXBarkPain",
+                "Phrase": "PAIN",
+                "Filter": "SFXBarkPain",
+                "Chance": 1
             }
         ],
-        "KillXPReward": 500,
+        "KillXPReward": 250,
+        "AiDirEncounterScore": 150,
+        "CodexScansRequiredOverride": 3,
+        "PartialFrozenWarmUpRate": 0.6,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceSlinky",
+        "CanBeInspected": 0,
+        "DisarmAction": "DA_DAMAGE_ONLY",
         "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/MITWSlinkyReactionAnims",
-        "DifficultyTableOverride": ""
+        "DisarmWeapon": "/Lotus/Weapons/Grineer/Melee/GrineerCombatKnife/NPCGrineerCombatKnife",
+        "CanUpdateOrderStatus": 1
     }
 }

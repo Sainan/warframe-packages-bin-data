@@ -345,6 +345,7 @@
                     "InfiniteTimeBetweenHits": 0,
                     "PauseHitTimerWhenHolstered": 0,
                     "TimeBetweenHits": 5,
+                    "MinTimeBetweenHits": 0.1,
                     "TimeUpgrade": "WEAPON_MELEE_COMBO_DURATION_BONUS",
                     "ComboProcData": [],
                     "ComboForcedProcHitCountWrap": 0,
@@ -380,8 +381,7 @@
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
                     },
-                    "UseNewMeleeImpulse": 1,
-                    "ComboHitsMultiplier": 1
+                    "UseNewMeleeImpulse": 1
                 },
                 "state:Type": "/Lotus/Types/Weapon/GunBladeStateBehavior",
                 "state:GunBladeStateBehavior": {
@@ -399,6 +399,7 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
                     "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
@@ -787,6 +788,7 @@
                     "InfiniteTimeBetweenHits": 0,
                     "PauseHitTimerWhenHolstered": 0,
                     "TimeBetweenHits": 5,
+                    "MinTimeBetweenHits": 0.1,
                     "TimeUpgrade": "WEAPON_MELEE_COMBO_DURATION_BONUS",
                     "ComboProcData": [],
                     "ComboForcedProcHitCountWrap": 0,
@@ -841,6 +843,7 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
                     "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
@@ -1027,8 +1030,10 @@
         "Slams": [
             {
                 "TriggeringAnimEvent": "MeleeSlam",
+                "RadiusMin": 0,
                 "Radius": 6,
                 "FallOff": 1,
+                "FallOffMax": 0.5,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 0,
                 "UseImpactBehaviorAttackDataAmount": 1,
@@ -1046,6 +1051,8 @@
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 0,
                 "Effect": {
                     "LocalPosition": [
@@ -1089,8 +1096,10 @@
             },
             {
                 "TriggeringAnimEvent": "HeavySlam",
+                "RadiusMin": 0,
                 "Radius": 10,
-                "FallOff": 0,
+                "FallOff": 1,
+                "FallOffMax": 0.7,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 1,
                 "UseImpactBehaviorAttackDataAmount": 1,
@@ -1108,6 +1117,8 @@
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 0,
                 "Effect": {
                     "LocalPosition": [
@@ -1151,8 +1162,10 @@
             },
             {
                 "TriggeringAnimEvent": "GroundAttackEffect",
+                "RadiusMin": 0,
                 "Radius": 1,
                 "FallOff": 1,
+                "FallOffMax": 0,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 0,
                 "UseImpactBehaviorAttackDataAmount": 1,
@@ -1168,6 +1181,8 @@
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 0,
                 "Effect": {
                     "LocalPosition": [
@@ -1211,8 +1226,10 @@
             },
             {
                 "TriggeringAnimEvent": "ShieldBashEffect",
+                "RadiusMin": 0,
                 "Radius": 0,
                 "FallOff": 1,
+                "FallOffMax": 0,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 0,
                 "UseImpactBehaviorAttackDataAmount": 1,
@@ -1228,6 +1245,8 @@
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 0,
                 "Effect": {
                     "LocalPosition": [
@@ -1268,73 +1287,15 @@
                 "HitAirborneTargets": 1,
                 "VerticalImpulse": 0.15,
                 "HorizontalImpulse": 0.1
-            },
-            {
-                "TriggeringAnimEvent": "",
-                "Radius": 5,
-                "FallOff": 1,
-                "CanCrit": 0,
-                "CanUseComboMultiplier": 0,
-                "UseImpactBehaviorAttackDataAmount": 1,
-                "UseModifiedRadius": 1,
-                "BaseDamageAttenuation": 1,
-                "AttackData": {
-                    "UseNewFormat": 0,
-                    "Type": "DT_EXPLOSION",
-                    "Amount": 50,
-                    "ProcChance": 0.1,
-                    "ForcedProcs": [],
-                    "ForcedDeathProcs": [],
-                    "HitType": "DHT_NONE",
-                    "ProcExtraTime": 0
-                },
-                "MainHandOnly": 0,
-                "Effect": {
-                    "LocalPosition": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "LocalRotation": [
-                        0,
-                        0,
-                        0,
-                        1
-                    ],
-                    "BoneName": "",
-                    "Type": "",
-                    "Chance": 255,
-                    "RelativeToBounds": 0,
-                    "Attach": 1,
-                    "DestroyWithOwner": 1,
-                    "DestroyParentOnDeath": 0,
-                    "FadeOutOnDestruction": 0,
-                    "Scale": 1
-                },
-                "Bone": "",
-                "Offset": [
-                    0,
-                    0,
-                    0
-                ],
-                "FXOffset": [
-                    0,
-                    0,
-                    0
-                ],
-                "UseWeaponAttachment": 0,
-                "WeaponAttachmentHand": "MAIN_HAND",
-                "IsAerialSlam": 0,
-                "HitAirborneTargets": 1,
-                "VerticalImpulse": 0.15,
-                "HorizontalImpulse": 0.1
             }
         ],
         "PvpSlams": [
             {
                 "TriggeringAnimEvent": "MeleeSlam",
+                "RadiusMin": 0,
                 "Radius": 3,
                 "FallOff": 1,
+                "FallOffMax": 0.5,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 0,
                 "UseImpactBehaviorAttackDataAmount": 1,
@@ -1352,6 +1313,8 @@
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 0,
                 "Effect": {
                     "LocalPosition": [
@@ -1395,8 +1358,10 @@
             },
             {
                 "TriggeringAnimEvent": "GroundAttackEffect",
+                "RadiusMin": 0,
                 "Radius": 1,
                 "FallOff": 1,
+                "FallOffMax": 0,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 0,
                 "UseImpactBehaviorAttackDataAmount": 1,
@@ -1412,6 +1377,8 @@
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 0,
                 "Effect": {
                     "LocalPosition": [
@@ -1455,8 +1422,10 @@
             },
             {
                 "TriggeringAnimEvent": "ShieldBashEffect",
+                "RadiusMin": 0,
                 "Radius": 0,
                 "FallOff": 1,
+                "FallOffMax": 0,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 0,
                 "UseImpactBehaviorAttackDataAmount": 1,
@@ -1472,6 +1441,8 @@
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 0,
                 "Effect": {
                     "LocalPosition": [

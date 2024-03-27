@@ -92,14 +92,8 @@
                         "Script": ""
                     },
                     "DefaultReevaluationDelay": 0,
-                    "ChanceToShootWhileHeld": 0,
-                    "UseShootingController": 1,
-                    "CanDisarmOnGrab": 0,
                     "BlockOnBeingAttached": 0,
-                    "BlindFireTime": [
-                        0.2,
-                        0.8
-                    ]
+                    "ShouldRemovePerception": 1
                 },
                 "links": [
                     {
@@ -235,6 +229,8 @@
                         "WeaponSlot": "SLOT_1",
                         "WeaponHand": "MAIN_HAND",
                         "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                        "AttackPhrase": "CHARGE_SCREAM",
+                        "AlwaysPlayAttackPhrase": 0,
                         "PlayPhrase": 1,
                         "Bark": "CHARGE_SCREAM",
                         "BarkFilter": "",
@@ -262,6 +258,7 @@
                         "AimPosture": 0,
                         "MinimalEnemyDistance": 0,
                         "TrackTarget": 0,
+                        "TrackTargetNotVisible": 0,
                         "Peek": 0,
                         "FailOnDamaged": 0,
                         "PreventShooting": 0,
@@ -390,6 +387,7 @@
                             6
                         ],
                         "TeamBbLungeSym": "",
+                        "LungeAnimAction": "",
                         "TimeBetweenTeamLunges": 5,
                         "LungeToPredictedPos": 0,
                         "UseMeleeFov": 0,
@@ -450,6 +448,7 @@
                             6,
                             14
                         ],
+                        "NumResults": 8,
                         "SafeDistance": 8,
                         "ValidEnemies": [],
                         "InvalidEnemies": []
@@ -525,6 +524,7 @@
                         "AimPosture": 0,
                         "MinimalEnemyDistance": 0,
                         "TrackTarget": 0,
+                        "TrackTargetNotVisible": 0,
                         "Peek": 0,
                         "FailOnDamaged": 1,
                         "PreventShooting": 0,
@@ -586,7 +586,8 @@
                                 15,
                                 25
                             ],
-                            "SafeDistance": 10000,
+                            "NumResults": 8,
+                            "SafeDistance": 1000,
                             "ValidEnemies": [],
                             "InvalidEnemies": []
                         },
@@ -617,6 +618,7 @@
                         7,
                         15
                     ],
+                    "DisengageAction:CanRelocateToCover": 1,
                     "DisengageAction:GenerateSpacing": 2
                 },
                 "links": [
@@ -677,6 +679,9 @@
                     "PatrolBehavior:AutoAssignClosestPatrol": 0,
                     "PatrolBehavior:SameZoneOnly": 1,
                     "PatrolBehavior:AutoPatrolRadius": 30,
+                    "PatrolBehavior:OnCompleteScript": {
+                        "Script": ""
+                    },
                     "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
                     "RandomWalkBehavior:Enabled": 1,
                     "RandomWalkBehavior:OnStartScript": {
@@ -725,6 +730,8 @@
                     "RandomWalkBehavior:UseWasAlert": 0,
                     "RandomWalkBehavior:ScanLength": 2,
                     "RandomWalkBehavior:MovementPosture": "WALK",
+                    "RandomWalkBehavior:MinimumTacWalkAreas": 4,
+                    "RandomWalkBehavior:WanderWhenNotEnoughTacAreas": 1,
                     "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
                     "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
                     "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
@@ -774,7 +781,8 @@
                         0,
                         0
                     ],
-                    "GuardBehavior:MinHeadingChangeToTurn": 0
+                    "GuardBehavior:MinHeadingChangeToTurn": 0,
+                    "GuardBehavior:AimWhenAlert": 1
                 },
                 "links": [
                     {
@@ -818,7 +826,10 @@
                     "MinPlayerFov": 60,
                     "AutoAssignClosestPatrol": 0,
                     "SameZoneOnly": 1,
-                    "AutoPatrolRadius": 30
+                    "AutoPatrolRadius": 30,
+                    "OnCompleteScript": {
+                        "Script": ""
+                    }
                 },
                 "links": [
                     {
@@ -884,6 +895,8 @@
                     "UseWasAlert": 0,
                     "ScanLength": 2,
                     "MovementPosture": "WALK",
+                    "MinimumTacWalkAreas": 4,
+                    "WanderWhenNotEnoughTacAreas": 1,
                     "TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
                     "TeammateBarkBehavior:Enabled": 1,
                     "TeammateBarkBehavior:OnStartScript": {
@@ -950,7 +963,8 @@
                         0,
                         0
                     ],
-                    "MinHeadingChangeToTurn": 0
+                    "MinHeadingChangeToTurn": 0,
+                    "AimWhenAlert": 1
                 },
                 "links": [
                     {

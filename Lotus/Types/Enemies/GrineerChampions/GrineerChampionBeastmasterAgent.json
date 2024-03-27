@@ -98,13 +98,14 @@
                     ]
                 ]
             },
-            "ForceLeader": "FL_SELECT_BEST_LEADER",
+            "ForceLeader": "FL_ALWAYS_LEAD",
             "OnlyEnhancedCanLead": 0,
             "LeaderPriority": 5,
             "EnhancedPriorityBoost": 1,
             "CombatSetting": "CS_COMBAT_ONLY",
             "NeedsTarget": 0,
             "PatrolRouteOnly": 0,
+            "RecruitFromPatrols": 0,
             "FormationIdentifier": "CatPack",
             "MergeThreshold": 0,
             "LeaderAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
@@ -259,6 +260,12 @@
                             0.8,
                             1.2
                         ],
+                        "MovementLineOfFireScoring": 0,
+                        "DistanceFromTeammates": [
+                            1.5,
+                            100
+                        ],
+                        "MaxNumTeammatesForScoring": 4,
                         "LookAtTarget": 0,
                         "LookHorizRate": 40,
                         "LookVertRate": 20,
@@ -285,6 +292,7 @@
                             2,
                             6
                         ],
+                        "StartRepositionTimerAtDest": 1,
                         "KeepRunningDuringWaitPeriod": 1,
                         "MoveDuringShoot": 1,
                         "CrouchDuringShootChance": 0.5,
@@ -313,7 +321,8 @@
                         "FiringPreferencesOverride": [],
                         "RequireRangedWeapon": 0,
                         "RequireNotForcedMelee": 0,
-                        "UseDefenseVolume": 0
+                        "UseDefenseVolume": 0,
+                        "ShouldConstantlyBarkAttack": 0
                     },
                     "WeaponSlot": "SLOT_1"
                 },
@@ -366,6 +375,7 @@
                             5
                         ],
                         "TeamBbLungeSym": "",
+                        "LungeAnimAction": "",
                         "TimeBetweenTeamLunges": 5,
                         "LungeToPredictedPos": 0,
                         "UseMeleeFov": 1,
@@ -452,6 +462,8 @@
                         "WeaponSlot": "SLOT_1",
                         "WeaponHand": "MAIN_HAND",
                         "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                        "AttackPhrase": "CHARGE_SCREAM",
+                        "AlwaysPlayAttackPhrase": 0,
                         "PlayPhrase": 0,
                         "Bark": "IDLE",
                         "BarkFilter": "",
@@ -479,6 +491,7 @@
                         "AimPosture": 1,
                         "MinimalEnemyDistance": 0,
                         "TrackTarget": 1,
+                        "TrackTargetNotVisible": 0,
                         "Peek": 0,
                         "FailOnDamaged": 1,
                         "PreventShooting": 0,
@@ -557,6 +570,8 @@
                     "WeaponSlot": "SLOT_1",
                     "WeaponHand": "MAIN_HAND",
                     "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "AttackPhrase": "CHARGE_SCREAM",
+                    "AlwaysPlayAttackPhrase": 0,
                     "PlayPhrase": 1,
                     "Bark": "CHARGE_SCREAM",
                     "BarkFilter": "",
@@ -586,6 +601,12 @@
                         0.8,
                         1.2
                     ],
+                    "MovementLineOfFireScoring": 0,
+                    "DistanceFromTeammates": [
+                        1.5,
+                        100
+                    ],
+                    "MaxNumTeammatesForScoring": 4,
                     "LookAtTarget": 0,
                     "LookHorizRate": 40,
                     "LookVertRate": 20,
@@ -612,6 +633,7 @@
                         2,
                         6
                     ],
+                    "StartRepositionTimerAtDest": 1,
                     "KeepRunningDuringWaitPeriod": 1,
                     "MoveDuringShoot": 1,
                     "CrouchDuringShootChance": 0,
@@ -640,7 +662,8 @@
                     "FiringPreferencesOverride": [],
                     "RequireRangedWeapon": 0,
                     "RequireNotForcedMelee": 0,
-                    "UseDefenseVolume": 0
+                    "UseDefenseVolume": 0,
+                    "ShouldConstantlyBarkAttack": 0
                 }
             },
             "LeaderAction:PursueTargetBehavior": {
@@ -844,7 +867,8 @@
                 "reactionsToInvestigate": [],
                 "MinAwareness": "AW_ALERT",
                 "minimumTargetInterest": "Investigate",
-                "ReportAttackOnDamage": 1
+                "ReportAttackOnDamage": 1,
+                "RestrictToDefenseVolume": 0
             },
             "LeaderAction:FailOnChildFailure": 0,
             "FollowerAction:Type": "/EE/Types/Npc/Action",

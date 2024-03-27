@@ -40,67 +40,79 @@
                 }
             },
             {
-                "tag": "UpdatePredeathMovie",
-                "executionMode": "EM_LOCAL",
+                "tag": "SpawnSandZombie",
+                "executionMode": "EM_ALL",
                 "inheritPrimary": 0,
                 "functionName": "",
                 "scriptInstance": {
-                    "Script": "/Lotus/Powersuits/Sandman/SandmanPassive.lua",
-                    "Function": "UpdatePredeathMovie",
-                    "_customDC": "",
-                    "_customMC": "",
-                    "_customHud": "/Lotus/Interface/PowerSuitCustomHuds/SandmanResurrectMeter.swf",
-                    "_predeathDevourEnemyAttach": "",
-                    "_predeathDevourSandmanAttach": "",
-                    "_predeathExitSubTree": "",
-                    "_devourBeamType": "",
-                    "_stareSequencerType": ""
-                }
-            },
-            {
-                "tag": "DoDrainFromBlast",
-                "executionMode": "EM_HOST",
-                "inheritPrimary": 0,
-                "functionName": "",
-                "scriptInstance": {
-                    "Script": "SandmanDevour.lua",
-                    "Function": "DoDrainFromBlast",
+                    "Script": "SandmanSwarm.lua",
+                    "Function": "CreateSandZombieFromBlast",
+                    "_chargeAnimStart": "",
+                    "_chargeAnimLoop": "",
                     "_activateAnim": "",
-                    "_pullAnim": "",
-                    "_eatAction": "",
-                    "_devourStartAnim": "",
-                    "_devourLoopAnim": "",
-                    "_devourEndAnim": "",
-                    "_captureAnim": "",
                     "_castEffect": "",
+                    "_castEffectNoEnergy": "",
                     "_castBurstEffect": "",
-                    "_enemyAttachEffect": "",
-                    "_eatAttachEffect": "",
-                    "_pullBeamType": "",
-                    "_pvpSandPileType": "",
-                    "_pvpSandPileEffectType": "",
-                    "_invalidAvatars": [],
-                    "_inputFilter": "",
-                    "_minionEffect": "/Lotus/Fx/PowersuitAbilities/Sandman/SandmanMinionAttach",
-                    "_npcAgainstPlayerCookTime": 2
+                    "_castBurstEffectNoEnergy": "",
+                    "_deathEffect": "",
+                    "_eatEnemyEffect": "",
+                    "_hudBuffType": "",
+                    "_endPointEffect": "",
+                    "_procBlockEffect": "",
+                    "_procSound": "",
+                    "_projectileType": "/Lotus/Powersuits/Sandman/ScarabSwarmProjectile",
+                    "_sandZombieFxProj": "/Lotus/Fx/PowersuitAbilities/Sandman/SandmanMinionAttach",
+                    "_zombieAgentType": "/Lotus/Powersuits/Sandman/SandZombieAgent",
+                    "_lineDeco": "",
+                    "_sandZombieBuffType": "/Lotus/Powersuits/Sandman/SandZombieHudBuff",
+                    "_zombieDeathEffect": "/Lotus/Fx/PowersuitAbilities/Sandman/SandmanZombieAvatarDeath",
+                    "_sandZombieSuit": "/Lotus/Types/Game/CatbrowPet/CatbrowPetPowerSuit"
                 }
             }
         ],
         "AbilityEvents": [
             {
-                "tag": "PassiveKill",
+                "tag": "PassiveHit",
+                "eventType": "ET_ON_MELEE_HIT",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/Sandman/SandmanPassive.lua",
+                    "Function": "PassiveHit",
+                    "_customDC": "",
+                    "_predeathAttach": "",
+                    "_predeathSpawnBurst": "",
+                    "_predeathExitSubTree": "",
+                    "_sandCloneIdleSubTree": "",
+                    "_predeathChargeIncreased": "",
+                    "_avatarType": "",
+                    "_sandCloneAvatarType": "",
+                    "_sandCloneAttach": "",
+                    "_sandCloneLocalAttach": "",
+                    "_sandCloneStartAnim": "",
+                    "_sandCloneFistType": "/Lotus/Powersuits/Sandman/SandCloneFist",
+                    "_customHud": "",
+                    "_seqType": ""
+                }
+            },
+            {
+                "tag": "OnMeleeKill",
                 "eventType": "ET_ON_MELEE_KILL",
                 "scriptInstance": {
                     "Script": "/Lotus/Powersuits/Sandman/SandmanPassive.lua",
                     "Function": "OnMeleeKill",
                     "_customDC": "",
-                    "_customMC": "",
-                    "_customHud": "",
-                    "_predeathDevourEnemyAttach": "",
-                    "_predeathDevourSandmanAttach": "",
+                    "_predeathAttach": "",
+                    "_predeathSpawnBurst": "",
                     "_predeathExitSubTree": "",
-                    "_devourBeamType": "",
-                    "_stareSequencerType": ""
+                    "_sandCloneIdleSubTree": "",
+                    "_predeathChargeIncreased": "",
+                    "_avatarType": "",
+                    "_sandCloneAvatarType": "",
+                    "_sandCloneAttach": "",
+                    "_sandCloneLocalAttach": "",
+                    "_sandCloneStartAnim": "",
+                    "_sandCloneFistType": "",
+                    "_customHud": "",
+                    "_seqType": ""
                 }
             },
             {
@@ -116,6 +128,34 @@
                     "_castBurstEnergyEffect": "",
                     "_castBurstPvpEffect": "",
                     "_pvpDotEffect": ""
+                }
+            },
+            {
+                "tag": "SandZombieOnHit",
+                "eventType": "ET_ON_HIT",
+                "scriptInstance": {
+                    "Script": "SandmanSwarm.lua",
+                    "Function": "SandZombieOnHit",
+                    "_chargeAnimStart": "",
+                    "_chargeAnimLoop": "",
+                    "_activateAnim": "",
+                    "_castEffect": "",
+                    "_castEffectNoEnergy": "",
+                    "_castBurstEffect": "",
+                    "_castBurstEffectNoEnergy": "",
+                    "_deathEffect": "",
+                    "_eatEnemyEffect": "",
+                    "_hudBuffType": "",
+                    "_endPointEffect": "",
+                    "_procBlockEffect": "",
+                    "_procSound": "",
+                    "_projectileType": "/Lotus/Powersuits/Sandman/ScarabSwarmProjectile",
+                    "_sandZombieFxProj": "",
+                    "_zombieAgentType": "",
+                    "_lineDeco": "",
+                    "_sandZombieBuffType": "/Lotus/Powersuits/Sandman/SandZombieHudBuff",
+                    "_zombieDeathEffect": "",
+                    "_sandZombieSuit": ""
                 }
             }
         ],
