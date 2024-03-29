@@ -90,14 +90,8 @@
                         "Script": ""
                     },
                     "DefaultReevaluationDelay": 0,
-                    "ChanceToShootWhileHeld": 0,
-                    "UseShootingController": 1,
-                    "CanDisarmOnGrab": 0,
                     "BlockOnBeingAttached": 0,
-                    "BlindFireTime": [
-                        0.2,
-                        0.8
-                    ]
+                    "ShouldRemovePerception": 1
                 },
                 "links": [
                     {
@@ -250,7 +244,8 @@
                     "ClearOrderOnMoveSuccess": 0,
                     "AllowTeleportToCatchUp": 1,
                     "TeleportToDestination": 0,
-                    "AllowPartialPath": 1
+                    "AllowPartialPath": 1,
+                    "RestrictToDV": 0
                 },
                 "links": [
                     {
@@ -397,6 +392,8 @@
                         "WeaponSlot": "SLOT_1",
                         "WeaponHand": "MAIN_HAND",
                         "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                        "AttackPhrase": "CHARGE_SCREAM",
+                        "AlwaysPlayAttackPhrase": 0,
                         "PlayPhrase": 0,
                         "Bark": "IDLE",
                         "BarkFilter": "",
@@ -424,6 +421,7 @@
                         "AimPosture": 1,
                         "MinimalEnemyDistance": 0,
                         "TrackTarget": 1,
+                        "TrackTargetNotVisible": 0,
                         "Peek": 0,
                         "FailOnDamaged": 1,
                         "PreventShooting": 0,
@@ -479,6 +477,7 @@
                     ],
                     "ShouldAim": 1,
                     "CanRun": 0,
+                    "StopRadius": 4.2,
                     "StopSearchIfNoTarget": 0,
                     "StopSearchOnAwarenessLevel": "AW_IDLE",
                     "MaintainedAwarenessLevel": "AW_ALERT",
@@ -611,7 +610,8 @@
                     "reactionsToInvestigate": [],
                     "MinAwareness": "AW_IDLE",
                     "minimumTargetInterest": "Investigate",
-                    "ReportAttackOnDamage": 1
+                    "ReportAttackOnDamage": 1,
+                    "RestrictToDefenseVolume": 0
                 },
                 "links": [
                     {
@@ -671,6 +671,9 @@
                     "PatrolBehavior:AutoAssignClosestPatrol": 0,
                     "PatrolBehavior:SameZoneOnly": 1,
                     "PatrolBehavior:AutoPatrolRadius": 30,
+                    "PatrolBehavior:OnCompleteScript": {
+                        "Script": ""
+                    },
                     "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
                     "RandomWalkBehavior:Enabled": 1,
                     "RandomWalkBehavior:OnStartScript": {
@@ -719,6 +722,8 @@
                     "RandomWalkBehavior:UseWasAlert": 0,
                     "RandomWalkBehavior:ScanLength": 2,
                     "RandomWalkBehavior:MovementPosture": "WALK",
+                    "RandomWalkBehavior:MinimumTacWalkAreas": 4,
+                    "RandomWalkBehavior:WanderWhenNotEnoughTacAreas": 1,
                     "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
                     "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
                     "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
@@ -768,7 +773,8 @@
                         0,
                         0
                     ],
-                    "GuardBehavior:MinHeadingChangeToTurn": 0
+                    "GuardBehavior:MinHeadingChangeToTurn": 0,
+                    "GuardBehavior:AimWhenAlert": 1
                 },
                 "links": [
                     {
