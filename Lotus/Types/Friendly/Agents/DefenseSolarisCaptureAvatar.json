@@ -1,8 +1,9 @@
 {
-    "parent": "DefenseComputerAvatar",
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
     "data": {
         "Mesh": "/Lotus/Objects/Corpus/Structural/Bunkers/CrpVenusBunkerCommRing.fbx",
         "MeshScale": 0.35,
+        "IsHighlightEnabled": 0,
         "AutoSimChildren": [
             {
                 "LocalPosition": [
@@ -27,9 +28,48 @@
                 "Scale": 1
             }
         ],
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
+        "ReplicaRunScriptInstance": 1,
+        "EyeOffset": [
+            0,
+            0.75,
+            0
+        ],
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "TENNO",
         "LocTag": "/Lotus/Language/Game/HackCorpusComputer",
         "ShortDesc": "/Lotus/Language/Game/HackCorpusComputerDesc",
         "Icon": "/Lotus/Interface/Icons/Objects/CorpusSystems.png",
-        "DamageControllerType": "DefenseSolarisCaptureDamageController"
+        "MaxHealth": 1500,
+        "BlockInputInCameraSpot": 1,
+        "DefaultThreatLevel": -5,
+        "AnimControllerType": "DefenseAnimTreeController",
+        "CameraControllerType": "/EE/Characters/BoxMan/BoxmanCamera",
+        "DamageControllerType": "DefenseSolarisCaptureDamageController",
+        "InventoryControllerType": "DefenseInventory",
+        "MotionControllerType": "/EE/Characters/BoxMan/BoxmanMotionAnyRotation",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "BoneName": "GAME_C1_HIP1"
+        },
+        "CollisionProxy": {
+            "BoneName": "GAME_C1_HIP1",
+            "Type": "/EE/Types/Physics/FullBodyCollision"
+        },
+        "ShowMiniMapMarker": 0,
+        "ExcludedFromCodex": 1,
+        "ExcludedFromSimulacrum": 1,
+        "SpawnInvulnTime": 5,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataImmuneMindPushPullHeal",
+        "DisarmAction": "DA_NONE"
     }
 }
