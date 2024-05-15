@@ -5,6 +5,7 @@
         "MarketMode": "MM_HIDDEN",
         "LocalizeTag": "/Lotus/Language/Mods/SobekNightwaveMod",
         "LocalizeDescTag": "",
+        "StatusDescTag": "/Lotus/Language/Buffs/SobekAugmentBuffDesc",
         "Icon": "/Lotus/Interface/Cards/Images/Syndicate/Sobek.png",
         "ExcludeFromCodex": 0,
         "Upgrades": [
@@ -19,15 +20,23 @@
                 "UpgradeObject": "",
                 "ValidPostures": [],
                 "ValidModifiers": [],
+                "InvalidModifiers": [],
                 "ValidProcTypes": [],
                 "OverrideLocalization": 1,
-                "LocTag": "",
+                "LocTag": "/Lotus/Language/Mods/IncreaseStatusChanceAndMultishotForMagazine",
                 "LocKeyWordScript": {
-                    "Script": ""
+                    "Script": "SobekNightwaveMod.lua",
+                    "Function": "GetDescription",
+                    "_chanceBuff": [
+                        0.05,
+                        0.07,
+                        0.09,
+                        0.11,
+                        0.13,
+                        0.15
+                    ],
+                    "_maxStacks": 15
                 },
-                "DisplayAsMultiplier": 0,
-                "DisplayAsPercent": 0,
-                "ReverseValueSymbol": 0,
                 "SmallerIsBetter": 0,
                 "RoundTo": 0.1,
                 "RoundingMode": "RM_ROUND"
@@ -35,25 +44,29 @@
         ],
         "ApplyUpgradesByDefault": 0,
         "ArtifactPolarity": "AP_ATTACK",
-        "BaseDrain": "QA_MEDIUM",
-        "FusionLimit": "QA_MEDIUM",
         "ItemCompatibility": "/Lotus/Weapons/Tenno/Shotgun/DoubleBarrelShotgun",
         "Script": {
             "Script": "SobekNightwaveMod.lua",
             "Function": "OnWeaponReloaded",
             "_chanceBuff": [
-                0.2,
-                0.25,
-                0.3,
-                0.35,
-                0.4
+                0.05,
+                0.07,
+                0.09,
+                0.11,
+                0.13,
+                0.15
             ],
-            "_maxStacks": 10
+            "_maxStacks": 15
+        },
+        "EnhancementTag": "/Lotus/Language/Upgrades/ConditionWithBonusDescription",
+        "EnhancementTagLocScript": {
+            "Script": ""
         },
         "UpgradeChance": 1,
         "ConditionalUpgrades": [
             "OnSobekReloadCondition"
         ],
+        "ConditionTag": "/Lotus/Language/Upgrades/OnReloadCondition_Description",
         "HudBuffIcon": "/Lotus/Interface/Icons/ModBuffIndicators/MultiShotBuffIcon.png"
     }
 }
