@@ -1,0 +1,121 @@
+{
+    "parent": "/EE/Types/Engine/ScriptTrigger",
+    "data": {
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Weapons/Duviri/IncarnonAdapters/Melee/IncarnonHammerVoidLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Gameplay/Duviri/ElectricFieldOnWeakPointRangeDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 2
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicTrigger",
+        "ScriptInstance": {
+            "Script": "ElectricFieldOnWeakPointKill.lua",
+            "Function": "OnFieldCreated",
+            "_fieldRadius": 10,
+            "_fieldLifetime": 8,
+            "_fieldDamagePercentage": [
+                0.1,
+                0.15,
+                0.2
+            ],
+            "_fieldDamagePeriod": 1,
+            "_fieldProcChance": 1,
+            "_fieldStatusProcs": [
+                "PT_ELECTROCUTION"
+            ],
+            "_fieldTriggerType": "",
+            "_maxFieldsCount": 5
+        },
+        "ReplicaRunScriptInstance": 1,
+        "IsCenterBaseOriented": 1,
+        "Dimensions": [
+            2,
+            1,
+            2
+        ],
+        "Shape": "VES_SPHERE",
+        "Radius": 10,
+        "AcceptType": "/Lotus/Types/Game/LotusAvatar",
+        "Scripts": [
+            {
+                "Target": "",
+                "Script": {
+                    "Script": "ElectricFieldOnWeakPointKill.lua",
+                    "Function": "OnEnterField",
+                    "_fieldRadius": 10,
+                    "_fieldLifetime": 8,
+                    "_fieldDamagePercentage": [
+                        0.1,
+                        0.15,
+                        0.2
+                    ],
+                    "_fieldDamagePeriod": 1,
+                    "_fieldProcChance": 1,
+                    "_fieldStatusProcs": [
+                        "PT_ELECTROCUTION"
+                    ],
+                    "_fieldTriggerType": "",
+                    "_maxFieldsCount": 5
+                }
+            }
+        ],
+        "ExitScript": {
+            "Script": "ElectricFieldOnWeakPointKill.lua",
+            "Function": "OnExitField",
+            "_fieldRadius": 10,
+            "_fieldLifetime": 8,
+            "_fieldDamagePercentage": [
+                0.1,
+                0.15,
+                0.2
+            ],
+            "_fieldDamagePeriod": 1,
+            "_fieldProcChance": 1,
+            "_fieldStatusProcs": [
+                "PT_ELECTROCUTION"
+            ],
+            "_fieldTriggerType": "",
+            "_maxFieldsCount": 5
+        }
+    }
+}

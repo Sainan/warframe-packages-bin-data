@@ -1,14 +1,9 @@
 {
-    "parent": "/Lotus/Weapons/Tenno/Rifle/TennoAR",
+    "parent": "/Lotus/Weapons/Tenno/Rifle/LotusAssaultStandardRifle",
     "data": {
         "PickUpMesh": "AK47_skel.fbx",
         "DropSound": "/Lotus/Sounds/Weapons/Grineer/WeaponDrops/GrineerWeaponDrop",
-        "EquipTime": 0.3,
-        "FIRST_PERSON_ATTACHMENT": {
-            "MAIN_HAND": {
-                "BoneName": ""
-            }
-        },
+        "InventorySlot": "SLOT_2",
         "THIRD_PERSON_ATTACHMENT": {
             "MAIN_HAND": {
                 "LocalPosition": [
@@ -22,19 +17,11 @@
                     -0.043619,
                     0.999048
                 ],
+                "BoneName": "GAME_R1_WEAPON1",
                 "Type": "AK47Attachment"
-            },
-            "EXTRA1": {
-                "LocalRotation": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "BoneName": "",
-                "Type": ""
             }
         },
+        "HolsterBone1Name": "GAME_C1_RIFLEATTACH",
         "HolsterBone1Position": [
             0.05,
             0.05,
@@ -46,17 +33,17 @@
             0,
             0
         ],
-        "RemovedWithOwnerAfterDrop": 1,
-        "MarketMode": "MM_NONE",
+        "PickUpText": "/Lotus/Language/Items/RiflePickup",
         "PremiumPrice": 240,
         "LocalizeTag": "/Lotus/Language/EntratiLab/EntratiGeneral/UnknownEntity",
-        "LocalizeDescTag": "",
-        "ExcludeFromCodex": 1,
+        "LocalizeDescTag": "/Lotus/Language/EntratiLab/EntratiGeneral/UnknownEntity",
+        "UseWeaponHandForAim": 1,
         "WeaponHandAimOffset": [
             0,
             0.05,
             0
         ],
+        "UseGripOffset": 1,
         "GripPositionOffset": [
             -0.075,
             -0.015,
@@ -312,7 +299,8 @@
                     },
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
-                    "IgnoreHeadshotBonusPvp": 0
+                    "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0
                 },
                 "state:Type": "/EE/Types/Game/WeaponAutomaticStateBehavior",
                 "state:WeaponAutomaticStateBehavior": {
@@ -324,7 +312,7 @@
                     "fireRate": 600,
                     "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 0,
-                    "ModeSwitchTime": 1.4,
+                    "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
                     "IsToggleBehavior": 0,
                     "autoReloadEmptyTime": 0.2,
@@ -334,7 +322,7 @@
                     "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
-                    "QueueReloadOnEmptyClip": 0,
+                    "QueueReloadOnEmptyClip": 1,
                     "EnableReloadEmpty": 0,
                     "ReloadOnAdditionalEmptyFire": 0,
                     "ForceReloadFromEmpty": 0,
@@ -379,27 +367,38 @@
                 }
             }
         ],
-        "AmmoClipSize": 30,
+        "InfiniteClipSizeForNpcs": 1,
+        "PVPAmmoCapacity": 200,
+        "AmmoClipSize": 40,
+        "PVPAmmoClipSize": 50,
+        "UIReticuleScale": 0.5,
+        "UIReticuleAim": 0,
         "StateAnimations": [
             {
                 "state": "WS_RELOAD",
                 "behaviorIndex": 0,
                 "animation": "/Lotus/Animations/Tenno/Movement/Rifle/AK47/AK47Reload_anim.fbx",
                 "clearable": 1
-            },
-            {
-                "state": "WS_MODE_SWITCH",
-                "behaviorIndex": 0,
-                "animation": "/Lotus/Animations/Tenno/Movement/Rifle/SapientPrimary/SapientPrimaryReload_anim.fbx",
-                "clearable": 1
-            },
-            {
-                "state": "WS_MODE_SWITCH",
-                "behaviorIndex": 1,
-                "animation": "/Lotus/Animations/Tenno/Movement/Rifle/SapientPrimary/SapientPrimaryReload_anim.fbx",
-                "clearable": 1
             }
         ],
-        "DefaultModTemplate": "/Lotus/Types/ModLists/Rifle/TennoCon2024Primary"
+        "RequiredLevel": 6,
+        "ShowBehaviorOnUI": 1,
+        "ArtifactSlots": [
+            "AP_UNIVERSAL",
+            "AP_ATTACK",
+            "AP_ATTACK",
+            "AP_UNIVERSAL",
+            "AP_UNIVERSAL",
+            "AP_UNIVERSAL",
+            "AP_UNIVERSAL",
+            "AP_UNIVERSAL",
+            "AP_ATTACK",
+            "AP_UNIVERSAL"
+        ],
+        "NumChargesToAdd": 0,
+        "MaxCharges": 0,
+        "NumChargesToConsume": 0,
+        "ClearChargesOnBehaviorChange": 1,
+        "OmegaAttenuation": 1.15
     }
 }

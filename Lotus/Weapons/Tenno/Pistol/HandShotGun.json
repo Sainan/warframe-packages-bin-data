@@ -46,7 +46,8 @@
         "ExcludeFromCodex": 0,
         "CompatibilityTags": [
             "SINGLESHOT",
-            "SECONDARYSHOTGUN"
+            "SECONDARYSHOTGUN",
+            "SEMI_AUTO"
         ],
         "AvailableOnPvp": 1,
         "HasAlternateFire": 1,
@@ -297,7 +298,8 @@
                     },
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
-                    "IgnoreHeadshotBonusPvp": 0
+                    "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0
                 },
                 "state:Type": "/EE/Types/Game/WeaponSemiAutomaticStateBehavior",
                 "state:WeaponSemiAutomaticStateBehavior": {
@@ -352,6 +354,8 @@
                     "OnNewProjectileScript": {
                         "Script": ""
                     },
+                    "IsAutomatic": 0,
+                    "AccessibilityTrigger": 1,
                     "QueueFiring": 1,
                     "QueueDelay": 0.1,
                     "FireOnButtonAction": "PRESSED",
@@ -575,7 +579,8 @@
                     },
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
-                    "IgnoreHeadshotBonusPvp": 0
+                    "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0
                 },
                 "state:Type": "/Lotus/Types/Weapon/LotusSemiAutomaticStateBehavior",
                 "state:LotusSemiAutomaticStateBehavior": {
@@ -630,6 +635,8 @@
                     "OnNewProjectileScript": {
                         "Script": ""
                     },
+                    "IsAutomatic": 0,
+                    "AccessibilityTrigger": 1,
                     "QueueFiring": 0,
                     "QueueDelay": 0.1,
                     "FireOnButtonAction": "PRESSED",
@@ -767,45 +774,8 @@
         ],
         "AllowDarkSectorMode": 1,
         "DisableDarkSectorReticleOnAim": 1,
-        "DarkSectorHolsterBone": "",
-        "DarkSectorHolsterPosOffset": [
-            0,
-            0,
-            0
-        ],
-        "DarkSectorHolsterRotOffset": [
-            0,
-            0,
-            0,
-            1
-        ],
         "DarkSectorAttachmentsToCreate": {
-            "MAIN_HAND": 0,
-            "OFF_HAND": 1,
-            "EXTRA1": 0,
-            "EXTRA2": 0
-        },
-        "MAIN_HAND": {
-            "LocalPosition": [
-                0,
-                0,
-                0
-            ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
-            "BoneName": "",
-            "Type": "",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
+            "OFF_HAND": 1
         },
         "OFF_HAND": {
             "LocalPosition": [
@@ -813,67 +783,13 @@
                 -0.04,
                 -0.015
             ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
             "BoneName": "GAME_L1_WEAPON1",
-            "Type": "HandShotgunAttachment",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
-        },
-        "EXTRA1": {
-            "LocalPosition": [
-                0,
-                0,
-                0
-            ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
-            "BoneName": "",
-            "Type": "",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
+            "Type": "HandShotgunAttachment"
         },
         "EXTRA2": {
-            "LocalPosition": [
-                0,
-                0,
-                0
-            ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
             "BoneName": "GAME_L1_WEAPON1",
-            "Type": "IncarnonHandShotgunAttachment",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
+            "Type": "IncarnonHandShotgunAttachment"
         },
-        "DarkSectorAuxiliaryAttachments": [],
         "DarkSectorStateAnimations": [
             {
                 "state": "WS_FIRE",
@@ -894,13 +810,6 @@
                 "clearable": 1
             }
         ],
-        "DarkSectorReloadEmptyStateAnimation": {
-            "state": "WS_READY",
-            "behaviorIndex": 4294967295,
-            "animation": "",
-            "clearable": 1
-        },
-        "DarkSectorFullClipModeSwitchStateAnimations": [],
         "DefaultModTemplate": "/Lotus/Types/ModLists/Pistol/HybridImpact"
     }
 }

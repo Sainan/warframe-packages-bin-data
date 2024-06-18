@@ -1,5 +1,5 @@
 {
-    "parent": "/Lotus/Types/Gameplay/Eidolon/Encounters/GrineerPatrol",
+    "parent": "LotusEncounterTemplate",
     "data": {
         "EncounterTags": [
             "InfestationPatrol"
@@ -8,16 +8,61 @@
         "AllowedEventTags": [
             "InfestedPlains"
         ],
-        "ValidTimeOfDay": [],
+        "DisallowedTags": [
+            "Narmer"
+        ],
+        "MinRequiredNpcsToSpawn": 3,
+        "MinActivationRadius": 30,
+        "CanActivateVisible": 0,
         "RandomWeight": 1.4,
         "EvaluateScript": {
             "Script": "/Lotus/Scripts/Events/InfestedPlainsEvent.lua",
             "Function": "InfestedEncounterEvaluate",
-            "_extraKonzuTransmission": ""
+            "_extraKonzuTransmission": "",
+            "_inTown": 1
+        },
+        "EncounterType": "ET_LEAD_UP",
+        "OnPrimedScript": {
+            "Script": "/Lotus/Scripts/Eidolon/Encounters/GrineerCamp.lua",
+            "Function": "OnPrimed",
+            "_spawnCountMin": 5,
+            "_spawnCountMax": 10,
+            "_additionalEncounterType": "",
+            "_StartCampAlert": 0,
+            "_spawnLeader": 1,
+            "_campTierMin": 0,
+            "_campTierMax": 2,
+            "_heavyTier": 3,
+            "_nightLevelMultiplier": 1.5,
+            "_lureSpawnCount": 1,
+            "_lureHardModeLevelMultiplier": 2,
+            "_lureAgentType": "",
+            "_maxNumLures": 6,
+            "_markerOffset": [
+                0,
+                0,
+                0
+            ],
+            "_enemyFaction": "Grineer",
+            "_allowTurrets": 1
         },
         "ExecuteScript": {
+            "Script": "/Lotus/Scripts/Eidolon/Encounters/Patrol.lua",
+            "Function": "Patrol",
+            "_useTacQuery": 0,
+            "_enemyFaction": "Infestation",
+            "_squadSpawnRadius": 10,
+            "_minEnemyCount": 3,
+            "_maxEnemyCount": 5,
+            "_spawnWithLeader": 0,
+            "_specialTier": -1,
+            "_specialTierExclusive": 0,
+            "_patrolOnRoads": 1,
+            "_squadTeam": "RandomTeam",
             "_sniperAgentType": "",
-            "_enemyFaction": "Infestation"
+            "_maxNumSnipers": 2,
+            "_doPlayerDistanceCheck": 0,
+            "_playerDistance": 300
         }
     }
 }

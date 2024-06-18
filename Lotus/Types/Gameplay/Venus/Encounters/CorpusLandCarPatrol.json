@@ -1,5 +1,5 @@
 {
-    "parent": "/Lotus/Types/Gameplay/Eidolon/Encounters/GrineerPatrol",
+    "parent": "LotusEncounterTemplate",
     "data": {
         "EncounterTags": [
             "CorpusVehicleReinforcement"
@@ -10,12 +10,40 @@
             "BaseInterior",
             "Narmer"
         ],
-        "ValidTimeOfDay": [],
+        "MinRequiredNpcsToSpawn": 3,
+        "MinActivationRadius": 30,
+        "CanActivateVisible": 0,
         "RandomWeight": 3,
         "RoadFilter": "ONLY_TRUE",
         "ExteriorFilter": "ONLY_TRUE",
+        "EncounterType": "ET_LEAD_UP",
+        "OnPrimedScript": {
+            "Script": "/Lotus/Scripts/Eidolon/Encounters/GrineerCamp.lua",
+            "Function": "OnPrimed",
+            "_spawnCountMin": 5,
+            "_spawnCountMax": 10,
+            "_additionalEncounterType": "",
+            "_StartCampAlert": 0,
+            "_spawnLeader": 1,
+            "_campTierMin": 0,
+            "_campTierMax": 2,
+            "_heavyTier": 3,
+            "_nightLevelMultiplier": 1.5,
+            "_lureSpawnCount": 1,
+            "_lureHardModeLevelMultiplier": 2,
+            "_lureAgentType": "",
+            "_maxNumLures": 6,
+            "_markerOffset": [
+                0,
+                0,
+                0
+            ],
+            "_enemyFaction": "Grineer",
+            "_allowTurrets": 1
+        },
         "ExecuteScript": {
             "Script": "/Lotus/Scripts/Venus/Encounters/VehicleReinforcements.lua",
+            "Function": "Patrol",
             "_vehicleType": "/Lotus/Types/Enemies/Corpus/Vehicle/WheelCarAgent",
             "_dropCountMin": 3,
             "_dropCountMax": 8,

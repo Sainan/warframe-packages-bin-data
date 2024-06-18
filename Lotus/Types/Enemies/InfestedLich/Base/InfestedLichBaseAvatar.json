@@ -28,7 +28,7 @@
                 "Scale": 1
             }
         ],
-        "PhysicsBehavior": "/Lotus/Types/Enemies/Infested/AiWeek/Runners/ChromaBossWalk",
+        "PhysicsBehavior": "InfestedLichBaseWalk",
         "Tag": "InfestedLich",
         "ScriptInstance": {
             "Script": ""
@@ -52,18 +52,45 @@
         "InputFilter": "/EE/Types/Input/HaydenInputFilter",
         "Faction": "Infestation",
         "LocTag": "[HC] Infested Lich Base",
-        "MaxHealth": 1000,
+        "MaxHealth": 3000,
+        "SuicideImmune": 1,
         "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
         "AnimControllerType": "InfestedLichAnimTreeController",
         "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
         "WallSlideControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWallSlideController",
-        "DamageControllerType": "InfestedLichDamageController",
+        "DamageControllerType": "InfestedLichBackingMemberDamageController",
         "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
         "InventoryControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInventory",
         "MotionControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerMotionController",
         "RaycastProxy": {
             "BoneName": "GAME_C1_HIP1",
             "Type": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/HitProxies/GrineerFullBody"
+        },
+        "OnPreDeathScript": {
+            "Script": "InfestedLichPreDeath.lua",
+            "Function": "InfestedLichPreDeath",
+            "_reviveAnimation": "/Lotus/Animations/Grineer/KuvaLich/KuvaBirthBack_anim.fbx",
+            "_revivalBeamType": "/Lotus/Types/Enemies/Duviri/Shadows/Weapons/DuviriShadowAuraBeam",
+            "_reviveFxType": "/Lotus/Fx/PowersuitAbilities/Sandman/PreDeathHealPulse",
+            "_reviveDuration": 5.25
+        },
+        "OnDeathScript": {
+            "Script": "InfestedLichDeath.lua",
+            "Function": "InfestedLichDeath",
+            "_frontingLichDeathDecoType": "/Lotus/Fx/Enemies/InfestedLiches/InfestedLichDeathTendrilsDeco",
+            "_backingLichDeathDecoType": "/Lotus/Fx/Enemies/InfestedLiches/InfestedLichDeathTendrilsDeco",
+            "_waitRange": [
+                0.3,
+                0.4
+            ],
+            "_growthRange": [
+                0.6,
+                1
+            ],
+            "_growthRateRange": [
+                0.2,
+                0.25
+            ]
         },
         "SpawnInvulnTime": 1,
         "DisarmAction": "DA_DAMAGE_ONLY",

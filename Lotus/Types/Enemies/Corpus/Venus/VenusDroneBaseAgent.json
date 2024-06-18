@@ -159,6 +159,7 @@
             },
             "DoTargetViewScore": 0,
             "RestrictToDefenseVolume": 0,
+            "MaxDistanceFromEncounterHint": 0,
             "ScoreDirectionFromTargetView": {
                 "m": -1,
                 "k": 2,
@@ -269,7 +270,10 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": 100,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 },
                 {
                     "reaction": "INVESTIGATE_COMBAT",
@@ -300,7 +304,10 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": 100,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 },
                 {
                     "reaction": "BULLET_IMPACT",
@@ -331,7 +338,10 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": 100,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 },
                 {
                     "reaction": "WHAT_WAS_THAT",
@@ -362,10 +372,22 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": 100,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 }
             ],
-            "BlockingResponse": 0
+            "BlockingResponse": 0,
+            "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+            "TurnToAction:Enabled": 1,
+            "TurnToAction:OnStartScript": {
+                "Script": ""
+            },
+            "TurnToAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "TurnAccuracyThreshold": 15
         },
         "PatrolFormationTactic": {
             "SuccessRadius": 2,
@@ -402,7 +424,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     },
                     {
                         "reaction": "INVESTIGATE_COMBAT",
@@ -433,7 +458,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     },
                     {
                         "reaction": "BULLET_IMPACT",
@@ -464,7 +492,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     },
                     {
                         "reaction": "WHAT_WAS_THAT",
@@ -495,7 +526,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     }
                 ]
             },
@@ -613,75 +647,11 @@
         },
         "GuardTactic": {
             "PatrolBehavior:AimWhenAlert": 0,
-            "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
-            "RandomWalkBehavior:DefaultReevaluationDelay": 0,
-            "RandomWalkBehavior:StopRadius": 2,
-            "RandomWalkBehavior:NearDistance": 4,
-            "RandomWalkBehavior:SpeedMultiplier": 1,
-            "RandomWalkBehavior:AlertSpeedMultiplier": 1,
-            "RandomWalkBehavior:AllowTarget": 0,
-            "RandomWalkBehavior:AimWhenIdle": 0,
-            "RandomWalkBehavior:AimWhenAlert": 1,
-            "RandomWalkBehavior:PermanentAlert": 0,
-            "RandomWalkBehavior:ForceIdleForSinglePointPatrols": 1,
-            "RandomWalkBehavior:AnimAction": "PatrolIdle",
-            "RandomWalkBehavior:GenericAnims": [],
             "RandomWalkBehavior:MinPlayerDist": [
                 0,
                 10
             ],
-            "RandomWalkBehavior:MinPlayerFov": 90,
-            "RandomWalkBehavior:PauseTime": [
-                3,
-                5
-            ],
-            "RandomWalkBehavior:TimeBetweenPauses": [
-                15,
-                25
-            ],
-            "RandomWalkBehavior:ReevaluationDelayOnAbortedMove": 5,
-            "RandomWalkBehavior:PlayPhrase": 1,
-            "RandomWalkBehavior:Bark": "IDLE",
-            "RandomWalkBehavior:BarkFilter": "",
-            "RandomWalkBehavior:BarkInterval": [
-                0,
-                0
-            ],
-            "RandomWalkBehavior:StartUpDelay": [
-                0,
-                0
-            ],
-            "RandomWalkBehavior:UseWasAlert": 0,
-            "RandomWalkBehavior:ScanLength": 2,
-            "RandomWalkBehavior:MovementPosture": "WALK",
-            "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
-            "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
-            "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
-                "Script": ""
-            },
-            "RandomWalkBehavior:TeammateBarkBehavior:OnDamagedScript": {
-                "Script": ""
-            },
-            "RandomWalkBehavior:TeammateBarkBehavior:DefaultReevaluationDelay": 0,
-            "RandomWalkBehavior:TeammateBarkBehavior:StopForTeammateDuration": [
-                3,
-                6
-            ],
-            "RandomWalkBehavior:TeammateBarkBehavior:DontStopForTeammateDuration": 30,
-            "RandomWalkBehavior:TeammateBarkBehavior:PostFailureEvaluationDelay": [
-                3,
-                3
-            ],
-            "RandomWalkBehavior:TeammateBarkBehavior:AllowableTeammateAngle": 90,
-            "RandomWalkBehavior:TeammateBarkBehavior:TeammateSearchDistance": 5,
-            "RandomWalkBehavior:TeammateBarkBehavior:TeammateBark": "IDLE",
-            "RandomWalkBehavior:TeammateBarkBehavior:TeammateBarkFilter": "",
-            "RandomWalkBehavior:UseDefenseVolume": 0,
-            "RandomWalkBehavior:EvaluateMoveScript": {
-                "Script": ""
-            },
-            "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
-            "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0
+            "RandomWalkBehavior:MinPlayerFov": 90
         },
         "LocomotionController:Type": "/EE/Types/Npc/DynamicLocomotionControllerHover",
         "LocomotionController:DynamicPathFinderGround": {

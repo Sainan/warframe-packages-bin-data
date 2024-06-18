@@ -1,14 +1,41 @@
 {
-    "parent": "/Lotus/Types/Gameplay/Eidolon/Encounters/GrineerPatrol",
+    "parent": "LotusEncounterTemplate",
     "data": {
         "EncounterTags": [
             "CorpusPatrol"
         ],
         "Faction": "Corpus",
+        "DisallowedTags": [
+            "Narmer"
+        ],
+        "MinRequiredNpcsToSpawn": 3,
         "MinActivationRadius": 0,
-        "CanActivateVisible": 1,
-        "ValidTimeOfDay": [],
+        "RandomWeight": 1.25,
         "EncounterType": "ET_NONE",
+        "OnPrimedScript": {
+            "Script": "/Lotus/Scripts/Eidolon/Encounters/GrineerCamp.lua",
+            "Function": "OnPrimed",
+            "_spawnCountMin": 5,
+            "_spawnCountMax": 10,
+            "_additionalEncounterType": "",
+            "_StartCampAlert": 0,
+            "_spawnLeader": 1,
+            "_campTierMin": 0,
+            "_campTierMax": 2,
+            "_heavyTier": 3,
+            "_nightLevelMultiplier": 1.5,
+            "_lureSpawnCount": 1,
+            "_lureHardModeLevelMultiplier": 2,
+            "_lureAgentType": "",
+            "_maxNumLures": 6,
+            "_markerOffset": [
+                0,
+                0,
+                0
+            ],
+            "_enemyFaction": "Grineer",
+            "_allowTurrets": 1
+        },
         "ExecuteScript": {
             "Script": "/Lotus/Scripts/Venus/Encounters/BeaconReinforcements.lua",
             "Function": "BeaconReinforcements",

@@ -1,11 +1,28 @@
 {
-    "parent": "/Lotus/Types/Gameplay/Eidolon/Encounters/GrineerPatrol",
+    "parent": "LotusEncounterTemplate",
     "data": {
+        "EncounterTags": [
+            "GrineerPatrol"
+        ],
+        "Faction": "Grineer",
+        "DisallowedTags": [
+            "Narmer"
+        ],
         "EncounterHintCoolDown": [
             3600,
             3600
         ],
-        "CanActivateVisible": 1,
+        "MinRequiredNpcsToSpawn": 3,
+        "MinActivationRadius": 30,
+        "ValidTimeOfDay": [
+            {
+                "ValidTime": [
+                    6.2,
+                    21.9
+                ]
+            }
+        ],
+        "RandomWeight": 1.25,
         "EvaluateScript": {
             "Script": "/Lotus/Scripts/Eidolon/Encounters/GlassFrameQuest.lua",
             "Function": "EvaluateGlassEncounter",
@@ -31,9 +48,47 @@
             "_introTextId": 1
         },
         "EncounterType": "ET_STRONG_POINT",
+        "OnPrimedScript": {
+            "Script": "/Lotus/Scripts/Eidolon/Encounters/GrineerCamp.lua",
+            "Function": "OnPrimed",
+            "_spawnCountMin": 5,
+            "_spawnCountMax": 10,
+            "_additionalEncounterType": "",
+            "_StartCampAlert": 0,
+            "_spawnLeader": 1,
+            "_campTierMin": 0,
+            "_campTierMax": 2,
+            "_heavyTier": 3,
+            "_nightLevelMultiplier": 1.5,
+            "_lureSpawnCount": 1,
+            "_lureHardModeLevelMultiplier": 2,
+            "_lureAgentType": "",
+            "_maxNumLures": 6,
+            "_markerOffset": [
+                0,
+                0,
+                0
+            ],
+            "_enemyFaction": "Grineer",
+            "_allowTurrets": 1
+        },
         "ExecuteScript": {
+            "Script": "/Lotus/Scripts/Eidolon/Encounters/Patrol.lua",
+            "Function": "Patrol",
+            "_useTacQuery": 0,
+            "_enemyFaction": "Grineer",
+            "_squadSpawnRadius": 10,
             "_minEnemyCount": 4,
-            "_maxNumSnipers": 1
+            "_maxEnemyCount": 5,
+            "_spawnWithLeader": 0,
+            "_specialTier": -1,
+            "_specialTierExclusive": 0,
+            "_patrolOnRoads": 1,
+            "_squadTeam": "RandomTeam",
+            "_sniperAgentType": "/Lotus/Types/Enemies/Grineer/Eidolon/EidolonGrineerFemale",
+            "_maxNumSnipers": 1,
+            "_doPlayerDistanceCheck": 0,
+            "_playerDistance": 300
         }
     }
 }

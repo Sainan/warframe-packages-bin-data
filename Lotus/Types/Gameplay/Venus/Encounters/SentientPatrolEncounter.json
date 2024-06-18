@@ -1,15 +1,24 @@
 {
-    "parent": "/Lotus/Types/Gameplay/Eidolon/Encounters/GrineerPatrol",
+    "parent": "LotusEncounterTemplate",
     "data": {
         "EncounterTags": [
             "CorpusPatrol"
         ],
         "Faction": "Corpus",
-        "ValidTimeOfDay": [],
+        "DisallowedTags": [
+            "Narmer"
+        ],
+        "MinRequiredNpcsToSpawn": 3,
+        "MinActivationRadius": 30,
+        "CanActivateVisible": 0,
         "RandomWeight": 1.2,
+        "EncounterType": "ET_LEAD_UP",
         "OnPrimedScript": {
             "Script": "/Lotus/Scripts/Venus/Encounters/CorpusBase.lua",
+            "Function": "OnPrimed",
             "_doInitialSpawns": 1,
+            "_spawnCountMin": 5,
+            "_spawnCountMax": 15,
             "_numLeaders": 0,
             "_scaleLeadersWithPlayerCount": 1,
             "_levelThresholdForLeaders": 0,
@@ -31,12 +40,27 @@
             "_encounterWeakRes": "",
             "_dialogDistance": 600,
             "_markGlobalAlertPanel": 0,
-            "_dataMassDropTable": ""
+            "_dataMassDropTable": "",
+            "_markerOffset": [
+                0,
+                0,
+                0
+            ],
+            "_enemyFaction": "Grineer",
+            "_alliesToEnemyFaction": ""
         },
         "ExecuteScript": {
             "Script": "/Lotus/Scripts/Venus/Encounters/SentientPatrol.lua",
+            "Function": "Patrol",
             "_enemyFaction": "Sentient",
             "_squadSpawnRadius": 8,
+            "_minEnemyCount": 3,
+            "_maxEnemyCount": 5,
+            "_spawnWithLeader": 0,
+            "_specialTier": -1,
+            "_specialTierExclusive": 0,
+            "_patrolOnRoads": 1,
+            "_squadTeam": "RandomTeam",
             "_eliteEnhancement": "/Lotus/Types/Enemies/Enhancements/EliteEnhancement"
         }
     }

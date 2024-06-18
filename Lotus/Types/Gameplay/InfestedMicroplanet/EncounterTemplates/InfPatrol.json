@@ -1,5 +1,5 @@
 {
-    "parent": "/Lotus/Types/Gameplay/Eidolon/Encounters/GrineerPatrol",
+    "parent": "LotusEncounterTemplate",
     "data": {
         "EncounterTags": [
             "InfestedPatrol"
@@ -12,21 +12,27 @@
             "EntratiTomb",
             "DynamicMissionRuins"
         ],
-        "CanActivateVisible": 1,
-        "ValidTimeOfDay": [],
+        "MinRequiredNpcsToSpawn": 3,
+        "MinActivationRadius": 30,
+        "RandomWeight": 1.25,
         "ExteriorFilter": "ONLY_TRUE",
-        "OnPrimedScript": {
-            "Script": ""
-        },
+        "EncounterType": "ET_LEAD_UP",
         "ExecuteScript": {
             "Script": "/Lotus/Scripts/Venus/Encounters/CorpusPatrol.lua",
+            "Function": "Patrol",
             "_enemyFaction": "Infestation",
             "_squadSpawnRadius": 8,
+            "_minEnemyCount": 3,
+            "_maxEnemyCount": 5,
             "_spawnWithLeader": 1,
+            "_specialTier": -1,
+            "_specialTierExclusive": 0,
             "_patrolOnRoads": 0,
+            "_squadTeam": "RandomTeam",
             "_eliteEnhancement": "/Lotus/Types/Enemies/Enhancements/EliteEnhancement",
             "_useLocalAlertForTier": 1,
             "_forceFassSpec": 0,
+            "_enemySpawnEffect": "",
             "_setVipNavName": "",
             "_useVip": 0
         }

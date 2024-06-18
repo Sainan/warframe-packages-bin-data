@@ -100,6 +100,7 @@
                     "fireIterations": 1,
                     "UseAmmo": 1,
                     "ConsumeEntireClip": 0,
+                    "ConsumePartialAmmo": 0,
                     "ammoRequirement": 1,
                     "ScaleAmmoRequirement": 0,
                     "RoundUpAmmoConsumption": 0,
@@ -148,6 +149,8 @@
                     "InfinitePunctureDepth": 0,
                     "tracePunctureDepth": 0,
                     "PunchthroughIgnoresAvatars": 0,
+                    "RicochetChance": 0,
+                    "RicochetRange": 15,
                     "ForceCameraAimForLocalPlayer": 1,
                     "AimTranslationOffset": [
                         0,
@@ -219,6 +222,7 @@
                     ],
                     "minImpulseFallOff": 1,
                     "applyPushVelocity": 0,
+                    "applyPushVelocityOnlyToBlockingTarget": 0,
                     "pushMagnitude": [
                         0.5,
                         1
@@ -244,6 +248,7 @@
                     "strength": 0,
                     "radius": 0,
                     "flash": 0,
+                    "OnHitScriptEnabled": 1,
                     "OnHitScript": {
                         "Script": ""
                     },
@@ -259,6 +264,7 @@
                         0
                     ],
                     "fireRate": 170,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 1,
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
@@ -266,6 +272,8 @@
                     "autoReloadEmptyTime": 0.2,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -280,6 +288,7 @@
                     "CanChargeWhileRunning": 1,
                     "CanFireWhileInAir": 1,
                     "PreventRunWhileRecharging": 0,
+                    "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
                     "IsAlternateFire": 0,
@@ -289,20 +298,28 @@
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
+                    "OnNewProjectileScript": {
+                        "Script": ""
+                    },
+                    "IsAutomatic": 0,
+                    "AccessibilityTrigger": 1,
                     "NumShots": 2,
                     "BurstDelay": 0.05,
                     "IgnoreFireRate": 0,
                     "EatAmmoOnUnequip": 1,
                     "QueueBursts": 0,
                     "BurstRemainingClip": 0,
-                    "IsAutomatic": 0,
                     "ConsumeAmmoOncePerBurst": 0,
-                    "ForceBurstLogicOnClient": 0
+                    "ForceBurstLogicOnClient": 0,
+                    "PreFireDuringBurst": 0
                 }
             },
             {
@@ -368,6 +385,7 @@
                     "fireIterations": 1,
                     "UseAmmo": 1,
                     "ConsumeEntireClip": 0,
+                    "ConsumePartialAmmo": 0,
                     "ammoRequirement": 0,
                     "ScaleAmmoRequirement": 0,
                     "RoundUpAmmoConsumption": 0,
@@ -388,6 +406,8 @@
                         "LockOnIgnoreEndPointTarget": 0
                     },
                     "NotifyPotentialVictimsOfIncomingAttack": 0,
+                    "HitVisibilityCheck": 1,
+                    "HitVisibilityUsesVisibilityRay": 1,
                     "HitPunctureDepth": 0,
                     "MaxHitAvatarsPerAttack": 1,
                     "InterruptAttackOnMaxAvatarsHit": 0,
@@ -444,6 +464,7 @@
                     ],
                     "minImpulseFallOff": 1,
                     "applyPushVelocity": 0,
+                    "applyPushVelocityOnlyToBlockingTarget": 0,
                     "pushMagnitude": [
                         0.5,
                         1
@@ -469,6 +490,7 @@
                     "strength": 0,
                     "radius": 0,
                     "flash": 0,
+                    "OnHitScriptEnabled": 1,
                     "OnHitScript": {
                         "Script": ""
                     },
@@ -484,6 +506,7 @@
                         0
                     ],
                     "fireRate": 60,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 1,
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
@@ -491,6 +514,8 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -505,6 +530,7 @@
                     "CanChargeWhileRunning": 1,
                     "CanFireWhileInAir": 1,
                     "PreventRunWhileRecharging": 0,
+                    "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
                     "IsAlternateFire": 0,
@@ -514,11 +540,17 @@
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
+                    "OnNewProjectileScript": {
+                        "Script": ""
+                    },
                     "ContinueRunningWhenAttacking": 0,
                     "CanAttackDuringEquip": 1,
                     "ContinuousMelee": 0,
@@ -561,13 +593,15 @@
         "StateAnimations": [
             {
                 "state": "WS_FIRE",
+                "behaviorIndex": 0,
                 "animation": "/Lotus/Animations/Tenno/Movement/Pistol/FireRight_anim.fbx",
-                "behaviorIndex": 0
+                "clearable": 1
             },
             {
                 "state": "WS_RELOAD",
+                "behaviorIndex": 0,
                 "animation": "/Lotus/Animations/Tenno/Movement/Pistol/ReloadGrnHeavyPistol_anim.fbx",
-                "behaviorIndex": 0
+                "clearable": 1
             }
         ],
         "WeaknessBonus": 0.5

@@ -73,10 +73,22 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": -1,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 }
             ],
-            "BlockingResponse": 1
+            "BlockingResponse": 1,
+            "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+            "TurnToAction:Enabled": 1,
+            "TurnToAction:OnStartScript": {
+                "Script": ""
+            },
+            "TurnToAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "TurnAccuracyThreshold": 15
         },
         "UsePowerSuitAbilitiesBehavior": {
             "ExtraReevaluationDelay": 2,
@@ -159,6 +171,12 @@
                         0.8,
                         1.2
                     ],
+                    "MovementLineOfFireScoring": 0,
+                    "DistanceFromTeammates": [
+                        1.5,
+                        100
+                    ],
+                    "MaxNumTeammatesForScoring": 4,
                     "LookAtTarget": 0,
                     "LookHorizRate": 40,
                     "LookVertRate": 20,
@@ -185,6 +203,7 @@
                         2,
                         6
                     ],
+                    "StartRepositionTimerAtDest": 1,
                     "KeepRunningDuringWaitPeriod": 1,
                     "MoveDuringShoot": 1,
                     "CrouchDuringShootChance": 0.5,
@@ -213,7 +232,8 @@
                     "FiringPreferencesOverride": [],
                     "RequireRangedWeapon": 1,
                     "RequireNotForcedMelee": 0,
-                    "UseDefenseVolume": 1
+                    "UseDefenseVolume": 1,
+                    "ShouldConstantlyBarkAttack": 0
                 },
                 "GuardBehavior": {
                     "Enabled": 1,
@@ -236,7 +256,8 @@
                         0,
                         0
                     ],
-                    "MinHeadingChangeToTurn": 0
+                    "MinHeadingChangeToTurn": 0,
+                    "AimWhenAlert": 1
                 },
                 "FailOnChildFailure": 0
             }
@@ -340,6 +361,8 @@
             "WeaponSlot": "SLOT_1",
             "WeaponHand": "MAIN_HAND",
             "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+            "AttackPhrase": "CHARGE_SCREAM",
+            "AlwaysPlayAttackPhrase": 0,
             "PlayPhrase": 0,
             "Bark": "IDLE",
             "BarkFilter": "",

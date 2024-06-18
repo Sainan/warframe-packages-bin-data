@@ -47,7 +47,8 @@
         "Icon": "/Lotus/Interface/Icons/StoreIcons/Weapons/SecondaryWeapons/Weapons/Tysis.png",
         "ExcludeFromCodex": 0,
         "CompatibilityTags": [
-            "PROJECTILE"
+            "PROJECTILE",
+            "SEMI_AUTO"
         ],
         "AvailableOnPvp": 1,
         "UseWeaponHandForAim": 1,
@@ -222,6 +223,7 @@
                     "horizontalDeviationAngle": 0,
                     "OwnProjectiles": 0,
                     "AlwaysUseAimEndPoint": 0,
+                    "KeepOriginalVisuals": 0,
                     "ApplyWeaponMaterialsToProjectile": 0,
                     "ApplyFlightSpeedToLaunchImpulse": 0,
                     "FallbackAgentTargetting": 1,
@@ -308,6 +310,7 @@
                     ],
                     "minImpulseFallOff": 1,
                     "applyPushVelocity": 0,
+                    "applyPushVelocityOnlyToBlockingTarget": 0,
                     "pushMagnitude": [
                         0.5,
                         1
@@ -333,6 +336,7 @@
                     "strength": 0,
                     "radius": 0,
                     "flash": 0,
+                    "OnHitScriptEnabled": 1,
                     "OnHitScript": {
                         "Script": ""
                     },
@@ -348,6 +352,7 @@
                         0
                     ],
                     "fireRate": 150,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 1,
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
@@ -355,6 +360,8 @@
                     "autoReloadEmptyTime": 0.2,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -369,6 +376,7 @@
                     "CanChargeWhileRunning": 1,
                     "CanFireWhileInAir": 1,
                     "PreventRunWhileRecharging": 0,
+                    "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
                     "IsAlternateFire": 0,
@@ -378,14 +386,19 @@
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
                     "OnNewProjectileScript": {
                         "Script": ""
                     },
+                    "IsAutomatic": 0,
+                    "AccessibilityTrigger": 1,
                     "QueueFiring": 1,
                     "QueueDelay": 0.1,
                     "FireOnButtonAction": "PRESSED",
@@ -476,6 +489,8 @@
                         "LockOnIgnoreEndPointTarget": 0
                     },
                     "NotifyPotentialVictimsOfIncomingAttack": 0,
+                    "HitVisibilityCheck": 1,
+                    "HitVisibilityUsesVisibilityRay": 1,
                     "HitPunctureDepth": 0,
                     "MaxHitAvatarsPerAttack": 1,
                     "InterruptAttackOnMaxAvatarsHit": 0,
@@ -532,6 +547,7 @@
                     ],
                     "minImpulseFallOff": 1,
                     "applyPushVelocity": 0,
+                    "applyPushVelocityOnlyToBlockingTarget": 0,
                     "pushMagnitude": [
                         0.5,
                         1
@@ -557,6 +573,7 @@
                     "strength": 0,
                     "radius": 0,
                     "flash": 0,
+                    "OnHitScriptEnabled": 1,
                     "OnHitScript": {
                         "Script": ""
                     },
@@ -572,6 +589,7 @@
                         0
                     ],
                     "fireRate": 60,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 1,
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
@@ -579,6 +597,8 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -593,6 +613,7 @@
                     "CanChargeWhileRunning": 1,
                     "CanFireWhileInAir": 1,
                     "PreventRunWhileRecharging": 0,
+                    "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
                     "IsAlternateFire": 0,
@@ -602,9 +623,12 @@
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
                     "OnNewProjectileScript": {
@@ -669,90 +693,13 @@
         "WeaknessBonus": 0.5,
         "OmegaAttenuation": 1.45,
         "AllowDarkSectorMode": 1,
-        "DisableDarkSectorReticleOnAim": 0,
-        "DarkSectorHolsterBone": "",
-        "DarkSectorHolsterPosOffset": [
-            0,
-            0,
-            0
-        ],
-        "DarkSectorHolsterRotOffset": [
-            0,
-            0,
-            0,
-            1
-        ],
         "DarkSectorAttachmentsToCreate": {
-            "MAIN_HAND": 0,
             "OFF_HAND": 1,
-            "EXTRA1": 0,
             "EXTRA2": 1
         },
-        "MAIN_HAND": {
-            "LocalPosition": [
-                0,
-                0,
-                0
-            ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
-            "BoneName": "",
-            "Type": "",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
-        },
         "OFF_HAND": {
-            "LocalPosition": [
-                0,
-                0,
-                0
-            ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
             "BoneName": "GAME_L1_WEAPON1",
-            "Type": "InfestedDartPistolAttachment",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
-        },
-        "EXTRA1": {
-            "LocalPosition": [
-                0,
-                0,
-                0
-            ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
-            "BoneName": "",
-            "Type": "",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
+            "Type": "InfestedDartPistolAttachment"
         },
         "EXTRA2": {
             "LocalPosition": [
@@ -767,16 +714,8 @@
                 0.142002
             ],
             "BoneName": "GAME_L1_TWIST2",
-            "Type": "InfestedDartPistolTailDSAttachment",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
+            "Type": "InfestedDartPistolTailDSAttachment"
         },
-        "DarkSectorAuxiliaryAttachments": [],
         "DarkSectorStateAnimations": [
             {
                 "state": "WS_RELOAD",
@@ -785,13 +724,6 @@
                 "clearable": 1
             }
         ],
-        "DarkSectorReloadEmptyStateAnimation": {
-            "state": "WS_READY",
-            "behaviorIndex": 4294967295,
-            "animation": "",
-            "clearable": 1
-        },
-        "DarkSectorFullClipModeSwitchStateAnimations": [],
         "DefaultModTemplate": "/Lotus/Types/ModLists/Pistol/StatusCorrosive"
     }
 }

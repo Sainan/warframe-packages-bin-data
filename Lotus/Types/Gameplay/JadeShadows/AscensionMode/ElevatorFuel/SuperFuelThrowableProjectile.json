@@ -1,0 +1,64 @@
+{
+    "parent": "/Lotus/Types/Game/GameplayItemProjectile",
+    "data": {
+        "Mesh": "/Lotus/Objects/Gameplay/JadeShadows/ElevatorFuelSpecial.fbx",
+        "MeshScale": 1.3,
+        "PhysicsBehavior": "KinematicNoCameraClipCCD",
+        "OnlyRegisterBounds": 0,
+        "ReplicaRunScriptInstance": 1,
+        "ReplicationOverride": "RO_ALWAYS",
+        "ReplicateCreator": 1,
+        "ExplosionIgnoreSource": 1,
+        "ExplodeOnImpact": 1,
+        "GrenadeShootPermissions": [
+            "IS_SAME_FACTION"
+        ],
+        "AllowedHitTypes": [],
+        "AllowedDamageTypes": [],
+        "DamageRadius": 10,
+        "SetAutoChildThrower": 1,
+        "IgnoreTypes": [
+            "/Lotus/Types/Player/TennoAvatar"
+        ],
+        "MaxLife": 1,
+        "MaxBounces": 1,
+        "SetLifeOnImpact": 1,
+        "IgnoreFriendlyAvatars": 1,
+        "EmbedDamageRadius": 10,
+        "EmbedTime": [
+            0.0001,
+            0.0001
+        ],
+        "EmbedDeathAttack": {
+            "Type": "DT_IMPACT"
+        },
+        "KinematicMovement": 1,
+        "KinematicAccel": 10,
+        "KinematicInitialSpeed": 12,
+        "KinematicMaxSpeed": 50,
+        "KinematicGravity": 1,
+        "ProjectileReplication": "REPLICATED",
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/Modes/AscensionProjectile.lua",
+            "Function": "OnThrowFuel",
+            "_elevatorFuelProjectile": "",
+            "_elevatorSuperFuelProjectile": "",
+            "_fuelGrenadeExplodeFX": "",
+            "_fuelGrenadeExplodeSound": "",
+            "_superFuelGrenadeExplodeFX": "",
+            "_superFuelGrenadeExplodeSound": ""
+        },
+        "OnProjectileDeathScript": {
+            "Script": "/Lotus/Scripts/Modes/AscensionProjectile.lua",
+            "Function": "OnGrenadeDeath",
+            "_elevatorFuelProjectile": "ElevatorFuelThrowableProjectile",
+            "_elevatorSuperFuelProjectile": "SuperFuelThrowableProjectile",
+            "_fuelGrenadeExplodeFX": "/Lotus/Fx/Levels/JadeShadows/JSSuperFuelExplosionFX",
+            "_fuelGrenadeExplodeSound": "/Lotus/Sounds/Gameplay/JadeShadows/Ascension/JSAscensionFuelProjectileExplosion",
+            "_superFuelGrenadeExplodeFX": "/Lotus/Fx/Levels/JadeShadows/JSSuperFuelExplosionFX",
+            "_superFuelGrenadeExplodeSound": "/Lotus/Sounds/Gameplay/JadeShadows/Ascension/JSAscensionFuelProjectileExplosionSuper"
+        },
+        "IgnoreInstigatorUntilBounced": 1,
+        "RecreatePickupOnDeath": 1
+    }
+}

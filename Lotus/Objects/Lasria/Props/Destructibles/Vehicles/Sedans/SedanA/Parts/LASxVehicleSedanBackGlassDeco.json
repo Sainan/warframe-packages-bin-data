@@ -4,11 +4,37 @@
         "BakeShadowsOnLightMaps": 0,
         "Mesh": "LASxVehicleSedanBackGlass.fbx",
         "PhysicsBehavior": "/EE/Types/Physics/KinematicNonCollidableRaycastable",
-        "Health": 35,
-        "RemoveOnDestroy": 1,
-        "CreateOnDestroy": {
-            "RelativeToBounds": 1
+        "ShowDamageNumbers": 0,
+        "Health": 10,
+        "SignalOnDestroy": 1,
+        "DestroyedMesh": "LASxVehicleSedanBackGlassDestroyed.fbx",
+        "MasterCreateOnDestroy": {
+            "Type": "/Lotus/Fx/Shatter/ShatterGlassChunks",
+            "RelativeToBounds": 1,
+            "Scale": 0.5
         },
+        "CreateHitEffectWhenDead": 0,
+        "PlayOnDestroy": "/Lotus/Sounds/Ambience/NineteenNinetyNine/Gameplay/NineteenNinetyNineGlassWindowBreak",
+        "ModifyDamageScript": {
+            "Script": "/Lotus/Levels/1999/AA1999CarGym/Cadillac/DestructibleVehicle.lua",
+            "Function": "HandleGlassDamage",
+            "_fixedJoints": [],
+            "_hingeJoints": [],
+            "_brokenPartPhysicsBehavior": "",
+            "_trunkPopJoint": "",
+            "_trunkDropTable": "",
+            "_dropPosition": [
+                0,
+                0,
+                0
+            ],
+            "_slowSound": "",
+            "_slowVelocityThreshold": 0.25,
+            "_fastSound": "",
+            "_fastVelocityThreshold": 0.75
+        },
+        "MaterialForSwap": "/Lotus/Objects/Lasria/Materials/LASxBrokenGlass",
+        "MaterialSwapOnDamaged": 1,
         "NavMeshInfluence": "NMI_NONE"
     }
 }
