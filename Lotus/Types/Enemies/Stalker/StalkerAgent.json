@@ -69,6 +69,7 @@
             ],
             "ShouldAim": 1,
             "CanRun": 1,
+            "StopRadius": 4.2,
             "StopSearchIfNoTarget": 0,
             "StopSearchOnAwarenessLevel": "AW_IDLE",
             "MaintainedAwarenessLevel": "AW_ALERT",
@@ -334,6 +335,7 @@
                 },
                 "DoTargetViewScore": 0,
                 "RestrictToDefenseVolume": 0,
+                "MaxDistanceFromEncounterHint": 0,
                 "ScoreDirectionFromTargetView": {
                     "m": -1,
                     "k": 2,
@@ -381,11 +383,17 @@
                     "DefaultReevaluationDelay": 0,
                     "MaxStrafeDistance": 25,
                     "MinStrafeDistance": 0,
-                    "StopRadius": 0.1,
+                    "StopRadius": 0.5,
                     "MovementSpeedModifier": [
                         0.8,
                         1.2
                     ],
+                    "MovementLineOfFireScoring": 0,
+                    "DistanceFromTeammates": [
+                        1.5,
+                        100
+                    ],
+                    "MaxNumTeammatesForScoring": 4,
                     "LookAtTarget": 0,
                     "LookHorizRate": 40,
                     "LookVertRate": 20,
@@ -412,6 +420,7 @@
                         2,
                         6
                     ],
+                    "StartRepositionTimerAtDest": 1,
                     "KeepRunningDuringWaitPeriod": 1,
                     "MoveDuringShoot": 1,
                     "CrouchDuringShootChance": 0,
@@ -462,7 +471,8 @@
                     ],
                     "RequireRangedWeapon": 0,
                     "RequireNotForcedMelee": 0,
-                    "UseDefenseVolume": 1
+                    "UseDefenseVolume": 1,
+                    "ShouldConstantlyBarkAttack": 0
                 }
             },
             "TacPosIdealDistanceBehavior": {
@@ -544,7 +554,9 @@
                     "logistic": 1
                 },
                 "AimWhileMoving": 0,
+                "SetViewWhileMoving": 1,
                 "ShootingDistance": 2,
+                "NeedsVisibilityForShooting": 1,
                 "ChangeWeapons": 1,
                 "WeaponSlot": "SLOT_1",
                 "WeaponHand": "MAIN_HAND",
@@ -563,11 +575,17 @@
             "DefaultReevaluationDelay": 0,
             "MaxStrafeDistance": 15,
             "MinStrafeDistance": 0,
-            "StopRadius": 0.1,
+            "StopRadius": 0.5,
             "MovementSpeedModifier": [
                 0.8,
                 1.2
             ],
+            "MovementLineOfFireScoring": 0,
+            "DistanceFromTeammates": [
+                1.5,
+                100
+            ],
+            "MaxNumTeammatesForScoring": 4,
             "LookAtTarget": 0,
             "LookHorizRate": 40,
             "LookVertRate": 20,
@@ -594,6 +612,7 @@
                 2,
                 6
             ],
+            "StartRepositionTimerAtDest": 1,
             "KeepRunningDuringWaitPeriod": 1,
             "MoveDuringShoot": 1,
             "CrouchDuringShootChance": 0,
@@ -622,7 +641,8 @@
             "FiringPreferencesOverride": [],
             "RequireRangedWeapon": 0,
             "RequireNotForcedMelee": 0,
-            "UseDefenseVolume": 1
+            "UseDefenseVolume": 1,
+            "ShouldConstantlyBarkAttack": 0
         },
         "GuardTactic": {
             "Enabled": 1,
@@ -652,6 +672,7 @@
             "PatrolBehavior:NearDistance": 2,
             "PatrolBehavior:SpeedMultiplier": 1,
             "PatrolBehavior:AlertSpeedMultiplier": 1,
+            "PatrolBehavior:MovementPosture": "WALK",
             "PatrolBehavior:FailOnTargetAcquired": 1,
             "PatrolBehavior:AimWhenIdle": 0,
             "PatrolBehavior:AimWhenAlert": 1,
@@ -666,6 +687,9 @@
             "PatrolBehavior:AutoAssignClosestPatrol": 0,
             "PatrolBehavior:SameZoneOnly": 1,
             "PatrolBehavior:AutoPatrolRadius": 30,
+            "PatrolBehavior:OnCompleteScript": {
+                "Script": ""
+            },
             "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
             "RandomWalkBehavior:Enabled": 1,
             "RandomWalkBehavior:OnStartScript": {
@@ -714,6 +738,8 @@
             "RandomWalkBehavior:UseWasAlert": 0,
             "RandomWalkBehavior:ScanLength": 2,
             "RandomWalkBehavior:MovementPosture": "WALK",
+            "RandomWalkBehavior:MinimumTacWalkAreas": 4,
+            "RandomWalkBehavior:WanderWhenNotEnoughTacAreas": 1,
             "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
             "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
             "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
@@ -742,6 +768,7 @@
             },
             "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
             "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
+            "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
             "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
             "GuardBehavior:Enabled": 1,
             "GuardBehavior:OnStartScript": {
@@ -763,7 +790,8 @@
                 0,
                 0
             ],
-            "GuardBehavior:MinHeadingChangeToTurn": 0
+            "GuardBehavior:MinHeadingChangeToTurn": 0,
+            "GuardBehavior:AimWhenAlert": 1
         },
         "LocomotionController:MoveModifierCollection": [
             {

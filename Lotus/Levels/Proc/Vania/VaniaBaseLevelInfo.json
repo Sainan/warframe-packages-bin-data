@@ -12,16 +12,24 @@
             "exposureConvergeSpeed": 10,
             "useExposureEVCurve": 1,
             "exposureCurveMin": {
-                "sceneEV": -5.5
+                "sceneEV": -6.5,
+                "adjustmentEV": -4.5
+            },
+            "exposureCurveMed": {
+                "sceneEV": -5,
+                "adjustmentEV": -3.5
+            },
+            "exposureCurveMax": {
+                "sceneEV": -3.5,
+                "adjustmentEV": -2.5
             },
             "toneMapType": "TM_ACES_REF",
-            "toneMapLUT": "/EE/Materials/PostFX/FilmLooks/Rec709Kodak2383D65.cube",
-            "toneMapLUTBlend": 0.55,
+            "toneMapLUT": "/EE/Materials/PostFX/TriuneLUTs/90s/FightClub.cube",
             "colorCorrectCurveLift": [
-                1,
-                1,
-                1,
-                0.01
+                1.02,
+                0.98,
+                1.1,
+                0
             ],
             "colorGradingData": {
                 "Global": {
@@ -30,12 +38,27 @@
                         1,
                         1,
                         0.9
+                    ],
+                    "Contrast": [
+                        1,
+                        1,
+                        1,
+                        1.1
+                    ],
+                    "Gamma": [
+                        1,
+                        1,
+                        1,
+                        0.98
+                    ],
+                    "Gain": [
+                        1,
+                        1,
+                        1,
+                        0.8
                     ]
                 }
             },
-            "skyBloom": 0.22,
-            "saturation": 0.85,
-            "horizonFogElevation": 1,
             "fogColor": [
                 48,
                 50,
@@ -43,10 +66,10 @@
                 240
             ],
             "distanceFogDensity": 0.22,
-            "heightFogFalloff": 0.5,
+            "heightFogFalloff": 0,
             "fogTexture": "/Lotus/Objects/Natural/Skybox/FogTextures/GrineerForestFogTextureNightDesat.png",
             "postFXMaterial": "/Lotus/Types/ACESPost",
-            "focalFarPlane": 60,
+            "focalFarPlane": 125,
             "focalFarDepth": 50,
             "sunPosition": [
                 -0.569803,
@@ -54,9 +77,9 @@
                 0.455842
             ],
             "sunColor": [
-                0.91,
-                1.02,
-                1.06,
+                0.74,
+                1.01,
+                1.64,
                 0
             ],
             "sunShaftsDecay": 0.875,
@@ -69,20 +92,36 @@
             ],
             "volumetricFog": {
                 "Enabled": 1,
-                "NearDistance": 0.001,
-                "DirectLightingMultiplier": 1.35,
-                "Extinction": 0.75,
-                "ExtinctionConfusion": 0.35,
+                "FogRange": 256,
+                "NearDistance": 0.5,
+                "Extinction": 0.5,
+                "ExtinctionConfusion": 0.5,
+                "ScatteringConfusion": 1,
                 "GlobalFog": {
-                    "Density": 0.023,
-                    "G": 0.3
+                    "Density": 0.0005,
+                    "G": 0.33
+                },
+                "HeightFog": {
+                    "HeightFogMinHeight": -5,
+                    "HeightFogMaxHeight": 5,
+                    "HeightFogParticipatingMedia": {
+                        "Density": 0.01,
+                        "G": 0.4,
+                        "NoiseScale": 0.05
+                    },
+                    "SecondaryHeightFogMinHeight": -5,
+                    "SecondaryHeightFogMaxHeight": 0.5,
+                    "SecondaryHeightFogParticipatingMedia": {
+                        "Density": 0.015,
+                        "ScatteringMultiplier": 2
+                    }
                 },
                 "WindSettings": {
-                    "WindSpeedMultiplier": 0.05
+                    "WindSpeedMultiplier": 0.1
                 },
                 "ClumpyNoise": {
-                    "ClumpAmount": 0.4,
-                    "ClumpStart": 0.6,
+                    "ClumpAmount": 0.35,
+                    "ClumpStart": 0.5,
                     "ClumpEnd": 0.9,
                     "NoiseScale": 0.05
                 },
@@ -93,6 +132,7 @@
         },
         "EnableGIVolumes": 1,
         "LightingParams": {
+            "diffuseBoost": 1.25,
             "bakingOptions:Type": "/EE/Types/Darkitect/BakingOptions",
             "bakingOptions:NovaBakeRadiosity": 1,
             "bakingOptions:NovaSamplesPerPixel": 1024,
@@ -131,6 +171,9 @@
             "bakingOptions:IndirectLightingFilterRadius": 5
         },
         "BakeFilesEnabled": 1,
+        "WeatherAutoChild": {
+            "Type": "/Lotus/Fx/Levels/1999Warframe/Weather/LasriaDefaultWeather"
+        },
         "NavMeshDesignOptions": "/EE/Types/Darkitect/RecastAutoBridgeNavMeshDesignOptions",
         "SegmentCoverGenerationDesignOptions": "/EE/Types/Darkitect/SegmentCoverGeneratorDesignOptions"
     }
