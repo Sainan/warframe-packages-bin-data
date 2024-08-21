@@ -74,7 +74,10 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": -1,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 },
                 {
                     "reaction": "DODGE_MELEE_ATTACK",
@@ -116,10 +119,22 @@
                             "DOWNWARD": ""
                         },
                         "DistanceFromTargetPoint": 0.4
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 }
             ],
-            "BlockingResponse": 1
+            "BlockingResponse": 1,
+            "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+            "TurnToAction:Enabled": 1,
+            "TurnToAction:OnStartScript": {
+                "Script": ""
+            },
+            "TurnToAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "TurnAccuracyThreshold": 15
         },
         "GrineerLancerFormationTactic": {
             "Enabled": 1,
@@ -316,6 +331,7 @@
                 ],
                 "ShouldAim": 1,
                 "CanRun": 0,
+                "StopRadius": 4.2,
                 "StopSearchIfNoTarget": 0,
                 "StopSearchOnAwarenessLevel": "AW_IDLE",
                 "MaintainedAwarenessLevel": "AW_ALERT",
@@ -425,7 +441,9 @@
                     "logistic": 1
                 },
                 "AimWhileMoving": 1,
+                "SetViewWhileMoving": 1,
                 "ShootingDistance": 1,
+                "NeedsVisibilityForShooting": 1,
                 "ChangeWeapons": 0,
                 "WeaponSlot": "SLOT_1",
                 "WeaponHand": "MAIN_HAND",
@@ -506,6 +524,7 @@
                 "PatrolBehavior:NearDistance": 2,
                 "PatrolBehavior:SpeedMultiplier": 1,
                 "PatrolBehavior:AlertSpeedMultiplier": 1,
+                "PatrolBehavior:MovementPosture": "WALK",
                 "PatrolBehavior:FailOnTargetAcquired": 1,
                 "PatrolBehavior:AimWhenIdle": 0,
                 "PatrolBehavior:AimWhenAlert": 1,
@@ -601,6 +620,7 @@
                 },
                 "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
                 "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
+                "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
                 "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
                 "GuardBehavior:Enabled": 1,
                 "GuardBehavior:OnStartScript": {
@@ -799,6 +819,7 @@
                 -1.2
             ],
             "MaxDistToShield": 10,
+            "MaxBehindDistToShield": 3,
             "ShootingOffset": [
                 0,
                 1.7,
@@ -840,6 +861,7 @@
                 ],
                 "coneInclusionDot": 0
             },
+            "HasDestroyableShield": 0,
             "MinDistanceToTarget": 6,
             "StopRadius": 0.5,
             "NearDistance": 0.3,
