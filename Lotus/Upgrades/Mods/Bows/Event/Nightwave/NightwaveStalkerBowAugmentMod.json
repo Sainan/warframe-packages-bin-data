@@ -5,6 +5,7 @@
         "MarketMode": "MM_HIDDEN",
         "LocalizeTag": "/Lotus/Language/Mods/NightwaveStalkerBowAugmentModName",
         "LocalizeDescTag": "",
+        "StatusDescTag": "/Lotus/Language/Buffs/NightwaveStalkerBowAugmentModBuffDesc",
         "Icon": "/Lotus/Interface/Cards/Images/Nightwave/NightwaveStalkerBowAugmentMod.png",
         "ExcludeFromCodex": 0,
         "Upgrades": [
@@ -28,12 +29,17 @@
                     "Function": "GetLocValues",
                     "_minEnemyHitsForInvisibility": 3,
                     "_invisibilityDuration": 5,
-                    "_buffCritLevels": [
+                    "_buffTypes": [
+                        "WEAPON_CRIT_DAMAGE"
+                    ],
+                    "_buffOperationType": "STACKING_MULTIPLY",
+                    "_buffValues": [
+                        0.5,
+                        0.75,
                         1,
                         1.25,
                         1.5,
-                        1.75,
-                        2
+                        1.75
                     ]
                 },
                 "SmallerIsBetter": 0,
@@ -42,6 +48,28 @@
             }
         ],
         "ArtifactPolarity": "AP_ATTACK",
-        "ItemCompatibility": "/Lotus/Weapons/Tenno/Bows/StalkerBow"
+        "ItemCompatibility": "/Lotus/Weapons/Tenno/Bows/StalkerBow",
+        "Script": {
+            "Script": "/Lotus/Scripts/Mods/StalkerBowInvisibilityOnMultiHitMod.lua",
+            "Function": "PollForInvisibility",
+            "_minEnemyHitsForInvisibility": 3,
+            "_invisibilityDuration": 5,
+            "_buffTypes": [
+                "WEAPON_CRIT_DAMAGE"
+            ],
+            "_buffOperationType": "STACKING_MULTIPLY",
+            "_buffValues": [
+                0.5,
+                0.75,
+                1,
+                1.25,
+                1.5,
+                1.75
+            ]
+        },
+        "SubUpgrades": [
+            "NightwaveStalkerBowAugmentModSubUpgrade"
+        ],
+        "HudBuffIcon": "/Lotus/Interface/Icons/ModBuffIndicators/InvisibilityBuffIcon.png"
     }
 }
