@@ -1,0 +1,187 @@
+{
+    "parent": "/Lotus/Types/Enemies/Infested/AiWeek/GreyStrain/GreyStrainAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "InfestedOniAvatar",
+            "EXIMUS": ""
+        },
+        "MinLevel": 15,
+        "BaseLevel": 15,
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Infested/InfestedMicroplanet/Ashen/AshenBigMeleeWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Powersuits/NpcPowersuits/AshenPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "AllowTeleportedByAiDirector": 0,
+        "SuicideOffNavAndHidden": 0,
+        "AggroController:Entries": [
+            "/EE/Types/Npc/AggroEntryNearDeath"
+        ],
+        "AggroController:AggroEntryNearDeath": {
+            "Enabled": 0,
+            "IncreaseTimeLength": 1,
+            "DecayTimeLength": 1,
+            "LowHeatlthBackOffValue": 50
+        },
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/Logic/LogicGraphAction"
+        ],
+        "LogicGraphAction": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "GraphRes": "/Lotus/Types/Enemies/Infested/InfestedMicroplanet/Ashen/AshenBigLogicGraph"
+        },
+        "CustomRunToCoverBehavior": "/EE/Types/Npc/RunToAttackCoverBehavior",
+        "LocomotionController:PathFinder": [
+            "/EE/Types/Npc/VipDynamicPathFinderGround",
+            "/EE/Types/Npc/DynamicPathFinderGround"
+        ],
+        "LocomotionController:VipDynamicPathFinderGround": {
+            "UseCover": 0,
+            "StripContextActionsIfFlyer": 1
+        },
+        "LocomotionController:DynamicPathFinderGround": {
+            "UseCover": 0
+        },
+        "LocomotionController:PathFollower": [
+            "/EE/Types/Npc/DynamicPathFollowerGroundUsingVip",
+            "/EE/Types/Npc/DynamicPathFollowerGround"
+        ],
+        "LocomotionController:DynamicPathFollowerGroundUsingVip": {
+            "MoveFailureTime": 0.4,
+            "MoveFailureThreshold": 0.9,
+            "LockedInPlaceTimeout": 5,
+            "KeepPathWhileBlocking": 0,
+            "MinimumMoveDistance": 0.1,
+            "MinimumRunDistance": 3,
+            "ShortDistanceSpeedMultiplier": 2,
+            "ForceSidestepDistance": 0,
+            "RunStopDist": 0.5,
+            "WalkStopDist": 0.3,
+            "MinWalkWhenTurningAngle": 360,
+            "StopWhenTurningAngle": 360,
+            "CheckFunnelForTightTurns": 0,
+            "MinReducedSpeed": 0.5,
+            "TurnAccelerationCompensation": 1,
+            "ReduceSpeedForTightTurns": 0,
+            "TraceOffset": [
+                0,
+                0.5,
+                0
+            ],
+            "TraceScoreCurve": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 0.99,
+                "logistic": 0
+            },
+            "TraceFwdBias": 2,
+            "SlopeThrottleMapping": [],
+            "EnableViewChange": 1,
+            "InitialAngleDiffForTurn": 0,
+            "ForceLookTarget": 0,
+            "ForcePredictUsingDesiredViewHeading": 0,
+            "TransitionDistance": 2,
+            "CoverWalkTransitionDistance": 0.5,
+            "AlternateCoverPoseTransitionDistance": 0,
+            "UseEndPoseForCoverWarp": 0,
+            "CanUseBendTransition": 0,
+            "MaximumHeightDifferenceForAlternateCover": 0,
+            "MaximumAngleForAlternateCover": 0,
+            "RoadNetworkTargetMinDistanceSqr": 50,
+            "RoadNetworkTargetMaxDistanceSqr": 400,
+            "UseVIPNav": 1,
+            "AvoidDynamicOnly": 0
+        },
+        "LocomotionController:DynamicPathFollowerGround": {
+            "MoveFailureTime": 0.1,
+            "MinWalkWhenTurningAngle": 360,
+            "StopWhenTurningAngle": 360,
+            "ReduceSpeedForTightTurns": 0,
+            "UseVIPNav": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/Lotus/Types/Game/VipNavLocomotionModifier",
+                    "/EE/Types/Npc/LocomotionMoveModifierSwitchMoveTypeOffNav"
+                ],
+                "VipNavLocomotionModifier": {
+                    "SupportedVipNavList": []
+                },
+                "LocomotionMoveModifierSwitchMoveTypeOffNav": {
+                    "ModifierSwitchingCondition": "NAVMESH_NEARBY_AND_OFF_NAV",
+                    "PathFinderTargetIdx": 1,
+                    "PathFollowerTargetIdx": 1,
+                    "MoveModifierPackageTargetIdx": 1,
+                    "GracePeriod": 2,
+                    "ForcePreventSwitchOrder": "",
+                    "ForceSwitchOrder": ""
+                }
+            },
+            {
+                "moveModifiers": [
+                    "/Lotus/Types/Game/VipNavLocomotionModifier",
+                    "/EE/Types/Npc/LocomotionMoveModifierSwitchMoveTypeOffNav"
+                ],
+                "VipNavLocomotionModifier": {
+                    "SupportedVipNavList": []
+                },
+                "LocomotionMoveModifierSwitchMoveTypeOffNav": {
+                    "ModifierSwitchingCondition": "VIP_NAVMESH_NEARBY",
+                    "PathFinderTargetIdx": 0,
+                    "PathFollowerTargetIdx": 0,
+                    "MoveModifierPackageTargetIdx": 0,
+                    "GracePeriod": 2,
+                    "ForcePreventSwitchOrder": "",
+                    "ForceSwitchOrder": ""
+                }
+            }
+        ],
+        "LocomotionController:limitToNav": 1,
+        "LocomotionController:waterRestriction": "WS_NONE",
+        "LocomotionController:PathingPreferences": {
+            "coverBias": 10,
+            "maxHeight": 20,
+            "minHeight": -10,
+            "nearbyNavSearchRadius": 8,
+            "shorteningType": "ST_NONE",
+            "avoidanceRadius": 1,
+            "dangerRadius": 0.5,
+            "avoidSpeedMultiplier": 1,
+            "avoidanceFactor": 1,
+            "vipNavName": "LargeEnemy",
+            "allowedLinkFlags": 295023,
+            "disallowedNodeFlags": 153
+        },
+        "ViewIdleFov": 140,
+        "IdleVerticalFov": 45,
+        "ViewIdleDistance": 60,
+        "ViewFov": 360,
+        "ViewDistance": 200,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "ReactionControllerType": "/Lotus/Types/Enemies/Grineer/Eidolon/EidolonGrineerReactionController",
+        "PerceiverType": "/Lotus/Types/Enemies/Infested/InfestedMicroplanet/MicroPlanetInfestedPerceiver",
+        "SightReactionProbability": 0.6,
+        "CoverIllumBias": 0.5,
+        "IsCoverUseEnabled": 1,
+        "CoverEvaluatorType": "/EE/Types/Npc/UtilityCoverEvaluator",
+        "TargetEvaluatorType": "/Lotus/Types/Game/KubrowTargetEvaluator"
+    }
+}

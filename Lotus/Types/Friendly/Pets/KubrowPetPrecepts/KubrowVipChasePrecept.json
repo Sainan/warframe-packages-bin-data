@@ -21,6 +21,7 @@
                 "UpgradeObject": "",
                 "ValidPostures": [],
                 "ValidModifiers": [],
+                "InvalidModifiers": [],
                 "ValidProcTypes": [],
                 "OverrideLocalization": 1,
                 "LocTag": "/Lotus/Language/Items/KubrowVipChasePreceptDesc",
@@ -31,7 +32,10 @@
                     "_runBehaviour": "",
                     "_vipSearchDistance": 60,
                     "_minActivationDistance": 6,
-                    "_chasePredeathTargets": 0
+                    "_activationDistance": 2,
+                    "_chasePredeathTargets": 0,
+                    "_companionAttackTime": 6,
+                    "_meleeHitFxType": ""
                 },
                 "SmallerIsBetter": 0,
                 "RoundTo": 0.1,
@@ -47,11 +51,32 @@
                 "_vipAvatarTypes": [
                     "/Lotus/Types/Enemies/CaptureTargets/CaptureTargetBaseAvatar"
                 ],
-                "_runBehaviour": "/Lotus/Types/Friendly/Pets/KubrowPetBehaviors/KubrowHunterFinisherTactic",
+                "_runBehaviour": "/EE/Types/Npc/MeleeTactic",
                 "_vipSearchDistance": 60,
                 "_minActivationDistance": 0,
-                "_chasePredeathTargets": 0
+                "_activationDistance": 2,
+                "_chasePredeathTargets": 0,
+                "_companionAttackTime": 6,
+                "_meleeHitFxType": ""
             },
+            "AbilityEvents": [
+                {
+                    "tag": "OnMeleeHit",
+                    "eventType": "ET_ON_MELEE_HIT",
+                    "scriptInstance": {
+                        "Script": "/Lotus/Types/Friendly/Pets/KubrowPetBehaviors/KubrowVipChaseAbility.lua",
+                        "Function": "OnMeleeHit",
+                        "_vipAvatarTypes": [],
+                        "_runBehaviour": "",
+                        "_vipSearchDistance": 40,
+                        "_minActivationDistance": 6,
+                        "_activationDistance": 2,
+                        "_chasePredeathTargets": 0,
+                        "_companionAttackTime": 6,
+                        "_meleeHitFxType": "/Lotus/Fx/Sentinels/Precepts/KubrowImpactFx"
+                    }
+                }
+            ],
             "CooldownDuration": 5,
             "EnergyRequiredToActivate": 0
         }

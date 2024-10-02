@@ -1,7 +1,9 @@
 {
-    "parent": "/Lotus/Types/Enemies/Infested/AiWeek/GreyStrain/FemurGooProjectile",
+    "parent": "/EE/Types/Engine/GuidedProjectile",
     "data": {
+        "UseAmbient": 1,
         "Mesh": "/Lotus/Fx/PowersuitAbilities/Brawler/RockMeshA.fbx",
+        "MeshScale": 0.5,
         "OverrideMaterial": [
             "/Lotus/Fx/Sentinels/Precepts/InfestedPredators/SpitAcidSpikeMat"
         ],
@@ -73,18 +75,68 @@
                 "Scale": 1
             }
         ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicAvatarsWalkThrough",
+        "AttackData": {
+            "Type": "DT_EXPLOSION",
+            "Amount": 50,
+            "ProcChance": 0
+        },
+        "ExplosiveAttack": {
+            "Type": "DT_VIRAL",
+            "Amount": 100,
+            "ProcChance": 0
+        },
+        "DamageRadius": 5,
         "DieEffect": "/Lotus/Fx/Sentinels/Precepts/InfestedPredators/TentacleParasiteProjDeath",
-        "StopOnAvatars": 1,
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "IgnoreCollisionsWithSameType": 1,
+        "IgnoreTypes": [
+            ""
+        ],
+        "MaxLife": 2,
+        "SetLifeOnImpact": 1,
+        "IgnoreFriendlyAvatars": 1,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "Health": 1,
+        "AngleSpeed": [
+            0.5,
+            2
+        ],
         "Embed": 1,
         "EmbedAlignToSurface": 1,
         "EmbedAttack": {
+            "Type": "DT_VIRAL",
             "Amount": 5
         },
         "EmbedTime": [
             2,
             2
         ],
+        "EmbedDeathAttack": {
+            "Amount": 90
+        },
         "OwnEmbedEffect": 1,
+        "DoNotEmbedOnThisSurface": "ST_DEFAULT",
+        "ShouldDetachOnDodge": 1,
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 15,
+        "KinematicMaxSpeed": 15,
+        "KinematicGravityMultiplier": 0.3,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            0,
+            90,
+            0
+        ],
+        "ProjectileReplication": "REPLICATED",
+        "InstantTurn": 1,
         "OnProjectileStoppedScript": {
             "Script": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePrecepts/TentacleParasite.lua",
             "Function": "OnHit",
@@ -92,8 +144,14 @@
             "_stunProjector": "/Lotus/Fx/Projectors/ScanProjectorCatbrow",
             "_tendrilsActive": "/Lotus/Fx/Sentinels/Precepts/InfestedPredators/SpitParasiteTentacleAttachDeco",
             "_viralTick": 5,
-            "_spawnRadius": 2
+            "_spawnRadius": 4,
+            "_auraType": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePreceptComponents/ParasitePreceptAura"
         },
-        "ApplyColorCustomization": 1
+        "ApplyColorCustomization": 1,
+        "MaxHomingSpeed": 70,
+        "AimRate": 550,
+        "ReducedAimRate": 550,
+        "SeekAllEntities": 1,
+        "AvatarTargetPart": "TORSO"
     }
 }

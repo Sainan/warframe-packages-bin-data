@@ -161,6 +161,8 @@
                 "logistic": 1
             },
             "DoTargetViewScore": 0,
+            "RestrictToDefenseVolume": 0,
+            "MaxDistanceFromEncounterHint": 0,
             "ScoreDirectionFromTargetView": {
                 "m": -1,
                 "k": 2,
@@ -169,6 +171,7 @@
                 "logistic": 0
             },
             "NumResults": 1,
+            "DelayBetweenDodges": 2,
             "TimeBetweenDodges": 10,
             "MinimumDodgeDistance": 2
         },
@@ -201,7 +204,8 @@
             "ClearOrderOnMoveSuccess": 0,
             "AllowTeleportToCatchUp": 1,
             "TeleportToDestination": 0,
-            "AllowPartialPath": 1
+            "AllowPartialPath": 1,
+            "RestrictToDV": 0
         },
         "DecoratedShootBehavior": {
             "Enabled": 1,
@@ -383,7 +387,9 @@
                 "logistic": 1
             },
             "AimWhileMoving": 1,
+            "SetViewWhileMoving": 1,
             "ShootingDistance": 0,
+            "NeedsVisibilityForShooting": 1,
             "ChangeWeapons": 0,
             "WeaponSlot": "SLOT_1",
             "WeaponHand": "MAIN_HAND",
@@ -440,6 +446,7 @@
             "PatrolBehavior:NearDistance": 2,
             "PatrolBehavior:SpeedMultiplier": 1,
             "PatrolBehavior:AlertSpeedMultiplier": 1,
+            "PatrolBehavior:MovementPosture": "WALK",
             "PatrolBehavior:FailOnTargetAcquired": 1,
             "PatrolBehavior:AimWhenIdle": 0,
             "PatrolBehavior:AimWhenAlert": 0,
@@ -454,6 +461,9 @@
             "PatrolBehavior:AutoAssignClosestPatrol": 0,
             "PatrolBehavior:SameZoneOnly": 1,
             "PatrolBehavior:AutoPatrolRadius": 30,
+            "PatrolBehavior:OnCompleteScript": {
+                "Script": ""
+            },
             "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
             "RandomWalkBehavior:Enabled": 1,
             "RandomWalkBehavior:OnStartScript": {
@@ -502,6 +512,8 @@
             "RandomWalkBehavior:UseWasAlert": 0,
             "RandomWalkBehavior:ScanLength": 2,
             "RandomWalkBehavior:MovementPosture": "WALK",
+            "RandomWalkBehavior:MinimumTacWalkAreas": 4,
+            "RandomWalkBehavior:WanderWhenNotEnoughTacAreas": 1,
             "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
             "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
             "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
@@ -530,6 +542,7 @@
             },
             "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
             "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
+            "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
             "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
             "GuardBehavior:Enabled": 1,
             "GuardBehavior:OnStartScript": {
@@ -551,7 +564,8 @@
                 0,
                 0
             ],
-            "GuardBehavior:MinHeadingChangeToTurn": 0
+            "GuardBehavior:MinHeadingChangeToTurn": 0,
+            "GuardBehavior:AimWhenAlert": 1
         },
         "LocomotionController:PathingPreferences": {
             "preferredHeight": 1

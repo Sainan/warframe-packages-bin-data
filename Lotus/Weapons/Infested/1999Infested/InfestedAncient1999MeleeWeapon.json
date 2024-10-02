@@ -349,7 +349,9 @@
                     "AttackTime": 0.3,
                     "RetractTime": 0.4,
                     "MaxVelocityCorrection": 2,
-                    "ThrowAttacks": [],
+                    "ThrowAttacks": [
+                        "MELEE"
+                    ],
                     "ExpandSymbol": "MeleeStart"
                 },
                 "impact:Type": "/EE/Types/Game/WeaponImpactBehavior",
@@ -358,10 +360,12 @@
                         "UseNewFormat": 0,
                         "Type": "DT_IMPACT",
                         "Amount": 15,
-                        "ProcChance": 0.1,
-                        "ForcedProcs": [],
+                        "ProcChance": 10,
+                        "ForcedProcs": [
+                            "PT_KNOCKBACK"
+                        ],
                         "ForcedDeathProcs": [],
-                        "HitType": "DHT_NONE",
+                        "HitType": "DHT_MELEE",
                         "ProcExtraTime": 0
                     },
                     "PvpForcedProcs": [],
@@ -377,7 +381,7 @@
                     "PlayerDamageMultiplier": 1,
                     "PvpDamageMultiplier": 1,
                     "PlayerScaleDamageMultiplierByMissionLevel": 0,
-                    "instantImpulse": 250,
+                    "instantImpulse": 50,
                     "additionalForce": [
                         0,
                         0,
@@ -385,14 +389,14 @@
                     ],
                     "impulseFallOff": [
                         10,
-                        1000
+                        300
                     ],
                     "minImpulseFallOff": 1,
-                    "applyPushVelocity": 0,
+                    "applyPushVelocity": 1,
                     "applyPushVelocityOnlyToBlockingTarget": 0,
                     "pushMagnitude": [
-                        0.5,
-                        1
+                        5,
+                        10
                     ],
                     "pushMagnitudeFallOff": [
                         10,
@@ -415,13 +419,14 @@
                     "strength": 10,
                     "radius": 10,
                     "flash": 0,
-                    "OnHitScriptEnabled": 1,
+                    "OnHitScriptEnabled": 0,
                     "OnHitScript": {
                         "Script": ""
                     },
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
-                    "IgnoreHeadshotBonusPvp": 0
+                    "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0
                 },
                 "state:Type": "/EE/Types/Game/WeaponMeleeStateBehavior",
                 "state:WeaponMeleeStateBehavior": {
@@ -458,6 +463,7 @@
                     "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "",
                     "BehaviorTag": "",

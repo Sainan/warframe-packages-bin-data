@@ -1,0 +1,196 @@
+{
+    "parent": "/EE/Types/Engine/AnimTreeController",
+    "data": {
+        "AnimTree": "LasrianTankAnimTree.animtree",
+        "DefaultMovementMode": "ATMM_PHYSICS_DRIVEN",
+        "DefaultMovementModeRemotePlayers": "ATMM_PHYSICS_DRIVEN",
+        "SnapAngleSpeed": 5,
+        "MaximumAimDirH": 180,
+        "LookIKSpeed": 0.5,
+        "LookIKFov": 180,
+        "DefaultLookIkHeadingTrackSpeed": 150,
+        "DefaultLookIkPitchTrackSpeed": 150,
+        "Actions": [
+            {
+                "Action": "IDLE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 0
+                    }
+                ],
+                "Query": []
+            },
+            {
+                "Action": "EnableLookIK",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_LOOK_IK_REQUESTED",
+                        "Value": 1
+                    }
+                ],
+                "Query": []
+            },
+            {
+                "Action": "DisableLookIK",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_LOOK_IK_REQUESTED",
+                        "Value": 0
+                    }
+                ],
+                "Query": []
+            },
+            {
+                "Action": "StartEfervonAim",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_CUSTOM_IK_AIM_1",
+                        "Value": 1
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_CUSTOM_IK_AIM_1",
+                        "Value": 1
+                    }
+                ]
+            },
+            {
+                "Action": "StopEfervonAim",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_CUSTOM_IK_AIM_1",
+                        "Value": 0
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_CUSTOM_IK_AIM_1",
+                        "Value": 0
+                    }
+                ]
+            },
+            {
+                "Action": "FIRE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": 1
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": 1
+                    }
+                ]
+            },
+            {
+                "Action": "ClearLook",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_LOOK_IK",
+                        "Value": 0
+                    }
+                ],
+                "Query": []
+            }
+        ],
+        "InitialVariableValues": [
+            {
+                "Variable": "IV_FOOT_IK_REQUESTED",
+                "Value": 1
+            }
+        ],
+        "SurfaceSensitiveEffects": [
+            {
+                "AnimEventSymbols": [
+                    "StepL"
+                ],
+                "RaycasterBoneName": "GAME_C1_ROOT",
+                "HitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps",
+                "OverridePostures": [
+                    {
+                        "Posture": "RUN",
+                        "OverrideHitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps"
+                    },
+                    {
+                        "Posture": "WALLRUNNING_LEFT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_RIGHT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_UP",
+                        "OverrideHitEffect": ""
+                    }
+                ],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepR"
+                ],
+                "RaycasterBoneName": "GAME_C1_ROOT",
+                "HitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps",
+                "OverridePostures": [
+                    {
+                        "Posture": "RUN",
+                        "OverrideHitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps"
+                    },
+                    {
+                        "Posture": "WALLRUNNING_LEFT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_RIGHT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_UP",
+                        "OverrideHitEffect": ""
+                    }
+                ],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 1,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "LandSoft"
+                ],
+                "RaycasterBoneName": "",
+                "HitEffect": "",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "LandHeavy"
+                ],
+                "RaycasterBoneName": "",
+                "HitEffect": "",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            }
+        ],
+        "CinematicID": "FlyingDrone1"
+    }
+}

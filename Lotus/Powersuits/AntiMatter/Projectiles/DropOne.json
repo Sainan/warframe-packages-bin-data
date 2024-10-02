@@ -2,7 +2,7 @@
     "parent": "/EE/Types/Engine/GuidedProjectile",
     "data": {
         "Mesh": "/Lotus/Powersuits/Trapper/Deployables/DeploySphere.x",
-        "MeshScale": 2.5,
+        "MeshScale": 4,
         "OverrideMaterial": [
             "/Lotus/Fx/PowersuitAbilities/Anti/DropProjMat"
         ],
@@ -109,20 +109,31 @@
             "_fullyChargedMat": "/Lotus/Fx/PowersuitAbilities/Anti/DropProjChargedMat",
             "_chargedEffect": "/Lotus/Fx/PowersuitAbilities/Anti/DropProjCharged",
             "_augmentPvpTrigger": "",
-            "_deluxeArmsAnimations": []
+            "_deluxeArmsAnimations": [],
+            "_projTypes": [],
+            "_pvpProjTypes": [],
+            "_throwEvent": "AntiCast",
+            "_throwDoneEvent": "CastAbility",
+            "_throwingHand": "GAME_L1_ARM3",
+            "_deluxeCastAttach": "",
+            "_dropProjSphereOuter": "/Lotus/Fx/PowersuitAbilities/Anti/DropProjSphereOuterDeco",
+            "_dropProjSphereInner": "/Lotus/Fx/PowersuitAbilities/Anti/DropProjSphereInnerDeco",
+            "_sphereChargedSound": "/Lotus/Sounds/Warframes/Antimatter/AntimatterDropFullyCharged",
+            "_speedUpSound": ""
         },
         "ReplicaRunScriptInstance": 1,
         "ReplicationOverride": "RO_ALWAYS",
         "ReplicateCreator": 1,
         "AttackData": {
-            "Type": "DT_RADIATION"
+            "Type": "DT_EXPLOSION",
+            "Amount": 0,
+            "ProcChance": 0
         },
         "ExplosiveAttack": {
-            "Type": "DT_RADIATION",
-            "Amount": 100
+            "ProcChance": 0
         },
         "ExplosionIgnoreSource": 1,
-        "DamageRadius": 5,
+        "ExplodeOnImpact": 1,
         "DieEffect": "/Lotus/Fx/PowersuitAbilities/Anti/DropProjDeath",
         "DieEffectOffset": [
             0,
@@ -132,28 +143,26 @@
         "IgnoreTypes": [
             "DropHitProxy"
         ],
-        "VerticalImpulse": 1000,
-        "HorizontalImpulse": 1000,
+        "VerticalImpulse": 0,
+        "HorizontalImpulse": 0,
         "SendEvents": 0,
         "CanBeReflected": 0,
-        "Embed": 1,
         "EmbedAttack": {
             "Type": "DT_RADIATION",
             "Amount": 0
         },
         "EmbedTime": [
-            0.25,
-            0.25
+            0.01,
+            0.01
         ],
         "EmbedDeathAttack": {
-            "Type": "DT_RADIATION",
-            "Amount": 100
+            "ProcChance": 0
         },
         "EmbedEffect": "/Lotus/Fx/HitEffects/TennoShieldHit",
         "EmbedDeathEffect": "/Lotus/Fx/PowersuitAbilities/Anti/DropProjDeath",
         "KinematicMovement": 1,
         "KinematicInitialSpeed": 4,
-        "KinematicMaxSpeed": 40,
+        "KinematicMaxSpeed": 500,
         "KinematicRestitution": 0,
         "KinematicRestitutionParallel": 0,
         "KinematicBulletRaycast": 0,
@@ -169,7 +178,40 @@
             "_fullyChargedMat": "",
             "_chargedEffect": "",
             "_augmentPvpTrigger": "DropPvpAugmentTrigger",
-            "_deluxeArmsAnimations": []
+            "_deluxeArmsAnimations": [],
+            "_projTypes": [],
+            "_pvpProjTypes": [],
+            "_throwEvent": "AntiCast",
+            "_throwDoneEvent": "CastAbility",
+            "_throwingHand": "GAME_L1_ARM3",
+            "_deluxeCastAttach": "",
+            "_dropProjSphereOuter": "",
+            "_dropProjSphereInner": "",
+            "_sphereChargedSound": "",
+            "_speedUpSound": ""
+        },
+        "OnProjectileDeathScript": {
+            "Script": "/Lotus/Powersuits/PowersuitAbilities/NovaDrop.lua",
+            "Function": "OnProjectileDeath",
+            "_augmentHelperType": "",
+            "_augmentOneSphereDeco": "",
+            "_projAttachDeco": "",
+            "_projPrimeAttachDeco": "",
+            "_helperType": "",
+            "_fullyChargedMat": "",
+            "_chargedEffect": "",
+            "_augmentPvpTrigger": "",
+            "_deluxeArmsAnimations": [],
+            "_projTypes": [],
+            "_pvpProjTypes": [],
+            "_throwEvent": "AntiCast",
+            "_throwDoneEvent": "CastAbility",
+            "_throwingHand": "GAME_L1_ARM3",
+            "_deluxeCastAttach": "",
+            "_dropProjSphereOuter": "",
+            "_dropProjSphereInner": "",
+            "_sphereChargedSound": "",
+            "_speedUpSound": ""
         },
         "ApplyColorCustomization": 1,
         "ForwardVel": 8,

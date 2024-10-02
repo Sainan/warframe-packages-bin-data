@@ -112,6 +112,50 @@
                 "DestroyParentOnDeath": 0,
                 "FadeOutOnDestruction": 0,
                 "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Music/DynamicMusic/1999/Cues/1999MotorcycleLoadingCueSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    -0.25,
+                    0
+                ],
+                "LocalRotation": [
+                    -0.707107,
+                    0,
+                    0,
+                    0.707107
+                ],
+                "BoneName": "GAME_C1_HANDLEBARS",
+                "Type": "/Lotus/Fx/Gameplay/Motorcycle/MotorcycleImpactTerrainCaster",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
             }
         ],
         "ServerChildren": [
@@ -161,7 +205,7 @@
             }
         ],
         "SetChildrenVisibility": 1,
-        "PhysicsBehavior": "/Lotus/Types/Vehicles/GrnGhoulSawVehicle/SawVehiclePhysics",
+        "PhysicsBehavior": "MotorcycleVehiclePhysics",
         "ScriptInstance": {
             "Script": "Motorcycle.lua",
             "Function": "MotorcycleAvatar",
@@ -183,6 +227,10 @@
             "_forwardDismountMaxSpeed": 5,
             "_AvatarFadeInTimeMultiplier": 2,
             "_equipBestWeapon": 1,
+            "_innerRadius": 1,
+            "_outerRadius": 30,
+            "_intervalMin": 0.35,
+            "_intervalMax": 0.75,
             "_mountedEffect": "",
             "_headLightTag": "MotorCycleLight",
             "_headLightOnEmmisiveAtten": 30
@@ -201,7 +249,9 @@
         ],
         "InputFilter": "/Lotus/Types/Enemies/Corpus/Venus/Hoverboard/CrpHoverboardInputFilter",
         "Faction": "TENNO",
-        "LocTag": "/Lotus/Language/Enemies/EidolonGrineerSkiffName",
+        "LocTag": "/Lotus/Language/1999Demo/1999MotorcycleAvatarName",
+        "LongDesc": "/Lotus/Language/1999Demo/1999MotorcycleAvatarDesc",
+        "Icon": "/Lotus/Interface/Icons/StoreIcons/Gear/SummonMotorcycle.png",
         "MaxHealth": 300,
         "ForceNotTargetable": 1,
         "RespondsToWorldCollisions": 1,
@@ -211,7 +261,7 @@
         "WallSlideControllerType": "/Lotus/Types/NeutralCreatures/ErsatzHorse/PegasusWallSlideController",
         "DamageControllerType": "/Lotus/Types/Enemies/Grineer/Eidolon/GrineerSkiff/UnmannedSkiff/UnmannedSkiffDamageController",
         "InputControllerType": "MotorcycleInputController",
-        "InventoryControllerType": "/Lotus/Types/Enemies/Corpus/Venus/Hoverboard/HoverboardInventory",
+        "InventoryControllerType": "MotorcycleInventory",
         "MotionControllerType": "1999MotorcycleMotionController",
         "RaycastProxy": {
             "LocalPosition": [
@@ -297,6 +347,14 @@
             {
                 "EventName": "SFXMotorcycleDismount",
                 "Sound": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/MC99ContainerDismounted",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMotorcycleFootDown",
+                "Sound": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/MC99FootDown",
                 "Chance": 1,
                 "Period": 1,
                 "Context": "PEC_ALL",
@@ -442,6 +500,28 @@
                 "DestroyParentOnDeath": 0,
                 "FadeOutOnDestruction": 0,
                 "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    -0.25,
+                    0
+                ],
+                "LocalRotation": [
+                    -0.707107,
+                    0,
+                    0,
+                    0.707107
+                ],
+                "BoneName": "GAME_C1_HANDLEBARS",
+                "Type": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/MC99SFXImpactCasterFast",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
             }
         ],
         "HudEntityType": "/Lotus/Weapons/Grineer/Emplacements/GrnEmplcmntStndng/EmplacementHudEntity",
@@ -488,6 +568,10 @@
             "_forwardDismountMaxSpeed": 5,
             "_AvatarFadeInTimeMultiplier": 2,
             "_equipBestWeapon": 1,
+            "_innerRadius": 1,
+            "_outerRadius": 30,
+            "_intervalMin": 0.35,
+            "_intervalMax": 0.75,
             "_mountedEffect": "/Lotus/Fx/Gameplay/Motorcycle/MotorcycleEffectsAttach",
             "_headLightTag": "MotorCycleLight",
             "_headLightOnEmmisiveAtten": 30
@@ -513,6 +597,10 @@
             "_forwardDismountMaxSpeed": 5,
             "_AvatarFadeInTimeMultiplier": 2,
             "_equipBestWeapon": 1,
+            "_innerRadius": 1,
+            "_outerRadius": 30,
+            "_intervalMin": 0.35,
+            "_intervalMax": 0.75,
             "_mountedEffect": "/Lotus/Fx/Gameplay/Motorcycle/MotorcycleEffectsAttach",
             "_headLightTag": "MotorCycleLight",
             "_headLightOnEmmisiveAtten": 30
@@ -538,6 +626,10 @@
             "_forwardDismountMaxSpeed": 5,
             "_AvatarFadeInTimeMultiplier": 2,
             "_equipBestWeapon": 1,
+            "_innerRadius": 1,
+            "_outerRadius": 30,
+            "_intervalMin": 0.35,
+            "_intervalMax": 0.75,
             "_mountedEffect": "",
             "_headLightTag": "MotorCycleLight",
             "_headLightOnEmmisiveAtten": 30
@@ -563,6 +655,10 @@
             "_forwardDismountMaxSpeed": 8.5,
             "_AvatarFadeInTimeMultiplier": 2,
             "_equipBestWeapon": 1,
+            "_innerRadius": 1,
+            "_outerRadius": 30,
+            "_intervalMin": 0.35,
+            "_intervalMax": 0.75,
             "_mountedEffect": "",
             "_headLightTag": "MotorCycleLight",
             "_headLightOnEmmisiveAtten": 30

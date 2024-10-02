@@ -1,0 +1,179 @@
+{
+    "parent": "/EE/Types/Engine/Projectile",
+    "data": {
+        "UseAmbient": 1,
+        "Mesh": "/Lotus/Fx/Enemies/Grineer/Nox/NoxGooBall.fbx",
+        "MeshScale": 0.25,
+        "OverrideMaterial": [
+            "/Lotus/Fx/Enemies/WF1999Lasrian/LasrianNoxGooBallMat"
+        ],
+        "DissolveOverride": "/Lotus/Fx/Common/SmoothBillow_d.png",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/WF1999Lasrian/LasrianNoxGooProjectileDroplets",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/InfestedSources/NoxBlobLight",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicAvatarsWalkThrough",
+        "OnlyRegisterBounds": 0,
+        "AttackData": {
+            "Type": "DT_GAS",
+            "Amount": 25,
+            "ProcChance": 0
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "CriticalChance": 0.05,
+        "CriticalMultiplier": 1.5,
+        "ExplosiveAttack": {
+            "Type": "DT_GAS",
+            "Amount": 5,
+            "ProcChance": 0
+        },
+        "DamageRadius": 2,
+        "HitEffect": "LasrianChemNoxLauncherHitEffect",
+        "HitEffectThrottleRange": [
+            0,
+            0
+        ],
+        "DieEffect": "/Lotus/Fx/Enemies/WF1999Lasrian/LasrianNoxGooBallExplosion",
+        "DieSound": "/Lotus/Sounds/Enemies/Lasrian/LasrianSoldiers/Weapons/LasrianChemNox/LasrianChemNoxGrenadeExplosion",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "StopOnCollisionWithEmbeddedOnly": 1,
+        "IgnoreTypes": [
+            "/EE/Types/Engine/Projectile"
+        ],
+        "Toughness": 10000,
+        "WarningTime": 5,
+        "MaxLife": 8,
+        "WhizzBySound": "/Lotus/Sounds/Enemies/Lasrian/LasrianSoldiers/Weapons/LasrianChemNox/LasrianChemNoxGrenadeProjBy",
+        "WhizzByRadius": 50,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "EmbedAttack": {
+            "Type": "DT_POISON",
+            "Amount": 0,
+            "ProcChance": 0
+        },
+        "EmbedFallOff": 0,
+        "EmbedTime": [
+            2,
+            4
+        ],
+        "EmbedDeathAttack": {
+            "Type": "DT_IMPACT",
+            "Amount": 30,
+            "ProcChance": 0,
+            "HitType": "DHT_PROJECTILE"
+        },
+        "EmbedEffect": "/Lotus/Fx/Enemies/WF1999Lasrian/LasrianNoxGooBallEmbed",
+        "EmbedDeathEffect": "/Lotus/Fx/Enemies/WF1999Lasrian/LasrianNoxGooBallExplosion",
+        "ShouldDetachOnDodge": 1,
+        "ShouldDestroyIfOrphan": 0,
+        "DetachInitialKinematicVelocity": [
+            0,
+            -1,
+            0
+        ],
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 22,
+        "KinematicMaxSpeed": 22,
+        "KinematicGravity": 1,
+        "KinematicGravityDelay": 0.5,
+        "KinematicGravityMultiplier": 1.25,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            25,
+            12,
+            9
+        ],
+        "ProjectileReplication": "SYNCED_AUTONOMOUS",
+        "KinematicIgnoredTypes": [
+            "/Lotus/Types/Game/PickUps/LotusPickUp"
+        ],
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/LasrianNoxWeapon.lua",
+            "Function": "OnStart",
+            "_scaleDuration": 0.4,
+            "_meshScaleStart": 0.25,
+            "_meshScaleMin": 0.56,
+            "_meshScaleMax": 1.12,
+            "_slowAtten": 0.1,
+            "_growthTriggerType": "",
+            "_projectileDamageRadius": 2.5,
+            "_trailVFX": "/Lotus/Fx/Enemies/WF1999Lasrian/GoonadierGrenadeTrail",
+            "_embedProjectorFX": ""
+        },
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/LasrianNoxWeapon.lua",
+            "Function": "OnStop",
+            "_scaleDuration": 0.4,
+            "_meshScaleStart": 0.5,
+            "_meshScaleMin": 2,
+            "_meshScaleMax": 2.25,
+            "_slowAtten": 0.15,
+            "_growthTriggerType": "/Lotus/Types/Enemies/Grineer/ChemStrike/NoxGooTrigger",
+            "_projectileDamageRadius": 3,
+            "_trailVFX": "",
+            "_embedProjectorFX": "/Lotus/Fx/Enemies/WF1999Lasrian/LasrianNoxEmbedProjector"
+        },
+        "OnProjectileDeathScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/LasrianNoxWeapon.lua",
+            "Function": "OnDeath",
+            "_scaleDuration": 0.6,
+            "_meshScaleStart": 0.25,
+            "_meshScaleMin": 1,
+            "_meshScaleMax": 5,
+            "_slowAtten": 0.1,
+            "_growthTriggerType": "",
+            "_projectileDamageRadius": 2.5,
+            "_trailVFX": "",
+            "_embedProjectorFX": ""
+        }
+    }
+}

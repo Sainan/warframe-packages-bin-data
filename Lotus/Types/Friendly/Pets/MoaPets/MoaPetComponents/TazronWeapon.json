@@ -48,18 +48,28 @@
         "Icon": "/Lotus/Interface/Icons/StoreIcons/Weapons/SentinelWeapons/Tazicor.png",
         "ExcludeFromCodex": 0,
         "CompatibilityTags": [
-            "PROJECTILE",
+            "BEAM",
             "ASSAULT_AMMO",
             "SENTINEL_WEAPON"
         ],
         "AvailableOnPvp": 1,
         "UseWeaponHandForAim": 1,
         "UseGripOffset": 1,
-        "GripBone": "GAME_C1_MASKATTACH",
+        "GripPositionOffset": [
+            -0.085,
+            0,
+            0.135
+        ],
+        "GripRotationOffset": [
+            -0.347803,
+            -0.675491,
+            0.637074,
+            -0.129932
+        ],
         "Behaviors": [
             {
-                "fire:Type": "/Lotus/Types/Game/LotusWeaponProjectileFireBehavior",
-                "fire:LotusWeaponProjectileFireBehavior": {
+                "fire:Type": "/Lotus/Types/Game/LotusBeamFireBehavior",
+                "fire:LotusBeamFireBehavior": {
                     "AiUsageInfo": {
                         "preferences": {
                             "setAimTarget": 1,
@@ -69,21 +79,21 @@
                             "controlReload": 1,
                             "allowFireWhileBlocking": 0,
                             "reloadThreshold": 0,
-                            "controlAim": 0,
-                            "continuousAim": 0,
-                            "minimumAimMask": 0,
+                            "controlAim": 1,
+                            "continuousAim": 1,
+                            "minimumAimMask": 0.9,
                             "ShootOnStaggerProbability": 0.1,
                             "StaggerTimeOut": 1,
                             "minAngleToTurn": 0,
-                            "onlyFireWithinRangeMultiplier": 0,
+                            "onlyFireWithinRangeMultiplier": 1,
                             "onlyFireAboveMinRangeMultiplier": 0,
                             "aimAtPart": "TORSO",
                             "aimAtClosestPart": 0,
                             "firingPreferences": {
-                                "firingType": "FT_VIRTUAL",
+                                "firingType": "FT_NORMAL",
                                 "burstTime": [
-                                    2,
-                                    2.5
+                                    0,
+                                    0
                                 ],
                                 "burstPauseTime": [
                                     0,
@@ -100,11 +110,11 @@
                             0
                         ],
                         "aimGraph": "/EE/Types/Npc/WeaponAimGraphs/AllHitAimGraph",
-                        "desiredAttackState": "AS_LONG_RANGE",
+                        "desiredAttackState": "AS_SHORT_RANGE",
                         "attackWeight": 1,
                         "desiredAttackRange": [
                             5,
-                            40
+                            20
                         ],
                         "hitSpreadMultiplier": 0
                     },
@@ -120,10 +130,11 @@
                     "fireIterations": 1,
                     "UseAmmo": 1,
                     "ConsumeEntireClip": 0,
-                    "ammoRequirement": 1,
+                    "ConsumePartialAmmo": 0,
+                    "ammoRequirement": 0.5,
                     "ScaleAmmoRequirement": 0,
                     "RoundUpAmmoConsumption": 0,
-                    "ammoType": "/Lotus/Weapons/Ammo/RifleAmmoEx",
+                    "ammoType": "/EE/Types/Game/AmmoEx",
                     "aimMode": "AIM_MODE_IRON_SIGHTS",
                     "IsMeleeBehavior": 0,
                     "ConsumesChargesForFire": 0,
@@ -139,10 +150,10 @@
                         "LockOnAngleWeighting": 1,
                         "LockOnIgnoreEndPointTarget": 0
                     },
-                    "HIP_FIRE_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/Weapon/BoltoRifleHipAccuracyInfo",
-                    "AIMED_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/Weapon/BoltoRifleAimAccuracyInfo",
-                    "HIP_CAMERA_RECOIL": "/Lotus/Types/Game/WeaponProperties/Recoil/Weapon/HeavyCorpusWeaponHipRecoilInfo",
-                    "AIMED_CAMERA_RECOIL": "/Lotus/Types/Game/WeaponProperties/Recoil/Weapon/CorpusUMPAimRecoilInfo",
+                    "HIP_FIRE_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/DefaultAccuracyInfo",
+                    "AIMED_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/DefaultAccuracyInfo",
+                    "HIP_CAMERA_RECOIL": "/Lotus/Types/Game/WeaponProperties/Recoil/Weapon/MediumWeaponHipRecoilInfo",
+                    "AIMED_CAMERA_RECOIL": "/Lotus/Types/Game/WeaponProperties/Recoil/Weapon/MediumWeaponHipRecoilInfo",
                     "spreadUniform": 0,
                     "SpreadRatioHorizontal": 0.5,
                     "SpreadInverse": 0,
@@ -151,22 +162,7 @@
                         "EyeBasedAimSource": 1,
                         "ScopedPlayerUsesCameraPos": 0,
                         "OverrideLaunchDir": 0,
-                        "UseWeaponAttachment": 0,
-                        "OverrideLaunchBone": 1,
-                        "MultipleBones": 0,
-                        "FireBone": "GAME_C1_MASKATTACH",
-                        "LocalPos": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "LocalRot": [
-                            0,
-                            0,
-                            0,
-                            1
-                        ],
-                        "UsePrevResults": 1,
+                        "UseWeaponAttachment": 1,
                         "AttenuateRecoilByChargeAmount": 0,
                         "PerfectChargeExtraRecoilAmount": 0,
                         "AttenuateRecoilBySpinUpAmount": 0,
@@ -174,112 +170,582 @@
                             0,
                             1
                         ],
-                        "CameraRecoilCurve": "ET_LINEAR",
-                        "NpcEyeBasedAimSource": 0
+                        "CameraRecoilCurve": "ET_LINEAR"
                     },
                     "AutoTargetChance": 0,
-                    "AimIgnoresProjectile": 0,
-                    "projectileType": "TazronProjectile",
-                    "AimIgnoresChargedProjectile": 0,
-                    "chargedProjectileType": "",
-                    "projectileLaunchOffset": [
+                    "traceDistance": 20,
+                    "PvpTraceDistance": 12,
+                    "punctureHitEffect": "",
+                    "InfinitePunctureDepth": 0,
+                    "tracePunctureDepth": 0,
+                    "PunchthroughIgnoresAvatars": 0,
+                    "RicochetChance": 0,
+                    "RicochetRange": 15,
+                    "OnlyHitEnitiesOnce": 1,
+                    "ForceCameraAimForLocalPlayer": 1,
+                    "AimTranslationOffset": [
                         0,
                         0,
                         0
                     ],
-                    "SequentialProjectileLaunchDirectionOffsets": [],
-                    "UpdateFirePositionPerIteration": 0,
-                    "projectileLaunchDirectionOffset": [
+                    "AimDirOverride": [
                         0,
                         0,
                         0
                     ],
-                    "projectileImpulse": [
+                    "UseVisibilityRaycast": 0,
+                    "IgnorePickups": 1,
+                    "CollectorTargetTag": "",
+                    "CollectorWeaponType": "",
+                    "CollectorScanTargetType": "",
+                    "WhizSound": "",
+                    "WhizRadius": [
+                        3,
+                        50
+                    ],
+                    "WhizDeviation": 1,
+                    "WhizChance": 0,
+                    "WhizzByRemoteMinDistance": 15,
+                    "TraceRadius": 0,
+                    "PvpTraceRadius": 0,
+                    "AffectedByStasis": 1,
+                    "AdjustAimWithAvatarUp": 0,
+                    "RiftStasisWeight": 42,
+                    "CloakShieldType": "/Lotus/Upgrades/Focus/Defense/Objects/CloakShieldDeco",
+                    "MaxTraceDistanceTime": 0.3,
+                    "RetractTime": 0.01,
+                    "AttachToWeapon": 0,
+                    "UseWeaponAttachmentFirePos": 0,
+                    "MultiBeam": 1,
+                    "BeamChildren": [
+                        {
+                            "LocalPosition": [
+                                0.02,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "GAME_C1_MASKATTACH",
+                            "Type": "/Lotus/Fx/Weapons/Corpus/LightningRifle/TazicorBeam",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1,
+                            "InventoryHand": "MAIN_HAND"
+                        },
+                        {
+                            "LocalPosition": [
+                                0.02,
+                                0.05,
+                                0.86
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "GAME_R1_WEAPON1",
+                            "Type": "/Lotus/Fx/Weapons/Corpus/LightningRifle/TazicorBeam",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1,
+                            "InventoryHand": "MAIN_HAND"
+                        }
+                    ],
+                    "CentralBeam": 0,
+                    "BeamFirstPersonAttachOffset": [
+                        0,
                         0,
                         0
                     ],
-                    "projectileUpImpulse": [
-                        0,
-                        0
+                    "ChargeUp": {
+                        "ChargingUpBeamType": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1,
+                            "InventoryHand": "MAIN_HAND"
+                        },
+                        "ChargeUpTime": 2
+                    },
+                    "MultiLockSingleTarget": 0,
+                    "LockOnBeamType": "",
+                    "StasisOverrideBeamType": "/Lotus/Fx/PowersuitAbilities/Magician/StasisBackupBeam",
+                    "EndPointChild": {
+                        "LocalPosition": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "LocalRotation": [
+                            0,
+                            0,
+                            0,
+                            1
+                        ],
+                        "BoneName": "",
+                        "Type": "",
+                        "Chance": 0,
+                        "RelativeToBounds": 0,
+                        "Attach": 1,
+                        "DestroyWithOwner": 1,
+                        "DestroyParentOnDeath": 0,
+                        "FadeOutOnDestruction": 1,
+                        "Scale": 1
+                    },
+                    "Radius": 0,
+                    "RadialChecksCover": 0,
+                    "RadialMinCoverDistance": 0,
+                    "AllowSelfDamage": 0,
+                    "IgnoreInvisibleAvatars": 1,
+                    "StasisCollapseTime": 2.5,
+                    "RecoilOnFire": 1,
+                    "RecoilRate": 120,
+                    "RecoilIntensityFireTime": 0.3,
+                    "RecoilCurve": "RC_LINEAR",
+                    "RecoilStrength": [
+                        0.2,
+                        0.2
                     ],
-                    "projectileTorque": [
+                    "LockOnRecoilTime": 0,
+                    "LockOnRecoilStrength": [
                         0,
-                        0,
-                        0
-                    ],
-                    "chargeSpeedMult": [
-                        1,
                         1
                     ],
-                    "playerDamageMultiplier": 1,
-                    "projectileSequenceList": [
-                        "TazronProjectile"
-                    ],
-                    "chargedProjectileSequenceList": [],
-                    "advanceProjectileSequenceOnFire": 0,
-                    "calculateLobAngle": 0,
-                    "useLargerLobAngle": 0,
-                    "lobVerticalOffset": 0,
-                    "DesiredTimeForArc": 0,
-                    "MaxPeakHeight": 0,
-                    "horizontalDeviationAngle": 0,
-                    "OwnProjectiles": 0,
-                    "AlwaysUseAimEndPoint": 0,
-                    "ApplyWeaponMaterialsToProjectile": 0,
-                    "ApplyFlightSpeedToLaunchImpulse": 0,
-                    "FallbackAgentTargetting": 1,
-                    "MultishotAmmoSpread": 0,
-                    "ChargedProjectileMinSpeed": -1,
-                    "ChargedProjectileMaxSpeed": -1,
-                    "ProjectileChargeScale": [
-                        0,
-                        1
-                    ],
-                    "MultiShotProjectileType": "",
-                    "MultiShotChargedProjectileType": "",
-                    "PvpProjectileType": "",
-                    "PvpChargedProjectileType": "",
-                    "PerfectChargedProjectileType": "",
-                    "PerfectChargeRange": [
-                        0,
-                        0
-                    ],
+                    "PvpRadius": 0,
+                    "UseBeamSpread": 0,
                     "UseFanSpread": 0,
-                    "IgnoreSpreadOnFirstFireIteration": 0,
-                    "SpreadRotationOffset": 0,
-                    "DrawGrenadeArc": 0,
-                    "FudgeAngle": 0,
-                    "RaysPerMeter": 0.5,
-                    "MaxRays": 0,
-                    "DrawCondition": "DC_AIMING",
-                    "SplineDrawType": "",
-                    "QuadDrawType": "",
-                    "ArcMaxEffectInstances": 1,
-                    "ArcEffectType": "",
-                    "ArcEndEffectType": "",
-                    "SplineSpeed": 1,
-                    "AttenuateForCharge": 0,
-                    "ConsumeRemainingClip": 0,
+                    "SpinningConverge": 0,
+                    "SpinSpeed": 0,
+                    "ReverseSpread": 0,
+                    "UseSmoothedAccuracy": 1,
+                    "SmoothedAccuracyStyle": "SAS_CARTESIAN",
+                    "SmoothTime": 0.5,
                     "AttenuateSpreadForCharge": 0,
-                    "MinChargeSpreadAtten": 1,
-                    "MaxChargeSpreadAtten": 1,
-                    "OverridePunctureDepthForCharge": 0,
-                    "MinChargePunctureDepth": 0,
-                    "MaxChargePunctureDepth": 1,
-                    "SpreadExtraProjectiles": 0,
-                    "AttenuateFireIterationsForCharge": 0,
-                    "OverrideFiringHand": 0
+                    "AttenuationAtMaxCharge": 1,
+                    "ExpansionTime": 1,
+                    "CollapseTime": 1,
+                    "InnerRingMultiplier": 0.9,
+                    "UseInnerRing": 1,
+                    "ConvergeanceStyle": "CS_ALWAYS",
+                    "ForceFiringUntilSpread": 0,
+                    "ForceFireLoop": 0,
+                    "DeactivateConsumesAmmo": 1,
+                    "ElementalEffects": {
+                        "DT_FIRE": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_FREEZE": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_ELECTRICITY": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_POISON": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_EXPLOSION": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_RADIATION": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_GAS": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_MAGNETIC": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_VIRAL": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_CORROSIVE": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_RADIANT": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_SENTIENT": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_CINEMATIC": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_SHIELD_DRAIN": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_HEALTH_DRAIN": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_ENERGY_DRAIN": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        },
+                        "DT_FINISHER": {
+                            "LocalPosition": [
+                                0,
+                                0,
+                                0
+                            ],
+                            "LocalRotation": [
+                                0,
+                                0,
+                                0,
+                                1
+                            ],
+                            "BoneName": "",
+                            "Type": "",
+                            "Chance": 255,
+                            "RelativeToBounds": 0,
+                            "Attach": 1,
+                            "DestroyWithOwner": 1,
+                            "DestroyParentOnDeath": 0,
+                            "FadeOutOnDestruction": 0,
+                            "Scale": 1
+                        }
+                    },
+                    "DarkSectorBeamBone": "GAME_L1_WEAPON1"
                 },
-                "impact:Type": "/Lotus/Types/Weapon/LotusWeaponImpactBehavior",
-                "impact:LotusWeaponImpactBehavior": {
+                "impact:Type": "/Lotus/Types/Game/LotusBeamImpactBehavior",
+                "impact:LotusBeamImpactBehavior": {
                     "AttackData": {
                         "UseNewFormat": 0,
-                        "Type": "DT_IMPACT",
+                        "Type": "DT_ELECTRICITY",
                         "Amount": 5,
-                        "ProcChance": 1,
-                        "ForcedProcs": [
-                            "PT_KNOCKED_DOWN"
-                        ],
+                        "ProcChance": 0.25,
+                        "ForcedProcs": [],
                         "ForcedDeathProcs": [],
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
@@ -293,9 +759,9 @@
                         0,
                         0
                     ],
-                    "damageFallOffMinDamage": 0,
+                    "damageFallOffMinDamage": 1,
                     "PlayerDamageMultiplier": 1,
-                    "PvpDamageMultiplier": 1.54,
+                    "PvpDamageMultiplier": 0.72,
                     "PlayerScaleDamageMultiplierByMissionLevel": 0,
                     "instantImpulse": 250,
                     "additionalForce": [
@@ -309,6 +775,7 @@
                     ],
                     "minImpulseFallOff": 1,
                     "applyPushVelocity": 0,
+                    "applyPushVelocityOnlyToBlockingTarget": 0,
                     "pushMagnitude": [
                         0.5,
                         1
@@ -317,7 +784,7 @@
                         10,
                         100
                     ],
-                    "hitEffect": "/Lotus/Fx/Weapons/Basic/Ballistic/Impacts/BallisticHitEffectMedium",
+                    "hitEffect": "/Lotus/Fx/Sentinels/Weapons/TazicorHitEffect",
                     "hitEffectAlt": "",
                     "deflectHitEffects": 0,
                     "deflectRange": [
@@ -326,36 +793,58 @@
                     ],
                     "AltEffectHands": [],
                     "ragdollChance": 0,
-                    "criticalHitChance": 0.025,
-                    "criticalHitDamageMultiplier": 1.3,
+                    "criticalHitChance": 0.05,
+                    "criticalHitDamageMultiplier": 1.5,
                     "ConsumeAmmoWhenDamageDealt": 0,
                     "AmmoConsumedWhenHitVulnerableTarget": 0,
                     "AmmoConsumedWhenHitInvulnerableTarget": 0,
                     "strength": 0,
                     "radius": 0,
                     "flash": 0,
+                    "OnHitScriptEnabled": 1,
                     "OnHitScript": {
                         "Script": ""
                     },
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
-                    "IgnoreHeadshotBonusPvp": 0
+                    "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0,
+                    "ContinuousDamageAttenuation": [
+                        0.2,
+                        1
+                    ],
+                    "ContinuousDamageAttenuationTime": 0.6,
+                    "ContinuousDamageAttenuationCooldownTime": 2,
+                    "ContinuousDamageAttenuationCooldownDelay": 0.8,
+                    "AttenuateContinuousDamagePerTarget": 0,
+                    "LockedOnHitEffect": "",
+                    "NumChains": 3,
+                    "SequentialChains": 1,
+                    "ChainDistance": 5,
+                    "AttachBeamToTorso": 0,
+                    "ChainDamageMultiplier": 0.5,
+                    "StopChainOnParry": 0,
+                    "ChainEffectType": "/Lotus/Fx/Weapons/Corpus/LightningRifle/TazicorBeam",
+                    "ChainableTypes": []
                 },
-                "state:Type": "/EE/Types/Game/WeaponAutomaticStateBehavior",
-                "state:WeaponAutomaticStateBehavior": {
-                    "reloadTime": 2.5,
+                "state:Type": "/EE/Types/Game/WeaponBeamStateBehavior",
+                "state:WeaponBeamStateBehavior": {
+                    "reloadTime": 2,
                     "PerfectReloadRange": [
                         0,
                         0
                     ],
-                    "fireRate": 500,
+                    "fireRate": 720,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 1,
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
                     "IsToggleBehavior": 0,
-                    "autoReloadEmptyTime": 0.2,
+                    "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -370,38 +859,43 @@
                     "CanChargeWhileRunning": 1,
                     "CanFireWhileInAir": 1,
                     "PreventRunWhileRecharging": 0,
+                    "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
                     "IsAlternateFire": 0,
-                    "LocTag": "/Lotus/Language/Menu/Loadout_TriggerAuto",
-                    "BehaviorTag": "",
+                    "LocTag": "/Lotus/Language/Menu/Loadout_TriggerContinous",
+                    "BehaviorTag": "/Lotus/Language/Menu/Loadout_TriggerContinous",
                     "TrackProjectiles": 0,
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
-                    "ContinuousFireRateAtten": [
-                        1,
-                        1
-                    ],
-                    "ContinuousMaxShots": 0,
-                    "Overspin": 0,
-                    "SpindownTime": 0.25,
-                    "ReverseFireRateAtten": 0,
-                    "RechargeAtten": 1
+                    "OnNewProjectileScript": {
+                        "Script": ""
+                    }
                 }
             }
         ],
-        "InfiniteClipSizeForNpcs": 1,
-        "PVPAmmoCapacity": 160,
-        "AmmoClipSize": 4,
+        "AmmoClipSize": 40,
         "PVPAmmoClipSize": 40,
         "UIReticuleScale": 0.5,
         "UIReticuleAim": 0,
+        "StateAnimations": [
+            {
+                "state": "WS_RELOAD",
+                "behaviorIndex": 4294967295,
+                "animation": "",
+                "clearable": 1
+            }
+        ],
         "RequiredLevel": 3,
         "ArtifactSlots": [
             "AP_ATTACK",

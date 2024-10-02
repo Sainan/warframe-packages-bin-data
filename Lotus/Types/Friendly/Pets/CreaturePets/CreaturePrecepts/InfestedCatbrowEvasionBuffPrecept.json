@@ -7,7 +7,7 @@
         "PremiumPrice": 2,
         "LocalizeTag": "/Lotus/Language/Pets/InfestedCatbrowEvasionBuffPreceptName",
         "LocalizeDescTag": "",
-        "StatusDescTag": "/Lotus/Language/Buffs/SurvivalInstinctBuffDesc",
+        "StatusDescTag": "/Lotus/Language/Buffs/ModCooldownDesc",
         "Icon": "/Lotus/Interface/Cards/Images/Pets/Deimos/InfestedKavatEvasionBuffPrecept.png",
         "ExcludeFromCodex": 0,
         "Upgrades": [
@@ -22,30 +22,27 @@
                 "UpgradeObject": "",
                 "ValidPostures": [],
                 "ValidModifiers": [],
+                "InvalidModifiers": [],
                 "ValidProcTypes": [],
                 "OverrideLocalization": 1,
                 "LocTag": "/Lotus/Language/Pets/InfestedCatbrowEvasionBuffPreceptDesc",
                 "LocKeyWordScript": {
-                    "Script": "InfestedCatbrowEvasionBuff.lua",
+                    "Script": "InfestedCatbrowBulletJumpVanish.lua",
                     "Function": "GetDescriptionInfo",
                     "_duration": [
-                        2,
-                        4,
+                        8,
+                        7,
                         6,
-                        8
+                        5
                     ],
                     "_buff": [
-                        0.1,
-                        0.2,
-                        0.3,
-                        0.4
+                        0.6,
+                        0.9,
+                        1.2,
+                        1.5
                     ],
-                    "_coolDown": 5,
-                    "_buffProjector": "",
-                    "_buffAbilityType": "",
-                    "_chrysalisBuffAbilityType": "",
-                    "_chrysalisSuitType": "",
-                    "_abilityEvent": "OwnerKillCritter"
+                    "_decoyAvatarType": "",
+                    "_jumpVFX": ""
                 },
                 "SmallerIsBetter": 0,
                 "RoundTo": 0.1,
@@ -55,37 +52,21 @@
         "BaseDrain": "QA_NONE",
         "FusionLimit": "QA_MEDIUM",
         "ItemCompatibility": "/Lotus/Types/Friendly/Pets/CreaturePets/VulpineInfestedCatbrowPetPowerSuit",
+        "SubUpgrades": [
+            "InfestedCatbrowEvasionBuffSubmod"
+        ],
+        "PlayEffect": 0,
         "HudBuffIcon": "/Lotus/Interface/Icons/Pets/Deimos/SlyVulpaphyla.png",
         "Ability": {
-            "Script": {
-                "Script": "InfestedCatbrowEvasionBuff.lua",
-                "Function": "ActivateAbility",
-                "_duration": [
-                    2,
-                    4,
-                    6,
-                    8
-                ],
-                "_buff": [
-                    0.1,
-                    0.2,
-                    0.3,
-                    0.4
-                ],
-                "_coolDown": 5,
-                "_buffProjector": "",
-                "_buffAbilityType": "",
-                "_chrysalisBuffAbilityType": "",
-                "_chrysalisSuitType": "",
-                "_abilityEvent": "OwnerKillCritter"
-            },
-            "AbilityEvents": [
+            "SecondaryScripts": [
                 {
-                    "tag": "OwnerKillCritter",
-                    "eventType": "ET_ON_KILL",
+                    "tag": "SpawnDecoy",
+                    "executionMode": "EM_ALL",
+                    "inheritPrimary": 0,
+                    "functionName": "",
                     "scriptInstance": {
-                        "Script": "InfestedCatbrowEvasionBuff.lua",
-                        "Function": "OnKill",
+                        "Script": "InfestedCatbrowBulletJumpVanish.lua",
+                        "Function": "SpawnDecoy",
                         "_duration": [
                             2,
                             4,
@@ -93,23 +74,44 @@
                             8
                         ],
                         "_buff": [
-                            0.1,
-                            0.2,
-                            0.3,
-                            0.4
+                            0.6,
+                            0.9,
+                            1.2,
+                            1.5
                         ],
-                        "_coolDown": 5,
-                        "_buffProjector": "/Lotus/Fx/Sentinels/Precepts/InfestedPredators/EvasionBuffProjector",
-                        "_buffAbilityType": "InfestedCatbrowEvasionBuffPrecept",
-                        "_chrysalisBuffAbilityType": "",
-                        "_chrysalisSuitType": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePreceptComponents/VulpineInfestedCritterSentinelPowerSuit",
-                        "_abilityEvent": "OwnerKillCritter"
+                        "_decoyAvatarType": "/Lotus/Types/Game/LotusCloneAvatar",
+                        "_jumpVFX": "/Lotus/Fx/Common/BaseSmokeCatbrowEvasionBuff"
+                    }
+                }
+            ],
+            "AbilityEvents": [
+                {
+                    "tag": "OwnerKillCritter",
+                    "eventType": "ET_ON_KILL",
+                    "scriptInstance": {
+                        "Script": "InfestedCatbrowBulletJumpVanish.lua",
+                        "Function": "GetDescriptionInfo",
+                        "_duration": [
+                            8,
+                            7,
+                            6,
+                            5
+                        ],
+                        "_buff": [
+                            0.6,
+                            0.9,
+                            1.2,
+                            1.5
+                        ],
+                        "_decoyAvatarType": "",
+                        "_jumpVFX": ""
                     }
                 }
             ],
             "EnergyRequiredToActivate": 0,
             "ActivationXP": 0,
             "IsPassive": 1,
+            "CastSound": "/Lotus/Sounds/Mods/PetMods/SurvivalInstinctMod",
             "Blocking": 0,
             "EvaluateScript": 0
         }

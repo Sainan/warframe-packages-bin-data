@@ -21,6 +21,28 @@
             "/EE/Types/Npc/MeleeRingTactic",
             "/EE/Types/Npc/GuardTactic"
         ],
+        "WaitForSpawnAnimationBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0
+        },
+        "BlockingBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "BlockOnBeingAttached": 0,
+            "ShouldRemovePerception": 1
+        },
         "FormationTactic": {
             "Enabled": 1,
             "OnStartScript": {
@@ -104,6 +126,7 @@
             "CombatSetting": "CS_NO_RESTRICTION",
             "NeedsTarget": 0,
             "PatrolRouteOnly": 0,
+            "RecruitFromPatrols": 0,
             "FormationIdentifier": "",
             "MergeThreshold": 0,
             "LeaderAction:Type": "/EE/Types/Npc/Action",
@@ -140,6 +163,7 @@
                 "AimPosture": 0,
                 "MinimalEnemyDistance": 0,
                 "TrackTarget": 0,
+                "TrackTargetNotVisible": 0,
                 "Peek": 0,
                 "FailOnDamaged": 1,
                 "PreventShooting": 0,
@@ -193,11 +217,49 @@
             "ClearOrderOnMoveSuccess": 0,
             "AllowTeleportToCatchUp": 1,
             "TeleportToDestination": 0,
-            "AllowPartialPath": 1
+            "AllowPartialPath": 1,
+            "RestrictToDV": 0
         },
         "UsePowerSuitAbilitiesBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0.25,
             "BlockForPowerCompleteType": "BT_ALWAYS",
-            "ExtraReevaluationDelay": 0
+            "AllowInterruptOfAbility": 0,
+            "StopFiring": 1,
+            "StopMovingOnStart": 0,
+            "ExtraReevaluationDelay": 0,
+            "ActiveAction:Type": "/EE/Types/Npc/Action",
+            "ActiveAction:Enabled": 1,
+            "ActiveAction:OnStartScript": {
+                "Script": ""
+            },
+            "ActiveAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "EvaluateAction": 1,
+            "FaceTarget": 0,
+            "TurnAccuracyThreshold": 10,
+            "TurnTimeout": 2,
+            "AimTimeout": 0.5,
+            "ValidAbilities": [],
+            "MaxProcessPerEval": 0,
+            "AimAtTarget": 0,
+            "CheckIfAbilityUnlocked": 0,
+            "MultipleConcurrentAbilities": 0,
+            "EvaluateDelayRange": [
+                0.5,
+                1
+            ],
+            "PreventUsageOnWeaponUse": 0,
+            "TurnDuringAbility": 0,
+            "DeactivateAbilitiesOnPredeath": 0,
+            "ResetEvalTimerOnEnemySpotted": 0
         },
         "KubrowFinisherBehavior": {
             "Enabled": 1,
@@ -262,6 +324,7 @@
             ],
             "KeepDistance:MaxMovementDistance": 100,
             "KeepDistance:AllowRetreat": 0,
+            "KeepDistance:AllowTeleportFromOffScreen": 0,
             "KeepDistance:AllowRun": 1,
             "KeepDistance:AllowChase": 0,
             "KeepDistance:ForceWalkBelowMinIdealRange": 1,
@@ -299,6 +362,8 @@
             "KeepDistance:WeaponSlot": "SLOT_1",
             "KeepDistance:WeaponHand": "MAIN_HAND",
             "KeepDistance:EquipStyle": "ES_PLAY_EQUIP_ANIM",
+            "KeepDistance:AttackPhrase": "CHARGE_SCREAM",
+            "KeepDistance:AlwaysPlayAttackPhrase": 0,
             "KeepDistance:PlayPhrase": 0,
             "KeepDistance:Bark": "IDLE",
             "KeepDistance:BarkFilter": "",
@@ -328,6 +393,10 @@
             "RingDist": [
                 1,
                 3
+            ],
+            "FallbackRange": [
+                3,
+                10
             ],
             "SuccessRadius": 0.5,
             "StopRadius": 0.5,
@@ -361,6 +430,7 @@
                     4
                 ],
                 "TeamBbLungeSym": "",
+                "LungeAnimAction": "",
                 "TimeBetweenTeamLunges": 5,
                 "LungeToPredictedPos": 0,
                 "UseMeleeFov": 1,
@@ -410,6 +480,7 @@
                 ],
                 "MaxMovementDistance": 100,
                 "AllowRetreat": 1,
+                "AllowTeleportFromOffScreen": 0,
                 "AllowRun": 1,
                 "AllowChase": 1,
                 "ForceWalkBelowMinIdealRange": 1,
@@ -447,6 +518,8 @@
                 "WeaponSlot": "SLOT_1",
                 "WeaponHand": "MAIN_HAND",
                 "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                "AttackPhrase": "CHARGE_SCREAM",
+                "AlwaysPlayAttackPhrase": 0,
                 "PlayPhrase": 0,
                 "Bark": "IDLE",
                 "BarkFilter": "",
@@ -474,6 +547,7 @@
                 "AimPosture": 1,
                 "MinimalEnemyDistance": 0,
                 "TrackTarget": 0,
+                "TrackTargetNotVisible": 0,
                 "Peek": 0,
                 "FailOnDamaged": 1,
                 "PreventShooting": 0,
@@ -522,6 +596,7 @@
             "PatrolBehavior:NearDistance": 2,
             "PatrolBehavior:SpeedMultiplier": 1,
             "PatrolBehavior:AlertSpeedMultiplier": 1,
+            "PatrolBehavior:MovementPosture": "WALK",
             "PatrolBehavior:FailOnTargetAcquired": 1,
             "PatrolBehavior:AimWhenIdle": 0,
             "PatrolBehavior:AimWhenAlert": 1,
@@ -536,6 +611,9 @@
             "PatrolBehavior:AutoAssignClosestPatrol": 0,
             "PatrolBehavior:SameZoneOnly": 1,
             "PatrolBehavior:AutoPatrolRadius": 30,
+            "PatrolBehavior:OnCompleteScript": {
+                "Script": ""
+            },
             "RandomWalkBehavior:Type": "/EE/Types/Npc/Action",
             "RandomWalkBehavior:Enabled": 1,
             "RandomWalkBehavior:OnStartScript": {
@@ -565,7 +643,8 @@
                 0,
                 0
             ],
-            "GuardBehavior:MinHeadingChangeToTurn": 0
+            "GuardBehavior:MinHeadingChangeToTurn": 0,
+            "GuardBehavior:AimWhenAlert": 1
         }
     }
 }

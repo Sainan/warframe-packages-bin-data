@@ -1,43 +1,53 @@
 {
-    "parent": "/Lotus/Types/Game/LotusArtifactUpgrades/BaseArtifactUpgrade",
+    "parent": "/Lotus/Types/Game/SentinelPrecept",
     "data": {
         "Rarity": "RARE",
         "MarketMode": "MM_HIDDEN",
         "RegularPrice": 5000,
         "PremiumPrice": 2,
         "LocalizeTag": "/Lotus/Language/Items/KubrowFinisherModName",
-        "LocalizeDescTag": "/Lotus/Language/Items/KubrowFinisherModDesc",
+        "LocalizeDescTag": "",
         "Icon": "/Lotus/Interface/Cards/Images/Kubrow/KubrowModFinisherDamage.png",
         "ExcludeFromCodex": 0,
         "Upgrades": [
             {
-                "UpgradeType": "AVATAR_SENTINEL_FINISHER_DAMAGE",
-                "OperationType": "STACKING_MULTIPLY",
-                "Value": 0.2,
+                "UpgradeType": "NONE",
+                "OperationType": "ADD",
+                "Value": 0,
                 "DamageType": "DT_ANY",
-                "AutoType": 0,
+                "AutoType": 1,
                 "ValidType": "",
                 "SymbolFilter": "",
                 "UpgradeObject": "",
                 "ValidPostures": [],
                 "ValidModifiers": [],
+                "InvalidModifiers": [],
                 "ValidProcTypes": [],
                 "OverrideLocalization": 1,
-                "LocTag": "/Lotus/Language/Upgrades/WeaponMeleeFinisherDmgModDesc",
+                "LocTag": "/Lotus/Language/Pets/KubrowFerocityModDesc",
                 "LocKeyWordScript": {
-                    "Script": ""
+                    "Script": "/Lotus/Types/Friendly/Pets/KubrowPetBehaviors/KubrowFerocityAbility.lua",
+                    "Function": "GetDescriptionInfo",
+                    "_abilityFxType": "",
+                    "_runBehavior": ""
                 },
-                "DisplayAsMultiplier": 0,
-                "DisplayAsPercent": 1,
-                "ReverseValueSymbol": 0,
                 "SmallerIsBetter": 0,
                 "RoundTo": 0.1,
                 "RoundingMode": "RM_ROUND"
             }
         ],
-        "ArtifactPolarity": "AP_PRECEPT",
         "BaseDrain": "QA_NONE",
         "ItemCompatibility": "/Lotus/Types/Game/KubrowPet/AdventurerKubrowPetPowerSuit",
-        "IncludeInBoosterPack": 1
+        "IncludeInBoosterPack": 1,
+        "Ability": {
+            "Script": {
+                "Script": "/Lotus/Types/Friendly/Pets/KubrowPetBehaviors/KubrowFerocityAbility.lua",
+                "Function": "NpcEvaluateAbility",
+                "_abilityFxType": "/Lotus/Fx/Sentinels/Precepts/KubrowDisarmBurstFx",
+                "_runBehavior": "/Lotus/Types/Friendly/Pets/KubrowPetBehaviors/KubrowMeleeTactic"
+            },
+            "CooldownDuration": 1,
+            "EnergyRequiredToActivate": 0
+        }
     }
 }

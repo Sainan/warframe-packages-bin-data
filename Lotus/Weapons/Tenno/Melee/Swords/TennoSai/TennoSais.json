@@ -20,6 +20,14 @@
                 ],
                 "BoneName": "GAME_L1_WEAPON1",
                 "Type": "TennoSaiOffHandAttachment"
+            },
+            "EXTRA1": {
+                "BoneName": "GAME_R1_WEAPON1",
+                "Type": "Incarnon/OkinaIncarnonAttachment"
+            },
+            "EXTRA2": {
+                "BoneName": "GAME_L1_WEAPON1",
+                "Type": "Incarnon/OkinaIncarnonOffHandAttachment"
             }
         },
         "MarketMode": "MM_HIDDEN",
@@ -297,6 +305,7 @@
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
                     "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0,
                     "ComboHitsAlwaysEnabled": 1,
                     "InitialHitCounter": 0,
                     "InitialHitCounterRecoveryRate": 40,
@@ -343,8 +352,7 @@
                         "ForcedDeathProcs": [],
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
-                    },
-                    "UseNewMeleeImpulse": 0
+                    }
                 },
                 "state:Type": "/Lotus/Types/Game/LotusComboMeleeStateBehavior",
                 "state:LotusComboMeleeStateBehavior": {
@@ -381,6 +389,7 @@
                     "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "",
                     "BehaviorTag": "",
@@ -448,6 +457,8 @@
                 }
             }
         ],
+        "ReticleName": "ReticleCustom",
+        "ReticleMovie": "/Lotus/Interface/SpecialReticles/EvolvingMelee.swf",
         "LevelUpType": "",
         "BulletAttractorType": "",
         "AttachmentsToCreate": {
@@ -531,6 +542,115 @@
             }
         },
         "OmegaAttenuation": 1.4,
+        "EvolutionReq": "/Lotus/Types/Items/MiscItems/IncarnonAdapters/Melee/OkinaIncarnonUnlocker",
+        "Evolutions": [
+            {
+                "Challenge": "",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "OkinaIncarnonEvolutions/OkinaEvoTransformUnlock"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Challenge": "OkinaIncarnonEvolutions/OkinaIncarnonChallenges/OkinaChallengeA",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "OkinaIncarnonEvolutions/OkinaEvoTier1A"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "OkinaIncarnonEvolutions/OkinaEvoTier1B"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Challenge": "OkinaIncarnonEvolutions/OkinaIncarnonChallenges/OkinaChallengeB",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "OkinaIncarnonEvolutions/OkinaEvoTier2A"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "OkinaIncarnonEvolutions/OkinaEvoTier2B"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "OkinaIncarnonEvolutions/OkinaEvoTier2C"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Challenge": "OkinaIncarnonEvolutions/OkinaIncarnonChallenges/OkinaChallengeC",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "OkinaIncarnonEvolutions/OkinaEvoTier3A"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "OkinaIncarnonEvolutions/OkinaEvoTier3B"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "OkinaIncarnonEvolutions/OkinaEvoTier3C"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "OnIncarnonModeActivatedScript": {
+            "Script": "Incarnon/OkinaIncarnon.lua",
+            "Function": "OnIncarnonActivated",
+            "_altFormSound": "",
+            "_altFormDeactivatingSound": "",
+            "_altFormDeactivatingFx": "",
+            "_daggerProjectileType": "",
+            "_daggerProcType": "DT_FREEZE",
+            "_daggerProcStacks": 5,
+            "_numDaggersSpawnedOnKill": 2,
+            "_maxAllowedDaggers": 6,
+            "_spawnInterval": 0.5,
+            "_targetSearchRadius": 15,
+            "_bestTargetDistance": 10,
+            "_searchConeAngle": 70,
+            "_coneOriginOffset": 2,
+            "_uniqueTargetWeightBonus": 1.25,
+            "_coneCenterWeightBonus": 0.9,
+            "_optimalDistanceWeightBonus": 1,
+            "_postSpawnOrbitTime": 2,
+            "_maxOrbitTime": 5,
+            "_orbitRadius": 1,
+            "_orbitVelocity": 300,
+            "_maxOrbitsCount": 6,
+            "_angleBetweenOrbits": 30,
+            "_maxSeekingProjectileLifespan": 10
+        },
+        "IncarnonModeUpgrades": [
+            "Incarnon/OkinaIncarnonSpawnDaggerProjectiles"
+        ],
+        "IncarnonAttachments": {
+            "EXTRA1": 1,
+            "EXTRA2": 1
+        },
+        "EvolvedIcon": "/Lotus/Interface/Icons/StoreIcons/Weapons/IncarnonWeapons/OkinaIncarnon.png",
+        "IncarnonComboRequirement": 5,
+        "IncarnonModeDuration": 90,
         "ArcaneApertureType": "/Lotus/Types/Items/MiscItems/WeaponMeleeArcaneUnlocker",
         "DefaultModTemplate": "/Lotus/Types/ModLists/Melee/HybridBalanced",
         "DefaultModOverrides": {
@@ -947,6 +1067,7 @@
                 "UpgradeObject": "",
                 "ValidPostures": [],
                 "ValidModifiers": [],
+                "InvalidModifiers": [],
                 "ValidProcTypes": []
             }
         ],
@@ -962,6 +1083,7 @@
                 "UpgradeObject": "",
                 "ValidPostures": [],
                 "ValidModifiers": [],
+                "InvalidModifiers": [],
                 "ValidProcTypes": []
             }
         ]

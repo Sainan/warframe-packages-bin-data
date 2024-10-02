@@ -1,0 +1,160 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "UseAmbient": 1,
+        "Mesh": "/Lotus/Characters/Lasria/Military/LasrianGoonadier/LasrianGoonadierGrenade.fbx",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/WF1999Lasrian/GoonadierGrenadeTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/WF1999Lasrian/GoonadierGrenadeFlare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "ReplicationOverride": "RO_ALWAYS",
+        "ReplicateCreator": 1,
+        "AttackData": {
+            "Type": "DT_GAS",
+            "Amount": 15
+        },
+        "ExplosiveAttack": {
+            "Type": "DT_GAS",
+            "Amount": 50
+        },
+        "ExplosionIgnoreCover": 0,
+        "DamageRadius": 8,
+        "HitEffect": "/Lotus/Fx/Enemies/WF1999Lasrian/GoonadierGrenadeHitEffect",
+        "DieEffect": "/Lotus/Fx/Enemies/WF1999Lasrian/GoonadierExplosion",
+        "DieSound": "/Lotus/Sounds/Enemies/Lasrian/LasrianSoldiers/Weapons/LasrianGoonadierGrenade/LasrianGoonadierGrenadeExplosion",
+        "DieEffectOffset": [
+            0.1,
+            0.1,
+            0.1
+        ],
+        "WarningTime": 3.5,
+        "WarningSound": "/Lotus/Sounds/Enemies/Lasrian/LasrianSoldiers/Weapons/LasrianGoonadierGrenade/LasrianGoonadierGrenadeWarning",
+        "MaxLife": 4,
+        "SetLifeOnImpact": 1,
+        "WhizzBySound": "/Lotus/Sounds/Enemies/Lasrian/LasrianSoldiers/Weapons/LasrianGoonadierGrenade/LasrianGoonadierGrenadeProjBy",
+        "WhizzByRadius": 20,
+        "StopWhizzBySoundWhenStopped": 0,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "Health": 1,
+        "AngleSpeed": [
+            0.5,
+            2
+        ],
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_GAS",
+            "Amount": 0
+        },
+        "EmbedTime": [
+            3,
+            3
+        ],
+        "EmbedDeathAttack": {
+            "Type": "DT_GAS",
+            "Amount": 65
+        },
+        "EmbedDeathEffect": "/Lotus/Fx/Enemies/WF1999Lasrian/GoonadierExplosion",
+        "ShouldDestroyIfOrphan": 0,
+        "DetachInitialKinematicVelocity": [
+            0,
+            -1,
+            0
+        ],
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 40,
+        "KinematicMaxSpeed": 40,
+        "KinematicGravity": 1,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicAngleSpeed": [
+            15,
+            20
+        ],
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            0,
+            90,
+            0
+        ],
+        "ProjectileReplication": "REPLICATED",
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/WF1999Abilities/LasrianGoonadeUtility.lua",
+            "Function": "AttachRangeDeco",
+            "_healRadius": 8,
+            "_healPctPerTick": 0.01,
+            "_damageAmount": 8,
+            "_healTickTime": 0.5,
+            "_gooLifeTime": 3,
+            "_showDebugs": 0,
+            "_rangeType": "/Lotus/Fx/Enemies/WF1999Lasrian/GoonadierGrenadeRangeDeco",
+            "_gasCloudEntity": ""
+        },
+        "OnProjectileDeathScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/WF1999Abilities/LasrianGoonadeUtility.lua",
+            "Function": "GoonadeDeath",
+            "_healRadius": 8,
+            "_healPctPerTick": 0.01,
+            "_damageAmount": 8,
+            "_healTickTime": 0.1,
+            "_gooLifeTime": 3,
+            "_showDebugs": 0,
+            "_rangeType": "",
+            "_gasCloudEntity": ""
+        },
+        "OnProjectileContactScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/WF1999Abilities/LasrianGoonadeUtility.lua",
+            "Function": "GoonadeContact",
+            "_healRadius": 10,
+            "_healPctPerTick": 0.01,
+            "_damageAmount": 8,
+            "_healTickTime": 0.5,
+            "_gooLifeTime": 3,
+            "_showDebugs": 0,
+            "_rangeType": "",
+            "_gasCloudEntity": "LasrianGoonadeGasEntity"
+        }
+    }
+}

@@ -19,40 +19,13 @@
             "_inputFilter": "/Lotus/Powersuits/Sentient/WhirlWindInputFilter",
             "_castEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlwindCast",
             "_attachEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlwindAttach",
-            "_attachAmpedEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlwindAttachAmped",
             "_rangeDeco": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlWindRangeDeco",
             "_dashEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlWindDashAttach",
-            "_pitchModulatedSeq": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindLoopSeq",
-            "_gainModulatedSeq": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindFastLoopSeq",
-            "_impactSound": "",
+            "_impactSound": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindDashImpact",
             "_impactAoeSound": "",
-            "_chargeSound": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindSpeedActivate"
+            "_impactExplosionType": "/Lotus/Fx/PowersuitAbilities/Caliban/SentientLiftedEnemyExplosion"
         },
         "SecondaryScripts": [
-            {
-                "tag": "SetState",
-                "executionMode": "EM_ALL",
-                "inheritPrimary": 0,
-                "functionName": "",
-                "scriptInstance": {
-                    "Script": "SentientWhirlwind.lua",
-                    "Function": "SetState",
-                    "_activateAnim": "",
-                    "_loopAnim": "",
-                    "_deactivateAnim": "",
-                    "_inputFilter": "",
-                    "_castEffect": "",
-                    "_attachEffect": "",
-                    "_attachAmpedEffect": "",
-                    "_rangeDeco": "",
-                    "_dashEffect": "",
-                    "_pitchModulatedSeq": "",
-                    "_gainModulatedSeq": "",
-                    "_impactSound": "",
-                    "_impactAoeSound": "",
-                    "_chargeSound": ""
-                }
-            },
             {
                 "tag": "NotifyImpact",
                 "executionMode": "EM_ALL",
@@ -67,113 +40,56 @@
                     "_inputFilter": "",
                     "_castEffect": "",
                     "_attachEffect": "",
-                    "_attachAmpedEffect": "",
                     "_rangeDeco": "",
                     "_dashEffect": "",
-                    "_pitchModulatedSeq": "",
-                    "_gainModulatedSeq": "",
                     "_impactSound": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindDashImpact",
                     "_impactAoeSound": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindDashEmpoweredImpact",
-                    "_chargeSound": ""
+                    "_impactExplosionType": "/Lotus/Fx/PowersuitAbilities/Caliban/SentientLiftedEnemyExplosion"
+                }
+            },
+            {
+                "tag": "HealOnHit",
+                "executionMode": "EM_HOST",
+                "inheritPrimary": 0,
+                "functionName": "HealOnHit",
+                "scriptInstance": {
+                    "Script": "SentientWhirlwind.lua",
+                    "Function": "HealOnHit",
+                    "_activateAnim": "/Lotus/Animations/Tenno/Powers/Caliban/WhirlwindStart_anim.fbx",
+                    "_loopAnim": "/Lotus/Animations/Tenno/Powers/Caliban/WhirlwindLoop_anim.fbx",
+                    "_deactivateAnim": "/Lotus/Animations/Tenno/Powers/Caliban/WhirlwindEnd_anim.fbx",
+                    "_inputFilter": "/Lotus/Powersuits/Sentient/WhirlWindInputFilter",
+                    "_castEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlwindCast",
+                    "_attachEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlwindAttach",
+                    "_rangeDeco": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlWindRangeDeco",
+                    "_dashEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlWindDashAttach",
+                    "_impactSound": "",
+                    "_impactAoeSound": "",
+                    "_impactExplosionType": "/Lotus/Fx/PowersuitAbilities/Concrete/LaserExplosion"
                 }
             }
         ],
-        "InputEvents": [
+        "AbilityEvents": [
             {
-                "tag": "OnFire",
-                "inputCode": "PRE_ATTACK",
-                "onDown": 1,
+                "tag": "OnJump",
+                "eventType": "ET_ON_JUMP",
                 "scriptInstance": {
                     "Script": "SentientWhirlwind.lua",
-                    "Function": "OnFireDown",
+                    "Function": "OnJump",
                     "_activateAnim": "",
                     "_loopAnim": "",
-                    "_deactivateAnim": "",
-                    "_inputFilter": "",
+                    "_deactivateAnim": "/Lotus/Animations/Tenno/Powers/Caliban/WhirlwindEnd_anim.fbx",
+                    "_inputFilter": "/Lotus/Powersuits/Sentient/WhirlWindInputFilter",
                     "_castEffect": "",
-                    "_attachEffect": "",
-                    "_attachAmpedEffect": "",
-                    "_rangeDeco": "",
-                    "_dashEffect": "",
-                    "_pitchModulatedSeq": "",
-                    "_gainModulatedSeq": "",
+                    "_attachEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlwindAttach",
+                    "_rangeDeco": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlWindRangeDeco",
+                    "_dashEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlWindDashAttach",
                     "_impactSound": "",
                     "_impactAoeSound": "",
-                    "_chargeSound": ""
-                }
-            },
-            {
-                "tag": "OnFire",
-                "inputCode": "PRE_ATTACK",
-                "onDown": 0,
-                "scriptInstance": {
-                    "Script": "SentientWhirlwind.lua",
-                    "Function": "OnFireUp",
-                    "_activateAnim": "",
-                    "_loopAnim": "",
-                    "_deactivateAnim": "",
-                    "_inputFilter": "",
-                    "_castEffect": "",
-                    "_attachEffect": "",
-                    "_attachAmpedEffect": "",
-                    "_rangeDeco": "",
-                    "_dashEffect": "",
-                    "_pitchModulatedSeq": "",
-                    "_gainModulatedSeq": "",
-                    "_impactSound": "",
-                    "_impactAoeSound": "",
-                    "_chargeSound": ""
-                }
-            },
-            {
-                "tag": "OnFire",
-                "inputCode": "MELEE",
-                "onDown": 1,
-                "scriptInstance": {
-                    "Script": "SentientWhirlwind.lua",
-                    "Function": "OnFireDown",
-                    "_activateAnim": "",
-                    "_loopAnim": "",
-                    "_deactivateAnim": "",
-                    "_inputFilter": "",
-                    "_castEffect": "",
-                    "_attachEffect": "",
-                    "_attachAmpedEffect": "",
-                    "_rangeDeco": "",
-                    "_dashEffect": "",
-                    "_pitchModulatedSeq": "",
-                    "_gainModulatedSeq": "",
-                    "_impactSound": "",
-                    "_impactAoeSound": "",
-                    "_chargeSound": ""
-                }
-            },
-            {
-                "tag": "OnFire",
-                "inputCode": "MELEE",
-                "onDown": 0,
-                "scriptInstance": {
-                    "Script": "SentientWhirlwind.lua",
-                    "Function": "OnFireUp",
-                    "_activateAnim": "",
-                    "_loopAnim": "",
-                    "_deactivateAnim": "",
-                    "_inputFilter": "",
-                    "_castEffect": "",
-                    "_attachEffect": "",
-                    "_attachAmpedEffect": "",
-                    "_rangeDeco": "",
-                    "_dashEffect": "",
-                    "_pitchModulatedSeq": "",
-                    "_gainModulatedSeq": "",
-                    "_impactSound": "",
-                    "_impactAoeSound": "",
-                    "_chargeSound": ""
+                    "_impactExplosionType": ""
                 }
             }
         ],
-        "EnergyConsumptionOverTime": 4,
-        "AllowToggle": 1,
         "ActivationXP": 25,
         "VideoTexture": "/Lotus/Interface/AbilityVideos/CalibanPower1_s.bk2",
         "IsJoinInProgressAbility": 1,
@@ -193,6 +109,14 @@
                 "Period": 1,
                 "Context": "PEC_ALL",
                 "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCalibanWhirlwindLoopStart",
+                "Sound": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindFastLoop",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": "SFXCalibanWhirlwindLoopStop"
             }
         ]
     }

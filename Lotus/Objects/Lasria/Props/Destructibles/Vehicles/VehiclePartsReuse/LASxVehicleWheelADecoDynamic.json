@@ -1,0 +1,59 @@
+{
+    "parent": "/EE/Types/Engine/EffectDecoration",
+    "data": {
+        "Mesh": "LASxVehicleWheelA.fbx",
+        "MeshScale": 1.05,
+        "CullDistance": 80,
+        "MotionBlurred": 1,
+        "PhysicsBehavior": "/EE/Types/Physics/DynamicVehiclePart",
+        "ExplicitMass": 20,
+        "RespondToDamageImpulse": 1,
+        "AllowUpdateDeferral": 1,
+        "ShowDamageNumbers": 0,
+        "ReplicationPriority": "RP_LOW",
+        "AllowMantle": 0,
+        "AllowWallRun": 0,
+        "Health": 10,
+        "RemoveOnDestroy": 0,
+        "CreateOnDestroy": {
+            "Type": "/Lotus/Fx/Weapons/Grineer/GrnKuvaLichRifle/GrnKuvaLichRifleProjDeathSmoke",
+            "RelativeToBounds": 1,
+            "Attach": 1
+        },
+        "PlayOnDestroy": "/Lotus/Sounds/Ambience/NineteenNinetyNine/Gameplay/NineteenNinetyNineCarTirePop",
+        "OnDamageScript": {
+            "Script": "/Lotus/Scripts/Effects/TriggerFade.lua",
+            "Function": "TriggerFadeTargetted",
+            "_TargetDeco": [
+                ""
+            ]
+        },
+        "MaterialForSwap": "/Lotus/Objects/Lasria/Materials/Props/Vehicles/LASxVehicleDetailsBDestroyed",
+        "NavMeshInfluence": "NMI_NONE",
+        "TrackDamage": 0,
+        "DisplayStatusOnHud": 0,
+        "ShowHealthInHud": 0,
+        "TriggeredMaterialFade": [
+            {
+                "Parameter": "UnlitAtten",
+                "TimeLength": 5,
+                "Multiplier": 1,
+                "FadeRange": [
+                    0,
+                    0.9
+                ],
+                "FadeCurve": {
+                    "Values": [],
+                    "SplineType": "LINEAR_SPLINE"
+                },
+                "BaseValue": 0,
+                "Delay": 0,
+                "DestroyWhenComplete": 1,
+                "IsDissolve": 1,
+                "IsMeshScale": 0,
+                "IsRepeating": 0
+            }
+        ],
+        "PlayTriggeredFadeOnDamage": 1
+    }
+}

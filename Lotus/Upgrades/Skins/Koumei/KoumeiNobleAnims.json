@@ -1,0 +1,37 @@
+{
+    "parent": "/Lotus/Types/Game/LotusWarframeCustomization",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Cosmetics/KoumeiNobleAnims",
+        "LocalizeDescTag": "/Lotus/Language/Cosmetics/KoumeiNobleAnimsDesc",
+        "Icon": "/Lotus/Interface/Icons/StoreIcons/AnimationSets/KoumeiNoble.png",
+        "AlwaysAvailable": 1,
+        "AvailableOnPvp": 1,
+        "Weapon": "/Lotus/Powersuits/Koumei/KoumeiBaseSuit",
+        "CompatibleSlots": [
+            "AnimationSet"
+        ],
+        "AnimationSubTrees": {
+            "PRN_IDLE_OVERRIDE": "/Lotus/Types/Player/Animation/WarframeAnimTrees/KoumeiNobleIdleSubTree.animtree"
+        },
+        "GenericCompatible": "/Lotus/Types/Game/PowerSuits/PlayerPowerSuit",
+        "GenericRequirement": "UnlockKoumeiNoble",
+        "ScriptEvents": [
+            {
+                "EventName": "StringsIdle",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Powersuits/Koumei/KoumeiIdles.lua",
+                    "Function": "StringsIdle",
+                    "_idleStringType": "/Lotus/Fx/PowersuitAbilities/Koumei/KoumeiIdleBeam"
+                }
+            },
+            {
+                "EventName": "StringsIdleEnd",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Powersuits/Koumei/KoumeiIdles.lua",
+                    "Function": "ClearStrings",
+                    "_idleStringType": "/Lotus/Fx/PowersuitAbilities/Koumei/KoumeiIdleBeam"
+                }
+            }
+        ]
+    }
+}

@@ -108,15 +108,15 @@
                             }
                         },
                         "aimError": [
-                            4,
-                            10
+                            0,
+                            0
                         ],
-                        "aimGraph": "/EE/Types/Npc/WeaponAimGraphs/MediumAimGraph",
-                        "desiredAttackState": "AS_SHORT_RANGE",
+                        "aimGraph": "/EE/Types/Npc/WeaponAimGraphs/AllHitAimGraph",
+                        "desiredAttackState": "AS_LONG_RANGE",
                         "attackWeight": 1,
                         "desiredAttackRange": [
                             5,
-                            25
+                            30
                         ],
                         "hitSpreadMultiplier": 0
                     },
@@ -192,10 +192,11 @@
                     "PvpTraceDistance": 300,
                     "punctureHitEffect": "",
                     "InfinitePunctureDepth": 0,
-                    "tracePunctureDepth": 1,
-                    "PunchthroughIgnoresAvatars": 0,
+                    "tracePunctureDepth": 2,
+                    "PunchthroughIgnoresAvatars": 1,
                     "RicochetChance": 0,
                     "RicochetRange": 15,
+                    "OnlyHitEnitiesOnce": 1,
                     "ForceCameraAimForLocalPlayer": 1,
                     "AimTranslationOffset": [
                         0,
@@ -315,7 +316,7 @@
                     "AttackData": {
                         "UseNewFormat": 0,
                         "Type": "DT_FIRE",
-                        "Amount": 35,
+                        "Amount": 500,
                         "ProcChance": 0.1,
                         "ForcedProcs": [],
                         "ForcedDeathProcs": [],
@@ -380,10 +381,11 @@
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
                     "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0,
                     "ApplyRadialDamageOnMiss": 1,
                     "ApplyRadialDamageOnHit": 1,
                     "RadialDamage": {
-                        "baseAmount": 0,
+                        "baseAmount": 100,
                         "baseProcChance": 0.2,
                         "DamagePercent": {
                             "DT_IMPACT": 0,
@@ -393,10 +395,10 @@
                             "DT_FREEZE": 0,
                             "DT_ELECTRICITY": 0,
                             "DT_POISON": 0,
-                            "DT_EXPLOSION": 0,
+                            "DT_EXPLOSION": 1,
                             "DT_RADIATION": 0,
                             "DT_GAS": 0,
-                            "DT_MAGNETIC": 1,
+                            "DT_MAGNETIC": 0,
                             "DT_VIRAL": 0,
                             "DT_CORROSIVE": 0,
                             "DT_RADIANT": 0,
@@ -407,9 +409,11 @@
                             "DT_ENERGY_DRAIN": 0,
                             "DT_FINISHER": 0
                         },
+                        "radiusMin": 0,
                         "radius": 5,
                         "ignoreSource": 1,
-                        "fallOff": 1,
+                        "fallOff": 0.5,
+                        "fallOffMax": 0,
                         "checkForCover": 1,
                         "hitAirborneTargets": 1,
                         "staticCoverOnly": 0,
@@ -440,10 +444,10 @@
                             "DT_FREEZE": 0,
                             "DT_ELECTRICITY": 0,
                             "DT_POISON": 0,
-                            "DT_EXPLOSION": 0,
+                            "DT_EXPLOSION": 1,
                             "DT_RADIATION": 0,
                             "DT_GAS": 0,
-                            "DT_MAGNETIC": 1,
+                            "DT_MAGNETIC": 0,
                             "DT_VIRAL": 0,
                             "DT_CORROSIVE": 0,
                             "DT_RADIANT": 0,
@@ -454,9 +458,11 @@
                             "DT_ENERGY_DRAIN": 0,
                             "DT_FINISHER": 0
                         },
+                        "radiusMin": 0,
                         "radius": 0,
                         "ignoreSource": 1,
                         "fallOff": 1,
+                        "fallOffMax": 0,
                         "checkForCover": 1,
                         "hitAirborneTargets": 1,
                         "staticCoverOnly": 0,
@@ -483,12 +489,13 @@
                 },
                 "state:Type": "/EE/Types/Game/WeaponChargeBeamStateBehavior",
                 "state:WeaponChargeBeamStateBehavior": {
-                    "reloadTime": 6,
+                    "reloadTime": 3,
                     "PerfectReloadRange": [
                         0,
                         0
                     ],
                     "fireRate": 60,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 1,
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
@@ -496,6 +503,8 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -510,8 +519,10 @@
                     "CanChargeWhileRunning": 1,
                     "CanFireWhileInAir": 1,
                     "PreventRunWhileRecharging": 0,
+                    "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "/Lotus/Language/Menu/Loadout_TriggerCharge",
                     "BehaviorTag": "",
@@ -519,14 +530,19 @@
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
                     "OnNewProjectileScript": {
                         "Script": ""
                     },
+                    "IsAutomatic": 0,
+                    "AccessibilityTrigger": 1,
                     "ClipSizeAffectsChargeTime": 0,
                     "ChargeTime": 1,
                     "MinChargeRatio": 0.4,
@@ -546,8 +562,13 @@
                     "AmmoConsumedPerSecondAtFullCharge": 0,
                     "ReplicateFireStop": 0,
                     "CanInterruptReload": 0,
-                    "IsAutomatic": 0,
                     "ChargeRequireFullClip": 0,
+                    "ChargeCancelledScript": {
+                        "Script": ""
+                    },
+                    "FullyChargedScript": {
+                        "Script": ""
+                    },
                     "BeamChild": {
                         "LocalPosition": [
                             0,
@@ -599,7 +620,15 @@
         "AmmoCapacity": 200,
         "PVPAmmoCapacity": 10,
         "AmmoClipSize": 1,
-        "PVPAmmoClipSize": 5,
+        "PVPAmmoClipSize": 1,
+        "StateAnimations": [
+            {
+                "state": "WS_RELOAD",
+                "behaviorIndex": 4294967295,
+                "animation": "",
+                "clearable": 1
+            }
+        ],
         "RequiredLevel": 14,
         "ArtifactSlots": [
             "AP_ATTACK",
