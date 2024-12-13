@@ -1,5 +1,5 @@
 {
-    "parent": "LotusHubNpcEntity",
+    "parent": "LasriaHubNpc",
     "data": {
         "Mesh": "/Lotus/Characters/Tenno/Frumentarius/1999Frumentarius/Face/WF1999FrumentariusHead_skel.fbx",
         "AnimationName": "Frumentarius",
@@ -104,7 +104,7 @@
                     0,
                     1
                 ],
-                "BoneName": "",
+                "BoneName": "GAME_C1_ROOT",
                 "Type": "/Lotus/Types/Game/HubNpcs/HubNpcBlockingVolume",
                 "Chance": 255,
                 "RelativeToBounds": 0,
@@ -117,7 +117,29 @@
             {
                 "LocalPosition": [
                     0,
-                    1,
+                    0.5,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_ROOT",
+                "Type": "/Lotus/Types/Game/HubNpcs/NpcPushVolumeCapsule",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    1.8,
                     0
                 ],
                 "LocalRotation": [
@@ -127,7 +149,29 @@
                     1
                 ],
                 "BoneName": "",
-                "Type": "/Lotus/Types/Game/HubNpcs/NpcPushVolumeCapsule",
+                "Type": "/Lotus/Types/Game/HubNpcs/HubNpcObjectiveMarker",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Characters/Tenno/Frumentarius/1999Frumentarius/Body/WF1999FrumentariusExtBody",
                 "Chance": 255,
                 "RelativeToBounds": 0,
                 "Attach": 1,
@@ -169,7 +213,7 @@
         "SoundEvents": [
             {
                 "EventName": "FrumentariusGunShotSFX",
-                "Sound": "/Lotus/Sounds/Quests/NineteenNinetyNine/Gameplay/NinetyNineQuincyTargetPracticeShot",
+                "Sound": "/Lotus/Sounds/Quests/NineteenNinetyNine/Gameplay/Quincy/NinetyNineQuincyTargetPracticeShot",
                 "Chance": 1,
                 "Period": 1,
                 "Context": "PEC_ALL",
@@ -177,7 +221,7 @@
             },
             {
                 "EventName": "FrumentariusGunShotSFX",
-                "Sound": "/Lotus/Sounds/Quests/NineteenNinetyNine/Gameplay/NinetyNineQuincyTargetPracticeShellCasing",
+                "Sound": "/Lotus/Sounds/Quests/NineteenNinetyNine/Gameplay/Quincy/NinetyNineQuincyTargetPracticeShellCasing",
                 "Chance": 1,
                 "Period": 1,
                 "Context": "PEC_ALL",
@@ -244,11 +288,27 @@
                 }
             }
         ],
+        "ActivateAnimSpeech": [
+            {
+                "AnimList": [
+                    "/Lotus/Animations/Cinematics/1999/ProtoframeIntros/Frumentarius/QuincyStart_anim.fbx"
+                ],
+                "SpeechList": []
+            }
+        ],
+        "DeactivateAnimSpeech": [
+            {
+                "AnimList": [
+                    "/Lotus/Animations/Cinematics/1999/ProtoframeIntros/Frumentarius/QuincyEnd_anim.fbx"
+                ],
+                "SpeechList": []
+            }
+        ],
         "InactiveAnims": [
             "/Lotus/Animations/Cinematics/1999/ProtoframeIntros/Frumentarius/RifleFire_anim.fbx"
         ],
         "ActiveAnims": [
-            "/Lotus/Animations/Cinematics/1999/ProtoframeIntros/Frumentarius/RifleFire_anim.fbx"
+            "/Lotus/Animations/Cinematics/1999/ProtoframeIntros/Frumentarius/QuincyIdle_anim.fbx"
         ],
         "TriggeredAnims": [
             {
@@ -267,6 +327,12 @@
                 "Tag": "QuestInterruptBehind",
                 "AnimList": [
                     "/Lotus/Animations/Cinematics/1999/ProtoframeIntros/Frumentarius/FrumentariusInterruptedBehind_anim.fbx"
+                ]
+            },
+            {
+                "Tag": "GenericIdle",
+                "AnimList": [
+                    "/Lotus/Animations/Cinematics/1999/ProtoframeIntros/Frumentarius/IdleGroup_anim.fbx"
                 ]
             }
         ],

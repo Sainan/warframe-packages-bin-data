@@ -1,0 +1,132 @@
+{
+    "parent": "/Lotus/Types/Enemies/Infested/ZombieAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "InfestedMaggot1999Avatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Weapons/Infested/1999Infested/InfestedQuadMelee1999Weapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/Logic/LogicGraphAction"
+        ],
+        "LogicGraphAction": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "GraphRes": "InfestedMaggot1999LogicGraph"
+        },
+        "CustomRunToCoverBehavior": "",
+        "LocomotionController:PathFinder": [
+            "/EE/Types/Npc/VipDynamicPathFinderGround",
+            "/EE/Types/Npc/DynamicPathFinderGround"
+        ],
+        "LocomotionController:VipDynamicPathFinderGround": {
+            "UseCover": 1,
+            "StripContextActionsIfFlyer": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerWallWalk",
+            "/EE/Types/Npc/DynamicPathFollowerGround"
+        ],
+        "LocomotionController:DynamicPathFollowerWallWalk": {
+            "MoveFailureTime": 0.4,
+            "MoveFailureThreshold": 0.9,
+            "LockedInPlaceTimeout": 5,
+            "KeepPathWhileBlocking": 0,
+            "MinimumMoveDistance": 0.1,
+            "MinimumRunDistance": 3,
+            "ShortDistanceSpeedMultiplier": 2,
+            "ForceSidestepDistance": 0,
+            "RunStopDist": 0.5,
+            "WalkStopDist": 0.3,
+            "MinWalkWhenTurningAngle": 50,
+            "StopWhenTurningAngle": 90,
+            "CheckFunnelForTightTurns": 0,
+            "MinReducedSpeed": 0.5,
+            "TurnAccelerationCompensation": 1,
+            "ReduceSpeedForTightTurns": 1,
+            "TraceOffset": [
+                0,
+                0.5,
+                0
+            ],
+            "TraceScoreCurve": {
+                "m": -1,
+                "k": 2,
+                "b": 1,
+                "c": 0.99,
+                "logistic": 0
+            },
+            "TraceFwdBias": 2,
+            "SlopeThrottleMapping": [],
+            "EnableViewChange": 1,
+            "InitialAngleDiffForTurn": 0,
+            "ForceLookTarget": 0,
+            "ForcePredictUsingDesiredViewHeading": 0,
+            "TransitionDistance": 2,
+            "CoverWalkTransitionDistance": 0.5,
+            "AlternateCoverPoseTransitionDistance": 0,
+            "UseEndPoseForCoverWarp": 0,
+            "CanUseBendTransition": 0,
+            "MaximumHeightDifferenceForAlternateCover": 0,
+            "MaximumAngleForAlternateCover": 0,
+            "RoadNetworkTargetMinDistanceSqr": 50,
+            "RoadNetworkTargetMaxDistanceSqr": 400,
+            "UseVIPNav": 1,
+            "AvoidDynamicOnly": 0,
+            "SpecialNavPhysicsBehavior": "/Lotus/Types/Enemies/Infested/InfestedMicroplanet/Ashen/AshenCeilingWalk",
+            "WalkingPhysicsBehavior": "/Lotus/Types/Enemies/Infested/InfestedMicroplanet/Ashen/AshenWalk",
+            "AllowExteriorViewControl": 1,
+            "VerticalPosErrorFromNavToPitch": 24,
+            "LazyGravityVelocity": 1,
+            "SlideBackWhenBeyondOffNavTolerance": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/Lotus/Types/Game/VipNavLocomotionModifier",
+                    "/EE/Types/Npc/LocomotionMoveModifierDodgeJumpBackToNav"
+                ],
+                "VipNavLocomotionModifier": {
+                    "SupportedVipNavList": [
+                        "Ceiling",
+                        "Wall"
+                    ]
+                },
+                "LocomotionMoveModifierDodgeJumpBackToNav": {
+                    "DodgeJumpSymbol": "DodgeJump",
+                    "OffNavTimeRequired": 2,
+                    "TotallyStuckTimeRequired": 4,
+                    "SkipPathOnStuck": 0,
+                    "MinTimeSinceLastSeenRequired": 10,
+                    "SkipFallingOrLaunchingAvatars": 0,
+                    "DistanceToInstantTeleport": 100
+                }
+            },
+            {
+                "moveModifiers": []
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 6,
+            "minHeight": -6,
+            "nearbyNavSearchRadius": 4,
+            "shorteningType": "ST_NONE",
+            "vipNavName": "Ceiling"
+        },
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 60,
+        "ViewFov": 360
+    }
+}

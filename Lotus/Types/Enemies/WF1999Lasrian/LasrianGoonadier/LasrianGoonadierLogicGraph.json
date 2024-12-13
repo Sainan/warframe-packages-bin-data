@@ -70,8 +70,8 @@
                 "value": {
                     "type": "Action",
                     "comment": "",
-                    "posX": 126,
-                    "posY": -178
+                    "posX": 379,
+                    "posY": -184
                 }
             },
             {
@@ -187,8 +187,8 @@
                 "value": {
                     "type": "Action",
                     "comment": "",
-                    "posX": 375,
-                    "posY": -152
+                    "posX": 596,
+                    "posY": -168
                 }
             },
             {
@@ -306,6 +306,15 @@
                     "comment": "",
                     "posX": 120,
                     "posY": -113
+                }
+            },
+            {
+                "key": 53,
+                "value": {
+                    "type": "Condition",
+                    "comment": "",
+                    "posX": 118,
+                    "posY": -195
                 }
             }
         ],
@@ -494,6 +503,7 @@
                     "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
                     "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
                     "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
+                    "RandomWalkBehavior:ResetStartingPositionOnStartup": 0,
                     "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
                     "GuardBehavior:Enabled": 1,
                     "GuardBehavior:OnStartScript": {
@@ -660,7 +670,8 @@
                     },
                     "OnlyFindPositionsOnFlightNav": 0,
                     "MaxPatrolDistanceFromEncounterHint": 0,
-                    "UseStartingPositionAsEncounterPosition": 0
+                    "UseStartingPositionAsEncounterPosition": 0,
+                    "ResetStartingPositionOnStartup": 0
                 },
                 "links": [
                     {
@@ -741,8 +752,8 @@
                             "prop": 0
                         },
                         "toPort": {
-                            "node": 0,
-                            "prop": 5
+                            "node": 53,
+                            "prop": 2
                         }
                     }
                 ]
@@ -1048,7 +1059,7 @@
                     "OnFailureReevalTime": 2,
                     "OnSuccessReevalTime": 10,
                     "TryShoot": 1,
-                    "TargetFaction": "",
+                    "TargetFaction": "Tenno",
                     "DistanceToOrderTargetForNearPosture": 0,
                     "ClearOrderOnMoveSuccess": 0,
                     "AllowTeleportToCatchUp": 1,
@@ -1956,7 +1967,8 @@
                         },
                         "OnlyFindPositionsOnFlightNav": 0,
                         "MaxPatrolDistanceFromEncounterHint": 0,
-                        "UseStartingPositionAsEncounterPosition": 0
+                        "UseStartingPositionAsEncounterPosition": 0,
+                        "ResetStartingPositionOnStartup": 0
                     },
                     "LeaderAction:GuardTactic": {
                         "Enabled": 1,
@@ -2083,6 +2095,7 @@
                         "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
                         "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
                         "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
+                        "RandomWalkBehavior:ResetStartingPositionOnStartup": 0,
                         "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
                         "GuardBehavior:Enabled": 1,
                         "GuardBehavior:OnStartScript": {
@@ -3103,6 +3116,31 @@
                         "toPort": {
                             "node": 0,
                             "prop": 6
+                        }
+                    }
+                ]
+            },
+            "53": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/BlackboardCondition",
+                "conditionProperties:notCondition": 0,
+                "conditionProperties:BlackboardVar": "PerformingParachute",
+                "conditionProperties:UseAvatarBlackboard": 0,
+                "conditionProperties:Check": "BBCT_IsEqualToNumber",
+                "conditionProperties:Number": 1,
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 53,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 5
                         }
                     }
                 ]

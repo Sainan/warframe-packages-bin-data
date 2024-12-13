@@ -1,0 +1,320 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 3,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "posX": 219,
+                    "posY": 109
+                }
+            },
+            {
+                "key": 6,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "posX": 475,
+                    "posY": 59
+                }
+            },
+            {
+                "key": 7,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "posX": 400,
+                    "posY": 409
+                }
+            },
+            {
+                "key": 8,
+                "value": {
+                    "type": "Condition",
+                    "comment": "",
+                    "posX": 472,
+                    "posY": 188
+                }
+            },
+            {
+                "key": 9,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "posX": 694,
+                    "posY": 228
+                }
+            },
+            {
+                "key": 10,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "posX": 608,
+                    "posY": 362
+                }
+            },
+            {
+                "key": 12,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "posX": 810,
+                    "posY": 225
+                }
+            }
+        ],
+        "NodeProperties": {
+            "3": {
+                "links": []
+            },
+            "6": {
+                "Type": "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "WaitForSpawnAnimationBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 6,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 3,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "7": {
+                "Type": "/EE/Types/Npc/WaitBehavior",
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 7,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 3,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "8": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/BlackboardCondition",
+                "conditionProperties:notCondition": 0,
+                "conditionProperties:BlackboardVar": "BossFight",
+                "conditionProperties:UseAvatarBlackboard": 1,
+                "conditionProperties:Check": "BBCT_IsSet",
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 8,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 3,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "9": {
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 9,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 8,
+                            "prop": 1
+                        }
+                    }
+                ]
+            },
+            "10": {
+                "Type": "/EE/Types/Npc/WaitBehavior",
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 10,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 8,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "12": {
+                "Type": "/EE/Types/Npc/ChangeWeaponDecoratorBehavior",
+                "ChangeWeaponDecoratorBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "FailOnChildFail": 0,
+                    "FailOnDamage": 0,
+                    "RequireWeapon": 1,
+                    "CheckAmmoForSlot": 0,
+                    "RestorePreviousWeaponOnExit": 0,
+                    "UseTimedGunCycling": 1,
+                    "WeaponType": "",
+                    "WeaponSlot": "SLOT_1",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "CycleWeapons": [
+                        {
+                            "WeaponType": "/Lotus/Weapons/1999/Rusalka/LasFurisRusalka",
+                            "WeaponSlot": "SLOT_1",
+                            "WeaponHand": "MAIN_HAND",
+                            "EquipStyle": "ES_INSTANT_EQUIP",
+                            "UseDurationRange": [
+                                4,
+                                6
+                            ]
+                        }
+                    ],
+                    "Action:Type": "/EE/Types/Npc/BasicShootBehavior",
+                    "Action:BasicShootBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "MinShots": 1,
+                        "ShootTime": [
+                            2,
+                            4
+                        ],
+                        "WaitTime": [
+                            2,
+                            3
+                        ],
+                        "DelayForAim": 0,
+                        "NeedToAim": 1,
+                        "CanAlternateAim": 0,
+                        "NeedToDecloak": 1,
+                        "UseSuppressiveFire": 1,
+                        "SuppressionTargetDistDiff": 2.5,
+                        "LookAtTarget": 0,
+                        "LookHorizRate": 40,
+                        "LookVertRate": 20,
+                        "LookTargetOffset": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "ShootAction:Type": "/EE/Types/Npc/ShootAction",
+                        "ShootAction:Enabled": 1,
+                        "ShootAction:OnStartScript": {
+                            "Script": ""
+                        },
+                        "ShootAction:OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "ShootAction:DefaultTimer": 0,
+                        "ShootAction:GoodTargetTimeout": 0.2,
+                        "ShootAction:ChargedAttack": 1,
+                        "ShootAction:ShootAtCoverEnabled": 1,
+                        "ShootAction:WeaponFireDelayRange": [
+                            0,
+                            0
+                        ],
+                        "ShootAction:FireBursts": 0,
+                        "ShootAction:BurstTime": [
+                            0.5,
+                            1
+                        ],
+                        "ShootAction:PauseTime": [
+                            0.5,
+                            1
+                        ]
+                    }
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 12,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 9,
+                            "prop": 2
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 3
+    }
+}

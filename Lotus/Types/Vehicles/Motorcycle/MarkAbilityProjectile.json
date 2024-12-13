@@ -1,0 +1,162 @@
+{
+    "parent": "/EE/Types/Engine/GuidedProjectile",
+    "data": {
+        "Mesh": "/Lotus/Weapons/Corpus/LongGuns/CrpBriefcaseLauncher/CrpBriefcaseLauncherRocket.fbx",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/HeavyGuns/ConcreteGun/ConcreteProjFlareB",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/Tenno/DrifterPistol/DrifterPistolProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicNonCollidable",
+        "AttackData": {
+            "Type": "DT_IMPACT",
+            "Amount": 0,
+            "ProcChance": 0
+        },
+        "ExplosiveAttack": {
+            "Type": "DT_FIRE",
+            "Amount": 600,
+            "ProcChance": 0,
+            "ForcedProcs": [
+                "PT_IMMOLATION"
+            ]
+        },
+        "ExplosionIgnoreSource": 1,
+        "ExplosionSelfAOEMultiplier": [
+            0,
+            0
+        ],
+        "ExplosionIgnoreCover": 0,
+        "ExplosionFallOff": 0.8,
+        "ExplodeEffect": "/Lotus/Fx/Explosions/Generic/ExplosionFXConcussiveSmall",
+        "DamageRadius": 2,
+        "DieSound": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/Abilities/MC99MarkTargetExplosionInst",
+        "MaxLife": 3,
+        "WhizzBySound": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/Abilities/MC99MarkTargetProjBy",
+        "WhizzByRadius": 25,
+        "WhizzByLocal": 1,
+        "OnlyCollideWithTarget": 1,
+        "IgnoreFriendlyAvatars": 1,
+        "VerticalImpulse": 1000,
+        "HorizontalImpulse": 1000,
+        "Health": 1,
+        "CanBeReflected": 0,
+        "KinematicMovement": 1,
+        "HelixRadius": 0.5,
+        "HelixSpreadRate": 0.5,
+        "HelixRadiusVariance": 20,
+        "HelixSpinRate": 60,
+        "HelixSpinRateVariance": 0.1,
+        "ContinuousHelixVariance": 1,
+        "KinematicAccel": 240,
+        "KinematicInitialSpeed": 40,
+        "KinematicMinSpeed": 40,
+        "KinematicMaxSpeed": 40,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "ProjectileReplication": "SYNCED_AUTONOMOUS",
+        "OnProjectileStartScript": {
+            "Script": "MotorcycleMarkAbility.lua",
+            "Function": "OnProjectileStart",
+            "_markAttachment": "",
+            "_debuffAttachment": "",
+            "_range": 1000,
+            "_fov": 67.5,
+            "_projectileType": "",
+            "_damageVuln": 2,
+            "_debuffDuration": 8,
+            "_minNumProjectiles": 7,
+            "_numBarrages": 3,
+            "_barrageInterval": 0.5,
+            "_seekBreakables": 0,
+            "_lootCrateType": "",
+            "_contactRadius": 2
+        },
+        "OnProjectileDeathScript": {
+            "Script": "MotorcycleMarkAbility.lua",
+            "Function": "OnProjectileDeath",
+            "_markAttachment": "/Lotus/Fx/Gameplay/Motorcycle/MotorcycleMissileMarkTarget",
+            "_debuffAttachment": "",
+            "_range": 1000,
+            "_fov": 67.5,
+            "_projectileType": "",
+            "_damageVuln": 2,
+            "_debuffDuration": 8,
+            "_minNumProjectiles": 7,
+            "_numBarrages": 3,
+            "_barrageInterval": 0.5,
+            "_seekBreakables": 0,
+            "_lootCrateType": "",
+            "_contactRadius": 0.5
+        },
+        "OnProjectileContactScript": {
+            "Script": "MotorcycleMarkAbility.lua",
+            "Function": "OnHit",
+            "_markAttachment": "/Lotus/Fx/Gameplay/Motorcycle/MotorcycleMissileMarkTarget",
+            "_debuffAttachment": "/Lotus/Fx/Gameplay/Motorcycle/MotorcycleMissleProj",
+            "_range": 100,
+            "_fov": 67.5,
+            "_projectileType": "",
+            "_damageVuln": 2,
+            "_debuffDuration": 8,
+            "_minNumProjectiles": 7,
+            "_numBarrages": 3,
+            "_barrageInterval": 0.5,
+            "_seekBreakables": 0,
+            "_lootCrateType": "",
+            "_contactRadius": 0.5
+        },
+        "ApplyColorCustomization": 1,
+        "MaxHomingSpeed": 75,
+        "UnguidedFlightTime": 0.1,
+        "SmoothUnguidedFlightTransition": 1,
+        "SmoothUnguidedFlightTime": 0.2,
+        "AimRate": 5000,
+        "ReducedAimRate": 5000,
+        "IgnoreFlares": 1,
+        "CanTurnAround": 1,
+        "HelixHoneDistance": 1
+    }
+}

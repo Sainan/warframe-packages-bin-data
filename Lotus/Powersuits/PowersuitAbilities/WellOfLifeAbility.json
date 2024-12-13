@@ -4,6 +4,7 @@
         "MarketMode": "MM_HIDDEN",
         "LocalizeTag": "/Lotus/Language/Suits/WellOfLifeAbilityName",
         "LocalizeDescTag": "/Lotus/Language/Suits/WellOfLifeAbilityDesc",
+        "StatusDescTag": "/Lotus/Language/Suits/TrinityWellOfLifeAbilityImmortalityBuffDesc",
         "Icon": "/Lotus/Interface/Icons/Abilities/TrinityWellOfLife.png",
         "UniquePowerIdentifier": "TRINITY_WELL_OF_LIFE",
         "AdditionalPowerIdentifiers": [
@@ -15,6 +16,7 @@
             "Function": "ActivateAbility",
             "_failSound": "",
             "_sound": "",
+            "_immortalSound": "/Lotus/Sounds/Warframes/Trinity/TrinityWellOfLifeSaved",
             "_activateAnim": "/Lotus/Animations/Tenno/Powers/Trinity/RadialHeal_anim.fbx",
             "_healthOrbType": "/Lotus/Types/PickUps/HealthIncrease",
             "_energyOrbType": "/Lotus/Types/PickUps/EnergyIncreaseSmall",
@@ -23,6 +25,48 @@
             "_flyDeco": "/Lotus/Fx/PowersuitAbilities/Trinity/WellOfLifeFlyerDeco",
             "_pvpSoftTargetRadius": 1.5
         },
+        "SecondaryScripts": [
+            {
+                "tag": "SavedYou",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "WellOfLifeAbility.lua",
+                    "Function": "SavedYou",
+                    "_failSound": "",
+                    "_sound": "",
+                    "_immortalSound": "",
+                    "_activateAnim": "",
+                    "_healthOrbType": "",
+                    "_energyOrbType": "",
+                    "_rangeDeco": "",
+                    "_procBlockProj": "",
+                    "_flyDeco": "",
+                    "_pvpSoftTargetRadius": 1
+                }
+            },
+            {
+                "tag": "EarlyCancel",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "WellOfLifeAbility.lua",
+                    "Function": "EarlyCancel",
+                    "_failSound": "",
+                    "_sound": "",
+                    "_immortalSound": "",
+                    "_activateAnim": "",
+                    "_healthOrbType": "",
+                    "_energyOrbType": "",
+                    "_rangeDeco": "",
+                    "_procBlockProj": "",
+                    "_flyDeco": "",
+                    "_pvpSoftTargetRadius": 1
+                }
+            }
+        ],
         "AbilityEvents": [
             {
                 "tag": "OnProcBlock",
@@ -32,12 +76,53 @@
                     "Function": "OnProcBlock",
                     "_failSound": "",
                     "_sound": "",
+                    "_immortalSound": "",
                     "_activateAnim": "",
                     "_healthOrbType": "",
                     "_energyOrbType": "",
                     "_rangeDeco": "",
                     "_procBlockProj": "/Lotus/Powersuits/Trinity/WellOfLifeProj",
                     "_flyDeco": "/Lotus/Fx/PowersuitAbilities/Trinity/WellOfLifeFlyerDeco",
+                    "_pvpSoftTargetRadius": 1
+                }
+            }
+        ],
+        "InputEvents": [
+            {
+                "tag": "CheckRecast",
+                "inputCode": "ACTIVATE_ABILITY_0",
+                "onDown": 1,
+                "scriptInstance": {
+                    "Script": "WellOfLifeAbility.lua",
+                    "Function": "CheckRecast",
+                    "_failSound": "",
+                    "_sound": "",
+                    "_immortalSound": "",
+                    "_activateAnim": "",
+                    "_healthOrbType": "",
+                    "_energyOrbType": "",
+                    "_rangeDeco": "",
+                    "_procBlockProj": "",
+                    "_flyDeco": "",
+                    "_pvpSoftTargetRadius": 1
+                }
+            },
+            {
+                "tag": "CheckRecast",
+                "inputCode": "POWER_MODIFIER",
+                "onDown": 1,
+                "scriptInstance": {
+                    "Script": "WellOfLifeAbility.lua",
+                    "Function": "CheckRecastPM",
+                    "_failSound": "",
+                    "_sound": "",
+                    "_immortalSound": "",
+                    "_activateAnim": "",
+                    "_healthOrbType": "",
+                    "_energyOrbType": "",
+                    "_rangeDeco": "",
+                    "_procBlockProj": "",
+                    "_flyDeco": "",
                     "_pvpSoftTargetRadius": 1
                 }
             }
@@ -64,6 +149,7 @@
                 "ForceFeedbackEffect": "/Lotus/Sounds/Weapons/ForceFeedbackSettings/Powers/ForceFeedbackPowerBurst"
             }
         ],
+        "HelminthOverrideDescTag": "/Lotus/Language/Suits/TrinityWellOfLifeAbilityDescription_Helminth",
         "ResourceOverrides": [
             {
                 "Tag": "WellCast",

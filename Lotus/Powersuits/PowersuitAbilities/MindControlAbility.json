@@ -27,8 +27,97 @@
             "_npcAgainstPlayerDuration": 4,
             "_pvpSoftTargetRadius": 1.5,
             "_teleportOutEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleport",
-            "_teleportInEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleportIn"
+            "_teleportInEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleportIn",
+            "_mindControlOverSound": "/Lotus/Sounds/Warframes/Nyx/NyxUpdatedSounds/NyxNewMindControlOver",
+            "_trackFxType": "/Lotus/Fx/Common/AllyVisionNew",
+            "_mindControlTargetEvalType": "/Lotus/Powersuits/Jade/NyxMindControlTargetEvaluator"
         },
+        "SecondaryScripts": [
+            {
+                "tag": "UpdateBonusDamage",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 1,
+                "functionName": "UpdateBonusDamage",
+                "scriptInstance": {
+                    "Script": "MindControl.lua",
+                    "Function": "UpdateBonusDamage",
+                    "_activateAnim": "/Lotus/Animations/Tenno/Powers/Trinity/MindControl_anim.fbx",
+                    "_baseRange": 100,
+                    "_baseTime": 15,
+                    "_resistantTimeScalar": 0.5,
+                    "_maxNumStompReactionAnims": 4,
+                    "_mindcontrolFx": "/Lotus/Fx/PowersuitAbilities/Jade/MindControl",
+                    "_invalidTypes": [
+                        "/Lotus/Types/Enemies/Grineer/SpecialEvents/SurveillanceDroneAvatar"
+                    ],
+                    "_castBeam": "/Lotus/Fx/PowersuitAbilities/Jade/MindControlCastBeam",
+                    "_castDeco": "/Lotus/Fx/PowersuitAbilities/Jade/MindControlFlyingDeco",
+                    "_npcAgainstPlayerDuration": 4,
+                    "_pvpSoftTargetRadius": 1.5,
+                    "_teleportOutEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleport",
+                    "_teleportInEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleportIn",
+                    "_mindControlOverSound": "/Lotus/Sounds/Warframes/Nyx/NyxUpdatedSounds/NyxNewMindControlOver",
+                    "_trackFxType": "/Lotus/Fx/Common/AllyVisionNew",
+                    "_mindControlTargetEvalType": "/Lotus/Powersuits/Jade/NyxMindControlTargetEvaluator"
+                }
+            },
+            {
+                "tag": "UpdateDamageDealt",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 1,
+                "functionName": "UpdateDamageDealt",
+                "scriptInstance": {
+                    "Script": "MindControl.lua",
+                    "Function": "UpdateDamageDealt",
+                    "_activateAnim": "/Lotus/Animations/Tenno/Powers/Trinity/MindControl_anim.fbx",
+                    "_baseRange": 100,
+                    "_baseTime": 15,
+                    "_resistantTimeScalar": 0.5,
+                    "_maxNumStompReactionAnims": 4,
+                    "_mindcontrolFx": "/Lotus/Fx/PowersuitAbilities/Jade/MindControl",
+                    "_invalidTypes": [
+                        "/Lotus/Types/Enemies/Grineer/SpecialEvents/SurveillanceDroneAvatar"
+                    ],
+                    "_castBeam": "/Lotus/Fx/PowersuitAbilities/Jade/MindControlCastBeam",
+                    "_castDeco": "/Lotus/Fx/PowersuitAbilities/Jade/MindControlFlyingDeco",
+                    "_npcAgainstPlayerDuration": 4,
+                    "_pvpSoftTargetRadius": 1.5,
+                    "_teleportOutEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleport",
+                    "_teleportInEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleportIn",
+                    "_mindControlOverSound": "/Lotus/Sounds/Warframes/Nyx/NyxUpdatedSounds/NyxNewMindControlOver",
+                    "_trackFxType": "/Lotus/Fx/Common/AllyVisionNew",
+                    "_mindControlTargetEvalType": "/Lotus/Powersuits/Jade/NyxMindControlTargetEvaluator"
+                }
+            },
+            {
+                "tag": "UpdateMindControlHud",
+                "executionMode": "EM_LOCAL",
+                "inheritPrimary": 1,
+                "functionName": "UpdateMindControlHud",
+                "scriptInstance": {
+                    "Script": "MindControl.lua",
+                    "Function": "UpdateMindControlHud",
+                    "_activateAnim": "/Lotus/Animations/Tenno/Powers/Trinity/MindControl_anim.fbx",
+                    "_baseRange": 100,
+                    "_baseTime": 15,
+                    "_resistantTimeScalar": 0.5,
+                    "_maxNumStompReactionAnims": 4,
+                    "_mindcontrolFx": "/Lotus/Fx/PowersuitAbilities/Jade/MindControl",
+                    "_invalidTypes": [
+                        "/Lotus/Types/Enemies/Grineer/SpecialEvents/SurveillanceDroneAvatar"
+                    ],
+                    "_castBeam": "/Lotus/Fx/PowersuitAbilities/Jade/MindControlCastBeam",
+                    "_castDeco": "/Lotus/Fx/PowersuitAbilities/Jade/MindControlFlyingDeco",
+                    "_npcAgainstPlayerDuration": 4,
+                    "_pvpSoftTargetRadius": 1.5,
+                    "_teleportOutEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleport",
+                    "_teleportInEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleportIn",
+                    "_mindControlOverSound": "/Lotus/Sounds/Warframes/Nyx/NyxUpdatedSounds/NyxNewMindControlOver",
+                    "_trackFxType": "/Lotus/Fx/Common/AllyVisionNew",
+                    "_mindControlTargetEvalType": "/Lotus/Powersuits/Jade/NyxMindControlTargetEvaluator"
+                }
+            }
+        ],
         "AbilityEvents": [
             {
                 "tag": "OnHitPvp",
@@ -48,12 +137,15 @@
                     "_npcAgainstPlayerDuration": 4,
                     "_pvpSoftTargetRadius": 1,
                     "_teleportOutEffect": "",
-                    "_teleportInEffect": ""
+                    "_teleportInEffect": "",
+                    "_mindControlOverSound": "",
+                    "_trackFxType": "",
+                    "_mindControlTargetEvalType": ""
                 }
             }
         ],
         "NpcCooldownDuration": 30,
-        "AllowToggle": 1,
+        "AllowReactivate": 1,
         "AllowDuringOverride": 1,
         "ActivationXP": 25,
         "VideoTexture": "/Lotus/Interface/AbilityVideos/NyxPower1_s.bk2",

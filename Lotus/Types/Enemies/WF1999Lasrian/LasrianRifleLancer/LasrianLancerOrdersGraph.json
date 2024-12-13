@@ -109,6 +109,24 @@
                     "posX": 96,
                     "posY": 148
                 }
+            },
+            {
+                "key": 12,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "posX": 87,
+                    "posY": 231
+                }
+            },
+            {
+                "key": 13,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "posX": 290,
+                    "posY": 271
+                }
             }
         ],
         "NodeProperties": {
@@ -435,6 +453,12 @@
                         "_waitPointTypeInReferences": "",
                         "_exitPointTypeInReferences": "",
                         "_turretType": "",
+                        "_turretAttachBone": "",
+                        "_turretOffset": [
+                            0,
+                            0,
+                            0
+                        ],
                         "_agentType": "",
                         "_forceAgentsToAlertState": 0,
                         "_completeEncounterAfterDeploy": 1,
@@ -478,7 +502,7 @@
                     "ShootAction:DefaultTimer": 0,
                     "ShootAction:GoodTargetTimeout": 0.2,
                     "ShootAction:ChargedAttack": 0,
-                    "ShootAction:ShootAtCoverEnabled": 1,
+                    "ShootAction:ShootAtCoverEnabled": 0,
                     "ShootAction:WeaponFireDelayRange": [
                         0,
                         0
@@ -539,6 +563,12 @@
                             "_waitPointTypeInReferences": "",
                             "_exitPointTypeInReferences": "",
                             "_turretType": "",
+                            "_turretAttachBone": "",
+                            "_turretOffset": [
+                                0,
+                                0,
+                                0
+                            ],
                             "_agentType": "",
                             "_forceAgentsToAlertState": 0,
                             "_completeEncounterAfterDeploy": 1,
@@ -582,7 +612,7 @@
                         "ShootAction:DefaultTimer": 0,
                         "ShootAction:GoodTargetTimeout": 0.2,
                         "ShootAction:ChargedAttack": 0,
-                        "ShootAction:ShootAtCoverEnabled": 1,
+                        "ShootAction:ShootAtCoverEnabled": 0,
                         "ShootAction:WeaponFireDelayRange": [
                             0,
                             0
@@ -618,6 +648,127 @@
                         "toPort": {
                             "node": 0,
                             "prop": 4
+                        }
+                    }
+                ]
+            },
+            "12": {
+                "Type": "/Lotus/Types/Behaviors/OrderDecorator",
+                "OrderDecorator": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "ChildAction:Type": "/Lotus/Types/Behaviors/GoProneBehavior",
+                    "ChildAction:GoProneBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "ContextActionSearchDistance": 15,
+                        "ProneTag": "ProneAction",
+                        "ProneActionType": "GoProne",
+                        "NearDistance": 3,
+                        "ActionInterval": -1,
+                        "MinTimeInProne": 5,
+                        "MaxTimeInProne": 120,
+                        "TargetNotVisibleTimeoutRange": [
+                            6,
+                            8
+                        ],
+                        "RangeToStartSearchingForContextActions": [
+                            20,
+                            80
+                        ],
+                        "MaxDistanceFromContextActionToTarget": [
+                            20,
+                            80
+                        ],
+                        "MaxAngleFromContextActionToTarget": 45,
+                        "CombatOnly": 1,
+                        "AddImmunities": 1,
+                        "Order": "GoProne",
+                        "FindPronePosOnOrderFail": 0,
+                        "NoTargetReevalTime": 5,
+                        "NoProneReevalTime": 5,
+                        "TakenProneReevalTime": 2,
+                        "DelayAfterFailure": 15
+                    },
+                    "StopWhenChildStops": 1,
+                    "OrderSym": "Go Prone"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 12,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 5
+                        }
+                    }
+                ]
+            },
+            "13": {
+                "Type": "/Lotus/Types/Behaviors/GoProneBehavior",
+                "GoProneBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "ContextActionSearchDistance": 15,
+                    "ProneTag": "ProneAction",
+                    "ProneActionType": "GoProne",
+                    "NearDistance": 3,
+                    "ActionInterval": -1,
+                    "MinTimeInProne": 5,
+                    "MaxTimeInProne": 120,
+                    "TargetNotVisibleTimeoutRange": [
+                        6,
+                        8
+                    ],
+                    "RangeToStartSearchingForContextActions": [
+                        20,
+                        80
+                    ],
+                    "MaxDistanceFromContextActionToTarget": [
+                        20,
+                        80
+                    ],
+                    "MaxAngleFromContextActionToTarget": 45,
+                    "CombatOnly": 1,
+                    "AddImmunities": 1,
+                    "Order": "GoProne",
+                    "FindPronePosOnOrderFail": 0,
+                    "NoTargetReevalTime": 5,
+                    "NoProneReevalTime": 5,
+                    "TakenProneReevalTime": 2,
+                    "DelayAfterFailure": 15
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 13,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 12,
+                            "prop": 1
                         }
                     }
                 ]

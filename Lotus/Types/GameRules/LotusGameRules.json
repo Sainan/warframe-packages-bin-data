@@ -58,7 +58,12 @@
             "/Lotus/Levels/KahlMissions/KahlMissionProc/GrineerForestKahlThumper",
             "/Lotus/Levels/KahlMissions/KahlMissionProc/KahlNarmerSpaceport",
             "/Lotus/Levels/KahlMissions/KahlMissionProc/KahlDevourerProc",
-            "/Lotus/Levels/KahlMissions/KahlMissionProc/KahlDevourerProcWeekly"
+            "/Lotus/Levels/KahlMissions/KahlMissionProc/KahlDevourerProcWeekly",
+            "/Lotus/Levels/CaliberChicks/CaliberChicks2.level",
+            "/Lotus/Levels/OlliesCrashCourse/SettlementRaceTrack01.level",
+            "/Lotus/Levels/1999/StartGarageTunneltoStreets.level",
+            "/Lotus/Levels/1999/StartGarageTunneltoStreetsWinterWet.level",
+            "/Lotus/Levels/1999/StartGarageTunneltoStreetsWinterSnow.level"
         ],
         "MessageDisplayScript": {
             "Script": "/Lotus/Scripts/DisplayMessage.lua",
@@ -91,6 +96,7 @@
         "OddityMsgMovie": "/Lotus/Interface/UnlockOddityMessage.swf",
         "LibraryScannerMsgMovie": "/Lotus/Interface/LibraryScanMessage.swf",
         "FragmentScannerMsgMovie": "/Lotus/Interface/CephalonFragmentMessage.swf",
+        "MapLegendMovie": "/Lotus/Interface/Map/MapLegend.swf",
         "WipDifficultyTable:LotusDifficultyTable": {
             "AgentLevelAttenuationCurves": {
                 "DAMAGE": {
@@ -146,12 +152,19 @@
             {
                 "FactionResistanceKeyword": "RK_OROKIN_FACTION",
                 "difficultyTable": "OrokinLotusDifficultyTable"
+            },
+            {
+                "FactionResistanceKeyword": "RK_LASRIA_FACTION",
+                "difficultyTable": "GrineerLotusDifficultyTable"
+            },
+            {
+                "FactionResistanceKeyword": "RK_PROTOINFESTED_FACTION",
+                "difficultyTable": "CorpusLotusDifficultyTable"
             }
         ],
         "MaxMigrations": 3,
         "EndOfMatchMovie": "/Lotus/Interface/EndOfMatch.swf",
         "InventoryCheckpointMovie": "/Lotus/Interface/EidolonMissionComplete.swf",
-        "MapLegendMovie": "/Lotus/Interface/Map/MapLegend.swf",
         "DedicatedServerInventoryCheckpointScript": {
             "Script": "/Lotus/Interface/EidolonMissionComplete.lua",
             "Function": "Initialize",
@@ -159,6 +172,7 @@
             "_bannerTextures": [],
             "_bannerJobTextures": [],
             "_bannerFailTextures": [],
+            "_bannerSidesTextures": [],
             "_bannerOverlayTextures": [],
             "_successSounds": [],
             "_bonusRewardSound": "",
@@ -504,7 +518,9 @@
             "_creationMovie": "",
             "_allyCooldownSeconds": 86400,
             "_corpusLichStingerSound": "",
-            "_corpusLichThrallStingerSound": "/Lotus/Music/CorpusLich/CorpusLichPetStinger"
+            "_corpusLichThrallStingerSound": "/Lotus/Music/CorpusLich/CorpusLichPetStinger",
+            "_infestationLichStingerSound": "",
+            "_infestationLichThrallStingerSound": ""
         },
         "NemesisScript": {
             "Script": "/Lotus/Scripts/Nemesis/NemesisMission.lua",
@@ -512,7 +528,9 @@
             "_creationMovie": "/Lotus/Interface/Test/NemesisTest.swf",
             "_allyCooldownSeconds": 86400,
             "_corpusLichStingerSound": "/Lotus/Music/CorpusLich/CorpusLichCinEndStinger",
-            "_corpusLichThrallStingerSound": ""
+            "_corpusLichThrallStingerSound": "",
+            "_infestationLichStingerSound": "",
+            "_infestationLichThrallStingerSound": ""
         },
         "NemesisAllyScript": {
             "Script": "/Lotus/Scripts/Nemesis/NemesisMission.lua",
@@ -520,7 +538,9 @@
             "_creationMovie": "",
             "_allyCooldownSeconds": 86400,
             "_corpusLichStingerSound": "",
-            "_corpusLichThrallStingerSound": ""
+            "_corpusLichThrallStingerSound": "",
+            "_infestationLichStingerSound": "",
+            "_infestationLichThrallStingerSound": ""
         },
         "ConditionalDrops": [
             "/Lotus/Types/Items/Research/DojoColors/GenericDojoColorConditionalDrop",
@@ -551,9 +571,6 @@
         "MedalDynamicCalculatorScript": {
             "Script": "/Lotus/Scripts/LotusGameRules.lua",
             "Function": "AddDynamicMedalCalculators"
-        },
-        "BoonRequestScript": {
-            "OverrideFunctionName": "OnBoonRequested"
         }
     }
 }

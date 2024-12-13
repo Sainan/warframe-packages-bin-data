@@ -1,8 +1,10 @@
 {
     "data": {
         "OnEmptyQueueCommand": "CmdQuit",
-        "BatchCommand": "CmdSubmitRebuild",
-        "PostBatchCommand": "CmdQuit",
+        "BatchCommand": "CmdBatchBuildSeparateCL",
+        "PostBatchCommand": "CmdPostBatchBuildSeparateCL",
+        "OneSubmitBatchCommand": "CmdBatchBuildOneCL",
+        "OneSubmitPostBatchCommand": "CmdPostBatchBuildOneCL",
         "StepMap": [
             {
                 "name": "agg",
@@ -55,7 +57,12 @@
             {
                 "name": "light",
                 "steps": [
-                    "RST_LIGHTING"
+                    "RST_LIGHTING",
+                    "RST_REFLECTION_PROBES",
+                    "RST_LIGHT_PROBES",
+                    "RST_FOG_VOLUMES_LIGHTING",
+                    "RST_VOLUMETRIC_SHADOWS",
+                    "RST_SKY_PROBE"
                 ]
             },
             {

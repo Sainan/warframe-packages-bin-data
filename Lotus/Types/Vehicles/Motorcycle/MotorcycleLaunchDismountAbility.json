@@ -2,20 +2,68 @@
     "parent": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/NpcAbility",
     "data": {
         "LocalizeTag": "/Lotus/Language/1999Demo/MotorcycleBombAbility",
+        "LocalizeDescTag": "/Lotus/Language/1999Demo/MotorcycleBombAbilityDesc",
         "Icon": "/Lotus/Interface/Icons/Abilities/Misc/MotorcycleDismountExplosion.png",
         "UniquePowerIdentifier": "MOTORCYCLE_LAUNCH_DISMOUNT",
         "Script": {
             "Script": "MotorcycleLaunchDismountAbility.lua",
             "Function": "ActivateAbility",
-            "_minimumSpeed": 10,
             "_bikeMountActionType": "/Lotus/Types/Enemies/Grineer/Eidolon/GrineerSkiff/UnmannedSkiff/UseEidolonSkiff",
-            "_explosionEntity": "",
-            "_explosionEffect": "",
+            "_explosionEntity": "MotorcycleMissileBlastEntity",
+            "_explosionEffect": "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledMedium",
             "_bikeLaunchSound": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/MissileAbility/MC99MissileAbilLaunchStart",
             "_localLaunchSound": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/MissileAbility/MC99MissileAbility3D",
             "_dismountAnim": "/Lotus/Animations/Tenno/Motorcycle/DismountBackwards_anim.fbx",
-            "_attachEffect": "/Lotus/Fx/Gameplay/Motorcycle/MotorcycleLaunchDismountAttach"
+            "_attachEffect": "/Lotus/Fx/Gameplay/Motorcycle/MotorcycleLaunchDismountAttach",
+            "_targettingAngle": 20,
+            "_targettingRange": 50,
+            "_maxTimeTillExplosion": 2.5,
+            "_explosionDamage": 15000
         },
+        "SecondaryScripts": [
+            {
+                "tag": "DoLaunch",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 1,
+                "functionName": "DoLaunch",
+                "scriptInstance": {
+                    "Script": "MotorcycleLaunchDismountAbility.lua",
+                    "Function": "DoLaunch",
+                    "_bikeMountActionType": "/Lotus/Types/Enemies/Grineer/Eidolon/GrineerSkiff/UnmannedSkiff/UseEidolonSkiff",
+                    "_explosionEntity": "MotorcycleMissileBlastEntity",
+                    "_explosionEffect": "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledMedium",
+                    "_bikeLaunchSound": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/MissileAbility/MC99MissileAbilLaunchStart",
+                    "_localLaunchSound": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/MissileAbility/MC99MissileAbility3D",
+                    "_dismountAnim": "/Lotus/Animations/Tenno/Motorcycle/DismountBackwards_anim.fbx",
+                    "_attachEffect": "/Lotus/Fx/Gameplay/Motorcycle/MotorcycleLaunchDismountAttach",
+                    "_targettingAngle": 20,
+                    "_targettingRange": 50,
+                    "_maxTimeTillExplosion": 2.5,
+                    "_explosionDamage": 15000
+                }
+            },
+            {
+                "tag": "DoExplosion",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 1,
+                "functionName": "DoExplosion",
+                "scriptInstance": {
+                    "Script": "MotorcycleLaunchDismountAbility.lua",
+                    "Function": "DoExplosion",
+                    "_bikeMountActionType": "/Lotus/Types/Enemies/Grineer/Eidolon/GrineerSkiff/UnmannedSkiff/UseEidolonSkiff",
+                    "_explosionEntity": "MotorcycleMissileBlastEntity",
+                    "_explosionEffect": "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledMedium",
+                    "_bikeLaunchSound": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/MissileAbility/MC99MissileAbilLaunchStart",
+                    "_localLaunchSound": "/Lotus/Sounds/Vehicles/Motorcycle/MotorcycleNinetyNine/MissileAbility/MC99MissileAbility3D",
+                    "_dismountAnim": "/Lotus/Animations/Tenno/Motorcycle/DismountBackwards_anim.fbx",
+                    "_attachEffect": "/Lotus/Fx/Gameplay/Motorcycle/MotorcycleLaunchDismountAttach",
+                    "_targettingAngle": 20,
+                    "_targettingRange": 50,
+                    "_maxTimeTillExplosion": 2.5,
+                    "_explosionDamage": 15000
+                }
+            }
+        ],
         "CooldownDuration": 0,
         "PvpEnergyRequiredToActivate": 0,
         "ActivationXP": 0

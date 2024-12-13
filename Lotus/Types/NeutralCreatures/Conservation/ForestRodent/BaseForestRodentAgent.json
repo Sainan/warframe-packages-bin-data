@@ -139,7 +139,10 @@
                         "BlackboardType": "BBT_AGENT",
                         "ClearOnStop": 0,
                         "Value": 1
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 },
                 {
                     "reaction": "ABOUT_TO_INVESTIGATE",
@@ -159,10 +162,22 @@
                         "MovementMode": "ATMM_DEFAULT",
                         "CoolDown": 5,
                         "StopMoving": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 }
             ],
-            "BlockingResponse": 1
+            "BlockingResponse": 1,
+            "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+            "TurnToAction:Enabled": 1,
+            "TurnToAction:OnStartScript": {
+                "Script": ""
+            },
+            "TurnToAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "TurnAccuracyThreshold": 15
         },
         "KeepIdealDistanceBehavior": {
             "Enabled": 1,
@@ -185,6 +200,7 @@
             ],
             "MaxMovementDistance": 100,
             "AllowRetreat": 1,
+            "AllowTeleportFromOffScreen": 0,
             "AllowRun": 1,
             "AllowChase": 0,
             "ForceWalkBelowMinIdealRange": 1,
@@ -358,6 +374,8 @@
             },
             "OnlyFindPositionsOnFlightNav": 0,
             "MaxPatrolDistanceFromEncounterHint": 20,
+            "UseStartingPositionAsEncounterPosition": 0,
+            "ResetStartingPositionOnStartup": 0,
             "OrderName": "PatrolTarget"
         },
         "GuardBehavior": {

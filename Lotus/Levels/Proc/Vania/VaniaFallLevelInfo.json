@@ -16,7 +16,7 @@
                 "adjustmentEV": 0
             },
             "toneMapLUT": "/EE/Materials/PostFX/JoshPinesSV2.cube",
-            "toneMapLUTBlend": 0,
+            "toneMapLUTBlend": 0.4,
             "colorCorrectCurveLift": [
                 1,
                 1,
@@ -29,19 +29,13 @@
                         1,
                         1,
                         1,
-                        1
+                        0.95
                     ],
                     "Contrast": [
                         1,
                         1,
                         1,
-                        1
-                    ],
-                    "Gamma": [
-                        1,
-                        1,
-                        1,
-                        1
+                        1.15
                     ],
                     "Gain": [
                         1,
@@ -80,20 +74,38 @@
                 "NearDistance": 0.01,
                 "Extinction": 0.65,
                 "GlobalFog": {
-                    "Density": 0.015
+                    "Density": 0.015,
+                    "G": 0.6
                 },
                 "HeightFog": {
                     "HeightFogMaxHeight": 7,
                     "HeightFogParticipatingMedia": {
-                        "Density": 0.05
+                        "Density": 0.05,
+                        "G": 0.5
+                    },
+                    "SecondaryHeightFogParticipatingMedia": {
+                        "G": 0.33
                     }
                 },
+                "ClumpyNoise": {
+                    "ClumpAmount": 0.65,
+                    "ClumpStart": 0.25,
+                    "NoiseScale": 0.01
+                },
                 "ColorGrading": {
-                    "Vibrance": 1.35,
+                    "Vibrance": 0.5,
                     "Contrast": 0.1
                 }
             }
         },
-        "BakeReflectionProbes": "BA_USE_CHILD"
+        "PostProcessInfoAlt": {
+            "volumetricFog": {
+                "ColorGrading": {
+                    "Vibrance": 1
+                }
+            }
+        },
+        "BakeReflectionProbes": "BA_USE_CHILD",
+        "BakeStatic": "BA_USE_CHILD"
     }
 }

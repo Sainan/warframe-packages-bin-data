@@ -1,10 +1,16 @@
 {
     "parent": "/Lotus/Types/Game/LotusWarframeCustomization",
     "data": {
-        "MarketMode": "MM_NONE",
-        "PremiumPrice": 5000,
+        "MarketMode": "MM_VISIBLE",
+        "PremiumPrice": 275,
+        "AdditionalItems": [
+            "/Lotus/Types/Items/Emotes/LegendaryArthurEmote"
+        ],
         "LocalizeTag": "/Lotus/Language/Skins/ExcaliburLasriaSkinName",
         "LocalizeDescTag": "/Lotus/Language/Skins/ExcaliburLasriaSkinDesc",
+        "Icon": "/Lotus/Interface/Icons/StoreIcons/Cosmetics/WarframeSkins/HumanSkins/WF1999ExcaliburSkin.png",
+        "Diorama": "/Lotus/Levels/Episodes/MarketGeminiArthur.level",
+        "ExcludeFromCodex": 0,
         "AvailableOnPvp": 1,
         "Weapon": "/Lotus/Powersuits/Excalibur/ExcaliburBaseSuit",
         "THIRD_PERSON_Attachment": {
@@ -37,18 +43,85 @@
         "CompatibleSlots": [
             "BodySkin"
         ],
+        "AnimController": "/Lotus/Types/Player/Animation/WarframeAnimTrees/ArthurAnimController",
         "NamedSubTrees": [
             {
                 "name": "IdleAdditive",
                 "tree": "/Lotus/Types/Friendly/Tenno/ArthurFaceIdle.animtree"
+            },
+            {
+                "name": "EyesClosed",
+                "tree": "/Lotus/Types/Friendly/Tenno/ArthurEyesClosed.animtree"
             }
         ],
         "ForcedCustomizations": {
             "Helmet": "/Lotus/Types/Gameplay/EntratiLab/Quest/ExcaliburLasriaHelmet"
         },
+        "OverrideAttachedFx": 1,
+        "AttachedFxOverrides": [],
+        "AllowUglyMode": 1,
         "DefaultCustomizationOverrides": {
-            "AnimationSet": {
-                "ItemType": "ExcaliburArthurAnims"
+            "CustomEmblem": {
+                "MAIN_HAND": [
+                    {
+                        "BoneOverride": "",
+                        "PosOffset": [
+                            0.05,
+                            0,
+                            -0.05
+                        ],
+                        "PosOffsetSecondary": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "RotOffset": [
+                            0,
+                            0,
+                            0,
+                            1
+                        ],
+                        "RotOffsetSecondary": [
+                            0,
+                            0,
+                            0,
+                            1
+                        ],
+                        "UseSecondaryOffset": 0,
+                        "Scale": 1
+                    }
+                ]
+            },
+            "EventEmblem": {
+                "OFF_HAND": [
+                    {
+                        "BoneOverride": "",
+                        "PosOffset": [
+                            -0.05,
+                            0,
+                            0.055
+                        ],
+                        "PosOffsetSecondary": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "RotOffset": [
+                            0,
+                            0,
+                            0,
+                            1
+                        ],
+                        "RotOffsetSecondary": [
+                            0,
+                            0,
+                            0,
+                            1
+                        ],
+                        "UseSecondaryOffset": 0,
+                        "Scale": 1
+                    }
+                ]
             },
             "VoiceItem": {
                 "ItemType": "/Lotus/Upgrades/Skins/Voices/ArthurVoiceItem"
@@ -58,14 +131,16 @@
         "Script": {
             "Script": "/Lotus/Scripts/WeaponAttachments/WarframeHumanSkins.lua",
             "Function": "CustomizeCustomEyes",
+            "_paramName": "CustomizeCustomEyes",
             "_eyeSlot": [
-                1,
-                5
+                2,
+                6
             ]
         },
         "UnappliedScript": {
             "Script": "/Lotus/Scripts/WeaponAttachments/WarframeHumanSkins.lua",
             "Function": "UncustomizeCustomEyes",
+            "_paramName": "CustomizeCustomEyes",
             "_eyeSlot": [
                 1,
                 5
