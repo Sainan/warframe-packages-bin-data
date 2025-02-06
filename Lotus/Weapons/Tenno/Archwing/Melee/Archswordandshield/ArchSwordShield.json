@@ -80,6 +80,7 @@
                         "hitSpreadMultiplier": 0
                     },
                     "IgnoreFireIterations": 0,
+                    "IgnoreOwner": 1,
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
@@ -112,6 +113,8 @@
                         "LockOnIgnoreEndPointTarget": 0
                     },
                     "NotifyPotentialVictimsOfIncomingAttack": 0,
+                    "HitVisibilityCheck": 1,
+                    "HitVisibilityUsesVisibilityRay": 1,
                     "HitPunctureDepth": 0,
                     "MaxHitAvatarsPerAttack": 1,
                     "InterruptAttackOnMaxAvatarsHit": 0,
@@ -217,7 +220,8 @@
                     },
                     "UseWeaponHandForHitEntitiesIndex": 1,
                     "RefinedSweep": 0,
-                    "RequireHitSubEntity": 0
+                    "RequireHitSubEntity": 0,
+                    "PerFrameSweepSampling": 1
                 },
                 "impact:Type": "/Lotus/Types/Game/MeleeImpactBehavior",
                 "impact:MeleeImpactBehavior": {
@@ -231,6 +235,7 @@
                         "ProcChance": 0.2,
                         "ForcedProcs": [],
                         "ForcedDeathProcs": [],
+                        "ForcedProcCount": 1,
                         "HitType": "DHT_MELEE",
                         "ProcExtraTime": 0
                     },
@@ -292,6 +297,7 @@
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
                     "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0,
                     "ComboHitsAlwaysEnabled": 1,
                     "InitialHitCounter": 0,
                     "InitialHitCounterRecoveryRate": 40,
@@ -303,6 +309,7 @@
                     "InfiniteTimeBetweenHits": 0,
                     "PauseHitTimerWhenHolstered": 0,
                     "TimeBetweenHits": 5,
+                    "MinTimeBetweenHits": 0.1,
                     "TimeUpgrade": "WEAPON_MELEE_COMBO_DURATION_BONUS",
                     "ComboProcData": [],
                     "ComboForcedProcHitCountWrap": 0,
@@ -335,10 +342,10 @@
                         "ProcChance": 0.1,
                         "ForcedProcs": [],
                         "ForcedDeathProcs": [],
+                        "ForcedProcCount": 1,
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
-                    },
-                    "UseNewMeleeImpulse": 0
+                    }
                 },
                 "state:Type": "/Lotus/Types/Game/LotusComboMeleeStateBehavior",
                 "state:LotusComboMeleeStateBehavior": {
@@ -348,6 +355,7 @@
                         0
                     ],
                     "fireRate": 65,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 1,
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
@@ -355,6 +363,8 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -369,8 +379,10 @@
                     "CanChargeWhileRunning": 1,
                     "CanFireWhileInAir": 1,
                     "PreventRunWhileRecharging": 0,
+                    "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "",
                     "BehaviorTag": "",
@@ -378,9 +390,12 @@
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
                     "OnNewProjectileScript": {
@@ -459,11 +474,14 @@
         "Slams": [
             {
                 "TriggeringAnimEvent": "MeleeSlam",
+                "RadiusMin": 0,
                 "Radius": 3,
                 "FallOff": 1,
+                "FallOffMax": 0,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 0,
                 "UseImpactBehaviorAttackDataAmount": 1,
+                "UseWeaponProcChance": 0,
                 "UseModifiedRadius": 1,
                 "BaseDamageAttenuation": 1,
                 "AttackData": {
@@ -475,9 +493,12 @@
                         "PT_RAGDOLL"
                     ],
                     "ForcedDeathProcs": [],
+                    "ForcedProcCount": 1,
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 0,
                 "Effect": {
                     "LocalPosition": [
@@ -521,11 +542,14 @@
             },
             {
                 "TriggeringAnimEvent": "GroundAttackEffect",
+                "RadiusMin": 0,
                 "Radius": 1,
                 "FallOff": 1,
+                "FallOffMax": 0,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 0,
                 "UseImpactBehaviorAttackDataAmount": 1,
+                "UseWeaponProcChance": 0,
                 "UseModifiedRadius": 1,
                 "BaseDamageAttenuation": 1,
                 "AttackData": {
@@ -535,9 +559,12 @@
                     "ProcChance": 0.1,
                     "ForcedProcs": [],
                     "ForcedDeathProcs": [],
+                    "ForcedProcCount": 1,
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 0,
                 "Effect": {
                     "LocalPosition": [
@@ -583,11 +610,14 @@
         "PvpSlams": [
             {
                 "TriggeringAnimEvent": "MeleeSlam",
+                "RadiusMin": 0,
                 "Radius": 3,
                 "FallOff": 1,
+                "FallOffMax": 0,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 0,
                 "UseImpactBehaviorAttackDataAmount": 1,
+                "UseWeaponProcChance": 0,
                 "UseModifiedRadius": 1,
                 "BaseDamageAttenuation": 1,
                 "AttackData": {
@@ -599,9 +629,12 @@
                         "PT_RAGDOLL"
                     ],
                     "ForcedDeathProcs": [],
+                    "ForcedProcCount": 1,
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 1,
                 "Effect": {
                     "LocalPosition": [
@@ -645,11 +678,14 @@
             },
             {
                 "TriggeringAnimEvent": "GroundAttackEffect",
+                "RadiusMin": 0,
                 "Radius": 1,
                 "FallOff": 1,
+                "FallOffMax": 0,
                 "CanCrit": 0,
                 "CanUseComboMultiplier": 0,
                 "UseImpactBehaviorAttackDataAmount": 1,
+                "UseWeaponProcChance": 0,
                 "UseModifiedRadius": 1,
                 "BaseDamageAttenuation": 1,
                 "AttackData": {
@@ -659,9 +695,12 @@
                     "ProcChance": 0.1,
                     "ForcedProcs": [],
                     "ForcedDeathProcs": [],
+                    "ForcedProcCount": 1,
                     "HitType": "DHT_NONE",
                     "ProcExtraTime": 0
                 },
+                "UseCurrentMeleeAttackForDamage": 0,
+                "MeleeAttack": "",
                 "MainHandOnly": 0,
                 "Effect": {
                     "LocalPosition": [
