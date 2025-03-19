@@ -10,6 +10,25 @@
             "exposureCurveMin": {
                 "adjustmentEV": -3
             },
+            "toneMapType": "TM_ACES_REF",
+            "toneMapLUT": "/EE/Materials/PostFX/FilmLooks/Rec709Kodak2383D60.cube",
+            "toneMapLUTBlend": 0.65,
+            "colorGradingData": {
+                "Global": {
+                    "Contrast": [
+                        1,
+                        1,
+                        1,
+                        1.2
+                    ],
+                    "Gamma": [
+                        1,
+                        1,
+                        1,
+                        0.98
+                    ]
+                }
+            },
             "bloom": 2,
             "horizonDOF": 1,
             "horizonFog": 1,
@@ -59,7 +78,12 @@
                 234,
                 255
             ],
-            "sunShafts": 1,
+            "weatherParams": [
+                0.75,
+                0,
+                0,
+                0
+            ],
             "cloudShadowsTexture": "/EE/Materials/Util/CloudShadow.png",
             "cloudShadowsMovementParams": [
                 0.001,
@@ -70,7 +94,27 @@
             "cloudShadowsAttenuationsParams": [
                 -0.15,
                 6
-            ]
+            ],
+            "volumetricFog": {
+                "Enabled": 1,
+                "NearDistance": 0.1,
+                "Extinction": 0.5,
+                "GlobalFog": {
+                    "Density": 0.035,
+                    "G": 0.4
+                },
+                "ClumpyNoise": {
+                    "ClumpAmount": 0.75,
+                    "ClumpStart": 0.4,
+                    "ClumpEnd": 0.8,
+                    "NoiseScale": 0.025
+                },
+                "ColorGrading": {
+                    "Vibrance": 0.1,
+                    "Contrast": 0.1,
+                    "Brightness": 0.75
+                }
+            }
         },
         "PostProcessInfoAlt": {
             "targetExposure": 0.045,
@@ -96,10 +140,12 @@
             ],
             "postFXMaterial": "/Lotus/Types/ACESPost"
         },
+        "EnableGIVolumes": 1,
         "LightingParams": {
             "giEnvironmentIntensity": 1,
             "giEnvironmentUseIBL": 1,
             "iblImageFile": "/EE/Materials/IBL/MonoLake.hdr",
+            "diffuseBoost": 1.35,
             "bakingOptions:Type": "/EE/Types/Darkitect/BakingOptions",
             "bakingOptions:NovaBakeRadiosity": 1,
             "bakingOptions:NovaSamplesPerPixel": 256,
@@ -147,6 +193,9 @@
             "_hasDayNightCycle": 0,
             "_alwaysDay": 0,
             "_alwaysNight": 0,
+            "_spawnOverrideTag": "",
+            "_enableSpawnPoints": 1,
+            "_skipIntroCinematics": 0,
             "_itemTypes": [],
             "_itemProbability": [
                 1
@@ -159,6 +208,7 @@
             "_railjackPickupWeighting": [
                 1
             ],
+            "_defaultCrateSpawningCap": 100,
             "_useCustomCrateSpawning": 0,
             "_customCrateCap": 50,
             "_customCrateChance": 0.25,
@@ -193,6 +243,7 @@
             "_eidolonGroupCoordinatorAgentType": "/Lotus/Types/Enemies/Grineer/Eidolon/EidolonGroupCoordinatorAgent",
             "_testAiSpec": "",
             "_hasMoodChanges": 0,
+            "_skipObjectives": 0,
             "_MaxXp": 5000,
             "_BaseXPPool": 0,
             "_SameZone": 0,
@@ -202,6 +253,9 @@
             "_rareCrateType": "",
             "_altRareCrateType": "",
             "_rareLootChance": 0.1,
+            "_syndicatePickupTypes": [],
+            "_syndicatePickupCount": 6,
+            "_syndicateGuaranteedPickupTypes": [],
             "_ultraRareLootWaypointType": "",
             "_ultraRareCrateType": "",
             "_altUltraRareCrateType": "",

@@ -223,7 +223,10 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": -1,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 },
                 {
                     "reaction": "INVESTIGATE_DEATH",
@@ -254,7 +257,10 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": -1,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 },
                 {
                     "reaction": "BULLET_IMPACT",
@@ -285,7 +291,10 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": -1,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 },
                 {
                     "reaction": "WHAT_WAS_THAT",
@@ -316,10 +325,22 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": -1,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 }
             ],
-            "BlockingResponse": 1
+            "BlockingResponse": 1,
+            "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+            "TurnToAction:Enabled": 1,
+            "TurnToAction:OnStartScript": {
+                "Script": ""
+            },
+            "TurnToAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "TurnAccuracyThreshold": 15
         },
         "PatrolFormationTactic": {
             "Enabled": 1,
@@ -455,8 +476,8 @@
             "NeedsTarget": 0,
             "PatrolRouteOnly": 1,
             "RecruitFromPatrols": 0,
+            "MatchingDesiredDestinationOnly": 0,
             "FormationIdentifier": "LooseFormation",
-            "MergeThreshold": 0,
             "LeaderAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
             "LeaderAction:Enabled": 1,
             "LeaderAction:OnStartScript": {
@@ -513,7 +534,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     },
                     {
                         "reaction": "INVESTIGATE_COMBAT",
@@ -544,7 +568,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     },
                     {
                         "reaction": "BULLET_IMPACT",
@@ -575,7 +602,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     },
                     {
                         "reaction": "WHAT_WAS_THAT",
@@ -606,10 +636,22 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     }
                 ],
-                "BlockingResponse": 0
+                "BlockingResponse": 0,
+                "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+                "TurnToAction:Enabled": 1,
+                "TurnToAction:OnStartScript": {
+                    "Script": ""
+                },
+                "TurnToAction:OnDamagedScript": {
+                    "Script": ""
+                },
+                "TurnAccuracyThreshold": 15
             },
             "LeaderAction:MoveToDesiredScriptPositionBehavior": {
                 "Enabled": 1,
@@ -680,6 +722,7 @@
                 "NearDistance": 1,
                 "SpeedMultiplier": 1,
                 "AlertSpeedMultiplier": 1,
+                "MovementPosture": "WALK",
                 "FailOnTargetAcquired": 1,
                 "AimWhenIdle": 0,
                 "AimWhenAlert": 1,
@@ -775,7 +818,9 @@
                     "Script": ""
                 },
                 "OnlyFindPositionsOnFlightNav": 0,
-                "MaxPatrolDistanceFromEncounterHint": 0
+                "MaxPatrolDistanceFromEncounterHint": 0,
+                "UseStartingPositionAsEncounterPosition": 0,
+                "ResetStartingPositionOnStartup": 0
             },
             "LeaderAction:GuardTactic": {
                 "Enabled": 1,
@@ -805,6 +850,7 @@
                 "PatrolBehavior:NearDistance": 2,
                 "PatrolBehavior:SpeedMultiplier": 1,
                 "PatrolBehavior:AlertSpeedMultiplier": 1,
+                "PatrolBehavior:MovementPosture": "WALK",
                 "PatrolBehavior:FailOnTargetAcquired": 1,
                 "PatrolBehavior:AimWhenIdle": 0,
                 "PatrolBehavior:AimWhenAlert": 1,
@@ -900,6 +946,8 @@
                 },
                 "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
                 "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
+                "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
+                "RandomWalkBehavior:ResetStartingPositionOnStartup": 0,
                 "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
                 "GuardBehavior:Enabled": 1,
                 "GuardBehavior:OnStartScript": {

@@ -56,6 +56,7 @@
                 ],
                 "KeepTrying": 1,
                 "DrawDest": 0,
+                "ClearTarget": 0,
                 "MoveAction:Type": "/EE/Types/Npc/LocomotionFollowPath",
                 "MoveAction:Enabled": 1,
                 "MoveAction:OnStartScript": {
@@ -84,6 +85,7 @@
                 "EvaluationDelayOnEnemyToClose": 5,
                 "MatchActionAttachOwnerFaction": 0,
                 "AttackTargetsOnRoute": 0,
+                "StopWhenNoLongerTouching": 1,
                 "Order": "UseContextAction",
                 "IgnoreAutoSpawnsCheck": 0
             },
@@ -180,7 +182,8 @@
                 "ClearOrderOnMoveSuccess": 0,
                 "AllowTeleportToCatchUp": 0,
                 "TeleportToDestination": 0,
-                "AllowPartialPath": 1
+                "AllowPartialPath": 1,
+                "RestrictToDV": 0
             },
             "GuardBehavior": {
                 "Enabled": 1,
@@ -203,7 +206,8 @@
                     0,
                     0
                 ],
-                "MinHeadingChangeToTurn": 0
+                "MinHeadingChangeToTurn": 0,
+                "AimWhenAlert": 1
             },
             "FailOnChildFailure": 0,
             "OrderName": "AttackTarget",
@@ -255,7 +259,8 @@
                 "ClearOrderOnMoveSuccess": 0,
                 "AllowTeleportToCatchUp": 0,
                 "TeleportToDestination": 0,
-                "AllowPartialPath": 1
+                "AllowPartialPath": 1,
+                "RestrictToDV": 0
             },
             "AttackFromTheOpenEndlessShootingBehavior": {
                 "Enabled": 1,
@@ -273,6 +278,12 @@
                     1,
                     1
                 ],
+                "MovementLineOfFireScoring": 0,
+                "DistanceFromTeammates": [
+                    1.5,
+                    100
+                ],
+                "MaxNumTeammatesForScoring": 4,
                 "LookAtTarget": 1,
                 "LookHorizRate": 120,
                 "LookVertRate": 90,
@@ -299,6 +310,7 @@
                     0,
                     0
                 ],
+                "StartRepositionTimerAtDest": 1,
                 "KeepRunningDuringWaitPeriod": 1,
                 "MoveDuringShoot": 0,
                 "CrouchDuringShootChance": 0.12,
@@ -327,7 +339,8 @@
                 "FiringPreferencesOverride": [],
                 "RequireRangedWeapon": 0,
                 "RequireNotForcedMelee": 0,
-                "UseDefenseVolume": 0
+                "UseDefenseVolume": 0,
+                "ShouldConstantlyBarkAttack": 0
             },
             "GuardBehavior": {
                 "Enabled": 1,
@@ -391,7 +404,8 @@
                     0,
                     0
                 ],
-                "MinHeadingChangeToTurn": 0
+                "MinHeadingChangeToTurn": 0,
+                "AimWhenAlert": 1
             },
             "FailOnChildFailure": 0,
             "OrderName": "GuardTarget",
@@ -427,6 +441,7 @@
                     "Action:AimPosture": 0,
                     "Action:MinimalEnemyDistance": 0,
                     "Action:TrackTarget": 0,
+                    "Action:TrackTargetNotVisible": 0,
                     "Action:Peek": 0,
                     "Action:FailOnDamaged": 0,
                     "Action:PreventShooting": 0,
@@ -458,7 +473,7 @@
                 "DefaultReevaluationDelay": 0,
                 "Actions": [
                     "/Lotus/Types/Behaviors/LotusFollowBbTeleportBehavior",
-                    "/Lotus/Types/Behaviors/LotusFollowBbMoveFiring",
+                    "/EE/Types/Npc/ChangeWeaponDecoratorBehavior",
                     "/Lotus/Types/Behaviors/LotusFollowBbCatchUpBehavior",
                     "/Lotus/Types/Behaviors/LotusFollowBbMoveWithBehavior",
                     "/EE/Types/Npc/ControlledShootBehavior",
@@ -487,7 +502,7 @@
                     "AlwaysTeleportOnRegionDifference": 0,
                     "EnableRailjackZoneDiffTeleport": 0
                 },
-                "LotusFollowBbMoveFiring": {
+                "ChangeWeaponDecoratorBehavior": {
                     "Enabled": 1,
                     "OnStartScript": {
                         "Script": ""
@@ -496,50 +511,73 @@
                         "Script": ""
                     },
                     "DefaultReevaluationDelay": 0,
-                    "SpeedMultiplier": 1.3,
-                    "RunDistance": 20,
-                    "WalkDistance": 10,
-                    "StopDistance": 5,
-                    "FollowRange": 5,
-                    "TetherRange": 50,
-                    "DoReloads": 0,
-                    "MinReloadRange": 10,
-                    "MaxDistToShootUnalertedEnemy": 70,
-                    "MaxDuration": 30,
-                    "PostTimeoutDelay": 1,
-                    "DestinationOffset": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "DestinationOffsetMultiplier": 1,
-                    "GeneratePointsDistance": [
-                        4,
-                        10
-                    ],
-                    "GenerateSpacing": 2,
-                    "IdealFollowDistanceRange": [
-                        5,
-                        15
-                    ],
-                    "ScoreIdealFollowCurve": {
-                        "m": 1,
-                        "k": -1,
-                        "b": 1,
-                        "c": 0.3,
-                        "logistic": 1
-                    },
-                    "ControlShootingFromBehavior": 0,
-                    "MaxTimeSinceCreatorAttack": 5,
-                    "LookAtTarget": 1,
-                    "LookHorizRate": 360,
-                    "LookVertRate": 60,
-                    "LookTargetOffset": [
-                        0,
-                        0,
-                        0
-                    ],
-                    "CheckAimStatusForFire": 0
+                    "FailOnChildFail": 0,
+                    "FailOnDamage": 0,
+                    "RequireWeapon": 1,
+                    "CheckAmmoForSlot": 1,
+                    "RestorePreviousWeaponOnExit": 0,
+                    "UseTimedGunCycling": 0,
+                    "WeaponType": "",
+                    "WeaponSlot": "SLOT_1",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "CycleWeapons": [],
+                    "Action:Type": "/Lotus/Types/Behaviors/LotusFollowBbMoveFiring",
+                    "Action:LotusFollowBbMoveFiring": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "SpeedMultiplier": 1.3,
+                        "RunDistance": 20,
+                        "WalkDistance": 10,
+                        "StopDistance": 5,
+                        "FollowRange": 5,
+                        "TetherRange": 50,
+                        "DoReloads": 0,
+                        "MinReloadRange": 10,
+                        "MaxDistToShootUnalertedEnemy": 70,
+                        "MaxDuration": 30,
+                        "PostTimeoutDelay": 1,
+                        "DestinationOffset": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "DestinationOffsetMultiplier": 1,
+                        "GeneratePointsDistance": [
+                            4,
+                            10
+                        ],
+                        "GenerateSpacing": 2,
+                        "IdealFollowDistanceRange": [
+                            5,
+                            15
+                        ],
+                        "ScoreIdealFollowCurve": {
+                            "m": 1,
+                            "k": -1,
+                            "b": 1,
+                            "c": 0.3,
+                            "logistic": 1
+                        },
+                        "ControlShootingFromBehavior": 0,
+                        "MaxTimeSinceCreatorAttack": 5,
+                        "LookAtTarget": 1,
+                        "LookHorizRate": 360,
+                        "LookVertRate": 60,
+                        "LookTargetOffset": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "CheckAimStatusForFire": 0,
+                        "CheckWeaponRange": 0
+                    }
                 },
                 "LotusFollowBbCatchUpBehavior": {
                     "Enabled": 1,
@@ -747,7 +785,8 @@
                         0,
                         0
                     ],
-                    "MinHeadingChangeToTurn": 0
+                    "MinHeadingChangeToTurn": 0,
+                    "AimWhenAlert": 1
                 },
                 "FollowPairedAgent": 0,
                 "FollowOrderTarget": "FollowTarget",
@@ -755,6 +794,7 @@
                 "FollowOwningAvatar": 0,
                 "DistanceMeasurement": "DMS_LEADING_PLAYER",
                 "AlwaysFollowWeaponGiver": 0,
+                "UseAllyLeader": 0,
                 "FollowingRefreshTime": 1,
                 "AttackToStealthTime": 5,
                 "ChangeWeapons": 0,
@@ -786,7 +826,8 @@
                 0,
                 0
             ],
-            "MinHeadingChangeToTurn": 0
+            "MinHeadingChangeToTurn": 0,
+            "AimWhenAlert": 1
         },
         "LocomotionController:DynamicPathFollowerGround": {
             "StopWhenTurningAngle": 90

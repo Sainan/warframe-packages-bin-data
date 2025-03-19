@@ -5,25 +5,46 @@
             {
                 "key": 0,
                 "value": {
-                    "type": "Selector"
+                    "type": "Selector",
+                    "comment": "",
+                    "posX": 0,
+                    "posY": -29
                 }
             },
             {
                 "key": 11,
                 "value": {
-                    "type": "Action"
+                    "type": "Action",
+                    "comment": "",
+                    "posX": 96,
+                    "posY": -23
                 }
             },
             {
                 "key": 12,
                 "value": {
-                    "type": "Action"
+                    "type": "Action",
+                    "comment": "",
+                    "posX": 403,
+                    "posY": -23
                 }
             },
             {
                 "key": 15,
                 "value": {
-                    "type": "Action"
+                    "type": "Action",
+                    "comment": "",
+                    "posX": 603,
+                    "posY": 145
+                }
+            },
+            {
+                "key": 16,
+                "value": {
+                    "type": "Compound Condition",
+                    "comment": "",
+                    "posX": 243,
+                    "posY": 175
                 }
             }
         ],
@@ -172,7 +193,8 @@
                             0,
                             0
                         ],
-                        "CheckAimStatusForFire": 1
+                        "CheckAimStatusForFire": 1,
+                        "CheckWeaponRange": 0
                     },
                     "LotusFollowBbMoveWithBehavior": {
                         "Enabled": 1,
@@ -270,6 +292,7 @@
                     "FollowOwningAvatar": 0,
                     "DistanceMeasurement": "DMS_LEADING_PLAYER",
                     "AlwaysFollowWeaponGiver": 0,
+                    "UseAllyLeader": 0,
                     "FollowingRefreshTime": 1,
                     "AttackToStealthTime": 5,
                     "ChangeWeapons": 0,
@@ -428,6 +451,37 @@
                         "type": "",
                         "fromPort": {
                             "node": 15,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 16,
+                            "prop": 1
+                        }
+                    }
+                ]
+            },
+            "16": {
+                "conditions": [
+                    {
+                        "Type": "/EE/Types/Npc/Logic/HasValidWeaponCondition",
+                        "HasValidWeaponCondition": {
+                            "notCondition": 0,
+                            "ValidWeaponType": "",
+                            "ValidWeaponCriteria": "VWC_RANGED",
+                            "AllowWeaponEquipUnequipState": 1
+                        }
+                    }
+                ],
+                "type": "LCO_AND",
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 16,
                             "prop": 0
                         },
                         "toPort": {
