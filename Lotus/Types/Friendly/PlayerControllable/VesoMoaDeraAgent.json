@@ -54,7 +54,10 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": -1,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 }
             ]
         },
@@ -139,6 +142,7 @@
                     "AimPosture": 0,
                     "MinimalEnemyDistance": 0,
                     "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
                     "Peek": 0,
                     "FailOnDamaged": 0,
                     "PreventShooting": 0,
@@ -165,6 +169,12 @@
                     1,
                     1
                 ],
+                "MovementLineOfFireScoring": 0,
+                "DistanceFromTeammates": [
+                    1.5,
+                    100
+                ],
+                "MaxNumTeammatesForScoring": 4,
                 "LookAtTarget": 1,
                 "LookHorizRate": 120,
                 "LookVertRate": 90,
@@ -191,6 +201,7 @@
                     0,
                     0
                 ],
+                "StartRepositionTimerAtDest": 1,
                 "KeepRunningDuringWaitPeriod": 1,
                 "MoveDuringShoot": 0,
                 "CrouchDuringShootChance": 0,
@@ -219,7 +230,8 @@
                 "FiringPreferencesOverride": [],
                 "RequireRangedWeapon": 0,
                 "RequireNotForcedMelee": 0,
-                "UseDefenseVolume": 0
+                "UseDefenseVolume": 0,
+                "ShouldConstantlyBarkAttack": 0
             },
             "KeepIdealDistanceBehavior": {
                 "Enabled": 1,
@@ -242,6 +254,7 @@
                 ],
                 "MaxMovementDistance": 100,
                 "AllowRetreat": 1,
+                "AllowTeleportFromOffScreen": 0,
                 "AllowRun": 1,
                 "AllowChase": 0,
                 "ForceWalkBelowMinIdealRange": 1,
@@ -279,6 +292,8 @@
                 "WeaponSlot": "SLOT_1",
                 "WeaponHand": "MAIN_HAND",
                 "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                "AttackPhrase": "CHARGE_SCREAM",
+                "AlwaysPlayAttackPhrase": 0,
                 "PlayPhrase": 0,
                 "Bark": "IDLE",
                 "BarkFilter": "",
@@ -321,7 +336,8 @@
                 "ClearOrderOnMoveSuccess": 0,
                 "AllowTeleportToCatchUp": 1,
                 "TeleportToDestination": 0,
-                "AllowPartialPath": 1
+                "AllowPartialPath": 1,
+                "RestrictToDV": 0
             },
             "GuardBehavior": {
                 "Enabled": 1,
@@ -385,7 +401,8 @@
                     0,
                     0
                 ],
-                "MinHeadingChangeToTurn": 0
+                "MinHeadingChangeToTurn": 0,
+                "AimWhenAlert": 1
             },
             "FailOnChildFailure": 0,
             "OrderName": "AttackTarget",
@@ -438,7 +455,8 @@
                 "ClearOrderOnMoveSuccess": 0,
                 "AllowTeleportToCatchUp": 0,
                 "TeleportToDestination": 0,
-                "AllowPartialPath": 1
+                "AllowPartialPath": 1,
+                "RestrictToDV": 0
             },
             "VesoBuddyAbandonOrderBehavior": {
                 "Enabled": 1,
@@ -505,6 +523,7 @@
                     "AimPosture": 0,
                     "MinimalEnemyDistance": 0,
                     "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
                     "Peek": 0,
                     "FailOnDamaged": 0,
                     "PreventShooting": 0,
@@ -531,6 +550,12 @@
                     1,
                     1
                 ],
+                "MovementLineOfFireScoring": 0,
+                "DistanceFromTeammates": [
+                    1.5,
+                    100
+                ],
+                "MaxNumTeammatesForScoring": 4,
                 "LookAtTarget": 1,
                 "LookHorizRate": 120,
                 "LookVertRate": 90,
@@ -557,6 +582,7 @@
                     0,
                     0
                 ],
+                "StartRepositionTimerAtDest": 1,
                 "KeepRunningDuringWaitPeriod": 1,
                 "MoveDuringShoot": 1,
                 "CrouchDuringShootChance": 0,
@@ -585,7 +611,8 @@
                 "FiringPreferencesOverride": [],
                 "RequireRangedWeapon": 0,
                 "RequireNotForcedMelee": 0,
-                "UseDefenseVolume": 0
+                "UseDefenseVolume": 0,
+                "ShouldConstantlyBarkAttack": 0
             },
             "GuardBehavior": {
                 "Enabled": 1,
@@ -649,7 +676,8 @@
                     0,
                     0
                 ],
-                "MinHeadingChangeToTurn": 0
+                "MinHeadingChangeToTurn": 0,
+                "AimWhenAlert": 1
             },
             "FailOnChildFailure": 0,
             "OrderName": "GuardTarget",
@@ -685,6 +713,7 @@
                     "Action:AimPosture": 0,
                     "Action:MinimalEnemyDistance": 0,
                     "Action:TrackTarget": 1,
+                    "Action:TrackTargetNotVisible": 0,
                     "Action:Peek": 0,
                     "Action:FailOnDamaged": 0,
                     "Action:PreventShooting": 0,
@@ -930,7 +959,9 @@
                         "logistic": 1
                     },
                     "AimWhileMoving": 1,
+                    "SetViewWhileMoving": 1,
                     "ShootingDistance": 0,
+                    "NeedsVisibilityForShooting": 1,
                     "ChangeWeapons": 0,
                     "WeaponSlot": "SLOT_1",
                     "WeaponHand": "MAIN_HAND",
@@ -963,7 +994,8 @@
                     "reactionsToInvestigate": [],
                     "MinAwareness": "AW_ALERT",
                     "minimumTargetInterest": "Investigate",
-                    "ReportAttackOnDamage": 1
+                    "ReportAttackOnDamage": 1,
+                    "RestrictToDefenseVolume": 0
                 },
                 "LotusFollowBbMoveWithBehavior": {
                     "Enabled": 1,
@@ -1007,6 +1039,7 @@
                             2
                         ],
                         "FireBursts": 0,
+                        "ChargeWeapon": 0,
                         "AimWhenPausing": 0,
                         "AimWhenStopping": 0,
                         "DecorativeReloads": 0,
@@ -1114,6 +1147,7 @@
                         1
                     ],
                     "FireBursts": 0,
+                    "ChargeWeapon": 0,
                     "AimWhenPausing": 0,
                     "AimWhenStopping": 0,
                     "DecorativeReloads": 0,
@@ -1159,7 +1193,8 @@
                         0,
                         0
                     ],
-                    "MinHeadingChangeToTurn": 0
+                    "MinHeadingChangeToTurn": 0,
+                    "AimWhenAlert": 1
                 },
                 "FollowPairedAgent": 0,
                 "FollowOrderTarget": "FollowTarget",
@@ -1167,6 +1202,7 @@
                 "FollowOwningAvatar": 0,
                 "DistanceMeasurement": "DMS_LEADING_PLAYER",
                 "AlwaysFollowWeaponGiver": 0,
+                "UseAllyLeader": 0,
                 "FollowingRefreshTime": 1,
                 "AttackToStealthTime": 500,
                 "ChangeWeapons": 0,
@@ -1198,7 +1234,8 @@
                 0,
                 0
             ],
-            "MinHeadingChangeToTurn": 0
+            "MinHeadingChangeToTurn": 0,
+            "AimWhenAlert": 1
         },
         "LocomotionController:limitToNav": 1,
         "LocomotionController:PathingPreferences": {
