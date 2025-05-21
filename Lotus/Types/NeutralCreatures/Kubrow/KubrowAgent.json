@@ -17,6 +17,7 @@
             }
         ],
         "IgnoredByAiDirector": 1,
+        "HostileWhenNoTargetFactions": 0,
         "AggroController:Entries": [
             "/EE/Types/Npc/AggroEntryNearDeath"
         ],
@@ -146,7 +147,8 @@
                         0,
                         0
                     ],
-                    "MinHeadingChangeToTurn": 0
+                    "MinHeadingChangeToTurn": 0,
+                    "AimWhenAlert": 1
                 }
             },
             "KubrowCombatBehavior": {
@@ -297,6 +299,7 @@
                     ],
                     "FinisherAction:KeepDistance:MaxMovementDistance": 100,
                     "FinisherAction:KeepDistance:AllowRetreat": 1,
+                    "FinisherAction:KeepDistance:AllowTeleportFromOffScreen": 0,
                     "FinisherAction:KeepDistance:AllowRun": 1,
                     "FinisherAction:KeepDistance:AllowChase": 0,
                     "FinisherAction:KeepDistance:ForceWalkBelowMinIdealRange": 1,
@@ -412,6 +415,7 @@
                     ],
                     "KeepDistance:MaxMovementDistance": 25,
                     "KeepDistance:AllowRetreat": 1,
+                    "KeepDistance:AllowTeleportFromOffScreen": 0,
                     "KeepDistance:AllowRun": 1,
                     "KeepDistance:AllowChase": 1,
                     "KeepDistance:ForceWalkBelowMinIdealRange": 1,
@@ -510,6 +514,7 @@
                         1
                     ],
                     "MeleeAction:TeamBbLungeSym": "",
+                    "MeleeAction:LungeAnimAction": "",
                     "MeleeAction:TimeBetweenTeamLunges": 5,
                     "MeleeAction:LungeToPredictedPos": 0,
                     "MeleeAction:UseMeleeFov": 0,
@@ -634,7 +639,8 @@
                 ],
                 "PlayStartPhrase": 1,
                 "StartBark": "FOLLOW_ME",
-                "StartBarkFilter": "KubrowVocalCall"
+                "StartBarkFilter": "KubrowVocalCall",
+                "AttackOnBehaviorTimeout": 0
             },
             "KubrowInvestigateBehavior": {
                 "Enabled": 1,
@@ -658,7 +664,27 @@
             "KubrowPackBehavior": {
                 "Enabled": 1,
                 "OnStartScript": {
-                    "Script": ""
+                    "Script": "/Lotus/Scripts/KubrowController.lua",
+                    "Function": "NightEyes",
+                    "_denTypeRes": "",
+                    "_spawnType": "",
+                    "_eyeFlareType": "KubrowEyeFlare",
+                    "_kubrowAvatar": "",
+                    "_kubrowAgent": "",
+                    "_packTeams": [],
+                    "_minDesiredDenCount": 4,
+                    "_maxDesiredDenCount": 8,
+                    "_spawnDist": 80,
+                    "_minPackSize": 3,
+                    "_maxPackSize": 6,
+                    "_playerMultiplier": 1.5,
+                    "_nightPackSizeMulti": 1.5,
+                    "_spawnsPerDen": 3,
+                    "_maxRespawnCount": 2,
+                    "_childDenSearchRadius": 25,
+                    "_packSpawnChance": 0.2,
+                    "_loopsToWait": 10,
+                    "_nightEyes": 0
                 },
                 "OnDamagedScript": {
                     "Script": ""
@@ -737,6 +763,8 @@
                 "UseWasAlert": 0,
                 "ScanLength": 2,
                 "MovementPosture": "WALK",
+                "MinimumTacWalkAreas": 4,
+                "WanderWhenNotEnoughTacAreas": 1,
                 "TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
                 "TeammateBarkBehavior:Enabled": 1,
                 "TeammateBarkBehavior:OnStartScript": {
@@ -764,7 +792,9 @@
                     "Script": ""
                 },
                 "OnlyFindPositionsOnFlightNav": 0,
-                "MaxPatrolDistanceFromEncounterHint": 0
+                "MaxPatrolDistanceFromEncounterHint": 0,
+                "UseStartingPositionAsEncounterPosition": 0,
+                "ResetStartingPositionOnStartup": 0
             },
             "GuardBehavior": {
                 "Enabled": 1,
@@ -787,7 +817,8 @@
                     0,
                     0
                 ],
-                "MinHeadingChangeToTurn": 0
+                "MinHeadingChangeToTurn": 0,
+                "AimWhenAlert": 1
             }
         },
         "LocomotionController:waterRestriction": "WS_NONE",

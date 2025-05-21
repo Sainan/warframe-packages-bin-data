@@ -8,17 +8,17 @@
         "MinLevel": 12,
         "NewAdditionalInventory": [
             {
-                "item": "/Lotus/Weapons/Tenno/Grenades/NpcGrineerThrowGrenadeIceWeapon",
-                "forceEquip": 1,
-                "hand": "EXTRA1"
-            },
-            {
                 "item": "/Lotus/Weapons/Tenno/Shotgun/EidolonEviseratorWeapon",
                 "forceEquip": 1,
                 "hand": "MAIN_HAND"
             },
             {
                 "item": "/Lotus/Weapons/Grineer/Eidolon/EidolonAntiAWMissileLauncher",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Grineer/LineIceGrenadeLauncher",
                 "forceEquip": 0,
                 "hand": "MAIN_HAND"
             }
@@ -42,7 +42,6 @@
             "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
             "/EE/Types/Npc/BuddyShieldTactic",
             "/EE/Types/Npc/AttackFromCoverTactic",
-            "/EE/Types/Npc/UseGrenadeBehavior",
             "/EE/Types/Npc/KeepIdealDistanceBehavior",
             "/EE/Types/Npc/AttackFromTheOpenBehavior",
             "/EE/Types/Npc/CustomResponseBehavior",
@@ -67,21 +66,43 @@
                     "MinRange": 0,
                     "MaxRange": 1000,
                     "EquipStyle": "ES_INSTANT_EQUIP",
-                    "TargetTypeSetting": "ATS_LAND_ONLY"
+                    "TargetTypeSetting": "ATS_LAND_ONLY",
+                    "RandomSwapDelayPerWeapon": [
+                        0.1,
+                        0.2
+                    ],
+                    "SwapAfterMinOneShot": 1
                 },
                 {
                     "WeaponSlot": "SLOT_1",
                     "MinRange": 0,
                     "MaxRange": 1000,
                     "EquipStyle": "ES_INSTANT_EQUIP",
-                    "TargetTypeSetting": "ATS_AIR_ONLY"
+                    "TargetTypeSetting": "ATS_AIR_ONLY",
+                    "RandomSwapDelayPerWeapon": [
+                        0,
+                        0
+                    ],
+                    "SwapAfterMinOneShot": 0
+                },
+                {
+                    "WeaponSlot": "SLOT_3",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_BOTH",
+                    "RandomSwapDelayPerWeapon": [
+                        0,
+                        0
+                    ],
+                    "SwapAfterMinOneShot": 0
                 }
             ],
             "WeaponHand": "MAIN_HAND",
             "SwapThreshold": 5,
             "RandomSwapDelay": [
-                3,
-                4
+                5,
+                6
             ]
         },
         "StormTargetOrderBehavior": {

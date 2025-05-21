@@ -6,30 +6,8 @@
             {
                 "LocalPosition": [
                     0,
-                    0.05,
-                    0.8
-                ],
-                "LocalRotation": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "BoneName": "",
-                "Type": "/Lotus/Fx/Weapons/Ballistic/PistolMuzzleFlash",
-                "Chance": 255,
-                "RelativeToBounds": 0,
-                "Attach": 1,
-                "DestroyWithOwner": 1,
-                "DestroyParentOnDeath": 0,
-                "FadeOutOnDestruction": 0,
-                "Scale": 1
-            },
-            {
-                "LocalPosition": [
-                    0.2,
                     0.03,
-                    0.94
+                    0.875
                 ],
                 "LocalRotation": [
                     0,
@@ -38,7 +16,7 @@
                     1
                 ],
                 "BoneName": "",
-                "Type": "/Lotus/Fx/Weapons/Ballistic/MuzzleLight",
+                "Type": "/Lotus/Fx/Weapons/Ballistic/GrnSniperBallisticMuzzleFlash",
                 "Chance": 255,
                 "RelativeToBounds": 0,
                 "Attach": 1,
@@ -61,50 +39,6 @@
                 ],
                 "BoneName": "",
                 "Type": "/EE/Types/FX/MuzzleFlashes/WhiteTracer",
-                "Chance": 255,
-                "RelativeToBounds": 0,
-                "Attach": 1,
-                "DestroyWithOwner": 1,
-                "DestroyParentOnDeath": 0,
-                "FadeOutOnDestruction": 0,
-                "Scale": 1
-            },
-            {
-                "LocalPosition": [
-                    0,
-                    0.1,
-                    0.8
-                ],
-                "LocalRotation": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "BoneName": "",
-                "Type": "",
-                "Chance": 255,
-                "RelativeToBounds": 0,
-                "Attach": 1,
-                "DestroyWithOwner": 1,
-                "DestroyParentOnDeath": 0,
-                "FadeOutOnDestruction": 0,
-                "Scale": 1
-            },
-            {
-                "LocalPosition": [
-                    0,
-                    0.1,
-                    0.8
-                ],
-                "LocalRotation": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "BoneName": "",
-                "Type": "",
                 "Chance": 255,
                 "RelativeToBounds": 0,
                 "Attach": 1,
@@ -515,6 +449,80 @@
                 "responseScript": {
                     "Script": ""
                 }
+            },
+            {
+                "sound": "",
+                "playerType": "PT_ANY",
+                "ignoreSoundIfAmmoClipRatioIsOutsideRange": 0,
+                "ammoInClipRangeLimit": [
+                    0,
+                    0
+                ],
+                "multiplyPitchByFireRateRatio": 0,
+                "adjustPitchByChargeRatio": 0,
+                "reverbCategory": "UNSPECIFIED",
+                "fireRatePitchMultiplier": 1,
+                "chargePitchRange": [
+                    0,
+                    0
+                ],
+                "adjustPitchByAmmoInClip": 0,
+                "ammoInClipPitchRange": [
+                    0,
+                    0
+                ],
+                "stopSoundOnExitState": 0,
+                "stopSoundEventNames": [],
+                "multiplyGainByModFireRateRatio": "RO_DEFAULT",
+                "useRandomPitchSeed": 0,
+                "randomPitchSeed": [
+                    1,
+                    1
+                ],
+                "animation": "",
+                "state": "WS_CHARGE",
+                "matchTransitionState": 0,
+                "transitionState": "WS_READY",
+                "weaponsWielded": "SINGLE_AND_DUAL_WIELD",
+                "equippedHand": "ANY_HAND",
+                "aimMode": "HIP_AND_AIM",
+                "suitMode": "SUIT_ANY",
+                "activeBehaviorIndexIgnoreList": [],
+                "stateSignalAttachments": [],
+                "effectsToCreate": [],
+                "effectsToDestroy": [],
+                "ammoStatus": "ALL_CASES",
+                "condition": "RF_ALWAYS",
+                "newBehaviorIndex": -1,
+                "useOnSkin": 0,
+                "upgradeType": "NONE",
+                "forceFeedbackEffect": "",
+                "continuousForceFeedback": 0,
+                "overrideTag": "",
+                "soundSequencerType": "",
+                "responseScript": {
+                    "Script": "/Lotus/Scripts/WeaponAttachments/LaserSightBeam.lua",
+                    "Function": "OnCharge",
+                    "_beamType": "/Lotus/Fx/Weapons/Grineer/GrnSniperBeamGreen",
+                    "_fullChargeBeamType": "/Lotus/Fx/Weapons/Grineer/GrnSniperBeamRed",
+                    "_readyShotSoundRes": "",
+                    "_firingBone": "GAME_R1_WEAPON1",
+                    "_raycastIgnoreTypes": [
+                        "/EE/Types/Game/PickUp"
+                    ],
+                    "_maxRaycastDistance": 200,
+                    "_attachOffset": [
+                        0,
+                        0.05,
+                        0.86
+                    ],
+                    "_attachRotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "_maxAimOffset": 10
+                }
             }
         ],
         "OnAnimEvent": [
@@ -744,6 +752,9 @@
                 ],
                 "Type": "/Lotus/Fx/Weapons/ElementalMuzzleFlashes/Corrosive"
             }
+        },
+        "TracerBeamChild": {
+            "Type": "/Lotus/Fx/Weapons/Grineer/GrnSniperBeamTracer"
         }
     }
 }

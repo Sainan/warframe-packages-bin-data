@@ -167,6 +167,9 @@
             },
             "FullBodyAction": "FBA_NONE",
             "Action": "DodgeJump",
+            "DoDirectionFiltering": 0,
+            "DirectionFilterFov": 180,
+            "InvertFacingFilter": 0,
             "UseTacPosMgr": 1,
             "IdealJumpDist": [
                 10,
@@ -203,6 +206,7 @@
             },
             "DoTargetViewScore": 1,
             "RestrictToDefenseVolume": 0,
+            "MaxDistanceFromEncounterHint": 0,
             "ScoreDirectionFromTargetView": {
                 "m": -1,
                 "k": 2,
@@ -476,7 +480,9 @@
                             "logistic": 1
                         },
                         "AimWhileMoving": 0,
+                        "SetViewWhileMoving": 1,
                         "ShootingDistance": 0,
+                        "NeedsVisibilityForShooting": 1,
                         "ChangeWeapons": 0,
                         "WeaponSlot": "SLOT_1",
                         "WeaponHand": "MAIN_HAND",
@@ -531,6 +537,8 @@
                         "UseWasAlert": 0,
                         "ScanLength": 2,
                         "MovementPosture": "WALK",
+                        "MinimumTacWalkAreas": 4,
+                        "WanderWhenNotEnoughTacAreas": 1,
                         "TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
                         "TeammateBarkBehavior:Enabled": 1,
                         "TeammateBarkBehavior:OnStartScript": {
@@ -558,7 +566,9 @@
                             "Script": ""
                         },
                         "OnlyFindPositionsOnFlightNav": 0,
-                        "MaxPatrolDistanceFromEncounterHint": 0
+                        "MaxPatrolDistanceFromEncounterHint": 0,
+                        "UseStartingPositionAsEncounterPosition": 0,
+                        "ResetStartingPositionOnStartup": 0
                     },
                     "WaitBehavior": {
                         "Enabled": 1,
@@ -616,7 +626,10 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": -1,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 }
             ]
         },

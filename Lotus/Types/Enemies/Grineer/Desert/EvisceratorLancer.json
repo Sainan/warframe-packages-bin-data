@@ -8,19 +8,20 @@
         "MinLevel": 12,
         "NewAdditionalInventory": [
             {
-                "item": "/Lotus/Weapons/Tenno/Grenades/NpcGrineerThrowGrenadeWeapon",
-                "forceEquip": 1,
-                "hand": "EXTRA1"
-            },
-            {
                 "item": "/Lotus/Weapons/Tenno/Shotgun/EviseratorWeapon",
                 "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Grineer/LineGrenadeLauncher",
+                "forceEquip": 0,
                 "hand": "MAIN_HAND"
             }
         ],
         "BehaviorDatabase": [
             "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
             "/EE/Types/Npc/BlockingBehavior",
+            "/Lotus/Types/Behaviors/WeaponSwapBehavior",
             "/Lotus/Types/Behaviors/GrineerLancerFormationTactic",
             "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
             "/EE/Types/Npc/InterruptResponseBehavior",
@@ -33,13 +34,54 @@
             "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
             "/EE/Types/Npc/BuddyShieldTactic",
             "/EE/Types/Npc/AttackFromCoverTactic",
-            "/EE/Types/Npc/UseGrenadeBehavior",
             "/EE/Types/Npc/AttackFromTheOpenBehavior",
             "/EE/Types/Npc/CustomResponseBehavior",
             "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
             "/EE/Types/Npc/InvestigateBehavior",
             "/EE/Types/Npc/GuardTactic"
         ],
+        "WeaponSwapBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WeaponSettings": [
+                {
+                    "WeaponSlot": "SLOT_1",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_BOTH",
+                    "RandomSwapDelayPerWeapon": [
+                        0,
+                        0
+                    ],
+                    "SwapAfterMinOneShot": 0
+                },
+                {
+                    "WeaponSlot": "SLOT_2",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_BOTH",
+                    "RandomSwapDelayPerWeapon": [
+                        0.1,
+                        0.2
+                    ],
+                    "SwapAfterMinOneShot": 1
+                }
+            ],
+            "WeaponHand": "MAIN_HAND",
+            "SwapThreshold": 0,
+            "RandomSwapDelay": [
+                6.5,
+                8
+            ]
+        },
         "GrineerLancerFormationTactic": {
             "Enabled": 1,
             "OnStartScript": {
@@ -376,6 +418,7 @@
                     3
                 ],
                 "FireBursts": 0,
+                "ChargeWeapon": 0,
                 "AimWhenPausing": 1,
                 "AimWhenStopping": 0,
                 "DecorativeReloads": 1,
@@ -635,6 +678,7 @@
                     3
                 ],
                 "FireBursts": 0,
+                "ChargeWeapon": 0,
                 "AimWhenPausing": 1,
                 "AimWhenStopping": 1,
                 "DecorativeReloads": 1,

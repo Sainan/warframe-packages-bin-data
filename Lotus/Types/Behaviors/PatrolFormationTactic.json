@@ -108,6 +108,7 @@
             "NearDistance": 1,
             "SpeedMultiplier": 1,
             "AlertSpeedMultiplier": 1,
+            "MovementPosture": "WALK",
             "FailOnTargetAcquired": 1,
             "AimWhenIdle": 0,
             "AimWhenAlert": 1,
@@ -121,7 +122,10 @@
             "MinPlayerFov": 60,
             "AutoAssignClosestPatrol": 0,
             "SameZoneOnly": 1,
-            "AutoPatrolRadius": 30
+            "AutoPatrolRadius": 30,
+            "OnCompleteScript": {
+                "Script": ""
+            }
         },
         "LeaderAction:RandomTacWalkBehavior": {
             "Enabled": 1,
@@ -171,6 +175,8 @@
             "UseWasAlert": 0,
             "ScanLength": 2,
             "MovementPosture": "WALK",
+            "MinimumTacWalkAreas": 4,
+            "WanderWhenNotEnoughTacAreas": 1,
             "TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
             "TeammateBarkBehavior:Enabled": 1,
             "TeammateBarkBehavior:OnStartScript": {
@@ -199,7 +205,9 @@
                 "Function": "EvaluateMove"
             },
             "OnlyFindPositionsOnFlightNav": 0,
-            "MaxPatrolDistanceFromEncounterHint": 0
+            "MaxPatrolDistanceFromEncounterHint": 0,
+            "UseStartingPositionAsEncounterPosition": 0,
+            "ResetStartingPositionOnStartup": 0
         },
         "LeaderAction:GuardTactic": {
             "Enabled": 1,
@@ -229,6 +237,7 @@
             "PatrolBehavior:NearDistance": 2,
             "PatrolBehavior:SpeedMultiplier": 1,
             "PatrolBehavior:AlertSpeedMultiplier": 1,
+            "PatrolBehavior:MovementPosture": "WALK",
             "PatrolBehavior:FailOnTargetAcquired": 1,
             "PatrolBehavior:AimWhenIdle": 0,
             "PatrolBehavior:AimWhenAlert": 1,
@@ -243,6 +252,10 @@
             "PatrolBehavior:AutoAssignClosestPatrol": 0,
             "PatrolBehavior:SameZoneOnly": 1,
             "PatrolBehavior:AutoPatrolRadius": 30,
+            "PatrolBehavior:OnCompleteScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
             "RandomWalkBehavior:Enabled": 1,
             "RandomWalkBehavior:OnStartScript": {
                 "Script": ""
@@ -250,6 +263,78 @@
             "RandomWalkBehavior:OnDamagedScript": {
                 "Script": ""
             },
+            "RandomWalkBehavior:DefaultReevaluationDelay": 0,
+            "RandomWalkBehavior:StopRadius": 2,
+            "RandomWalkBehavior:NearDistance": 4,
+            "RandomWalkBehavior:SpeedMultiplier": 1,
+            "RandomWalkBehavior:AlertSpeedMultiplier": 1,
+            "RandomWalkBehavior:AllowTarget": 0,
+            "RandomWalkBehavior:AimWhenIdle": 0,
+            "RandomWalkBehavior:AimWhenAlert": 1,
+            "RandomWalkBehavior:PermanentAlert": 0,
+            "RandomWalkBehavior:ForceIdleForSinglePointPatrols": 1,
+            "RandomWalkBehavior:AnimAction": "PatrolIdle",
+            "RandomWalkBehavior:GenericAnims": [],
+            "RandomWalkBehavior:MinPlayerDist": [
+                0,
+                0
+            ],
+            "RandomWalkBehavior:MinPlayerFov": 60,
+            "RandomWalkBehavior:PauseTime": [
+                3,
+                5
+            ],
+            "RandomWalkBehavior:TimeBetweenPauses": [
+                15,
+                25
+            ],
+            "RandomWalkBehavior:ReevaluationDelayOnAbortedMove": 5,
+            "RandomWalkBehavior:PlayPhrase": 1,
+            "RandomWalkBehavior:Bark": "IDLE",
+            "RandomWalkBehavior:BarkFilter": "",
+            "RandomWalkBehavior:BarkInterval": [
+                0,
+                0
+            ],
+            "RandomWalkBehavior:StartUpDelay": [
+                0,
+                0
+            ],
+            "RandomWalkBehavior:UseWasAlert": 0,
+            "RandomWalkBehavior:ScanLength": 2,
+            "RandomWalkBehavior:MovementPosture": "WALK",
+            "RandomWalkBehavior:MinimumTacWalkAreas": 4,
+            "RandomWalkBehavior:WanderWhenNotEnoughTacAreas": 1,
+            "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
+            "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
+            "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:TeammateBarkBehavior:OnDamagedScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:TeammateBarkBehavior:DefaultReevaluationDelay": 0,
+            "RandomWalkBehavior:TeammateBarkBehavior:StopForTeammateDuration": [
+                3,
+                6
+            ],
+            "RandomWalkBehavior:TeammateBarkBehavior:DontStopForTeammateDuration": 30,
+            "RandomWalkBehavior:TeammateBarkBehavior:PostFailureEvaluationDelay": [
+                3,
+                3
+            ],
+            "RandomWalkBehavior:TeammateBarkBehavior:AllowableTeammateAngle": 90,
+            "RandomWalkBehavior:TeammateBarkBehavior:TeammateSearchDistance": 5,
+            "RandomWalkBehavior:TeammateBarkBehavior:TeammateBark": "IDLE",
+            "RandomWalkBehavior:TeammateBarkBehavior:TeammateBarkFilter": "",
+            "RandomWalkBehavior:UseDefenseVolume": 0,
+            "RandomWalkBehavior:EvaluateMoveScript": {
+                "Script": ""
+            },
+            "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
+            "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
+            "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
+            "RandomWalkBehavior:ResetStartingPositionOnStartup": 0,
             "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
             "GuardBehavior:Enabled": 1,
             "GuardBehavior:OnStartScript": {
@@ -271,7 +356,8 @@
                 0,
                 0
             ],
-            "GuardBehavior:MinHeadingChangeToTurn": 0
+            "GuardBehavior:MinHeadingChangeToTurn": 0,
+            "GuardBehavior:AimWhenAlert": 1
         },
         "LeaderAction:FailOnChildFailure": 0,
         "FollowerAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",

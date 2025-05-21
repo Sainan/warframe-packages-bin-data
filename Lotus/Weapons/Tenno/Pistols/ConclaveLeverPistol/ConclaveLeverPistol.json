@@ -45,6 +45,9 @@
         "Icon": "/Lotus/Interface/Icons/StoreIcons/Weapons/SecondaryWeapons/Weapons/ConclaveLeverPistol.png",
         "ExcludeFromCodex": 0,
         "TradeCapability": "RO_ALWAYS",
+        "SearchTags": [
+            "/Lotus/Language/Loadout/LoadoutCat_Pistol"
+        ],
         "AvailableOnPvp": 1,
         "HasAlternateFire": 1,
         "AlternateFireDisabled": 1,
@@ -77,6 +80,7 @@
                             "onlyFireAboveMinRangeMultiplier": 0,
                             "aimAtPart": "TORSO",
                             "aimAtClosestPart": 0,
+                            "lockAimOnFullCharge": 0,
                             "firingPreferences": {
                                 "firingType": "FT_NORMAL",
                                 "burstTime": [
@@ -107,6 +111,7 @@
                         "hitSpreadMultiplier": 0
                     },
                     "IgnoreFireIterations": 0,
+                    "IgnoreOwner": 1,
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
@@ -136,7 +141,8 @@
                         "LockOnPart": "ANY_PART",
                         "LockOnDistanceWeighting": 0.1,
                         "LockOnAngleWeighting": 1,
-                        "LockOnIgnoreEndPointTarget": 0
+                        "LockOnIgnoreEndPointTarget": 0,
+                        "LockOnIgnoreTags": []
                     },
                     "HIP_FIRE_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/Weapon/TennoHeavyPistolHipAccuracyInfo",
                     "AIMED_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/Weapon/SybarisPistolAimAccuracyInfo",
@@ -169,6 +175,7 @@
                     "PunchthroughIgnoresAvatars": 0,
                     "RicochetChance": 0,
                     "RicochetRange": 15,
+                    "OnlyHitEnitiesOnce": 1,
                     "ForceCameraAimForLocalPlayer": 1,
                     "AimTranslationOffset": [
                         0,
@@ -212,6 +219,7 @@
                         "ProcChance": 0.26,
                         "ForcedProcs": [],
                         "ForcedDeathProcs": [],
+                        "ForcedProcCount": 1,
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
                     },
@@ -272,7 +280,8 @@
                     },
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
-                    "IgnoreHeadshotBonusPvp": 0
+                    "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0
                 },
                 "state:Type": "/Lotus/Types/Weapon/LotusSemiAutomaticStateBehavior",
                 "state:LotusSemiAutomaticStateBehavior": {
@@ -309,6 +318,8 @@
                     "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
+                    "NeedsLockOnTargets": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "/Lotus/Language/Menu/Loadout_TriggerSemiAutoFireOnUp",
                     "BehaviorTag": "",
@@ -327,6 +338,8 @@
                     "OnNewProjectileScript": {
                         "Script": ""
                     },
+                    "IsAutomatic": 0,
+                    "AccessibilityTrigger": 1,
                     "QueueFiring": 0,
                     "QueueDelay": 0.1,
                     "FireOnButtonAction": "BOTH",
@@ -355,6 +368,7 @@
                             "onlyFireAboveMinRangeMultiplier": 0,
                             "aimAtPart": "TORSO",
                             "aimAtClosestPart": 0,
+                            "lockAimOnFullCharge": 0,
                             "firingPreferences": {
                                 "firingType": "FT_NORMAL",
                                 "burstTime": [
@@ -385,6 +399,7 @@
                         "hitSpreadMultiplier": 0
                     },
                     "IgnoreFireIterations": 0,
+                    "IgnoreOwner": 1,
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
@@ -414,7 +429,8 @@
                         "LockOnPart": "ANY_PART",
                         "LockOnDistanceWeighting": 0.1,
                         "LockOnAngleWeighting": 1,
-                        "LockOnIgnoreEndPointTarget": 0
+                        "LockOnIgnoreEndPointTarget": 0,
+                        "LockOnIgnoreTags": []
                     },
                     "HIP_FIRE_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/DefaultAccuracyInfo",
                     "AIMED_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/DefaultAccuracyInfo",
@@ -447,6 +463,7 @@
                     "PunchthroughIgnoresAvatars": 0,
                     "RicochetChance": 0,
                     "RicochetRange": 15,
+                    "OnlyHitEnitiesOnce": 1,
                     "ForceCameraAimForLocalPlayer": 1,
                     "AimTranslationOffset": [
                         0,
@@ -480,6 +497,7 @@
                     "MaxTraceDistanceTime": 0.1,
                     "RetractTime": 0.2,
                     "AttachToWeapon": 1,
+                    "UseWeaponAttachmentFirePos": 0,
                     "AttachToTarget": 0,
                     "MultiBeam": 1,
                     "BeamChildren": [
@@ -572,6 +590,7 @@
                         "ProcChance": 0.4,
                         "ForcedProcs": [],
                         "ForcedDeathProcs": [],
+                        "ForcedProcCount": 1,
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
                     },
@@ -633,8 +652,10 @@
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
                     "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0,
                     "ApplyRadialDamageOnMiss": 1,
                     "ApplyRadialDamageOnHit": 1,
+                    "MultiShotBuffsRadialDamage": 0,
                     "RadialDamage": {
                         "baseAmount": 600,
                         "baseProcChance": 0.4,
@@ -776,6 +797,8 @@
                     "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
+                    "NeedsLockOnTargets": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "/Lotus/Language/Menu/Loadout_TriggerCharge",
                     "BehaviorTag": "/Lotus/Language/Mods/ZarimanRifleAltFireUnlockEvo",
@@ -794,6 +817,8 @@
                     "OnNewProjectileScript": {
                         "Script": ""
                     },
+                    "IsAutomatic": 0,
+                    "AccessibilityTrigger": 1,
                     "ClipSizeAffectsChargeTime": 0,
                     "ChargeTime": 0.6,
                     "MinChargeRatio": 1,
@@ -813,7 +838,6 @@
                     "AmmoConsumedPerSecondAtFullCharge": 0,
                     "ReplicateFireStop": 0,
                     "CanInterruptReload": 0,
-                    "IsAutomatic": 0,
                     "ChargeRequireFullClip": 0,
                     "ChargeCancelledScript": {
                         "Script": ""
@@ -822,28 +846,6 @@
                         "Script": ""
                     },
                     "BeamChild": {
-                        "LocalPosition": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "LocalRotation": [
-                            0,
-                            0,
-                            0,
-                            1
-                        ],
-                        "BoneName": "",
-                        "Type": "",
-                        "Chance": 255,
-                        "RelativeToBounds": 0,
-                        "Attach": 1,
-                        "DestroyWithOwner": 1,
-                        "DestroyParentOnDeath": 0,
-                        "FadeOutOnDestruction": 0,
-                        "Scale": 1
-                    },
-                    "EndPointChild": {
                         "LocalPosition": [
                             0,
                             0,
@@ -936,7 +938,6 @@
             }
         ],
         "EvolutionReq": "/Lotus/Types/Items/MiscItems/IncarnonAdapters/Secondary/ZylokIncarnonUnlocker",
-        "EvolvedIcon": "/Lotus/Interface/Icons/StoreIcons/Weapons/IncarnonWeapons/ZylokIncarnon.png",
         "Evolutions": [
             {
                 "Challenge": "",
@@ -1008,47 +1009,11 @@
                 ]
             }
         ],
+        "EvolvedIcon": "/Lotus/Interface/Icons/StoreIcons/Weapons/IncarnonWeapons/ZylokIncarnon.png",
         "AllowDarkSectorMode": 1,
         "DisableDarkSectorReticleOnAim": 1,
-        "DarkSectorHolsterBone": "",
-        "DarkSectorHolsterPosOffset": [
-            0,
-            0,
-            0
-        ],
-        "DarkSectorHolsterRotOffset": [
-            0,
-            0,
-            0,
-            1
-        ],
         "DarkSectorAttachmentsToCreate": {
-            "MAIN_HAND": 0,
-            "OFF_HAND": 1,
-            "EXTRA1": 0,
-            "EXTRA2": 0
-        },
-        "MAIN_HAND": {
-            "LocalPosition": [
-                0,
-                0,
-                0
-            ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
-            "BoneName": "",
-            "Type": "",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
+            "OFF_HAND": 1
         },
         "OFF_HAND": {
             "LocalPosition": [
@@ -1056,67 +1021,13 @@
                 0.025,
                 -0.005
             ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
             "BoneName": "GAME_L1_WEAPON1",
-            "Type": "ConclaveLeverPistolDSAttachment",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
-        },
-        "EXTRA1": {
-            "LocalPosition": [
-                0,
-                0,
-                0
-            ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
-            "BoneName": "",
-            "Type": "",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
+            "Type": "ConclaveLeverPistolDSAttachment"
         },
         "EXTRA2": {
-            "LocalPosition": [
-                0,
-                0,
-                0
-            ],
-            "LocalRotation": [
-                0,
-                0,
-                0,
-                1
-            ],
             "BoneName": "GAME_L1_WEAPON1",
-            "Type": "IncarnonConclaveLeverPistolAttachment",
-            "Chance": 255,
-            "RelativeToBounds": 0,
-            "Attach": 1,
-            "DestroyWithOwner": 1,
-            "DestroyParentOnDeath": 0,
-            "FadeOutOnDestruction": 0,
-            "Scale": 1
+            "Type": "IncarnonConclaveLeverPistolAttachment"
         },
-        "DarkSectorAuxiliaryAttachments": [],
         "DarkSectorStateAnimations": [
             {
                 "state": "WS_FIRE",
@@ -1143,13 +1054,6 @@
                 "clearable": 1
             }
         ],
-        "DarkSectorReloadEmptyStateAnimation": {
-            "state": "WS_READY",
-            "behaviorIndex": 4294967295,
-            "animation": "",
-            "clearable": 1
-        },
-        "DarkSectorFullClipModeSwitchStateAnimations": [],
         "DefaultModTemplate": "/Lotus/Types/ModLists/Pistol/StatusBalanced"
     }
 }

@@ -8,13 +8,13 @@
         "MinLevel": 12,
         "NewAdditionalInventory": [
             {
-                "item": "/Lotus/Weapons/Tenno/Grenades/NpcGrineerThrowGrenadeWeapon",
-                "forceEquip": 1,
-                "hand": "EXTRA1"
-            },
-            {
                 "item": "/Lotus/Weapons/Tenno/Shotgun/EviseratorWeapon",
                 "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "/Lotus/Weapons/Grineer/LineGrenadeLauncher",
+                "forceEquip": 0,
                 "hand": "MAIN_HAND"
             }
         ],
@@ -22,6 +22,7 @@
             "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
             "/EE/Types/Npc/BlockingBehavior",
             "/EE/Types/Npc/InterruptResponseBehavior",
+            "/Lotus/Types/Behaviors/WeaponSwapBehavior",
             "/Lotus/Types/Behaviors/GrineerLancerFormationTactic",
             "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
             "/Lotus/Types/Behaviors/BasicMoraleBrokenBehavior",
@@ -33,7 +34,6 @@
             "/Lotus/Types/Behaviors/UsePanicButtonBehavior",
             "/EE/Types/Npc/BuddyShieldTactic",
             "/EE/Types/Npc/AttackFromCoverTactic",
-            "/EE/Types/Npc/UseGrenadeBehavior",
             "/EE/Types/Npc/KeepIdealDistanceBehavior",
             "/EE/Types/Npc/AttackFromTheOpenBehavior",
             "/EE/Types/Npc/CustomResponseBehavior",
@@ -142,6 +142,48 @@
             },
             "TurnAccuracyThreshold": 15
         },
+        "WeaponSwapBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "WeaponSettings": [
+                {
+                    "WeaponSlot": "SLOT_1",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_BOTH",
+                    "RandomSwapDelayPerWeapon": [
+                        0,
+                        0
+                    ],
+                    "SwapAfterMinOneShot": 0
+                },
+                {
+                    "WeaponSlot": "SLOT_2",
+                    "MinRange": 0,
+                    "MaxRange": 1000,
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "TargetTypeSetting": "ATS_BOTH",
+                    "RandomSwapDelayPerWeapon": [
+                        0.1,
+                        0.2
+                    ],
+                    "SwapAfterMinOneShot": 1
+                }
+            ],
+            "WeaponHand": "MAIN_HAND",
+            "SwapThreshold": 0,
+            "RandomSwapDelay": [
+                6.5,
+                8
+            ]
+        },
         "GrineerLancerFormationTactic": {
             "Enabled": 1,
             "OnStartScript": {
@@ -226,8 +268,8 @@
             "NeedsTarget": 0,
             "PatrolRouteOnly": 0,
             "RecruitFromPatrols": 0,
+            "MatchingDesiredDestinationOnly": 0,
             "FormationIdentifier": "",
-            "MergeThreshold": 0,
             "LeaderAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
             "LeaderAction:Enabled": 1,
             "LeaderAction:OnStartScript": {
@@ -478,6 +520,7 @@
                     3
                 ],
                 "FireBursts": 0,
+                "ChargeWeapon": 0,
                 "AimWhenPausing": 1,
                 "AimWhenStopping": 0,
                 "DecorativeReloads": 1,
@@ -627,6 +670,7 @@
                 "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
                 "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
                 "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
+                "RandomWalkBehavior:ResetStartingPositionOnStartup": 0,
                 "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
                 "GuardBehavior:Enabled": 1,
                 "GuardBehavior:OnStartScript": {
@@ -736,6 +780,7 @@
                     3
                 ],
                 "FireBursts": 0,
+                "ChargeWeapon": 0,
                 "AimWhenPausing": 1,
                 "AimWhenStopping": 1,
                 "DecorativeReloads": 1,
@@ -815,7 +860,6 @@
                 "Script": ""
             },
             "DefaultReevaluationDelay": 0,
-            "ExitMoveDist": 1.5,
             "SearchDistance": 15,
             "EmplacementType": "/EE/Types/Actions/Emplacement",
             "Order": "UseEmplacement",
@@ -963,6 +1007,7 @@
             ],
             "MaxMovementDistance": 100,
             "AllowRetreat": 1,
+            "AllowTeleportFromOffScreen": 0,
             "AllowRun": 1,
             "AllowChase": 1,
             "ForceWalkBelowMinIdealRange": 1,
