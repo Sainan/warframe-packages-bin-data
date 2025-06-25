@@ -1,0 +1,110 @@
+{
+    "parent": "/EE/Types/Engine/GuidedProjectile",
+    "data": {
+        "Mesh": "/Lotus/Fx/Weapons/ProjectileMeshA.fbx",
+        "OverrideMaterial": [
+            "/Lotus/Fx/PowersuitAbilities/Oraxia/OraxiaStingerMatA"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0.5
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/PowersuitAbilities/Oraxia/OraxiaWebTrailsG",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Weapons/OraxiaFlechette/OraxiaFlechetteWebUnits",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicNonCollidable",
+        "ReplicationOverride": "RO_NEVER",
+        "AttackData": {
+            "Type": "DT_POISON",
+            "Amount": 250,
+            "ProcChance": 0,
+            "ForcedProcs": [
+                "PT_POISONED",
+                "PT_STAGGERED"
+            ],
+            "ForcedProcCount": 4
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "HitEffect": "/Lotus/Fx/PowersuitAbilities/Oraxia/OraxiaStingerProjectileHitEffect",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "Toughness": 1000,
+        "MaxLife": 1,
+        "SetLifeOnImpact": 1,
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 120,
+        "KinematicMaxSpeed": 120,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "InstantTurn": 1,
+        "KinematicIgnoredTypes": [
+            "/Lotus/Powersuits/Volt/ShieldHitProxy",
+            "/Lotus/Powersuits/Frost/IceShieldHitProxy",
+            "/Lotus/Types/Game/PickUps/LotusPickUp",
+            "/EE/Types/Game/WeaponAttachmentEx"
+        ],
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Powersuits/PowersuitAbilities/OraxiaSpiders.lua",
+            "Function": "OnProjectileStopped",
+            "_activateAnim": "",
+            "_activateAnimGround": "",
+            "_castEffect": "",
+            "_debuffEffect": "/Lotus/Fx/PowersuitAbilities/Oraxia/OraxiaPoisonToxinSpawner",
+            "_projectileType": "",
+            "_spiderAgentType": "OraxiaSpiderlingAgent",
+            "_spiderTrackFX": "/Lotus/Fx/Common/AllyVisionNew",
+            "_spiderDeathEffect": "",
+            "_teleportOutEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleport",
+            "_teleportInEffect": "/Lotus/Fx/PowersuitAbilities/MonkeyKing/HairTeleportIn"
+        },
+        "SilentProjectile": 1,
+        "ApplyColorCustomization": 1,
+        "ForwardVel": 80,
+        "AimRate": 720,
+        "ReducedAimRate": 720,
+        "SeekAllEntities": 1,
+        "AvatarTargetPart": "TORSO"
+    }
+}

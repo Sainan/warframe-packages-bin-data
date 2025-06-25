@@ -1,5 +1,5 @@
 {
-    "parent": "/Lotus/Weapons/Tenno/Rifle/LotusAssaultRifle",
+    "parent": "LotusBulletWeapon",
     "data": {
         "PickUpMesh": "/Lotus/Weapons/Tenno/LongGuns/Boltor/Boltor_skel.fbx",
         "EquipTime": 1.1,
@@ -36,6 +36,8 @@
         "PickUpText": "/Lotus/Language/Items/RiflePickup",
         "RemovedWithOwnerAfterDrop": 0,
         "PremiumPrice": 150,
+        "SellingPrice": 7500,
+        "ProductCategory": "LongGuns",
         "LocalizeTag": "/Lotus/Language/SolarisVenus/TranqRifleCName",
         "LocalizeDescTag": "/Lotus/Language/SolarisVenus/TranqRifleCDesc",
         "Icon": "/Lotus/Interface/Icons/StoreIcons/Gear/TranqRifle.png",
@@ -58,6 +60,9 @@
             -0.707107,
             0.061628
         ],
+        "DisableFireWhileMainHandMeleeing": 0,
+        "AimStartSound": "/Lotus/Sounds/Weapons/Generic/GenericWeaponAimTransitionInLocal",
+        "AimStopSound": "/Lotus/Sounds/Weapons/Generic/GenericWeaponAimTransitionOutLocal",
         "Behaviors": [
             {
                 "fire:Type": "/Lotus/Types/Game/LotusWeaponProjectileFireBehavior",
@@ -81,6 +86,7 @@
                             "onlyFireAboveMinRangeMultiplier": 0,
                             "aimAtPart": "TORSO",
                             "aimAtClosestPart": 0,
+                            "lockAimOnFullCharge": 0,
                             "firingPreferences": {
                                 "firingType": "FT_NORMAL",
                                 "burstTime": [
@@ -111,6 +117,7 @@
                         "hitSpreadMultiplier": 0
                     },
                     "IgnoreFireIterations": 0,
+                    "IgnoreOwner": 1,
                     "IsSilenced": 1,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
@@ -140,7 +147,8 @@
                         "LockOnPart": "ANY_PART",
                         "LockOnDistanceWeighting": 0.1,
                         "LockOnAngleWeighting": 1,
-                        "LockOnIgnoreEndPointTarget": 0
+                        "LockOnIgnoreEndPointTarget": 0,
+                        "LockOnIgnoreTags": []
                     },
                     "HIP_FIRE_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/Weapon/GrnSniperRifleHipAccuracyInfo",
                     "AIMED_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/Weapon/GrnSniperRifleAimAccuracyInfo",
@@ -224,16 +232,20 @@
                     "horizontalDeviationAngle": 0,
                     "OwnProjectiles": 0,
                     "AlwaysUseAimEndPoint": 0,
+                    "KeepOriginalVisuals": 0,
                     "ApplyWeaponMaterialsToProjectile": 0,
                     "ApplyFlightSpeedToLaunchImpulse": 0,
                     "FallbackAgentTargetting": 1,
                     "MultishotAmmoSpread": 0,
+                    "UseMultishotLineSpread": 0,
                     "ChargedProjectileMinSpeed": -1,
                     "ChargedProjectileMaxSpeed": -1,
                     "ProjectileChargeScale": [
                         0,
                         1
                     ],
+                    "SetProjectileTargetForLockOn": 0,
+                    "MultiTargetLock": 0,
                     "MultiShotProjectileType": "",
                     "MultiShotChargedProjectileType": "",
                     "PvpProjectileType": "",
@@ -281,6 +293,7 @@
                         "ProcChance": 0.1,
                         "ForcedProcs": [],
                         "ForcedDeathProcs": [],
+                        "ForcedProcCount": 1,
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
                     },
@@ -307,6 +320,7 @@
                     ],
                     "minImpulseFallOff": 1,
                     "applyPushVelocity": 0,
+                    "applyPushVelocityOnlyToBlockingTarget": 0,
                     "pushMagnitude": [
                         0.5,
                         1
@@ -332,12 +346,14 @@
                     "strength": 0,
                     "radius": 0,
                     "flash": 0,
+                    "OnHitScriptEnabled": 1,
                     "OnHitScript": {
                         "Script": ""
                     },
                     "UseNextShotDamageBonus": 0,
                     "IgnoreHeadshotBonus": 0,
-                    "IgnoreHeadshotBonusPvp": 0
+                    "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0
                 },
                 "state:Type": "/EE/Types/Game/WeaponSemiAutomaticStateBehavior",
                 "state:WeaponSemiAutomaticStateBehavior": {
@@ -347,6 +363,7 @@
                         0
                     ],
                     "fireRate": 240,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 1,
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
@@ -354,6 +371,8 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -368,8 +387,11 @@
                     "CanChargeWhileRunning": 1,
                     "CanFireWhileInAir": 1,
                     "PreventRunWhileRecharging": 0,
+                    "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
+                    "NeedsLockOnTargets": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "/Lotus/Language/Menu/Loadout_TriggerSemiAuto",
                     "BehaviorTag": "",
@@ -377,14 +399,19 @@
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
                     "OnNewProjectileScript": {
                         "Script": ""
                     },
+                    "IsAutomatic": 0,
+                    "AccessibilityTrigger": 1,
                     "QueueFiring": 0,
                     "QueueDelay": 0.1,
                     "FireOnButtonAction": "PRESSED",
@@ -399,6 +426,12 @@
         "ReticleName": "ReticleFlashMovie",
         "UIReticuleAim": 0,
         "ReticleMovie": "/Lotus/Interface/SpecialReticles/TranqScope.swf",
+        "HitSounds": [
+            "/Lotus/Sounds/Weapons/BulletImpacts/HitNotifications/BulletImpactHitNotification"
+        ],
+        "HitHeadSounds": [
+            "/Lotus/Sounds/Weapons/BulletImpacts/HitNotifications/BulletImpactHeadHitNotification"
+        ],
         "StateAnimations": [
             {
                 "state": "WS_RELOAD",
@@ -408,6 +441,8 @@
             }
         ],
         "SupportsXP": 0,
+        "HolsterCategory": "RIFLE",
+        "UtilityReq": "/Lotus/Types/Items/MiscItems/WeaponUtilityUnlocker",
         "RequiredLevel": 2,
         "ArtifactSlots": [
             "AP_UNIVERSAL",
@@ -419,6 +454,19 @@
             "AP_UNIVERSAL",
             "AP_DEFENSE"
         ],
-        "OmegaAttenuation": 0.79
+        "DefaultCustomization": {
+            "LegLeft": {
+                "ItemType": "/Lotus/Upgrades/Skins/HolsterCustomizations/RifleUpperBack"
+            }
+        },
+        "StealthXpMultiplier": [
+            1,
+            2
+        ],
+        "OmegaAttenuation": 0.79,
+        "ArcaneApertureType": "/Lotus/Types/Items/MiscItems/WeaponPrimaryArcaneUnlocker",
+        "DefaultModOverrides": {
+            "SlotType": "ST_GUN"
+        }
     }
 }

@@ -16,6 +16,7 @@
                 "DamageType": "DT_ANY",
                 "AutoType": 0,
                 "ValidType": "",
+                "CheckTypeOnInstall": 0,
                 "SymbolFilter": "",
                 "UpgradeObject": "",
                 "ValidPostures": [],
@@ -50,7 +51,8 @@
                 },
                 "SmallerIsBetter": 0,
                 "RoundTo": 0.1,
-                "RoundingMode": "RM_ROUND"
+                "RoundingMode": "RM_ROUND",
+                "AllowConditionalLocMerge": 0
             },
             {
                 "UpgradeType": "AVATAR_HEAL_RATE",
@@ -59,6 +61,7 @@
                 "DamageType": "DT_ANY",
                 "AutoType": 0,
                 "ValidType": "",
+                "CheckTypeOnInstall": 0,
                 "SymbolFilter": "",
                 "UpgradeObject": "",
                 "ValidPostures": [],
@@ -88,7 +91,8 @@
                 },
                 "SmallerIsBetter": 0,
                 "RoundTo": 0.1,
-                "RoundingMode": "RM_ROUND"
+                "RoundingMode": "RM_ROUND",
+                "AllowConditionalLocMerge": 0
             }
         ],
         "ArtifactPolarity": "AP_ANY",
@@ -97,6 +101,12 @@
         "TargetType": "/Lotus/Types/Player/TennoAvatar",
         "ExcludedAvatars": [
             "/Lotus/Types/Player/LotusOperatorAvatar"
-        ]
+        ],
+        "OnAuraEnabledScript": {
+            "Script": "/Lotus/Scripts/Challenges/ChallengeNotifyTag.lua",
+            "Function": "NotifyChallengeMgr",
+            "_masterOnly": 1,
+            "_gameEventTag": "EQUIPPED_DREAMERS_BOND_MOD"
+        }
     }
 }

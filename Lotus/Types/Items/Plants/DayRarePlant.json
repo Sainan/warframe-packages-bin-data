@@ -2,59 +2,34 @@
     "parent": "PlantDeco",
     "data": {
         "Mesh": "/Lotus/Objects/Grineer/Forest/GftPlantSkunkCabbageYoung.fbx",
-        "AutoSimChildren": [
-            {
-                "LocalPosition": [
-                    0,
-                    0,
-                    0
-                ],
-                "LocalRotation": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "BoneName": "",
-                "Type": "PlantProxy",
-                "Chance": 255,
-                "RelativeToBounds": 0,
-                "Attach": 1,
-                "DestroyWithOwner": 1,
-                "DestroyParentOnDeath": 0,
-                "FadeOutOnDestruction": 0,
-                "Scale": 1
-            }
-        ],
-        "ServerChildren": [
-            {
-                "LocalPosition": [
-                    0,
-                    0,
-                    0
-                ],
-                "LocalRotation": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "BoneName": "",
-                "Type": "DayRarePlantScanReward",
-                "Chance": 255,
-                "RelativeToBounds": 0,
-                "Attach": 1,
-                "DestroyWithOwner": 1,
-                "DestroyParentOnDeath": 0,
-                "FadeOutOnDestruction": 0,
-                "Scale": 1
-            }
-        ],
         "LocTag": "/Lotus/Language/Game/DayRarePlant",
         "LongDesc": "/Lotus/Language/Game/DayRarePlantDesc",
         "Icon": "/Lotus/Interface/Icons/Plants/ForestDayRare.png",
+        "Health": 100,
         "AcceptedDamageTypes": [
             "DT_CINEMATIC"
-        ]
+        ],
+        "RemoveOnDestroy": 1,
+        "CreateOnDestroy": {
+            "Type": "/Lotus/Fx/Gameplay/ResourceContainers/Plants/DayRarePlantOpen"
+        },
+        "StateChangeScript": {
+            "Script": "/Lotus/Scripts/ContainerDropTable.lua",
+            "Function": "DropTableSingle",
+            "_dropTable": "/Lotus/Types/DropTables/Plants/DayRarePlantDropTable",
+            "_nightmareModeDropTable": "",
+            "_survivalDropTable": "",
+            "_evacDropTable": "",
+            "_basicDropTable": "",
+            "_placement": [
+                0,
+                0,
+                0
+            ],
+            "_delay": 0.25,
+            "_hasDropAnim": 0,
+            "_onlyDropIfDead": 0
+        },
+        "ShowHealthInHud": 0
     }
 }

@@ -8,44 +8,18 @@
             ],
             "useExposureEVCurve": 1,
             "exposureCurveMin": {
-                "sceneEV": -6.5,
-                "adjustmentEV": -4.5
+                "sceneEV": -6.5
             },
-            "exposureCurveMed": {
-                "sceneEV": -5,
-                "adjustmentEV": -3.5
-            },
-            "exposureCurveMax": {
-                "sceneEV": -3.5,
-                "adjustmentEV": -2.5
-            },
-            "toneMapType": "TM_ACES_REF",
-            "toneMapLUT": "/EE/Materials/PostFX/FilmLooks/Rec709Kodak2383D60.cube",
-            "toneMapLUTBlend": 0.65,
-            "colorGradingData": {
-                "Global": {
-                    "Contrast": [
-                        1,
-                        1,
-                        1,
-                        1.2
-                    ],
-                    "Gamma": [
-                        1,
-                        1,
-                        1,
-                        0.98
-                    ]
-                }
-            },
+            "toneMapLUT": "/EE/Materials/PostFX/LogCToRec709Kodak2393D65.cube",
+            "toneMapLUTBlend": 0.75,
             "bloom": 2,
             "horizonDOF": 1,
             "horizonFog": 1,
             "horizonFogElevation": 1,
             "fogColor": [
-                56,
-                56,
-                56,
+                78,
+                88,
+                103,
                 240
             ],
             "distanceFogDensity": 0.22,
@@ -88,7 +62,7 @@
                 255
             ],
             "weatherParams": [
-                0.45,
+                0.75,
                 0,
                 0,
                 0
@@ -101,27 +75,43 @@
                 -0.01
             ],
             "cloudShadowsAttenuationsParams": [
-                -0.15,
-                6
+                1,
+                1
             ],
             "volumetricFog": {
                 "Enabled": 1,
                 "NearDistance": 0.1,
-                "Extinction": 0.5,
+                "ExtinctionConfusion": 0.75,
+                "ScatteringConfusion": 0.5,
                 "GlobalFog": {
-                    "Density": 0.035,
-                    "G": 0.4
+                    "Density": 0.005,
+                    "NoiseScale": 0.005
+                },
+                "HeightFog": {
+                    "HeightFogMinHeight": -70,
+                    "HeightFogMaxHeight": -40,
+                    "HeightFogParticipatingMedia": {
+                        "Density": 0.025,
+                        "NoiseScale": 0.005,
+                        "Falloff": 1
+                    }
+                },
+                "WindSettings": {
+                    "FakeWindSpeed": 1,
+                    "FakeWindDirection": [
+                        1,
+                        0,
+                        -1
+                    ]
                 },
                 "ClumpyNoise": {
-                    "ClumpAmount": 0.75,
+                    "ClumpAmount": 0.5,
                     "ClumpStart": 0.4,
                     "ClumpEnd": 0.8,
-                    "NoiseScale": 0.025
+                    "NoiseScale": 0.005
                 },
                 "ColorGrading": {
-                    "Vibrance": 0.1,
-                    "Contrast": 0.1,
-                    "Brightness": 0.75
+                    "Vibrance": 0.4
                 }
             }
         },
@@ -151,13 +141,13 @@
         },
         "EnableGIVolumes": 1,
         "LightingParams": {
-            "giEnvironmentIntensity": 1,
-            "giEnvironmentUseIBL": 1,
-            "iblImageFile": "/EE/Materials/IBL/MonoLake.hdr",
+            "iblImageFile": "/EE/Materials/IBL/Kloppenheim021KSatted.hdr",
             "diffuseBoost": 1.35,
+            "emissiveScale": 0,
+            "globalCubeMap": "/EE/Editor/Darkitect/Materials/IBL/1999WinterIBL_cross.hdr",
             "bakingOptions:Type": "/EE/Types/Darkitect/BakingOptions",
             "bakingOptions:NovaBakeRadiosity": 1,
-            "bakingOptions:NovaSamplesPerPixel": 256,
+            "bakingOptions:NovaSamplesPerPixel": 1024,
             "bakingOptions:ExportDiffuseTextures": "ET_256_PIXELS",
             "bakingOptions:NovaApertureSamplesPerPixel": 144,
             "bakingOptions:LegacyIndexLighting": 0,
@@ -173,11 +163,11 @@
             "bakingOptions:DirectionMapMipBias": 1,
             "bakingOptions:MaxObjectLightMapSize": "MLM_1024x1024",
             "bakingOptions:ObjectLightMapSizeDownscale": 0,
-            "bakingOptions:MaxLightMapPageSize": "MLM_2048x2048",
+            "bakingOptions:MaxLightMapPageSize": "MLM_1024x1024",
             "bakingOptions:AutoGenerateLightProbes": 1,
             "bakingOptions:LightProbeMinMax": [
-                5,
-                15
+                2,
+                5
             ],
             "bakingOptions:LightProbeHeight": 1,
             "bakingOptions:LightProbeAdaptiveThreshold": 2,

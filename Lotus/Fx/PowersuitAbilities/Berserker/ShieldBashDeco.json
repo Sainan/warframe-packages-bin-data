@@ -1,32 +1,104 @@
 {
     "parent": "/Lotus/Types/Game/LotusEffectDecoration",
     "data": {
-        "Mesh": "/Lotus/Fx/PowersuitAbilities/Decree/PushSoundwave.fbx",
+        "Mesh": "ShieldBashMeshRadial.fbx",
         "OverrideMaterial": [
             "ShieldBashDecoMat"
         ],
-        "DistortionEffect": 1,
         "DrawInTransparentPass": 1,
-        "ScriptInstance": {
-            "Script": "/Lotus/Fx/PowersuitAbilities/Decree/PushAbility.lua",
-            "Function": "combined",
-            "_ScaleTimeLength": 1,
-            "_StartScale": [
-                0.2,
-                0.6,
-                0.2
-            ],
-            "_EndScale": [
-                1.2,
-                0.8,
-                1.6
-            ],
-            "_Delay": 0,
-            "_TimeLength": 0.5,
-            "_OriginalValue": 1,
-            "_NewValue": 0,
-            "_isMeleeWeapon": 0
-        },
-        "ReplicaRunScriptInstance": 1
+        "MaterialFade": [
+            {
+                "Parameter": "UnlitAtten",
+                "Slot": -1,
+                "TimeLength": 0.5,
+                "Multiplier": 1,
+                "FadeRange": [
+                    0,
+                    1
+                ],
+                "FadeCurve": {
+                    "Values": [
+                        {
+                            "Time": 0,
+                            "Value": 0
+                        },
+                        {
+                            "Time": 0.25,
+                            "Value": 5
+                        },
+                        {
+                            "Time": 1,
+                            "Value": 0
+                        }
+                    ],
+                    "SplineType": "LINEAR_SPLINE"
+                },
+                "BaseValue": 0,
+                "Delay": 0,
+                "DestroyWhenComplete": 0,
+                "IsDissolve": 0,
+                "IsMeshScale": 0,
+                "IsRepeating": 0
+            },
+            {
+                "Parameter": "Scale",
+                "Slot": -1,
+                "TimeLength": 0.125,
+                "Multiplier": 1,
+                "FadeRange": [
+                    0,
+                    1
+                ],
+                "FadeCurve": {
+                    "Values": [
+                        {
+                            "Time": 0,
+                            "Value": 0
+                        },
+                        {
+                            "Time": 1,
+                            "Value": 0.5
+                        }
+                    ],
+                    "SplineType": "LINEAR_SPLINE"
+                },
+                "BaseValue": 0,
+                "Delay": 0,
+                "DestroyWhenComplete": 0,
+                "IsDissolve": 0,
+                "IsMeshScale": 1,
+                "IsRepeating": 0
+            },
+            {
+                "Parameter": "vScaleFade",
+                "Slot": -1,
+                "TimeLength": 0.125,
+                "Multiplier": 1,
+                "FadeRange": [
+                    0,
+                    1
+                ],
+                "FadeCurve": {
+                    "Values": [
+                        {
+                            "Time": 0,
+                            "Value": 0
+                        },
+                        {
+                            "Time": 1,
+                            "Value": 0.5
+                        }
+                    ],
+                    "SplineType": "LINEAR_SPLINE"
+                },
+                "BaseValue": 0,
+                "Delay": 0,
+                "DestroyWhenComplete": 0,
+                "IsDissolve": 0,
+                "IsMeshScale": 1,
+                "IsRepeating": 0
+            }
+        ],
+        "ApplyColorCustomization": 1
     }
 }

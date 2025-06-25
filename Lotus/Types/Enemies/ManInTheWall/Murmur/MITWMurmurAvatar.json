@@ -1,0 +1,281 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/MITW/DuviriMurmur/DuviriMurmur_skel.fbx",
+        "MeshScale": 1.5,
+        "DissolveOverride": "/Lotus/Fx/Common/PointNoise_d.png",
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_BODY1",
+                "Type": "/Lotus/Fx/Enemies/Mitw/MitwMouth/MitwMouthBodyFXDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_L1_WING",
+                "Type": "/Lotus/Fx/Enemies/Mitw/MitwMouth/MitwMouthLeftWingFXDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "BoneName": "GAME_R1_WING",
+                "Type": "/Lotus/Fx/Enemies/Mitw/MitwMouth/MitwMouthRightWingFXDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0.707107,
+                    0.707107
+                ],
+                "BoneName": "GAME_C1_CAP",
+                "Type": "/Lotus/Fx/Enemies/Mitw/MitwMouth/MitwMouthCapFXDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "MurmurHover",
+        "ScriptInstance": {
+            "Script": "/Lotus/Types/Enemies/ManInTheWall/MITWBarkController.lua",
+            "Function": "IdleVoiceBoxLoop"
+        },
+        "EyeOffset": [
+            0,
+            0.5,
+            0
+        ],
+        "WeaponBone": "GAME_C1_BODY1",
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "MITW",
+        "LocTag": "/Lotus/Language/Isleweaver/DuviriMurmurName",
+        "ShortDesc": "/Lotus/Language/Isleweaver/DuviriMurmurDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Murmur/MITWMurmur.png",
+        "MaxHealth": 2000,
+        "DefaultThreatLevel": 2,
+        "VoiceBox": "/Lotus/Sounds/Enemies/ManInTheWall/FlyingMouth/MITWFlyingMouthVoicebox",
+        "DropTable": "/Lotus/Types/DropTables/ManInTheWall/HandBomberAgentDropTable",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
+        "AnimControllerType": "MITWMurmurAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "DamageControllerType": "MITWMurmurDamageController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/DroneInventoryController",
+        "MotionControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/DroneMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0.45,
+                -0.3
+            ],
+            "LocalRotation": [
+                0,
+                0,
+                0.707107,
+                0.707107
+            ],
+            "BoneName": "GAME_C1_ROOT",
+            "Type": "HitProxies/MITWMurmurFullBody"
+        },
+        "EnableCameraCollisionCulling": 0,
+        "OnDeathScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/MITWEnnemiesVFX.lua",
+            "Function": "DissolveOnDeath",
+            "_dissolveEffect": "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveGenericSpawner",
+            "_dissolveSound": "/Lotus/Sounds/Enemies/ManInTheWall/FlyingMouth/MITWFlyingMouthDeathDissolve",
+            "_dissolveProj": [
+                "/Lotus/Fx/Enemies/Mitw/MitwSandProj",
+                "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveExtrudeDynProj",
+                "/Lotus/Fx/Enemies/Mitw/MitwSandDissolveGlitterProj"
+            ],
+            "_attachmentToTriggeredFade": [
+                "/Lotus/Fx/Enemies/Mitw/MitwMouth/MitwMouthBodyFXDeco",
+                "/Lotus/Fx/Enemies/Mitw/MitwMouth/MitwMouthLeftWingFXDeco",
+                "/Lotus/Fx/Enemies/Mitw/MitwMouth/MitwMouthRightWingFXDeco",
+                "/Lotus/Fx/Enemies/Mitw/MitwMouth/MitwMouthCapFXDeco"
+            ],
+            "_attachmentToDissolveAndHide": [],
+            "_boneToAttachTo": "GAME_C1_CAP",
+            "_attachOffset": [
+                0,
+                0,
+                0
+            ],
+            "_gravityOnDeath": 1,
+            "_gravityVector": [
+                0,
+                -2.2,
+                0
+            ],
+            "_disableCollision": 1,
+            "_totalFadeOutDuration": 6,
+            "_waitBeforeDissolve": 0.5,
+            "_waitBeforeStart": 0,
+            "_DestroyAfterFade": 1,
+            "_waitBeforeDestroy": 2,
+            "_SpawnerToDestroy": "",
+            "_OriginalValue": 1,
+            "_NewValue": 2,
+            "_needsFinisherTiming": 0,
+            "_finisherDissolveProj": [],
+            "_finisherTotalFadeOutDuration": 0.8,
+            "_finisherWaitBeforeDissolve": 0.25,
+            "_finisherWaitBeforeStart": 0,
+            "_deathProjectileType": "",
+            "_deathProjectileCount": 0,
+            "_deathProjectileBone": "GAME_C1_BODY1",
+            "_octopedeEventDropTables": [],
+            "_octopedeEventSPDropTables": []
+        },
+        "SoundEvents": [
+            {
+                "EventName": "SFXMITWGroundHit",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/EnemyGameplay/MITWFinisherGroundHit",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMITWFinisherImpact",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/EnemyGameplay/MITWFinisherImpact",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMITWFlyingMouthAttackInhale",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/FlyingMouth/MITWFlyingMouthAttackInhale",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": "SFXMITWFlyingMouthAttackFire"
+            },
+            {
+                "EventName": "SFXMITWFlyingMouthAttackInhaleEnd",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/FlyingMouth/MITWFlyingMouthAttackInhaleEnd",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMITWFlyingMouthAttackFire",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/FlyingMouth/MITWFlyingMouthAttackFire",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMITWFlyingMouthAttackFireEmpty",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/FlyingMouth/MITWFlyingMouthAttackFireEmpty",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXMITWFlyingMouthSpawn",
+                "Sound": "/Lotus/Sounds/Enemies/ManInTheWall/FlyingMouth/MITWFlyingMouthSpawn",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "VoiceBoxEvents": [
+            {
+                "EventName": "SFXBarkPain",
+                "Phrase": "PAIN",
+                "Filter": "SFXBarkPain",
+                "Chance": 1
+            }
+        ],
+        "AnimationEvents": [
+            {
+                "EventName": "",
+                "Animation": "",
+                "BlendIndex": 0,
+                "Rate": 1,
+                "Loop": 0,
+                "Queue": 0,
+                "Transition": 0,
+                "FreezeAtEnd": 0,
+                "PreserveDelta": 0,
+                "ChildrenOnly": 0
+            }
+        ],
+        "KillXPReward": 250,
+        "UINameAttachPart": "TORSO",
+        "UINameAttachOffset": [
+            0,
+            0.55,
+            0
+        ],
+        "CodexScansRequiredOverride": 3,
+        "FactionResistanceKeyword": "RK_MITW_FACTION",
+        "DisarmAction": "DA_DAMAGE_ONLY",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HoverDroneReactionAnims"
+    }
+}

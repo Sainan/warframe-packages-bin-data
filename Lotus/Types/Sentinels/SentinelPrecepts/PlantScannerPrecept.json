@@ -15,6 +15,7 @@
                 "DamageType": "DT_ANY",
                 "AutoType": 1,
                 "ValidType": "",
+                "CheckTypeOnInstall": 0,
                 "SymbolFilter": "",
                 "UpgradeObject": "",
                 "ValidPostures": [],
@@ -38,7 +39,8 @@
                 },
                 "SmallerIsBetter": 0,
                 "RoundTo": 0.1,
-                "RoundingMode": "RM_ROUND"
+                "RoundingMode": "RM_ROUND",
+                "AllowConditionalLocMerge": 0
             }
         ],
         "BaseDrain": "QA_MEDIUM",
@@ -46,22 +48,32 @@
         "Ability": {
             "Rarity": "RARE",
             "Script": {
-                "Script": "/Lotus/Types/Sentinels/SentinelAbilities/CodexScannerAbility.lua",
-                "Function": "NpcEvaluateAbility",
-                "_scannerConsumableType": "/Lotus/Types/Restoratives/Consumable/Scanner",
-                "_alternativeScannerConsumableType": "/Lotus/Types/Restoratives/Consumable/LibraryScanner",
+                "Script": "/Lotus/Types/Sentinels/SentinelAbilities/PlantScannerAbility.lua",
+                "Function": "ActivateAbility",
+                "_scanRanges": [
+                    20,
+                    26,
+                    32,
+                    38,
+                    44,
+                    50
+                ],
+                "_scanDurations": [
+                    5,
+                    4.4,
+                    3.8,
+                    3.2,
+                    2.6,
+                    2
+                ],
+                "_rescanInterval": 1,
+                "_plantDecoType": "/Lotus/Types/Items/Plants/PlantDeco",
+                "_plantPickupType": "/Lotus/Types/Gameplay/Plants/PlantPickup",
                 "_pulseFX": "/Lotus/Fx/Projectors/ScanProjector",
                 "_scannedFX": "/Lotus/Fx/Projectors/ScannedProjector",
                 "_pulseSound": "/Lotus/Sounds/UI/LibraryScanner/LibraryScannerScanAvailable",
                 "_scannedSound": "/Lotus/Sounds/UI/LibraryScanner/LibraryScannerScanFinished",
-                "_allowQuotaRescannable": 1,
-                "_validTargets": [
-                    "/Lotus/Types/Items/Plants/PlantDeco"
-                ],
-                "_restrictedTargets": [
-                    "/Lotus/Objects/Orokin/Props/CollectibleSeriesOne",
-                    "/Lotus/Types/Lore/GlassFragmentScanDeco"
-                ]
+                "_vacuumEffect": "/Lotus/Fx/Enemies/Drones/VacuumPickUpTrail"
             },
             "CooldownDuration": 10,
             "IsPassive": 1,

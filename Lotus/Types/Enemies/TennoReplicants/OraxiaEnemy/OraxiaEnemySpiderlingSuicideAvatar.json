@@ -1,0 +1,179 @@
+{
+    "parent": "/Lotus/Types/Enemies/Infested/AiWeek/Quadrupeds/QuadrupedAvatarBase",
+    "data": {
+        "Mesh": "/Lotus/Characters/Tenno/Oraxia/Summon/OraxiaSummon_skel.fbx",
+        "MeshScale": 0.8,
+        "OverrideMaterial": [
+            "/Lotus/Fx/Enemies/TennoReplicants/Oraxia/OraxiaBombSpiderlingMat"
+        ],
+        "AnimationName": "Guild",
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_COG",
+                "Type": "/Lotus/Fx/Quests/Priest/EmotionSpecterSmoke",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_COG",
+                "Type": "/Lotus/Fx/Enemies/Duviri/DuviriGhostBodySmoke",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Oraxia/Gameplay/OraxiaBossSuicideSpiderlingLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "OraxiaEnemySpiderlingSuicideWalk",
+        "Tag": "OraxiaEnemySpiderling",
+        "ScriptInstance": {
+            "Script": "OraxiaEnemySpiderlings.lua",
+            "Function": "SuicideSpider",
+            "_lifeTime": 15,
+            "_spawnAnim": "/Lotus/Animations/Corpus/Arachnoid/MicroSpawnFromBurrowed_anim.fbx",
+            "_deathAnim": "/Lotus/Animations/Corpus/Arachnoid/MicroRearUp_anim.fbx",
+            "_deathAnimEvent": "Explode",
+            "_explodeFx": "/Lotus/Fx/Enemies/TennoReplicants/Oraxia/OraxiaSpiderlingDeathExp",
+            "_explodeShockwaveType": "OraxiaEnemySpiderlingSuicideShockwave",
+            "_explodeDamageType": "DT_EXPLOSION",
+            "_explodeDamage": 200,
+            "_explodeProc": "PT_FRAILTY",
+            "_explodeRadius": 4,
+            "_pulseAttachFx": "/Lotus/Fx/Enemies/TennoReplicants/Oraxia/SpiderlingPulseDmgDeco",
+            "_pulseDamageType": "DT_CORROSIVE",
+            "_pulseDamage": 100,
+            "_pulseProc": "PT_CAUSTIC_BURN",
+            "_pulseRadius": 6,
+            "_pulseFrequency": 1,
+            "_tripwireDeathFx": "",
+            "_tripwireSpiderlingType": ""
+        },
+        "ReplicaRunScriptInstance": 1,
+        "ReplicateCreator": 1,
+        "EyeOffset": [
+            0,
+            0.5,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Duviri",
+        "LocTag": "/Lotus/Language/Isleweaver/IsleweaverSpiderlingSuicideName",
+        "ShortDesc": "/Lotus/Language/Isleweaver/IsleweaverSpiderlingSuicideDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Infested/1999/InfestedMaggot.png",
+        "MaxHealth": 1250,
+        "DropTable": "/Lotus/Types/DropTables/DuviriDropTables/DuviriOraxiaSpiderlingDropTable",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentControllerNoDefaultFinisher",
+        "AnimControllerType": "OraxiaEnemySpiderlingAnimController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "WallSlideControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWallSlideController",
+        "DamageControllerType": "OraxiaEnemySpiderlingSuicideDamageControllerB",
+        "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Infested/InfestedAvatars/InfestedEventInventory",
+        "MotionControllerType": "OraxiaEnemySpiderlingMotionController",
+        "RaycastProxy": {
+            "Type": "/Lotus/Types/Enemies/Corpus/Vip/Arachnoid/Proxies/ArachnoidMicroFullBody"
+        },
+        "CollisionProxy": {
+            "BoneName": "GAME_C1_COG"
+        },
+        "FacialMorphScript": {
+            "Script": "/Lotus/Scripts/NPC/FacialMorph.lua",
+            "Function": "OnMorphChangeRequested",
+            "_autoRemovePainMorph": 1
+        },
+        "FacialMorphHeadAttachmentType": "/Lotus/Characters/Grineer/Marine/GrineerHeadMorphsDeco",
+        "MorphName:ALERT": "Morphs.Alert",
+        "MorphName:RAGE": "Morphs.Rage",
+        "MorphName:FEAR": "Morphs.Fear",
+        "MorphName:DEAD": "Morphs.Dead",
+        "MorphName:SMUG": "Morphs.Smug",
+        "MorphName:PAIN": "Morphs.Pain",
+        "SoundEvents": [
+            {
+                "EventName": "SFXOraxiaBossSuicideScuttlerPreDeathVocal",
+                "Sound": "/Lotus/Sounds/Enemies/Oraxia/Gameplay/OraxiaBossSuicideScuttlerPreDeathVocal",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": "SFXOraxiaBossSuicideScuttlerPreDeathStop"
+            },
+            {
+                "EventName": "SFXOraxiaBossSuicideScuttlerPreDeathBeep",
+                "Sound": "/Lotus/Sounds/Enemies/Oraxia/Gameplay/OraxiaBossSuicideScuttlerPreDeathBeep",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": "SFXOraxiaBossSuicideScuttlerPreDeathStop"
+            },
+            {
+                "EventName": "SFXCrpArachnoidMicroSpawnVocal",
+                "Sound": "/Lotus/Sounds/Warframes/Oraxia/Brood/OraxiaBroodSpiderSpawn",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "KillXPReward": 25,
+        "AiDirEncounterScore": 35,
+        "ShowLevelInHud": 0,
+        "ExcludedFromCodex": 1,
+        "ExcludedFromSimulacrum": 1,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataImmuneMindPushPullHeal",
+        "FactionResistanceKeyword": "RK_MITW_FACTION",
+        "DisarmAction": "DA_DAMAGE_ONLY",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/QuadrupedReactionAnims"
+    }
+}

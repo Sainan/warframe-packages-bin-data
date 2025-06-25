@@ -55,7 +55,16 @@
                 },
                 "DefaultReevaluationDelay": 0,
                 "Responses": [],
-                "BlockingResponse": 1
+                "BlockingResponse": 1,
+                "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+                "TurnToAction:Enabled": 1,
+                "TurnToAction:OnStartScript": {
+                    "Script": ""
+                },
+                "TurnToAction:OnDamagedScript": {
+                    "Script": ""
+                },
+                "TurnAccuracyThreshold": 15
             },
             "StormTargetOrderBehavior": {
                 "Enabled": 1,
@@ -110,7 +119,6 @@
                     "Script": ""
                 },
                 "DefaultReevaluationDelay": 0,
-                "ExitMoveDist": 1.5,
                 "SearchDistance": 15,
                 "EmplacementType": "/EE/Types/Actions/Emplacement",
                 "Order": "UseEmplacement",
@@ -138,7 +146,6 @@
                 },
                 "ShootAction:DefaultTimer": 0,
                 "ShootAction:GoodTargetTimeout": 0.2,
-                "ShootAction:SetAimTarget": 1,
                 "ShootAction:ChargedAttack": 0,
                 "ShootAction:ShootAtCoverEnabled": 1,
                 "ShootAction:WeaponFireDelayRange": [
@@ -216,6 +223,12 @@
                     0.8,
                     1.2
                 ],
+                "AttackBehavior:MovementLineOfFireScoring": 0,
+                "AttackBehavior:DistanceFromTeammates": [
+                    1.5,
+                    100
+                ],
+                "AttackBehavior:MaxNumTeammatesForScoring": 4,
                 "AttackBehavior:LookAtTarget": 0,
                 "AttackBehavior:LookHorizRate": 40,
                 "AttackBehavior:LookVertRate": 20,
@@ -242,6 +255,7 @@
                     2,
                     6
                 ],
+                "AttackBehavior:StartRepositionTimerAtDest": 1,
                 "AttackBehavior:KeepRunningDuringWaitPeriod": 1,
                 "AttackBehavior:MoveDuringShoot": 0,
                 "AttackBehavior:CrouchDuringShootChance": 0,
@@ -270,7 +284,8 @@
                 "AttackBehavior:FiringPreferencesOverride": [],
                 "AttackBehavior:RequireRangedWeapon": 0,
                 "AttackBehavior:RequireNotForcedMelee": 0,
-                "AttackBehavior:UseDefenseVolume": 0
+                "AttackBehavior:UseDefenseVolume": 0,
+                "AttackBehavior:ShouldConstantlyBarkAttack": 0
             },
             "KeepIdealDistanceBehavior": {
                 "Enabled": 1,
@@ -293,6 +308,7 @@
                 ],
                 "MaxMovementDistance": 100,
                 "AllowRetreat": 1,
+                "AllowTeleportFromOffScreen": 0,
                 "AllowRun": 1,
                 "AllowChase": 0,
                 "ForceWalkBelowMinIdealRange": 1,
@@ -361,6 +377,12 @@
                     1,
                     1
                 ],
+                "MovementLineOfFireScoring": 0,
+                "DistanceFromTeammates": [
+                    1.5,
+                    100
+                ],
+                "MaxNumTeammatesForScoring": 4,
                 "LookAtTarget": 0,
                 "LookHorizRate": 40,
                 "LookVertRate": 20,
@@ -387,6 +409,7 @@
                     2,
                     6
                 ],
+                "StartRepositionTimerAtDest": 1,
                 "KeepRunningDuringWaitPeriod": 1,
                 "MoveDuringShoot": 1,
                 "CrouchDuringShootChance": 0,
@@ -415,7 +438,8 @@
                 "FiringPreferencesOverride": [],
                 "RequireRangedWeapon": 0,
                 "RequireNotForcedMelee": 0,
-                "UseDefenseVolume": 0
+                "UseDefenseVolume": 0,
+                "ShouldConstantlyBarkAttack": 0
             },
             "CustomResponseBehavior": {
                 "Responses": [
@@ -448,7 +472,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": -1,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     }
                 ]
             },
@@ -966,6 +993,7 @@
                 ],
                 "MaxMovementDistance": 100,
                 "AllowRetreat": 1,
+                "AllowTeleportFromOffScreen": 0,
                 "AllowRun": 1,
                 "AllowChase": 0,
                 "ForceWalkBelowMinIdealRange": 1,
@@ -1058,9 +1086,6 @@
         },
         "LocomotionController:DynamicPathFinderGround": {
             "UseCover": 0
-        },
-        "LocomotionController:PathingPreferences": {
-            "shorteningType": "ST_NAVMESH"
         },
         "ShootingController:DefaultFiringPrefs": {
             "shootAtCover": 0

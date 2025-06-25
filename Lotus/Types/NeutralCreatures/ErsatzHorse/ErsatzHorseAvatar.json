@@ -98,13 +98,14 @@
             "Script": "ErsatzWings.lua",
             "Function": "UpdateWings",
             "_wingsIdleAnim": "/Lotus/Animations/Creatures/ErstazHorse/Flying/IdleCustomizationScreen_anim.fbx",
+            "_playerInAirSummonVehicleAnim": "/Lotus/Animations/Creatures/ErstazHorse/Flying/BulletJumpMount",
+            "_playerSummonVehicleAnim": "",
             "_innerRadius": 5,
             "_outerRadius": 30,
             "_intervalMin": 0.35,
             "_intervalMax": 0.75,
             "_orphanedHorseCheckInterval": 0.5,
-            "_horseAvatarFadeInTimeMultiplier": 0.5,
-            "_horseAvatarType": "/Lotus/Types/Game/PegasusAvatar"
+            "_horseAvatarFadeInTimeMultiplier": 0.5
         },
         "ReplicaRunScriptInstance": 1,
         "LocTag": "[HC] Kaithe",
@@ -426,6 +427,24 @@
                 "CancelEventName": ""
             }
         ],
+        "ScriptEvents": [
+            {
+                "EventName": "JumpMountImpulse",
+                "ExecuteScript": {
+                    "Script": "ErsatzWings.lua",
+                    "Function": "JumpMountImpulse",
+                    "_wingsIdleAnim": "/Lotus/Animations/Creatures/ErstazHorse/Flying/IdleCustomizationScreen_anim.fbx",
+                    "_playerInAirSummonVehicleAnim": "",
+                    "_playerSummonVehicleAnim": "/Lotus/Animations/Creatures/ErstazHorse/MountRear02_anim.fbx",
+                    "_innerRadius": 5,
+                    "_outerRadius": 30,
+                    "_intervalMin": 0.35,
+                    "_intervalMax": 0.75,
+                    "_orphanedHorseCheckInterval": 0.5,
+                    "_horseAvatarFadeInTimeMultiplier": 0.5
+                }
+            }
+        ],
         "EnteredSwimmableWaterEffect": {
             "LocalPosition": [
                 0,
@@ -474,8 +493,22 @@
         "ForceDismountRightAnimation": "/Lotus/Animations/Creatures/ErstazHorse/DeathRight_anim.fbx",
         "ForceDismountMidairAnimation": "/Lotus/Animations/Creatures/ErstazHorse/Flying/HitReacts/FallBackwards_anim.fbx",
         "PlaySyncedBlockingMount": 1,
+        "MountCameraTransitionTime": 1.2,
         "AllowRiderWeaponSwitching": 1,
         "MaintainRiderWeaponSwitching": 1,
+        "SetupMountAnimScript": {
+            "Script": "ErsatzWings.lua",
+            "Function": "SetupMountAnimation",
+            "_wingsIdleAnim": "/Lotus/Animations/Creatures/ErstazHorse/Flying/IdleCustomizationScreen_anim.fbx",
+            "_playerInAirSummonVehicleAnim": "/Lotus/Animations/Creatures/ErstazHorse/Flying/BulletJumpMount",
+            "_playerSummonVehicleAnim": "/Lotus/Animations/Creatures/ErstazHorse/MountRear02_anim.fbx",
+            "_innerRadius": 5,
+            "_outerRadius": 30,
+            "_intervalMin": 0.35,
+            "_intervalMax": 0.75,
+            "_orphanedHorseCheckInterval": 0.5,
+            "_horseAvatarFadeInTimeMultiplier": 0.5
+        },
         "CheckRiderForTriggerAdditionalAvatar": 1,
         "MinBulletJumpAngle": 76,
         "MaxFlappyCount": 0,

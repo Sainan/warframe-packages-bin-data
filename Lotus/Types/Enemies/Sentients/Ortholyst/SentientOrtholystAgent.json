@@ -207,7 +207,9 @@
                             "logistic": 1
                         },
                         "AimWhileMoving": 0,
+                        "SetViewWhileMoving": 1,
                         "ShootingDistance": 0,
+                        "NeedsVisibilityForShooting": 1,
                         "ChangeWeapons": 0,
                         "WeaponSlot": "SLOT_1",
                         "WeaponHand": "MAIN_HAND",
@@ -261,7 +263,8 @@
                         "ChildAction:AgentTargetWeight": 1,
                         "ChildAction:MainHandTargetWeight": 1,
                         "ChildAction:OffHandTargetWeight": 1,
-                        "ChildAction:UseDefenseVolume": 0
+                        "ChildAction:UseDefenseVolume": 0,
+                        "ChildAction:MaxDistanceFromEncounterHint": 0
                     },
                     "FailOnChildFailure": 0
                 }
@@ -280,6 +283,7 @@
                 "AimPosture": 0,
                 "MinimalEnemyDistance": 0,
                 "TrackTarget": 0,
+                "TrackTargetNotVisible": 0,
                 "Peek": 0,
                 "FailOnDamaged": 0,
                 "PreventShooting": 0,
@@ -346,6 +350,7 @@
                 "AimPosture": 0,
                 "MinimalEnemyDistance": 0,
                 "TrackTarget": 0,
+                "TrackTargetNotVisible": 0,
                 "Peek": 0,
                 "FailOnDamaged": 0,
                 "PreventShooting": 0,
@@ -376,6 +381,7 @@
             ],
             "ShouldAim": 1,
             "CanRun": 0,
+            "StopRadius": 4.2,
             "StopSearchIfNoTarget": 0,
             "StopSearchOnAwarenessLevel": "AW_IDLE",
             "MaintainedAwarenessLevel": "AW_ALERT",
@@ -432,7 +438,8 @@
             "reactionsToInvestigate": [],
             "MinAwareness": "AW_IDLE",
             "minimumTargetInterest": "Investigate",
-            "ReportAttackOnDamage": 1
+            "ReportAttackOnDamage": 1,
+            "RestrictToDefenseVolume": 0
         },
         "GuardTactic": {
             "Enabled": 1,
@@ -462,6 +469,7 @@
             "PatrolBehavior:NearDistance": 2,
             "PatrolBehavior:SpeedMultiplier": 1,
             "PatrolBehavior:AlertSpeedMultiplier": 1,
+            "PatrolBehavior:MovementPosture": "WALK",
             "PatrolBehavior:FailOnTargetAcquired": 1,
             "PatrolBehavior:AimWhenIdle": 0,
             "PatrolBehavior:AimWhenAlert": 1,
@@ -476,6 +484,9 @@
             "PatrolBehavior:AutoAssignClosestPatrol": 0,
             "PatrolBehavior:SameZoneOnly": 1,
             "PatrolBehavior:AutoPatrolRadius": 30,
+            "PatrolBehavior:OnCompleteScript": {
+                "Script": ""
+            },
             "RandomWalkBehavior:Type": "/EE/Types/Npc/RandomTacWalkBehavior",
             "RandomWalkBehavior:Enabled": 1,
             "RandomWalkBehavior:OnStartScript": {
@@ -493,7 +504,6 @@
             "RandomWalkBehavior:AimWhenIdle": 0,
             "RandomWalkBehavior:AimWhenAlert": 1,
             "RandomWalkBehavior:PermanentAlert": 0,
-            "RandomWalkBehavior:ForceIdleForSinglePointPatrols": 1,
             "RandomWalkBehavior:AnimAction": "PatrolIdle",
             "RandomWalkBehavior:GenericAnims": [],
             "RandomWalkBehavior:MinPlayerDist": [
@@ -524,6 +534,8 @@
             "RandomWalkBehavior:UseWasAlert": 0,
             "RandomWalkBehavior:ScanLength": 2,
             "RandomWalkBehavior:MovementPosture": "WALK",
+            "RandomWalkBehavior:MinimumTacWalkAreas": 4,
+            "RandomWalkBehavior:WanderWhenNotEnoughTacAreas": 1,
             "RandomWalkBehavior:TeammateBarkBehavior:Type": "/EE/Types/Npc/BarkAtNearbyAllyBehavior",
             "RandomWalkBehavior:TeammateBarkBehavior:Enabled": 1,
             "RandomWalkBehavior:TeammateBarkBehavior:OnStartScript": {
@@ -552,6 +564,8 @@
             },
             "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
             "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
+            "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
+            "RandomWalkBehavior:ResetStartingPositionOnStartup": 0,
             "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
             "GuardBehavior:Enabled": 1,
             "GuardBehavior:OnStartScript": {
@@ -573,7 +587,8 @@
                 0,
                 0
             ],
-            "GuardBehavior:MinHeadingChangeToTurn": 0
+            "GuardBehavior:MinHeadingChangeToTurn": 0,
+            "GuardBehavior:AimWhenAlert": 1
         },
         "WaitBehavior": {
             "Enabled": 1,
@@ -589,6 +604,7 @@
             "AimPosture": 0,
             "MinimalEnemyDistance": 0,
             "TrackTarget": 0,
+            "TrackTargetNotVisible": 0,
             "Peek": 0,
             "FailOnDamaged": 1,
             "PreventShooting": 0,

@@ -67,6 +67,7 @@
                             "onlyFireAboveMinRangeMultiplier": 0,
                             "aimAtPart": "TORSO",
                             "aimAtClosestPart": 0,
+                            "lockAimOnFullCharge": 0,
                             "firingPreferences": {
                                 "firingType": "FT_NORMAL",
                                 "burstTime": [
@@ -146,7 +147,7 @@
                             "LocalPosition": [
                                 0,
                                 0,
-                                1.7
+                                2.15
                             ],
                             "LocalRotation": [
                                 0,
@@ -165,7 +166,7 @@
                             "LocalPosition": [
                                 0,
                                 0,
-                                1.7
+                                2.15
                             ],
                             "LocalRotation": [
                                 0,
@@ -246,9 +247,9 @@
                     "AttackData": {
                         "UseNewFormat": 0,
                         "Type": "DT_PHYSICAL",
-                        "DT_IMPACT": 0.3333,
-                        "DT_PUNCTURE": 0.333333,
-                        "DT_SLASH": 0.333367,
+                        "DT_IMPACT": 0,
+                        "DT_PUNCTURE": 0.25,
+                        "DT_SLASH": 0.75,
                         "Amount": 300,
                         "ProcChance": 0,
                         "ForcedProcs": [],
@@ -479,46 +480,32 @@
         "OwnerSetScript": {
             "Script": "/Lotus/Powersuits/PowersuitAbilities/LastStand.lua",
             "Function": "ReceivedWeapon",
+            "_beginEffect": "",
             "_activateAnim": "",
-            "_attachFx": [],
-            "_enemyType": "",
-            "_enemyAttachFx": "",
-            "_numEnemiesForMaxDamage": 4,
-            "_selfDamageFx": "",
             "_clawType": "",
-            "_deluxeClawMesh": "",
-            "_primeClawMesh": "",
+            "_clawTypeTag": "ClawDeco",
             "_colorCorrection": "",
             "_endEffect": "",
             "_localSequencer": "",
-            "_deluxeSkin": "",
-            "_rangeDecoType": "",
-            "_invalidEnemies": [],
             "_augmentOneAnim": "",
             "_augmentOneSound": "",
-            "_augmentOneHitSound": ""
+            "_augmentOneHitSound": "",
+            "_reviveFX": ""
         },
         "OnRemovedScript": {
             "Script": "/Lotus/Powersuits/PowersuitAbilities/LastStand.lua",
             "Function": "RemovedWeapon",
+            "_beginEffect": "",
             "_activateAnim": "",
-            "_attachFx": [],
-            "_enemyType": "",
-            "_enemyAttachFx": "",
-            "_numEnemiesForMaxDamage": 4,
-            "_selfDamageFx": "",
             "_clawType": "",
-            "_deluxeClawMesh": "",
-            "_primeClawMesh": "",
+            "_clawTypeTag": "ClawDeco",
             "_colorCorrection": "",
             "_endEffect": "",
             "_localSequencer": "",
-            "_deluxeSkin": "",
-            "_rangeDecoType": "",
-            "_invalidEnemies": [],
             "_augmentOneAnim": "",
             "_augmentOneSound": "",
-            "_augmentOneHitSound": ""
+            "_augmentOneHitSound": "",
+            "_reviveFX": ""
         },
         "LevelUpType": "",
         "BulletAttractorType": "",
@@ -609,7 +596,7 @@
                         1
                     ],
                     "BoneName": "",
-                    "Type": "/Lotus/Fx/Weapons/Melee/Clean/Slams/MeleeSlamMediumFx",
+                    "Type": "/Lotus/Fx/Weapons/Melee/Clean/Slams/ScaledSlam/MeleeSlamScaled",
                     "Chance": 255,
                     "RelativeToBounds": 0,
                     "Attach": 1,
@@ -677,7 +664,7 @@
                         1
                     ],
                     "BoneName": "",
-                    "Type": "/Lotus/Fx/Weapons/Melee/Clean/Channeling/MeleeSlamSuspendMediumFX",
+                    "Type": "/Lotus/Fx/Weapons/Melee/Clean/Slams/ScaledSlam/MeleeSlamSuspendFX",
                     "Chance": 255,
                     "RelativeToBounds": 0,
                     "Attach": 1,
@@ -1217,7 +1204,7 @@
                         1
                     ],
                     "BoneName": "",
-                    "Type": "/Lotus/Fx/Weapons/Melee/Clean/Channeling/MeleeSlamSuspendMediumFX",
+                    "Type": "/Lotus/Fx/Weapons/Melee/Clean/Slams/ScaledSlam/MeleeSlamSuspendFX",
                     "Chance": 255,
                     "RelativeToBounds": 0,
                     "Attach": 1,
@@ -1244,6 +1231,10 @@
                 "VerticalImpulse": 1200,
                 "HorizontalImpulse": 600
             }
+        ],
+        "SlamRadiusPercentageClamps": [
+            0.416667,
+            1.5
         ],
         "ParryDamagePercentBlocked": 1,
         "ParryDamagePercentBlockedPvp": 1,
