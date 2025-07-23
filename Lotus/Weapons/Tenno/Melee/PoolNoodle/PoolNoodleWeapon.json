@@ -77,7 +77,6 @@
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
-                    "SlaveUsesMasterTargets": 0,
                     "ExplicitNpcPerceptionSoundAttenuationRadius": [
                         10,
                         100
@@ -222,12 +221,9 @@
                 "impact:MeleeImpactBehavior": {
                     "AttackData": {
                         "UseNewFormat": 0,
-                        "Type": "DT_PHYSICAL",
-                        "DT_IMPACT": 0.51,
-                        "DT_PUNCTURE": 0.03,
-                        "DT_SLASH": 0.46,
-                        "Amount": 259,
-                        "ProcChance": 0.33,
+                        "Type": "DT_IMPACT",
+                        "Amount": 60,
+                        "ProcChance": 0.05,
                         "ForcedProcs": [],
                         "ForcedDeathProcs": [],
                         "ForcedProcCount": 1,
@@ -277,8 +273,8 @@
                     ],
                     "AltEffectHands": [],
                     "ragdollChance": 0,
-                    "criticalHitChance": 0.17,
-                    "criticalHitDamageMultiplier": 1.9,
+                    "criticalHitChance": 0.15,
+                    "criticalHitDamageMultiplier": 2,
                     "ConsumeAmmoWhenDamageDealt": 0,
                     "AmmoConsumedWhenHitVulnerableTarget": 0,
                     "AmmoConsumedWhenHitInvulnerableTarget": 0,
@@ -303,7 +299,7 @@
                     "HitReqNextTierOperationType": "HTO_ADDITIVE",
                     "InfiniteTimeBetweenHits": 0,
                     "PauseHitTimerWhenHolstered": 0,
-                    "TimeBetweenHits": 5,
+                    "TimeBetweenHits": 30,
                     "MinTimeBetweenHits": 0.1,
                     "TimeUpgrade": "WEAPON_MELEE_COMBO_DURATION_BONUS",
                     "ComboProcData": [],
@@ -349,7 +345,7 @@
                         0,
                         0
                     ],
-                    "fireRate": 60,
+                    "fireRate": 240,
                     "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 1,
                     "ModeSwitchTime": 0,
@@ -447,7 +443,7 @@
                     "SupportGroundThrow": 1,
                     "HasHeavyAttack": 1,
                     "ConsumeComboOnHeavyAttack": 1,
-                    "ChargeDuration": 1,
+                    "ChargeDuration": 0.75,
                     "AfterAerialAttackAimGlideBonusTime": 0,
                     "AimGlideBonusPreventsJumpAndDodge": 0,
                     "AfterAttackCooldown": 0,
@@ -521,7 +517,6 @@
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
-                    "SlaveUsesMasterTargets": 0,
                     "ExplicitNpcPerceptionSoundAttenuationRadius": [
                         10,
                         100
@@ -844,12 +839,10 @@
                 }
             }
         ],
-        "DefaultUpgrades": [
-            "/Lotus/Weapons/Tenno/Melee/MeleeTrees/HammerCmbOneMeleeTree"
-        ],
         "AmmoClipSize": 0,
         "ReticleName": "ReticleFlashMovie",
         "ReticleMovie": "/Lotus/Interface/SpecialReticles/GlaiveReticle.swf",
+        "SupportsXP": 0,
         "LevelUpType": "",
         "BulletAttractorType": "",
         "RequiredLevel": 7,
@@ -903,14 +896,14 @@
         "ArcaneApertureType": "/Lotus/Types/Items/MiscItems/WeaponMeleeArcaneUnlocker",
         "DefaultModTemplate": "/Lotus/Types/ModLists/Melee/HybridBalanced",
         "DefaultModOverrides": {
-            "Stance": "/Lotus/Weapons/Tenno/Melee/MeleeTrees/HammerCmbTwoMeleeTree"
+            "Stance": "/Lotus/Weapons/Tenno/Melee/MeleeTrees/PoolNoodleMeleeTree"
         },
         "MeleeTreeType": "/Lotus/Weapons/Tenno/Melee/MeleeTrees/PoolNoodleMeleeTree",
         "Slams": [
             {
                 "TriggeringAnimEvent": "MeleeSlam",
                 "RadiusMin": 0,
-                "Radius": 9,
+                "Radius": 5,
                 "FallOff": 1,
                 "FallOffMax": 0.5,
                 "CanCrit": 0,
@@ -924,9 +917,7 @@
                     "Type": "DT_IMPACT",
                     "Amount": 25,
                     "ProcChance": 0.1,
-                    "ForcedProcs": [
-                        "PT_KNOCKED_DOWN"
-                    ],
+                    "ForcedProcs": [],
                     "ForcedDeathProcs": [],
                     "ForcedProcCount": 1,
                     "HitType": "DHT_NONE",
@@ -978,7 +969,7 @@
             {
                 "TriggeringAnimEvent": "HeavySlam",
                 "RadiusMin": 0,
-                "Radius": 10,
+                "Radius": 5,
                 "FallOff": 1,
                 "FallOffMax": 0.7,
                 "CanCrit": 0,
@@ -986,15 +977,13 @@
                 "UseImpactBehaviorAttackDataAmount": 1,
                 "UseWeaponProcChance": 1,
                 "UseModifiedRadius": 1,
-                "BaseDamageAttenuation": 5,
+                "BaseDamageAttenuation": 1,
                 "AttackData": {
                     "UseNewFormat": 0,
-                    "Type": "DT_EXPLOSION",
+                    "Type": "DT_IMPACT",
                     "Amount": 50,
                     "ProcChance": 0.1,
-                    "ForcedProcs": [
-                        "PT_LIFT_HIT"
-                    ],
+                    "ForcedProcs": [],
                     "ForcedDeathProcs": [],
                     "ForcedProcCount": 1,
                     "HitType": "DHT_NONE",
@@ -1192,9 +1181,7 @@
                     "Type": "DT_IMPACT",
                     "Amount": 50,
                     "ProcChance": 0.1,
-                    "ForcedProcs": [
-                        "PT_STAGGERED"
-                    ],
+                    "ForcedProcs": [],
                     "ForcedDeathProcs": [],
                     "ForcedProcCount": 1,
                     "HitType": "DHT_NONE",
@@ -1518,7 +1505,7 @@
         ],
         "ParryDamagePercentBlocked": 1,
         "ParryDamagePercentBlockedPvp": 1,
-        "ParryAngle": 50,
+        "ParryAngle": 55,
         "ChannelingReflectAmountPvp": 0.1,
         "EquippedContextsToKeep": [
             "CC_GROUND_HEAVY",
