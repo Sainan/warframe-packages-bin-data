@@ -578,6 +578,7 @@
             "_meleeWeaponType": "",
             "_gunPickupType": "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/NechroTech/NechroTechLongGunPickup",
             "_meleePickupType": "ThanoTechMeleeWeaponPickup",
+            "_meleeSwordPickupType": "",
             "_armourDestroySound": "",
             "_rearWeakSpotFX": "/Lotus/Fx/Gameplay/Thanomech/NechrotechWeakPointBackFX",
             "_restoreLimbHealthOnPickup": 0.5,
@@ -621,21 +622,11 @@
         "ArmourConstant": 0.003333,
         "ArmourResistanceKeyword": "RK_HULKING_ARMOR",
         "UseArmourGroupHealthbars": 1,
-        "ScaleMethod": "DPS_TONEMAP",
         "DamageResistanceCurves": [
             {
-                "DamageResistanceTiers": [
-                    {
-                        "damageUpperLimit": 4000,
-                        "damageResistanceRatio": 0.25
-                    },
-                    {
-                        "damageUpperLimit": 7000,
-                        "damageResistanceRatio": 0.8
-                    }
-                ],
-                "ShotgunCompensation": 0.6,
-                "UseCritScaling": 0,
+                "DamageResistanceTiers": [],
+                "ShotgunCompensation": 1,
+                "UseCritScaling": 1,
                 "CritMultiplierScaling": 1,
                 "UseAsDefault": 1,
                 "HitTypes": [],
@@ -643,8 +634,13 @@
                 "CheckInvalidSubEntityHit": 0
             }
         ],
-        "MaxPeakDamage": 1200,
-        "MaxDamagePerSecond": 8000,
-        "SmoothDPSDecayTime": 3.5
+        "MaxDamagePerSecondHealthPercentLower": 1,
+        "MaxDamagePerSecondHealthPercentUpper": 0.3,
+        "MaxPeakDamageHealthPercentLower": 0.5,
+        "MaxPeakDamageHealthPercentUpper": 0.05,
+        "UpperLevelForMaxDamageScaling": 100,
+        "ScaleCrits": 1,
+        "ScaleAfterCrits": 1,
+        "AfterCritShotgunDPSCompensation": 0.25
     }
 }
