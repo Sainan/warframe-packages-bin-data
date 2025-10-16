@@ -1,0 +1,110 @@
+{
+    "parent": "/Lotus/Types/Enemies/Corpus/Drones/DroneAttackAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "TeshinTestTargetAvatarElectricity"
+        },
+        "NewAdditionalInventory": [],
+        "IgnoredByAiDirector": 1,
+        "SuicideOffNavAndHidden": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/ScriptedBehavior"
+        ],
+        "ScriptedBehavior": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "DefaultReevaluationDelay": 0,
+            "ChildAction:Type": "/EE/Types/Npc/GuardBehavior",
+            "ChildAction:GuardBehavior": {
+                "Enabled": 1,
+                "OnStartScript": {
+                    "Script": ""
+                },
+                "OnDamagedScript": {
+                    "Script": ""
+                },
+                "DefaultReevaluationDelay": 0,
+                "WaitAction:Type": "/EE/Types/Npc/WaitAction",
+                "WaitAction:Enabled": 1,
+                "WaitAction:OnStartScript": {
+                    "Script": ""
+                },
+                "WaitAction:OnDamagedScript": {
+                    "Script": ""
+                },
+                "RandomFacingChange": [
+                    0,
+                    0
+                ],
+                "MinHeadingChangeToTurn": 0,
+                "AimWhenAlert": 1
+            },
+            "StopWhenChildStops": 1,
+            "Script": {
+                "Script": "/Lotus/Scripts/Quests/ModQuest/TeshinTargetDrone.lua",
+                "Function": "MoveDroneToReletivePosition",
+                "_moveToPos": [
+                    0,
+                    2,
+                    0
+                ]
+            },
+            "EvaluateFunctionName": "Evaluate",
+            "ActivateFunctionName": "Activate",
+            "DeactivateFunctionName": "Deactivate",
+            "DoPerFrameUpdate": 0,
+            "UpdateFunctionName": "Update",
+            "WaitForChildActionsToStop": 0,
+            "SetCriticalBehavior": 0
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerFlight"
+        ],
+        "LocomotionController:DynamicPathFollowerFlight": {
+            "AllowLookAhead": 1,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 1,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "ForceFaceForwardWhenInactive": 1,
+            "PreferedDistAboveNav": [
+                8,
+                12
+            ],
+            "MoveHeightOffset": 0,
+            "DistanceToDisregardTurning": 1,
+            "DistanceToSlow": 0,
+            "MinimumSlowedSpeed": 8,
+            "MinimumSpeed": 0,
+            "RecoverySpeedPct": 0.6,
+            "CorrectHeightOnIdle": 0,
+            "AirplaneControls": 0,
+            "DesiredAngleRangeForBank": [
+                0,
+                0
+            ],
+            "BackUpForRecovery": 0,
+            "CanMoveWithoutPath": 1
+        },
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 999,
+            "useBoxAvoidance": 1,
+            "avoidanceRadius": 1,
+            "dangerRadius": 3.5,
+            "avoidanceFactor": 0
+        }
+    }
+}

@@ -57,8 +57,8 @@
             }
         ],
         "DamageMultiplier": 0.8,
-        "SelfDamageMultiplier": 0,
         "RejectSelfDamage": 1,
+        "SelfDamageMultiplier": 0,
         "DamageEffects": [
             {
                 "damageType": "DT_ELECTRICITY",
@@ -144,15 +144,21 @@
         },
         "DeathSounds": [
             {
+                "HitFilter": "DSHF_HIT_MATCH",
                 "HitType": "DHT_TRACE",
+                "FinisherFilter": "DSFF_ANY",
                 "Sound": "/Lotus/Sounds/Weapons/BulletImpacts/DeathshotDefault/DeathshotDefault"
             },
             {
+                "HitFilter": "DSHF_HIT_MATCH",
                 "HitType": "DHT_PROJECTILE",
+                "FinisherFilter": "DSFF_ANY",
                 "Sound": "/Lotus/Sounds/Weapons/BulletImpacts/DeathshotDefault/DeathshotDefault"
             },
             {
+                "HitFilter": "DSHF_HIT_MATCH",
                 "HitType": "DHT_MELEE",
+                "FinisherFilter": "DSFF_ANY",
                 "Sound": "/Lotus/Sounds/Weapons/BulletImpacts/DeathshotDefault/DeathshotDefaultMelee"
             }
         ],
@@ -214,7 +220,8 @@
                 "hitPart": "ANY_PART",
                 "hitType": "DHT_NONE",
                 "damageSourceObjectType": "",
-                "multiplier": 0.5
+                "multiplier": 0.5,
+                "showInHUD": 0
             }
         ],
         "ShieldAuraAutoChild": {
@@ -314,6 +321,7 @@
                 ]
             }
         },
+        "ScaleMethod": "DPS_TONEMAP_FIXED",
         "DamageResistanceCurves": [
             {
                 "DamageResistanceTiers": [
@@ -342,7 +350,7 @@
                         "damageResistanceRatio": 0.9
                     }
                 ],
-                "ShotgunCompensation": 0.5,
+                "ShotgunCompensation": 0.25,
                 "UseCritScaling": 1,
                 "CritMultiplierScaling": 1,
                 "UseAsDefault": 1,
@@ -350,6 +358,14 @@
                 "HitPart": "ANY_PART",
                 "CheckInvalidSubEntityHit": 0
             }
-        ]
+        ],
+        "MaxDamagePerSecondHealthPercentLower": 1,
+        "MaxDamagePerSecondHealthPercentUpper": 0.3,
+        "MaxPeakDamageHealthPercentLower": 0.5,
+        "MaxPeakDamageHealthPercentUpper": 0.05,
+        "UpperLevelForMaxDamageScaling": 100,
+        "ScaleCrits": 1,
+        "ScaleAfterCrits": 1,
+        "AfterCritShotgunDPSCompensation": 0.25
     }
 }

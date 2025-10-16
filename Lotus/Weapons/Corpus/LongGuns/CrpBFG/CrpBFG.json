@@ -67,6 +67,7 @@
             -0.707107,
             0
         ],
+        "NotifyAttachmentState": 1,
         "Behaviors": [
             {
                 "fire:Type": "/Lotus/Types/Weapon/RadialOnMissTraceFireBehavior",
@@ -90,6 +91,7 @@
                             "onlyFireAboveMinRangeMultiplier": 0,
                             "aimAtPart": "TORSO",
                             "aimAtClosestPart": 0,
+                            "lockAimOnFullCharge": 0,
                             "firingPreferences": {
                                 "firingType": "FT_CHARGED",
                                 "burstTime": [
@@ -120,6 +122,7 @@
                         "hitSpreadMultiplier": 0
                     },
                     "IgnoreFireIterations": 0,
+                    "IgnoreOwner": 1,
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
@@ -149,7 +152,8 @@
                         "LockOnPart": "ANY_PART",
                         "LockOnDistanceWeighting": 0.1,
                         "LockOnAngleWeighting": 1,
-                        "LockOnIgnoreEndPointTarget": 0
+                        "LockOnIgnoreEndPointTarget": 0,
+                        "LockOnIgnoreTags": []
                     },
                     "HIP_FIRE_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/DefaultAccuracyInfo",
                     "AIMED_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/DefaultAccuracyInfo",
@@ -182,6 +186,7 @@
                     "PunchthroughIgnoresAvatars": 0,
                     "RicochetChance": 0,
                     "RicochetRange": 15,
+                    "OnlyHitEnitiesOnce": 1,
                     "ForceCameraAimForLocalPlayer": 1,
                     "AimTranslationOffset": [
                         0,
@@ -216,6 +221,7 @@
                     "MaxTraceDistanceTime": 0.1,
                     "RetractTime": 0.2,
                     "AttachToWeapon": 1,
+                    "UseWeaponAttachmentFirePos": 0,
                     "AttachToTarget": 0,
                     "MultiBeam": 1,
                     "BeamChildren": [
@@ -310,6 +316,7 @@
                             "PT_BIG_STAGGER"
                         ],
                         "ForcedDeathProcs": [],
+                        "ForcedProcCount": 1,
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
                     },
@@ -338,6 +345,7 @@
                     ],
                     "minImpulseFallOff": 1,
                     "applyPushVelocity": 0,
+                    "applyPushVelocityOnlyToBlockingTarget": 0,
                     "pushMagnitude": [
                         0.5,
                         1
@@ -363,14 +371,17 @@
                     "strength": 0,
                     "radius": 0,
                     "flash": 0,
+                    "OnHitScriptEnabled": 1,
                     "OnHitScript": {
                         "Script": ""
                     },
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
                     "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0,
                     "ApplyRadialDamageOnMiss": 1,
                     "ApplyRadialDamageOnHit": 1,
+                    "MultiShotBuffsRadialDamage": 0,
                     "RadialDamage": {
                         "baseAmount": 200,
                         "baseProcChance": 0.2,
@@ -396,9 +407,11 @@
                             "DT_ENERGY_DRAIN": 0,
                             "DT_FINISHER": 0
                         },
+                        "radiusMin": 0,
                         "radius": 6,
                         "ignoreSource": 1,
                         "fallOff": 0.6,
+                        "fallOffMax": 0,
                         "checkForCover": 1,
                         "hitAirborneTargets": 1,
                         "staticCoverOnly": 0,
@@ -420,7 +433,8 @@
                         "selfAOEMultiplier": [
                             0.25,
                             0.75
-                        ]
+                        ],
+                        "friendlyFire": 0
                     },
                     "PvpRadialDamage": {
                         "baseAmount": 0,
@@ -447,9 +461,11 @@
                             "DT_ENERGY_DRAIN": 0,
                             "DT_FINISHER": 0
                         },
+                        "radiusMin": 0,
                         "radius": 0,
                         "ignoreSource": 1,
                         "fallOff": 1,
+                        "fallOffMax": 0,
                         "checkForCover": 1,
                         "hitAirborneTargets": 1,
                         "staticCoverOnly": 0,
@@ -467,7 +483,8 @@
                         "selfAOEMultiplier": [
                             0.25,
                             0.75
-                        ]
+                        ],
+                        "friendlyFire": 0
                     },
                     "RadialDamageEffects": [
                         "/Lotus/Fx/Weapons/Corpus/Bfg/CrpBFGYouMissedExplosion"
@@ -482,6 +499,7 @@
                         0
                     ],
                     "fireRate": 60,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 1,
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
@@ -489,6 +507,8 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -503,8 +523,11 @@
                     "CanChargeWhileRunning": 1,
                     "CanFireWhileInAir": 1,
                     "PreventRunWhileRecharging": 0,
+                    "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
+                    "NeedsLockOnTargets": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "/Lotus/Language/Menu/Loadout_TriggerCharge",
                     "BehaviorTag": "",
@@ -512,14 +535,19 @@
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
                     "OnNewProjectileScript": {
                         "Script": ""
                     },
+                    "IsAutomatic": 0,
+                    "AccessibilityTrigger": 1,
                     "ClipSizeAffectsChargeTime": 0,
                     "ChargeTime": 2,
                     "MinChargeRatio": 0.4,
@@ -539,8 +567,13 @@
                     "AmmoConsumedPerSecondAtFullCharge": 0,
                     "ReplicateFireStop": 0,
                     "CanInterruptReload": 0,
-                    "IsAutomatic": 0,
                     "ChargeRequireFullClip": 0,
+                    "ChargeCancelledScript": {
+                        "Script": ""
+                    },
+                    "FullyChargedScript": {
+                        "Script": ""
+                    },
                     "BeamChild": {
                         "LocalPosition": [
                             0,
@@ -555,28 +588,6 @@
                         ],
                         "BoneName": "",
                         "Type": "/Lotus/Fx/Weapons/Corpus/Bfg/BfgBeamCharging",
-                        "Chance": 255,
-                        "RelativeToBounds": 0,
-                        "Attach": 1,
-                        "DestroyWithOwner": 1,
-                        "DestroyParentOnDeath": 0,
-                        "FadeOutOnDestruction": 0,
-                        "Scale": 1
-                    },
-                    "EndPointChild": {
-                        "LocalPosition": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "LocalRotation": [
-                            0,
-                            0,
-                            0,
-                            1
-                        ],
-                        "BoneName": "",
-                        "Type": "",
                         "Chance": 255,
                         "RelativeToBounds": 0,
                         "Attach": 1,
@@ -634,6 +645,7 @@
             "_weightModifier": 0.8,
             "_speed": 0.4,
             "_cloakColorMult": 2,
+            "_useRootAvatar": 0,
             "_excludedAvatarTypes": [
                 "/Lotus/Types/Enemies/Sentients/Eidolon/SentientTeralystAvatar"
             ]

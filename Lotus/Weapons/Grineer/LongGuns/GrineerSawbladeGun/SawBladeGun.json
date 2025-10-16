@@ -67,6 +67,7 @@
             0.489067,
             -0.12088
         ],
+        "NotifyAttachmentState": 1,
         "Behaviors": [
             {
                 "fire:Type": "/Lotus/Types/Game/LotusWeaponProjectileFireBehavior",
@@ -90,6 +91,7 @@
                             "onlyFireAboveMinRangeMultiplier": 0,
                             "aimAtPart": "TORSO",
                             "aimAtClosestPart": 0,
+                            "lockAimOnFullCharge": 0,
                             "firingPreferences": {
                                 "firingType": "FT_NORMAL",
                                 "burstTime": [
@@ -120,6 +122,7 @@
                         "hitSpreadMultiplier": 0
                     },
                     "IgnoreFireIterations": 0,
+                    "IgnoreOwner": 1,
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
@@ -149,7 +152,8 @@
                         "LockOnPart": "ANY_PART",
                         "LockOnDistanceWeighting": 0.1,
                         "LockOnAngleWeighting": 1,
-                        "LockOnIgnoreEndPointTarget": 0
+                        "LockOnIgnoreEndPointTarget": 0,
+                        "LockOnIgnoreTags": []
                     },
                     "HIP_FIRE_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/DefaultAccuracyInfo",
                     "AIMED_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/DefaultAccuracyInfo",
@@ -244,6 +248,7 @@
                     "ApplyFlightSpeedToLaunchImpulse": 0,
                     "FallbackAgentTargetting": 1,
                     "MultishotAmmoSpread": 0,
+                    "UseMultishotLineSpread": 0,
                     "ChargedProjectileMinSpeed": -1,
                     "ChargedProjectileMaxSpeed": -1,
                     "ProjectileChargeScale": [
@@ -251,6 +256,7 @@
                         1
                     ],
                     "SetProjectileTargetForLockOn": 0,
+                    "MultiTargetLock": 0,
                     "MultiShotProjectileType": "",
                     "MultiShotChargedProjectileType": "",
                     "PvpProjectileType": "PvPSawBladeProjectileNormal",
@@ -315,6 +321,7 @@
                         "ProcChance": 0.1,
                         "ForcedProcs": [],
                         "ForcedDeathProcs": [],
+                        "ForcedProcCount": 1,
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
                     },
@@ -375,7 +382,8 @@
                     },
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
-                    "IgnoreHeadshotBonusPvp": 0
+                    "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0
                 },
                 "state:Type": "/EE/Types/Game/WeaponChargedStateBehavior",
                 "state:WeaponChargedStateBehavior": {
@@ -385,6 +393,7 @@
                         0
                     ],
                     "fireRate": 150,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 0,
                     "ModeSwitchTime": 1.4,
                     "FullClipModeSwitchTime": 0,
@@ -392,6 +401,8 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -409,6 +420,8 @@
                     "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
+                    "NeedsLockOnTargets": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "/Lotus/Language/Menu/Loadout_TriggerCharge",
                     "BehaviorTag": "",
@@ -416,14 +429,19 @@
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
                     "OnNewProjectileScript": {
                         "Script": ""
                     },
+                    "IsAutomatic": 0,
+                    "AccessibilityTrigger": 1,
                     "ClipSizeAffectsChargeTime": 0,
                     "ChargeTime": 0.75,
                     "MinChargeRatio": 0.033333,
@@ -443,8 +461,13 @@
                     "AmmoConsumedPerSecondAtFullCharge": 0,
                     "ReplicateFireStop": 0,
                     "CanInterruptReload": 0,
-                    "IsAutomatic": 0,
-                    "ChargeRequireFullClip": 0
+                    "ChargeRequireFullClip": 0,
+                    "ChargeCancelledScript": {
+                        "Script": ""
+                    },
+                    "FullyChargedScript": {
+                        "Script": ""
+                    }
                 }
             },
             {
@@ -469,6 +492,7 @@
                             "onlyFireAboveMinRangeMultiplier": 0,
                             "aimAtPart": "TORSO",
                             "aimAtClosestPart": 0,
+                            "lockAimOnFullCharge": 0,
                             "firingPreferences": {
                                 "firingType": "FT_NORMAL",
                                 "burstTime": [
@@ -499,6 +523,7 @@
                         "hitSpreadMultiplier": 0
                     },
                     "IgnoreFireIterations": 0,
+                    "IgnoreOwner": 1,
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
@@ -528,7 +553,8 @@
                         "LockOnPart": "ANY_PART",
                         "LockOnDistanceWeighting": 0.1,
                         "LockOnAngleWeighting": 1,
-                        "LockOnIgnoreEndPointTarget": 0
+                        "LockOnIgnoreEndPointTarget": 0,
+                        "LockOnIgnoreTags": []
                     },
                     "HIP_FIRE_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/Weapon/TnAlchemistShotgunHipAccuracyInfo",
                     "AIMED_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/Weapon/TnAlchemistShotgunAimAccuracyInfo",
@@ -604,6 +630,7 @@
                     "ApplyFlightSpeedToLaunchImpulse": 0,
                     "FallbackAgentTargetting": 1,
                     "MultishotAmmoSpread": 0,
+                    "UseMultishotLineSpread": 0,
                     "ChargedProjectileMinSpeed": -1,
                     "ChargedProjectileMaxSpeed": -1,
                     "ProjectileChargeScale": [
@@ -611,6 +638,7 @@
                         1
                     ],
                     "SetProjectileTargetForLockOn": 0,
+                    "MultiTargetLock": 0,
                     "MultiShotProjectileType": "",
                     "MultiShotChargedProjectileType": "",
                     "PvpProjectileType": "",
@@ -658,6 +686,7 @@
                         "ProcChance": 0.1,
                         "ForcedProcs": [],
                         "ForcedDeathProcs": [],
+                        "ForcedProcCount": 1,
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
                     },
@@ -718,7 +747,8 @@
                     },
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
-                    "IgnoreHeadshotBonusPvp": 0
+                    "IgnoreHeadshotBonusPvp": 0,
+                    "AlwaysOverrideFiringAvatar": 0
                 },
                 "state:Type": "/EE/Types/Game/WeaponAutomaticStateBehavior",
                 "state:WeaponAutomaticStateBehavior": {
@@ -728,6 +758,7 @@
                         0
                     ],
                     "fireRate": 200,
+                    "NeedsPassiveUpdate": 0,
                     "ApplyNumChargesToDamageMultiplier": 0,
                     "ModeSwitchTime": 0.6,
                     "FullClipModeSwitchTime": 0,
@@ -735,6 +766,8 @@
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
+                    "PrefireTime": 0,
+                    "ShareFireRateWithPrefire": 0,
                     "ShouldAutoPreFireToFire": 0,
                     "SkipRefireOnEmpty": 0,
                     "QueueReloadOnEmptyClip": 0,
@@ -752,6 +785,8 @@
                     "PreventRunDuringModeSwitch": 1,
                     "UseReloadTimeBetweenShots": 0,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 0,
+                    "CanInterruptModeSwitch": 0,
+                    "NeedsLockOnTargets": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "/Lotus/Language/Menu/Loadout_TriggerAuto",
                     "BehaviorTag": "/Lotus/Language/Mods/ZarimanRifleAltFireUnlockEvo",
@@ -759,9 +794,12 @@
                     "MaxNumProjectiles": 0,
                     "PvpMaxNumProjectiles": 0,
                     "OverheatStyle": "OS_PLATEAU",
+                    "InstantOverheat": 0,
                     "OverheatTime": 0,
+                    "ReduceOverheatAmount": 0,
                     "OverheatCooldownModifier": 1,
                     "AmmoOverheatSound": "",
+                    "OverheatEndedSound": "",
                     "AmmoOverheatSoundResetThreshold": 0.75,
                     "ReplicateAmmoConsumption": 0,
                     "OnNewProjectileScript": {
@@ -858,7 +896,6 @@
             }
         ],
         "EvolutionReq": "/Lotus/Types/Items/MiscItems/IncarnonAdapters/Primary/MiterIncarnonUnlocker",
-        "EvolvedIcon": "/Lotus/Interface/Icons/StoreIcons/Weapons/IncarnonWeapons/MiterIncarnon.png",
         "Evolutions": [
             {
                 "Challenge": "",
@@ -930,6 +967,7 @@
                 ]
             }
         ],
+        "EvolvedIcon": "/Lotus/Interface/Icons/StoreIcons/Weapons/IncarnonWeapons/MiterIncarnon.png",
         "DefaultModTemplate": "/Lotus/Types/ModLists/Rifle/StatusSlash"
     }
 }

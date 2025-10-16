@@ -1,8 +1,9 @@
 {
-    "parent": "/Lotus/Types/Friendly/Agents/DefenseAvatar",
+    "parent": "/Lotus/Types/Friendly/Agents/BaseDefendableAvatar",
     "data": {
         "Mesh": "/Lotus/Objects/Lasria/Gameplay/SensorCluster/LASxSensorCluster.fbx",
         "LODBias": -2,
+        "IsHighlightEnabled": 0,
         "AutoSimChildren": [
             {
                 "LocalPosition": [
@@ -72,18 +73,52 @@
             }
         ],
         "SetChildrenVisibility": 1,
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
         "Tag": "DefenseAvatar",
-        "ScriptInstance": {
-            "Script": ""
-        },
+        "ReplicaRunScriptInstance": 1,
+        "EyeOffset": [
+            0,
+            0.75,
+            0
+        ],
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "TENNO",
         "LocTag": "/Lotus/Language/1999PvPvE/PvPvEDefenseTargetName",
         "ShortDesc": "/Lotus/Language/1999PvPvE/PvPvEDefenseTargetDec",
-        "MaxHealth": 100,
+        "Icon": "/Lotus/Interface/Icons/Objects/Cryopod.png",
+        "BlockInputInCameraSpot": 1,
         "DefaultThreatLevel": 3,
+        "AnimControllerType": "/Lotus/Types/Friendly/Agents/DefenseAnimTreeController",
+        "CameraControllerType": "/EE/Characters/BoxMan/BoxmanCamera",
         "DamageControllerType": "DefenseDamageController",
+        "InventoryControllerType": "/Lotus/Types/Friendly/Agents/DefenseInventory",
+        "MotionControllerType": "/EE/Characters/BoxMan/BoxmanMotion",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "BoneName": "GAME_C1_HIP1"
+        },
+        "CollisionProxy": {
+            "BoneName": "GAME_C1_HIP1",
+            "Type": "/EE/Types/Physics/FullBodyCollision"
+        },
         "ReviveTime": 60,
         "ReviveHealthPct": 0.5,
+        "ShowMiniMapMarker": 0,
+        "ExcludedFromCodex": 1,
+        "ExcludedFromSimulacrum": 1,
         "NaturalReviveInvulnTime": 10,
-        "CanBeRevived": 0
+        "SpawnInvulnTime": 5,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataImmuneMindPushPullHeal",
+        "CanBeRevived": 0,
+        "DisarmAction": "DA_NONE"
     }
 }

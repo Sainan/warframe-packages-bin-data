@@ -1,0 +1,124 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Guild/Spaceman/CorpusSpacemanNullifierDroneVariant_skel.fbx",
+        "MeshScale": 3,
+        "OverrideMaterial": [
+            "/Lotus/Types/Enemies/NokkoColony/Materials/NokkoDefenseDroneTopMaterial"
+        ],
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    -0.56,
+                    0.05
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_BASE",
+                "Type": "/Lotus/Types/Enemies/NokkoColony/Decorations/NokkoDefenseDroneHeadDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Gameplay/NokkoColony/DroneDefense/NokkoDroneFlyingLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/VenusDefenseDroneHover",
+        "Tag": "VenusDefenseDrone",
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/DroneHover.lua",
+            "Function": "DroneHover",
+            "_hoverSound": "",
+            "_pitchMin": 0.95,
+            "_pitchMax": 1.05,
+            "_boneDirectorInit": "",
+            "_boneOffset": [
+                0,
+                0,
+                0
+            ],
+            "_boneScale": [
+                1,
+                1,
+                1
+            ],
+            "_sequencerForEmissives": "",
+            "_minEmissive": 0.2
+        },
+        "EyeOffset": [
+            0,
+            0.5,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Corpus",
+        "LocTag": "/Lotus/Language/NokkoColony/NokkoDroneDefenseTargetAgent",
+        "LongDesc": "/Lotus/Language/SolarisVenus/VenusDefenseDroneDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Nokko/NokkoDroneDefenseTarget.png",
+        "MaxHealth": 250,
+        "DefaultThreatLevel": 2,
+        "DropTable": "/Lotus/Types/DropTables/CorpusShieldDroneAgentDropTable",
+        "AnimControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/VenusDefenseDroneAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "DamageControllerType": "/Lotus/Types/Enemies/NokkoColony/NokkoDefenseDroneDamageController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/DroneInventoryController",
+        "MotionControllerType": "/Lotus/Types/Enemies/Grineer/GhostTower/GhostMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "BoneName": "GAME_C1_BASE",
+            "Type": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/HitProxies/VenusDefenseDroneFullBody"
+        },
+        "OnPreDeathScript": {
+            "Script": "/Lotus/Scripts/Venus/Encounters/DynamicDroneDefense.lua",
+            "Function": "OnPreDeath",
+            "_disableDroneSound": "",
+            "_containerAgentType": "",
+            "_enableBonus": 1,
+            "_allowAutoEncounters": 1,
+            "_initialSpawns": 0,
+            "_enemyFaction": "Corpus",
+            "_maxKillsOverride": 0,
+            "_droneLevelOverride": 0,
+            "_droneHealthOverride": 0
+        },
+        "ReviveTime": 8,
+        "ReviveInvulnTime": 3,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataImmuneAll",
+        "FactionResistanceKeyword": "RK_CORPUS_FACTION",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HoverDroneReactionAnims"
+    }
+}

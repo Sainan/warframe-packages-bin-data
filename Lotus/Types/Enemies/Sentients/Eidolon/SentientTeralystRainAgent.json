@@ -122,6 +122,7 @@
                         ],
                         "MaxMovementDistance": 100,
                         "AllowRetreat": 1,
+                        "AllowTeleportFromOffScreen": 0,
                         "AllowRun": 0,
                         "AllowChase": 0,
                         "ForceWalkBelowMinIdealRange": 1,
@@ -159,6 +160,8 @@
                         "WeaponSlot": "SLOT_1",
                         "WeaponHand": "MAIN_HAND",
                         "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                        "AttackPhrase": "CHARGE_SCREAM",
+                        "AlwaysPlayAttackPhrase": 0,
                         "PlayPhrase": 0,
                         "Bark": "IDLE",
                         "BarkFilter": "",
@@ -199,10 +202,7 @@
             "AltDestBB": "TeralystEscaping",
             "MoveSpeedThreshold": 0.5,
             "StuckThreshold": 1,
-            "UseVipNav": 1,
-            "WidthRestrictions": [
-                6
-            ]
+            "UseVipNav": 1
         },
         "WaitBehavior": {
             "Enabled": 1,
@@ -218,6 +218,7 @@
             "AimPosture": 0,
             "MinimalEnemyDistance": 0,
             "TrackTarget": 0,
+            "TrackTargetNotVisible": 0,
             "Peek": 0,
             "FailOnDamaged": 0,
             "PreventShooting": 0,
@@ -240,6 +241,7 @@
             "MoveFailureThreshold": 0.9,
             "LockedInPlaceTimeout": 5,
             "KeepPathWhileBlocking": 1,
+            "TurnRateMultiplierOnMoveDirFacing": 1,
             "MinimumMoveDistance": 0.2,
             "MinimumRunDistance": 3,
             "ShortDistanceSpeedMultiplier": 2,
@@ -268,6 +270,8 @@
             "SlopeThrottleMapping": [],
             "EnableViewChange": 1,
             "InitialAngleDiffForTurn": 0,
+            "MaxAngleDiffForTurn": 360,
+            "AngleDiffTolerance": 0,
             "ForceLookTarget": 0,
             "ForcePredictUsingDesiredViewHeading": 0,
             "TransitionDistance": 2,
@@ -287,7 +291,9 @@
                 "moveModifiers": [
                     "/Lotus/Types/Game/VipNavLocomotionModifier"
                 ],
-                "VipNavLocomotionModifier": []
+                "VipNavLocomotionModifier": {
+                    "SupportedVipNavList": []
+                }
             }
         ],
         "LocomotionController:limitToNav": 1,
@@ -297,7 +303,6 @@
             "preferredHeight": 0,
             "nearbyNavSearchRadius": 2.5,
             "offNavToleranceRadius": 0,
-            "shorteningType": "ST_NONE",
             "maxShortenSteps": 0,
             "useAvoidance": 1,
             "disallowedNodeFlags": 321

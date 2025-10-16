@@ -468,12 +468,13 @@
         "Armour": [
             {
                 "Type": "/Lotus/Types/Game/ArmourGroup",
-                "MaxHealth": 300,
+                "MaxHealth": 900,
                 "ScaleHealth": 1,
                 "RemoveProcs": 0,
                 "Strength": 1,
                 "AllowCarryOverDamage": 0,
                 "ProtectedByOverguard": 0,
+                "ProtectedByShields": 1,
                 "PeakDamage": -1,
                 "Part": "ARM_RIGHT",
                 "AttachmentTypes": [],
@@ -523,12 +524,13 @@
             },
             {
                 "Type": "/Lotus/Types/Game/ArmourGroup",
-                "MaxHealth": 300,
+                "MaxHealth": 900,
                 "ScaleHealth": 1,
                 "RemoveProcs": 0,
                 "Strength": 1,
                 "AllowCarryOverDamage": 0,
                 "ProtectedByOverguard": 0,
+                "ProtectedByShields": 1,
                 "PeakDamage": -1,
                 "Part": "ARM_LEFT",
                 "AttachmentTypes": [],
@@ -586,6 +588,7 @@
             "_meleeWeaponType": "",
             "_gunPickupType": "NechroTechLongGunPickup",
             "_meleePickupType": "NechroTechMeleeWeaponPickup",
+            "_meleeSwordPickupType": "",
             "_armourDestroySound": "",
             "_rearWeakSpotFX": "/Lotus/Fx/Gameplay/Thanomech/NechrotechWeakPointBackFX",
             "_restoreLimbHealthOnPickup": 0.5,
@@ -628,7 +631,7 @@
         "ImmuneToArmourReduction": 1,
         "ArmourResistanceKeyword": "RK_HULKING_ARMOR",
         "UseArmourGroupHealthbars": 1,
-        "ScaleMethod": "DPS_TONEMAP",
+        "ScaleMethod": "DPS_TONEMAP_FIXED",
         "DamageResistanceCurves": [
             {
                 "DamageResistanceTiers": [
@@ -650,8 +653,16 @@
                 "CheckInvalidSubEntityHit": 0
             }
         ],
-        "MaxPeakDamage": 1200,
-        "MaxDamagePerSecond": 8000,
-        "SmoothDPSDecayTime": 3.5
+        "MaxPeakDamage": 0,
+        "MaxDamagePerSecond": 0,
+        "SmoothDPSDecayTime": 3,
+        "MaxDamagePerSecondHealthPercentLower": 0.5,
+        "MaxDamagePerSecondHealthPercentUpper": 0.3,
+        "MaxPeakDamageHealthPercentLower": 0.3,
+        "MaxPeakDamageHealthPercentUpper": 0.05,
+        "UpperLevelForMaxDamageScaling": 100,
+        "ScaleCrits": 1,
+        "ScaleAfterCrits": 1,
+        "AfterCritShotgunDPSCompensation": 0.7
     }
 }

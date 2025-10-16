@@ -1,10 +1,11 @@
 {
-    "parent": "DefenseAvatar",
+    "parent": "BaseDefendableAvatar",
     "data": {
         "Mesh": "/Lotus/Objects/Tenno/Props/OxygenPillar/OxygenPillar.fbx",
         "OverrideMaterial": [
             "/Lotus/Objects/Tenno/Props/OxygenPillar/OxygenPillarKuva"
         ],
+        "IsHighlightEnabled": 0,
         "AutoSimChildren": [
             {
                 "LocalPosition": [
@@ -164,10 +165,9 @@
             }
         ],
         "SetChildrenVisibility": 1,
+        "PhysicsBehavior": "/EE/Types/Physics/Kinematic",
         "Tag": "SurvivalLifeSupport",
-        "ScriptInstance": {
-            "Script": ""
-        },
+        "ReplicaRunScriptInstance": 1,
         "SurvivesMigration": 1,
         "EyeOffset": [
             0,
@@ -179,18 +179,26 @@
             2,
             0
         ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "TENNO",
         "LocTag": "/Lotus/Language/Objectives/KuvaTowerName",
         "ShortDesc": "/Lotus/Language/Objectives/KuvaTowerName",
         "Icon": "/Lotus/Interface/Icons/Objects/TennoExcavator.png",
         "MaxHealth": 1500,
+        "BlockInputInCameraSpot": 1,
+        "DefaultThreatLevel": -2,
         "AnimControllerType": "/Lotus/Types/Game/SimpleTurretAnimController",
+        "CameraControllerType": "/EE/Characters/BoxMan/BoxmanCamera",
         "DamageControllerType": "SurvivalKuvaTowerDamageController",
+        "InventoryControllerType": "DefenseInventory",
+        "MotionControllerType": "/EE/Characters/BoxMan/BoxmanMotion",
         "RaycastProxy": {
             "LocalPosition": [
                 0,
                 1.8,
                 0
             ],
+            "BoneName": "GAME_C1_HIP1",
             "Type": "Hitproxy/ExcavatorFullBody"
         },
         "CollisionProxy": {
@@ -199,12 +207,19 @@
                 2,
                 0
             ],
+            "BoneName": "GAME_C1_HIP1",
             "Type": "Hitproxy/ExcavatorCollision"
         },
+        "ShowMiniMapMarker": 0,
         "UINameAttachOffset": [
             0,
             2,
             0
-        ]
+        ],
+        "ExcludedFromCodex": 1,
+        "ExcludedFromSimulacrum": 1,
+        "SpawnInvulnTime": 5,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataImmuneMindPushPullHeal",
+        "DisarmAction": "DA_NONE"
     }
 }

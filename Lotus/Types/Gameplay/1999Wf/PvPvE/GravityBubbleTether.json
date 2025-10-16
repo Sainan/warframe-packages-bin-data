@@ -1,6 +1,7 @@
 {
-    "parent": "/Lotus/Weapons/Tenno/Grenades/PlasmaGrenadeProjectile",
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
     "data": {
+        "UseAmbient": 1,
         "Mesh": "/Lotus/Objects/Guild/Props/CrpOspreyEnergyDiscClosed.fbx",
         "AutoSimChildren": [
             {
@@ -255,38 +256,59 @@
         "DealDamageThroughImpactBehavior": 1,
         "CriticalChance": 0.1,
         "CriticalMultiplier": 2,
-        "ExplosiveAttack": {
-            "Amount": 0
-        },
+        "ForcedSourceProcs": [
+            "PT_BIG_STAGGER",
+            "PT_KNOCKED_DOWN"
+        ],
+        "ExplosionIgnoreCover": 0,
         "DamageRadius": 4,
         "HitEffect": "/Lotus/Sounds/Characters/Corpus/Osprey/MineOsprey/MineProjectile/MineImpactHitEffect",
         "DieEffect": "/Lotus/Fx/Moa/TetherVaccumMine/TetherVaccumMineProjDeath",
         "DieSound": "/Lotus/Sounds/Gameplay/NineteeenNinetyNine/PvPvE/NinetyNinePvPvEBoostGravityWellEnd",
+        "DieEffectOffset": [
+            0.1,
+            0.1,
+            0.1
+        ],
         "IgnoreCollisionsWithSameType": 1,
         "IgnoreTypes": [
             "/EE/Types/Game/Avatar"
         ],
         "Toughness": 1000,
         "MaxLife": 30,
-        "Health": 0,
-        "Embed": 0,
+        "SetLifeOnImpact": 1,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "AngleSpeed": [
+            0.5,
+            2
+        ],
+        "EmbedAttack": {
+            "Type": "DT_FIRE",
+            "Amount": 0
+        },
         "EmbedTime": [
             10,
             10
         ],
-        "EmbedDeathAttack": {
-            "Amount": 0
-        },
         "EmbedDeathEffect": "/Lotus/Fx/Moa/TetherVaccumMine/TetherVaccumMineProjDeath",
+        "KinematicMovement": 1,
         "KinematicPostCollisionsSpeedFactor": 1,
+        "KinematicInitialSpeed": 40,
         "KinematicMaxSpeed": 45,
+        "KinematicGravity": 1,
         "KinematicRestitution": 0.1,
         "KinematicRestitutionParallel": 0.1,
         "KinematicAngleSpeed": [
             30,
             40
         ],
-        "ProjectileReplication": "FULLY_AUTONOMOUS",
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            0,
+            90,
+            0
+        ],
         "OnProjectileStartScript": {
             "Script": "/Lotus/Scripts/WeaponStuff.lua",
             "Function": "grenadeSound",

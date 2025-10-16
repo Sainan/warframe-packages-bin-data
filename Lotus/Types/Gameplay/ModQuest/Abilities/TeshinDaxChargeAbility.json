@@ -1,0 +1,94 @@
+{
+    "parent": "/Lotus/Types/Game/PowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/RhinoChargeAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/RhinoChargeAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/RhinoDash.png",
+        "Script": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Duviri/DuviriDaxChargeAbility.lua",
+            "Function": "ActivateAbility",
+            "_chargeSound": "/Lotus/Sounds/Enemies/Teshin/DojoAbilities/TeshinChargeAbilPreCast",
+            "_castSound": "/Lotus/Sounds/Enemies/Teshin/DojoAbilities/TeshinChargeAbilCast",
+            "_dashFxList": [
+                "/Lotus/Fx/ModQuest/TeshinCharge/TeshinChargeFX",
+                "/Lotus/Fx/Enemies/Duviri/DaxChargeFX",
+                "/Lotus/Fx/Enemies/Duviri/DaxChargeFX",
+                "/Lotus/Fx/Enemies/Duviri/DaxFearChargeTeleportDelay"
+            ],
+            "_windupFxList": [
+                "/Lotus/Fx/Enemies/Duviri/DaxChargeProjFX"
+            ],
+            "_poolHelperList": [
+                "/Lotus/Types/Enemies/Duviri/Dax/DaxFirePoolHelper",
+                "/Lotus/Types/Enemies/Duviri/Dax/DaxFirePoolHelper"
+            ],
+            "_damageTypeList": [
+                "DT_PUNCTURE",
+                "DT_FIRE",
+                "DT_FREEZE",
+                "DT_ELECTRICITY",
+                "DT_RADIANT",
+                "DT_POISON"
+            ],
+            "_extraTypeList": [
+                "",
+                "",
+                "/Lotus/Fx/Enemies/Duviri/DaxSadChargeIceDeco",
+                "/Lotus/Fx/Enemies/Duviri/DaxFearChargeTeleportFX",
+                "/Lotus/Fx/Enemies/Duviri/DaxHappyLifeStealDeco",
+                "/Lotus/Types/Enemies/Duviri/Dax/Weapons/DuviriDaxChargeAbilityEnvyProjectile"
+            ],
+            "_telegraphType": "/Lotus/Fx/ModQuest/TeshinCharge/TeshinChargeTelegraph",
+            "_telegraphBnwType": "/Lotus/Fx/Enemies/Duviri/DaxChargeTelegraphBnW",
+            "_fearTellFX": "/Lotus/Fx/Enemies/Duviri/DaxFearChargeTellDecal",
+            "_pathDamage": 20,
+            "_pathDamageRange": 1.75,
+            "_pathPredictionTime": 0.5,
+            "_damageRate": 0.05,
+            "_hitEffect": "/Lotus/Sounds/Enemies/Teshin/DojoAbilities/TeshinChargeAbilHitEffect",
+            "_ChargeStartAnim": "/Lotus/Animations/Dax/Melee/StingerStart_anim.fbx",
+            "_ChargeAnim": "/Lotus/Animations/Dax/Melee/StingerLoop_anim.fbx",
+            "_ChargeFinishAnim": "/Lotus/Animations/Dax/Melee/StingerEnd_anim.fbx",
+            "_ChargeFearAtkAnim": "/Lotus/Animations/Dax/Melee/VacuumSliceVerticalToIdle_anim.fbx",
+            "_npcMinRange": 8,
+            "_npcMaxRange": 14,
+            "_coordinatedAttackThreshold": 3,
+            "_healthThreshold": 0.9,
+            "_speed": 45,
+            "_maxChargeDist": 20,
+            "_threshold": 0.3,
+            "_useBark": 0,
+            "_bark": "VoiceBox_USING_ABILITY",
+            "_barkFilter": "",
+            "_doAffineNavCheck": 0,
+            "_stopChargeAfterPassingTarget": 1,
+            "_distanceThreshold": 2,
+            "_teamCooldown": 20,
+            "_evaluateDamageThreshold": 0
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "CheckForAbilityInterruption",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Duviri/DuviriAbilityUtility.lua",
+                    "Function": "CheckForAbilityInterruption"
+                }
+            }
+        ],
+        "CooldownDuration": 15,
+        "EnergyRequiredToActivate": 0,
+        "ActivationXP": 0,
+        "TurnToTarget": 1,
+        "VoiceBoxEvents": [
+            {
+                "EventName": "AbilityBark",
+                "Phrase": "USING_ABILITY",
+                "Filter": "",
+                "Chance": 1
+            }
+        ]
+    }
+}

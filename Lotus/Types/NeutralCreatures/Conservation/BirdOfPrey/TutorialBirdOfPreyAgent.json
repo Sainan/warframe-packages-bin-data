@@ -4,6 +4,138 @@
         "AvatarTypes": {
             "STANDARD": "CommonFemaleBirdOfPreyAvatar"
         },
+        "BlackboardBehaviorSelector": {
+            "Actions": [
+                {
+                    "VarName": "Flee",
+                    "Action:Type": "/EE/Types/Npc/GenericBehaviorSelector",
+                    "Action:Enabled": 1,
+                    "Action:OnStartScript": {
+                        "Script": ""
+                    },
+                    "Action:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "Action:DefaultReevaluationDelay": 0,
+                    "Action:Actions": [
+                        "/Lotus/Types/Behaviors/FlyEscapeWhenTooFarBehavior",
+                        "/EE/Types/Npc/FleeFromPerceptionFlyingBehavior"
+                    ],
+                    "Action:FlyEscapeWhenTooFarBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "DistanceFromAllPlayersForEscape": 300,
+                        "MinAgentAgeInSeconds": 10,
+                        "TimeBeforeDisappearing": 0,
+                        "EscapeAngleY": 30,
+                        "AllowedMoveError": 6,
+                        "SpeedMultiplier": 1,
+                        "OnEscapeScript": {
+                            "Script": "/Lotus/Scripts/Eidolon/Encounters/AnimalSpawns.lua",
+                            "Function": "BirdEscape",
+                            "_agentTypes": [],
+                            "_agentWeights": [
+                                1
+                            ],
+                            "_animalNightAvailable": [
+                                1
+                            ],
+                            "_animalDayAvailable": [
+                                1
+                            ],
+                            "_resourceAgentType": "",
+                            "_resourceAgentSpawnChance": 0.2,
+                            "_attackerAgentType": "",
+                            "_animalFaction": "Neutral",
+                            "_spawnOffsetVectorsList": [
+                                [
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            ],
+                            "_patrolHintOrderName": "PatrolTarget",
+                            "_patrolRadiusFromHintPos": 5,
+                            "_birdSpawnLocationBaseType": "",
+                            "_birdSpawnLocationTag": "BirdSpawn",
+                            "_birdSpawnIdlePerchType": "",
+                            "_birdSpawnIdleRoamingType": "",
+                            "_birdSpawnMinCount": 2,
+                            "_birdSpawnMaxCount": 2,
+                            "_randomizeRotation": 0,
+                            "_doDestroyOnEscape": 0,
+                            "_escapeDissolveTime": 1,
+                            "_carrionTypes": [],
+                            "_spawnDynamicBones": [
+                                1
+                            ],
+                            "_dynamicBoneTypes": [],
+                            "_dynamicBoneWeight": [
+                                1
+                            ],
+                            "_numBirdsMin": 3,
+                            "_numBirdsMax": 5,
+                            "_grineerAttackerChance": 0.2,
+                            "_rodentSpawnMinCount": 1,
+                            "_rodentSpawnMaxCount": 3,
+                            "_predatorAgentTypes": [],
+                            "_spawnAnimation": "",
+                            "_spawnCallSound": ""
+                        }
+                    },
+                    "Action:FleeFromPerceptionFlyingBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "PerceptionLevel": "PTL_INVESTIGATE",
+                        "OnlyReactOnParticularFaction": 0,
+                        "Faction": "",
+                        "FleeDirectionRandomness": 0.15,
+                        "SpeedMultiplier": 3,
+                        "FleeContinuationMode": "FCM_FLEE_FOREVER",
+                        "FleePointTag": "",
+                        "DisappearAfterTime": 1,
+                        "TimeForDisappearance": 5,
+                        "DisappearStartTimeBlackboardSymbol": "",
+                        "DisappearMaxTimeBlackboardSymbol": "",
+                        "DisappearOutOfRangeTime": 0,
+                        "AnimActionOnFleeEnd": "",
+                        "SetAwarenessOnFleeEnd": 0,
+                        "NewAlertness": "AW_SLEEPING",
+                        "TimeBeforeFleeing": [
+                            0.1,
+                            0.2
+                        ],
+                        "MaxPerceptionDistance": 160,
+                        "StopRadius": 1.5,
+                        "ComfortableDistance": 0,
+                        "DissolveTime": 3,
+                        "FleeWhenAlert": 1,
+                        "PlayPhrase": 1,
+                        "Bark": "RETREAT",
+                        "FlyingPhysicsBehavior": "",
+                        "DistanceToRun": [
+                            100,
+                            150
+                        ],
+                        "DistanceFromGround": 50,
+                        "DetectCollisionRange": 8
+                    },
+                    "Action:FailOnChildFailure": 0
+                }
+            ]
+        },
         "ViewIdleFov": 360,
         "ViewIdleDistance": 55,
         "ViewFov": 360,

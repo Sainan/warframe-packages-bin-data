@@ -1,6 +1,7 @@
 {
-    "parent": "/Lotus/Weapons/Tenno/Grenades/PlasmaGrenadeProjectile",
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
     "data": {
+        "UseAmbient": 1,
         "Mesh": "/Lotus/Types/Enemies/Corpus/QuadRobot/TrooperCannonRocket.x",
         "MeshScale": 0.5,
         "AutoSimChildren": [
@@ -71,25 +72,59 @@
                 "Scale": 1
             }
         ],
+        "AttackData": {
+            "Type": "DT_EXPLOSION",
+            "Amount": 25
+        },
         "ExplosiveAttack": {
             "Amount": 50
         },
+        "ForcedSourceProcs": [
+            "PT_BIG_STAGGER",
+            "PT_KNOCKED_DOWN"
+        ],
         "ExplosionIgnoreSource": 1,
+        "ExplosionIgnoreCover": 0,
         "ExplodeEffect": "/Lotus/Fx/Enemies/WF1999Lasrian/Tank/LasrianTankPanicStateExplosion",
         "DamageRadius": 4,
-        "HitEffect": "",
         "DieEffect": "LasrianTankMissileGooHelper",
         "DieSound": "/Lotus/Sounds/Enemies/Lasrian/LasrianTank/Abilities/LasrianTankMissileBarragePrjExplosion",
+        "DieEffectOffset": [
+            0.1,
+            0.1,
+            0.1
+        ],
+        "MaxLife": 4,
+        "SetLifeOnImpact": 1,
         "WhizzBySound": "/Lotus/Sounds/Enemies/Lasrian/LasrianTank/Abilities/LasrianTankMissileBarrageWhizzby",
         "WhizzByRadius": 7,
-        "Embed": 0,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "Health": 1,
+        "AngleSpeed": [
+            0.5,
+            2
+        ],
+        "EmbedAttack": {
+            "Type": "DT_FIRE",
+            "Amount": 0
+        },
+        "EmbedDeathAttack": {
+            "Amount": 400
+        },
+        "EmbedDeathEffect": "/Lotus/Fx/Weapons/Grenades/PlasmaGrenadeBurst",
+        "KinematicMovement": 1,
         "KinematicInitialSpeed": 18,
-        "KinematicAngleSpeed": [
+        "KinematicMaxSpeed": 40,
+        "KinematicGravity": 1,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
             0,
+            90,
             0
         ],
-        "OnProjectileStoppedScript": {
-            "Script": ""
-        }
+        "ProjectileReplication": "REPLICATED"
     }
 }
