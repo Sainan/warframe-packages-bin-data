@@ -1,0 +1,127 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "UseAmbient": 1,
+        "Mesh": "/Lotus/Weapons/Tenno/Grenades/TnOrokinGrenade/TnOrokinGrenade.fbx",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/PowersuitAbilities/Odalisk/GrenadeTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "ReplicationOverride": "RO_ALWAYS",
+        "ReplicateCreator": 1,
+        "AttackData": {
+            "Type": "DT_IMPACT",
+            "Amount": 20,
+            "ProcChance": 0
+        },
+        "ExplosiveAttack": {
+            "Type": "DT_PHYSICAL",
+            "DT_IMPACT": 0.333333,
+            "DT_PUNCTURE": 0.333333,
+            "DT_SLASH": 0.333333,
+            "Amount": 5
+        },
+        "ExplosionIgnoreCover": 0,
+        "DamageRadius": 8,
+        "HitEffect": "/Lotus/Fx/Enemies/Tau/Trapper/TrapperGrenadeHitEffect",
+        "DieEffect": "/Lotus/Fx/Enemies/Tau/Trapper/TrapperElementalGrenadeElecExplosion",
+        "DieSound": "/Lotus/Sounds/Enemies/Tau/PrimeGrineer/PrimeTrapper/PrimeGrineerTrapperGrenadeExplosion",
+        "DieEffectOffset": [
+            0.1,
+            0.1,
+            0.1
+        ],
+        "WarningTime": 0.1,
+        "WarningSound": "/Lotus/Sounds/Enemies/Tau/PrimeGrineer/PrimeTrapper/PrimeGrineerTrapperGrenadeWarning",
+        "MaxLife": 4,
+        "SetLifeOnImpact": 1,
+        "WhizzBySound": "/Lotus/Sounds/Enemies/Tau/PrimeGrineer/PrimeTrapper/PrimeGrineerTrapperGrenadeProjBy",
+        "WhizzByRadius": 20,
+        "StopWhizzBySoundWhenStopped": 0,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "Health": 1,
+        "AngleSpeed": [
+            0.5,
+            2
+        ],
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_ELECTRICITY",
+            "Amount": 0
+        },
+        "EmbedTime": [
+            3,
+            3
+        ],
+        "EmbedDeathAttack": {
+            "Type": "DT_ELECTRICITY",
+            "Amount": 5,
+            "ProcChance": 0
+        },
+        "EmbedDeathEffect": "/Lotus/Fx/Enemies/Tau/Trapper/TrapperElementalGrenadeElecExplosion",
+        "ShouldDestroyIfOrphan": 0,
+        "DetachInitialKinematicVelocity": [
+            0,
+            -1,
+            0
+        ],
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 40,
+        "KinematicMaxSpeed": 40,
+        "KinematicGravity": 1,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicAngleSpeed": [
+            15,
+            20
+        ],
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            0,
+            90,
+            0
+        ],
+        "ProjectileReplication": "REPLICATED",
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Tau/OrokinEmpire/GrineerTrapperGrenadeUtility.lua",
+            "Function": "AttachRangeDeco",
+            "_aoeRadius": 6,
+            "_aoeDamage": 20,
+            "_aoeTick": 2,
+            "_aoeLifeTime": 5,
+            "_aoeRangeType": "/Lotus/Fx/Weapons/Grenades/GrenadeRangeDeco",
+            "_aoeEntity": ""
+        },
+        "OnProjectileContactScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Tau/OrokinEmpire/GrineerTrapperGrenadeUtility.lua",
+            "Function": "GrenadeContact",
+            "_aoeRadius": 10,
+            "_aoeDamage": 20,
+            "_aoeTick": 2,
+            "_aoeLifeTime": 5,
+            "_aoeRangeType": "",
+            "_aoeEntity": "TauGrineerTrapperGrenadeAoeEntity"
+        }
+    }
+}

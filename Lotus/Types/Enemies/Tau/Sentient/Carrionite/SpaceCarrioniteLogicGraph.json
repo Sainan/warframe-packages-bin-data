@@ -1,0 +1,453 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 0,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 0,
+                    "posY": -1
+                }
+            },
+            {
+                "key": 1,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 96,
+                    "posY": -72
+                }
+            },
+            {
+                "key": 2,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 148,
+                    "posY": -13
+                }
+            },
+            {
+                "key": 12,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 167,
+                    "posY": 142
+                }
+            },
+            {
+                "key": 13,
+                "value": {
+                    "type": "Condition",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 114,
+                    "posY": 45
+                }
+            },
+            {
+                "key": 14,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 466,
+                    "posY": 357
+                }
+            },
+            {
+                "key": 20,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 588,
+                    "posY": 326
+                }
+            },
+            {
+                "key": 30,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 592,
+                    "posY": 384
+                }
+            },
+            {
+                "key": 31,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 485,
+                    "posY": 2
+                }
+            },
+            {
+                "key": 33,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 645,
+                    "posY": 59
+                }
+            },
+            {
+                "key": 34,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 652,
+                    "posY": -7
+                }
+            },
+            {
+                "key": 36,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 759,
+                    "posY": -222
+                }
+            }
+        ],
+        "NodeProperties": {
+            "0": {
+                "links": []
+            },
+            "1": {
+                "Type": "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "WaitForSpawnAnimationBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 1,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "2": {
+                "Type": "/EE/Types/Npc/BlockingBehavior",
+                "BlockingBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "BlockOnBeingAttached": 0,
+                    "ShouldRemovePerception": 1
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 2,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "12": {
+                "Type": "/EE/Types/Npc/WaitAction",
+                "WaitAction": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    }
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 12,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 5
+                        }
+                    }
+                ]
+            },
+            "13": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/AwarenessCondition",
+                "conditionProperties:notCondition": 0,
+                "conditionProperties:AwarenessLevels": [
+                    "AW_COMBAT"
+                ],
+                "conditionProperties:CheckTargetInsteadOfSelf": 0,
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 13,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "14": {
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 14,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 13,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "20": {
+                "Type": "/Lotus/Types/Behaviors/FlyPatrolBehavior",
+                "FlyPatrolBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "DefaultThrottle": 0.75,
+                    "WaypointRadius": 5,
+                    "AutoAssignClosestPatrol": 0,
+                    "SameZoneOnly": 1,
+                    "CanRunIfHasTarget": 0,
+                    "MovePosture": "WALK",
+                    "SlowDownDistance": 0,
+                    "SpeedMultiplier": 1,
+                    "AutoPatrolRadius": 300,
+                    "BackwardWeight": 3,
+                    "StationaryThreshold": 10
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 20,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 14,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "30": {
+                "Type": "/Lotus/Types/Behaviors/FlyWaitBehavior",
+                "FlyWaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "StopMovingOnEnter": 1,
+                    "NoiseMag": 0.2,
+                    "NoiseWaitPeriod": 1,
+                    "SpeedMultiplier": 0.5
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 30,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 14,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "31": {
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 31,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 13,
+                            "prop": 1
+                        }
+                    }
+                ]
+            },
+            "33": {
+                "Type": "/Lotus/Types/Behaviors/FlyWaitBehavior",
+                "FlyWaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "StopMovingOnEnter": 1,
+                    "NoiseMag": 0.2,
+                    "NoiseWaitPeriod": 1,
+                    "SpeedMultiplier": 0.5
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 33,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 31,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "34": {
+                "Type": "/Lotus/Types/Behaviors/DroneFlyAroundTargetBehavior",
+                "DroneFlyAroundTargetBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "StartingDistance": 100,
+                    "OffsetDistance": 8,
+                    "SpeedBurstModifier": 1,
+                    "VerticalDistance": 4
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 34,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 31,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "36": {
+                "Type": "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "UsePowerSuitAbilitiesBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.25,
+                    "BlockForPowerCompleteType": "BT_NEVER",
+                    "AllowInterruptOfAbility": 0,
+                    "StopFiring": 1,
+                    "StopMovingOnStart": 0,
+                    "ExtraReevaluationDelay": 0,
+                    "ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ActiveAction:Enabled": 1,
+                    "ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "EvaluateAction": 1,
+                    "FaceTarget": 0,
+                    "TurnAccuracyThreshold": 10,
+                    "TurnTimeout": 2,
+                    "AimTimeout": 0.5,
+                    "ValidAbilities": [
+                        0
+                    ],
+                    "MaxProcessPerEval": 0,
+                    "AimAtTarget": 1,
+                    "CheckIfAbilityUnlocked": 0,
+                    "MultipleConcurrentAbilities": 0,
+                    "EvaluateDelayRange": [
+                        0.5,
+                        1
+                    ],
+                    "PreventUsageOnWeaponUse": 0,
+                    "TurnDuringAbility": 1,
+                    "DeactivateAbilitiesOnPredeath": 1,
+                    "ResetEvalTimerOnEnemySpotted": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 36,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 31,
+                            "prop": 2
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 0
+    }
+}

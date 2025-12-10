@@ -146,7 +146,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     },
                     {
                         "reaction": "INVESTIGATE_COMBAT",
@@ -177,7 +180,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     },
                     {
                         "reaction": "BULLET_IMPACT",
@@ -208,7 +214,10 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     },
                     {
                         "reaction": "WHAT_WAS_THAT",
@@ -239,10 +248,22 @@
                             "AlertTeammates": 0,
                             "AwarenessPropagationDistance": 100,
                             "ReportAttackAfterReact": 0
-                        }
+                        },
+                        "forceFaceReaction": 0,
+                        "useTurnToAction": 0,
+                        "chanceToReact": 1
                     }
                 ],
-                "BlockingResponse": 1
+                "BlockingResponse": 1,
+                "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+                "TurnToAction:Enabled": 1,
+                "TurnToAction:OnStartScript": {
+                    "Script": ""
+                },
+                "TurnToAction:OnDamagedScript": {
+                    "Script": ""
+                },
+                "TurnAccuracyThreshold": 15
             },
             "GenericBehaviorSelector": {
                 "Enabled": 1,
@@ -375,7 +396,6 @@
                         "AimWhenIdle": 0,
                         "AimWhenAlert": 1,
                         "PermanentAlert": 0,
-                        "ForceIdleForSinglePointPatrols": 1,
                         "AnimAction": "PatrolIdle",
                         "GenericAnims": [],
                         "MinPlayerDist": [
@@ -435,7 +455,9 @@
                             "Script": ""
                         },
                         "OnlyFindPositionsOnFlightNav": 0,
-                        "MaxPatrolDistanceFromEncounterHint": 0
+                        "MaxPatrolDistanceFromEncounterHint": 0,
+                        "UseStartingPositionAsEncounterPosition": 0,
+                        "ResetStartingPositionOnStartup": 0
                     },
                     "ContinuousMoveToTargetBehavior": {
                         "Enabled": 1,
@@ -519,6 +541,7 @@
             "MoveFailureThreshold": 0,
             "LockedInPlaceTimeout": 5,
             "KeepPathWhileBlocking": 0,
+            "TurnRateMultiplierOnMoveDirFacing": 1,
             "MinimumMoveDistance": 0.1,
             "MinimumRunDistance": 3,
             "ShortDistanceSpeedMultiplier": 2,
@@ -547,6 +570,8 @@
             "SlopeThrottleMapping": [],
             "EnableViewChange": 1,
             "InitialAngleDiffForTurn": 0,
+            "MaxAngleDiffForTurn": 360,
+            "AngleDiffTolerance": 0,
             "ForceLookTarget": 0,
             "ForcePredictUsingDesiredViewHeading": 0,
             "TransitionDistance": 2,

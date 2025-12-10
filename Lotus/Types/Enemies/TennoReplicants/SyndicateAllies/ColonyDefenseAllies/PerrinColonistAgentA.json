@@ -228,6 +228,7 @@
                             3
                         ],
                         "FireBursts": 0,
+                        "ChargeWeapon": 0,
                         "AimWhenPausing": 0,
                         "AimWhenStopping": 0,
                         "DecorativeReloads": 1,
@@ -266,6 +267,7 @@
                         "AimPosture": 0,
                         "MinimalEnemyDistance": 0,
                         "TrackTarget": 0,
+                        "TrackTargetNotVisible": 0,
                         "Peek": 0,
                         "FailOnDamaged": 1,
                         "PreventShooting": 0,
@@ -288,6 +290,12 @@
                         0.8,
                         1.2
                     ],
+                    "MovementLineOfFireScoring": 0,
+                    "DistanceFromTeammates": [
+                        1.5,
+                        100
+                    ],
+                    "MaxNumTeammatesForScoring": 4,
                     "LookAtTarget": 0,
                     "LookHorizRate": 40,
                     "LookVertRate": 20,
@@ -314,6 +322,7 @@
                         2,
                         6
                     ],
+                    "StartRepositionTimerAtDest": 1,
                     "KeepRunningDuringWaitPeriod": 1,
                     "MoveDuringShoot": 1,
                     "CrouchDuringShootChance": 0.25,
@@ -342,7 +351,8 @@
                     "FiringPreferencesOverride": [],
                     "RequireRangedWeapon": 0,
                     "RequireNotForcedMelee": 0,
-                    "UseDefenseVolume": 0
+                    "UseDefenseVolume": 0,
+                    "ShouldConstantlyBarkAttack": 0
                 },
                 "GuardBehavior": {
                     "Enabled": 1,
@@ -365,7 +375,8 @@
                         0,
                         0
                     ],
-                    "MinHeadingChangeToTurn": 0
+                    "MinHeadingChangeToTurn": 0,
+                    "AimWhenAlert": 1
                 },
                 "FailOnChildFailure": 0
             },
@@ -407,7 +418,8 @@
             "reactionsToInvestigate": [],
             "MinAwareness": "AW_ALERT",
             "minimumTargetInterest": "Investigate",
-            "ReportAttackOnDamage": 1
+            "ReportAttackOnDamage": 1,
+            "RestrictToDefenseVolume": 0
         },
         "GuardTactic": {
             "Enabled": 1,
@@ -437,6 +449,7 @@
             "PatrolBehavior:NearDistance": 2,
             "PatrolBehavior:SpeedMultiplier": 1,
             "PatrolBehavior:AlertSpeedMultiplier": 1,
+            "PatrolBehavior:MovementPosture": "WALK",
             "PatrolBehavior:FailOnTargetAcquired": 1,
             "PatrolBehavior:AimWhenIdle": 0,
             "PatrolBehavior:AimWhenAlert": 1,
@@ -451,6 +464,9 @@
             "PatrolBehavior:AutoAssignClosestPatrol": 0,
             "PatrolBehavior:SameZoneOnly": 1,
             "PatrolBehavior:AutoPatrolRadius": 30,
+            "PatrolBehavior:OnCompleteScript": {
+                "Script": ""
+            },
             "RandomWalkBehavior:Type": "/EE/Types/Npc/Action",
             "RandomWalkBehavior:Enabled": 1,
             "RandomWalkBehavior:OnStartScript": {
@@ -480,13 +496,13 @@
                 0,
                 0
             ],
-            "GuardBehavior:MinHeadingChangeToTurn": 0
+            "GuardBehavior:MinHeadingChangeToTurn": 0,
+            "GuardBehavior:AimWhenAlert": 1
         },
         "BaseHitChance": [
             0.8,
             1
         ],
-        "IsCoverUseEnabled": 1,
         "CoverEvaluatorType": "/EE/Types/Npc/AdvancingCoverEvaluator"
     }
 }

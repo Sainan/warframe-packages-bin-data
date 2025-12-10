@@ -1,0 +1,133 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Grineer/TauPrequelGrineer/Marine/TauPrequelGrineerMaleBody_skel.fbx",
+        "AnimationName": "Guild",
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_ROOT",
+                "Type": "/Lotus/Characters/Grineer/TauPrequelGrineer/Marine/TauPrequelGrineerMaleHeadDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWalk",
+        "HeadBone": "GAME_C1_HEAD1",
+        "HeadRotation": [
+            270,
+            0,
+            0
+        ],
+        "UseHeadBoneForEyePosition": 1,
+        "CrouchOffset": [
+            0,
+            1.1,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Orokin Empire",
+        "LocTag": "/Lotus/Language/TauPrequel/TauPrequelFinal/TauGrineerLancerName",
+        "Icon": "/Lotus/Interface/Icons/Npcs/Tau/AnarchTauGrineerLancer.png",
+        "MaxHealth": 125,
+        "VoiceBox": "/Lotus/Sounds/Dialog/Barks/Battle/Tau/PrimeGrineerMale/PrimeGrineerMaleEmpireVoicebox",
+        "DropTable": "/Lotus/Types/DropTables/Tau/TauBaseDropTable",
+        "AgentControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerAgentController",
+        "AnimControllerType": "TauGrineerLancerAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "WallSlideControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerWallSlideController",
+        "DamageControllerType": "TauGrineerLancerDamageController",
+        "InputControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerInputController",
+        "InventoryControllerType": "GrineerLancerInventory",
+        "MotionControllerType": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/GrineerMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "BoneName": "GAME_C1_HIP1",
+            "Type": "/Lotus/Types/Enemies/Grineer/GrineerAvatars/HitProxies/GrineerFullBody"
+        },
+        "OnDeathScript": {
+            "Script": "WeaponPickupFrenzyAbility.lua",
+            "Function": "DropPickup",
+            "_pickupType": "FrenzyPickup",
+            "_frenzyActivateAnim": "",
+            "_pickupWeaponAnim": "",
+            "_enrageEffect": "",
+            "_enrageEffectAura": "",
+            "_enrageSound": "",
+            "_enrageSeqType": "",
+            "_explosionRadius": 5,
+            "_minDistanceToTargetToExplode": 4,
+            "_timeToDetonation": 10,
+            "_ExplosionFX": "/Lotus/Types/Enemies/Tau/GuiltSentient/SentientGuiltBossLaserExplosion",
+            "_explosionFxScale": 1,
+            "_TeamWideCooldown": 12,
+            "_damageBase": 35,
+            "_impulseAmount": 50,
+            "_falloff": 1,
+            "_procType": "PT_RAGDOLL"
+        },
+        "FacialMorphScript": {
+            "Script": "/Lotus/Scripts/NPC/FacialMorph.lua",
+            "Function": "OnMorphChangeRequested",
+            "_autoRemovePainMorph": 1
+        },
+        "FacialMorphHeadAttachmentType": "/Lotus/Characters/Grineer/Marine/GrineerHeadMorphsDeco",
+        "MorphName:ALERT": "Morphs.Alert",
+        "MorphName:RAGE": "Morphs.Rage",
+        "MorphName:FEAR": "Morphs.Fear",
+        "MorphName:DEAD": "Morphs.Dead",
+        "MorphName:SMUG": "Morphs.Smug",
+        "MorphName:PAIN": "Morphs.Pain",
+        "WaterSimChild": {
+            "Type": "/EE/Types/Engine/WaterSimInjectionTrigger"
+        },
+        "WaterSimParts": [
+            {
+                "BoneName": "GAME_L1_LEG3",
+                "PartSize": 0.25,
+                "RippleIntensity": 1,
+                "CheckForBelowSurface": 0
+            },
+            {
+                "BoneName": "GAME_R1_LEG3",
+                "PartSize": 0.25,
+                "RippleIntensity": 1,
+                "CheckForBelowSurface": 0
+            }
+        ],
+        "SoundEvents": [
+            {
+                "EventName": "SFXTauGrineerLancerFrenzyPickup",
+                "Sound": "/Lotus/Sounds/Enemies/Tau/PrimeGrineer/PrimeLancer/TauPrimeGrineerLancerFrenzyFoley",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "ExcludedFromCodex": 1,
+        "FactionResistanceKeyword": "RK_OROKIN_EMPIRE_FACTION",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HumanoidReactionAnims",
+        "DisarmWeapon": "/Lotus/Weapons/Tau/OrokinEmpire/TauTrapperAxe"
+    }
+}

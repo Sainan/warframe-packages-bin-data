@@ -1,0 +1,124 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PlayerPowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/FireBallAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/FireBallAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/EmberFireBall.png",
+        "UniquePowerIdentifier": "CALIBAN_WHIRLWIND",
+        "AdditionalPowerIdentifiers": [
+            "EFFECT_DAMAGE"
+        ],
+        "Script": {
+            "Script": "SentientWhirlwind.lua",
+            "Function": "ActivateAbility",
+            "_activateAnim": "/Lotus/Animations/Tenno/Powers/Caliban/WhirlwindStart_anim.fbx",
+            "_loopAnim": "/Lotus/Animations/Tenno/Powers/Caliban/WhirlwindLoop_anim.fbx",
+            "_deactivateAnim": "/Lotus/Animations/Tenno/Powers/Caliban/WhirlwindEnd_anim.fbx",
+            "_inputFilter": "/Lotus/Powersuits/Sentient/WhirlWindInputFilter",
+            "_castEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlwindCast",
+            "_attachEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlwindAttach",
+            "_rangeDeco": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlWindRangeDeco",
+            "_dashEffect": "/Lotus/Fx/PowersuitAbilities/Caliban/WhirlWindDashAttach",
+            "_impactSound": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindDashImpact",
+            "_impactAoeSound": "",
+            "_impactExplosionType": "/Lotus/Fx/PowersuitAbilities/Caliban/SentientLiftedEnemyExplosion",
+            "_anticipationVfxToAttach": "/Lotus/Fx/Enemies/Tau/Primes/CalibanPrime/WhirlwindAnticipationDeco",
+            "_npcUseOverrideStats": 1,
+            "_isPrimeCouncilHazard": 0,
+            "_anticipationDashSpeed": 10,
+            "_npcOverrideDamage": 1,
+            "_DASH_SPEED": 24,
+            "_baseDamageTickRate": 0.1
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "NotifyImpact",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "SentientWhirlwind.lua",
+                    "Function": "NotifyImpact",
+                    "_activateAnim": "",
+                    "_loopAnim": "",
+                    "_deactivateAnim": "",
+                    "_inputFilter": "",
+                    "_castEffect": "",
+                    "_attachEffect": "",
+                    "_rangeDeco": "",
+                    "_dashEffect": "",
+                    "_impactSound": "",
+                    "_impactAoeSound": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindDashEmpoweredImpact",
+                    "_impactExplosionType": "/Lotus/Fx/PowersuitAbilities/Caliban/SentientLiftedEnemyExplosion",
+                    "_anticipationVfxToAttach": "",
+                    "_npcUseOverrideStats": 0,
+                    "_isPrimeCouncilHazard": 0,
+                    "_anticipationDashSpeed": 10,
+                    "_npcOverrideDamage": 0,
+                    "_DASH_SPEED": 24,
+                    "_baseDamageTickRate": 0.1
+                }
+            },
+            {
+                "tag": "HealOnHit",
+                "executionMode": "EM_HOST",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "SentientWhirlwind.lua",
+                    "Function": "HealOnHit",
+                    "_activateAnim": "",
+                    "_loopAnim": "",
+                    "_deactivateAnim": "",
+                    "_inputFilter": "",
+                    "_castEffect": "",
+                    "_attachEffect": "",
+                    "_rangeDeco": "",
+                    "_dashEffect": "",
+                    "_impactSound": "",
+                    "_impactAoeSound": "",
+                    "_impactExplosionType": "",
+                    "_anticipationVfxToAttach": "",
+                    "_npcUseOverrideStats": 0,
+                    "_isPrimeCouncilHazard": 0,
+                    "_anticipationDashSpeed": 10,
+                    "_npcOverrideDamage": 0,
+                    "_DASH_SPEED": 24,
+                    "_baseDamageTickRate": 0.1
+                }
+            }
+        ],
+        "NpcCooldownDuration": 15,
+        "EnergyRequiredToActivate": 0,
+        "PvpEnergyRequiredToActivate": 0,
+        "AllowOnZipLines": 1,
+        "ActivationXP": 25,
+        "VideoTexture": "/Lotus/Interface/AbilityVideos/EmberPower1_s.bk2",
+        "SoundEvents": [
+            {
+                "EventName": "SFXCalibanWhirlwindCastStart",
+                "Sound": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindCastStart",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCalibanWhirlwindLoopStart",
+                "Sound": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindLoop",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": "SFXCalibanWhirlwindLoopStop"
+            },
+            {
+                "EventName": "SFXCalibanWhirlwindCastStop",
+                "Sound": "/Lotus/Sounds/Warframes/Caliban/CalibanWhirlwindCastStop",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ]
+    }
+}

@@ -1,32 +1,7 @@
 {
-    "parent": "/Lotus/Types/Game/LotusDynamicDecalProjector",
+    "parent": "/EE/Types/Engine/DeferredDecalProjector",
     "data": {
-        "UseLightProbes": 1,
         "DissolveOverride": "MeleeSlamDecalDissolve_d.png",
-        "ScriptInstance": {
-            "Script": "/Lotus/Scripts/Effects/DecalEmissiveFade.lua",
-            "Function": "FadeEmissive",
-            "_emissiveAtten": 60,
-            "_fadeDuration": 0.6,
-            "_lowClamp": 0,
-            "_useAttachmentsColorSlot": 0,
-            "_energyColorA": [
-                255,
-                255,
-                255,
-                255
-            ],
-            "_energyColorB": [
-                255,
-                255,
-                255,
-                255
-            ]
-        },
-        "ReplicaRunScriptInstance": 1,
-        "LifeSpan": 5,
-        "FadeParameter": "",
-        "RequiresTarget": 0,
         "Material": "MeleeSlamDecalEnergyCracksMat",
         "Width": 1.4,
         "Height": 1.4,
@@ -34,7 +9,6 @@
             0.8,
             1.2
         ],
-        "ProjectiveSplat": 0,
         "MaterialFade": [
             {
                 "Parameter": "",
@@ -44,10 +18,31 @@
                     0.02,
                     0.669492
                 ],
+                "FadeCurve": {
+                    "Values": [],
+                    "SplineType": "LINEAR_SPLINE"
+                },
                 "BaseValue": 0,
                 "Delay": 0,
-                "DestroyWhenComplete": 0,
-                "IsDissolve": 1
+                "IsDissolve": 1,
+                "DestroyWhenComplete": 0
+            },
+            {
+                "Parameter": "EmissiveAttenuation",
+                "TimeLength": 3,
+                "Multiplier": 2,
+                "FadeRange": [
+                    0,
+                    0
+                ],
+                "FadeCurve": {
+                    "Values": [],
+                    "SplineType": "LINEAR_SPLINE"
+                },
+                "BaseValue": 0,
+                "Delay": 0,
+                "IsDissolve": 0,
+                "DestroyWhenComplete": 0
             }
         ]
     }

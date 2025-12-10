@@ -1,0 +1,112 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Types/Gameplay/InfestedMicroplanet/Resources/EntratiWisp/EntratiWisp_skel.fbx",
+        "OverrideMaterial": [
+            "/EE/Materials/Hidden"
+        ],
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_ROOT",
+                "Type": "/Lotus/Fx/Enemies/Tau/Marrowtick/MarrowtickCoreDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Tau/SentientMarrowtick/SentientMarrowtickSwarmLoopSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "TauSentientMarrowtickHover",
+        "Tag": "MarrowtickAvatar",
+        "ScriptInstance": {
+            "Script": "/Lotus/Scripts/Tau/Marrowtick.lua",
+            "Function": "Avatar",
+            "_attackingAttach": "",
+            "_damagedEffect": "",
+            "_contextActionType": "/Lotus/Types/Gameplay/Tau/GrappleAction",
+            "_contextActionTag": "TauGrappleAction",
+            "_maxNumActions": 8,
+            "_minSpaceBetweenActions": 7,
+            "_minHeightForGrapple": 8
+        },
+        "EyeOffset": [
+            0,
+            0.5,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Sentient",
+        "LocTag": "/Lotus/Language/TauPrequel/TauPrequelFinal/TauSentientMarrowtickName",
+        "ShortDesc": "/Lotus/Language/TauPrequel/TauPrequelFinal/TauSentientMarrowtickDesc",
+        "MaxHealth": 75,
+        "DropTable": "/Lotus/Types/DropTables/Tau/MarrowtickAmmoDropTable",
+        "AgentControllerType": "/EE/Types/Npc/AgentControllerNoDefaultFinishers",
+        "AnimControllerType": "TauSentientMarrowtickAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "DamageControllerType": "TauSentientMarrowtickDamageController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/DroneInventoryController",
+        "MotionControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/DroneMotionController",
+        "RaycastProxy": {
+            "LocalPosition": [
+                0,
+                0,
+                0
+            ],
+            "Type": "HitProxies/MarrowtickRaycast"
+        },
+        "OnDamageScript": {
+            "Script": "/Lotus/Scripts/Tau/Marrowtick.lua",
+            "Function": "OnDamaged",
+            "_attackingAttach": "",
+            "_damagedEffect": "",
+            "_contextActionType": "/Lotus/Types/Gameplay/Tau/MarrowtickGrappleAction",
+            "_contextActionTag": "TauGrappleAction",
+            "_maxNumActions": 8,
+            "_minSpaceBetweenActions": 7,
+            "_minHeightForGrapple": 8
+        },
+        "KillXPReward": 750,
+        "AiDirEncounterScore": 100,
+        "ExcludedFromCodex": 1,
+        "ExcludedFromSimulacrum": 1,
+        "FactionResistanceKeyword": "RK_OROKIN_EMPIRE_FACTION",
+        "DisarmAction": "DA_DAMAGE_ONLY",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HoverDroneReactionAnims"
+    }
+}

@@ -1,0 +1,292 @@
+{
+    "parent": "/Lotus/Types/Game/LotusAnimTreeController",
+    "data": {
+        "AnimTree": "PalanquinHorseAnimTree.animtree",
+        "DefaultMovementMode": "ATMM_DEFAULT",
+        "BlinkDurationRange": [
+            0.15,
+            0.4
+        ],
+        "BlinkIntervalRange": [
+            2,
+            10
+        ],
+        "DecoupledClmpMaxDistance": 0.2,
+        "ManualInputValues": 1,
+        "MaximumAimDirH": 180,
+        "NeedReadyWeaponToAim": 0,
+        "LookIKFov": 180,
+        "DefaultLookIkHeadingTrackSpeed": 1000,
+        "DefaultLookIkPitchTrackSpeed": 1000,
+        "Actions": [
+            {
+                "Action": "RELOAD",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_RELOAD",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_RELOAD",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "FIRE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "FIRE_ALTERNATE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "MELEE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "MELEE_SWING",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "Jump",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_JUMP",
+                        "Value": "JS_JUMP_START"
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_JUMP",
+                        "Value": "JS_JUMPING"
+                    }
+                ]
+            },
+            {
+                "Action": "IDLE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 0
+                    }
+                ],
+                "Query": []
+            },
+            {
+                "Action": "StartGlide",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ADDITIVE_1",
+                        "Value": 1
+                    },
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ADDITIVE_1",
+                        "Value": 1
+                    },
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ]
+            },
+            {
+                "Action": "StopGlide",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ADDITIVE_1",
+                        "Value": 0
+                    },
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ADDITIVE_1",
+                        "Value": 0
+                    },
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 3
+                    }
+                ]
+            },
+            {
+                "Action": "WingFlap",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ]
+            },
+            {
+                "Action": "MOUNT_ACTION",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 4
+                    }
+                ]
+            }
+        ],
+        "InitialVariableValues": [
+            {
+                "Variable": "IV_AIMING_MASK_CHANGE_RATE",
+                "Value": 4
+            }
+        ],
+        "ScriptEvents": [
+            {
+                "EventName": "DismountRider",
+                "ExecuteScript": {
+                    "Script": "/Lotus/Types/Enemies/Duviri/Mounted/DuviriMountedDaxMiniBoss.lua",
+                    "Function": "Dismount",
+                    "_moodVariant": 1,
+                    "_elementalPoolTypeList": [],
+                    "_phase1Finisher": "",
+                    "_phase2Finisher": "",
+                    "_unattachRider": 0,
+                    "_smokeDecoType": "/Lotus/Fx/PowersuitAbilities/Drifter/DrifterSmokeBombDeco",
+                    "_smokeProjectileType": "/Lotus/Types/Friendly/PlayerControllable/Abilities/DrifterTossProjectile",
+                    "_riderAnimationOnFinisher": ""
+                }
+            }
+        ],
+        "SurfaceSensitiveEffects": [
+            {
+                "AnimEventSymbols": [
+                    "FootstepBackL"
+                ],
+                "RaycasterBoneName": "GAME_L1_LEG6_END",
+                "HitEffect": "/Lotus/Fx/Gameplay/Horse/HorseSteps",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "FootstepBackR"
+                ],
+                "RaycasterBoneName": "GAME_R1_LEG6_END",
+                "HitEffect": "/Lotus/Fx/Gameplay/Horse/HorseSteps",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "FootstepFrontL"
+                ],
+                "RaycasterBoneName": "GAME_L1_ARM7",
+                "HitEffect": "/Lotus/Fx/Gameplay/Horse/HorseSteps",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "FootstepFrontR"
+                ],
+                "RaycasterBoneName": "GAME_R1_ARM7",
+                "HitEffect": "/Lotus/Fx/Gameplay/Horse/HorseSteps",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "FootstepFrontL"
+                ],
+                "RaycasterBoneName": "GAME_L1_ARM7",
+                "HitEffect": "/Lotus/Sounds/Vehicles/Duviri/DuviriHorse/StepsSurfaceKickups/DuviriHorseSurfaceKickupsFront",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "FootstepBackL"
+                ],
+                "RaycasterBoneName": "GAME_R1_LEG6_END",
+                "HitEffect": "/Lotus/Sounds/Vehicles/Duviri/DuviriHorse/StepsSurfaceKickups/DuviriHorseSurfaceKickupsBack",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            }
+        ],
+        "FinisherCtlType": "/Lotus/Types/Player/TennoFinisherController",
+        "CinematicID": "Erstaz",
+        "AlternateVictimCinematicID": "Erstaz",
+        "MinimumAnimWeight": 0,
+        "UseSimpleRotationAdjustment": 1,
+        "UpdateTrajectory": 1,
+        "DesiredTrajectoryType": "/Lotus/Animations/Creatures/ErstazHorse/DesiredTrajectory"
+    }
+}

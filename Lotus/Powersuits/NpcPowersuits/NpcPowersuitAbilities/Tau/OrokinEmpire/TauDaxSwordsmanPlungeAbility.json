@@ -1,0 +1,56 @@
+{
+    "parent": "/Lotus/Types/Game/PowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/RhinoChargeAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/RhinoChargeAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/RhinoDash.png",
+        "UniquePowerIdentifier": "TAU_SWORD_PLUNGE",
+        "Script": {
+            "Script": "TauDaxSwordsmanPlungeAbility.lua",
+            "Function": "ActivateAbility",
+            "_plungeAnim": "/Lotus/Animations/Dax/Melee/GroundStabStart_anim.fbx",
+            "_plungeAnimEvent": "PlungeAttack",
+            "_followupAnim": "/Lotus/Animations/Dax/Melee/GroundStabPlunge_anim.fbx",
+            "_followupAnimEvent": "SecondPlungeAttack",
+            "_teamCooldown": 25,
+            "_castSound": "/Lotus/Sounds/Enemies/Tau/TauDax/Abilities/TauDaxKnight/TauDaxKnightPlungeAbilityCast",
+            "_useBark": 0,
+            "_bark": "VoiceBox_USING_ABILITY",
+            "_barkFilter": "SFXBarkDaxKnightAbility",
+            "_plungeSeqType": "/Lotus/Sounds/Enemies/Tau/TauDax/Abilities/TauDaxKnight/TauDaxKnightPlungeAbilityGroundHitSeq",
+            "_plungeFx": "/Lotus/Fx/Enemies/Tau/Swordsman/SwordsmanPlungeFx",
+            "_followupFx": "/Lotus/Fx/Enemies/Tau/Swordsman/SwordsmanGroundExp",
+            "_plungeShockwave": "/Lotus/Fx/Enemies/Tau/Swordsman/SwordsmanPlungeShockwave",
+            "_damageType": "DT_IMPACT",
+            "_plungeTelegraphFx": "/Lotus/Fx/Enemies/Tau/Swordsman/SwordsmanTelegraph",
+            "_plungeTelegraphBnwFx": "/Lotus/Fx/Enemies/Tau/Swordsman/SwordsmanTelegraphBnW",
+            "_offsetAmount": 0.75,
+            "_range": 8,
+            "_stabAoe": 3,
+            "_stabDamage": 50,
+            "_plungeDamage": 30,
+            "_plungeAoe": 8,
+            "_procType": "PT_STAGGERED",
+            "_AoeTelegraphScaleFactor": 2.5,
+            "_counterDecayDelay": 8,
+            "_damageCounterDecay": 0.04,
+            "_damageCounterPct": 0.025,
+            "_evaluateDamageThreshold": 0
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "CheckForAbilityInterruption",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/Duviri/DuviriAbilityUtility.lua",
+                    "Function": "CheckForAbilityInterruption"
+                }
+            }
+        ],
+        "CooldownDuration": 25,
+        "EnergyRequiredToActivate": 0,
+        "ActivationXP": 0
+    }
+}

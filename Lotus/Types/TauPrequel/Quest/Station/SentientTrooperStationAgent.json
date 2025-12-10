@@ -1,0 +1,34 @@
+{
+    "parent": "/Lotus/Types/Enemies/Sentients/Troopers/SentientBaseTrooperAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SentientTrooperStationAvatar"
+        },
+        "MinLevel": 1,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/EE/Types/Npc/BehaviorParallel"
+        ],
+        "BehaviorParallel": {
+            "GenericBehaviorSelector": {
+                "Actions": [
+                    "/EE/Types/Npc/StormTargetOrderBehavior",
+                    "/EE/Types/Npc/GuardTactic"
+                ],
+                "StormTargetOrderBehavior": {
+                    "AllowTeleportToCatchUp": 0
+                },
+                "GuardTactic": {
+                    "LookAtNearbyTeammates": 0,
+                    "PatrolBehavior:SpeedMultiplier": 0.25,
+                    "PatrolBehavior:FailOnTargetAcquired": 0
+                }
+            }
+        },
+        "LocomotionController:PathingPreferences": {
+            "minHeight": -2
+        }
+    }
+}

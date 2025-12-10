@@ -1,23 +1,32 @@
 {
-    "parent": "/Lotus/Types/Enemies/NewWar/Archons/PNWBorealStruggle",
+    "parent": "/EE/Types/Engine/Finisher",
     "data": {
-        "Style": "FINISHER",
         "IgnoreBlockingAnimCheck": 1,
         "Animation": "/Lotus/Animations/MITW/Oraxia/LungeFinisher_cin.fbx",
-        "OnFinisherEndScript": {
-            "Script": ""
-        },
-        "FinisherMovie": "",
-        "LoopAnimation": "",
-        "SuccessAnimation": "",
-        "FailureAnimation": "",
-        "AttenuateDamageByLevel": 0,
+        "VictimSide": "ANY",
+        "Damage": 0,
+        "Range": [
+            0,
+            12
+        ],
+        "Angle": 360,
+        "CheckCollision": 0,
         "DamagePerSecondAdvanced": {
             "Type": "DT_ENERGY_DRAIN",
-            "Amount": 20
+            "Amount": 20,
+            "ProcChance": 1,
+            "HitType": "DHT_MELEE"
         },
         "DamageAtEvent": {
-            "Amount": 500
+            "Amount": 500,
+            "ProcChance": 0,
+            "ForcedProcs": [
+                "PT_FRAILTY"
+            ],
+            "HitType": "DHT_MELEE"
+        },
+        "DamageAtAttackerEvent": {
+            "ProcChance": 0
         },
         "DamagePctToAttackerForExit": 0.1,
         "StruggleLoopCount": 5,
@@ -25,21 +34,14 @@
         "StruggleExternalDamageMultiplierAttacker": 0.05,
         "StruggleMaxFOV": 1,
         "StruggleMinFOV": 1,
-        "StruggleInputFilter": "",
-        "AcceptedStruggleInputCodes": [],
+        "StruggleAllowSkipEnd": 1,
         "Inputs": [],
-        "AnimMovementMode": "ATMM_ANIMATION_HORIZ_PHYSICS_VERT",
         "AnimateCameraVictim": 0,
         "AnimateCameraAttacker": 0,
-        "SnapCamera": 0,
-        "VictimItemVisibility": {
-            "VictimSetItemVisibility": []
-        },
-        "ForceRelativeSkelAlignment": 0,
-        "ScaleToVictim": 0,
+        "MaxFloorHeightDiff": 5,
+        "AllowDuringCrouch": 1,
+        "AllowDuringJump": 1,
         "DisableScaling": 1,
-        "TeleportToOriginalPositions": 0,
-        "DisableCollision": 0,
         "CameraTransitionTime": 0.5
     }
 }

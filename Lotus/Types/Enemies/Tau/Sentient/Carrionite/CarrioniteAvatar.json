@@ -1,0 +1,161 @@
+{
+    "parent": "/Lotus/Types/Game/LotusNpcAvatar",
+    "data": {
+        "Mesh": "/Lotus/Characters/Sentient/MonolystDrone/SntMonolystDroneA_skel.fbx",
+        "RootMotionChannel": "GAME_C1_ROOT",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    -0.1,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    -0.707107,
+                    0,
+                    0.707107
+                ],
+                "BoneName": "GAME_C1_EYE",
+                "Type": "/Lotus/Fx/Enemies/Tau/Drone/DetectionBeamRoot",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Tau/SearchDrone/SentientSearchDroneSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/Tau/SearchDrone/SentientSearchDroneSpottedAlarmSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "GAME_C1_BODY",
+                "Type": "CarrioniteLight",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "CarrioniteHover",
+        "Tag": "CarrioniteAvatar",
+        "ScriptInstance": {
+            "Script": "/Lotus/Types/Enemies/Narmer/Deacon/DeaconStealthEffects.lua",
+            "Function": "OnSpawn",
+            "_searchlightDecoType": "/Lotus/Fx/Enemies/Tau/Drone/DetectionConeDecoA",
+            "_lightDecoType": "",
+            "_detectedMaterial": "/Lotus/Fx/Quests/NewWar/PartThree/UnumTower/DeaconConeDetectedDecoMat",
+            "_undetectedMaterial": "/Lotus/Fx/Quests/NewWar/PartThree/UnumTower/DeaconConeDecoMat",
+            "_undetectedBeamType": "/Lotus/Fx/Enemies/Tau/Drone/DroneDetectionBeam",
+            "_detectedBeamType": "/Lotus/Fx/Enemies/Tau/Drone/DroneDetectionBeamDetected",
+            "_combatBeamType": "/Lotus/Fx/Enemies/Tau/Drone/DroneDetectionBeamCombat",
+            "_hideBeamsWhenStunned": 0,
+            "_hideMarkerWhenInCombat": 0,
+            "_showLightsWhenInCombat": 1,
+            "_progressMarkerType": "/Lotus/Types/Gameplay/Duviri/Encounters/TownExecution/DetectionMarker",
+            "_progressMarkerOffset": [
+                0,
+                0.5,
+                0
+            ],
+            "_undetectedVocalSound": "",
+            "_combatVocalSound": "",
+            "_detectedSeq": "/Lotus/Sounds/Enemies/Tau/SearchDrone/SentientSearchDroneSpottedAlarmSeq",
+            "_preDetectedSeq": "",
+            "_patrolSeq": "/Lotus/Sounds/Enemies/Tau/SearchDrone/SentientSearchDroneSeq",
+            "_spottedChallengeSymb": "SPOTTED_BY_DEACON",
+            "_setLookTarget": 1
+        },
+        "EyeOffset": [
+            0,
+            0.8,
+            0
+        ],
+        "InputFilter": "/EE/Types/Input/HaydenInputFilter",
+        "Faction": "Sentient",
+        "LocTag": "/Lotus/Language/TauPrequel/TauPrequelFinal/TauSentientCarrioniteName",
+        "ShortDesc": "/Lotus/Language/TauPrequel/TauPrequelFinal/TauSentientCarrioniteDesc",
+        "Icon": "/Lotus/Interface/Icons/Npcs/OspreyShield.png",
+        "MaxHealth": 1,
+        "DefaultThreatLevel": 2,
+        "AgentControllerType": "/EE/Types/Npc/AgentControllerNoDefaultFinishers",
+        "AnimControllerType": "CarrioniteAnimTreeController",
+        "CameraControllerType": "/EE/Types/DefaultAvatar/DefaultCamera",
+        "DamageControllerType": "CarrioniteDamageController",
+        "InventoryControllerType": "/Lotus/Types/Enemies/Corpus/Drones/DroneAvatars/DroneInventoryController",
+        "MotionControllerType": "CarrioniteMotionController",
+        "RaycastProxy": {
+            "Type": "HitProxies/SentientDroneFullBodyCollision"
+        },
+        "OnDeathScript": {
+            "Script": "/Lotus/Scripts/Audio/EnableFirstTagged.lua",
+            "Function": "EnableFirstTagged",
+            "_tag": "SFXTauVesselPain",
+            "_delay": 0
+        },
+        "UINameAttachPart": "TORSO",
+        "UINameAttachOffset": [
+            0,
+            0.8,
+            0
+        ],
+        "FactionResistanceKeyword": "RK_SENTIENT_FACTION",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/HoverDroneReactionAnims"
+    }
+}

@@ -1,0 +1,222 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 20,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 0,
+                    "posY": 9
+                }
+            },
+            {
+                "key": 21,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 108,
+                    "posY": -44
+                }
+            },
+            {
+                "key": 23,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 176,
+                    "posY": 24
+                }
+            },
+            {
+                "key": 25,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 121,
+                    "posY": 92
+                }
+            },
+            {
+                "key": 26,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 255,
+                    "posY": 256
+                }
+            }
+        ],
+        "NodeProperties": {
+            "20": {
+                "links": []
+            },
+            "21": {
+                "Type": "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "WaitForSpawnAnimationBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 21,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 20,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "23": {
+                "Type": "/EE/Types/Npc/BlockingBehavior",
+                "BlockingBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "BlockOnBeingAttached": 0,
+                    "ShouldRemovePerception": 1
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 23,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 20,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "25": {
+                "Type": "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "UsePowerSuitAbilitiesBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.25,
+                    "BlockForPowerCompleteType": "BT_ABILITY_DRIVEN",
+                    "AllowInterruptOfAbility": 0,
+                    "StopFiring": 1,
+                    "StopMovingOnStart": 0,
+                    "ExtraReevaluationDelay": 0,
+                    "ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ActiveAction:Enabled": 1,
+                    "ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "EvaluateAction": 1,
+                    "FaceTarget": 0,
+                    "TurnAccuracyThreshold": 10,
+                    "TurnTimeout": 2,
+                    "AimTimeout": 0.5,
+                    "ValidAbilities": [],
+                    "MaxProcessPerEval": 0,
+                    "AimAtTarget": 0,
+                    "CheckIfAbilityUnlocked": 0,
+                    "MultipleConcurrentAbilities": 0,
+                    "EvaluateDelayRange": [
+                        0.5,
+                        1
+                    ],
+                    "PreventUsageOnWeaponUse": 0,
+                    "TurnDuringAbility": 0,
+                    "DeactivateAbilitiesOnPredeath": 0,
+                    "ResetEvalTimerOnEnemySpotted": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 25,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 20,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "26": {
+                "Type": "/EE/Types/Npc/PatrolBehavior",
+                "PatrolBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "StopRadius": 1,
+                    "NearDistance": 2,
+                    "SpeedMultiplier": 1,
+                    "AlertSpeedMultiplier": 1,
+                    "MovementPosture": "WALK",
+                    "FailOnTargetAcquired": 0,
+                    "AimWhenIdle": 0,
+                    "AimWhenAlert": 0,
+                    "PermanentAlert": 0,
+                    "ForceIdleForSinglePointPatrols": 1,
+                    "GenericAnims": [],
+                    "MinPlayerDist": [
+                        0,
+                        0
+                    ],
+                    "MinPlayerFov": 60,
+                    "AutoAssignClosestPatrol": 0,
+                    "SameZoneOnly": 1,
+                    "AutoPatrolRadius": 30,
+                    "OnCompleteScript": {
+                        "Script": ""
+                    }
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 26,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 20,
+                            "prop": 5
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 20
+    }
+}

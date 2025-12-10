@@ -1,0 +1,51 @@
+{
+    "parent": "/Lotus/Types/Enemies/Sentients/Troopers/SentientBaseTrooperAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "SRescueTrooperPrisonerAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/TauPrequel/Quest/AdisAlly/Powersuit/AdisAllyPowerSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "AffectsAiDirIntensity": 0,
+        "NeverPauseByAiDirector": 1,
+        "AllowTeleportedByAiDirector": 0,
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+            "/EE/Types/Npc/BlockingBehavior",
+            "/EE/Types/Npc/InterruptResponseBehavior",
+            "/EE/Types/Npc/BehaviorParallel"
+        ],
+        "BehaviorParallel": {
+            "GenericBehaviorSelector": {
+                "Actions": [
+                    "/EE/Types/Npc/StormTargetOrderBehavior",
+                    "/EE/Types/Npc/GuardTactic"
+                ],
+                "StormTargetOrderBehavior": {
+                    "DesiredPosture": "WALK",
+                    "DesiredPostureOutOfView": "WALK",
+                    "AllowTeleportToCatchUp": 0
+                },
+                "GuardTactic": {
+                    "LookAtNearbyTeammates": 0,
+                    "PatrolBehavior:SpeedMultiplier": 0.26,
+                    "PatrolBehavior:AlertSpeedMultiplier": 0.26,
+                    "PatrolBehavior:FailOnTargetAcquired": 0,
+                    "RandomWalkBehavior:SpeedMultiplier": 0.78,
+                    "RandomWalkBehavior:AlertSpeedMultiplier": 0.78
+                }
+            }
+        },
+        "LocomotionController:PathingPreferences": {
+            "minHeight": -2,
+            "offNavToleranceRadius": 0.5
+        },
+        "CanCloak": 1
+    }
+}

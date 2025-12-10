@@ -1,0 +1,269 @@
+{
+    "parent": "/EE/Types/Engine/AnimTreeController",
+    "data": {
+        "AnimTree": "GulphagorEnemyAnimTree.animtree",
+        "DefaultMovementMode": "ATMM_PHYSICS_DRIVEN",
+        "DefaultMovementModeRemotePlayers": "ATMM_PHYSICS_DRIVEN",
+        "SnapSpeedForCollisions": 2,
+        "Actions": [
+            {
+                "Action": "RELOAD",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_RELOAD",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_RELOAD",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "FIRE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "FIRE_ALTERNATE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_FIRE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "MELEE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "MELEE_SWING",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_MELEE",
+                        "Value": ""
+                    }
+                ]
+            },
+            {
+                "Action": "DodgeJump",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 1
+                    }
+                ]
+            },
+            {
+                "Action": "HackPanel",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 2
+                    }
+                ]
+            },
+            {
+                "Action": "IDLE",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 0
+                    }
+                ],
+                "Query": []
+            },
+            {
+                "Action": "Wall_Jump_Start",
+                "SetToBegin": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 19
+                    }
+                ],
+                "Query": [
+                    {
+                        "Variable": "IV_ACTION",
+                        "Value": 19
+                    }
+                ]
+            }
+        ],
+        "ContextActions": [
+            {
+                "Action": "WALLRUN",
+                "SetToBegin": [],
+                "Query": [
+                    {
+                        "Variable": "IV_MOVE_STYLE",
+                        "Value": "WALLRUN"
+                    }
+                ]
+            }
+        ],
+        "AlwaysUseContextActionNavLinkFlags": 1,
+        "SoundEvents": [
+            {
+                "EventName": "DroneOpen",
+                "Sound": "/Lotus/Sounds/Weapons/Grineer/GrineerDrone/GrineerDroneAlert",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SuicideDroneAlarm",
+                "Sound": "/Lotus/Sounds/Characters/Corpus/Osprey/AttackOsprey/WarningAlarm/OspreyWarningAlarm",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            },
+            {
+                "EventName": "SFXCrpOspreyDodge",
+                "Sound": "/Lotus/Sounds/Characters/Corpus/Osprey/Dodge/CrpOspreyDodge",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ],
+        "SurfaceSensitiveEffects": [
+            {
+                "AnimEventSymbols": [
+                    "StepL"
+                ],
+                "RaycasterBoneName": "GAME_C1_HIP1",
+                "HitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps",
+                "OverridePostures": [
+                    {
+                        "Posture": "RUN",
+                        "OverrideHitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps"
+                    },
+                    {
+                        "Posture": "WALLRUNNING_LEFT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_RIGHT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_UP",
+                        "OverrideHitEffect": ""
+                    }
+                ],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 0,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "StepR"
+                ],
+                "RaycasterBoneName": "GAME_C1_HIP1",
+                "HitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps",
+                "OverridePostures": [
+                    {
+                        "Posture": "RUN",
+                        "OverrideHitEffect": "/Lotus/Fx/SurfaceHitEffects/EnemyFootsteps/GrineerSteps"
+                    },
+                    {
+                        "Posture": "WALLRUNNING_LEFT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_RIGHT",
+                        "OverrideHitEffect": ""
+                    },
+                    {
+                        "Posture": "WALLRUNNING_UP",
+                        "OverrideHitEffect": ""
+                    }
+                ],
+                "ExclusiveFxDuration": 1,
+                "AnimTreeVarsToSet": [
+                    {
+                        "Type": "IV_FOOT_FALL",
+                        "Value": 1,
+                        "Style": "ATVU_NORMAL"
+                    }
+                ]
+            },
+            {
+                "AnimEventSymbols": [
+                    "LandSoft"
+                ],
+                "RaycasterBoneName": "",
+                "HitEffect": "",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            },
+            {
+                "AnimEventSymbols": [
+                    "LandHeavy"
+                ],
+                "RaycasterBoneName": "",
+                "HitEffect": "",
+                "OverridePostures": [],
+                "ExclusiveFxDuration": 0,
+                "AnimTreeVarsToSet": []
+            }
+        ],
+        "CinematicID": "Gulphagor"
+    }
+}

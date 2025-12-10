@@ -1,0 +1,88 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "UseAmbient": 1,
+        "Mesh": "/Lotus/Fx/Common/Sphere1.fbx",
+        "MeshScale": 0.5,
+        "OverrideMaterial": [
+            "/Lotus/Fx/Enemies/Tau/Marrowtick/MarrowtickCoreDecoMat"
+        ],
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Tau/Marrowtick/MonolystMarrowtickProjectileTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Tau/Marrowtick/MarrowticksSpawner",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 1,
+                "FadeOutOnDestruction": 0,
+                "Scale": 0.6
+            }
+        ],
+        "ReplicationOverride": "RO_ALWAYS",
+        "DieEffect": "/Lotus/Fx/Enemies/Tau/Marrowtick/MarrowticksSpawnDecoB",
+        "IgnoreTypes": [
+            "/Lotus/Types/Enemies/Tau/Monolyst/MonolystAvatar"
+        ],
+        "MaxLife": 1.6,
+        "WhizzBySound": "/Lotus/Sounds/Enemies/Tau/SentientMarrowtick/SentientMarrowtickPodIncomingDelayed",
+        "WhizzByRadius": 50,
+        "StopWhizzBySoundWhenStopped": 0,
+        "DetachInitialKinematicVelocity": [
+            0,
+            -1,
+            0
+        ],
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 50,
+        "KinematicMaxSpeed": 50,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicAngleSpeed": [
+            15,
+            20
+        ],
+        "KinematicBulletRaycast": 0,
+        "ProjectileReplication": "REPLICATED",
+        "OnProjectileDeathScript": {
+            "Script": "/Lotus/Scripts/Tau/MonolystMarrowtickProjectile.lua",
+            "Function": "OnProjectileStopped",
+            "_marrowtickAgent": "/Lotus/Types/Enemies/Tau/Sentient/Marrowtick/SpaceSentientMarrowtickAgent",
+            "_podImpactSound": "/Lotus/Sounds/Enemies/Tau/SentientMarrowtick/SentientMarrowtickPodImpact"
+        }
+    }
+}

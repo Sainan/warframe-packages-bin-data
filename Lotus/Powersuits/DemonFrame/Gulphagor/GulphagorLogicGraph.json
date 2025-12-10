@@ -1,0 +1,336 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 0,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 0,
+                    "posY": 17
+                }
+            },
+            {
+                "key": 1,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 116,
+                    "posY": -88
+                }
+            },
+            {
+                "key": 17,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 196,
+                    "posY": -12
+                }
+            },
+            {
+                "key": 18,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 156,
+                    "posY": 88
+                }
+            },
+            {
+                "key": 19,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 588,
+                    "posY": 289
+                }
+            },
+            {
+                "key": 20,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 225,
+                    "posY": 338
+                }
+            }
+        ],
+        "NodeProperties": {
+            "0": {
+                "links": []
+            },
+            "1": {
+                "Type": "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "WaitForSpawnAnimationBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 1,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "17": {
+                "Type": "/EE/Types/Npc/BlockingBehavior",
+                "BlockingBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "BlockOnBeingAttached": 0,
+                    "ShouldRemovePerception": 1
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 17,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "18": {
+                "Type": "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "UsePowerSuitAbilitiesBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.25,
+                    "BlockForPowerCompleteType": "BT_ALWAYS",
+                    "AllowInterruptOfAbility": 0,
+                    "StopFiring": 1,
+                    "StopMovingOnStart": 0,
+                    "ExtraReevaluationDelay": 0,
+                    "ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ActiveAction:Enabled": 1,
+                    "ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "EvaluateAction": 1,
+                    "FaceTarget": 0,
+                    "TurnAccuracyThreshold": 10,
+                    "TurnTimeout": 0,
+                    "AimTimeout": 0,
+                    "ValidAbilities": [],
+                    "MaxProcessPerEval": 0,
+                    "AimAtTarget": 0,
+                    "CheckIfAbilityUnlocked": 0,
+                    "MultipleConcurrentAbilities": 0,
+                    "EvaluateDelayRange": [
+                        0,
+                        0.3
+                    ],
+                    "PreventUsageOnWeaponUse": 0,
+                    "TurnDuringAbility": 0,
+                    "DeactivateAbilitiesOnPredeath": 0,
+                    "ResetEvalTimerOnEnemySpotted": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 18,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "19": {
+                "Type": "/Lotus/Types/Behaviors/LotusFollowBbMoveWithBehavior",
+                "LotusFollowBbMoveWithBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "StealthyAction:Type": "/EE/Types/Npc/Action",
+                    "StealthyAction:Action": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        }
+                    },
+                    "RevealedAction:Type": "/EE/Types/Npc/Action",
+                    "RevealedAction:Action": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        }
+                    },
+                    "GeneratePointsDistance": [
+                        4,
+                        10
+                    ],
+                    "GenerateSpacing": 2,
+                    "UseCameraView": 1,
+                    "BiasTowardsObjective": 0,
+                    "MaxAngleFromObjective": 60,
+                    "MaxObjectiveSearchDepth": 1,
+                    "MaxSearchDistanceFromTarget": 10,
+                    "MinDistanceFromTargetLine": 1,
+                    "RevealedOffset": [
+                        2,
+                        0,
+                        4
+                    ],
+                    "StealthOffset": [
+                        2,
+                        0,
+                        4
+                    ],
+                    "SpecialOffsettingWeapons": [
+                        "/Lotus/Weapons/Tenno/Gear/MiningLaserWeapon",
+                        "/Lotus/Weapons/Tenno/Gear/SpearFishingWeapon"
+                    ],
+                    "SpecialWeaponOffset": [
+                        -2,
+                        0,
+                        -2
+                    ],
+                    "SpecialWeaponLineOfFireThreshold": 25,
+                    "IdealFollowDistanceRange": [
+                        0,
+                        10
+                    ],
+                    "ScoreIdealFollowCurve": {
+                        "m": 1,
+                        "k": -1,
+                        "b": 1,
+                        "c": 0.3,
+                        "logistic": 1
+                    },
+                    "StopRadius": 1,
+                    "FollowRange": 1,
+                    "FollowMoveThreshold": 0,
+                    "RepositionTime": 0,
+                    "RelocateOnTargetRotate": 1,
+                    "FollowRotationThreshold": 0,
+                    "AllowPlayerLookingAtFollower": 0,
+                    "MatchSpeedDistance": 6,
+                    "TargetableWhenStealthy": 0,
+                    "UsePrediction": 0,
+                    "PredictionDist": 10,
+                    "ObjectiveWeight": 0.2,
+                    "InfluenceWeight": 0,
+                    "InfluenceDeltaWeight": 0.5,
+                    "AlwaysUseSimplePos": 1,
+                    "UseFixedPosition": 1,
+                    "PriorityTargetAvatars": [],
+                    "MinFollowBarkInterval": 20,
+                    "MatchCrouchState": 1,
+                    "CrouchInLineOfFireThreshold": 10,
+                    "WaypointTag": "",
+                    "WaypointSearchRadius": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 19,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 20,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "20": {
+                "Type": "/Lotus/Types/Behaviors/LotusFollowBbChooseAvatarBehavior",
+                "LotusFollowBbChooseAvatarBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "Actions": [],
+                    "FollowPairedAgent": 0,
+                    "FollowOrderTarget": "",
+                    "NeverStealth": 0,
+                    "MustHavePlayer": 0,
+                    "FollowOwningAvatar": 1,
+                    "DistanceMeasurement": "DMS_LEADING_PLAYER",
+                    "AlwaysFollowWeaponGiver": 0,
+                    "UseAllyLeader": 0,
+                    "FollowingRefreshTime": 0,
+                    "AttackToStealthTime": 5,
+                    "ChangeWeapons": 0,
+                    "WeaponSlot": "SLOT_2",
+                    "BackupWeaponSlot": "SLOT_1",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_PLAY_EQUIP_ANIM"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 20,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 5
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 0
+    }
+}

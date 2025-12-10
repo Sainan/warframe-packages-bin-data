@@ -1,0 +1,246 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 0,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 32,
+                    "posY": 249
+                }
+            },
+            {
+                "key": 1,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 140,
+                    "posY": 442
+                }
+            },
+            {
+                "key": 3,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 539,
+                    "posY": 54
+                }
+            },
+            {
+                "key": 4,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 521,
+                    "posY": 332
+                }
+            },
+            {
+                "key": 5,
+                "value": {
+                    "type": "Condition",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 156,
+                    "posY": 198
+                }
+            },
+            {
+                "key": 6,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 392,
+                    "posY": 68
+                }
+            },
+            {
+                "key": 7,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 375,
+                    "posY": 334
+                }
+            }
+        ],
+        "NodeProperties": {
+            "0": {
+                "links": []
+            },
+            "1": {
+                "Type": "/EE/Types/Npc/WaitBehavior",
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 1,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "3": {
+                "Type": "/Lotus/Types/Behaviors/TurnToBbEntityBehavior",
+                "TurnToBbEntityBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "BlackboardSymbol": "SENSEI_LOOK_TARGET",
+                    "DesiredFacingAngle": 15,
+                    "FlattenFacingCheck": 1,
+                    "StopMoving": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 3,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 6,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "4": {
+                "Type": "/EE/Types/Npc/MoveToDesiredScriptPositionBehavior",
+                "MoveToDesiredScriptPositionBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "SpeedMultiplier": 1.5,
+                    "StopRadius": 0.5,
+                    "NearDistance": 2,
+                    "FacingThreshold": 10,
+                    "SucceedWhenNearPosition": 0,
+                    "MovePosture": "WALK",
+                    "FacingControl": "MFC_FACE_MOVEDIR",
+                    "ClearDesiredPosOnAwareness": 0,
+                    "TargetAwarenessToClear": "AW_SLEEPING",
+                    "ClearDesiredPosOnSuccess": 1,
+                    "StopMovingOnComplete": 1,
+                    "TryRecover": 1,
+                    "RecoverDist": 10,
+                    "MaxRecoverTime": 10,
+                    "StuckTime": 2,
+                    "MaxFailures": 5,
+                    "AllowFiring": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 4,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 7,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "5": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/BlackboardCondition",
+                "conditionProperties:notCondition": 0,
+                "conditionProperties:BlackboardVar": "SENSEI_CONVERSATION",
+                "conditionProperties:UseAvatarBlackboard": 0,
+                "conditionProperties:Check": "BBCT_IsSet",
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 5,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "6": {
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 6,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 5,
+                            "prop": 1
+                        }
+                    }
+                ]
+            },
+            "7": {
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 7,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 5,
+                            "prop": 2
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 0
+    }
+}

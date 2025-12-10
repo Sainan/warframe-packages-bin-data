@@ -1,0 +1,97 @@
+{
+    "parent": "/Lotus/Types/Enemies/Narmer/Deacon/NarmerDeaconPatrolAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "CoHNarmerDeaconAvatar",
+            "EXIMUS": "CoHNarmerDeaconAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Narmer/Deacon/KahlDeaconPatrolSuit",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "IgnoredByAiDirector": 1,
+        "AffectsAiDirIntensity": 0,
+        "PostureModifierDecorator": {
+            "ChildAction:GenericBehaviorSelector": {
+                "Actions": [
+                    "/EE/Types/Npc/AttackFromTheOpenBehavior",
+                    "/EE/Types/Npc/TacPosIdealDistanceBehavior"
+                ],
+                "AttackFromTheOpenBehavior": {
+                    "MovementSpeedModifier": [
+                        1.5,
+                        2.4
+                    ],
+                    "MovePosture": "RUN"
+                },
+                "TacPosIdealDistanceBehavior": {
+                    "IdealDistance": [
+                        2,
+                        12
+                    ],
+                    "SpeedMultiplier": [
+                        5,
+                        8
+                    ]
+                }
+            }
+        },
+        "CustomResponseBehavior": {
+            "TurnAccuracyThreshold": 25
+        },
+        "TacPosIdealDistanceBehavior": {
+            "DistanceFromSelfRange": [
+                2,
+                10
+            ],
+            "SpeedMultiplier": [
+                2,
+                5
+            ]
+        },
+        "TargetStunnedDecorator": {
+            "ChildAction:GenericBehaviorSelector": {
+                "HoverHeightDecorator": {
+                    "ChildAction:HoverNearTargetBehavior": {
+                        "TargetDistance": [
+                            4,
+                            15
+                        ],
+                        "BoostPosture": "RUN",
+                        "SpeedBoostMultiplier": 5
+                    }
+                }
+            }
+        },
+        "HoverHeightDecorator": {
+            "ChildAction:HoverNearTargetBehavior": {
+                "SpeedBoostMultiplier": 6
+            }
+        },
+        "InvestigateBehavior": {
+            "FastSpeedMultiplier": 2,
+            "MinAwareness": "AW_ALERT"
+        },
+        "LocomotionController:DynamicPathFollowerHover": {
+            "HeightRecoverSpeed": 5
+        },
+        "LocomotionController:PathingPreferences": {
+            "avoidSpeedMultiplier": 2
+        },
+        "ViewIdleFov": 120,
+        "IdleVerticalFov": 40,
+        "ViewIdleDistance": 25,
+        "ViewIdleFovSphereRadius": 10,
+        "TargetLostTime": 25,
+        "TargetLowHealthPercent": 0.65,
+        "ReportTargetRadius": 45,
+        "ReportAwareness": 1,
+        "alertRadiusBounds": [
+            2,
+            5
+        ]
+    }
+}

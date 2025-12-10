@@ -1,0 +1,205 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/PlasmaGrenadeProjectile",
+    "data": {
+        "Mesh": "/Lotus/Fx/Enemies/Mitw/LootboxHeadGeo.fbx",
+        "MeshScale": 1.5,
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Mitw/LootboxSandProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Mitw/MitwRangedProjectileShockwave",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Mitw/OctoSpawnConnectFlare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Explosions/Generic/ExplosionConcussionRippleSmall",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Mitw/LootboxHeadGlowDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicAvatarsWalkThroughIgnoreCamera",
+        "ReplicationOverride": "RO_ALWAYS",
+        "AttackData": {
+            "Amount": 0
+        },
+        "ExplosiveAttack": {
+            "Amount": 0,
+            "ProcChance": 0
+        },
+        "ExplosionIgnoreSource": 1,
+        "DamageRadius": 1.5,
+        "HitEffect": "/Lotus/Sounds/Gameplay/Tau/TauCirclesOfHell/TreasureBox/TauCirclesOfHellTreasureBoxProjImpactHitEffect",
+        "DieEffect": "/Lotus/Fx/Enemies/Mitw/OctoUnearthImpact",
+        "DieSound": "/Lotus/Sounds/Gameplay/Tau/TauCirclesOfHell/TreasureBox/TauCirclesTreasureBoxProjExplosion",
+        "IgnoreCollisionsWithSameType": 1,
+        "IgnoreTypes": [
+            "/EE/Types/Game/Avatar"
+        ],
+        "MaxLife": 8,
+        "Health": 30,
+        "StopOnAvatars": 0,
+        "EmbedAlignToSurface": 0.6,
+        "EmbedTime": [
+            20,
+            20
+        ],
+        "EmbedDeathAttack": {
+            "Amount": 50
+        },
+        "EmbedEffect": "/Lotus/Fx/Enemies/Mitw/LootboxSandImpactFX",
+        "EmbedDeathEffect": "/Lotus/Fx/Enemies/Mitw/LootboxCloneBurst",
+        "HelixSpreadRate": 0,
+        "KinematicInitialSpeed": 10,
+        "KinematicMaxSpeed": 15,
+        "KinematicGravityMultiplier": 0.8,
+        "KinematicAngleSpeed": [
+            0,
+            0
+        ],
+        "KinematicSpinRate": [
+            30,
+            90,
+            0
+        ],
+        "FaceVelocity": 1,
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/WeaponStuff.lua",
+            "Function": "grenadeSound",
+            "_grenadeLaunch": ""
+        },
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/ManInTheWall/TreasureBoxSandPoolAbility.lua",
+            "Function": "OnProjectileStop",
+            "_slowFactor": 0.5,
+            "_sandSlowRange": 6,
+            "_maxThrowRange": 15,
+            "_poolLifeTime": 5,
+            "_showDebugs": 0,
+            "_sandPoolProjectile": "",
+            "_vortexThrowAnimation": "",
+            "_vortexPreviewVFX": "",
+            "_vortexActiveVFX": "/Lotus/Fx/Enemies/Mitw/LootboxSandRangeDeco",
+            "_abilityAttackSound": "",
+            "_vortexLoopSound": "/Lotus/Sounds/Gameplay/Tau/TauCirclesOfHell/TreasureBox/TauCirclesOfHellTreasureBoxSandPoolWindLoop",
+            "_playBark": 1,
+            "_bark": "VoiceBox_USING_ABILITY",
+            "_barkFilter": "MITWBarkTBThrow"
+        },
+        "OnProjectileDeathScript": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/ManInTheWall/TreasureBoxSandPoolAbility.lua",
+            "Function": "OnProjectileDeath",
+            "_slowFactor": 0.8,
+            "_sandSlowRange": 5,
+            "_maxThrowRange": 15,
+            "_poolLifeTime": 5,
+            "_showDebugs": 0,
+            "_sandPoolProjectile": "",
+            "_vortexThrowAnimation": "",
+            "_vortexPreviewVFX": "",
+            "_vortexActiveVFX": "",
+            "_abilityAttackSound": "",
+            "_vortexLoopSound": "",
+            "_playBark": 1,
+            "_bark": "VoiceBox_USING_ABILITY",
+            "_barkFilter": "MITWBarkTBThrow"
+        }
+    }
+}

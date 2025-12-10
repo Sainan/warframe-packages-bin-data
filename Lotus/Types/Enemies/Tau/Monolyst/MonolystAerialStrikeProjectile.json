@@ -1,0 +1,179 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/GrenadeProjectile",
+    "data": {
+        "UseAmbient": 1,
+        "Mesh": "/Lotus/Fx/Common/Sphere.fbx",
+        "MeshScale": 3,
+        "OverrideMaterial": [
+            "/Lotus/Fx/Enemies/Tau/VesselGiant/VesselGiantCinmaticChargeDecoCMat"
+        ],
+        "AttachBone": "mes",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Tau/VesselGiant/MonolystBarrageProjectileDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Tau/VesselGiant/MonolystProjectileTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            }
+        ],
+        "ScriptInstance": {
+            "Script": "SentientProjectiles.lua",
+            "Function": "AerialStrikeProjectile",
+            "_fireGrowDuration": 8,
+            "_fireDuration": 10,
+            "_fireStartingSize": 4,
+            "_fireEndingSize": 10,
+            "_radius": 3,
+            "_maxOffset": 1,
+            "_fireDecoType": "",
+            "_numDecosPerDirection": 2,
+            "_numDirectionsToFan": 5,
+            "_raycastIgnoreTypes": [],
+            "_triggerType": "",
+            "_hostOnly": 0,
+            "_randomHeading": 0,
+            "_gridBeamType": "",
+            "_gridBeamOffset": [
+                0,
+                0,
+                0
+            ],
+            "_timeInAir": 3,
+            "_GiantBossRingFx": "/Lotus/Fx/Enemies/Tau/VesselGiant/SentientGiantBossStompRing",
+            "_telegraphDuration": 3,
+            "_telegraphScaleStart": 10,
+            "_telegraphScaleEnd": 20,
+            "_MonolystType": "MonolystAvatar",
+            "_projectorType": ""
+        },
+        "ReplicaRunScriptInstance": 1,
+        "AttackData": {
+            "Type": "DT_FIRE",
+            "Amount": 0,
+            "ProcChance": 0
+        },
+        "ExplosiveAttack": {
+            "Type": "DT_FIRE",
+            "Amount": 100,
+            "ProcChance": 0
+        },
+        "ExplosionIgnoreCover": 0,
+        "DamageRadius": 13,
+        "DieEffect": "/Lotus/Fx/Enemies/Tau/VesselGiant/MonolystBarrageProjectileImpactSpawner",
+        "DieSound": "/Lotus/Sounds/Enemies/Tau/SentientVessel/Abilities/TauSentientVesselBarrageExplosion",
+        "DieEffectOffset": [
+            0.1,
+            0.1,
+            0.1
+        ],
+        "MaxLife": 20,
+        "WhizzBySound": "/Lotus/Sounds/Enemies/Tau/SentientVessel/Abilities/TauSentientVesselBarrageProjBy",
+        "WhizzByRadius": 50,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "AngleSpeed": [
+            0.5,
+            2
+        ],
+        "Embed": 1,
+        "EmbedAttack": {
+            "Type": "DT_FIRE",
+            "Amount": 90
+        },
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 60,
+        "KinematicMaxSpeed": 60,
+        "KinematicGravity": 1,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicAngleSpeed": [
+            15,
+            100
+        ],
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            0,
+            90,
+            0
+        ],
+        "ProjectileReplication": "REPLICATED",
+        "KinematicIgnoredTypes": [
+            "MonolystAvatar"
+        ],
+        "OnProjectileStoppedScript": {
+            "Script": "SentientProjectiles.lua",
+            "Function": "CreateFire",
+            "_fireGrowDuration": 8,
+            "_fireDuration": 10,
+            "_fireStartingSize": 4,
+            "_fireEndingSize": 10,
+            "_radius": 20,
+            "_maxOffset": 1,
+            "_fireDecoType": "/Lotus/Fx/Enemies/Tau/VesselGiant/MonolystBarrageGroundBurnDeco",
+            "_numDecosPerDirection": 0,
+            "_numDirectionsToFan": 0,
+            "_raycastIgnoreTypes": [
+                "/EE/Types/Game/Avatar",
+                "/EE/Types/Game/PickUp",
+                "/EE/Types/Physics/Ragdoll",
+                "/EE/Types/Engine/HitProxy",
+                "/Lotus/Fx/Enemies/Tau/VesselGiant/MonolystBarrageGroundBurnDeco",
+                "MonolystBarrageProjectile"
+            ],
+            "_triggerType": "MonolystGroundFireDamageTrigger",
+            "_hostOnly": 0,
+            "_randomHeading": 0,
+            "_gridBeamType": "",
+            "_gridBeamOffset": [
+                0,
+                0,
+                0
+            ],
+            "_timeInAir": 10,
+            "_GiantBossRingFx": "",
+            "_telegraphDuration": 4,
+            "_telegraphScaleStart": 10,
+            "_telegraphScaleEnd": 20,
+            "_MonolystType": "",
+            "_projectorType": ""
+        }
+    }
+}

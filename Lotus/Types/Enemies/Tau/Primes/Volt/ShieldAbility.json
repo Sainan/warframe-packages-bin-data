@@ -1,0 +1,181 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PlayerPowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/FireBallAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/FireBallAbilityDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/EmberFireBall.png",
+        "UniquePowerIdentifier": "VOLT_ELECTRIC_SHIELD",
+        "AdditionalPowerIdentifiers": [
+            "EFFECT_BUFF"
+        ],
+        "Script": {
+            "Script": "Shield.lua",
+            "Function": "ActivateAbility",
+            "_shieldDeco": "ShieldPowerDeco",
+            "_activateAnim": "/Lotus/Animations/Tenno/Powers/Volt/Shield_anim.fbx",
+            "_launchSound": "",
+            "_shieldElementType": "",
+            "_actionType": "",
+            "_pickupSound": "",
+            "_dropSound": "",
+            "_shieldExplosionEffect": "",
+            "_hitProxyDestroyEffect": "VoltPrimeBossElectricityTrapExplosionNoLoot",
+            "_knockdownTriggerType": "",
+            "_augmentOneAttachEffect": "",
+            "_grabEffect": "",
+            "_healthThreshold": 1,
+            "_shieldWeakpointHitProxy": "ShieldWeakpointHitProxy",
+            "_shieldDestroySelfBaseDamage": 200,
+            "_shieldDestroyStunTime": 2,
+            "_electricalBonusDamageCap": 1000,
+            "_electricalPctConversion": 0.25
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "RestoreShields",
+                "executionMode": "EM_HOST",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/Shield.lua",
+                    "Function": "AugmentRestoreShields",
+                    "_activateAnim": "",
+                    "_launchSound": "",
+                    "_castBeamType": "",
+                    "_shieldElementType": "",
+                    "_chargedUpEffect": "",
+                    "_chargedUpBeamEffect": "",
+                    "_actionType": "",
+                    "_pickupSound": "",
+                    "_dropSound": "",
+                    "_knockdownTriggerType": "",
+                    "_augmentOneTriggerType": "",
+                    "_augmentPvpTriggerType": "",
+                    "_augmentOneAttachEffect": "",
+                    "_grabEffect": ""
+                }
+            },
+            {
+                "tag": "PickupShield",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "Shield.lua",
+                    "Function": "PickupShield",
+                    "_shieldDeco": "",
+                    "_activateAnim": "",
+                    "_launchSound": "",
+                    "_shieldElementType": "",
+                    "_actionType": "",
+                    "_pickupSound": "",
+                    "_dropSound": "",
+                    "_shieldExplosionEffect": "",
+                    "_hitProxyDestroyEffect": "",
+                    "_knockdownTriggerType": "/Lotus/Powersuits/Volt/ShieldKnockdownTrigger",
+                    "_augmentOneAttachEffect": "/Lotus/Fx/PowersuitAbilities/Volt/ShieldAugmentIndicator",
+                    "_grabEffect": "/Lotus/Fx/PowersuitAbilities/Volt/ShieldGrab",
+                    "_healthThreshold": 0.75,
+                    "_shieldWeakpointHitProxy": "",
+                    "_shieldDestroySelfBaseDamage": 200,
+                    "_shieldDestroyStunTime": 2,
+                    "_electricalBonusDamageCap": 1000,
+                    "_electricalPctConversion": 0.25
+                }
+            },
+            {
+                "tag": "DropShield",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "Shield.lua",
+                    "Function": "DropShield",
+                    "_shieldDeco": "",
+                    "_activateAnim": "",
+                    "_launchSound": "",
+                    "_shieldElementType": "",
+                    "_actionType": "",
+                    "_pickupSound": "",
+                    "_dropSound": "/Lotus/Sounds/Warframes/Volt/VoltShieldDrop",
+                    "_shieldExplosionEffect": "",
+                    "_hitProxyDestroyEffect": "",
+                    "_knockdownTriggerType": "",
+                    "_augmentOneAttachEffect": "",
+                    "_grabEffect": "",
+                    "_healthThreshold": 0.75,
+                    "_shieldWeakpointHitProxy": "",
+                    "_shieldDestroySelfBaseDamage": 200,
+                    "_shieldDestroyStunTime": 2,
+                    "_electricalBonusDamageCap": 1000,
+                    "_electricalPctConversion": 0.25
+                }
+            }
+        ],
+        "AbilityEvents": [
+            {
+                "tag": "ForceDropShield",
+                "eventType": "ET_ON_ABILITY_ACTIVATE",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/Shield.lua",
+                    "Function": "ForceDropShield",
+                    "_activateAnim": "",
+                    "_launchSound": "",
+                    "_castBeamType": "",
+                    "_shieldElementType": "",
+                    "_chargedUpEffect": "",
+                    "_chargedUpBeamEffect": "",
+                    "_actionType": "",
+                    "_pickupSound": "",
+                    "_dropSound": "/Lotus/Sounds/Warframes/Volt/VoltShieldDrop",
+                    "_knockdownTriggerType": "",
+                    "_augmentOneTriggerType": "",
+                    "_augmentPvpTriggerType": "",
+                    "_augmentOneAttachEffect": "",
+                    "_grabEffect": ""
+                }
+            }
+        ],
+        "InputEvents": [
+            {
+                "tag": "TryPickup",
+                "inputCode": "USE",
+                "onDown": 0,
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/PowersuitAbilities/Shield.lua",
+                    "Function": "TryPickup",
+                    "_activateAnim": "",
+                    "_launchSound": "",
+                    "_castBeamType": "",
+                    "_shieldElementType": "",
+                    "_chargedUpEffect": "",
+                    "_chargedUpBeamEffect": "",
+                    "_actionType": "/Lotus/Powersuits/Volt/ShieldAction",
+                    "_pickupSound": "",
+                    "_dropSound": "",
+                    "_knockdownTriggerType": "",
+                    "_augmentOneTriggerType": "",
+                    "_augmentPvpTriggerType": "",
+                    "_augmentOneAttachEffect": "/Lotus/Fx/PowersuitAbilities/Volt/ShieldAugmentIndicator",
+                    "_grabEffect": ""
+                }
+            }
+        ],
+        "CooldownDuration": 30,
+        "EnergyRequiredToActivate": 0,
+        "PvpEnergyRequiredToActivate": 0,
+        "AllowOnZipLines": 1,
+        "ActivationXP": 25,
+        "VideoTexture": "/Lotus/Interface/AbilityVideos/EmberPower1_s.bk2",
+        "SoundEvents": [
+            {
+                "EventName": "VoltShieldCast3D",
+                "Sound": "/Lotus/Sounds/Warframes/Volt/VoltShieldCast3D",
+                "Chance": 1,
+                "Period": 1,
+                "Context": "PEC_ALL",
+                "CancelEventName": ""
+            }
+        ]
+    }
+}

@@ -1,0 +1,674 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 0,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 0,
+                    "posY": 54
+                }
+            },
+            {
+                "key": 1,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 96,
+                    "posY": -129
+                }
+            },
+            {
+                "key": 14,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 121,
+                    "posY": -8
+                }
+            },
+            {
+                "key": 15,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 341,
+                    "posY": 40
+                }
+            },
+            {
+                "key": 16,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 349,
+                    "posY": -31
+                }
+            },
+            {
+                "key": 17,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 120,
+                    "posY": -79
+                }
+            },
+            {
+                "key": 18,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 131,
+                    "posY": 111
+                }
+            },
+            {
+                "key": 19,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 146,
+                    "posY": 167
+                }
+            },
+            {
+                "key": 20,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 148,
+                    "posY": 227
+                }
+            },
+            {
+                "key": 21,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 165,
+                    "posY": 306
+                }
+            },
+            {
+                "key": 22,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 154,
+                    "posY": 368
+                }
+            },
+            {
+                "key": 23,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 156,
+                    "posY": 429
+                }
+            }
+        ],
+        "NodeProperties": {
+            "0": {
+                "links": []
+            },
+            "1": {
+                "Type": "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "WaitForSpawnAnimationBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 1,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "14": {
+                "Type": "/EE/Types/Npc/DroneRecoveryBehavior",
+                "DroneRecoveryBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOffNav": 2,
+                    "ToleranceDistance": 1,
+                    "DisableWhenFlying": 0,
+                    "RerunDelay": 5,
+                    "OffNavBehaviors": [
+                        "/EE/Types/Npc/DodgeJumpBackToNavBehavior",
+                        "/EE/Types/Npc/FlyDescendToNavBehavior"
+                    ],
+                    "DodgeJumpBackToNavBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "Action": "DodgeJump",
+                        "SweepForValidPos": 1,
+                        "OnlyIfRecentlyDamaged": 0,
+                        "RequestDelay": 0,
+                        "FaceDirectionOfPathFollowerTarget": 0,
+                        "JumpToClosestNavPoint": 0
+                    },
+                    "FlyDescendToNavBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "DelayEvaluationOnNavFindFailure": 12,
+                        "DownwardRaycastLength": 50,
+                        "RaycastIgnoreTypes": [
+                            "/EE/Types/Engine/BaseAvatar",
+                            "/EE/Types/Engine/HitProxy",
+                            "/EE/Types/Engine/Decoration",
+                            "/EE/Types/Physics/Ragdoll"
+                        ],
+                        "UseLastGoodPosition": 0
+                    }
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 14,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "15": {
+                "Type": "/EE/Types/Npc/FlyDescendToNavBehavior",
+                "FlyDescendToNavBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "DelayEvaluationOnNavFindFailure": 12,
+                    "DownwardRaycastLength": 50,
+                    "RaycastIgnoreTypes": [
+                        "/EE/Types/Engine/BaseAvatar",
+                        "/EE/Types/Engine/HitProxy",
+                        "/EE/Types/Engine/Decoration",
+                        "/EE/Types/Physics/Ragdoll"
+                    ],
+                    "UseLastGoodPosition": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 15,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 14,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "16": {
+                "Type": "/EE/Types/Npc/DodgeJumpBackToNavBehavior",
+                "DodgeJumpBackToNavBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "Action": "",
+                    "SweepForValidPos": 1,
+                    "OnlyIfRecentlyDamaged": 0,
+                    "RequestDelay": 0,
+                    "FaceDirectionOfPathFollowerTarget": 0,
+                    "JumpToClosestNavPoint": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 16,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 14,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "17": {
+                "Type": "/EE/Types/Npc/BlockingBehavior",
+                "BlockingBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "BlockOnBeingAttached": 0,
+                    "ShouldRemovePerception": 1
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 17,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "18": {
+                "Type": "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "UsePowerSuitAbilitiesBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.25,
+                    "BlockForPowerCompleteType": "BT_ALWAYS",
+                    "AllowInterruptOfAbility": 0,
+                    "StopFiring": 1,
+                    "StopMovingOnStart": 0,
+                    "ExtraReevaluationDelay": 0,
+                    "ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ActiveAction:Enabled": 1,
+                    "ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "EvaluateAction": 1,
+                    "FaceTarget": 0,
+                    "TurnAccuracyThreshold": 10,
+                    "TurnTimeout": 2,
+                    "AimTimeout": 0.5,
+                    "ValidAbilities": [],
+                    "MaxProcessPerEval": 0,
+                    "AimAtTarget": 0,
+                    "CheckIfAbilityUnlocked": 0,
+                    "MultipleConcurrentAbilities": 0,
+                    "EvaluateDelayRange": [
+                        0.5,
+                        1
+                    ],
+                    "PreventUsageOnWeaponUse": 0,
+                    "TurnDuringAbility": 0,
+                    "DeactivateAbilitiesOnPredeath": 0,
+                    "ResetEvalTimerOnEnemySpotted": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 18,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 5
+                        }
+                    }
+                ]
+            },
+            "19": {
+                "Type": "/Lotus/Types/Behaviors/DroneDodgeBehavior",
+                "DroneDodgeBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "UseDirectionalActions": 0,
+                    "DirectionalActions:STATIONARY": {
+                        "fullBodyAction": "FBA_ROLL",
+                        "action": "DodgeJump"
+                    },
+                    "DirectionalActions:FORWARD": {
+                        "fullBodyAction": "FBA_ROLL",
+                        "action": "DodgeJump"
+                    },
+                    "DirectionalActions:BACKWARD": {
+                        "fullBodyAction": "FBA_ROLL",
+                        "action": "DodgeJump"
+                    },
+                    "DirectionalActions:LEFT": {
+                        "fullBodyAction": "FBA_ROLL",
+                        "action": "DodgeJump"
+                    },
+                    "DirectionalActions:RIGHT": {
+                        "fullBodyAction": "FBA_ROLL",
+                        "action": "DodgeJump"
+                    },
+                    "DirectionalActions:STOPPING": {
+                        "fullBodyAction": "FBA_ROLL",
+                        "action": "DodgeJump"
+                    },
+                    "DirectionalActions:UPWARD": {
+                        "fullBodyAction": "FBA_ROLL",
+                        "action": "DodgeJump"
+                    },
+                    "DirectionalActions:DOWNWARD": {
+                        "fullBodyAction": "FBA_ROLL",
+                        "action": "DodgeJump"
+                    },
+                    "FullBodyAction": "FBA_NONE",
+                    "Action": "DodgeJump",
+                    "DoDirectionFiltering": 0,
+                    "DirectionFilterFov": 180,
+                    "InvertFacingFilter": 0,
+                    "UseTacPosMgr": 0,
+                    "IdealJumpDist": [
+                        2,
+                        4
+                    ],
+                    "MaxJumpDist": 5,
+                    "ShouldFaceTarget": 0,
+                    "GeneratePointsAroundTarget": 0,
+                    "GeneratePointsDistance": [
+                        5,
+                        10
+                    ],
+                    "GenerateSpacing": 2,
+                    "MinDistanceToNavEdge": 0,
+                    "PreventDodgeOnAnimBlocked": 0,
+                    "DoTacVisTrace": 1,
+                    "DoGeoRaycast": 0,
+                    "StaticShapesOnly": 1,
+                    "TacVisToTarget": 1,
+                    "ScoreDistToTarget": 1,
+                    "ScoreDistanceResponseCurve": {
+                        "m": -3,
+                        "k": 2,
+                        "b": 1,
+                        "c": 0.5,
+                        "logistic": 0
+                    },
+                    "ScoreDirectionFromTarget": {
+                        "m": 10,
+                        "k": 1,
+                        "b": 0,
+                        "c": 0.5,
+                        "logistic": 1
+                    },
+                    "DoTargetViewScore": 0,
+                    "RestrictToDefenseVolume": 0,
+                    "MaxDistanceFromEncounterHint": 0,
+                    "ScoreDirectionFromTargetView": {
+                        "m": -1,
+                        "k": 2,
+                        "b": 1,
+                        "c": 1,
+                        "logistic": 0
+                    },
+                    "NumResults": 1,
+                    "DelayBetweenDodges": 2,
+                    "TimeBetweenDodges": 6,
+                    "MinimumDodgeDistance": 1.5
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 19,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 6
+                        }
+                    }
+                ]
+            },
+            "20": {
+                "Type": "/EE/Types/Npc/StormTargetOrderBehavior",
+                "StormTargetOrderBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeSinceLastSeen": 5,
+                    "MaxDistToTarget": 25,
+                    "SpeedMultiplier": 1,
+                    "ConsiderOrderType": 1,
+                    "Order": "StormTarget",
+                    "FailsOnTargetAcquired": 1,
+                    "SuccessRadius": 1,
+                    "DesiredPosture": "JOG",
+                    "UseNearTargetPosture": 0,
+                    "DesiredPostureNearTarget": "WALK",
+                    "DesiredPostureOutOfView": "RUN",
+                    "MaxOffNavDistance": 5,
+                    "TargetMovedRadius": 6,
+                    "OnFailureReevalTime": 2,
+                    "OnSuccessReevalTime": 10,
+                    "TryShoot": 1,
+                    "TargetFaction": "",
+                    "DistanceToOrderTargetForNearPosture": 0,
+                    "ClearOrderOnMoveSuccess": 0,
+                    "AllowTeleportToCatchUp": 1,
+                    "TeleportToDestination": 0,
+                    "AllowPartialPath": 1,
+                    "RestrictToDV": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 20,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 7
+                        }
+                    }
+                ]
+            },
+            "21": {
+                "Type": "/Lotus/Types/Behaviors/HoverNearTargetBehavior",
+                "HoverNearTargetBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TargetDistance": [
+                        3,
+                        3
+                    ],
+                    "StrafeDistance": 1,
+                    "VerticalDistance": 0,
+                    "VerticalDistanceVariance": [
+                        0,
+                        0
+                    ],
+                    "ReachedLocationTolerance": 0.5,
+                    "WaitDuration": [
+                        2,
+                        3.5
+                    ],
+                    "RecheckInterval": 2,
+                    "MinMovementDistance": 1,
+                    "AlwaysUpdateEvasion": 0,
+                    "ControlFacing": "MFC_FACE_TARGET",
+                    "BoostFacing": "MFC_FACE_TARGET",
+                    "BoostPosture": "WALK",
+                    "SpeedBoostMultiplier": 1,
+                    "BoostRange": 15,
+                    "BoostToTarget": 0,
+                    "ExitAfterWait": 0,
+                    "AdjustDestinationHeight": 1
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 21,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 8
+                        }
+                    }
+                ]
+            },
+            "22": {
+                "Type": "/EE/Types/Npc/InvestigateBehavior",
+                "InvestigateBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "ShouldAim": 0,
+                    "MaxInvestigateDistance": 55,
+                    "NearDestinationRadius": 6,
+                    "SpeedMultiplier": 1,
+                    "FastSpeedMultiplier": 1,
+                    "VisInterval": 0.5,
+                    "LookAroundTime": 3,
+                    "NumLookAroundDirections": 2,
+                    "TeamCoordination": 0,
+                    "UseFlare": 0,
+                    "CheckThreatFaction": 0,
+                    "AllowRun": 1,
+                    "RunTowardsNewTargets": 0,
+                    "KnowInstigatorPosAtStart": 0,
+                    "reactionsToInvestigate": [],
+                    "MinAwareness": "AW_ALERT",
+                    "minimumTargetInterest": "Investigate",
+                    "ReportAttackOnDamage": 1,
+                    "RestrictToDefenseVolume": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 22,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 9
+                        }
+                    }
+                ]
+            },
+            "23": {
+                "Type": "/EE/Types/Npc/WaitBehavior",
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 23,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 10
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 0
+    }
+}
