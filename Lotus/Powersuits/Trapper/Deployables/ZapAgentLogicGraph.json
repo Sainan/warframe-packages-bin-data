@@ -1,0 +1,322 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 1,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 496,
+                    "posY": 227
+                }
+            },
+            {
+                "key": 6,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 777,
+                    "posY": 452
+                }
+            },
+            {
+                "key": 15,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 285,
+                    "posY": 304
+                }
+            },
+            {
+                "key": 18,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 511,
+                    "posY": 299
+                }
+            },
+            {
+                "key": 20,
+                "value": {
+                    "type": "Condition",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 499,
+                    "posY": 376
+                }
+            },
+            {
+                "key": 21,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 789,
+                    "posY": 362
+                }
+            }
+        ],
+        "NodeProperties": {
+            "1": {
+                "Type": "/EE/Types/Npc/BlockingBehavior",
+                "BlockingBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "BlockOnBeingAttached": 0,
+                    "ShouldRemovePerception": 1
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 1,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 15,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "6": {
+                "Type": "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
+                "FollowAllyPlayerBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "StopRadius": 4,
+                    "TightStopRadius": 1.5,
+                    "AllowRun": 1,
+                    "AllowPartial": 0,
+                    "IllumRange": [
+                        0,
+                        1
+                    ],
+                    "CoverRadius": 0,
+                    "FromPlayerRadius": 6,
+                    "OffsetFromPlayer": [
+                        0,
+                        0,
+                        1
+                    ],
+                    "Randomness": 5,
+                    "CoverSelectFov": 45,
+                    "MinTimeBetweenMoves": 2,
+                    "DoEnterCover": 0,
+                    "CoverLeftOffset": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "CoverRightOffset": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "AllowTeleport": 1,
+                    "TeleportForBadPath": 1,
+                    "MaxBadPathCountBeforeTeleport": 1,
+                    "PhaseOutDuration": [
+                        0,
+                        0
+                    ],
+                    "TeleportToPlayerDistSqr": 100,
+                    "TeleportLeaveEffect": "",
+                    "TeleportLeaveSound": "",
+                    "TeleportLeaveAnimation": "",
+                    "TeleportArriveEffect": "",
+                    "TeleportArriveSound": "",
+                    "TeleportArriveAnimation": "",
+                    "TimeSinceLastSeen": 5,
+                    "MaxDistToTarget": 25,
+                    "Order": "",
+                    "FactionFilter": "TENNO",
+                    "OnlyExitIfHaveWeapon": 1,
+                    "RequiresOwner": 1,
+                    "MoveAction:Type": "/EE/Types/Npc/LocomotionFollowPath",
+                    "MoveAction:Enabled": 1,
+                    "MoveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "MoveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "MoveAction:TrackEntity": 0,
+                    "MoveAction:TrackingRate": 0.5,
+                    "MoveAction:FaceTarget": 0,
+                    "MoveAction:SucceedEarly": 0,
+                    "MoveAction:SuccessRadius": 0.5,
+                    "MoveAction:SucceedImmediately": 0,
+                    "MoveAction:SucceedOnAbort": 0,
+                    "WaitAction:Type": "/EE/Types/Npc/WaitBehavior",
+                    "WaitAction:Enabled": 1,
+                    "WaitAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "WaitAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "WaitAction:DefaultReevaluationDelay": 0,
+                    "WaitAction:TimeOut": 5,
+                    "WaitAction:CoverOnly": 0,
+                    "WaitAction:AimPosture": 0,
+                    "WaitAction:MinimalEnemyDistance": 0,
+                    "WaitAction:TrackTarget": 0,
+                    "WaitAction:TrackTargetNotVisible": 0,
+                    "WaitAction:Peek": 0,
+                    "WaitAction:FailOnDamaged": 1,
+                    "WaitAction:PreventShooting": 0,
+                    "WaitAction:StopMovingOnEnter": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 6,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 20,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "15": {
+                "links": []
+            },
+            "18": {
+                "Type": "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
+                "UsePowerSuitAbilitiesBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0.25,
+                    "BlockForPowerCompleteType": "BT_NEVER",
+                    "AllowInterruptOfAbility": 0,
+                    "StopFiring": 1,
+                    "StopMovingOnStart": 1,
+                    "ExtraReevaluationDelay": 0,
+                    "ActiveAction:Type": "/EE/Types/Npc/Action",
+                    "ActiveAction:Enabled": 1,
+                    "ActiveAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "ActiveAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "EvaluateAction": 1,
+                    "FaceTarget": 0,
+                    "TurnAccuracyThreshold": 10,
+                    "TurnTimeout": 2,
+                    "AimTimeout": 0.5,
+                    "ValidAbilities": [],
+                    "MaxProcessPerEval": 0,
+                    "AimAtTarget": 0,
+                    "CheckIfAbilityUnlocked": 0,
+                    "MultipleConcurrentAbilities": 0,
+                    "EvaluateDelayRange": [
+                        0.5,
+                        0.5
+                    ],
+                    "PreventUsageOnWeaponUse": 0,
+                    "TurnDuringAbility": 0,
+                    "DeactivateAbilitiesOnPredeath": 0,
+                    "ResetEvalTimerOnEnemySpotted": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 18,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 15,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "20": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/OrderCondition",
+                "conditionProperties:notCondition": 0,
+                "conditionProperties:OrderName": "LatcherOrder",
+                "conditionProperties:NotThisOrder": 0,
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 20,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 15,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "21": {
+                "Type": "/EE/Types/Npc/GoToOrderPositionBehavior",
+                "GoToOrderPositionBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "DesiredPosture": "JOG",
+                    "DesiredPostureNearTarget": "JOG",
+                    "AlmostCompleteDistance": 1.5,
+                    "StopDistance": 1.5,
+                    "NearDestinationDistance": 1.5,
+                    "AbortDistance": 1
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 21,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 20,
+                            "prop": 1
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 15
+    }
+}

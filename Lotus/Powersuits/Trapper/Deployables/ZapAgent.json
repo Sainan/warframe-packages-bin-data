@@ -21,15 +21,9 @@
         "IgnoredByAiDirector": 1,
         "DestroyWhenPaused": 1,
         "BehaviorDatabase": [
-            "/EE/Types/Npc/BlockingBehavior",
-            "/EE/Types/Npc/StormTargetOrderBehavior",
-            "/Lotus/Types/Behaviors/UsePowerSuitAbilitiesBehavior",
-            "/Lotus/Types/Behaviors/ContinuousMoveToTargetBehavior",
-            "/EE/Types/Npc/SearchForTargetBehavior",
-            "/Lotus/Types/Behaviors/FollowAllyPlayerBehavior",
-            "/EE/Types/Npc/GuardTactic"
+            "/EE/Types/Npc/Logic/LogicGraphAction"
         ],
-        "BlockingBehavior": {
+        "LogicGraphAction": {
             "Enabled": 1,
             "OnStartScript": {
                 "Script": ""
@@ -37,178 +31,33 @@
             "OnDamagedScript": {
                 "Script": ""
             },
-            "DefaultReevaluationDelay": 0,
-            "BlockOnBeingAttached": 0,
-            "ShouldRemovePerception": 1
-        },
-        "StormTargetOrderBehavior": {
-            "DesiredPosture": "RUN",
-            "DesiredPostureNearTarget": "RUN"
-        },
-        "UsePowerSuitAbilitiesBehavior": {
-            "Enabled": 1,
-            "OnStartScript": {
-                "Script": ""
-            },
-            "OnDamagedScript": {
-                "Script": ""
-            },
-            "DefaultReevaluationDelay": 0.25,
-            "BlockForPowerCompleteType": "BT_ALWAYS",
-            "AllowInterruptOfAbility": 0,
-            "StopFiring": 1,
-            "StopMovingOnStart": 0,
-            "ExtraReevaluationDelay": 0,
-            "ActiveAction:Type": "/EE/Types/Npc/Action",
-            "ActiveAction:Enabled": 1,
-            "ActiveAction:OnStartScript": {
-                "Script": ""
-            },
-            "ActiveAction:OnDamagedScript": {
-                "Script": ""
-            },
-            "EvaluateAction": 1,
-            "FaceTarget": 0,
-            "TurnAccuracyThreshold": 10,
-            "TurnTimeout": 2,
-            "AimTimeout": 0.5,
-            "ValidAbilities": [],
-            "MaxProcessPerEval": 0,
-            "AimAtTarget": 0,
-            "CheckIfAbilityUnlocked": 0,
-            "MultipleConcurrentAbilities": 0,
-            "EvaluateDelayRange": [
-                1,
-                3
-            ],
-            "PreventUsageOnWeaponUse": 0,
-            "TurnDuringAbility": 0,
-            "DeactivateAbilitiesOnPredeath": 0,
-            "ResetEvalTimerOnEnemySpotted": 0
-        },
-        "ContinuousMoveToTargetBehavior": {
-            "Enabled": 1,
-            "OnStartScript": {
-                "Script": ""
-            },
-            "OnDamagedScript": {
-                "Script": ""
-            },
-            "DefaultReevaluationDelay": 0,
-            "DesiredPosture": "JOG",
-            "MaxMovementDistance": 500,
-            "StopDistance": 0.1,
-            "ClearAvoidance": 0,
-            "SpeedModifier": 1,
-            "MoveFacingControl": "MFC_FACE_TARGET",
-            "OffsetDistance": 0,
-            "UseEyePos": 0,
-            "UseLastPosWhenTargetLost": 0
-        },
-        "FollowAllyPlayerBehavior": {
-            "Enabled": 1,
-            "OnStartScript": {
-                "Script": ""
-            },
-            "OnDamagedScript": {
-                "Script": ""
-            },
-            "DefaultReevaluationDelay": 0,
-            "StopRadius": 4,
-            "TightStopRadius": 1.5,
-            "AllowRun": 1,
-            "AllowPartial": 0,
-            "IllumRange": [
-                0,
-                1
-            ],
-            "CoverRadius": 0,
-            "FromPlayerRadius": 6,
-            "OffsetFromPlayer": [
-                0,
-                0,
-                -1
-            ],
-            "Randomness": 5,
-            "CoverSelectFov": 45,
-            "MinTimeBetweenMoves": 2,
-            "DoEnterCover": 0,
-            "CoverLeftOffset": [
-                0,
-                0,
-                0
-            ],
-            "CoverRightOffset": [
-                0,
-                0,
-                0
-            ],
-            "AllowTeleport": 1,
-            "TeleportForBadPath": 1,
-            "MaxBadPathCountBeforeTeleport": 10,
-            "PhaseOutDuration": [
-                2,
-                4
-            ],
-            "TeleportToPlayerDistSqr": 225,
-            "TeleportLeaveEffect": "",
-            "TeleportLeaveSound": "",
-            "TeleportLeaveAnimation": "",
-            "TeleportArriveEffect": "",
-            "TeleportArriveSound": "",
-            "TeleportArriveAnimation": "",
-            "TimeSinceLastSeen": 5,
-            "MaxDistToTarget": 25,
-            "Order": "",
-            "FactionFilter": "TENNO",
-            "OnlyExitIfHaveWeapon": 1,
-            "RequiresOwner": 1,
-            "MoveAction:Type": "/EE/Types/Npc/LocomotionFollowPath",
-            "MoveAction:Enabled": 1,
-            "MoveAction:OnStartScript": {
-                "Script": ""
-            },
-            "MoveAction:OnDamagedScript": {
-                "Script": ""
-            },
-            "MoveAction:TrackEntity": 0,
-            "MoveAction:TrackingRate": 0.5,
-            "MoveAction:FaceTarget": 0,
-            "MoveAction:SucceedEarly": 0,
-            "MoveAction:SuccessRadius": 0.5,
-            "MoveAction:SucceedImmediately": 0,
-            "MoveAction:SucceedOnAbort": 0,
-            "WaitAction:Type": "/EE/Types/Npc/WaitBehavior",
-            "WaitAction:Enabled": 1,
-            "WaitAction:OnStartScript": {
-                "Script": ""
-            },
-            "WaitAction:OnDamagedScript": {
-                "Script": ""
-            },
-            "WaitAction:DefaultReevaluationDelay": 0,
-            "WaitAction:TimeOut": 5,
-            "WaitAction:CoverOnly": 0,
-            "WaitAction:AimPosture": 0,
-            "WaitAction:MinimalEnemyDistance": 0,
-            "WaitAction:TrackTarget": 0,
-            "WaitAction:TrackTargetNotVisible": 0,
-            "WaitAction:Peek": 0,
-            "WaitAction:FailOnDamaged": 1,
-            "WaitAction:PreventShooting": 0,
-            "WaitAction:StopMovingOnEnter": 0
+            "GraphRes": "ZapAgentLogicGraph"
         },
         "CustomRunToCoverBehavior": "",
         "LocomotionController:DynamicPathFollowerGround": {
             "MinWalkWhenTurningAngle": 105
         },
-        "LocomotionController:PathingPreferences": {
-            "shorteningType": "ST_NONE"
-        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierDodgeJumpBackToNav"
+                ],
+                "LocomotionMoveModifierDodgeJumpBackToNav": {
+                    "DodgeJumpSymbol": "DodgeJump",
+                    "OffNavTimeRequired": 1,
+                    "TotallyStuckTimeRequired": 0.1,
+                    "SkipPathOnStuck": 1,
+                    "MinTimeSinceLastSeenRequired": 10,
+                    "SkipFallingOrLaunchingAvatars": 0,
+                    "DistanceToInstantTeleport": 100
+                }
+            }
+        ],
+        "LocomotionController:limitToNav": 1,
         "ViewIdleFov": 360,
         "IdleVerticalFov": 90,
         "ViewIdleDistance": 120,
         "ViewFov": 360,
-        "TargetEvaluatorType": "/Lotus/Powersuits/Infestation/PodMinionTargetEvaluator"
+        "TargetEvaluatorType": ""
     }
 }

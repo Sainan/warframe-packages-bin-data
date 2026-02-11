@@ -33,6 +33,7 @@
             ],
             "_fightingGameProjType": "/Lotus/Powersuits/Trapper/Deployables/ZapTrapProjectileFighting",
             "_launchSound": "",
+            "_heldLaunchSound": "",
             "_localLaunchSound": "",
             "_remoteLaunchSound": "",
             "_chargeLaunchSound": "/Lotus/Sounds/Warframes/Trapper/TrapperAbilityChargedThrow3D",
@@ -73,6 +74,12 @@
             "_projSpread": 15,
             "_dealDamageThroughImpactBehavior": 0,
             "_instigatorItemSlot": "INVALID",
+            "_matchInstigatorVelocity": 1,
+            "_instigatorVelocityScale": [
+                1,
+                1,
+                1
+            ],
             "_augmentElementDamageEffect": "",
             "_augmentElementRangeDecoType": "",
             "_deluxeSkin": "",
@@ -80,11 +87,13 @@
             "_deluxeBone": "",
             "_castEffectSymbol": "",
             "_castEffectAirSymbol": "",
+            "_heldCastEffectSymbol": "",
+            "_heldCastEffectAirSymbol": "",
             "_castEffectBurstSymbol": "",
             "_explosionEffectSymbol": "",
             "_useBark": 0,
             "_barkFilter": "",
-            "_barkType": "VoiceBox_GRENADE",
+            "_barkType": "VoiceBoxPhrase_GRENADE",
             "_decosToShowOnAbilityInit": [],
             "_attenuateFov": 0,
             "_fovAtten": 1.5
@@ -101,6 +110,9 @@
                     "_agentType": "/Lotus/Powersuits/Trapper/Deployables/ZapAgent",
                     "_latchedEffect": "/Lotus/Fx/PowersuitAbilities/Trapper/ZapLatchedAttach",
                     "_latchedBurstEffect": "/Lotus/Fx/PowersuitAbilities/Trapper/ZapLatchedBurst",
+                    "_augBurstEffect": "/Lotus/Fx/PowersuitAbilities/Trapper/ZapAugBurstSpawner",
+                    "_augAttachEffect": "/Lotus/Fx/PowersuitAbilities/Trapper/ZapAugAttach",
+                    "_augMarkType": "/Lotus/Powersuits/Trapper/TeslaAugmentMarkIcon",
                     "_chargingDecoType": "",
                     "_chargingAnim": "",
                     "_chargingReleaseBeam": ""
@@ -125,6 +137,7 @@
                     "_pvpProjTypes": [],
                     "_fightingGameProjType": "",
                     "_launchSound": "",
+                    "_heldLaunchSound": "",
                     "_localLaunchSound": "",
                     "_remoteLaunchSound": "",
                     "_chargeLaunchSound": "",
@@ -165,6 +178,12 @@
                     "_projSpread": 0,
                     "_dealDamageThroughImpactBehavior": 0,
                     "_instigatorItemSlot": "INVALID",
+                    "_matchInstigatorVelocity": 0,
+                    "_instigatorVelocityScale": [
+                        1,
+                        1,
+                        1
+                    ],
                     "_augmentElementDamageEffect": "",
                     "_augmentElementRangeDecoType": "",
                     "_deluxeSkin": "",
@@ -172,11 +191,13 @@
                     "_deluxeBone": "",
                     "_castEffectSymbol": "",
                     "_castEffectAirSymbol": "",
+                    "_heldCastEffectSymbol": "",
+                    "_heldCastEffectAirSymbol": "",
                     "_castEffectBurstSymbol": "",
                     "_explosionEffectSymbol": "",
                     "_useBark": 0,
                     "_barkFilter": "",
-                    "_barkType": "VoiceBox_GRENADE",
+                    "_barkType": "VoiceBoxPhrase_GRENADE",
                     "_decosToShowOnAbilityInit": [],
                     "_attenuateFov": 0,
                     "_fovAtten": 1.5
@@ -201,6 +222,7 @@
                     "_pvpProjTypes": [],
                     "_fightingGameProjType": "",
                     "_launchSound": "",
+                    "_heldLaunchSound": "",
                     "_localLaunchSound": "",
                     "_remoteLaunchSound": "",
                     "_chargeLaunchSound": "",
@@ -241,6 +263,12 @@
                     "_projSpread": 0,
                     "_dealDamageThroughImpactBehavior": 0,
                     "_instigatorItemSlot": "INVALID",
+                    "_matchInstigatorVelocity": 0,
+                    "_instigatorVelocityScale": [
+                        1,
+                        1,
+                        1
+                    ],
                     "_augmentElementDamageEffect": "",
                     "_augmentElementRangeDecoType": "",
                     "_deluxeSkin": "",
@@ -248,30 +276,64 @@
                     "_deluxeBone": "",
                     "_castEffectSymbol": "",
                     "_castEffectAirSymbol": "",
+                    "_heldCastEffectSymbol": "",
+                    "_heldCastEffectAirSymbol": "",
                     "_castEffectBurstSymbol": "",
                     "_explosionEffectSymbol": "",
                     "_useBark": 0,
                     "_barkFilter": "",
-                    "_barkType": "VoiceBox_GRENADE",
+                    "_barkType": "VoiceBoxPhrase_GRENADE",
                     "_decosToShowOnAbilityInit": [],
                     "_attenuateFov": 0,
                     "_fovAtten": 1.5
+                }
+            },
+            {
+                "tag": "AttachLocalEffects",
+                "executionMode": "EM_LOCAL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "ZapProbe.lua",
+                    "Function": "AttachLocalEffects",
+                    "_agentType": "",
+                    "_latchedEffect": "",
+                    "_latchedBurstEffect": "",
+                    "_augBurstEffect": "",
+                    "_augAttachEffect": "",
+                    "_augMarkType": "/Lotus/Powersuits/Trapper/TeslaAugmentMarkIcon",
+                    "_chargingDecoType": "",
+                    "_chargingAnim": "",
+                    "_chargingReleaseBeam": "",
+                    "_maxEnemySearchRange": 60,
+                    "_attachRangeMax": 3
+                }
+            },
+            {
+                "tag": "DestroyLocalEffects",
+                "executionMode": "EM_LOCAL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "ZapProbe.lua",
+                    "Function": "DestroyLocalEffects",
+                    "_agentType": "",
+                    "_latchedEffect": "",
+                    "_latchedBurstEffect": "",
+                    "_augBurstEffect": "",
+                    "_augAttachEffect": "",
+                    "_augMarkType": "/Lotus/Powersuits/Trapper/TeslaAugmentMarkIcon",
+                    "_chargingDecoType": "",
+                    "_chargingAnim": "",
+                    "_chargingReleaseBeam": "",
+                    "_maxEnemySearchRange": 60,
+                    "_attachRangeMax": 3
                 }
             }
         ],
         "NpcCooldownDuration": 20,
         "AllowOnZipLines": 1,
         "ActivationXP": 25,
-        "VideoTexture": "/Lotus/Interface/AbilityVideos/VaubanPower1_s.bk2",
-        "SoundEvents": [
-            {
-                "EventName": "SFXVaubanThrow",
-                "Sound": "/Lotus/Sounds/Warframes/Trapper/TrapperAbilityThrow",
-                "Chance": 1,
-                "Period": 1,
-                "Context": "PEC_ALL",
-                "CancelEventName": ""
-            }
-        ]
+        "VideoTexture": "/Lotus/Interface/AbilityVideos/VaubanPower1_s.bk2"
     }
 }
