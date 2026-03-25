@@ -33,16 +33,6 @@
                 }
             },
             {
-                "key": 7,
-                "value": {
-                    "type": "Action",
-                    "comment": "",
-                    "requiresChildAction": 0,
-                    "posX": 139,
-                    "posY": 254
-                }
-            },
-            {
                 "key": 32,
                 "value": {
                     "type": "Action",
@@ -68,8 +58,8 @@
                     "type": "Action",
                     "comment": "",
                     "requiresChildAction": 0,
-                    "posX": 133,
-                    "posY": 189
+                    "posX": 140,
+                    "posY": 116
                 }
             },
             {
@@ -78,18 +68,8 @@
                     "type": "Action",
                     "comment": "",
                     "requiresChildAction": 0,
-                    "posX": 117,
-                    "posY": 116
-                }
-            },
-            {
-                "key": 51,
-                "value": {
-                    "type": "Action",
-                    "comment": "",
-                    "requiresChildAction": 0,
-                    "posX": 97,
-                    "posY": 57
+                    "posX": 125,
+                    "posY": 77
                 }
             },
             {
@@ -98,8 +78,8 @@
                     "type": "Action",
                     "comment": "",
                     "requiresChildAction": 1,
-                    "posX": 156,
-                    "posY": 330
+                    "posX": 315,
+                    "posY": 251
                 }
             },
             {
@@ -110,6 +90,26 @@
                     "requiresChildAction": 1,
                     "posX": 163,
                     "posY": 446
+                }
+            },
+            {
+                "key": 54,
+                "value": {
+                    "type": "Compound Condition",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 166,
+                    "posY": 201
+                }
+            },
+            {
+                "key": 55,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 337,
+                    "posY": 196
                 }
             }
         ],
@@ -167,51 +167,6 @@
                         "toPort": {
                             "node": 0,
                             "prop": 3
-                        }
-                    }
-                ]
-            },
-            "7": {
-                "Type": "/EE/Types/Npc/InvestigateBehavior",
-                "InvestigateBehavior": {
-                    "Enabled": 1,
-                    "OnStartScript": {
-                        "Script": ""
-                    },
-                    "OnDamagedScript": {
-                        "Script": ""
-                    },
-                    "DefaultReevaluationDelay": 0,
-                    "ShouldAim": 1,
-                    "MaxInvestigateDistance": 55,
-                    "NearDestinationRadius": 6,
-                    "SpeedMultiplier": 1,
-                    "FastSpeedMultiplier": 1,
-                    "VisInterval": 0.5,
-                    "LookAroundTime": 3,
-                    "NumLookAroundDirections": 5,
-                    "TeamCoordination": 1,
-                    "UseFlare": 0,
-                    "CheckThreatFaction": 0,
-                    "AllowRun": 0,
-                    "RunTowardsNewTargets": 1,
-                    "KnowInstigatorPosAtStart": 0,
-                    "reactionsToInvestigate": [],
-                    "MinAwareness": "AW_ALERT",
-                    "minimumTargetInterest": "Investigate",
-                    "ReportAttackOnDamage": 1,
-                    "RestrictToDefenseVolume": 0
-                },
-                "links": [
-                    {
-                        "type": "",
-                        "fromPort": {
-                            "node": 7,
-                            "prop": 0
-                        },
-                        "toPort": {
-                            "node": 0,
-                            "prop": 9
                         }
                     }
                 ]
@@ -416,7 +371,7 @@
                                 "DefaultReevaluationDelay": 0,
                                 "TurnToFace": 1,
                                 "TurnDelay": 0,
-                                "FaceAttackDirection": 0,
+                                "FaceAttackDirection": 1,
                                 "LookAt": 0,
                                 "DoAim": 0,
                                 "UpdateTarget": 0,
@@ -491,7 +446,7 @@
                         },
                         "toPort": {
                             "node": 0,
-                            "prop": 8
+                            "prop": 7
                         }
                     }
                 ]
@@ -511,17 +466,17 @@
                     "UseWeaponRange": 0,
                     "IdealDistance": [
                         0,
-                        10
+                        2
                     ],
                     "EvaluateDistance": [
-                        12,
+                        4,
                         100
                     ],
                     "MaxMovementDistance": 100,
                     "AllowRetreat": 0,
                     "AllowTeleportFromOffScreen": 0,
                     "AllowRun": 0,
-                    "AllowChase": 1,
+                    "AllowChase": 0,
                     "ForceWalkBelowMinIdealRange": 1,
                     "WalkRange": [
                         0,
@@ -534,7 +489,7 @@
                     "StopRadius": 0.5,
                     "RunWhenShocked": 0,
                     "ShockedDamageTime": 30,
-                    "OnlyTravelWhenVisible": 1,
+                    "OnlyTravelWhenVisible": 0,
                     "TravelDuringStruggle": 1,
                     "AllowPartialPath": 0,
                     "UpdateDestinationInterval": 0.5,
@@ -581,56 +536,6 @@
                         },
                         "toPort": {
                             "node": 0,
-                            "prop": 7
-                        }
-                    }
-                ]
-            },
-            "51": {
-                "Type": "/EE/Types/Npc/MoveTowardsTacEnemyInfluence",
-                "MoveTowardsTacEnemyInfluence": {
-                    "Enabled": 1,
-                    "OnStartScript": {
-                        "Script": ""
-                    },
-                    "OnDamagedScript": {
-                        "Script": ""
-                    },
-                    "DefaultReevaluationDelay": 0,
-                    "StopRadius": 0.5,
-                    "NearDistance": 2,
-                    "SpeedMultiplier": 1,
-                    "AlertSpeedMultiplier": 1,
-                    "AimWhenIdle": 0,
-                    "AimWhenAlert": 1,
-                    "PermanentAlert": 1,
-                    "EnemyFaction": "TENNO",
-                    "TimeSinceLastSeen": 5,
-                    "NoCoverAfterExitTime": 1,
-                    "MustBeFurtherFromObjective": 1,
-                    "DistAheadToAdvance": 50,
-                    "MinAwareness": "AW_COMBAT",
-                    "AlertMovementPosture": "WALK",
-                    "DefaultMovementPosture": "WALK",
-                    "PauseTime": [
-                        3,
-                        5
-                    ],
-                    "DesiredTacAreaScore": 8,
-                    "OnlyIfLevelAlert": 1,
-                    "UseLastSeenByTeam": 1,
-                    "LimitToCurrentRoom": 0,
-                    "OnlyFindPositionsOnFlightNav": 0
-                },
-                "links": [
-                    {
-                        "type": "",
-                        "fromPort": {
-                            "node": 51,
-                            "prop": 0
-                        },
-                        "toPort": {
-                            "node": 0,
                             "prop": 6
                         }
                     }
@@ -664,8 +569,8 @@
                             "prop": 0
                         },
                         "toPort": {
-                            "node": 0,
-                            "prop": 10
+                            "node": 54,
+                            "prop": 2
                         }
                     }
                 ]
@@ -684,8 +589,8 @@
                     "TimeOut": 0,
                     "CoverOnly": 0,
                     "AimPosture": 0,
-                    "MinimalEnemyDistance": 0,
                     "TrackTarget": 0,
+                    "MinimalEnemyDistance": 0,
                     "TrackTargetNotVisible": 0,
                     "Peek": 0,
                     "FailOnDamaged": 0,
@@ -701,7 +606,81 @@
                         },
                         "toPort": {
                             "node": 0,
-                            "prop": 11
+                            "prop": 9
+                        }
+                    }
+                ]
+            },
+            "54": {
+                "conditions": [
+                    {
+                        "Type": "/EE/Types/Npc/Logic/TargetCondition",
+                        "TargetCondition": {
+                            "notCondition": 0,
+                            "CheckTargetVisibility": 0,
+                            "CheckTargetIsAvatar": 0,
+                            "LastPerceivedBySelfTime": [
+                                0,
+                                0
+                            ],
+                            "LastSeenBySelfTime": [
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                ],
+                "type": "LCO_AND",
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 54,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 8
+                        }
+                    }
+                ]
+            },
+            "55": {
+                "Type": "/EE/Types/Npc/WaitBehavior",
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "TrackTarget": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 55,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 54,
+                            "prop": 1
                         }
                     }
                 ]
