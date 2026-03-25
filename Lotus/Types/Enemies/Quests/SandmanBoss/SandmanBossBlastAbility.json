@@ -1,7 +1,140 @@
 {
-    "parent": "/Lotus/Powersuits/PowersuitAbilities/SandmanBlastAbility",
+    "parent": "/Lotus/Powersuits/Sandman/Abilities/SandmanBlastAbility",
     "data": {
         "MarketMode": "MM_NONE",
+        "Script": {
+            "Script": "/Lotus/Powersuits/Sandman/Abilities/SandmanBlast.lua"
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "Blast",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/Sandman/Abilities/SandmanBlast.lua",
+                    "Function": "Blast",
+                    "_activateAnim": "",
+                    "_blindProjector": "/Lotus/Fx/PowersuitAbilities/Sandman/SandBlinded",
+                    "_castEffect": "",
+                    "_castBurstEffect": "",
+                    "_castBurstEnergyEffect": "",
+                    "_castBurstPvpEffect": "",
+                    "_pvpDotEffect": "/Lotus/Fx/PowersuitAbilities/Sandman/BlastDotAttach"
+                }
+            },
+            {
+                "tag": "SpawnSandZombie",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/Sandman/Abilities/SandmanSwarm.lua",
+                    "Function": "CreateSandZombieFromBlast",
+                    "_activateAnim": "",
+                    "_castEffect": "",
+                    "_castEffectNoEnergy": "",
+                    "_castBurstEffect": "",
+                    "_castBurstEffectNoEnergy": "",
+                    "_deathEffect": "",
+                    "_eatEnemyEffect": "",
+                    "_hudBuffType": "",
+                    "_endPointEffect": "",
+                    "_projectileType": "/Lotus/Powersuits/Sandman/ScarabSwarmProjectile",
+                    "_sandZombieFxProj": "/Lotus/Fx/PowersuitAbilities/Sandman/SandmanMinionAttach",
+                    "_zombieAgentType": "/Lotus/Powersuits/Sandman/SandZombieAgent",
+                    "_lineDeco": "",
+                    "_sandZombieBuffType": "/Lotus/Powersuits/Sandman/SandZombieHudBuff",
+                    "_zombieDeathEffect": "/Lotus/Fx/PowersuitAbilities/Sandman/SandmanZombieAvatarDeath",
+                    "_sandZombieSuit": "/Lotus/Types/Game/CatbrowPet/CatbrowPetPowerSuit"
+                }
+            }
+        ],
+        "AbilityEvents": [
+            {
+                "tag": "PassiveHit",
+                "eventType": "ET_ON_MELEE_HIT",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/Sandman/SandmanPassive.lua",
+                    "Function": "PassiveHit",
+                    "_customDC": "",
+                    "_predeathAttach": "",
+                    "_predeathSpawnBurst": "",
+                    "_predeathExitSubTree": "",
+                    "_sandCloneIdleSubTree": "",
+                    "_predeathChargeIncreased": "",
+                    "_avatarType": "",
+                    "_sandCloneAvatarType": "",
+                    "_sandCloneAttach": "",
+                    "_sandCloneLocalAttach": "",
+                    "_sandCloneStartAnim": "",
+                    "_sandCloneFistType": "/Lotus/Powersuits/Sandman/SandCloneFist",
+                    "_customHud": "",
+                    "_seqType": ""
+                }
+            },
+            {
+                "tag": "OnMeleeKill",
+                "eventType": "ET_ON_MELEE_KILL",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/Sandman/SandmanPassive.lua",
+                    "Function": "OnMeleeKill",
+                    "_customDC": "",
+                    "_predeathAttach": "",
+                    "_predeathSpawnBurst": "",
+                    "_predeathExitSubTree": "",
+                    "_sandCloneIdleSubTree": "",
+                    "_predeathChargeIncreased": "",
+                    "_avatarType": "",
+                    "_sandCloneAvatarType": "",
+                    "_sandCloneAttach": "",
+                    "_sandCloneLocalAttach": "",
+                    "_sandCloneStartAnim": "",
+                    "_sandCloneFistType": "",
+                    "_customHud": "",
+                    "_seqType": ""
+                }
+            },
+            {
+                "tag": "AugmentMeleeKill",
+                "eventType": "ET_ON_MELEE_KILL",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/Sandman/Abilities/SandmanBlast.lua",
+                    "Function": "AugmentMeleeKill",
+                    "_activateAnim": "",
+                    "_blindProjector": "",
+                    "_castEffect": "",
+                    "_castBurstEffect": "",
+                    "_castBurstEnergyEffect": "",
+                    "_castBurstPvpEffect": "",
+                    "_pvpDotEffect": ""
+                }
+            },
+            {
+                "tag": "SandZombieOnHit",
+                "eventType": "ET_ON_HIT",
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/Sandman/Abilities/SandmanSwarm.lua",
+                    "Function": "SandZombieOnHit",
+                    "_activateAnim": "",
+                    "_castEffect": "",
+                    "_castEffectNoEnergy": "",
+                    "_castBurstEffect": "",
+                    "_castBurstEffectNoEnergy": "",
+                    "_deathEffect": "",
+                    "_eatEnemyEffect": "",
+                    "_hudBuffType": "",
+                    "_endPointEffect": "",
+                    "_projectileType": "/Lotus/Powersuits/Sandman/ScarabSwarmProjectile",
+                    "_sandZombieFxProj": "",
+                    "_zombieAgentType": "",
+                    "_lineDeco": "",
+                    "_sandZombieBuffType": "/Lotus/Powersuits/Sandman/SandZombieHudBuff",
+                    "_zombieDeathEffect": "",
+                    "_sandZombieSuit": ""
+                }
+            }
+        ],
         "CooldownDuration": 8,
         "EnergyRequiredToActivate": 0,
         "Blocking": 1

@@ -1,0 +1,124 @@
+{
+    "parent": "/Lotus/Powersuits/PowersuitAbilities/PlayerPowerSuitAbility",
+    "data": {
+        "LocalizeTag": "/Lotus/Language/Suits/GrendelBowlAbilityName",
+        "LocalizeDescTag": "/Lotus/Language/Suits/GrendelBowlAbilityDesc",
+        "StatusDescTag": "/Lotus/Language/Buffs/HealthRegenerationBuffDesc",
+        "Icon": "/Lotus/Interface/Icons/Abilities/GrendelBellyBowling.png",
+        "UniquePowerIdentifier": "DEVOURER_BOWL",
+        "AdditionalPowerIdentifiers": [
+            "EFFECT_DAMAGE",
+            "EFFECT_MOBILITY",
+            "EFFECT_MOTION_STATE"
+        ],
+        "Script": {
+            "Script": "DevourerBowl.lua",
+            "Function": "ActivateAbility",
+            "_endNoEnergyAnim": "/Lotus/Animations/Tenno/Powers/Devourer/DizzyIdle_anim.fbx",
+            "_inputFilter": "/Lotus/Powersuits/Devourer/BowlInputFilter",
+            "_scriptTriggerType": "/Lotus/Powersuits/Devourer/BowlScriptTrigger",
+            "_ballMesh": "/Lotus/Characters/Tenno/Devourer/DevourerBall_skel.fbx",
+            "_rollPhysics": "/Lotus/Powersuits/Devourer/BowlPhysics",
+            "_walkPhysics": "/Lotus/Types/Player/TennoWalk",
+            "_rangeDecoType": "/Lotus/Fx/PowersuitAbilities/Devourer/BowlingRangeDeco",
+            "_hitProxy": "/Lotus/Powersuits/Devourer/BowlTorso",
+            "_augmentPushSound": ""
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "DoLandAoE",
+                "executionMode": "EM_HOST",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "DevourerBowl.lua",
+                    "Function": "DoLandAoE",
+                    "_endNoEnergyAnim": "",
+                    "_inputFilter": "",
+                    "_scriptTriggerType": "",
+                    "_ballMesh": "",
+                    "_rollPhysics": "",
+                    "_walkPhysics": "",
+                    "_rangeDecoType": "",
+                    "_hitProxy": "",
+                    "_augmentPushSound": ""
+                }
+            },
+            {
+                "tag": "AugmentEnergyDrain",
+                "executionMode": "EM_HOST",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "DevourerBowl.lua",
+                    "Function": "AugmentEnergyDrain",
+                    "_endNoEnergyAnim": "",
+                    "_inputFilter": "",
+                    "_scriptTriggerType": "",
+                    "_ballMesh": "",
+                    "_rollPhysics": "",
+                    "_walkPhysics": "",
+                    "_rangeDecoType": "",
+                    "_hitProxy": "",
+                    "_augmentPushSound": ""
+                }
+            }
+        ],
+        "InputEvents": [
+            {
+                "tag": "AugmentPush",
+                "inputCode": "SECONDARY_FIRE",
+                "onDown": 1,
+                "scriptInstance": {
+                    "Script": "DevourerBowl.lua",
+                    "Function": "AugmentPush",
+                    "_endNoEnergyAnim": "",
+                    "_inputFilter": "",
+                    "_scriptTriggerType": "",
+                    "_ballMesh": "",
+                    "_rollPhysics": "",
+                    "_walkPhysics": "",
+                    "_rangeDecoType": "",
+                    "_hitProxy": "",
+                    "_augmentPushSound": "/Lotus/Sounds/Warframes/Grendel/GrendelBowlJumpLocal"
+                }
+            }
+        ],
+        "NpcCooldownDuration": 60,
+        "EnergyRequiredToActivate": 0,
+        "AllowToggle": 1,
+        "ActivationXP": 25,
+        "VideoTexture": "/Lotus/Interface/AbilityVideos/GrendelPower4_s.bk2",
+        "IsJoinInProgressAbility": 1,
+        "ResourceOverrides": [
+            {
+                "Tag": "BowlStartAnim",
+                "Resource": "/Lotus/Animations/Tenno/Powers/Devourer/BellyBowlingStart_anim.fbx"
+            },
+            {
+                "Tag": "BowlEndAnim",
+                "Resource": "/Lotus/Animations/Tenno/Powers/Devourer/BellyBowlingEnd_anim.fbx"
+            },
+            {
+                "Tag": "BowlLoopSeq",
+                "Resource": "/Lotus/Sounds/Warframes/Grendel/GrendelBowlLoopSeq"
+            },
+            {
+                "Tag": "BowlJumpSound",
+                "Resource": "/Lotus/Sounds/Warframes/Grendel/GrendelBowlJump"
+            },
+            {
+                "Tag": "BowlLandSound",
+                "Resource": "/Lotus/Sounds/Warframes/Grendel/GrendelBowlLandRemote"
+            },
+            {
+                "Tag": "BowlDoubleJumpSound",
+                "Resource": "/Lotus/Sounds/Warframes/Grendel/GrendelBowlJumpSecond"
+            },
+            {
+                "Tag": "BowlMotionController",
+                "Resource": "/Lotus/Powersuits/Devourer/BowlMotionController"
+            }
+        ]
+    }
+}

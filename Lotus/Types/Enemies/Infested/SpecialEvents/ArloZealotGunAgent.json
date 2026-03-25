@@ -73,7 +73,9 @@
                         "AwarenessPropagationDistance": -1,
                         "ReportAttackAfterReact": 0
                     },
-                    "forceFaceReaction": 0
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 },
                 {
                     "reaction": "DODGE_MELEE_ATTACK",
@@ -116,10 +118,21 @@
                         },
                         "DistanceFromTargetPoint": 0.4
                     },
-                    "forceFaceReaction": 0
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 }
             ],
-            "BlockingResponse": 1
+            "BlockingResponse": 1,
+            "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+            "TurnToAction:Enabled": 1,
+            "TurnToAction:OnStartScript": {
+                "Script": ""
+            },
+            "TurnToAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "TurnAccuracyThreshold": 15
         },
         "AgentOffNavBehavior": {
             "Enabled": 1,
@@ -202,6 +215,9 @@
             },
             "FullBodyAction": "FBA_NONE",
             "Action": "Roll",
+            "DoDirectionFiltering": 0,
+            "DirectionFilterFov": 180,
+            "InvertFacingFilter": 0,
             "UseTacPosMgr": 1,
             "IdealJumpDist": [
                 4,
@@ -363,8 +379,8 @@
             "NeedsTarget": 0,
             "PatrolRouteOnly": 0,
             "RecruitFromPatrols": 0,
+            "MatchingDesiredDestinationOnly": 0,
             "FormationIdentifier": "Arlo",
-            "MergeThreshold": 0,
             "LeaderAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
             "LeaderAction:Enabled": 1,
             "LeaderAction:OnStartScript": {
@@ -394,7 +410,6 @@
                 "AimWhenIdle": 0,
                 "AimWhenAlert": 1,
                 "PermanentAlert": 0,
-                "ForceIdleForSinglePointPatrols": 1,
                 "AnimAction": "PatrolIdle",
                 "GenericAnims": [],
                 "MinPlayerDist": [
@@ -455,7 +470,8 @@
                 },
                 "OnlyFindPositionsOnFlightNav": 0,
                 "MaxPatrolDistanceFromEncounterHint": 0,
-                "UseStartingPositionAsEncounterPosition": 0
+                "UseStartingPositionAsEncounterPosition": 0,
+                "ResetStartingPositionOnStartup": 0
             },
             "LeaderAction:FailOnChildFailure": 0,
             "FollowerAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",

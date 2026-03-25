@@ -1,0 +1,62 @@
+{
+    "parent": "/Lotus/Types/Game/LotusEffectDecoration",
+    "data": {
+        "PhysicsSleep": 0,
+        "Mesh": "/Lotus/Objects/Lasria/Gameplay/Explosives/LASxExplosiveBarrelA.fbx",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/PowersuitAbilities/InkBlot/SketchObjectInkProj",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/Dynamic",
+        "Tag": "ExplodingBarrel",
+        "ReplicationOverride": "RO_DEFAULT",
+        "ReplicateCreator": 1,
+        "Health": 10,
+        "DestroyOwnedOnDestroy": 0,
+        "CreateOnDestroy": {
+            "LocalRotation": [
+                -0.707107,
+                0,
+                0,
+                0.707107
+            ],
+            "Type": "/Lotus/Fx/Explosions/Generic/ExplosionFXFueledLargeShockwave"
+        },
+        "PlayOnDestroy": "/Lotus/Sounds/Ambience/NineteenNinetyNine/Gameplay/NinetyNineStreetBarrelExplosion",
+        "StateChangeScript": {
+            "Script": "ScriptedExplosiveBarrel.lua",
+            "Function": "ExplosiveBarrelDestroyed",
+            "_damageBaseAmount": 300,
+            "_damageRadius": 12,
+            "_damageType": "DT_EXPLOSION",
+            "_damageMaxHealthPct": 0.8,
+            "_damageArmorMultiplier": 1,
+            "_procChance": 1,
+            "_knockdownRange": 2,
+            "_bigStaggerRange": 6,
+            "_staggerRange": 10
+        },
+        "Faction": "TENNO",
+        "MarkHostile": 1
+    }
+}

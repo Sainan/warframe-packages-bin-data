@@ -1,6 +1,7 @@
 {
-    "parent": "/Lotus/Types/Enemies/Sentients/Troopers/SentientTrooperAvatar",
+    "parent": "/Lotus/Types/Enemies/Sentients/SentientBaseAvatar",
     "data": {
+        "Mesh": "/Lotus/Characters/Sentient/Trooper/SentientTrooperBody_skel.fbx",
         "MeshScale": 1.25,
         "OverrideMaterial": [
             "/Lotus/Fx/Enemies/Sentients/TrooperGhostMat",
@@ -206,19 +207,35 @@
                 "Scale": 1
             }
         ],
-        "ServerChildren": [],
         "PhysicsBehavior": "SentientGhostCasterWalk",
+        "HeadBone": "GAME_C1_NECK1",
+        "HeadRotation": [
+            90,
+            90,
+            0
+        ],
         "LocTag": "/Lotus/Language/Enemies/SentientEidolonGhostCasterName",
         "ShortDesc": "/Lotus/Language/Enemies/SentientEidolonGhostCasterDesc",
-        "LongDesc": "",
         "Icon": "/Lotus/Interface/Icons/Npcs/Sentients/SentientEidolonGhostCaster.png",
-        "MaxHealth": 300,
         "VoiceBox": "/Lotus/Sounds/Enemies/Sentients/SentientEidolonGhostCaster/Barks/SentientEidolonGhostCasterVoicebox",
-        "DropTable": "",
+        "AgentControllerType": "/Lotus/Types/Enemies/Sentients/Troopers/SentientTrooperAgentController",
         "AnimControllerType": "/Lotus/Types/Enemies/Sentients/SentientGhostAnimTreeController",
         "DamageControllerType": "/Lotus/Types/Enemies/Sentients/Dolicholyst/EidolonGhostDamageController",
         "InventoryControllerType": "VomvalystInventoryController",
+        "RaycastProxy": {
+            "Type": "/Lotus/Types/Enemies/Sentients/Troopers/SentientTrooperFullBody"
+        },
+        "VoiceBoxEvents": [
+            {
+                "EventName": "SFXSntConculystAttackVocal",
+                "Phrase": "ATTACK",
+                "Filter": "SentientConculystVocalAttackWalk",
+                "Chance": 1
+            }
+        ],
         "KillXPReward": 200,
-        "DisarmAction": "DA_DAMAGE_ONLY"
+        "AiDirEncounterScore": 300,
+        "AbilityResistanceData": "/Lotus/Types/Game/LotusAbilityResistanceDatas/AbilityResistanceDataResistTime",
+        "ReactionAnims": "/Lotus/Types/Game/ReactionAnims/SentientReactionAnims"
     }
 }

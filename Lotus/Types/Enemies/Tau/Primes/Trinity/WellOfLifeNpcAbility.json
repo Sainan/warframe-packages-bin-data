@@ -1,0 +1,189 @@
+{
+    "parent": "/Lotus/Powersuits/Trinity/Abilities/WellOfLifeAbility",
+    "data": {
+        "MarketMode": "MM_NONE",
+        "LocalizeDescTag": "[HC] Give me a description",
+        "StatusDescTag": "/Lotus/Language/Buffs/TrinityPrimeBossWOLDebuffDesc",
+        "Script": {
+            "Script": "TrinityBossWellOfLifeAbility.lua",
+            "_immortalSound": "/Lotus/Sounds/Enemies/Warframes/TrinityPrimeBoss/TrinityPrimeBossWellOfLifeSavedCast",
+            "_baseRange": 20,
+            "_baseDuration": 30,
+            "_baseLeechPct": 0.005,
+            "_baseHealRadius": 20,
+            "_percentHealPerSecond": 0.01,
+            "_saveHealHealthPercentage": 0.5,
+            "_cleanseAbilityHitProxy": "WellOfLifeDestroyHitProxy",
+            "_cleanseDamageTypeDeco": "VoidVulnerabilityParticle"
+        },
+        "SecondaryScripts": [
+            {
+                "tag": "SavedYou",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 1,
+                "functionName": "SavedYou",
+                "scriptInstance": {
+                    "Script": "TrinityBossWellOfLifeAbility.lua",
+                    "Function": "SavedYou",
+                    "_failSound": "",
+                    "_sound": "",
+                    "_immortalSound": "/Lotus/Sounds/Enemies/Warframes/TrinityPrimeBoss/TrinityPrimeBossWellOfLifeSavedCast",
+                    "_activateAnim": "/Lotus/Animations/Tenno/Powers/Trinity/RadialHeal_anim.fbx",
+                    "_rangeDeco": "/Lotus/Fx/PowersuitAbilities/Trinity/WellOfLifeRangeDeco",
+                    "_procBlockProj": "",
+                    "_flyDeco": "/Lotus/Fx/PowersuitAbilities/Trinity/WellOfLifeFlyerDeco",
+                    "_baseRange": 20,
+                    "_baseDuration": 30,
+                    "_baseLeechPct": 0.005,
+                    "_baseHealRadius": 20,
+                    "_percentHealPerSecond": 0.01,
+                    "_saveHealHealthPercentage": 0.5,
+                    "_cleanseAbilityHitProxy": "WellOfLifeDestroyHitProxy",
+                    "_cleanseDamageTypeDeco": "VoidVulnerabilityParticle"
+                }
+            },
+            {
+                "tag": "EarlyCancel",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 0,
+                "functionName": "",
+                "scriptInstance": {
+                    "Script": "TrinityBossWellOfLifeAbility.lua",
+                    "Function": "EarlyCancel",
+                    "_failSound": "",
+                    "_sound": "",
+                    "_immortalSound": "",
+                    "_activateAnim": "",
+                    "_rangeDeco": "",
+                    "_procBlockProj": "",
+                    "_flyDeco": "",
+                    "_baseRange": 100,
+                    "_baseDuration": 7,
+                    "_baseLeechPct": 1,
+                    "_baseHealRadius": 25,
+                    "_percentHealPerSecond": 0.01,
+                    "_saveHealHealthPercentage": 1,
+                    "_cleanseAbilityHitProxy": "",
+                    "_cleanseDamageTypeDeco": ""
+                }
+            },
+            {
+                "tag": "CleanupEffects",
+                "executionMode": "EM_ALL",
+                "inheritPrimary": 1,
+                "functionName": "CleanupEffects",
+                "scriptInstance": {
+                    "Script": "TrinityBossWellOfLifeAbility.lua",
+                    "Function": "CleanupEffects",
+                    "_failSound": "",
+                    "_sound": "",
+                    "_immortalSound": "/Lotus/Sounds/Enemies/Warframes/TrinityPrimeBoss/TrinityPrimeBossWellOfLifeSavedCast",
+                    "_activateAnim": "/Lotus/Animations/Tenno/Powers/Trinity/RadialHeal_anim.fbx",
+                    "_rangeDeco": "/Lotus/Fx/PowersuitAbilities/Trinity/WellOfLifeRangeDeco",
+                    "_procBlockProj": "",
+                    "_flyDeco": "/Lotus/Fx/PowersuitAbilities/Trinity/WellOfLifeFlyerDeco",
+                    "_baseRange": 20,
+                    "_baseDuration": 30,
+                    "_baseLeechPct": 0.005,
+                    "_baseHealRadius": 20,
+                    "_percentHealPerSecond": 0.01,
+                    "_saveHealHealthPercentage": 0.5,
+                    "_cleanseAbilityHitProxy": "WellOfLifeDestroyHitProxy",
+                    "_cleanseDamageTypeDeco": "VoidVulnerabilityParticle"
+                }
+            }
+        ],
+        "AbilityEvents": [
+            {
+                "tag": "OnProcBlock",
+                "eventType": "ET_ON_PROC_BLOCK",
+                "scriptInstance": {
+                    "Script": "TrinityBossWellOfLifeAbility.lua",
+                    "Function": "OnProcBlock",
+                    "_failSound": "",
+                    "_sound": "",
+                    "_immortalSound": "",
+                    "_activateAnim": "",
+                    "_rangeDeco": "",
+                    "_procBlockProj": "WellOfLifeBossProj",
+                    "_flyDeco": "/Lotus/Fx/PowersuitAbilities/Trinity/WellOfLifeFlyerDeco",
+                    "_baseRange": 100,
+                    "_baseDuration": 7,
+                    "_baseLeechPct": 1,
+                    "_baseHealRadius": 25,
+                    "_percentHealPerSecond": 0.01,
+                    "_saveHealHealthPercentage": 1,
+                    "_cleanseAbilityHitProxy": "",
+                    "_cleanseDamageTypeDeco": ""
+                }
+            }
+        ],
+        "InputEvents": [
+            {
+                "tag": "CheckRecast",
+                "inputCode": "ACTIVATE_ABILITY_0",
+                "onDown": 1,
+                "scriptInstance": {
+                    "Script": "TrinityBossWellOfLifeAbility.lua",
+                    "Function": "CheckRecast",
+                    "_failSound": "",
+                    "_sound": "",
+                    "_immortalSound": "",
+                    "_activateAnim": "",
+                    "_rangeDeco": "",
+                    "_procBlockProj": "",
+                    "_flyDeco": "",
+                    "_baseRange": 100,
+                    "_baseDuration": 7,
+                    "_baseLeechPct": 1,
+                    "_baseHealRadius": 25,
+                    "_percentHealPerSecond": 0.01,
+                    "_saveHealHealthPercentage": 1,
+                    "_cleanseAbilityHitProxy": "",
+                    "_cleanseDamageTypeDeco": ""
+                }
+            },
+            {
+                "tag": "CheckRecast",
+                "inputCode": "POWER_MODIFIER",
+                "onDown": 1,
+                "scriptInstance": {
+                    "Script": "/Lotus/Powersuits/Trinity/Abilities/WellOfLifeAbility.lua",
+                    "Function": "CheckRecastPM",
+                    "_failSound": "",
+                    "_sound": "",
+                    "_immortalSound": "",
+                    "_activateAnim": "",
+                    "_healthOrbType": "",
+                    "_energyOrbType": "",
+                    "_rangeDeco": "",
+                    "_procBlockProj": "",
+                    "_flyDeco": "",
+                    "_pvpSoftTargetRadius": 1
+                }
+            }
+        ],
+        "EnergyRequiredToActivate": 0,
+        "PvpEnergyRequiredToActivate": 0,
+        "CastSound": "/Lotus/Sounds/Enemies/Warframes/TrinityPrimeBoss/TrinityPrimeBossBlessingAbilityCast",
+        "SoundEvents": [],
+        "ResourceOverrides": [
+            {
+                "Tag": "WellCast",
+                "Resource": "/Lotus/Fx/PowersuitAbilities/Trinity/HealCast"
+            },
+            {
+                "Tag": "WellCastBurst",
+                "Resource": "/Lotus/Fx/PowersuitAbilities/Trinity/HealCastLensFlareSpawner"
+            },
+            {
+                "Tag": "WellAttach",
+                "Resource": "TrinityPrimeBossWellOfLifeAttach"
+            },
+            {
+                "Tag": "WellEnd",
+                "Resource": "/Lotus/Fx/PowersuitAbilities/Trinity/WellOfLifeEndAttach"
+            }
+        ]
+    }
+}

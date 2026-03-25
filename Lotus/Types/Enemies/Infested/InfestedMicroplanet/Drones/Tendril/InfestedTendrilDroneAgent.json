@@ -168,6 +168,7 @@
                     "PT_STAGGERED"
                 ],
                 "ForcedDeathProcs": [],
+                "ForcedProcCount": 1,
                 "HitType": "DHT_DOT",
                 "ProcExtraTime": 0
             },
@@ -274,6 +275,7 @@
                     3
                 ],
                 "CheckTargetVisible": 1,
+                "CriticalWhenFiring": 0,
                 "BaitType": "",
                 "MaxBaitRadius": 1000,
                 "FaceTarget": 1,
@@ -592,7 +594,6 @@
                 "AimWhenIdle": 0,
                 "AimWhenAlert": 1,
                 "PermanentAlert": 0,
-                "ForceIdleForSinglePointPatrols": 1,
                 "AnimAction": "PatrolIdle",
                 "GenericAnims": [],
                 "MinPlayerDist": [
@@ -653,7 +654,8 @@
                 },
                 "OnlyFindPositionsOnFlightNav": 0,
                 "MaxPatrolDistanceFromEncounterHint": 0,
-                "UseStartingPositionAsEncounterPosition": 0
+                "UseStartingPositionAsEncounterPosition": 0,
+                "ResetStartingPositionOnStartup": 0
             },
             "GuardBehavior": {
                 "Enabled": 1,
@@ -792,6 +794,7 @@
             "PatrolCenterOverrideOrder": "PatrolTarget",
             "CirclingRadius": 70,
             "CirclingRadiusJitter": 5,
+            "CirclingVerticalJitter": 0,
             "AngleBetweenConsecutiveMoveTargets": 0.523,
             "StopRadius": 6,
             "NeverCorrectDestHeight": 1,
@@ -804,7 +807,9 @@
             "MovePostureWhileAlert": "RUN",
             "ForceToClockwiseDirection": 1,
             "TurnOnDamageTime": 10,
-            "UseCreatorAsPatrolCenter": 1
+            "UseCreatorAsPatrolCenter": 1,
+            "UseDirectMove": 0,
+            "CheckDestination": 0
         },
         "FlyPatrolBehavior": {
             "Enabled": 1,
@@ -839,8 +844,8 @@
             "TimeOut": 0,
             "CoverOnly": 0,
             "AimPosture": 0,
-            "MinimalEnemyDistance": 0,
             "TrackTarget": 0,
+            "MinimalEnemyDistance": 0,
             "TrackTargetNotVisible": 0,
             "Peek": 0,
             "FailOnDamaged": 1,
@@ -877,6 +882,7 @@
         ],
         "LocomotionController:DynamicPathFollowerSpace": {
             "AllowLookAhead": 1,
+            "UpdateNextFrameView": 0,
             "LookAheadPathClearance": -1,
             "StuckDetectionTime": [
                 3,
@@ -896,6 +902,7 @@
             "MoveFailureThreshold": 0.9,
             "LockedInPlaceTimeout": 5,
             "KeepPathWhileBlocking": 0,
+            "TurnRateMultiplierOnMoveDirFacing": 1,
             "MinimumMoveDistance": 0.1,
             "MinimumRunDistance": 3,
             "ShortDistanceSpeedMultiplier": 2,
@@ -924,8 +931,11 @@
             "SlopeThrottleMapping": [],
             "EnableViewChange": 1,
             "InitialAngleDiffForTurn": 0,
+            "MaxAngleDiffForTurn": 360,
+            "AngleDiffTolerance": 0,
             "ForceLookTarget": 0,
             "ForcePredictUsingDesiredViewHeading": 0,
+            "MaxLookAheadDistanceForPeakHeight": 5,
             "TransitionDistance": 2,
             "CoverWalkTransitionDistance": 0.5,
             "AlternateCoverPoseTransitionDistance": 0,
@@ -938,10 +948,14 @@
             "UseVIPNav": 0,
             "AvoidDynamicOnly": 0,
             "HoverHeightCorrection": 1,
+            "HoverHeightCorrectionOnInit": 1,
+            "StayAboveUpwardMovingNavBridges": 1,
             "MinMoveDistToCorrectHeight": 5,
             "DesiredHeightTolerance": 0.25,
             "HeightRecoverFactor": 3,
             "HeightRecoverSpeed": 3,
+            "PreferredHeightAboveWater": -1,
+            "WaterRaycastCooldownDuration": 0.5,
             "GroundRaycastCorrection": 0,
             "RaycastCooldownDuration": 0.5,
             "MaxDownwardsRaytraceDist": -3,
@@ -952,8 +966,10 @@
             "NoiseAmplitudeRot": 0,
             "NoiseAmplitudePitch": 0,
             "NoiseAmplitudeVel": 0,
+            "UseLinearTurnRateForHeadingChange": 0,
             "YawAccel": 720,
-            "MaxDesiredHeightOnBridges": 1
+            "MaxDesiredHeightOnBridges": 1,
+            "NearBridgeDistance": 2
         },
         "LocomotionController:MoveModifierCollection": [
             {
@@ -1019,7 +1035,6 @@
             "preferredHeight": 1.6,
             "nearbyNavSearchRadius": 1,
             "offNavToleranceRadius": 1,
-            "shorteningType": "ST_NONE",
             "maxShortenSteps": 20,
             "useAvoidance": 0,
             "avoidanceExtraRange": 20,

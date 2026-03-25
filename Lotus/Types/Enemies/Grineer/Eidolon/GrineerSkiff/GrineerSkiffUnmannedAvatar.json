@@ -111,7 +111,7 @@
             0
         ],
         "LocTag": "/Lotus/Language/Enemies/EidolonGrineerSkiffName",
-        "MaxHealth": 300,
+        "MaxHealth": 3500,
         "RespondsToWorldCollisions": 1,
         "ClimbControllerType": "UnmannedSkiff/SkiffClimbController",
         "DamageControllerType": "UnmannedSkiff/UnmannedSkiffDamageController",
@@ -119,7 +119,8 @@
         "OnPreDeathScript": {
             "Script": "UnmannedSkiff/HandlePilotOnSkiffDeath.lua",
             "Function": "RagdollPilot",
-            "_pilotAvatarType": "/Lotus/Types/Enemies/Grineer/Eidolon/Avatars/EidolonSkiffPilotAvatar"
+            "_pilotAvatarType": "/Lotus/Types/Enemies/Grineer/Eidolon/Avatars/EidolonSkiffPilotAvatar",
+            "_maxHealthAsDamagePct": 0.8
         },
         "OnDeathScript": {
             "_explosionFx": "/Lotus/Fx/Enemies/Grineer/Skiff/EidolonSkiffExplosion"
@@ -1178,7 +1179,6 @@
                 "colorId": "HCC_GENERAL_MARKER"
             }
         ],
-        "DisarmAction": "DA_DAMAGE_ONLY",
         "AIMountedSkiffAgentType": "GrineerSkiffAgent",
         "UnmannedSkiffAgentType": "GrineerSkiffUnmannedAgent",
         "MountActionType": "UnmannedSkiff/UseEidolonSkiff",
@@ -1189,7 +1189,8 @@
         "RiderCinMap": [
             {
                 "OriginalCinID": "Marine",
-                "NewCinID": "Tenno"
+                "NewCinID": "Tenno",
+                "EnableFootIK": 0
             }
         ],
         "PlayerHijackMountVehicleAnim": "/Lotus/Animations/Grineer/Speeder/HijackMountWarframecin",
@@ -1214,14 +1215,6 @@
                     0,
                     1
                 ],
-                "PositionDeviation": [
-                    0,
-                    0
-                ],
-                "RotationDeviation": [
-                    0,
-                    0
-                ],
                 "BoneName": "GAME_C1_SHIELDATTCH",
                 "Type": "/Lotus/Fx/Levels/Grineer/SkiffFlareSmall",
                 "Chance": 255,
@@ -1243,14 +1236,6 @@
                     0,
                     0,
                     0.707107
-                ],
-                "PositionDeviation": [
-                    0,
-                    0
-                ],
-                "RotationDeviation": [
-                    0,
-                    0
                 ],
                 "BoneName": "",
                 "Type": "/Lotus/Fx/Gameplay/SpaceFlight/ArchwingTerrainCaster",
