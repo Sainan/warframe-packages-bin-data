@@ -1,0 +1,518 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 0,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 0,
+                    "posY": 50
+                }
+            },
+            {
+                "key": 1,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 163,
+                    "posY": -306
+                }
+            },
+            {
+                "key": 3,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 273,
+                    "posY": -55
+                }
+            },
+            {
+                "key": 4,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 255,
+                    "posY": 65
+                }
+            },
+            {
+                "key": 36,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 365,
+                    "posY": 264
+                }
+            },
+            {
+                "key": 37,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 744,
+                    "posY": 69
+                }
+            },
+            {
+                "key": 38,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 1267,
+                    "posY": -15
+                }
+            },
+            {
+                "key": 39,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 1222,
+                    "posY": 252
+                }
+            },
+            {
+                "key": 40,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 1226,
+                    "posY": 336
+                }
+            }
+        ],
+        "NodeProperties": {
+            "0": {
+                "links": []
+            },
+            "1": {
+                "Type": "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "WaitForSpawnAnimationBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 1,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "3": {
+                "Type": "/EE/Types/Npc/BlockingBehaviorFighter",
+                "BlockingBehaviorFighter": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "BlockOnBeingAttached": 0,
+                    "ShouldRemovePerception": 1,
+                    "Deceleration": 0.25,
+                    "AltDeceleration": 0,
+                    "AltDecelPostures": [
+                        "PM_STAGGER"
+                    ],
+                    "PostDeathDeceleration": 0,
+                    "RandomDriftAngleRange": [
+                        0,
+                        0
+                    ],
+                    "ShouldMoveRandomlyBlind": 1,
+                    "BlindedSpeedModifier": 2,
+                    "TimeBetweenBlindDirectionChange": 0.5
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 3,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "4": {
+                "Type": "/Lotus/Types/Behaviors/FlyRetreatOffMapBehaviour",
+                "FlyRetreatOffMapBehaviour": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": "/Lotus/Scripts/CrewShip/GrineerCrewShip.lua",
+                        "Function": "RemoveOnRetreat",
+                        "_warpFxType": "/Lotus/Fx/Enemies/Corpus/RailJack/CrpCargoShipWarpOut",
+                        "_weakPointDecoType": "",
+                        "_shieldFxType": "",
+                        "_spaceMarkerType": "/Lotus/Types/Game/MarkerInfos/SpaceEnemyCrewShipMarkerInfo",
+                        "_retreatTimer": 10
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AvatarOutOfBoundsRatioToDisappear": 0.9,
+                    "AllowCombat": 0,
+                    "AlwaysDestroyOutsidePlayingSpace": 1,
+                    "RetreatOrder": "RetreatOffMap"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 4,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "36": {
+                "Type": "/EE/Types/Npc/WaitBehavior",
+                "WaitBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "TimeOut": 0,
+                    "CoverOnly": 0,
+                    "AimPosture": 0,
+                    "MinimalEnemyDistance": 0,
+                    "TrackTarget": 0,
+                    "TrackTargetNotVisible": 0,
+                    "Peek": 0,
+                    "FailOnDamaged": 0,
+                    "PreventShooting": 0,
+                    "StopMovingOnEnter": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 36,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 5
+                        }
+                    }
+                ]
+            },
+            "37": {
+                "Type": "/Lotus/Types/Behaviors/FighterBehaviorStateMachine",
+                "FighterBehaviorStateMachine": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AttackAction:Type": "/Lotus/Types/Behaviors/FighterFlyToTargetBehavior",
+                    "AttackAction:Enabled": 1,
+                    "AttackAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "AttackAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "AttackAction:DefaultReevaluationDelay": 0,
+                    "AttackAction:CombatPosture": "WALK",
+                    "AttackAction:ControlShooting": 1,
+                    "AttackAction:UseCombatManager": 1,
+                    "AttackAction:PredictTime": 2,
+                    "AttackAction:AimArc": 30,
+                    "AttackAction:OffsetTargetDestination": 100,
+                    "AttackAction:OffsetTargetDestinationByTargetWidthMultiplier": 1,
+                    "AttackAction:AlwaysHeadForOffsetDestination": 1,
+                    "AttackAction:MaxSpeedModifier": 1.4,
+                    "AttackAction:MinSpeedModifier": 1,
+                    "AttackAction:ExtraSpeedModifierWhenFiring": 1,
+                    "AttackAction:FiringIntervalScalingByTargetCrewCount": [
+                        3,
+                        8
+                    ],
+                    "AttackAction:SetVariable": "IV_CROUCH",
+                    "AttackAction:SetVariableValue": 0,
+                    "DisengageAction:Type": "/Lotus/Types/Behaviors/FighterDisengageBehavior",
+                    "DisengageAction:Enabled": 1,
+                    "DisengageAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "DisengageAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DisengageAction:DefaultReevaluationDelay": 0,
+                    "DisengageAction:DisengagePosture": "RUN",
+                    "DisengageAction:SimpleForwardDisengage": 1,
+                    "DisengageAction:PredictTime": 2,
+                    "DisengageAction:MinAngleToTarget": 90,
+                    "DisengageAction:MaxDistanceToTarget": 70,
+                    "DisengageAction:DisengageDistance": 240,
+                    "DisengageAction:DestinationOverrideOrder": "",
+                    "DisengageAction:MinDistanceFromOverrideOrder": 300,
+                    "DisengageAction:MinOrderedDisengagingTime": [
+                        6,
+                        10
+                    ],
+                    "DisengageAction:AllowFire": 0,
+                    "CircleAction:Type": "/Lotus/Types/Behaviors/FlyAroundTargetBehavior",
+                    "CircleAction:Enabled": 1,
+                    "CircleAction:OnStartScript": {
+                        "Script": ""
+                    },
+                    "CircleAction:OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "CircleAction:DefaultReevaluationDelay": 0,
+                    "CircleAction:MaxRange": 1000,
+                    "CircleAction:EnableAttackingPhase": 0,
+                    "CircleAction:FlyPastTargetDistanceRange": [
+                        100,
+                        150
+                    ],
+                    "CircleAction:FlyPastAvoidDistanceToTarget": 10,
+                    "CircleAction:TargetMovedDistanceToRecalculateDirection": 2,
+                    "CircleAction:DistanceToTargetToStopDirectionChange": 10,
+                    "CircleAction:MaxPitchVarianceFromTargetHorizontal": 70,
+                    "CircleAction:MaxApproachAngleFromFrontOfTargetDeviance": 30,
+                    "CircleAction:ForceEndCircleAroundStageDistance": 140,
+                    "CircleAction:IdealStartViewCone": 30,
+                    "CircleAction:ForceCircleAroundOutsideViewCone": 55,
+                    "CircleAction:CircleAroundPointCount": 5,
+                    "CircleAction:AttackPosture": "JOG",
+                    "CircleAction:CircleAroundPosture": "RUN",
+                    "CircleAction:TrackTarget": 1,
+                    "CircleAction:AllowableMoveError": 6,
+                    "CircleAction:ShootingAngleFromForward": 120,
+                    "CircleAction:MoveFacingControl": "MFC_FACE_MOVEDIR",
+                    "CircleAction:DistanceFromTargetToPreventAttackActions": 180,
+                    "CircleAction:AttackActions": [],
+                    "ControlShooting": 1,
+                    "CirclingMinTimeRange": [
+                        0,
+                        0
+                    ],
+                    "NoCirclingBehindTarget": 1,
+                    "CirclingCountdownMultiplierOutOfVision": 2,
+                    "MinAttackDistance": 70,
+                    "MaxDistanceToStartDisengage": 120,
+                    "ScriptTargetRange": 180,
+                    "TargetInRangeScript": {
+                        "Script": "/Lotus/Scripts/GrnOutriderScript.lua",
+                        "Function": "OnStartAttacking",
+                        "_turretAgentTypes": [],
+                        "_turretAvatarType": "/Lotus/Types/Enemies/SpaceBattles/Grineer/Fighters/SpaceFighterOutriderGunTurretAvatar",
+                        "_weakPointDecoType": "",
+                        "_engineFxOffest": [
+                            -5,
+                            0,
+                            0
+                        ],
+                        "_engineSpeedUpEffect": "",
+                        "_combatModeSound": "/Lotus/Sounds/Enemies/GrineerPursuitSpaceShip/GrineerPursuitSpaceShipTurretWindUp",
+                        "_disengageSound": "",
+                        "_shipSequencerType": "",
+                        "_shipCloseSequencerType": "",
+                        "_ENGINE_BONE": "GAME_C1_EXHAUSTFX",
+                        "_ShiftEmissives": 0
+                    },
+                    "TargetLeftRangeScript": {
+                        "Script": "/Lotus/Scripts/GrnOutriderScript.lua",
+                        "Function": "OnStartDisengaging",
+                        "_turretAgentTypes": [],
+                        "_turretAvatarType": "/Lotus/Types/Enemies/SpaceBattles/Grineer/Fighters/SpaceFighterOutriderGunTurretAvatar",
+                        "_weakPointDecoType": "",
+                        "_engineFxOffest": [
+                            -1,
+                            0,
+                            0
+                        ],
+                        "_engineSpeedUpEffect": "/Lotus/Fx/SpaceBattle/Ships/GrineerPursuit/PursuitJetAfterBurner",
+                        "_combatModeSound": "",
+                        "_disengageSound": "/Lotus/Sounds/Vehicles/GrineerPursuitSpaceShip/GrineerPursuitSpaceshipEnginesBackOnline",
+                        "_shipSequencerType": "",
+                        "_shipCloseSequencerType": "",
+                        "_ENGINE_BONE": "GAME_C1_EXHAUSTFX",
+                        "_ShiftEmissives": 0
+                    },
+                    "ScriptTargetInRangeMoveSpeedModifier": 0.35,
+                    "OffensivePathingType": 0,
+                    "EvasivePathingType": 0
+                },
+                "links": []
+            },
+            "38": {
+                "Type": "/Lotus/Types/Behaviors/FighterFlyToTargetBehavior",
+                "FighterFlyToTargetBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "CombatPosture": "WALK",
+                    "ControlShooting": 1,
+                    "UseCombatManager": 1,
+                    "PredictTime": 2,
+                    "AimArc": 30,
+                    "OffsetTargetDestination": 100,
+                    "OffsetTargetDestinationByTargetWidthMultiplier": 1,
+                    "AlwaysHeadForOffsetDestination": 1,
+                    "MaxSpeedModifier": 1.4,
+                    "MinSpeedModifier": 1,
+                    "ExtraSpeedModifierWhenFiring": 1,
+                    "FiringIntervalScalingByTargetCrewCount": [
+                        3,
+                        8
+                    ],
+                    "SetVariable": "IV_CROUCH",
+                    "SetVariableValue": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 38,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 37,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "39": {
+                "Type": "/Lotus/Types/Behaviors/FighterDisengageBehavior",
+                "FighterDisengageBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "DisengagePosture": "RUN",
+                    "SimpleForwardDisengage": 1,
+                    "PredictTime": 2,
+                    "MinAngleToTarget": 90,
+                    "MaxDistanceToTarget": 70,
+                    "DisengageDistance": 240,
+                    "DestinationOverrideOrder": "",
+                    "MinDistanceFromOverrideOrder": 300,
+                    "MinOrderedDisengagingTime": [
+                        6,
+                        10
+                    ],
+                    "AllowFire": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 39,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 37,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "40": {
+                "Type": "/Lotus/Types/Behaviors/FlyAroundTargetBehavior",
+                "FlyAroundTargetBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "MaxRange": 1000,
+                    "EnableAttackingPhase": 0,
+                    "FlyPastTargetDistanceRange": [
+                        100,
+                        150
+                    ],
+                    "FlyPastAvoidDistanceToTarget": 10,
+                    "TargetMovedDistanceToRecalculateDirection": 2,
+                    "DistanceToTargetToStopDirectionChange": 10,
+                    "MaxPitchVarianceFromTargetHorizontal": 70,
+                    "MaxApproachAngleFromFrontOfTargetDeviance": 30,
+                    "ForceEndCircleAroundStageDistance": 140,
+                    "IdealStartViewCone": 30,
+                    "ForceCircleAroundOutsideViewCone": 55,
+                    "CircleAroundPointCount": 5,
+                    "AttackPosture": "JOG",
+                    "CircleAroundPosture": "RUN",
+                    "TrackTarget": 1,
+                    "AllowableMoveError": 6,
+                    "ShootingAngleFromForward": 120,
+                    "MoveFacingControl": "MFC_FACE_MOVEDIR",
+                    "DistanceFromTargetToPreventAttackActions": 180,
+                    "AttackActions": []
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 40,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 37,
+                            "prop": 4
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 0
+    }
+}

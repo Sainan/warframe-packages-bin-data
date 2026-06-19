@@ -1,0 +1,112 @@
+{
+    "parent": "/Lotus/Types/Enemies/EnemyAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "JS2MCorpusSpaceArchwingAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Corpus/Spaceman/SpacemanRifle",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/Logic/LogicGraphAction"
+        ],
+        "LogicGraphAction": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "GraphRes": "JS2MCorpusSpaceArchwingLogicGraph"
+        },
+        "LocomotionController:PathFinder": [
+            "/Lotus/Types/Game/DynamicPathFinderSpace"
+        ],
+        "LocomotionController:DynamicPathFinderSpace": {
+            "FlightPathParams": {
+                "Gfactor": 1,
+                "Hfactor": 1.5,
+                "UseManhatten": 1,
+                "HeightCostBias": 0,
+                "UseFace": 1,
+                "UnitCost": 0,
+                "UseEndNodePos": 0,
+                "NodeSizeCompensate": 1,
+                "NodeSizeCompensateEstimateAmount": 0.5,
+                "NodeSizeCompensateCostAmount": 0.8
+            },
+            "Async": 1
+        },
+        "LocomotionController:PathFollower": [
+            "/Lotus/Types/Game/DynamicPathFollowerSpace"
+        ],
+        "LocomotionController:DynamicPathFollowerSpace": {
+            "AllowLookAhead": 1,
+            "UpdateNextFrameView": 0,
+            "LookAheadPathClearance": -1,
+            "StuckDetectionTime": [
+                3,
+                6
+            ],
+            "AllowRecovery": 1,
+            "MaxRecoveryAttemptTime": 0.25,
+            "MinRecoveryAttemptTime": 0,
+            "MoveSuccessRadius": 1,
+            "DesiredVelocityAsMultiplierOfBaseSpeed": 1,
+            "StopWhenMovementInactive": 1,
+            "IdlingSpeedMultiplier": 0.45,
+            "ForceFaceForwardWhenInactive": 1
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierMoveTowardsDestination"
+                ],
+                "LocomotionMoveModifierMoveTowardsDestination": {
+                    "MinSpeed": 0
+                }
+            }
+        ],
+        "LocomotionController:PathingPreferences": {
+            "maxHeight": 20,
+            "minHeight": -7,
+            "preferredHeight": 1,
+            "offNavToleranceRadius": 1,
+            "maxShortenSteps": 20,
+            "useAvoidance": 0
+        },
+        "AccuracyModsType": "/EE/Types/Npc/NpcArchwingAccuracyMods",
+        "ViewIdleFov": 360,
+        "IdleVerticalFov": 90,
+        "ViewIdleDistance": 400,
+        "ViewFov": 360,
+        "ViewDistance": 500,
+        "UseCombatView": 1,
+        "ViewCombatFov": 360,
+        "ViewCombatDistance": 3500,
+        "DarkVisionSensitivity": [
+            1,
+            1
+        ],
+        "AwarenessDecayTime": 0,
+        "TargetLostTime": 20,
+        "TargetLowHealthPercent": 0.3,
+        "ReportTargetRadius": 600,
+        "ReportTargetPortalCheck": 0,
+        "ReportAwareness": 1,
+        "alertRadiusBounds": [
+            1,
+            100
+        ],
+        "AlertDecayTime": 30,
+        "SuperAlertRadius": 800,
+        "SuperAlertDecayTime": 20,
+        "ReactionControllerType": "/Lotus/Types/Enemies/SpaceBattles/Grineer/Fighters/RailjackFighterReactionControllerImpl",
+        "PerceiverType": "/Lotus/Types/Enemies/SpaceBattles/Grineer/Fighters/RailjackShipPerceiver"
+    }
+}

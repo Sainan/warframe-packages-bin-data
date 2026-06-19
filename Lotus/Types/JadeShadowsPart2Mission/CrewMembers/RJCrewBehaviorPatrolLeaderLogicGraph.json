@@ -1,0 +1,95 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 1,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 0,
+                    "posY": -18
+                }
+            },
+            {
+                "key": 2,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 124,
+                    "posY": -35
+                }
+            },
+            {
+                "key": 3,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 124,
+                    "posY": 49
+                }
+            }
+        ],
+        "NodeProperties": {
+            "1": {
+                "links": []
+            },
+            "2": {
+                "Type": "/EE/Types/Npc/Logic/LogicGraphAction",
+                "LogicGraphAction": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "GraphRes": "/Lotus/Types/Friendly/RailJack/RJCrewFunctionsSubgraph"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 2,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 1,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "3": {
+                "Type": "/EE/Types/Npc/Logic/LogicGraphAction",
+                "LogicGraphAction": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "GraphRes": "RJCrewCombatPatrolLeaderSubgraph"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 3,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 1,
+                            "prop": 3
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 1
+    }
+}

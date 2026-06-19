@@ -2,7 +2,8 @@
     "parent": "CrpAdmiralBaseAgent",
     "data": {
         "AvatarTypes": {
-            "STANDARD": "Avatars/CrpAdmiralFlyingAvatar"
+            "STANDARD": "Avatars/CrpAdmiralFlyingAvatar",
+            "EXIMUS": "Avatars/CrpAdmiralFlyingAvatarLeader"
         },
         "NewAdditionalInventory": [
             {
@@ -37,14 +38,24 @@
                     "MinRange": 0,
                     "MaxRange": 1000,
                     "EquipStyle": "ES_INSTANT_EQUIP",
-                    "TargetTypeSetting": "ATS_LAND_ONLY"
+                    "TargetTypeSetting": "ATS_LAND_ONLY",
+                    "RandomSwapDelayPerWeapon": [
+                        0,
+                        0
+                    ],
+                    "SwapAfterMinOneShot": 0
                 },
                 {
                     "WeaponSlot": "SLOT_1",
                     "MinRange": 0,
                     "MaxRange": 1000,
                     "EquipStyle": "ES_INSTANT_EQUIP",
-                    "TargetTypeSetting": "ATS_AIR_ONLY"
+                    "TargetTypeSetting": "ATS_AIR_ONLY",
+                    "RandomSwapDelayPerWeapon": [
+                        0,
+                        0
+                    ],
+                    "SwapAfterMinOneShot": 0
                 }
             ],
             "WeaponHand": "MAIN_HAND",
@@ -197,6 +208,7 @@
                 "MaxDistToTarget": 25,
                 "Order": "StormTarget",
                 "SuccessRadius": 1,
+                "SpeedMultiplier": 1,
                 "DesiredPosture": "RUN",
                 "UseNearTargetPosture": 0,
                 "NearTargetPostureMissionType": "Territory",
@@ -249,6 +261,9 @@
                 },
                 "FullBodyAction": "FBA_NONE",
                 "Action": "JetDodge",
+                "DoDirectionFiltering": 0,
+                "DirectionFilterFov": 180,
+                "InvertFacingFilter": 0,
                 "UseTacPosMgr": 0,
                 "IdealJumpDist": [
                     3,
@@ -538,7 +553,6 @@
                 "RandomWalkBehavior:AimWhenIdle": 0,
                 "RandomWalkBehavior:AimWhenAlert": 1,
                 "RandomWalkBehavior:PermanentAlert": 0,
-                "RandomWalkBehavior:ForceIdleForSinglePointPatrols": 1,
                 "RandomWalkBehavior:AnimAction": "PatrolIdle",
                 "RandomWalkBehavior:GenericAnims": [],
                 "RandomWalkBehavior:MinPlayerDist": [
@@ -600,6 +614,7 @@
                 "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
                 "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
                 "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
+                "RandomWalkBehavior:ResetStartingPositionOnStartup": 0,
                 "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
                 "GuardBehavior:Enabled": 1,
                 "GuardBehavior:OnStartScript": {
@@ -940,6 +955,7 @@
                 "DefaultReevaluationDelay": 0,
                 "TimeSinceLastSeen": 5,
                 "MaxDistToTarget": 15,
+                "SpeedMultiplier": 1,
                 "ConsiderOrderType": 1,
                 "Order": "StormTarget",
                 "FailsOnTargetAcquired": 1,
@@ -1350,6 +1366,7 @@
                         3
                     ],
                     "FireBursts": 0,
+                    "ChargeWeapon": 0,
                     "AimWhenPausing": 0,
                     "AimWhenStopping": 0,
                     "DecorativeReloads": 1,
@@ -1866,7 +1883,6 @@
                 "RandomWalkBehavior:AimWhenIdle": 0,
                 "RandomWalkBehavior:AimWhenAlert": 1,
                 "RandomWalkBehavior:PermanentAlert": 0,
-                "RandomWalkBehavior:ForceIdleForSinglePointPatrols": 1,
                 "RandomWalkBehavior:AnimAction": "PatrolIdle",
                 "RandomWalkBehavior:GenericAnims": [],
                 "RandomWalkBehavior:MinPlayerDist": [
@@ -1928,6 +1944,7 @@
                 "RandomWalkBehavior:OnlyFindPositionsOnFlightNav": 0,
                 "RandomWalkBehavior:MaxPatrolDistanceFromEncounterHint": 0,
                 "RandomWalkBehavior:UseStartingPositionAsEncounterPosition": 0,
+                "RandomWalkBehavior:ResetStartingPositionOnStartup": 0,
                 "GuardBehavior:Type": "/EE/Types/Npc/GuardBehavior",
                 "GuardBehavior:Enabled": 1,
                 "GuardBehavior:OnStartScript": {
@@ -1969,6 +1986,7 @@
             "MoveFailureThreshold": 0.9,
             "LockedInPlaceTimeout": 5,
             "KeepPathWhileBlocking": 0,
+            "TurnRateMultiplierOnMoveDirFacing": 1,
             "MinimumMoveDistance": 0.1,
             "MinimumRunDistance": 3,
             "ShortDistanceSpeedMultiplier": 2,
@@ -1997,8 +2015,11 @@
             "SlopeThrottleMapping": [],
             "EnableViewChange": 1,
             "InitialAngleDiffForTurn": 0,
+            "MaxAngleDiffForTurn": 360,
+            "AngleDiffTolerance": 0,
             "ForceLookTarget": 0,
             "ForcePredictUsingDesiredViewHeading": 0,
+            "MaxLookAheadDistanceForPeakHeight": 5,
             "TransitionDistance": 2,
             "CoverWalkTransitionDistance": 0.5,
             "AlternateCoverPoseTransitionDistance": 0,
@@ -2011,10 +2032,14 @@
             "UseVIPNav": 0,
             "AvoidDynamicOnly": 0,
             "HoverHeightCorrection": 1,
+            "HoverHeightCorrectionOnInit": 1,
+            "StayAboveUpwardMovingNavBridges": 1,
             "MinMoveDistToCorrectHeight": 5,
             "DesiredHeightTolerance": 0.25,
             "HeightRecoverFactor": 3,
             "HeightRecoverSpeed": 3,
+            "PreferredHeightAboveWater": -1,
+            "WaterRaycastCooldownDuration": 0.5,
             "GroundRaycastCorrection": 0,
             "RaycastCooldownDuration": 0.5,
             "MaxDownwardsRaytraceDist": -3,
@@ -2025,8 +2050,10 @@
             "NoiseAmplitudeRot": 0,
             "NoiseAmplitudePitch": 0,
             "NoiseAmplitudeVel": 0,
+            "UseLinearTurnRateForHeadingChange": 0,
             "YawAccel": 720,
-            "MaxDesiredHeightOnBridges": 1
+            "MaxDesiredHeightOnBridges": 1,
+            "NearBridgeDistance": 2
         },
         "LocomotionController:DynamicPathFollowerGround": {
             "MoveFailureThreshold": 0.9,

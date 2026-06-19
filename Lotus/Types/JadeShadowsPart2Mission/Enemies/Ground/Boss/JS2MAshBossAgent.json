@@ -1,0 +1,67 @@
+{
+    "parent": "/Lotus/Types/Enemies/TennoReplicants/RelayBoss/TennoReplicantRelayBossBaseAgent",
+    "data": {
+        "AvatarTypes": {
+            "STANDARD": "JS2MAshBossAvatar"
+        },
+        "NewAdditionalInventory": [
+            {
+                "item": "/Lotus/Types/Enemies/Quests/JadeShadowsPart2Quest/JS2QuestAshKarystWeapon",
+                "forceEquip": 1,
+                "hand": "MAIN_HAND"
+            },
+            {
+                "item": "JS2MAshBossPowerSuit",
+                "forceEquip": 1,
+                "hand": "EXTRA1"
+            },
+            {
+                "item": "JS2MAshGeminiKunaiPistolWeapon",
+                "forceEquip": 0,
+                "hand": "MAIN_HAND"
+            }
+        ],
+        "BehaviorDatabase": [
+            "/EE/Types/Npc/Logic/LogicGraphAction"
+        ],
+        "LogicGraphAction": {
+            "Enabled": 1,
+            "OnStartScript": {
+                "Script": ""
+            },
+            "OnDamagedScript": {
+                "Script": ""
+            },
+            "GraphRes": "JS2MAshBossLogicGraph"
+        },
+        "LocomotionController:DynamicPathFollowerGround": {
+            "MoveFailureThreshold": 0.9,
+            "MinimumRunDistance": 3,
+            "ShortDistanceSpeedMultiplier": 2
+        },
+        "LocomotionController:MoveModifierCollection": [
+            {
+                "moveModifiers": [
+                    "/EE/Types/Npc/LocomotionMoveModifierDodgeJumpBackToNav"
+                ],
+                "LocomotionMoveModifierDodgeJumpBackToNav": {
+                    "DodgeJumpSymbol": "DodgeJump",
+                    "OffNavTimeRequired": 2,
+                    "TotallyStuckTimeRequired": 4,
+                    "SkipPathOnStuck": 0,
+                    "MinTimeSinceLastSeenRequired": 10,
+                    "SkipFallingOrLaunchingAvatars": 0,
+                    "DistanceToInstantTeleport": 100
+                }
+            }
+        ],
+        "LocomotionController:limitToNav": 1,
+        "BaseHitChance": [
+            0.5,
+            0.7
+        ],
+        "DodgeBreaksLead": 1,
+        "TargetEvaluatorType": "/Lotus/Types/Enemies/PlayerPrefRangedTargetEvaluator",
+        "MusicWeight": 10
+    }
+}

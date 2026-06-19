@@ -1,0 +1,66 @@
+{
+    "parent": "/Lotus/Types/Game/LotusArtifactUpgrade",
+    "data": {
+        "Rarity": "UNCOMMON",
+        "LocalizeTag": "/Lotus/Language/Mods/IncarnonSicarusTier3B",
+        "LocalizeDescTag": "",
+        "Icon": "/Lotus/Interface/Icons/EvolvingWeapons/GainStatusChanceOfCritChance.png",
+        "Upgrades": [
+            {
+                "UpgradeType": "NONE",
+                "OperationType": "ADD",
+                "Value": 0,
+                "DamageType": "DT_ANY",
+                "AutoType": 1,
+                "ValidType": "",
+                "CheckTypeOnInstall": 0,
+                "SymbolFilter": "",
+                "UpgradeObject": "",
+                "ValidPostures": [],
+                "ValidModifiers": [],
+                "InvalidModifiers": [],
+                "ValidProcTypes": [],
+                "OverrideLocalization": 1,
+                "LocTag": "/Lotus/Language/Upgrades/IncarnonEvoProcforCritChance",
+                "LocKeyWordScript": {
+                    "Script": "/Lotus/Scripts/Mods/WeaponAddBaseStatForModdedStat.lua",
+                    "Function": "GetLocValues",
+                    "_targetBaseStatType": "WEAPON_CRIT_CHANCE",
+                    "_sourceModdedStatType": "WEAPON_PROC_CHANCE",
+                    "_bonusPercentage": 0.3,
+                    "_isDynamic": 0,
+                    "_bonusMaxCap": 0.4
+                },
+                "SmallerIsBetter": 0,
+                "RoundTo": 0.1,
+                "RoundingMode": "RM_ROUND",
+                "AllowConditionalLocMerge": 0
+            }
+        ],
+        "FusionLimit": "QA_NONE",
+        "ItemCompatibility": "/Lotus/Weapons/Tenno/Rifle/TennoSniperRifle",
+        "IncompatibilityTags": [
+            "POWER_WEAPON"
+        ],
+        "Script": {
+            "Script": "/Lotus/Scripts/Mods/WeaponAddBaseStatForModdedStat.lua",
+            "Function": "OnUpgradeApplied",
+            "_targetBaseStatType": "WEAPON_PROC_CHANCE",
+            "_sourceModdedStatType": "WEAPON_CRIT_CHANCE",
+            "_bonusPercentage": 0.3,
+            "_isDynamic": 1,
+            "_bonusMaxCap": 0.4
+        },
+        "UnappliedScript": {
+            "Script": "/Lotus/Scripts/Mods/WeaponAddBaseStatForModdedStat.lua",
+            "Function": "OnUpgradeRemoved",
+            "_targetBaseStatType": "WEAPON_PROC_CHANCE",
+            "_sourceModdedStatType": "WEAPON_PROC_CHANCE",
+            "_bonusPercentage": 0.3,
+            "_isDynamic": 0,
+            "_bonusMaxCap": 1.5
+        },
+        "UpgradeChance": 1,
+        "HudBuffIcon": "/Lotus/Interface/Icons/EvolvingWeapons/GainStatusChanceOfCritChance.png"
+    }
+}

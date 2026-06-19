@@ -1,0 +1,59 @@
+{
+    "parent": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/NpcAbility",
+    "data": {
+        "Script": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/NomadTeleportAbility.lua",
+            "Function": "ActivateAbility",
+            "_minRange": 0,
+            "_maxRange": 4,
+            "_teleportRangeMultiplier": 30,
+            "_teleportFX": "",
+            "_doShockwave": 0,
+            "_shockwaveEntity": "",
+            "_teleportWindupAnim": "/Lotus/Animations/Dax/Ninja/NinjaTeleportAttack_anim.fbx",
+            "_teleportRecoverAnim": "/Lotus/Animations/Grineer/Movement/Melee/FlameTeleportEnd",
+            "_ScriptedTeleportFx": 1
+        },
+        "CooldownDuration": 8,
+        "ActivationXP": 0,
+        "CastSound": "/Lotus/Sounds/Enemies/JadeShadows2/JS2AshBaseSniperTeleportAbility",
+        "EvaluateScript": 0,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/CheckTargetEvaluator",
+            "/Lotus/Types/Game/AbilityEvaluators/GetTacPosEvaluator"
+        ],
+        "Evaluator:CheckTargetEvaluator": {
+            "TargetRange": [
+                0,
+                20
+            ],
+            "LastSeemTime": 4,
+            "PersonallySeen": 0,
+            "RequireLivingAvatar": 1,
+            "SetAbilityArg": 1
+        },
+        "Evaluator:GetTacPosEvaluator": {
+            "GenerateFromTarget": 1,
+            "GenerationDistance": [
+                15,
+                20
+            ],
+            "DistanceScoring": [
+                {
+                    "curve": {
+                        "m": 100,
+                        "k": 1.5,
+                        "b": 0,
+                        "c": 0.8,
+                        "logistic": 1
+                    },
+                    "range": [
+                        0,
+                        15
+                    ],
+                    "centerOnTarget": 0
+                }
+            ]
+        }
+    }
+}

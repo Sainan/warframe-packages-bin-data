@@ -78,6 +78,7 @@
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
+                    "SlaveUsesMasterTargets": 0,
                     "ExplicitNpcPerceptionSoundAttenuationRadius": [
                         10,
                         100
@@ -239,6 +240,7 @@
                     "DamageUpgradeTypes": [
                         "WEAPON_MELEE_DAMAGE"
                     ],
+                    "PlayHitEffectsOnFriendlyAvatars": 0,
                     "damageFallOff": [
                         0,
                         0
@@ -287,7 +289,9 @@
                     "flash": 0,
                     "OnHitScriptEnabled": 1,
                     "OnHitScript": {
-                        "Script": ""
+                        "Script": "ObexIncarnonEvolutions/ObexIncarnon.lua",
+                        "Function": "OnWeaponHit",
+                        "_explosionFx": ""
                     },
                     "UseNextShotDamageBonus": 1,
                     "IgnoreHeadshotBonus": 0,
@@ -314,6 +318,7 @@
                         "CC_GROUND_BRANCH_B": [],
                         "CC_GROUND_BRANCH_C": [],
                         "CC_GROUND_HEAVY": [],
+                        "CC_GROUND_HELD_HEAVY": [],
                         "CC_SLIDING": [],
                         "CC_AIR": [],
                         "CC_AIR_RIGHT": [],
@@ -355,6 +360,7 @@
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
                     "IsToggleBehavior": 0,
+                    "ForceReturnToPreviousBehavior": 0,
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
@@ -430,7 +436,12 @@
                     "SetToPreviousBehaviorWhenMeleeActionEnds": 1,
                     "RecordFireEvent": 1,
                     "ComboData": {
+                        "MinHeldHeavyTime": 0,
                         "HeavyMeleeChargeTime": 0.75,
+                        "PerfectHeldHeavyRange": [
+                            0,
+                            0
+                        ],
                         "UseCurrentContextAfterCharge": 0
                     },
                     "GroundHitLerpRate": 0.25,
@@ -447,6 +458,304 @@
             }
         ],
         "RequiredLevel": 10,
+        "AuxiliaryAttachments": [
+            {
+                "Attachment": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "UseHolsterWhenHeld",
+                    "Type": "IncarnonObexPrismaRightFingerAttachment",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "SwapHands": 0,
+                "OffHandBone": "",
+                "OffHandOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "OffHandRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "UseSkinnedOffset": 0,
+                "SkinnedOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "ShowEvent": "",
+                "HideEvent": "",
+                "LookAtEnabled": 0,
+                "EnableLookAtEvent": "",
+                "DisableLookAtEvent": "",
+                "LookAtBone": "",
+                "LookAtOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "OffHandLookAtBone": "",
+                "OffHandLookAtOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "MatchHandVisibility": 0,
+                "VisibleWhenHidden": 0,
+                "VisibleWhenGrabbed": 1,
+                "VisibleWhenOffhand": 1,
+                "VisibleWhenHolstered": 1,
+                "RequiresAmmoInClip": 0,
+                "RequiresAmmoInInventory": 0,
+                "RespondsToEvents": 1,
+                "RespondsToAnimEvents": 1,
+                "OnlyRespondsToEventsWhenVisible": 1,
+                "UseHolster": 1,
+                "HolsterCategory": "PUNCH_SLASH_KICK",
+                "ForceOffhandHolster": 0,
+                "UseAttachmentIndexForHolsterHand": 1
+            },
+            {
+                "Attachment": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "UseHolsterWhenHeld",
+                    "Type": "IncarnonObexPrismaLeftFingerAttachment",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "SwapHands": 0,
+                "OffHandBone": "",
+                "OffHandOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "OffHandRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "UseSkinnedOffset": 0,
+                "SkinnedOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "ShowEvent": "",
+                "HideEvent": "",
+                "LookAtEnabled": 0,
+                "EnableLookAtEvent": "",
+                "DisableLookAtEvent": "",
+                "LookAtBone": "",
+                "LookAtOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "OffHandLookAtBone": "",
+                "OffHandLookAtOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "MatchHandVisibility": 0,
+                "VisibleWhenHidden": 0,
+                "VisibleWhenGrabbed": 1,
+                "VisibleWhenOffhand": 1,
+                "VisibleWhenHolstered": 1,
+                "RequiresAmmoInClip": 0,
+                "RequiresAmmoInInventory": 0,
+                "RespondsToEvents": 1,
+                "RespondsToAnimEvents": 1,
+                "OnlyRespondsToEventsWhenVisible": 1,
+                "UseHolster": 1,
+                "HolsterCategory": "PUNCH_SLASH_KICK",
+                "ForceOffhandHolster": 0,
+                "UseAttachmentIndexForHolsterHand": 1
+            },
+            {
+                "Attachment": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "UseHolsterWhenHeld",
+                    "Type": "IncarnonObexPrismaRightToeAttachment",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "SwapHands": 0,
+                "OffHandBone": "",
+                "OffHandOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "OffHandRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "UseSkinnedOffset": 0,
+                "SkinnedOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "ShowEvent": "",
+                "HideEvent": "",
+                "LookAtEnabled": 0,
+                "EnableLookAtEvent": "",
+                "DisableLookAtEvent": "",
+                "LookAtBone": "",
+                "LookAtOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "OffHandLookAtBone": "",
+                "OffHandLookAtOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "MatchHandVisibility": 0,
+                "VisibleWhenHidden": 0,
+                "VisibleWhenGrabbed": 1,
+                "VisibleWhenOffhand": 1,
+                "VisibleWhenHolstered": 1,
+                "RequiresAmmoInClip": 0,
+                "RequiresAmmoInInventory": 0,
+                "RespondsToEvents": 1,
+                "RespondsToAnimEvents": 1,
+                "OnlyRespondsToEventsWhenVisible": 1,
+                "UseHolster": 1,
+                "HolsterCategory": "PUNCH_SLASH_KICK",
+                "ForceOffhandHolster": 0,
+                "UseAttachmentIndexForHolsterHand": 1
+            },
+            {
+                "Attachment": {
+                    "LocalPosition": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "LocalRotation": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ],
+                    "BoneName": "UseHolsterWhenHeld",
+                    "Type": "IncarnonObexPrismaLeftToeAttachment",
+                    "Chance": 255,
+                    "RelativeToBounds": 0,
+                    "Attach": 1,
+                    "DestroyWithOwner": 1,
+                    "DestroyParentOnDeath": 0,
+                    "FadeOutOnDestruction": 0,
+                    "Scale": 1
+                },
+                "SwapHands": 0,
+                "OffHandBone": "",
+                "OffHandOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "OffHandRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "UseSkinnedOffset": 0,
+                "SkinnedOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "ShowEvent": "",
+                "HideEvent": "",
+                "LookAtEnabled": 0,
+                "EnableLookAtEvent": "",
+                "DisableLookAtEvent": "",
+                "LookAtBone": "",
+                "LookAtOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "OffHandLookAtBone": "",
+                "OffHandLookAtOffset": [
+                    0,
+                    0,
+                    0
+                ],
+                "MatchHandVisibility": 0,
+                "VisibleWhenHidden": 0,
+                "VisibleWhenGrabbed": 1,
+                "VisibleWhenOffhand": 1,
+                "VisibleWhenHolstered": 1,
+                "RequiresAmmoInClip": 0,
+                "RequiresAmmoInInventory": 0,
+                "RespondsToEvents": 1,
+                "RespondsToAnimEvents": 1,
+                "OnlyRespondsToEventsWhenVisible": 1,
+                "UseHolster": 1,
+                "HolsterCategory": "PUNCH_SLASH_KICK",
+                "ForceOffhandHolster": 0,
+                "UseAttachmentIndexForHolsterHand": 1
+            }
+        ],
         "DefaultEnergyColor": [
             61,
             237,
@@ -460,6 +769,77 @@
             255
         ],
         "OmegaAttenuation": 1.25,
+        "Evolutions": [
+            {
+                "Challenge": "",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "ObexIncarnonEvolutions/ObexEvoTransformUnlock"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Challenge": "ObexIncarnonEvolutions/ObexIncarnonChallenges/ObexChallengeA",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "ObexIncarnonEvolutions/Prisma/PrismaObexEvoTier1A"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "ObexIncarnonEvolutions/Prisma/PrismaObexEvoTier1B"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Challenge": "ObexIncarnonEvolutions/ObexIncarnonChallenges/ObexChallengeB",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "ObexIncarnonEvolutions/ObexEvoTier2A"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "ObexIncarnonEvolutions/ObexEvoTier2B"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "ObexIncarnonEvolutions/ObexEvoTier2C"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Challenge": "ObexIncarnonEvolutions/ObexIncarnonChallenges/ObexChallengeC",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "ObexIncarnonEvolutions/Prisma/PrismaObexEvoTier3A"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "ObexIncarnonEvolutions/Prisma/PrismaObexEvoTier3B"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "ObexIncarnonEvolutions/Prisma/PrismaObexEvoTier3C"
+                        ]
+                    }
+                ]
+            }
+        ],
         "DefaultModTemplate": "/Lotus/Types/ModLists/Melee/HybridImpact",
         "VariantType": "VT_VARIANT",
         "Slams": [

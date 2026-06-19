@@ -1,0 +1,156 @@
+{
+    "parent": "/Lotus/Types/Weapon/StackableProjectile",
+    "data": {
+        "BakeShadowsOnLightMaps": 0,
+        "UseLightProbes": 0,
+        "Mesh": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunProjMesh.fbx",
+        "OverrideMaterial": [
+            "/EE/Materials/TransparentImposterMaterial"
+        ],
+        "MotionBlurred": 1,
+        "DissolveOverride": "/Lotus/Fx/Common/SmoothBillow_d.png",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "IncarnonGooProjectileDeco",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 0.5
+            }
+        ],
+        "PhysicsBehavior": "/EE/Types/Physics/KinematicQueriesOnlyNoCamera",
+        "OnlyRegisterBounds": 0,
+        "Tag": "StugProjectile",
+        "ReplicaRunScriptInstance": 1,
+        "AttackData": {
+            "Type": "DT_CORROSIVE",
+            "Amount": 0,
+            "ProcChance": 0
+        },
+        "DealDamageThroughImpactBehavior": 1,
+        "CriticalChance": 0.25,
+        "CriticalMultiplier": 2,
+        "ExplosiveAttack": {
+            "Type": "DT_CORROSIVE",
+            "Amount": 200,
+            "ProcChance": 0.2
+        },
+        "ForcedSourceProcs": [
+            "PT_IMMOLATION",
+            "PT_CHILLED",
+            "PT_ELECTROCUTION",
+            "PT_STAGGERED"
+        ],
+        "ExplosionIgnoreSource": 1,
+        "ExplosionFallOff": 0.3,
+        "DamageRadius": 0.3,
+        "HitEffect": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunSackLargeHitEffect",
+        "DieEffect": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunProjDeathNoSound",
+        "DieEffectMirror": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunProjDeathIllusionAvatarNoSound",
+        "DieSound": "/Lotus/Sounds/Weapons/Grineer/GrnGooGun/Incarnon/IncarnonStugProjExplosion",
+        "DieEffectOffset": [
+            0,
+            0,
+            0
+        ],
+        "StopOnCollisionWithEmbeddedOnly": 1,
+        "Toughness": 10000,
+        "MaxLife": 8,
+        "PlayLocalHitSoundOnImpact": 1,
+        "VerticalImpulse": 150,
+        "HorizontalImpulse": 300,
+        "Embed": 1,
+        "EmbedAlignToSurface": 1,
+        "EmbedAttack": {
+            "Type": "DT_CORROSIVE",
+            "Amount": 50,
+            "ProcChance": 0.2
+        },
+        "EmbedDamageRadius": 2,
+        "EmbedTime": [
+            1.5,
+            1.5
+        ],
+        "EmbedDeathAttack": {
+            "Type": "DT_CORROSIVE",
+            "Amount": 450,
+            "ProcChance": 0.2
+        },
+        "EmbedEffect": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunProjEmbed",
+        "OwnEmbedEffect": 1,
+        "EmbedDeathEffect": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunProjDeathNoSound",
+        "KinematicMovement": 1,
+        "KinematicInitialSpeed": 35,
+        "KinematicMaxSpeed": 35,
+        "KinematicGravity": 1,
+        "KinematicGravityMultiplier": 0.75,
+        "KinematicRestitution": 0,
+        "KinematicRestitutionParallel": 0,
+        "KinematicBulletRaycast": 0,
+        "KinematicSpinRate": [
+            0,
+            0.1,
+            0
+        ],
+        "ProjectileReplication": "SYNCED_AUTONOMOUS",
+        "KinematicIgnoredTypes": [
+            "/Lotus/Types/Game/PickUps/LotusPickUp",
+            "IncarnonBouncingGooProjectile",
+            "/Lotus/Weapons/Grineer/Pistols/GrineerCrossbow/GooProjectile"
+        ],
+        "OnProjectileDeathScript": {
+            "Script": "StugIncarnon.lua",
+            "Function": "OnIncarnonProjectileDeath",
+            "_secondaryProjectile": "IncarnonBouncingGooProjectile",
+            "_maxSecondaryProjectilesCount": 5,
+            "_maxSecondaryProjectilesCountForMirror": 1,
+            "_minLaunchPitch": 15,
+            "_maxLaunchPitch": 75,
+            "_maxLaunchSpeedMult": 2,
+            "_maxExplosiveBounces": 2,
+            "_deathExplosionMult": 2.5,
+            "_bounceLingerEffect": ""
+        },
+        "ApplyColorCustomization": 1,
+        "CollisionTrigger": {
+            "Type": "/Lotus/Weapons/Grineer/Pistols/GrineerCrossbow/GooTrigger"
+        },
+        "MeshScaleRange": [
+            1,
+            3
+        ],
+        "ExplosionRange": [
+            0.25,
+            2.8
+        ],
+        "MaxProjectileStack": 5,
+        "OnProjectileStackedScript": {
+            "Script": "StugIncarnon.lua",
+            "Function": "OnIncarnonProjectileStack",
+            "_secondaryProjectile": "",
+            "_maxSecondaryProjectilesCount": 5,
+            "_maxSecondaryProjectilesCountForMirror": 1,
+            "_minLaunchPitch": 30,
+            "_maxLaunchPitch": 80,
+            "_maxLaunchSpeedMult": 2,
+            "_maxExplosiveBounces": 2,
+            "_deathExplosionMult": 2.5,
+            "_bounceLingerEffect": ""
+        }
+    }
+}

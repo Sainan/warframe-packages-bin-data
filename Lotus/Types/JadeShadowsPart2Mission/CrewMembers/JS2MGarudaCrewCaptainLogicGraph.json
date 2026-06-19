@@ -1,0 +1,201 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 35,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": -10,
+                    "posY": 743
+                }
+            },
+            {
+                "key": 36,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 296,
+                    "posY": 387
+                }
+            },
+            {
+                "key": 37,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 1135,
+                    "posY": 1045
+                }
+            },
+            {
+                "key": 39,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 1245,
+                    "posY": 721
+                }
+            },
+            {
+                "key": 43,
+                "value": {
+                    "type": "Condition",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 280,
+                    "posY": 1027
+                }
+            },
+            {
+                "key": 44,
+                "value": {
+                    "type": "Condition",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 277,
+                    "posY": 847
+                }
+            }
+        ],
+        "NodeProperties": {
+            "35": {
+                "links": []
+            },
+            "36": {
+                "Type": "/EE/Types/Npc/Logic/LogicGraphAction",
+                "LogicGraphAction": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "GraphRes": "/Lotus/Types/Friendly/RailJack/RJCrewFunctionsSubgraph"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 36,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 35,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "37": {
+                "Type": "/EE/Types/Npc/Logic/LogicGraphAction",
+                "LogicGraphAction": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "GraphRes": "JS2MGarudaCaptainLogicSubgraph"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 37,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 43,
+                            "prop": 1
+                        }
+                    }
+                ]
+            },
+            "39": {
+                "Type": "/EE/Types/Npc/Logic/LogicGraphAction",
+                "LogicGraphAction": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "GraphRes": "/Lotus/Types/Friendly/RailJack/RJCrewCombatSubgraph"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 39,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 44,
+                            "prop": 1
+                        }
+                    }
+                ]
+            },
+            "43": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/ScriptCondition",
+                "conditionProperties:notCondition": 0,
+                "conditionProperties:Script": {
+                    "Script": "/Lotus/Scripts/JadeShadowsPart2Mission/Friendlies/GarudaForceEquipMelee.lua",
+                    "Function": "GiveGarudaClaws"
+                },
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 43,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 35,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "44": {
+                "conditionProperties:Type": "/EE/Types/Npc/Logic/ScriptCondition",
+                "conditionProperties:notCondition": 0,
+                "conditionProperties:Script": {
+                    "Script": "/Lotus/Scripts/JadeShadowsPart2Mission/Friendlies/GarudaForceEquipMelee.lua",
+                    "Function": "RetractGarudaClaws"
+                },
+                "randomStartDelay": [
+                    0,
+                    0
+                ],
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 44,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 35,
+                            "prop": 3
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 35
+    }
+}

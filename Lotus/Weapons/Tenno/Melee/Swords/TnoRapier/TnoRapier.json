@@ -6,6 +6,10 @@
             "MAIN_HAND": {
                 "BoneName": "GAME_R1_WEAPON1",
                 "Type": "TnoRapierAttachment"
+            },
+            "EXTRA1": {
+                "BoneName": "GAME_R1_WEAPON1",
+                "Type": "IncarnonTnoRapierAttachment"
             }
         },
         "MarketMode": "MM_VISIBLE",
@@ -76,6 +80,7 @@
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
+                    "SlaveUsesMasterTargets": 0,
                     "ExplicitNpcPerceptionSoundAttenuationRadius": [
                         10,
                         100
@@ -237,6 +242,7 @@
                     "DamageUpgradeTypes": [
                         "WEAPON_MELEE_DAMAGE"
                     ],
+                    "PlayHitEffectsOnFriendlyAvatars": 0,
                     "damageFallOff": [
                         0,
                         0
@@ -312,6 +318,7 @@
                         "CC_GROUND_BRANCH_B": [],
                         "CC_GROUND_BRANCH_C": [],
                         "CC_GROUND_HEAVY": [],
+                        "CC_GROUND_HELD_HEAVY": [],
                         "CC_SLIDING": [],
                         "CC_AIR": [],
                         "CC_AIR_RIGHT": [],
@@ -353,6 +360,7 @@
                     "ModeSwitchTime": 0,
                     "FullClipModeSwitchTime": 0,
                     "IsToggleBehavior": 0,
+                    "ForceReturnToPreviousBehavior": 0,
                     "autoReloadEmptyTime": 0,
                     "AmmoTakenPerReload": -1,
                     "DoPreFire": 0,
@@ -428,7 +436,12 @@
                     "SetToPreviousBehaviorWhenMeleeActionEnds": 1,
                     "RecordFireEvent": 1,
                     "ComboData": {
+                        "MinHeldHeavyTime": 0,
                         "HeavyMeleeChargeTime": 2,
+                        "PerfectHeldHeavyRange": [
+                            0,
+                            0
+                        ],
                         "UseCurrentContextAfterCharge": 0
                     },
                     "GroundHitLerpRate": 0.25,
@@ -445,8 +458,8 @@
             }
         ],
         "AmmoClipSize": 0,
-        "ReticleName": "ReticleFlashMovie",
-        "ReticleMovie": "/Lotus/Interface/SpecialReticles/GunAndSwordReticle.swf",
+        "ReticleName": "ReticleCustom",
+        "ReticleMovie": "/Lotus/Interface/SpecialReticles/EvolvingMelee.swf",
         "LevelUpType": "",
         "BulletAttractorType": "",
         "HolsterRotOffset": [
@@ -470,6 +483,139 @@
             "AP_UNIVERSAL"
         ],
         "OmegaAttenuation": 1.25,
+        "EvolutionReq": "/Lotus/Types/Items/MiscItems/IncarnonAdapters/Melee/DestrezaIncarnonUnlocker",
+        "Evolutions": [
+            {
+                "Challenge": "",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "DestrezaIncarnonEvolutions/DestrezaEvoTransformUnlock"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Challenge": "DestrezaIncarnonEvolutions/DestrezaIncarnonChallenges/DestrezaChallengeA",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "DestrezaIncarnonEvolutions/DestrezaEvoTier1A"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "DestrezaIncarnonEvolutions/DestrezaEvoTier1B"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Challenge": "DestrezaIncarnonEvolutions/DestrezaIncarnonChallenges/DestrezaChallengeB",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "DestrezaIncarnonEvolutions/DestrezaEvoTier2A"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "DestrezaIncarnonEvolutions/DestrezaEvoTier2B"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "DestrezaIncarnonEvolutions/DestrezaEvoTier2C"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Challenge": "DestrezaIncarnonEvolutions/DestrezaIncarnonChallenges/DestrezaChallengeC",
+                "Complication": "",
+                "Powerups": [
+                    {
+                        "Upgrades": [
+                            "DestrezaIncarnonEvolutions/DestrezaEvoTier3A"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "DestrezaIncarnonEvolutions/DestrezaEvoTier3B"
+                        ]
+                    },
+                    {
+                        "Upgrades": [
+                            "DestrezaIncarnonEvolutions/DestrezaEvoTier3C"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "OnIncarnonModeActivatedScript": {
+            "Script": "IncarnonDestreza/DestrezaIncarnon.lua",
+            "Function": "OnIncarnonModeActivated",
+            "_ghostSwordSpawnFX": "",
+            "_ghostSwordProjectile": "",
+            "_ghostSwordProjectileSpeed": 15,
+            "_sword1Offset": [
+                0,
+                0,
+                0
+            ],
+            "_sword2Offset": [
+                0,
+                0,
+                0
+            ],
+            "_sword3Offset": [
+                0,
+                0,
+                0
+            ],
+            "_stageFireDelay": 0.04,
+            "_bonusPunctureDamagePerKill": 1,
+            "_maxStacks": 25
+        },
+        "OnIncarnonModeDeactivatedScript": {
+            "Script": "IncarnonDestreza/DestrezaIncarnon.lua",
+            "Function": "OnIncarnonModeDeactivated",
+            "_ghostSwordSpawnFX": "",
+            "_ghostSwordProjectile": "",
+            "_ghostSwordProjectileSpeed": 15,
+            "_sword1Offset": [
+                0,
+                0,
+                0
+            ],
+            "_sword2Offset": [
+                0,
+                0,
+                0
+            ],
+            "_sword3Offset": [
+                0,
+                0,
+                0
+            ],
+            "_stageFireDelay": 0.04,
+            "_bonusPunctureDamagePerKill": 1,
+            "_maxStacks": 25
+        },
+        "IncarnonModeUpgrades": [
+            "DestrezaIncarnonEvolutions/DestrezaIncarnonTransformUpgrade",
+            "IncarnonDestreza/DestrezaIncarnonBonusPunctureOnHeavyKillUpgrade"
+        ],
+        "UseScriptedIncarnonMode": 0,
+        "IncarnonAttachments": {
+            "EXTRA1": 1
+        },
+        "EvolvedIcon": "/Lotus/Interface/Icons/StoreIcons/Weapons/IncarnonWeapons/DestrezaIncarnon.png",
+        "IncarnonComboRequirement": 5,
+        "IncarnonModeDuration": 180,
         "ArcaneApertureType": "/Lotus/Types/Items/MiscItems/WeaponMeleeArcaneUnlocker",
         "DefaultModTemplate": "/Lotus/Types/ModLists/Melee/HybridPuncture",
         "DefaultModOverrides": {
@@ -891,7 +1037,6 @@
         "ParryDamagePercentBlockedPvp": 1,
         "ParryAngle": 60,
         "ChannelingReflectAmountPvp": 0.2,
-        "DarkSectorMeleeTreeType": "/Lotus/Weapons/Tenno/Melee/MeleeTrees/RapierDSMeleeTree",
-        "UseSpecialReticleOnlyInDarkSectorMode": 1
+        "DarkSectorMeleeTreeType": "/Lotus/Weapons/Tenno/Melee/MeleeTrees/RapierDSMeleeTree"
     }
 }

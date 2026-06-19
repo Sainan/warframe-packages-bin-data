@@ -1,0 +1,135 @@
+{
+    "parent": "/Lotus/Weapons/Tenno/Grenades/PlasmaGrenadeProjectile",
+    "data": {
+        "Mesh": "/Lotus/Fx/Enemies/Corpus/Aristocrat/AristocratMineMesh.fbx",
+        "AutoSimChildren": [
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/Corpus/RiotMoa/NullifierGrenadeProjLensflare",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Fx/Enemies/VayHek/HekGrenadeProjTrail",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 0,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 1,
+                "Scale": 1
+            },
+            {
+                "LocalPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "LocalRotation": [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "BoneName": "",
+                "Type": "/Lotus/Sounds/Enemies/JadeShadows2/JS2TetherTurretMineThrowableFireSeq",
+                "Chance": 255,
+                "RelativeToBounds": 0,
+                "Attach": 1,
+                "DestroyWithOwner": 1,
+                "DestroyParentOnDeath": 0,
+                "FadeOutOnDestruction": 0,
+                "Scale": 1
+            }
+        ],
+        "ReplicationOverride": "RO_ALWAYS",
+        "AttackData": {
+            "Amount": 0
+        },
+        "ExplosiveAttack": {
+            "Amount": 0,
+            "ProcChance": 0
+        },
+        "ExplosionIgnoreSource": 1,
+        "DamageRadius": 1.5,
+        "HitEffect": "/Lotus/Sounds/Characters/Corpus/Osprey/MineOsprey/MineProjectile/MineImpactHitEffect",
+        "DieEffect": "JS2MTetherTurretExplosion",
+        "DieSound": "/Lotus/Sounds/Enemies/CorpusDiscOsprey/CorpusDiscOspreyProjExplode",
+        "IgnoreCollisionsWithSameType": 1,
+        "IgnoreTypes": [
+            "/EE/Types/Game/Avatar"
+        ],
+        "MaxLife": 8,
+        "Health": 30,
+        "StopOnAvatars": 0,
+        "EmbedTime": [
+            20,
+            20
+        ],
+        "EmbedDeathAttack": {
+            "Amount": 50
+        },
+        "EmbedDeathEffect": "JS2MTetherTurretExplosion",
+        "KinematicInitialSpeed": 5,
+        "KinematicMaxSpeed": 10,
+        "KinematicGravityMultiplier": 0.9,
+        "KinematicAngleSpeed": [
+            0,
+            0
+        ],
+        "OnProjectileStartScript": {
+            "Script": "/Lotus/Scripts/WeaponStuff.lua",
+            "Function": "grenadeSound",
+            "_grenadeLaunch": ""
+        },
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/NPC/MagLeash.lua",
+            "Function": "OnProjectileStop",
+            "_minDistSlow": 1,
+            "_maxDistSlow": 0.1,
+            "_beamType": "",
+            "_beamAttachBone": "",
+            "_beamAttachOffset": [
+                0,
+                0,
+                0
+            ],
+            "_beamAttachRotation": [
+                0,
+                0,
+                0
+            ],
+            "_ignoreTypes": [],
+            "_MoaFaction": "Corpus",
+            "_LeashType": "/Lotus/Types/Enemies/Corpus/Aristocrats/AristocratTetherMine"
+        }
+    }
+}

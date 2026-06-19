@@ -1,0 +1,493 @@
+{
+    "parent": "/EE/Types/Npc/Logic/LogicGraph",
+    "data": {
+        "nodes": [
+            {
+                "key": 0,
+                "value": {
+                    "type": "Selector",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 0,
+                    "posY": 69
+                }
+            },
+            {
+                "key": 1,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 144,
+                    "posY": -18
+                }
+            },
+            {
+                "key": 2,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 181,
+                    "posY": 61
+                }
+            },
+            {
+                "key": 3,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 189,
+                    "posY": 119
+                }
+            },
+            {
+                "key": 8,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 255,
+                    "posY": 183
+                }
+            },
+            {
+                "key": 12,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 146,
+                    "posY": 427
+                }
+            },
+            {
+                "key": 20,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 1,
+                    "posX": 183,
+                    "posY": 339
+                }
+            },
+            {
+                "key": 22,
+                "value": {
+                    "type": "Action",
+                    "comment": "",
+                    "requiresChildAction": 0,
+                    "posX": 518,
+                    "posY": 167
+                }
+            }
+        ],
+        "NodeProperties": {
+            "0": {
+                "links": []
+            },
+            "1": {
+                "Type": "/EE/Types/Npc/WaitForSpawnAnimationBehavior",
+                "WaitForSpawnAnimationBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 1,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 2
+                        }
+                    }
+                ]
+            },
+            "2": {
+                "Type": "/EE/Types/Npc/GroundFireBehavior",
+                "GroundFireBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "NeverGetUp": 1,
+                    "DownedTime": [
+                        5,
+                        7
+                    ],
+                    "VisibilityDelay": [
+                        7,
+                        7
+                    ],
+                    "ReloadDelay": [
+                        2,
+                        3
+                    ],
+                    "FovAllowed": 90,
+                    "ChangeWeapons": 1,
+                    "WeaponSlot": "SLOT_1",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_INSTANT_EQUIP"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 2,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 3
+                        }
+                    }
+                ]
+            },
+            "3": {
+                "Type": "/EE/Types/Npc/BlockingBehavior",
+                "BlockingBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "BlockOnBeingAttached": 0,
+                    "ShouldRemovePerception": 1
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 3,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 4
+                        }
+                    }
+                ]
+            },
+            "8": {
+                "Type": "/EE/Types/Npc/MeleeTactic",
+                "MeleeTactic": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "AttackState": "AS_MELEE",
+                    "ReportUnreachable": 0,
+                    "RequireMeleeWeapon": 0,
+                    "RequireWeaponInInventory": 0,
+                    "TimeOffNavForReport": 3,
+                    "UnreachableTime": 2,
+                    "MeleeBehaviors": [
+                        "/Lotus/Types/Behaviors/LotusAdvancedMeleeBehavior"
+                    ],
+                    "LotusAdvancedMeleeBehavior": {
+                        "Enabled": 1,
+                        "OnStartScript": {
+                            "Script": ""
+                        },
+                        "OnDamagedScript": {
+                            "Script": ""
+                        },
+                        "DefaultReevaluationDelay": 0,
+                        "UseCombatMgr": 0,
+                        "SucceedAfterCombo": 0,
+                        "SucceedAfterDefensive": 0,
+                        "AdjustAimDuringCombo": 0,
+                        "AlwaysCompleteCombo": 0,
+                        "LastSeenTargetStopComboTime": 2,
+                        "AttackFirst": 1,
+                        "DefensiveMoveTowards": 0,
+                        "DefensiveWhenNotAttacking": 0,
+                        "AllowWeaponSwapForDefence": 0,
+                        "DefensiveWhenAimedAt": 0,
+                        "DefensiveHealthPercentage": 0,
+                        "DefensiveForcedWindow": 3,
+                        "StopMovementOnAttack": 1,
+                        "DefensiveParryChance": 1,
+                        "DefensiveTime": [
+                            1.5,
+                            3
+                        ],
+                        "DoReactiveBlocking": 0,
+                        "ReactiveBlockingDefenseTime": 0.4,
+                        "DefensiveCooldownTime": 1,
+                        "HeavyAttackProcTypeImmunities": [],
+                        "MeleeRange": [
+                            0,
+                            3
+                        ],
+                        "MeleeRangeAttack": [
+                            0,
+                            3
+                        ],
+                        "MeleeRangeDash": [
+                            3,
+                            6
+                        ],
+                        "PlayerBehaviourEvalTime": [
+                            0.5,
+                            2
+                        ],
+                        "MaxAllowedAttacksBlocked": 0,
+                        "AggressiveHealthThreshold": 0,
+                        "BasicAttackTypes": [],
+                        "DashAttackType": "CC_SLIDING",
+                        "UseEquippedWeapon": 0,
+                        "ChangeWeapons": 1,
+                        "WeaponSlot": "SLOT_6",
+                        "WeaponHand": "MAIN_HAND",
+                        "EquipStyle": "ES_INSTANT_EQUIP",
+                        "StopWeapons": 0
+                    }
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 8,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 5
+                        }
+                    }
+                ]
+            },
+            "12": {
+                "Type": "/EE/Types/Npc/FindAndMoveToPlayerBehavior",
+                "FindAndMoveToPlayerBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "RequireAlertness": 0,
+                    "RangeToStop": [
+                        0,
+                        4
+                    ],
+                    "TargetMovedDistanceForRepath": 10,
+                    "SpeedMultiplier": 3
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 12,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 7
+                        }
+                    }
+                ]
+            },
+            "20": {
+                "Type": "/EE/Types/Npc/KeepIdealDistanceBehavior",
+                "KeepIdealDistanceBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "RandomizeRange": 1,
+                    "UseWeaponRange": 0,
+                    "IdealDistance": [
+                        0,
+                        3
+                    ],
+                    "EvaluateDistance": [
+                        0,
+                        100
+                    ],
+                    "MaxMovementDistance": 100,
+                    "AllowRetreat": 1,
+                    "AllowTeleportFromOffScreen": 0,
+                    "AllowRun": 1,
+                    "AllowChase": 0,
+                    "ForceWalkBelowMinIdealRange": 1,
+                    "WalkRange": [
+                        0,
+                        0
+                    ],
+                    "RequireTeamMeleeLock": 0,
+                    "ReleaseTeamMeleeLock": 1,
+                    "AimWhileMoving": 0,
+                    "MoveFacingControl": "MFC_FACE_MOVEDIR",
+                    "StopRadius": 0.5,
+                    "RunWhenShocked": 0,
+                    "ShockedDamageTime": 30,
+                    "OnlyTravelWhenVisible": 0,
+                    "TravelDuringStruggle": 1,
+                    "AllowPartialPath": 0,
+                    "UpdateDestinationInterval": 0.5,
+                    "UpdateDestinationDistance": 0,
+                    "OffNavRadius": 0,
+                    "OffNavHeight": 0,
+                    "RequiresClearNavTrace": 0,
+                    "HoverHeightOverride": -1,
+                    "RetryWithPathlessMovement": 0,
+                    "PathlessMovementMaxDistance": 16,
+                    "AvoidTargetLineOfSight": 0,
+                    "AvoidanceBias": 10,
+                    "LockTarget": 0,
+                    "LookAtTarget": 0,
+                    "DistanceToShoot": -1,
+                    "WalkWhileShooting": 0,
+                    "AimOnFire": 0,
+                    "AllowReload": 0,
+                    "ChangeWeapons": 0,
+                    "WeaponSlot": "SLOT_1",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_PLAY_EQUIP_ANIM",
+                    "AttackPhrase": "CHARGE_SCREAM",
+                    "AlwaysPlayAttackPhrase": 0,
+                    "PlayPhrase": 0,
+                    "Bark": "IDLE",
+                    "BarkFilter": "",
+                    "BarkInterval": [
+                        0,
+                        0
+                    ],
+                    "ReportUnreachableOnFailedMove": 0,
+                    "ReportUnreachableOffNav": 0,
+                    "TimeOffNav": 2,
+                    "RestrictToDefenseVolume": 0,
+                    "WalkMovePosture": "JOG"
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 20,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 0,
+                            "prop": 6
+                        }
+                    }
+                ]
+            },
+            "22": {
+                "Type": "/Lotus/Types/Behaviors/LotusAdvancedMeleeBehavior",
+                "LotusAdvancedMeleeBehavior": {
+                    "Enabled": 1,
+                    "OnStartScript": {
+                        "Script": ""
+                    },
+                    "OnDamagedScript": {
+                        "Script": ""
+                    },
+                    "DefaultReevaluationDelay": 0,
+                    "UseCombatMgr": 0,
+                    "SucceedAfterCombo": 0,
+                    "SucceedAfterDefensive": 0,
+                    "AdjustAimDuringCombo": 1,
+                    "AlwaysCompleteCombo": 0,
+                    "LastSeenTargetStopComboTime": 1,
+                    "AttackFirst": 1,
+                    "DefensiveMoveTowards": 0,
+                    "DefensiveWhenNotAttacking": 0,
+                    "AllowWeaponSwapForDefence": 0,
+                    "DefensiveWhenAimedAt": 0,
+                    "DefensiveHealthPercentage": 1,
+                    "DefensiveForcedWindow": 3,
+                    "StopMovementOnAttack": 1,
+                    "DefensiveParryChance": 1,
+                    "DefensiveTime": [
+                        0.5,
+                        1
+                    ],
+                    "DoReactiveBlocking": 0,
+                    "ReactiveBlockingDefenseTime": 0.4,
+                    "DefensiveCooldownTime": 1,
+                    "HeavyAttackProcTypeImmunities": [
+                        "PT_STAGGERED",
+                        "PT_BIG_STAGGER",
+                        "PT_KNOCKED_DOWN"
+                    ],
+                    "MeleeRange": [
+                        0,
+                        4
+                    ],
+                    "MeleeRangeAttack": [
+                        0,
+                        4
+                    ],
+                    "MeleeRangeDash": [
+                        4,
+                        8
+                    ],
+                    "PlayerBehaviourEvalTime": [
+                        0.5,
+                        1
+                    ],
+                    "MaxAllowedAttacksBlocked": 0,
+                    "AggressiveHealthThreshold": 0,
+                    "BasicAttackTypes": [
+                        "CC_GROUND_HEAVY",
+                        "CC_GROUND_BRANCH_C",
+                        "CC_GROUND_BRANCH_B",
+                        "CC_GROUND",
+                        "CC_GROUND_BRANCH_A"
+                    ],
+                    "DashAttackType": "CC_SLIDING",
+                    "UseEquippedWeapon": 1,
+                    "ChangeWeapons": 0,
+                    "WeaponSlot": "SLOT_6",
+                    "WeaponHand": "MAIN_HAND",
+                    "EquipStyle": "ES_INSTANT_EQUIP",
+                    "StopWeapons": 0
+                },
+                "links": [
+                    {
+                        "type": "",
+                        "fromPort": {
+                            "node": 22,
+                            "prop": 0
+                        },
+                        "toPort": {
+                            "node": 8,
+                            "prop": 2
+                        }
+                    }
+                ]
+            }
+        },
+        "RootId": 0
+    }
+}

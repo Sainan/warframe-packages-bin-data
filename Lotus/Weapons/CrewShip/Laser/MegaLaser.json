@@ -91,6 +91,7 @@
                             "onlyFireAboveMinRangeMultiplier": 0,
                             "aimAtPart": "TORSO",
                             "aimAtClosestPart": 0,
+                            "lockAimOnFullCharge": 0,
                             "firingPreferences": {
                                 "firingType": "FT_CHARGED",
                                 "burstTime": [
@@ -121,9 +122,11 @@
                         "hitSpreadMultiplier": 0
                     },
                     "IgnoreFireIterations": 0,
+                    "IgnoreOwner": 1,
                     "IsSilenced": 0,
                     "ReportAttack": 1,
                     "UseExplicitNpcPerceptionSoundProperties": 0,
+                    "SlaveUsesMasterTargets": 0,
                     "ExplicitNpcPerceptionSoundAttenuationRadius": [
                         10,
                         100
@@ -150,7 +153,8 @@
                         "LockOnPart": "ANY_PART",
                         "LockOnDistanceWeighting": 0.1,
                         "LockOnAngleWeighting": 1,
-                        "LockOnIgnoreEndPointTarget": 0
+                        "LockOnIgnoreEndPointTarget": 0,
+                        "LockOnIgnoreTags": []
                     },
                     "HIP_FIRE_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/DefaultAccuracyInfo",
                     "AIMED_ACCURACY": "/Lotus/Types/Game/WeaponProperties/Accuracy/DefaultAccuracyInfo",
@@ -218,6 +222,7 @@
                     "MaxTraceDistanceTime": 0.25,
                     "RetractTime": 0.2,
                     "AttachToWeapon": 1,
+                    "UseWeaponAttachmentFirePos": 0,
                     "AttachToTarget": 0,
                     "MultiBeam": 1,
                     "BeamChildren": [
@@ -310,6 +315,7 @@
                         "ProcChance": 0,
                         "ForcedProcs": [],
                         "ForcedDeathProcs": [],
+                        "ForcedProcCount": 1,
                         "HitType": "DHT_NONE",
                         "ProcExtraTime": 0
                     },
@@ -318,6 +324,7 @@
                     "DamageUpgradeTypes": [
                         "WEAPON_DAMAGE_AMOUNT"
                     ],
+                    "PlayHitEffectsOnFriendlyAvatars": 0,
                     "damageFallOff": [
                         0,
                         0
@@ -374,6 +381,7 @@
                     "AlwaysOverrideFiringAvatar": 0,
                     "ApplyRadialDamageOnMiss": 1,
                     "ApplyRadialDamageOnHit": 1,
+                    "MultiShotBuffsRadialDamage": 0,
                     "RadialDamage": {
                         "baseAmount": 0,
                         "baseProcChance": 0,
@@ -421,7 +429,9 @@
                         "selfAOEMultiplier": [
                             0.25,
                             0.75
-                        ]
+                        ],
+                        "friendlyFire": 0,
+                        "ignoreDamageAttenuation": 0
                     },
                     "PvpRadialDamage": {
                         "baseAmount": 0,
@@ -470,7 +480,9 @@
                         "selfAOEMultiplier": [
                             0.25,
                             0.75
-                        ]
+                        ],
+                        "friendlyFire": 0,
+                        "ignoreDamageAttenuation": 0
                     },
                     "RadialDamageEffects": [
                         ""
@@ -513,6 +525,7 @@
                     "UseReloadTimeBetweenShots": 1,
                     "OnlyGiveAmmoOnReloadCompleteEvent": 1,
                     "CanInterruptModeSwitch": 0,
+                    "NeedsLockOnTargets": 0,
                     "IsAlternateFire": 0,
                     "LocTag": "/Lotus/Language/Menu/Loadout_TriggerCharge",
                     "BehaviorTag": "",
@@ -573,28 +586,6 @@
                         ],
                         "BoneName": "",
                         "Type": "/Lotus/Fx/Weapons/Railjack/MegaLaser/MegaLaserChargeBeam",
-                        "Chance": 255,
-                        "RelativeToBounds": 0,
-                        "Attach": 1,
-                        "DestroyWithOwner": 1,
-                        "DestroyParentOnDeath": 0,
-                        "FadeOutOnDestruction": 0,
-                        "Scale": 1
-                    },
-                    "EndPointChild": {
-                        "LocalPosition": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "LocalRotation": [
-                            0,
-                            0,
-                            0,
-                            1
-                        ],
-                        "BoneName": "",
-                        "Type": "",
                         "Chance": 255,
                         "RelativeToBounds": 0,
                         "Attach": 1,

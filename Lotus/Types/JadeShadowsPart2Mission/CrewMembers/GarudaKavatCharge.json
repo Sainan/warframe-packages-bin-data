@@ -1,0 +1,56 @@
+{
+    "parent": "/Lotus/Types/Game/PowerSuitAbility",
+    "data": {
+        "LocalizeTag": "[HC] GarudaKavatCharge",
+        "LocalizeDescTag": "[HC] Give me a description",
+        "Icon": "/Lotus/Interface/Icons/Abilities/RhinoDash.png",
+        "Script": {
+            "Script": "/Lotus/Powersuits/NpcPowersuits/NpcPowersuitAbilities/KubrowCharge.lua",
+            "Function": "ActivateAbility",
+            "_sprintProjector": "",
+            "_sound": "",
+            "_expfx": "",
+            "_pathDamage": 75,
+            "_pathDamageRange": 1.2,
+            "_damageRate": 0.2,
+            "_damageRankMod": 3,
+            "_ChargeStartAnim": "/Lotus/Animations/Creatures/FeralCatbrow/JogStart_anim.fbx",
+            "_ChargeAnim": "/Lotus/Animations/Creatures/FeralCatbrow/LungeMelee_anim.fbx",
+            "_finishAnim": "/Lotus/Animations/Creatures/FeralCatbrow/LungeMelee_anim.fbx",
+            "_damageType": "DT_IMPACT",
+            "_procType": "PT_KNOCKED_DOWN",
+            "_npcMinRange": 0,
+            "_npcMaxRange": 15,
+            "_heightDiffCutoff": 2.5,
+            "_aimScoreTarget": 0.97,
+            "_speed": 30,
+            "_maxChargeDist": 10,
+            "_threshold": 0.1,
+            "_chargeCooldown": 8,
+            "_hitEffect": "/Lotus/Types/Weapons/KubrowChargeHitEffect"
+        },
+        "CooldownDuration": 1,
+        "ActivationXP": 25,
+        "EvaluateScript": 0,
+        "Evaluator:Evaluators": [
+            "/Lotus/Types/Game/AbilityEvaluators/BlackboardVarEvaluator",
+            "/Lotus/Types/Game/AbilityEvaluators/TargetsInFrontAndInRangeEvaluator"
+        ],
+        "Evaluator:BlackboardVarEvaluator": {
+            "VarName": "",
+            "Var": "LastChargeAbilityTime",
+            "Value": 5,
+            "Check": "VC_LAST_TIME_GREATER",
+            "Team": 1
+        },
+        "Evaluator:TargetsInFrontAndInRangeEvaluator": {
+            "TargetRange": [
+                5,
+                30
+            ],
+            "MaxHeightDiff": 2.5,
+            "DirectionAngle": 28.139721,
+            "SetFirstValidTarget": 0
+        }
+    }
+}

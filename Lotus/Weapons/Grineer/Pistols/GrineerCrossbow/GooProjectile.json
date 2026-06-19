@@ -1,7 +1,13 @@
 {
     "parent": "/Lotus/Types/Weapon/StackableProjectile",
     "data": {
+        "BakeShadowsOnLightMaps": 0,
+        "UseLightProbes": 0,
         "Mesh": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunProjMesh.fbx",
+        "OverrideMaterial": [
+            "/EE/Materials/TransparentImposterMaterial"
+        ],
+        "MotionBlurred": 1,
         "DissolveOverride": "/Lotus/Fx/Common/SmoothBillow_d.png",
         "AutoSimChildren": [
             {
@@ -17,58 +23,14 @@
                     1
                 ],
                 "BoneName": "",
-                "Type": "",
-                "Chance": 255,
-                "RelativeToBounds": 0,
-                "Attach": 1,
-                "DestroyWithOwner": 0,
-                "DestroyParentOnDeath": 0,
-                "FadeOutOnDestruction": 1,
-                "Scale": 1
-            },
-            {
-                "LocalPosition": [
-                    0,
-                    0,
-                    0
-                ],
-                "LocalRotation": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "BoneName": "",
-                "Type": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunProjScriptHelper",
+                "Type": "GooProjectileDeco",
                 "Chance": 255,
                 "RelativeToBounds": 0,
                 "Attach": 1,
                 "DestroyWithOwner": 1,
                 "DestroyParentOnDeath": 0,
                 "FadeOutOnDestruction": 0,
-                "Scale": 1
-            },
-            {
-                "LocalPosition": [
-                    0,
-                    0,
-                    0
-                ],
-                "LocalRotation": [
-                    0,
-                    0,
-                    0,
-                    1
-                ],
-                "BoneName": "",
-                "Type": "/Lotus/Sounds/Weapons/Grineer/GrnGooGun/GrnGooGunSackBuildUpASeq",
-                "Chance": 255,
-                "RelativeToBounds": 0,
-                "Attach": 1,
-                "DestroyWithOwner": 1,
-                "DestroyParentOnDeath": 0,
-                "FadeOutOnDestruction": 0,
-                "Scale": 1
+                "Scale": 0.5
             }
         ],
         "PhysicsBehavior": "/EE/Types/Physics/KinematicQueriesOnlyNoCamera",
@@ -110,6 +72,7 @@
         "VerticalImpulse": 150,
         "HorizontalImpulse": 300,
         "Embed": 1,
+        "EmbedAlignToSurface": 1,
         "EmbedAttack": {
             "Type": "DT_CORROSIVE",
             "Amount": 4,
@@ -124,7 +87,8 @@
             "Type": "DT_CORROSIVE",
             "Amount": 75
         },
-        "EmbedEffect": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunProjEmbed",
+        "EmbedEffect": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunProjEmbedSpawn",
+        "OwnEmbedEffect": 1,
         "EmbedDeathEffect": "/Lotus/Fx/Weapons/Grineer/GooGun/GooGunProjDeath",
         "KinematicMovement": 1,
         "KinematicInitialSpeed": 35,
@@ -141,18 +105,33 @@
         ],
         "ProjectileReplication": "SYNCED_AUTONOMOUS",
         "KinematicIgnoredTypes": [
-            "/Lotus/Types/Game/PickUps/LotusPickUp"
+            "/Lotus/Types/Game/PickUps/LotusPickUp",
+            "IncarnonAdapterGrineerCrossbow/IncarnonGooProjectile",
+            "IncarnonAdapterGrineerCrossbow/IncarnonBouncingGooProjectile"
         ],
+        "OnProjectileStoppedScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/GooGun.lua",
+            "Function": "OnProjectileStopped",
+            "_avatarType": "",
+            "_gooProjectileType": ""
+        },
+        "ApplyColorCustomization": 1,
         "CollisionTrigger": {
             "Type": "GooTrigger"
         },
         "MeshScaleRange": [
-            0.5,
-            2
+            1,
+            4
         ],
         "ExplosionRange": [
             0.25,
             2.8
-        ]
+        ],
+        "OnProjectileStackedScript": {
+            "Script": "/Lotus/Scripts/WeaponAttachments/GooGun.lua",
+            "Function": "OnProjectileStacked",
+            "_avatarType": "",
+            "_gooProjectileType": ""
+        }
     }
 }

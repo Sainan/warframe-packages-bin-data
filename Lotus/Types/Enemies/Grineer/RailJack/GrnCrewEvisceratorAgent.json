@@ -2,7 +2,8 @@
     "parent": "/Lotus/Types/Enemies/Grineer/GrineerMarineRifle",
     "data": {
         "AvatarTypes": {
-            "STANDARD": "Avatars/GrnCrewEvisceratorAvatar"
+            "STANDARD": "Avatars/GrnCrewEvisceratorAvatar",
+            "EXIMUS": "Avatars/GrnCrewEvisceratorAvatarLeader"
         },
         "MinLevel": 12,
         "NewAdditionalInventory": [
@@ -79,7 +80,10 @@
                         "AlertTeammates": 0,
                         "AwarenessPropagationDistance": -1,
                         "ReportAttackAfterReact": 0
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 },
                 {
                     "reaction": "DODGE_MELEE_ATTACK",
@@ -121,10 +125,22 @@
                             "DOWNWARD": ""
                         },
                         "DistanceFromTargetPoint": 0.4
-                    }
+                    },
+                    "forceFaceReaction": 0,
+                    "useTurnToAction": 0,
+                    "chanceToReact": 1
                 }
             ],
-            "BlockingResponse": 1
+            "BlockingResponse": 1,
+            "TurnToAction:Type": "/EE/Types/Npc/TurnToAction",
+            "TurnToAction:Enabled": 1,
+            "TurnToAction:OnStartScript": {
+                "Script": ""
+            },
+            "TurnToAction:OnDamagedScript": {
+                "Script": ""
+            },
+            "TurnAccuracyThreshold": 15
         },
         "GrineerLancerFormationTactic": {
             "Enabled": 1,
@@ -210,8 +226,8 @@
             "NeedsTarget": 0,
             "PatrolRouteOnly": 0,
             "RecruitFromPatrols": 0,
+            "MatchingDesiredDestinationOnly": 0,
             "FormationIdentifier": "",
-            "MergeThreshold": 0,
             "LeaderAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
             "LeaderAction:Enabled": 1,
             "LeaderAction:OnStartScript": {
@@ -281,6 +297,7 @@
                 "DefaultReevaluationDelay": 0,
                 "TimeSinceLastSeen": 5,
                 "MaxDistToTarget": 5,
+                "SpeedMultiplier": 1,
                 "ConsiderOrderType": 1,
                 "Order": "StormTarget",
                 "FailsOnTargetAcquired": 1,
@@ -321,6 +338,7 @@
                 ],
                 "ShouldAim": 1,
                 "CanRun": 0,
+                "StopRadius": 4.2,
                 "StopSearchIfNoTarget": 0,
                 "StopSearchOnAwarenessLevel": "AW_IDLE",
                 "MaintainedAwarenessLevel": "AW_ALERT",
@@ -430,7 +448,9 @@
                     "logistic": 1
                 },
                 "AimWhileMoving": 1,
+                "SetViewWhileMoving": 1,
                 "ShootingDistance": 1,
+                "NeedsVisibilityForShooting": 1,
                 "ChangeWeapons": 0,
                 "WeaponSlot": "SLOT_1",
                 "WeaponHand": "MAIN_HAND",
@@ -459,6 +479,7 @@
                     3
                 ],
                 "FireBursts": 0,
+                "ChargeWeapon": 0,
                 "AimWhenPausing": 1,
                 "AimWhenStopping": 0,
                 "DecorativeReloads": 1,
@@ -511,6 +532,7 @@
                 "PatrolBehavior:NearDistance": 2,
                 "PatrolBehavior:SpeedMultiplier": 1,
                 "PatrolBehavior:AlertSpeedMultiplier": 1,
+                "PatrolBehavior:MovementPosture": "WALK",
                 "PatrolBehavior:FailOnTargetAcquired": 1,
                 "PatrolBehavior:AimWhenIdle": 0,
                 "PatrolBehavior:AimWhenAlert": 1,
@@ -525,6 +547,9 @@
                 "PatrolBehavior:AutoAssignClosestPatrol": 0,
                 "PatrolBehavior:SameZoneOnly": 1,
                 "PatrolBehavior:AutoPatrolRadius": 30,
+                "PatrolBehavior:OnCompleteScript": {
+                    "Script": ""
+                },
                 "RandomWalkBehavior:Type": "/EE/Types/Npc/Action",
                 "RandomWalkBehavior:Enabled": 1,
                 "RandomWalkBehavior:OnStartScript": {
@@ -554,7 +579,8 @@
                     0,
                     0
                 ],
-                "GuardBehavior:MinHeadingChangeToTurn": 0
+                "GuardBehavior:MinHeadingChangeToTurn": 0,
+                "GuardBehavior:AimWhenAlert": 1
             },
             "LeaderAction:FailOnChildFailure": 0,
             "FollowerAction:Type": "/EE/Types/Npc/GenericBehaviorSelector",
@@ -641,6 +667,7 @@
                     3
                 ],
                 "FireBursts": 0,
+                "ChargeWeapon": 0,
                 "AimWhenPausing": 1,
                 "AimWhenStopping": 1,
                 "DecorativeReloads": 1,
@@ -723,7 +750,6 @@
                 "Script": ""
             },
             "DefaultReevaluationDelay": 0,
-            "ExitMoveDist": 1.5,
             "SearchDistance": 15,
             "EmplacementType": "/EE/Types/Actions/Emplacement",
             "Order": "UseEmplacement",
@@ -741,6 +767,7 @@
             "TeleportToEmplacement": 0,
             "DelayOnFailTime": 20,
             "FindEmplacementOnOrderFail": 0,
+            "ForceNeverLeave": 0,
             "ShootAction:Type": "/EE/Types/Npc/ShootAction",
             "ShootAction:Enabled": 1,
             "ShootAction:OnStartScript": {
@@ -751,7 +778,6 @@
             },
             "ShootAction:DefaultTimer": 0,
             "ShootAction:GoodTargetTimeout": 0.2,
-            "ShootAction:SetAimTarget": 1,
             "ShootAction:ChargedAttack": 0,
             "ShootAction:ShootAtCoverEnabled": 1,
             "ShootAction:WeaponFireDelayRange": [
@@ -799,6 +825,7 @@
                 -1.2
             ],
             "MaxDistToShield": 10,
+            "MaxBehindDistToShield": 3,
             "ShootingOffset": [
                 0,
                 1.7,
@@ -840,6 +867,7 @@
                 ],
                 "coneInclusionDot": 0
             },
+            "HasDestroyableShield": 0,
             "MinDistanceToTarget": 6,
             "StopRadius": 0.5,
             "NearDistance": 0.3,
@@ -872,6 +900,7 @@
             ],
             "MaxMovementDistance": 100,
             "AllowRetreat": 1,
+            "AllowTeleportFromOffScreen": 0,
             "AllowRun": 1,
             "AllowChase": 1,
             "ForceWalkBelowMinIdealRange": 1,
