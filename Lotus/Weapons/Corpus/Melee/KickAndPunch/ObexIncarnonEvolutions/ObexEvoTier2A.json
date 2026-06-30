@@ -6,7 +6,7 @@
         "Icon": "/Lotus/Interface/Icons/EvolvingWeapons/OnFinisherIncreaseParkourVelocity.png",
         "Upgrades": [
             {
-                "UpgradeType": "AVATAR_PARKOUR_BOOST",
+                "UpgradeType": "NONE",
                 "OperationType": "STACKING_MULTIPLY",
                 "Value": 0.025,
                 "DamageType": "DT_ANY",
@@ -35,6 +35,20 @@
         ],
         "ApplyUpgradesByDefault": 0,
         "ItemCompatibility": "/Lotus/Weapons/Corpus/Melee/KickAndPunch/KickPunchWeapon",
+        "Script": {
+            "Script": "StatIncreaseOnFinisherKill.lua",
+            "Function": "ApplyUpgrade",
+            "_statType": "AVATAR_PARKOUR_BOOST",
+            "_statValue": 0.025,
+            "_opType": "STACKING_MULTIPLY"
+        },
+        "UnappliedScript": {
+            "Script": "StatIncreaseOnFinisherKill.lua",
+            "Function": "RemoveUpgrade",
+            "_statType": "AVATAR_PARKOUR_BOOST",
+            "_statValue": 0.025,
+            "_opType": "STACKING_MULTIPLY"
+        },
         "EnhancementTag": "/Lotus/Language/Upgrades/CosmeticEnhancerDescriptionNoChanceWithStacks",
         "EnhancementTagLocScript": {
             "Script": ""
@@ -47,6 +61,7 @@
         ],
         "ConditionTag": "/Lotus/Language/Upgrades/OnFinisherCondition_Description",
         "HudBuffIcon": "/Lotus/Interface/Icons/EvolvingWeapons/OnFinisherIncreaseParkourVelocity.png",
+        "ShowConditionalUpgradeBuffNotification": 0,
         "IsInfinite": 1
     }
 }
